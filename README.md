@@ -1,2 +1,2 @@
 # my-vue-cli
-newest vue-cli demo
+my vue-cli demo
