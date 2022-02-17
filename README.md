@@ -181,7 +181,7 @@
 
 > 1、在constructor构造函数中，不要用 setStyle,setAttrObj,appendChild等带有渲染的方法。
 
-> 2、在实体类的构造函数中，如果没有特殊属性，不需要单独定义propObj,events；
+> 2、在实体类的构造函数中，如果没有特殊属性，不需要单独定义propObj,events；在 web-element中赋值了。
 
 > 3、构造函数的parent参数，直接用 public parent；
 
