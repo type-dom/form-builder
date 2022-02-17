@@ -1,0 +1,14 @@
+import { IWebComponent } from '../../web-component/web-component.interface';
+import { IWebPage } from '../web-page/web-page.interface';
+import { IButton } from '../../web-element/button/button.interface';
+import { IInput } from '../../web-element/input/input.interface';
+import { IDivision } from '../../web-element/division/division.interface';
+import { ISpan } from '../../web-element/span/span.interface';
+import { IWebDocumentContents } from './contents/contents.interface';
+import { IWebDocumentTabs } from './tabs/tabs.interface';
+
+export interface IWebDocument extends IWebComponent {
+  tagName: 'div',
+  className: 'WebDocument',
+  childNodes: (IWebPage| ISpan | IInput | IButton | IDivision | IWebDocumentContents | IWebDocumentTabs)[],
+}
