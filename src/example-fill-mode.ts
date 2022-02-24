@@ -15,10 +15,10 @@ import './style/index.scss';
 fromEvent(document, 'DOMContentLoaded').subscribe(e => {
   // console.log('form mode document DOMContentLoaded, e is ', e);
   const formEl = document.querySelector('#fill-mode') as HTMLElement;
-  formEl.style.maxWidth = '800px';
-  formEl.style.margin = '0 auto';
   // console.log('formEl is ', formEl);
   if (formEl) {
+    formEl.style.maxWidth = '800px';
+    formEl.style.margin = '0 auto';
     const editor = new FormEditor(formEl, 'fill');
     console.log('editor is ', editor);
 
