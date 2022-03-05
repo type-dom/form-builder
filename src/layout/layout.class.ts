@@ -1,10 +1,10 @@
 import { fromEvent } from 'rxjs';
+import { FormEditor } from '../form-editor';
 import { DivComponent } from '../web-component/div-component/div-component.abstract';
 import { WebDocument } from '../core/document/web-document.class';
-import { FormEditor } from '../form-editor';
+import { WebForm } from '../components/form/form';
 import { WebHeader } from './header/header';
 import { WebBody } from './body/body';
-import { WebForm } from '../components/form/form';
 export class WebLayout extends DivComponent {
   className: 'WebLayout';
   parent = this;
