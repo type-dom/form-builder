@@ -138,7 +138,7 @@
 ## 提交表单
 
         变量： submitObservable, 提交的监听事件。
-              exampleData 表单数据，结构 { 字段名：字段值， }
+              formData 表单数据，结构 { 字段名：字段值， }
 
 ## 重置optionConfig
 
@@ -169,7 +169,7 @@
         selectedControl : 当前选中的控件
         selectedMenu: 当前选中的控件菜单按钮
         selectedTableDataCell: 当前选中的表格的单元格
-        exampleData: 提交的数据
+        formData: 提交的数据
         allControls: 表单的所有控件
         optionControls: 带有optionConfig属性的控件
         currentPage: 当前页面

@@ -1,6 +1,11 @@
 import { IWebDocument } from './core/document/web-document.interface';
-import { IFormData } from './interfaces';
 import { IOptionConfig } from './core/controls/web-control.interface';
+
+export interface IFormData {
+  table: Record<string, string>[],
+  [propName: string]: string | Record<string, string>[],
+}
+
 // 测试数据
 export const formJson: IWebDocument = {
   'tagName': 'div',
@@ -2027,7 +2032,7 @@ export const formJson: IWebDocument = {
     }
   ]
 };
-export const exampleData: IFormData = {
+export const formData: IFormData = {
   'table': [
     {
       'table3.field1': '12',

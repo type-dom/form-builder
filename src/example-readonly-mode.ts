@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { exampleData, formJson, oldFormData, oldFormJson, tableData, tableJson } from './example-data';
+import { formData, formJson, oldFormData, oldFormJson, tableData, tableJson } from './form-data';
 import { FormEditor } from './form-editor';
 import './styles/index.scss';
 // 在页面中调用时

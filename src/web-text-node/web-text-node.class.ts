@@ -140,9 +140,8 @@ export class WebTextNode implements IWebTextNode {
     this.parent.render();
   }
 
-  render(): WebTextNode {
+  render(): void {
     this.dom.textContent = this.text || '';  // '\u200b'; // &zwnj; \u200c &zwsp;
-    return this;
   }
 }
 

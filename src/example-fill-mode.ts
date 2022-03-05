@@ -4,11 +4,11 @@ import {
   tableJson,
   oldFormJson,
   oldFormData,
-  exampleData,
+  formData,
   tableData,
   taskJson,
   taskData
-} from './example-data';
+} from './form-data';
 import { FormEditor } from './form-editor';
 import './styles/index.scss';
 // 在页面中调用时
