@@ -1,5 +1,5 @@
 import { debounce, debounceTime, switchMap, fromEvent, map, filter, Observable, Subscription, merge } from 'rxjs';
-import './style/index.scss';
+import './styles/index.scss';
 import { FormEditor } from './form-editor';
 import {
   fieldsConfig,

@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { exampleData, formJson, oldFormData, oldFormJson, tableData, tableJson } from './example-data';
 import { FormEditor } from './form-editor';
-import './style/index.scss';
+import './styles/index.scss';
 // 在页面中调用时
 fromEvent(document, 'DOMContentLoaded').subscribe(() => {
   // console.log('form mode document DOMContentLoaded, e is ', e);

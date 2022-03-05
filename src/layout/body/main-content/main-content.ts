@@ -1,4 +1,4 @@
-import { WebDocument } from '../../../core/web-document/web-document.class';
+import { WebDocument } from '../../../core/document/web-document.class';
 import { StylePosition } from '../../../web-element/web-style.enum';
 import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
 import { WebBody } from '../body';

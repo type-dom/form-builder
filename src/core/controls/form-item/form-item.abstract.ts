@@ -1,4 +1,4 @@
-import { IStyle } from '../../../web-element/web-element.interface';
+import { IWebStyle } from '../../../web-element/web-style.interface';
 import { WebTable } from '../../../web-element/table/table.class';
 import { Input } from '../../../web-element/input/input.class';
 import { Label } from '../../../web-element/label/label.class';
@@ -22,7 +22,7 @@ export abstract class FormItem extends DivComponent implements IFormItem {
 
   label: Label;
   labelText: WebTextNode;
-  labelStyle: Partial<IStyle>;
+  labelStyle: Partial<IWebStyle>;
   deleteSpan: Span;
 
   protected constructor(labelText = '控件名称') {

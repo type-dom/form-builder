@@ -1,5 +1,5 @@
 import { WebTableDataCell } from '../../../../web-element/table/data-cell/data-cell.class';
-import { WebPage } from '../../../web-page/web-page.class';
+import { WebPage } from '../../../page/web-page.class';
 import { TextareaItem } from '../../form-item/textarea-item/textarea-item.class';
 import { WebBasicControl } from '../basic.abstract';
 import { IMultilineInputControl } from './multiline-input.inerface';

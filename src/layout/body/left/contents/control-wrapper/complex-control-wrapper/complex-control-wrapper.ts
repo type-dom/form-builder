@@ -1,12 +1,12 @@
 import { DivComponent } from '../../../../../../web-component/div-component/div-component.abstract';
-import { ComplexControlMenus } from '../../../../../../core/menus/complex-control-menus/complex-control-menus';
+import { ComplexMenus } from '../../../../../../core/menus/complex-menus/complex-menus';
 import { ExpandHeading } from '../../../../../../components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';
 
 export class ComplexControlWrapper extends DivComponent {
   className: 'ComplexControlWrapper';
-  childNodes: [ExpandHeading, ComplexControlMenus];
-  complexControlMenus: ComplexControlMenus;
+  childNodes: [ExpandHeading, ComplexMenus];
+  complexControlMenus: ComplexMenus;
   constructor(public parent: ControlWrapper) {
     super();
     this.className = 'ComplexControlWrapper';
@@ -25,7 +25,7 @@ export class ComplexControlWrapper extends DivComponent {
     };
 
     const h3 = new ExpandHeading(this, '高级控件');
-    this.complexControlMenus = new ComplexControlMenus(this);
+    this.complexControlMenus = new ComplexMenus(this);
     this.childNodes = [h3, this.complexControlMenus];
   }
 

@@ -11,7 +11,7 @@ import { WebTableRow } from '../../web-element/table/row/row.class';
 import { WebTableDataCell } from '../../web-element/table/data-cell/data-cell.class';
 import { toJSON } from '../../web-element/web-element.function';
 import { ControlClassMap } from '../../constants';
-import { WebPage } from '../web-page/web-page.class';
+import { WebPage } from '../page/web-page.class';
 import { FormItem } from './form-item/form-item.abstract';
 import { IOptionConfig, IWebControl } from './web-control.interface';
 import { controlStyle } from './web-control.const';

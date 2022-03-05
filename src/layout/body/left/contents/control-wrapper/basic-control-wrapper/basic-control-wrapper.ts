@@ -1,12 +1,12 @@
 import { DivComponent } from '../../../../../../web-component/div-component/div-component.abstract';
-import { BasicControlMenus } from '../../../../../../core/menus/basic-control-menus/basic-control-menus';
+import { BasicMenus } from '../../../../../../core/menus/basic-menus/basic-menus';
 import { ExpandHeading } from '../../../../../../components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';
 
 export class BasicControlWrapper extends DivComponent {
   className: 'BasicControlWrapper';
-  childNodes: [ExpandHeading, BasicControlMenus];
-  basicControlMenus = new BasicControlMenus(this);
+  childNodes: [ExpandHeading, BasicMenus];
+  basicControlMenus = new BasicMenus(this);
 
   constructor(public parent: ControlWrapper) {
     super();
@@ -26,7 +26,7 @@ export class BasicControlWrapper extends DivComponent {
     };
 
     const h3 = new ExpandHeading(this, '基础控件');
-    this.basicControlMenus = new BasicControlMenus(this);
+    this.basicControlMenus = new BasicMenus(this);
     this.childNodes = [h3, this.basicControlMenus];
   }
 }

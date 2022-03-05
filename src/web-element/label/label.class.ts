@@ -1,6 +1,6 @@
+import { WebTextNode } from '../../web-text-node/web-text-node.class';
 import { WebElement } from '../web-element.abstract';
 import { ILabel } from './label.interface';
-import { WebTextNode } from '../../web-text-node/web-text-node.class';
 
 export class Label extends WebElement implements ILabel {
   tagName: 'label';

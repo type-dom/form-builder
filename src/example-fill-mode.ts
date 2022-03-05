@@ -10,7 +10,7 @@ import {
   taskData
 } from './example-data';
 import { FormEditor } from './form-editor';
-import './style/index.scss';
+import './styles/index.scss';
 // 在页面中调用时
 fromEvent(document, 'DOMContentLoaded').subscribe(e => {
   // console.log('form mode document DOMContentLoaded, e is ', e);

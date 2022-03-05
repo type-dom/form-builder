@@ -1,14 +1,15 @@
 import { Subscription } from 'rxjs';
+import { WebTextNode } from '../web-text-node/web-text-node.class';
+import { FormEditor } from '../form-editor';
+import { humpToMiddleLine } from '../utils';
 import {
-  IAttribute,
-  IStyle, IWebBoundBox,
+  IWebAttribute,
+  IWebBoundBox,
   IWebElement,
   IWebProperty
 } from './web-element.interface';
-import { WebTextNode } from '../web-text-node/web-text-node.class';
 import { Cursor } from './web-style.enum';
-import { FormEditor } from '../form-editor';
-import { humpToMiddleLine } from '../utils';
+import { IWebStyle } from './web-style.interface';
 
 /**
  * 这是浏览器端的document数据结构。
@@ -55,11 +56,11 @@ export abstract class WebElement implements IWebElement {
     return this.parent ? this.parent.findChildIndex(this) : -1;
   }
 
-  get attrObj(): Partial<IAttribute> {
+  get attrObj(): Partial<IWebAttribute> {
     return this.propObj.attrObj;
   }
 
-  get styleObj(): Partial<IStyle> {
+  get styleObj(): Partial<IWebStyle> {
     return this.propObj.styleObj;
   }
 
@@ -135,7 +136,7 @@ export abstract class WebElement implements IWebElement {
         this.removeAttribute(key);
       }
       // for (const style in this.propObj.styleObj) {
-      //   this.removeStyle(style as keyof IStyle);
+      //   this.removeStyle(style as keyof IWebStyle);
       // }
       this.dom.removeAttribute('style');
     }
@@ -146,37 +147,37 @@ export abstract class WebElement implements IWebElement {
 
   // todo 类型验证 set ???----> replace
   // todo 累加
-  setStyleObj(styles: Partial<IStyle>): WebElement {
+  setStyleObj(styles: Partial<IWebStyle>): WebElement {
     for (const key in styles) {
       if (Object.hasOwnProperty.call(styles, key)) {
         // todo 如何优化
-        const value = styles[key as keyof IStyle] as string | number | boolean;
-        this.setStyle(key as keyof IStyle, value);
+        const value = styles[key as keyof IWebStyle] as string | number | boolean;
+        this.setStyle(key as keyof IWebStyle, value);
       }
     }
     return this;
   }
-  addStyleObj(styles: Partial<IStyle>): WebElement {
+  addStyleObj(styles: Partial<IWebStyle>): WebElement {
     for (const key in styles) {
       if (Object.hasOwnProperty.call(styles, key)) {
         // todo 如何优化
-        const value = styles[key as keyof IStyle] as string | number | boolean;
-        this.addStyle(key as keyof IStyle, value);
+        const value = styles[key as keyof IWebStyle] as string | number | boolean;
+        this.addStyle(key as keyof IWebStyle, value);
       }
     }
     return this;
   }
-  renderStyleObj(styles: Partial<IStyle>): WebElement {
+  renderStyleObj(styles: Partial<IWebStyle>): WebElement {
     for (const key in styles) {
       if (Object.hasOwnProperty.call(styles, key)) {
         // todo 如何优化
-        const value = styles[key as keyof IStyle] as string | number | boolean;
-        this.renderStyle(key as keyof IStyle, value);
+        const value = styles[key as keyof IWebStyle] as string | number | boolean;
+        this.renderStyle(key as keyof IWebStyle, value);
       }
     }
     return this;
   }
-  setStyle(key: keyof IStyle, value: string | number | boolean): WebElement {
+  setStyle(key: keyof IWebStyle, value: string | number | boolean): WebElement {
     // todo 是否要删除属性。
     // if (!value) {
     //   delete this.propObj.styleObj[key];
@@ -195,11 +196,11 @@ export abstract class WebElement implements IWebElement {
   addStyle(key: string, value: string | number | boolean): void {
     (this.propObj.styleObj as Record<string, string | number | boolean>)[key] = value;
   }
-  renderStyle(key: keyof IStyle, value: string | number | boolean): void {
+  renderStyle(key: keyof IWebStyle, value: string | number | boolean): void {
     this.dom.style[key as any] = String(value);
   }
   // 删除样式
-  removeStyle(key: keyof IStyle): WebElement {
+  removeStyle(key: keyof IWebStyle): WebElement {
     if (this.propObj.styleObj[key]) {
       delete this.propObj.styleObj[key];
     }
@@ -214,7 +215,7 @@ export abstract class WebElement implements IWebElement {
     this.setStyle('display', 'none');
   }
   // 不影响已有的，但是没有传的属性
-  setAttrObj(attrObj: Partial<IAttribute>): WebElement {
+  setAttrObj(attrObj: Partial<IWebAttribute>): WebElement {
     for (const key in attrObj) {
       if (Object.hasOwnProperty.call(attrObj, key)) {
         // todo 如何优化
@@ -225,7 +226,7 @@ export abstract class WebElement implements IWebElement {
     return this;
   }
 
-  addAttrObj(attrObj: Partial<IAttribute>): WebElement {
+  addAttrObj(attrObj: Partial<IWebAttribute>): WebElement {
     for (const key in attrObj) {
       if (Object.hasOwnProperty.call(attrObj, key)) {
         const value = attrObj[key] as string | number;
@@ -235,7 +236,7 @@ export abstract class WebElement implements IWebElement {
     return this;
   }
 
-  renderAttrObj(attrObj: Partial<IAttribute>): WebElement {
+  renderAttrObj(attrObj: Partial<IWebAttribute>): WebElement {
     for (const key in attrObj) {
       if (Object.hasOwnProperty.call(attrObj, key)) {
         const value = attrObj[key] as string | number;
@@ -462,7 +463,7 @@ export abstract class WebElement implements IWebElement {
   // 会循环调用
   // clone(): WebElement {
   // //   const attrObj: { [key: string]: boolean | string | number } = {};
-  // //   const styleObj: Partial<IStyle> = {};
+  // //   const styleObj: Partial<IWebStyle> = {};
   // //   this.attrObj.forEach(((value, key) => {
   // //     attrs[key] = value
   // //   }));

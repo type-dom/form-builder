@@ -1,5 +1,5 @@
 import { WebElement } from '../web-element.abstract';
-import { WebOption } from '../option/option.class';
+import { WebOption } from './option/option.class';
 import { IOption } from '../../core/controls/web-control.interface';
 import { WebComponent } from '../../web-component/web-component.abstract';
 import { ISelect } from './select.interface';

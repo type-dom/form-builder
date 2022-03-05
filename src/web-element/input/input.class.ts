@@ -4,8 +4,8 @@ import { IInput } from './input.interface';
 
 export class Input extends FinalComponent implements IInput {
   tagName: 'input';
-  className: 'Input';
   dom: HTMLInputElement;
+  className: 'Input';
   childNodes: [];
   // value: string | number | boolean | undefined;
   constructor(public parent: WebElement) {

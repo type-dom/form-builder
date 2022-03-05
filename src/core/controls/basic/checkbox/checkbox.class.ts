@@ -1,7 +1,6 @@
 import { WebTableDataCell } from '../../../../web-element/table/data-cell/data-cell.class';
-import { CheckboxOption } from '../../../../components/checkbox-group/checkbox-option/checkbox-option.class';
 import { deepClone } from '../../../../utils';
-import { WebPage } from '../../../web-page/web-page.class';
+import { WebPage } from '../../../page/web-page.class';
 import { defaultOptionConfig } from '../../web-control.const';
 import { IOptionConfig, IWebControl } from '../../web-control.interface';
 import { WebControl } from '../../web-control.abstract';

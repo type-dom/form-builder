@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { deepClone } from '../../../../utils';
-import { WebPage } from '../../../web-page/web-page.class';
+import { WebPage } from '../../../page/web-page.class';
 import { TableItem } from '../../form-item/table-item/table-item.class';
 import { WebComplexControl } from '../complex.abstract';
 import { tableData, tableHeader } from './table.const';

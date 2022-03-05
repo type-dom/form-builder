@@ -1,5 +1,5 @@
-import { WebElement } from '../web-element.abstract';
 import { WebTextNode } from '../../web-text-node/web-text-node.class';
+import { WebElement } from '../web-element.abstract';
 import { IHeading } from './heading.interface';
 
 // h1,h2,h3,h4,h5

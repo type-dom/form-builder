@@ -1,17 +1,18 @@
 import { IWebTextNode } from '../web-text-node/web-text-node.interface';
-import { IAttribute, IStyle, IWebElement } from './web-element.interface';
+import { IWebAttribute, IWebElement } from './web-element.interface';
 import { WebElement } from './web-element.abstract';
+import { IWebStyle } from './web-style.interface';
 
 /**
  * 设置dom的style
  * @param dom
  * @param styleObj
  */
-export function setStyles(dom: HTMLElement, styleObj: Partial<IStyle>): void {
+export function setStyles(dom: HTMLElement, styleObj: Partial<IWebStyle>): void {
   for (const key in styleObj) {
     // console.log('key is ', key);
     if (Object.hasOwnProperty.call(styleObj, key)) {
-      (dom.style as any)[key] = styleObj[key as keyof IStyle];
+      (dom.style as any)[key] = styleObj[key as keyof IWebStyle];
     }
   }
 }
@@ -21,7 +22,7 @@ export function setStyles(dom: HTMLElement, styleObj: Partial<IStyle>): void {
  * @param dom
  * @param attrObj
  */
-export function setAttributes(dom: HTMLElement, attrObj: Partial<IAttribute>): void {
+export function setAttributes(dom: HTMLElement, attrObj: Partial<IWebAttribute>): void {
   for (const attr in attrObj) {
     if (Object.hasOwnProperty.call(attrObj, attr)) {
       dom.setAttribute(attr, (attrObj as any)[attr]);

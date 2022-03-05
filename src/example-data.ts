@@ -1,4 +1,4 @@
-import { IWebDocument } from './core/web-document/web-document.interface';
+import { IWebDocument } from './core/document/web-document.interface';
 import { IFormData } from './interfaces';
 import { IOptionConfig } from './core/controls/web-control.interface';
 // 测试数据

@@ -2,8 +2,8 @@ import { fromEvent } from 'rxjs';
 import { ButtonComponent } from '../../../../web-component/button-component/button-component.abstract';
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
 import { toJSON } from '../../../../web-element/web-element.function';
-import { WebDocument } from '../../../../core/web-document/web-document.class';
-import { IWebDocument } from '../../../../core/web-document/web-document.interface';
+import { WebDocument } from '../../../../core/document/web-document.class';
+import { IWebDocument } from '../../../../core/document/web-document.interface';
 import { Navbar } from '../navbar';
 
 export class PreviewButton extends ButtonComponent {

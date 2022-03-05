@@ -1,6 +1,6 @@
-import { IStyle } from '../../web-element/web-element.interface';
+import { IWebStyle } from '../../web-element/web-style.interface';
 
-export const buttonStyle: Partial<IStyle> = {
+export const buttonStyle: Partial<IWebStyle> = {
   // appearance: 'none',
   textAlign: 'center',
   boxSizing: 'border-box',
