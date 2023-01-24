@@ -13,7 +13,7 @@
     "lint-fix": "eslint 'src/**/*.{ts,js,tsx,jsx}' --fix -o eslint_log.log",
     "uml": "tsuml2 --glob ./src/web-element/*.ts ",
     "docs": "typedoc --entryPointStrategy expand ./src",
-    "ts-coverage": "typescript-coverage-report"
+    "coverage": "typescript-coverage-report"
   },
   "keywords": [
     "typescript",
