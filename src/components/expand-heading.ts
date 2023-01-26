@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { Span } from '../web-element/span/span.class';
+import { Span } from '../web-element/web-html/span/span.class';
 import { WebComponent } from '../web-component/web-component.abstract';
 import { WebTextNode } from '../web-text-node/web-text-node.class';
 import { TriangleSvg } from './svgs/triangle/triangle';

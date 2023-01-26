@@ -1,7 +1,7 @@
-import { Button } from '../../../../../../web-element/button/button.class';
-import { Label } from '../../../../../../web-element/label/label.class';
+import { Button } from '../../../../../../web-element/web-html/button/button.class';
+import { Label } from '../../../../../../web-element/web-html/label/label.class';
+import { Span } from '../../../../../../web-element/web-html/span/span.class';
 import { Display } from '../../../../../../web-element/web-style.enum';
-import { Span } from '../../../../../../web-element/span/span.class';
 import { WebTextNode } from '../../../../../../web-text-node/web-text-node.class';
 import { PropertyItem } from '../property-item.abstract';
 

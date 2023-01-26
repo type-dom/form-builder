@@ -1,11 +1,11 @@
+import { WebSvg } from '../../web-element/web-svg/web-svg.abstract';
 import { ISvgComponent } from './svg-component.interface';
-import { SvgElement } from '../../svg-element/svg-element.abstract';
 
-export abstract class SvgComponent extends SvgElement implements ISvgComponent {
+export abstract class SvgComponent extends WebSvg implements ISvgComponent {
   tagName: 'svg';
   className: string;
   dom: SVGSVGElement;
-  childNodes: SvgElement[];
+  childNodes: WebSvg[];
   width: string | number = '100%';
   height: string | number = '100%';
   protected constructor() {

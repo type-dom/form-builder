@@ -10,17 +10,17 @@ import { ControlProperty } from './layout/body/right/contents/control-property/c
 import { FormProperty } from './layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './layout/body/right/contents/field-property/field-property';
 import { Cursor } from './web-element/web-style.enum';
-import { WebTableDataCell } from './web-element/table/data-cell/data-cell.class';
-import { ListItem } from './web-element/unordered-list/list-item/list-item.class';
+import { WebTableDataCell } from './web-element/web-html/table/data-cell/data-cell.class';
+import { ListItem } from './web-element/web-html/unordered-list/list-item/list-item.class';
+import { WebTableRow } from './web-element/web-html/table/row/row.class';
+import { Span } from './web-element/web-html/span/span.class';
 import { toJSON } from './web-element/web-element.function';
 import { WebDialog } from './components/dialog/dialog';
 import { MessageBox } from './components/message-box/message-box';
 import { ConnectionControl } from './core/controls/complex/connection/connection.class';
 import { TableControl } from './core/controls/complex/table/table.class';
 import { ITableField } from './core/controls/complex/table/table.interface';
-import { WebTableRow } from './web-element/table/row/row.class';
 import { WebTextNode } from './web-text-node/web-text-node.class';
-import { Span } from './web-element/span/span.class';
 import { WebForm } from './components/form/form';
 import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
 
@@ -284,14 +284,14 @@ export class FormEditor {
         const tableHeader = table.childNodes[0];
         // console.log('tableHeader is ', tableHeader);
         const tableHead: ITableField[] = [];
-        tableHeader.childNodes.forEach(th => {
+        tableHeader.childNodes.forEach((th) => {
           tableHead.push({
             label: th.childNodes[0].text,
             name: th.attrObj.name as string,
           });
         });
         // console.log('tableHead is ', tableHead);
-        table.childNodes.forEach((tr, index) => {
+        table.childNodes.forEach((tr: WebTableRow | unknown, index: number) => {
           if (index > 0) {
             // console.log('tr is ', tr);
             if (tr instanceof WebTableRow) {

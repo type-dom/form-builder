@@ -1,5 +1,5 @@
 import { DateSvg } from '../../../../components/svgs/date/date';
-import { Span } from '../../../../web-element/span/span.class';
+import { Span } from '../../../../web-element/web-html/span/span.class';
 import { DateControl } from '../../../controls/basic/date/date.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';

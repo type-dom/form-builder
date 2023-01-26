@@ -1,10 +1,10 @@
 import { IOptionConfig } from '../../../../../../core/controls/web-control.interface';
-import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
-import { ControlProperty } from '../control-property';
-import { Input } from '../../../../../../web-element/input/input.class';
-import { Textarea } from '../../../../../../web-element/textarea/textarea.class';
+import { Input } from '../../../../../../web-element/web-html/input/input.class';
+import { Textarea } from '../../../../../../web-element/web-html/textarea/textarea.class';
 import { WebTextNode } from '../../../../../../web-text-node/web-text-node.class';
 import { FieldProperty } from '../../field-property/field-property';
+import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
+import { ControlProperty } from '../control-property';
 
 const requiredConfigs: IOptionConfig = {
   name: '必填' + Math.random(),

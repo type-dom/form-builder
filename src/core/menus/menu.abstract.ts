@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { DivComponent } from '../../web-component/div-component/div-component.abstract';
 import { SvgComponent } from '../../web-component/svg-component/svg-component.abstract';
-import { Span } from '../../web-element/span/span.class';
+import { Span } from '../../web-element/web-html/span/span.class';
 import { WebTextNode } from '../../web-text-node/web-text-node.class';
 import { ControlClass } from '../controls/web-control.interface';
 import { TableControl } from '../controls/complex/table/table.class';

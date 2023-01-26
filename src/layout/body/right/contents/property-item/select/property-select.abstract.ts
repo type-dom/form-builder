@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
-import { Label } from '../../../../../../web-element/label/label.class';
-import { Select } from '../../../../../../web-element/select/select.class';
+import { Label } from '../../../../../../web-element/web-html/label/label.class';
+import { Select } from '../../../../../../web-element/web-html/select/select.class';
+import { Button } from '../../../../../../web-element/web-html/button/button.class';
 import { itemContentStyle } from '../../../../../../core/controls/web-control.const';
 import { PropertyItem } from '../property-item.abstract';
-import { Button } from '../../../../../../web-element/button/button.class';
 
 export abstract class PropertySelect extends PropertyItem {
   abstract reset(value?: string): void;

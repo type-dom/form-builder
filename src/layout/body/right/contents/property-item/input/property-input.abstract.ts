@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
-import { Button } from '../../../../../../web-element/button/button.class';
-import { Label } from '../../../../../../web-element/label/label.class';
-import { Input } from '../../../../../../web-element/input/input.class';
-import { PropertyItem } from '../property-item.abstract';
+import { Button } from '../../../../../../web-element/web-html/button/button.class';
+import { Label } from '../../../../../../web-element/web-html/label/label.class';
+import { Input } from '../../../../../../web-element/web-html/input/input.class';
 import { itemContentStyle } from '../../../../../../core/controls/web-control.const';
+import { PropertyItem } from '../property-item.abstract';
 
 const disableStyle = {
   backgroundColor: '#F5F7FA',

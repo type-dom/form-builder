@@ -1,11 +1,11 @@
 import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
-import { SvgElement } from '../../../svg-element/svg-element.abstract';
+import { WebSvg } from '../../../web-element/web-svg/web-svg.abstract';
 import { LogoSvg } from '../../../components/svgs/logo/logo';
 import { WebHeader } from '../header';
 
 export class Logo extends DivComponent {
   className: 'Logo';
-  childNodes: SvgElement[];
+  childNodes: WebSvg[];
   constructor(public parent: WebHeader) {
     super();
     this.className = 'Logo';

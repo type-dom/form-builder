@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { Textarea } from '../../../../../../web-element/textarea/textarea.class';
-import { Label } from '../../../../../../web-element/label/label.class';
+import { Textarea } from '../../../../../../web-element/web-html/textarea/textarea.class';
+import { Label } from '../../../../../../web-element/web-html/label/label.class';
+import { Button } from '../../../../../../web-element/web-html/button/button.class';
 import { Display } from '../../../../../../web-element/web-style.enum';
-import { Button } from '../../../../../../web-element/button/button.class';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertyTextarea extends PropertyItem {

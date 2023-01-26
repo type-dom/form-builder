@@ -1,9 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { PropertyInput } from '../../property-item/input/property-input.abstract';
-import { FormProperty } from '../form-property';
-import { WebTable } from '../../../../../../web-element/table/table.class';
 import { TableControl } from '../../../../../../core/controls/complex/table/table.class';
 import { labelStyle } from '../../../../../../core/controls/web-control.const';
+import { PropertyInput } from '../../property-item/input/property-input.abstract';
+import { FormProperty } from '../form-property';
 
 // 控件标签宽度
 export class LabelWidthProperty extends PropertyInput {

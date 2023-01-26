@@ -1,6 +1,6 @@
-import { Label } from '../../../../web-element/label/label.class';
-import { Textarea } from '../../../../web-element/textarea/textarea.class';
-import { Span } from '../../../../web-element/span/span.class';
+import { Label } from '../../../../web-element/web-html/label/label.class';
+import { Textarea } from '../../../../web-element/web-html/textarea/textarea.class';
+import { Span } from '../../../../web-element/web-html/span/span.class';
 import { WebControl } from '../../web-control.abstract';
 import { itemContentStyle } from '../../web-control.const';
 import { FormItem } from '../form-item.abstract';

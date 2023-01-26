@@ -1,5 +1,5 @@
 import { fromEvent, Observable } from 'rxjs';
-import { WebTableDataCell } from '../../../../web-element/table/data-cell/data-cell.class';
+import { WebTableDataCell } from '../../../../web-element/web-html/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
 import { ButtonItem } from '../../form-item/button-item/button-item.class';
 import { WebComplexControl } from '../complex.abstract';

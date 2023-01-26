@@ -1,5 +1,5 @@
 import { AttachmentSvg } from '../../../../components/svgs/attachment/attachment';
-import { Span } from '../../../../web-element/span/span.class';
+import { Span } from '../../../../web-element/web-html/span/span.class';
 import { AttachmentControl } from '../../../controls/basic/attachment/attachment.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';

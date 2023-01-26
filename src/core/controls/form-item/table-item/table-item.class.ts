@@ -1,11 +1,11 @@
 import { fromEvent } from 'rxjs';
-import { Label } from '../../../../web-element/label/label.class';
-import { WebTable } from '../../../../web-element/table/table.class';
-import { WebTableRow } from '../../../../web-element/table/row/row.class';
-import { Span } from '../../../../web-element/span/span.class';
+import { Label } from '../../../../web-element/web-html/label/label.class';
+import { Span } from '../../../../web-element/web-html/span/span.class';
+import { WebTable } from '../../../../web-element/web-html/table/table.class';
+import { WebTableRow } from '../../../../web-element/web-html/table/row/row.class';
+import { IWebTableRow } from '../../../../web-element/web-html/table/row/row.interface';
 import { Display } from '../../../../web-element/web-style.enum';
 import { toJSON } from '../../../../web-element/web-element.function';
-import { IWebTableRow } from '../../../../web-element/table/row/row.interface';
 import { AddSvg } from '../../../../components/svgs/add/add';
 import { TableControl } from '../../complex/table/table.class';
 import { FormItem } from '../form-item.abstract';

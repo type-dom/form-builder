@@ -1,9 +1,9 @@
 import { fromEvent, Observable } from 'rxjs';
-import { Label } from '../../../../../../web-element/label/label.class';
+import { Label } from '../../../../../../web-element/web-html/label/label.class';
+import { Division } from '../../../../../../web-element/web-html/division/division.class';
+import { Select } from '../../../../../../web-element/web-html/select/select.class';
+import { Button } from '../../../../../../web-element/web-html/button/button.class';
 import { Display } from '../../../../../../web-element/web-style.enum';
-import { Division } from '../../../../../../web-element/division/division.class';
-import { Select } from '../../../../../../web-element/select/select.class';
-import { Button } from '../../../../../../web-element/button/button.class';
 import { WebTextNode } from '../../../../../../web-text-node/web-text-node.class';
 import { WebControl } from '../../../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../../../core/controls/web-control.const';

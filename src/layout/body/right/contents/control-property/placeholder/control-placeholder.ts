@@ -1,5 +1,5 @@
-import { Textarea } from '../../../../../../web-element/textarea/textarea.class';
-import { Input } from '../../../../../../web-element/input/input.class';
+import { Textarea } from '../../../../../../web-element/web-html/textarea/textarea.class';
+import { Input } from '../../../../../../web-element/web-html/input/input.class';
 import { SingleInputControl } from '../../../../../../core/controls/basic/single-input/single-input.class';
 import { MultilineInputControl } from '../../../../../../core/controls/basic/multiline-input/multiline-input.class';
 import { FieldProperty } from '../../field-property/field-property';

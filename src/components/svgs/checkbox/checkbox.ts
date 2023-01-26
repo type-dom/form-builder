@@ -1,6 +1,6 @@
 import { WebElement } from '../../../web-element/web-element.abstract';
 import { SvgComponent } from '../../../web-component/svg-component/svg-component.abstract';
-import { SvgPath } from '../../../svg-element/path/path.class';
+import { SvgPath } from '../../../web-element/web-svg/path/path.class';
 
 export class CheckboxSvg extends SvgComponent {
   className: 'CheckboxSvg';
