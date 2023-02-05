@@ -1,6 +1,6 @@
-import { IWebSvg } from '../../web-element/web-svg/web-svg.interface';
+import { ISvgElement } from '../../web-element/svg-element/svg-element.interface';
 
-export interface ISvgComponent extends IWebSvg {
+export interface ISvgComponent extends ISvgElement {
   tagName: 'svg',
-  childNodes: IWebSvg[],
+  childNodes: ISvgElement[],
 }

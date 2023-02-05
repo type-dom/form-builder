@@ -1,5 +1,5 @@
 import { DivComponent } from '../../../../../web-component/div-component/div-component.abstract';
-import { Division } from '../../../../../web-element/web-html/division/division.class';
+import { Division } from '../../../../../web-element/html-element/division/division.class';
 import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
 import { RightContents } from '../contents';
 // control property

@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { Label } from '../../../../../../web-element/web-html/label/label.class';
-import { Division } from '../../../../../../web-element/web-html/division/division.class';
-import { Button } from '../../../../../../web-element/web-html/button/button.class';
+import { Label } from '../../../../../../web-element/html-element/label/label.class';
+import { Division } from '../../../../../../web-element/html-element/division/division.class';
+import { Button } from '../../../../../../web-element/html-element/button/button.class';
 import { WebTextNode } from '../../../../../../web-text-node/web-text-node.class';
 import { IOption, IOptionConfig } from '../../../../../../core/controls/web-control.interface';
 

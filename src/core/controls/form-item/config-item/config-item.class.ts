@@ -1,6 +1,6 @@
-import { Span } from '../../../../web-element/web-html/span/span.class';
-import { Label } from '../../../../web-element/web-html/label/label.class';
-import { Select } from '../../../../web-element/web-html/select/select.class';
+import { Span } from '../../../../web-element/html-element/span/span.class';
+import { Label } from '../../../../web-element/html-element/label/label.class';
+import { Select } from '../../../../web-element/html-element/select/select.class';
 import { RadioGroup } from '../../../../components/radio-group/radio-group.class';
 import { CheckboxGroup } from '../../../../components/checkbox-group/checkbox-group.class';
 import { FormItem } from '../form-item.abstract';

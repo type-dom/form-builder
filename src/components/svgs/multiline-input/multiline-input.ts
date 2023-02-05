@@ -1,5 +1,5 @@
 import { WebElement } from '../../../web-element/web-element.abstract';
-import { SvgPath } from '../../../web-element/web-svg/path/path.class';
+import { SvgPath } from '../../../web-element/svg-element/path/path.class';
 import { SvgComponent } from '../../../web-component/svg-component/svg-component.abstract';
 
 export class MultilineInputSvg extends SvgComponent {

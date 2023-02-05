@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { SpanComponent } from '../../../web-component/span-component/span-component.abstract';
-import { Input } from '../../../web-element/web-html/input/input.class';
+import { Input } from '../../../web-element/html-element/input/input.class';
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
 import { RadioGroup } from '../radio-group.class';
 import { IRadioOption } from './radio-option.interface';

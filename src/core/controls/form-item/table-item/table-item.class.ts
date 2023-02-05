@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
-import { Label } from '../../../../web-element/web-html/label/label.class';
-import { Span } from '../../../../web-element/web-html/span/span.class';
-import { WebTable } from '../../../../web-element/web-html/table/table.class';
-import { WebTableRow } from '../../../../web-element/web-html/table/row/row.class';
-import { IWebTableRow } from '../../../../web-element/web-html/table/row/row.interface';
+import { Label } from '../../../../web-element/html-element/label/label.class';
+import { Span } from '../../../../web-element/html-element/span/span.class';
+import { WebTable } from '../../../../web-element/html-element/table/table.class';
+import { WebTableRow } from '../../../../web-element/html-element/table/row/row.class';
+import { IWebTableRow } from '../../../../web-element/html-element/table/row/row.interface';
 import { Display } from '../../../../web-element/web-style.enum';
 import { toJSON } from '../../../../web-element/web-element.function';
 import { AddSvg } from '../../../../components/svgs/add/add';

@@ -1,5 +1,5 @@
 import { DivComponent } from '../../web-component/div-component/div-component.abstract';
-import { WebHtml } from '../../web-element/web-html/web-html.abstract';
+import { HtmlElement } from '../../web-element/html-element/html-element.abstract';
 import { IOption } from '../../core/controls/web-control.interface';
 import { CheckboxOption } from './checkbox-option/checkbox-option.class';
 import { ICheckboxGroup } from './checkbox-group.interface';
@@ -8,7 +8,7 @@ export class CheckboxGroup extends DivComponent implements ICheckboxGroup {
   className: 'CheckboxGroup';
   childNodes: CheckboxOption[];
   value: (string | number | boolean)[]; // 应该是个数组
-  constructor(public parent: WebHtml) {
+  constructor(public parent: HtmlElement) {
     super();
     this.className = 'CheckboxGroup';
     this.addAttrName('checkbox-group');

@@ -2,24 +2,24 @@
  * 虚拟dom的数据结构字面量接口。
  */
 import { IWebTextNode } from '../web-text-node/web-text-node.interface';
-import { Button } from './web-html/button/button.class';
-import { Division } from './web-html/division/division.class';
-import { Heading } from './web-html/heading/heading.class';
-import { Input } from './web-html/input/input.class';
-import { Label } from './web-html/label/label.class';
-import { ListItem } from './web-html/unordered-list/list-item/list-item.class';
-import { WebOption } from './web-html/select/option/option.class';
-import { Select } from './web-html/select/select.class';
-import { Span } from './web-html/span/span.class';
-import { Textarea } from './web-html/textarea/textarea.class';
-import { WebTable } from './web-html/table/table.class';
-import { UnorderedList } from './web-html/unordered-list/unordered-list.class';
-import { WebTableRow } from './web-html/table/row/row.class';
-import { WebTableDataCell } from './web-html/table/data-cell/data-cell.class';
-import { WebTableHead } from './web-html/table/head/head.class';
-import { WebTableBody } from './web-html/table/body/body.class';
-import { WebTableFoot } from './web-html/table/foot/foot.class';
-import { WebTableHeader } from './web-html/table/header/header.class';
+import { Button } from './html-element/button/button.class';
+import { Division } from './html-element/division/division.class';
+import { Heading } from './html-element/heading/heading.class';
+import { Input } from './html-element/input/input.class';
+import { Label } from './html-element/label/label.class';
+import { ListItem } from './html-element/unordered-list/list-item/list-item.class';
+import { WebOption } from './html-element/select/option/option.class';
+import { Select } from './html-element/select/select.class';
+import { Span } from './html-element/span/span.class';
+import { Textarea } from './html-element/textarea/textarea.class';
+import { WebTable } from './html-element/table/table.class';
+import { UnorderedList } from './html-element/unordered-list/unordered-list.class';
+import { WebTableRow } from './html-element/table/row/row.class';
+import { WebTableDataCell } from './html-element/table/data-cell/data-cell.class';
+import { WebTableHead } from './html-element/table/head/head.class';
+import { WebTableBody } from './html-element/table/body/body.class';
+import { WebTableFoot } from './html-element/table/foot/foot.class';
+import { WebTableHeader } from './html-element/table/header/header.class';
 import { IWebStyle } from './web-style.interface';
 
 export interface IWebAttribute {

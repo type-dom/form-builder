@@ -10,10 +10,10 @@ import { ControlProperty } from './layout/body/right/contents/control-property/c
 import { FormProperty } from './layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './layout/body/right/contents/field-property/field-property';
 import { Cursor } from './web-element/web-style.enum';
-import { WebTableDataCell } from './web-element/web-html/table/data-cell/data-cell.class';
-import { ListItem } from './web-element/web-html/unordered-list/list-item/list-item.class';
-import { WebTableRow } from './web-element/web-html/table/row/row.class';
-import { Span } from './web-element/web-html/span/span.class';
+import { WebTableDataCell } from './web-element/html-element/table/data-cell/data-cell.class';
+import { ListItem } from './web-element/html-element/unordered-list/list-item/list-item.class';
+import { WebTableRow } from './web-element/html-element/table/row/row.class';
+import { Span } from './web-element/html-element/span/span.class';
 import { toJSON } from './web-element/web-element.function';
 import { WebDialog } from './components/dialog/dialog';
 import { MessageBox } from './components/message-box/message-box';

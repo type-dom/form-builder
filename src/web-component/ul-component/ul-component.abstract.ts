@@ -1,4 +1,4 @@
-import { ListItem } from '../../web-element/web-html/unordered-list/list-item/list-item.class';
+import { ListItem } from '../../web-element/html-element/unordered-list/list-item/list-item.class';
 import { WebComponent } from '../web-component.abstract';
 import { IUlComponent } from './ul-component.interface';
 

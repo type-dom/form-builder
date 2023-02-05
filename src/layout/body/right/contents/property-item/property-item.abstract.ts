@@ -1,10 +1,10 @@
-import { Label } from '../../../../../web-element/web-html/label/label.class';
-import { Input } from '../../../../../web-element/web-html/input/input.class';
-import { Textarea } from '../../../../../web-element/web-html/textarea/textarea.class';
-import { Division } from '../../../../../web-element/web-html/division/division.class';
-import { Button } from '../../../../../web-element/web-html/button/button.class';
-import { Select } from '../../../../../web-element/web-html/select/select.class';
-import { Span } from '../../../../../web-element/web-html/span/span.class';
+import { Label } from '../../../../../web-element/html-element/label/label.class';
+import { Input } from '../../../../../web-element/html-element/input/input.class';
+import { Textarea } from '../../../../../web-element/html-element/textarea/textarea.class';
+import { Division } from '../../../../../web-element/html-element/division/division.class';
+import { Button } from '../../../../../web-element/html-element/button/button.class';
+import { Select } from '../../../../../web-element/html-element/select/select.class';
+import { Span } from '../../../../../web-element/html-element/span/span.class';
 import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
 import { DivComponent } from '../../../../../web-component/div-component/div-component.abstract';
 import { labelStyle } from '../../../../../core/controls/web-control.const';

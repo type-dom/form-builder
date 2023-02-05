@@ -1,7 +1,7 @@
-import { WebHtml } from '../../web-element/web-html/web-html.abstract';
+import { HtmlElement } from '../../web-element/html-element/html-element.abstract';
 import { ISpanComponent } from './span-component.interface';
 
-export abstract class SpanComponent extends WebHtml implements ISpanComponent {
+export abstract class SpanComponent extends HtmlElement implements ISpanComponent {
   tagName: 'span';
   dom: HTMLSpanElement;
   protected constructor() {

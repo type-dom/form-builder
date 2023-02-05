@@ -1,6 +1,6 @@
-import { IWebHtml } from '../web-element/web-html/web-html.interface';
+import { IHtmlElement } from '../web-element/html-element/html-element.interface';
 import { IWebElement } from '../web-element/web-element.interface';
 
-export interface IWebComponent extends IWebHtml {
+export interface IWebComponent extends IHtmlElement {
   childNodes: Array<IWebElement>; // contents
 }

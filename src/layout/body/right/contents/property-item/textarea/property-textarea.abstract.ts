@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { Textarea } from '../../../../../../web-element/web-html/textarea/textarea.class';
-import { Label } from '../../../../../../web-element/web-html/label/label.class';
-import { Button } from '../../../../../../web-element/web-html/button/button.class';
+import { Textarea } from '../../../../../../web-element/html-element/textarea/textarea.class';
+import { Label } from '../../../../../../web-element/html-element/label/label.class';
+import { Button } from '../../../../../../web-element/html-element/button/button.class';
 import { Display } from '../../../../../../web-element/web-style.enum';
 import { PropertyItem } from '../property-item.abstract';
 
