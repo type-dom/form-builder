@@ -1,5 +1,5 @@
 import { SvgElement } from '../svg-element.abstract';
-import { Svg } from '../svg/svg.class';
+import { SvgSvg } from '../svg/svg.class';
 import { ISvgRect, ISvgRectProperty } from './rect.interface';
 
 export class SvgRect extends SvgElement implements ISvgRect {
@@ -10,7 +10,7 @@ export class SvgRect extends SvgElement implements ISvgRect {
   childNodes: [];
   width = 60;
   height = 60;
-  constructor(public parent: Svg) {
+  constructor(public parent: SvgSvg) {
     super();
     this.tagName = 'rect';
     this.className = 'SvgRect';

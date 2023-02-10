@@ -1,5 +1,5 @@
 import { SvgElement } from '../svg-element.abstract';
-import { Svg } from '../svg/svg.class';
+import { SvgSvg } from '../svg/svg.class';
 import { ISvgCircle } from './circle.interface';
 
 export class SvgCircle extends SvgElement implements ISvgCircle {
@@ -7,7 +7,7 @@ export class SvgCircle extends SvgElement implements ISvgCircle {
   className: 'SvgCircle';
   dom: SVGCircleElement;
   childNodes: [];
-  constructor(public parent: Svg) {
+  constructor(public parent: SvgSvg) {
     super();
     this.tagName = 'circle';
     this.className = 'SvgCircle';

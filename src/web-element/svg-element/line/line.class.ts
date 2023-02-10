@@ -1,4 +1,4 @@
-import { Svg } from '../svg/svg.class';
+import { SvgSvg } from '../svg/svg.class';
 import { SvgElement } from '../svg-element.abstract';
 import { ISvgLine, ISvgLineProperty } from './line.interface';
 
@@ -13,7 +13,7 @@ export class SvgLine extends SvgElement implements ISvgLine {
   y1 = 0;
   y2 = 0;
 
-  constructor(public parent: Svg) {
+  constructor(public parent: SvgSvg) {
     super();
     this.tagName = 'line';
     this.className = 'SvgLine';

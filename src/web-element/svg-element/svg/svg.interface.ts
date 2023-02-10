@@ -1,7 +1,7 @@
 import { ISvgElement } from '../svg-element.interface';
 
-export interface ISvg extends ISvgElement {
+export interface ISvgSvg extends ISvgElement {
   tagName: 'svg',
-  className: 'Svg',
+  className: 'SvgSvg',
   childNodes: ISvgElement[],
 }
