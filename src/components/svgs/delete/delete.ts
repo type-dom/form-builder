@@ -1,14 +1,14 @@
-import { WebElement } from '../../../web-element/web-element.abstract';
-import { SvgPath } from '../../../web-element/svg-element/path/path.class';
 import { SvgComponent } from '../../../web-component/svg-component/svg-component.abstract';
+import { HtmlElement } from '../../../web-element/html-element/html-element.abstract';
+import { SvgPath } from '../../../web-element/svg-element/path/path.class';
 
 export class DeleteSvg extends SvgComponent {
   className: 'DeleteSvg';
   childNodes: [SvgPath];
-  constructor(public parent: WebElement) {
+  constructor(public parent: HtmlElement) {
     super();
     this.className = 'DeleteSvg';
-    this.reset(20, 20);
+    this.resetSize(20, 20);
     const path = new SvgPath(this);
     path.setData('M608 768c-17.696 0-32-14.304-32-32L576 384c0-17.696 14.304-32 32-32s32 14.304 32 32l0 352C640 753.696 625.696 768 608 768z',
       'M416 768c-17.696 0-32-14.304-32-32L384 384c0-17.696 14.304-32 32-32s32 14.304 32 32l0 352C448 753.696 433.696 768 416 768z',

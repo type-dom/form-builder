@@ -16,7 +16,7 @@ export class TimeMenu extends ControlMenu {
     this.ControlClass = TimeControl;
     this.addAttrName('time-menu');
     this.svg = new TimeSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('时间');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

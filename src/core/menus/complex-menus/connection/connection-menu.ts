@@ -16,7 +16,7 @@ export class ConnectionMenu extends ControlMenu {
     this.ControlClass = ConnectionControl;
     this.addAttrName('connection-menu');
     this.svg = new ConnectionSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('关联选项');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

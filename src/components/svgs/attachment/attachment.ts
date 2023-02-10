@@ -1,11 +1,11 @@
-import { WebElement } from '../../../web-element/web-element.abstract';
 import { SvgComponent } from '../../../web-component/svg-component/svg-component.abstract';
 import { SvgPath } from '../../../web-element/svg-element/path/path.class';
+import { HtmlElement } from '../../../web-element/html-element/html-element.abstract';
 
 export class AttachmentSvg extends SvgComponent {
   className: 'AttachmentSvg';
   childNodes: [SvgPath];
-  constructor(public parent: WebElement) {
+  constructor(public parent: HtmlElement) {
     super();
     this.className = 'AttachmentSvg';
     const path = new SvgPath(this);

@@ -17,7 +17,7 @@ export class DateMenu extends ControlMenu {
     this.ControlClass = DateControl;
     this.addAttrName('date-menu');
     this.svg = new DateSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('日期');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

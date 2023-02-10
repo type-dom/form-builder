@@ -16,7 +16,7 @@ export class MultilineInputMenu extends ControlMenu {
     this.ControlClass = MultilineInputControl;
     this.addAttrName('multiline-input-menu');
     this.svg = new MultilineInputSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('多行输入');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

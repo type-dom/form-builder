@@ -15,7 +15,7 @@ export class CheckboxMenu extends ControlMenu {
     this.ControlClass = CheckboxControl;
     this.addAttrName('checkbox-menu');
     this.svg = new CheckboxSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('复选');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

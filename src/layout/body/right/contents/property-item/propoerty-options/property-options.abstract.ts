@@ -73,7 +73,7 @@ export abstract class PropertyOptions extends PropertyItem {
       borderRadius: '0 4px 4px 0',
     });
     this.dotsSvg = new ThreeDotsSvg(this.btn);
-    this.dotsSvg.reset(16, 16);
+    this.dotsSvg.resetSize(16, 16);
     this.btn.textNode.setText('');
     this.btn.addChild(this.dotsSvg);
     this.selectDiv.childNodes = [this.selectObj, this.btn];

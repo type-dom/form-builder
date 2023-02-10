@@ -18,7 +18,7 @@ export class ControlDefaultValueProperty extends PropertyInput {
     this.className = 'ControlDefaultValueProperty';
     this.addAttrName('control-default-value-property');
     this.dotsSvg = new ThreeDotsSvg(this.button);
-    this.dotsSvg.reset(16, 16);
+    this.dotsSvg.resetSize(16, 16);
     this.button.textNode.setText('');
     this.button.addChild(this.dotsSvg);
     this.button.setStyle('display', 'inline-block');

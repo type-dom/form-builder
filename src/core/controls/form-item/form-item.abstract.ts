@@ -44,7 +44,7 @@ export abstract class FormItem extends DivComponent implements IFormItem {
       backgroundColor: '#fff'
     });
     const svg = new DeleteSvg(this.deleteSpan);
-    svg.reset(20, 20);
+    svg.resetSize(20, 20);
     this.deleteSpan.addChild(svg);
   }
 

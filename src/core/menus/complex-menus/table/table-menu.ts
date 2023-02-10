@@ -16,7 +16,7 @@ export class TableMenu extends ControlMenu {
     this.ControlClass = TableControl;
     this.addAttrName('table-menu');
     this.svg = new TableSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('表格');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

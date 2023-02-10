@@ -15,7 +15,7 @@ export class AttachmentMenu extends ControlMenu {
     this.ControlClass = AttachmentControl;
     this.addAttrName('attachment-menu');
     this.svg = new AttachmentSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('附件');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

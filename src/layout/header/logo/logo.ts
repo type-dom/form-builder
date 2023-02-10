@@ -22,7 +22,7 @@ export class Logo extends DivComponent {
       }
     };
     const logoSvg = new LogoSvg(this);
-    logoSvg.reset(58, 58);
+    logoSvg.resetSize(58, 58);
     this.childNodes = [logoSvg];
   }
   // render(): void {

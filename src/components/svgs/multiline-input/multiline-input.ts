@@ -1,11 +1,12 @@
 import { WebElement } from '../../../web-element/web-element.abstract';
 import { SvgPath } from '../../../web-element/svg-element/path/path.class';
 import { SvgComponent } from '../../../web-component/svg-component/svg-component.abstract';
+import { HtmlElement } from '../../../web-element/html-element/html-element.abstract';
 
 export class MultilineInputSvg extends SvgComponent {
   className: 'MultilineInputSvg';
   childNodes: [SvgPath];
-  constructor(public parent: WebElement) {
+  constructor(public parent: HtmlElement) {
     super();
     this.className = 'MultilineInputSvg';
     const path = new SvgPath(this);
