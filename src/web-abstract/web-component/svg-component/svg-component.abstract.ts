@@ -1,5 +1,5 @@
-import { SvgElement } from '../../web-element/svg-element/svg-element.abstract';
-import { HtmlElement } from '../../web-element/html-element/html-element.abstract';
+import { SvgElement } from '../../../web-element/svg-element/svg-element.abstract';
+import { HtmlElement } from '../../../web-element/html-element/html-element.abstract';
 import { ISvgComponent } from './svg-component.interface';
 
 export abstract class SvgComponent extends SvgElement implements ISvgComponent {

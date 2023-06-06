@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { Display, StylePosition } from '../../web-element/web-style.enum';
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
 import { OverlayContainer } from './container/container';
 
 export abstract class Overlay extends DivComponent {

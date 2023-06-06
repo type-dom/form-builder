@@ -1,5 +1,5 @@
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { SvgComponent } from '../../../web-component/svg-component/svg-component.abstract';
+import { SvgComponent } from '../../../web-abstract/web-component/svg-component/svg-component.abstract';
 import { SvgElement } from '../svg-element.abstract';
 import { ISvgText, ISvgTextProperty } from './text.interface';
 

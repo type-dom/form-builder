@@ -1,5 +1,5 @@
-import { WebTextNode } from '../../web-text-node/web-text-node.class';
-import { WebElement } from '../../web-element/web-element.abstract';
+import { WebTextNode } from '../../../web-text-node/web-text-node.class';
+import { WebElement } from '../../../web-element/web-element.abstract';
 import { buttonStyle } from './button-component.const';
 import { IButtonComponent } from './button-component.interface';
 

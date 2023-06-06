@@ -1,4 +1,4 @@
-import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
 import { Display } from '../../../web-element/web-style.enum';
 import { WebHeader } from '../header';
 import { PreviewButton } from './preiew-button/preview-button';

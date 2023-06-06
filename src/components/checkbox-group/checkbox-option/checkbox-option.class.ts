@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { SpanComponent } from '../../../web-component/span-component/span-component.abstract';
+import { SpanComponent } from '../../../web-abstract/web-component/span-component/span-component.abstract';
 import { Input } from '../../../web-element/html-element/input/input.class';
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
 import { CheckboxGroup } from '../checkbox-group.class';

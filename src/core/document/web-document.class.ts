@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
 import { WebLayout } from '../../layout/layout.class';
 import { BodyMainContent } from '../../layout/body/main-content/main-content';
 import { IOptionConfig } from '../controls/web-control.interface';

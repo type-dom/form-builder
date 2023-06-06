@@ -1,4 +1,4 @@
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
 import { RadioItem } from '../../core/controls/form-item/radio-item/radio-item.class';
 import { RadioOption } from './radio-option/radio-option.class';
 import { IRadioGroup } from './radio-group.interface';

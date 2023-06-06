@@ -1,7 +1,7 @@
 import { HtmlElement } from '../html-element.abstract';
 import { WebOption } from './option/option.class';
 import { IOption } from '../../../core/controls/web-control.interface';
-import { WebComponent } from '../../../web-component/web-component.abstract';
+import { WebComponent } from '../../../web-abstract/web-component/web-component.abstract';
 import { ISelect } from './select.interface';
 import { fromEvent } from 'rxjs';
 

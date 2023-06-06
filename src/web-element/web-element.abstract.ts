@@ -8,7 +8,7 @@ import {
   IWebElement,
   IWebProperty
 } from './web-element.interface';
-import { Cursor } from './web-style.enum';
+import {Cursor, Display} from './web-style.enum';
 import { IWebStyle } from './web-style.interface';
 
 /**
@@ -208,8 +208,8 @@ export abstract class WebElement implements IWebElement {
     // delete this.dom.style[key as keyof CSSStyleDeclaration];
     return this;
   }
-  show(): void {
-    this.setStyle('display', 'block');
+  show(mode: keyof typeof Display = 'block'): void {
+    this.setStyle('display', Display[mode]); // flex ?  fixed ?
   }
   hide(): void {
     this.setStyle('display', 'none');

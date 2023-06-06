@@ -1,5 +1,5 @@
 import { WebForm } from '../form';
-import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
 
 // 表单主体部分的内容要另外添加。
 export class FormBody extends DivComponent {

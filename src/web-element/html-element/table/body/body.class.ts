@@ -1,4 +1,4 @@
-import { WebComponent } from '../../../../web-component/web-component.abstract';
+import { WebComponent } from '../../../../web-abstract/web-component/web-component.abstract';
 import { WebTable } from '../table.class';
 import { WebTableRow } from '../row/row.class';
 import { IWebTableBody } from './body.interface';

@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { WebComponent } from '../../../../web-component/web-component.abstract';
+import { WebComponent } from '../../../../web-abstract/web-component/web-component.abstract';
 import { DeleteSvg } from '../../../../components/svgs/delete/delete';
 import { Span } from '../../span/span.class';
 import { StylePosition } from '../../../web-style.enum';

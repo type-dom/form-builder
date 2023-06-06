@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { ButtonComponent } from '../../../../../web-component/button-component/button-component.abstract';
+import { ButtonComponent } from '../../../../../web-abstract/web-component/button-component/button-component.abstract';
 import { Cursor, StylePosition } from '../../../../../web-element/web-style.enum';
 import { CloseSvg } from '../../../../svgs/close/close';
 import { OverlayHeader } from '../header';

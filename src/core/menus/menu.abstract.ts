@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
-import { SvgComponent } from '../../web-component/svg-component/svg-component.abstract';
+import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
+import { SvgComponent } from '../../web-abstract/web-component/svg-component/svg-component.abstract';
 import { Span } from '../../web-element/html-element/span/span.class';
 import { WebTextNode } from '../../web-text-node/web-text-node.class';
 import { ControlClass } from '../controls/web-control.interface';

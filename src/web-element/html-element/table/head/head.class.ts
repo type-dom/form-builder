@@ -1,4 +1,4 @@
-import { WebComponent } from '../../../../web-component/web-component.abstract';
+import { WebComponent } from '../../../../web-abstract/web-component/web-component.abstract';
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
 import { ITableField } from '../../../../core/controls/complex/table/table.interface';
 import { WebTableHeader } from '../header/header.class';

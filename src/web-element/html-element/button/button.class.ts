@@ -1,4 +1,4 @@
-import { ButtonComponent } from '../../../web-component/button-component/button-component.abstract';
+import { ButtonComponent } from '../../../web-abstract/web-component/button-component/button-component.abstract';
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
 import { HtmlElement } from '../html-element.abstract';
 import { IButton } from './button.interface';

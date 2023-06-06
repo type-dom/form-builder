@@ -1,4 +1,4 @@
-import { FinalComponent } from '../../../web-component/final-component/final-component.abstract';
+import { FinalComponent } from '../../../web-abstract/web-component/final-component/final-component.abstract';
 import { HtmlElement } from '../html-element.abstract';
 import { ITextarea } from './textarea.interface';
 

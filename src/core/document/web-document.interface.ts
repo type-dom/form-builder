@@ -1,4 +1,4 @@
-import { IWebComponent } from '../../web-component/web-component.interface';
+import { IWebComponent } from '../../web-abstract/web-component/web-component.interface';
 import { IWebDocumentContents } from './contents/contents.interface';
 import { IWebDocumentTabs } from './tabs/tabs.interface';
 

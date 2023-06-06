@@ -1,4 +1,4 @@
-import { DivComponent } from '../../../../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../../../../web-abstract/web-component/div-component/div-component.abstract';
 import { BasicMenus } from '../../../../../../core/menus/basic-menus/basic-menus';
 import { ExpandHeading } from '../../../../../../components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';

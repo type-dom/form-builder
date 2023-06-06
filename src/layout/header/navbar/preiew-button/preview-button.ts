@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { ButtonComponent } from '../../../../web-component/button-component/button-component.abstract';
+import { ButtonComponent } from '../../../../web-abstract/web-component/button-component/button-component.abstract';
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
 import { toJSON } from '../../../../web-element/web-element.function';
 import { WebDocument } from '../../../../core/document/web-document.class';

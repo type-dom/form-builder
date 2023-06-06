@@ -1,5 +1,5 @@
 import { BasicControlWrapper } from '../../../layout/body/left/contents/control-wrapper/basic-control-wrapper/basic-control-wrapper';
-import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
 import { Display } from '../../../web-element/web-style.enum';
 import { ControlMenu } from '../menu.abstract';
 import { NumericalMenu } from './numerical/numerical-menu';

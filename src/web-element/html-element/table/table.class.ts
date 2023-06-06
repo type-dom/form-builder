@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { WebComponent } from '../../../web-component/web-component.abstract';
+import { WebComponent } from '../../../web-abstract/web-component/web-component.abstract';
 import { TableItem } from '../../../core/controls/form-item/table-item/table-item.class';
 import { ITableConfig, ITableField } from '../../../core/controls/complex/table/table.interface';
 import { WebControl } from '../../../core/controls/web-control.abstract';

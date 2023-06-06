@@ -1,4 +1,4 @@
-import { IWebStyle } from '../../web-element/web-style.interface';
+import { IWebStyle } from '../../../web-element/web-style.interface';
 
 export const buttonStyle: Partial<IWebStyle> = {
   // appearance: 'none',

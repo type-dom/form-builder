@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
 import { StylePosition } from '../../web-element/web-style.enum';
 import { ControlClassMap } from '../../constants';
 import { WebDocumentContents } from '../document/contents/contents.class';

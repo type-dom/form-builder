@@ -1,5 +1,5 @@
 import { IWebControl } from '../controls/web-control.interface';
-import { IDivComponent } from '../../web-component/div-component/div-component.interface';
+import { IDivComponent } from '../../web-abstract/web-component/div-component/div-component.interface';
 
 export interface IWebPageBackground {
   type: number, // 背景类型，0：无背景；1：颜色背景；2：图像背景

@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
 import { IWebDocumentContents } from './contents.interface';
 import { WebPage } from '../../page/web-page.class';
 import { WebDocument } from '../web-document.class';

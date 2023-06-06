@@ -1,4 +1,4 @@
-import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
 import { WebBody } from '../body';
 import { LeftContents } from './contents/contents';
 

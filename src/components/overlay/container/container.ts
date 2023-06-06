@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { StylePosition } from '../../../web-element/web-style.enum';
-import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
 import { Overlay } from '../overlay.abstract';
 import { OverlayHeader } from './header/header';
 import { OverlayBody } from './body/body';

@@ -1,4 +1,4 @@
-import { HtmlElement } from '../../web-element/html-element/html-element.abstract';
+import { HtmlElement } from '../../../web-element/html-element/html-element.abstract';
 import { ISpanComponent } from './span-component.interface';
 
 export abstract class SpanComponent extends HtmlElement implements ISpanComponent {

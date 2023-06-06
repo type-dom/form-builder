@@ -1,4 +1,4 @@
-import { DivComponent } from '../../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../../web-abstract/web-component/div-component/div-component.abstract';
 import { BodyRight } from '../right';
 import { ControlProperty } from './control-property/control-property';
 import { FormProperty } from './form-property/form-property';

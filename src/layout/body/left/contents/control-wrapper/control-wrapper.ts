@@ -1,5 +1,5 @@
 import { Display } from '../../../../../web-element/web-style.enum';
-import { DivComponent } from '../../../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../../../web-abstract/web-component/div-component/div-component.abstract';
 import { LeftContents } from '../contents';
 import { BasicControlWrapper } from './basic-control-wrapper/basic-control-wrapper';
 import { ComplexControlWrapper } from './complex-control-wrapper/complex-control-wrapper';

@@ -1,5 +1,5 @@
-import { HtmlElement } from '../web-element/html-element/html-element.abstract';
-import { WebElement } from '../web-element/web-element.abstract';
+import { HtmlElement } from '../../web-element/html-element/html-element.abstract';
+import { WebElement } from '../../web-element/web-element.abstract';
 import { IWebComponent } from './web-component.interface';
 
 // 子节点是 WebElement 的类。排除子节点是 WebTextNode的情况

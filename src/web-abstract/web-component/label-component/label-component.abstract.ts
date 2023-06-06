@@ -1,5 +1,5 @@
 import { ILabelComponent } from './label-component.interface';
-import { WebElement } from '../../web-element/web-element.abstract';
+import { WebElement } from '../../../web-element/web-element.abstract';
 
 export abstract class LabelComponent extends WebElement implements ILabelComponent {
   tagName: 'label';

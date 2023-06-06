@@ -1,5 +1,5 @@
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { FinalComponent } from '../../../web-component/final-component/final-component.abstract';
+import { FinalComponent } from '../../../web-abstract/web-component/final-component/final-component.abstract';
 import { WebForm } from '../form';
 
 export class FormHeader extends FinalComponent {

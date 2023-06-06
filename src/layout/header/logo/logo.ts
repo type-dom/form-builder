@@ -1,4 +1,4 @@
-import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
 import { SvgElement } from '../../../web-element/svg-element/svg-element.abstract';
 import { LogoSvg } from '../../../components/svgs/logo/logo';
 import { WebHeader } from '../header';

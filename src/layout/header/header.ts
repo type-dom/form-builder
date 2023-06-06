@@ -1,5 +1,5 @@
 import { Display } from '../../web-element/web-style.enum';
-import { WebComponent } from '../../web-component/web-component.abstract';
+import { WebComponent } from '../../web-abstract/web-component/web-component.abstract';
 import { WebLayout } from '../layout.class';
 import { Navbar } from './navbar/navbar';
 import { Logo } from './logo/logo';

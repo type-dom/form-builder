@@ -1,4 +1,4 @@
-import { DivComponent } from '../../../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../../../web-abstract/web-component/div-component/div-component.abstract';
 import { RightContents } from '../contents';
 import { FormSizeProperty } from './form-size/form-size';
 import { LabelWidthProperty } from './label-width/label-width';

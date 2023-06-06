@@ -1,4 +1,4 @@
-import { SvgComponent } from '../../../web-component/svg-component/svg-component.abstract';
+import { SvgComponent } from '../../../web-abstract/web-component/svg-component/svg-component.abstract';
 import { HtmlElement } from '../../html-element/html-element.abstract';
 import { ISvgSvg } from './svg.interface';
 

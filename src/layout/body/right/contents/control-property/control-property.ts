@@ -1,4 +1,4 @@
-import { DivComponent } from '../../../../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../../../../web-abstract/web-component/div-component/div-component.abstract';
 import { Division } from '../../../../../web-element/html-element/division/division.class';
 import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
 import { RightContents } from '../contents';

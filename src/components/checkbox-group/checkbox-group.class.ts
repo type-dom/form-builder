@@ -1,4 +1,4 @@
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
+import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
 import { HtmlElement } from '../../web-element/html-element/html-element.abstract';
 import { IOption } from '../../core/controls/web-control.interface';
 import { CheckboxOption } from './checkbox-option/checkbox-option.class';

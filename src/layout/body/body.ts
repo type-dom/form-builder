@@ -1,4 +1,4 @@
-import { WebComponent } from '../../web-component/web-component.abstract';
+import { WebComponent } from '../../web-abstract/web-component/web-component.abstract';
 import { Display } from '../../web-element/web-style.enum';
 import { BodyLeft } from './left/left';
 import { BodyRight } from './right/right';
