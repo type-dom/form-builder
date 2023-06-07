@@ -1,9 +1,8 @@
-import { DivComponent } from '../../../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { WebComponent } from '../../../../../../web-element/web-abstract/web-component/web-component.abstract';
 import { BasicMenus } from '../../../../../../core/menus/basic-menus/basic-menus';
 import { ExpandHeading } from '../../../../../../components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';
-
-export class BasicControlWrapper extends DivComponent {
+export class BasicControlWrapper extends WebComponent {
   className: 'BasicControlWrapper';
   childNodes: [ExpandHeading, BasicMenus];
   basicControlMenus = new BasicMenus(this);

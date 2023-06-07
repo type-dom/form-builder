@@ -1,23 +1,23 @@
-import { WebComponent } from '../../web-abstract/web-component/web-component.abstract';
+import { HtmlElement } from '../../web-element/web-abstract/html-element/html-element.abstract';
 import { Display } from '../../web-element/web-style.enum';
+import { LayoutWrapper } from '../layout.class';
 import { BodyLeft } from './left/left';
 import { BodyRight } from './right/right';
 import { BodyMainContent } from './main-content/main-content';
-import { WebLayout } from '../layout.class';
 
-export class WebBody extends WebComponent {
+export class BodyWrapper extends HtmlElement {
   tagName: 'section';
   dom: HTMLElement;
-  className: 'WebBody';
+  className: 'BodyWrapper';
   childNodes: [BodyLeft, BodyMainContent, BodyRight];
   left: BodyLeft;
   content: BodyMainContent;
   right: BodyRight;
-  constructor(public parent: WebLayout) {
+  constructor(public parent: LayoutWrapper) {
     super();
     this.tagName = 'section';
     this.dom = document.createElement(this.tagName);
-    this.className = 'WebBody';
+    this.className = 'BodyWrapper';
     console.log('this.editor.el.clientHeight is ', this.editor.el.clientHeight);
     this.propObj = {
       styleObj: {

@@ -1,5 +1,5 @@
 import { IWebProperty } from '../../web-element.interface';
-import { ISvgElement } from '../svg-element.interface';
+import { ISvgElement } from '../../web-abstract/svg-element/svg-element.interface';
 
 /**
  * x1 属性在 x 轴定义线条的开始

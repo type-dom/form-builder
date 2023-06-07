@@ -1,10 +1,10 @@
-import { DivComponent } from '../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../../web-element/web-abstract/html-element/div/div.abstract';
 import { BodyRight } from '../right';
 import { ControlProperty } from './control-property/control-property';
 import { FormProperty } from './form-property/form-property';
 import { FieldProperty } from './field-property/field-property';
 
-export class RightContents extends DivComponent {
+export class RightContents extends DivBase {
   className: 'RightContents';
   childNodes: [FieldProperty, ControlProperty, FormProperty];
 

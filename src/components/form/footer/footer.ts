@@ -1,9 +1,9 @@
 import { fromEvent, Observable } from 'rxjs';
-import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
 import { WebForm } from '../form';
 import { SubmitButton } from './submit-button/submit-button';
 
-export class FormFooter extends DivComponent {
+export class FormFooter extends DivBase {
   className: 'FormFooter';
   childNodes: SubmitButton[];
   submitBtn: SubmitButton;

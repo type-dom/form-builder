@@ -1,4 +1,4 @@
-import { SvgElement } from '../svg-element.abstract';
+import { SvgElement } from '../../web-abstract/svg-element/svg-element.abstract';
 import { ISvgEllipse, ISvgEllipseProperty } from './ellipse.interface';
 
 export class SvgEllipse extends SvgElement implements ISvgEllipse {

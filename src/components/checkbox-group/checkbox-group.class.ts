@@ -1,10 +1,10 @@
-import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
-import { HtmlElement } from '../../web-element/html-element/html-element.abstract';
+import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
+import { HtmlElement } from '../../web-element/web-abstract/html-element/html-element.abstract';
 import { IOption } from '../../core/controls/web-control.interface';
 import { CheckboxOption } from './checkbox-option/checkbox-option.class';
 import { ICheckboxGroup } from './checkbox-group.interface';
 
-export class CheckboxGroup extends DivComponent implements ICheckboxGroup {
+export class CheckboxGroup extends DivBase implements ICheckboxGroup {
   className: 'CheckboxGroup';
   childNodes: CheckboxOption[];
   value: (string | number | boolean)[]; // 应该是个数组

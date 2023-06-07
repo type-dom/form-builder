@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
 import { Display, StylePosition } from '../../web-element/web-style.enum';
-import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
 import { OverlayContainer } from './container/container';
 
-export abstract class Overlay extends DivComponent {
+export abstract class Overlay extends DivBase {
   abstract className: string;
   // abstract parent: FormEditor;
   childNodes: [OverlayContainer];

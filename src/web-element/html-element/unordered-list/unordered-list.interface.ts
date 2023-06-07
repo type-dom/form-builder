@@ -1,7 +1,7 @@
+import { IHtmlElement } from '../../web-abstract/html-element/html-element.interface';
 import { IListItem } from './list-item/list-item.interface';
-import { IWebComponent } from '../../../web-abstract/web-component/web-component.interface';
 
-export interface IUnorderedList extends IWebComponent {
+export interface IUnorderedList extends IHtmlElement {
   tagName: 'ul',
   className: 'UnorderedList',
   childNodes: IListItem[],

@@ -1,8 +1,8 @@
 import { IWebTableHead } from './head/head.interface';
 import { IWebTableRow } from './row/row.interface';
-import { IWebComponent } from '../../../web-abstract/web-component/web-component.interface';
+import { IHtmlElement } from '../../web-abstract/html-element/html-element.interface';
 
-export interface IWebTable extends IWebComponent {
+export interface IWebTable extends IHtmlElement {
   tagName: 'table',
   className: 'WebTable',
   childNodes: (IWebTableRow | IWebTableHead)[],

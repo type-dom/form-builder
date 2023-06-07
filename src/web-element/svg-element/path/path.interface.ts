@@ -1,5 +1,5 @@
 import { IWebProperty } from '../../web-element.interface';
-import { ISvgElement } from '../svg-element.interface';
+import { ISvgElement } from '../../web-abstract/svg-element/svg-element.interface';
 
 export interface ISvgPathProperty extends IWebProperty {
   styleObj: {

@@ -1,5 +1,5 @@
 import { Display } from '../../../../../web-element/web-style.enum';
-import { DivComponent } from '../../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../../../web-element/web-abstract/html-element/div/div.abstract';
 import { ReadonlyProperty } from '../control-property/readonly/control-readonly';
 import { MinValueProperty } from '../control-property/min-value/control-min-value';
 import { MaxValueProperty } from '../control-property/max-value/control-max-value';
@@ -14,7 +14,7 @@ import { ControlOnChangeProperty } from '../control-property/change-event/contro
 import { MultipleProperty } from '../control-property/multiple/control-multiple';
 
 // 字段属性内容栏
-export class FieldProperty extends DivComponent {
+export class FieldProperty extends DivBase {
   className: 'FieldProperty';
   childNodes: [
     ControlFieldProperty,

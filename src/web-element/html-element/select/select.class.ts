@@ -1,11 +1,10 @@
-import { HtmlElement } from '../html-element.abstract';
-import { WebOption } from './option/option.class';
 import { IOption } from '../../../core/controls/web-control.interface';
-import { WebComponent } from '../../../web-abstract/web-component/web-component.abstract';
+import { HtmlElement } from '../../web-abstract/html-element/html-element.abstract';
+import { WebOption } from './option/option.class';
 import { ISelect } from './select.interface';
 import { fromEvent } from 'rxjs';
 
-export class Select extends WebComponent implements ISelect {
+export class Select extends HtmlElement implements ISelect {
   tagName: 'select';
   dom: HTMLSelectElement;
   className: 'Select';

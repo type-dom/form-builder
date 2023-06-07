@@ -1,5 +1,5 @@
 import { IWebProperty } from '../../web-element.interface';
-import { ISvgElement } from '../svg-element.interface';
+import { ISvgElement } from '../../web-abstract/svg-element/svg-element.interface';
 
 /**
  * width 和 height 属性可定义矩形的高度和宽度

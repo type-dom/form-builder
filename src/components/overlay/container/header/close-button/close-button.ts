@@ -1,10 +1,10 @@
 import { fromEvent } from 'rxjs';
-import { ButtonComponent } from '../../../../../web-abstract/web-component/button-component/button-component.abstract';
+import { ButtonBase } from '../../../../../web-element/web-abstract/html-element/button/button.abstract';
 import { Cursor, StylePosition } from '../../../../../web-element/web-style.enum';
 import { CloseSvg } from '../../../../svgs/close/close';
 import { OverlayHeader } from '../header';
 
-export class CloseButton extends ButtonComponent {
+export class CloseButton extends ButtonBase {
   className: 'CloseButton';
   childNodes: [CloseSvg];
   private readonly svg: CloseSvg;

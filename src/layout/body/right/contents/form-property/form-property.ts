@@ -1,4 +1,4 @@
-import { DivComponent } from '../../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../../../web-element/web-abstract/html-element/div/div.abstract';
 import { RightContents } from '../contents';
 import { FormSizeProperty } from './form-size/form-size';
 import { LabelWidthProperty } from './label-width/label-width';
@@ -9,7 +9,7 @@ import { BeforeSubmitProperty } from './before-submit/before-submit';
 import { AfterSubmitProperty } from './after-submit/after-submit';
 import { TabCountProperty } from './tab-count/tab-count';
 
-export class FormProperty extends DivComponent {
+export class FormProperty extends DivBase {
   className: 'FormProperty';
   childNodes: [
     FormSizeProperty,

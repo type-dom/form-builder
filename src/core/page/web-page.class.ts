@@ -1,12 +1,12 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
 import { StylePosition } from '../../web-element/web-style.enum';
 import { ControlClassMap } from '../../constants';
 import { WebDocumentContents } from '../document/contents/contents.class';
 import { WebControl } from '../controls/web-control.abstract';
 import { IWebPage } from './web-page.interface';
 
-export class WebPage extends DivComponent implements IWebPage {
+export class WebPage extends DivBase implements IWebPage {
   className: 'WebPage';
   childNodes: WebControl[];
   dragStartIndex: number;

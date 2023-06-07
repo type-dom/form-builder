@@ -1,18 +1,18 @@
-import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
 import { StylePosition } from '../../web-element/web-style.enum';
-import { WebLayout } from '../../layout/layout.class';
+import { LayoutWrapper } from '../../layout/layout.class';
 import { FormHeader } from './header/header';
 import { FormBody } from './body/body';
 import { FormFooter } from './footer/footer';
 
-export class WebForm extends DivComponent {
+export class WebForm extends DivBase {
   className: 'WebForm';
   childNodes: [FormHeader, FormBody, FormFooter];
   header: FormHeader;
   body: FormBody;
   footer: FormFooter;
   title: string;
-  constructor(public parent: WebLayout) {
+  constructor(public parent: LayoutWrapper) {
     super();
     this.className = 'WebForm';
     this.propObj = {

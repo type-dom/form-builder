@@ -1,8 +1,8 @@
-import { HtmlElement } from '../html-element.abstract';
+import { HtmlElement } from '../../web-abstract/html-element/html-element.abstract';
+import { UlBase } from '../../web-abstract/html-element/ul/ul.abstract';
 import { IUnorderedList } from './unordered-list.interface';
-import { UlComponent } from '../../../web-abstract/web-component/ul-component/ul-component.abstract';
 
-export class UnorderedList extends UlComponent implements IUnorderedList {
+export class UnorderedList extends UlBase implements IUnorderedList {
   className: 'UnorderedList';
   constructor(public parent: HtmlElement) {
     super();

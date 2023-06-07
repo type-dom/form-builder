@@ -1,12 +1,12 @@
 import { fromEvent } from 'rxjs';
 import { StylePosition } from '../../../web-element/web-style.enum';
-import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
 import { Overlay } from '../overlay.abstract';
 import { OverlayHeader } from './header/header';
 import { OverlayBody } from './body/body';
 import { OverlayFooter } from './footer/footer';
 
-export class OverlayContainer extends DivComponent {
+export class OverlayContainer extends DivBase {
   className: 'OverlayContainer';
   childNodes: [OverlayHeader, OverlayBody, OverlayFooter];
   header: OverlayHeader;

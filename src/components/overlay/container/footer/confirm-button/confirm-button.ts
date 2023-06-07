@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
 import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
-import { ButtonComponent } from '../../../../../web-abstract/web-component/button-component/button-component.abstract';
+import { ButtonBase } from '../../../../../web-element/web-abstract/html-element/button/button.abstract';
 import { OverlayFooter } from '../footer';
 
-export class ConfirmButton extends ButtonComponent {
+export class ConfirmButton extends ButtonBase {
   className: 'ConfirmButton';
   childNodes: [WebTextNode];
 

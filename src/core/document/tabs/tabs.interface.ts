@@ -1,5 +1,5 @@
-import { IUlComponent } from '../../../web-abstract/web-component/ul-component/ul-component.interface';
+import { IUlBase } from '../../../web-element/web-abstract/html-element/ul/ul.interface';
 
-export interface IWebDocumentTabs extends IUlComponent {
+export interface IWebDocumentTabs extends IUlBase {
   className: 'WebDocumentTabs',
 }

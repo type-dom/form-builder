@@ -11,7 +11,7 @@ import { ControlClassMap } from '../../../../constants';
 import { Input } from '../../input/input.class';
 import { Select } from '../../select/select.class';
 import { Textarea } from '../../textarea/textarea.class';
-import { HtmlElement } from '../../html-element.abstract';
+import { HtmlElement } from '../../../web-abstract/html-element/html-element.abstract';
 import { WebTableRow } from '../row/row.class';
 import { IWebTableDataCell } from './data-cell.interface';
 

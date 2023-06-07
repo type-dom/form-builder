@@ -1,10 +1,11 @@
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { FinalComponent } from '../../../web-abstract/web-component/final-component/final-component.abstract';
+import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
 import { WebForm } from '../form';
 
-export class FormHeader extends FinalComponent {
+export class FormHeader extends DivBase {
   tagName: 'div';
   className: 'FormHeader';
+  childNodes: [WebTextNode];
   dom: HTMLDivElement;
 
   constructor(public parent: WebForm) {

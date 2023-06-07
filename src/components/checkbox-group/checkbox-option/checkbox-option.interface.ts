@@ -1,8 +1,8 @@
 import { IInput } from '../../../web-element/html-element/input/input.interface';
+import { ISpanBase } from '../../../web-element/web-abstract/html-element/span/span.interface';
 import { IWebTextNode } from '../../../web-text-node/web-text-node.interface';
-import { ISpanComponent } from '../../../web-abstract/web-component/span-component/span-component.interface';
 
-export interface ICheckboxOption extends ISpanComponent {
+export interface ICheckboxOption extends ISpanBase {
   className: 'CheckboxOption',
   childNodes: [IInput, IWebTextNode],
 }

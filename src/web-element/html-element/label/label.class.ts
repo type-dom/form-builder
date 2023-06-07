@@ -1,5 +1,5 @@
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { HtmlElement } from '../html-element.abstract';
+import { HtmlElement } from '../../web-abstract/html-element/html-element.abstract';
 import { ILabel } from './label.interface';
 
 export class Label extends HtmlElement implements ILabel {

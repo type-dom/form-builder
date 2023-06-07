@@ -1,4 +1,4 @@
-import { HtmlElement } from '../../html-element.abstract';
+import { HtmlElement } from '../../../web-abstract/html-element/html-element.abstract';
 import { WebTableRow } from '../row/row.class';
 import { IWebTableFoot } from './foot.interface';
 

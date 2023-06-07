@@ -1,8 +1,8 @@
 import { WebForm } from '../form';
-import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
 
 // 表单主体部分的内容要另外添加。
-export class FormBody extends DivComponent {
+export class FormBody extends DivBase {
   className: 'FormBody';
 
   constructor(public parent: WebForm) {

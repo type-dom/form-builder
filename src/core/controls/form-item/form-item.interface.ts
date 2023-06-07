@@ -8,7 +8,7 @@ import { Select } from '../../../web-element/html-element/select/select.class';
 import { ISelect } from '../../../web-element/html-element/select/select.interface';
 import { ILabel } from '../../../web-element/html-element/label/label.interface';
 import { ISpan } from '../../../web-element/html-element/span/span.interface';
-import { IDivComponent } from '../../../web-abstract/web-component/div-component/div-component.interface';
+import { IDivBase } from '../../../web-element/web-abstract/html-element/div/div.interface';
 import { RadioGroup } from '../../../components/radio-group/radio-group.class';
 import { IRadioGroup } from '../../../components/radio-group/radio-group.interface';
 import { CheckboxGroup } from '../../../components/checkbox-group/checkbox-group.class';
@@ -17,7 +17,7 @@ import { ICheckboxGroup } from '../../../components/checkbox-group/checkbox-grou
 export type ItemContent = Input | Textarea | Select | RadioGroup | CheckboxGroup | WebTable;
 export type IItemContent = IInput | ITextarea | ISelect | IRadioGroup | ICheckboxGroup | IWebTable;
 
-export interface IFormItem extends IDivComponent {
+export interface IFormItem extends IDivBase {
   className: string, // 'ButtonItem' | 'CheckboxItem' | 'ConfigItem' | 'InputItem' | 'RadioItem' | 'SelectItem' | 'TableItem' | 'TextareaItem',
   childNodes: [ILabel, IItemContent, ISpan],
 }

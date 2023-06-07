@@ -1,8 +1,8 @@
-import { DivComponent } from '../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../../web-element/web-abstract/html-element/div/div.abstract';
 import { StylePosition } from '../../../../web-element/web-style.enum';
 import { Logo } from '../logo';
 
-export class Reference extends DivComponent {
+export class Reference extends DivBase {
   className: 'Reference';
   constructor(public parent: Logo) {
     super();

@@ -6,13 +6,13 @@ import { Button } from '../../../../../web-element/html-element/button/button.cl
 import { Select } from '../../../../../web-element/html-element/select/select.class';
 import { Span } from '../../../../../web-element/html-element/span/span.class';
 import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
-import { DivComponent } from '../../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../../../web-element/web-abstract/html-element/div/div.abstract';
 import { labelStyle } from '../../../../../core/controls/web-control.const';
 import { ControlProperty } from '../control-property/control-property';
 import { FormProperty } from '../form-property/form-property';
 import { FieldProperty } from '../field-property/field-property';
 
-export abstract class PropertyItem extends DivComponent {
+export abstract class PropertyItem extends DivBase {
   abstract className: string;
   abstract parent: ControlProperty | FormProperty | FieldProperty;
   abstract childNodes: [Label, ...(Span | Input | Textarea | Select | Division)[], Button];

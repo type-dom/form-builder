@@ -1,7 +1,7 @@
-import { DivComponent } from '../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../../web-element/web-abstract/html-element/div/div.abstract';
 import { OverlayContainer } from '../container';
 
-export class OverlayBody extends DivComponent {
+export class OverlayBody extends DivBase {
   className: 'OverlayBody';
 
   constructor(public parent: OverlayContainer) {

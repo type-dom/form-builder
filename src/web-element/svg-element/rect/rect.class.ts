@@ -1,4 +1,4 @@
-import { SvgElement } from '../svg-element.abstract';
+import { SvgElement } from '../../web-abstract/svg-element/svg-element.abstract';
 import { SvgSvg } from '../svg/svg.class';
 import { ISvgRect, ISvgRectProperty } from './rect.interface';
 

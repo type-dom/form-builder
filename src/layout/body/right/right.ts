@@ -1,15 +1,15 @@
-import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
-import { WebBody } from '../body';
+import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
+import { BodyWrapper } from '../body';
 import { RightContents } from './contents/contents';
 import { BodyRightTabs } from './tabs/tabs';
 
-export class BodyRight extends DivComponent {
+export class BodyRight extends DivBase {
   className: 'BodyRight';
   childNodes: [BodyRightTabs, RightContents];
 
   tabs: BodyRightTabs;
   contents: RightContents;
-  constructor(public parent: WebBody) {
+  constructor(public parent: BodyWrapper) {
     super();
     this.className = 'BodyRight';
     this.propObj = {

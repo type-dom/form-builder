@@ -1,8 +1,8 @@
-import { SvgComponent } from '../../../web-abstract/web-component/svg-component/svg-component.abstract';
+import { SvgBase } from '../../../web-element/web-abstract/svg-element/svg/svg.abstract';
 import { SvgPath } from '../../../web-element/svg-element/path/path.class';
-import { HtmlElement } from '../../../web-element/html-element/html-element.abstract';
+import { HtmlElement } from '../../../web-element/web-abstract/html-element/html-element.abstract';
 
-export class CheckboxSvg extends SvgComponent {
+export class CheckboxSvg extends SvgBase {
   className: 'CheckboxSvg';
   childNodes: [SvgPath];
   constructor(public parent: HtmlElement) {

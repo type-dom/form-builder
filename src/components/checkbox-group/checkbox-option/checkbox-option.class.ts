@@ -1,11 +1,11 @@
 import { fromEvent } from 'rxjs';
-import { SpanComponent } from '../../../web-abstract/web-component/span-component/span-component.abstract';
+import { SpanBase } from '../../../web-element/web-abstract/html-element/span/span.abstract';
 import { Input } from '../../../web-element/html-element/input/input.class';
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
 import { CheckboxGroup } from '../checkbox-group.class';
 import { ICheckboxOption } from './checkbox-option.interface';
 
-export class CheckboxOption extends SpanComponent implements ICheckboxOption {
+export class CheckboxOption extends SpanBase implements ICheckboxOption {
   className: 'CheckboxOption';
   childNodes: [Input, WebTextNode];
   input: Input;

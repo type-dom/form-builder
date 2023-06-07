@@ -1,10 +1,10 @@
 import { fromEvent, Observable } from 'rxjs';
-import { buttonStyle } from '../../../../web-abstract/web-component/button-component/button-component.const';
+import { ButtonBase } from '../../../../web-element/web-abstract/html-element/button/button.abstract';
+import { buttonStyle } from '../../../../web-element/web-abstract/html-element/button/button.const';
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
-import { FinalComponent } from '../../../../web-abstract/web-component/final-component/final-component.abstract';
 import { FormFooter } from '../footer';
 
-export class SubmitButton extends FinalComponent {
+export class SubmitButton extends ButtonBase {
   tagName: 'button';
   className: 'SubmitButton';
   dom: HTMLButtonElement;

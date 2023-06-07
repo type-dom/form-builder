@@ -1,32 +1,32 @@
 import { Display } from '../../web-element/web-style.enum';
-import { WebComponent } from '../../web-abstract/web-component/web-component.abstract';
-import { WebLayout } from '../layout.class';
+import { HtmlElement } from '../../web-element/web-abstract/html-element/html-element.abstract';
+import { LayoutWrapper } from '../layout.class';
 import { Navbar } from './navbar/navbar';
-import { Logo } from './logo/logo';
+// import { Logo } from './logo/logo';
 
-export class WebHeader extends WebComponent {
+export class HeaderWrapper extends HtmlElement {
   tagName: 'header';
-  className: 'WebHeader';
-  childNodes: [Logo, Navbar]
+  className: 'HeaderWrapper';
+  childNodes: [Navbar]
   dom: HTMLElement;
-  constructor(public parent: WebLayout) {
+  constructor(public parent: LayoutWrapper) {
     super();
     this.tagName = 'header';
     this.dom = document.createElement(this.tagName);
-    this.className = 'WebHeader';
+    this.className = 'HeaderWrapper';
     this.propObj = {
       styleObj: {
         height: '60px',
         display: Display.flex,
         justifyContent: 'flex-start',
-        paddingLeft: '10px',
+        // paddingLeft: '10px',
       },
       attrObj: {
         name: 'layout-header'
       }
     };
-    const logo = new Logo(this);
+    // const logo = new Logo(this);
     const navbar = new Navbar(this);
-    this.childNodes = [logo, navbar];
+    this.childNodes = [navbar];
   }
 }

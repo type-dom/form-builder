@@ -1,11 +1,11 @@
 import { fromEvent } from 'rxjs';
-import { SpanComponent } from '../../../web-abstract/web-component/span-component/span-component.abstract';
 import { Input } from '../../../web-element/html-element/input/input.class';
+import { SpanBase } from '../../../web-element/web-abstract/html-element/span/span.abstract';
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
 import { RadioGroup } from '../radio-group.class';
 import { IRadioOption } from './radio-option.interface';
 
-export class RadioOption extends SpanComponent implements IRadioOption {
+export class RadioOption extends SpanBase implements IRadioOption {
   className: 'RadioOption';
   childNodes: [Input, WebTextNode];
   input: Input;

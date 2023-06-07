@@ -10,11 +10,11 @@ import { RadioGroup } from '../../../components/radio-group/radio-group.class';
 import { CheckboxGroup } from '../../../components/checkbox-group/checkbox-group.class';
 import { DeleteSvg } from '../../../components/svgs/delete/delete';
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
 import { formItemStyle, labelStyle } from '../web-control.const';
 import { IFormItem, ItemContent } from './form-item.interface';
 
-export abstract class FormItem extends DivComponent implements IFormItem {
+export abstract class FormItem extends DivBase implements IFormItem {
   abstract className: string;
   // abstract parent: WebControl;
   abstract childNodes: [Label, ItemContent, Span];

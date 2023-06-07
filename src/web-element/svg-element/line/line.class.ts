@@ -1,5 +1,5 @@
 import { SvgSvg } from '../svg/svg.class';
-import { SvgElement } from '../svg-element.abstract';
+import { SvgElement } from '../../web-abstract/svg-element/svg-element.abstract';
 import { ISvgLine, ISvgLineProperty } from './line.interface';
 
 export class SvgLine extends SvgElement implements ISvgLine {

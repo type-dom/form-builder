@@ -1,9 +1,9 @@
 import { WebElement } from '../../../web-element/web-element.abstract';
 import { SvgPath } from '../../../web-element/svg-element/path/path.class';
-import { SvgComponent } from '../../../web-abstract/web-component/svg-component/svg-component.abstract';
-import { HtmlElement } from '../../../web-element/html-element/html-element.abstract';
+import { SvgBase } from '../../../web-element/web-abstract/svg-element/svg/svg.abstract';
+import { HtmlElement } from '../../../web-element/web-abstract/html-element/html-element.abstract';
 
-export class MultilineInputSvg extends SvgComponent {
+export class MultilineInputSvg extends SvgBase {
   className: 'MultilineInputSvg';
   childNodes: [SvgPath];
   constructor(public parent: HtmlElement) {

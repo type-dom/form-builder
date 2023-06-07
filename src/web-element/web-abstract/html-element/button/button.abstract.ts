@@ -1,12 +1,12 @@
-import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { WebElement } from '../../../web-element/web-element.abstract';
-import { buttonStyle } from './button-component.const';
-import { IButtonComponent } from './button-component.interface';
+import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
+import { HtmlElement } from '../html-element.abstract';
+import { buttonStyle } from './button.const';
+import { IButtonBase } from './button.interface';
 
-export abstract class ButtonComponent extends WebElement implements IButtonComponent {
+export abstract class ButtonBase extends HtmlElement implements IButtonBase {
   tagName: 'button';
   abstract className: string;
-  abstract parent: WebElement;
+  abstract parent: HtmlElement;
   dom: HTMLButtonElement;
   textNode: WebTextNode;
   protected constructor() {

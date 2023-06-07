@@ -1,8 +1,8 @@
-import { SvgComponent } from '../../../web-abstract/web-component/svg-component/svg-component.abstract';
-import { HtmlElement } from '../../../web-element/html-element/html-element.abstract';
+import { SvgBase } from '../../../web-element/web-abstract/svg-element/svg/svg.abstract';
+import { HtmlElement } from '../../../web-element/web-abstract/html-element/html-element.abstract';
 import { SvgPath } from '../../../web-element/svg-element/path/path.class';
 
-export class TimeSvg extends SvgComponent {
+export class TimeSvg extends SvgBase {
   className: 'TimeSvg';
   childNodes: [SvgPath];
   constructor(public parent: HtmlElement) {

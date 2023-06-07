@@ -1,5 +1,5 @@
 import { IWebProperty } from '../../web-element.interface';
-import { ISvgElement } from '../svg-element.interface';
+import { ISvgElement } from '../../web-abstract/svg-element/svg-element.interface';
 
 /**
  * cx 属性定义圆点的 x 坐标

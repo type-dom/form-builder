@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
-import { SvgComponent } from '../../web-abstract/web-component/svg-component/svg-component.abstract';
+import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
+import { SvgBase } from '../../web-element/web-abstract/svg-element/svg/svg.abstract';
 import { Span } from '../../web-element/html-element/span/span.class';
 import { WebTextNode } from '../../web-text-node/web-text-node.class';
 import { ControlClass } from '../controls/web-control.interface';
@@ -9,10 +9,10 @@ import { labelStyle } from '../controls/web-control.const';
 import { menuStyle } from './menu.const';
 import { IControlMenu } from './menu.interface';
 
-export abstract class ControlMenu extends DivComponent implements IControlMenu {
+export abstract class ControlMenu extends DivBase implements IControlMenu {
   abstract ControlClass: ControlClass;
-  abstract childNodes: [SvgComponent, Span];
-  abstract svg: SvgComponent;
+  abstract childNodes: [SvgBase, Span];
+  abstract svg: SvgBase;
   readonly titleSpan: Span;
   textNode: WebTextNode;
   protected constructor() {

@@ -1,10 +1,10 @@
 import { Display } from '../../../../../web-element/web-style.enum';
-import { DivComponent } from '../../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../../../web-element/web-abstract/html-element/div/div.abstract';
 import { LeftContents } from '../contents';
 import { BasicControlWrapper } from './basic-control-wrapper/basic-control-wrapper';
 import { ComplexControlWrapper } from './complex-control-wrapper/complex-control-wrapper';
 
-export class ControlWrapper extends DivComponent {
+export class ControlWrapper extends DivBase {
   className: 'ControlWrapper';
   childNodes: [BasicControlWrapper, ComplexControlWrapper];
   formControlWrapper: BasicControlWrapper;

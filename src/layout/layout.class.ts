@@ -1,17 +1,17 @@
 import { fromEvent } from 'rxjs';
 import { FormEditor } from '../form-editor';
-import { DivComponent } from '../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../web-element/web-abstract/html-element/div/div.abstract';
 import { WebDocument } from '../core/document/web-document.class';
 import { WebForm } from '../components/form/form';
-import { WebHeader } from './header/header';
-import { WebBody } from './body/body';
-export class WebLayout extends DivComponent {
-  className: 'WebLayout';
+import { HeaderWrapper } from './header/header';
+import { BodyWrapper } from './body/body';
+export class LayoutWrapper extends DivBase {
+  className: 'LayoutWrapper';
   parent = this;
 
   webDocument: WebDocument;
-  header: WebHeader;
-  body: WebBody;
+  header: HeaderWrapper;
+  body: BodyWrapper;
   formEditor: FormEditor;
   form?: WebForm;
 
@@ -19,7 +19,7 @@ export class WebLayout extends DivComponent {
     super();
     this.formEditor = formEditor;
 
-    this.className = 'WebLayout';
+    this.className = 'LayoutWrapper';
     this.propObj = {
       attrObj: {
         name: 'layout',
@@ -30,8 +30,8 @@ export class WebLayout extends DivComponent {
       }
     };
     this.webDocument = new WebDocument(this);
-    this.header = new WebHeader(this);
-    this.body = new WebBody(this); // WebBody ---> MainContent中会调用 webDocument,所以必须先创建webDocument
+    this.header = new HeaderWrapper(this);
+    this.body = new BodyWrapper(this); // WebBody ---> MainContent中会调用 webDocument,所以必须先创建webDocument
     if (formEditor.mode === 'design') {
       this.childNodes.push(this.header, this.body);
       // console.log('this.formEditor.el.clientHeight is ', this.formEditor.el.clientHeight);

@@ -1,13 +1,13 @@
-import { WebComponent } from '../../../../web-abstract/web-component/web-component.abstract';
+import { fromEvent } from 'rxjs';
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
 import { ITableField } from '../../../../core/controls/complex/table/table.interface';
+import { HtmlElement } from '../../../web-abstract/html-element/html-element.abstract';
 import { WebTableHeader } from '../header/header.class';
 import { WebTable } from '../table.class';
 import { IWebTableHead } from './head.interface';
-import { fromEvent } from 'rxjs';
 
 // 表格页眉
-export class WebTableHead extends WebComponent implements IWebTableHead {
+export class WebTableHead extends HtmlElement implements IWebTableHead {
   tagName: 'thead';
   className: 'WebTableHead';
   dom: HTMLTableSectionElement;

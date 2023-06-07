@@ -1,4 +1,4 @@
-import { IDivComponent } from '../../web-abstract/web-component/div-component/div-component.interface';
+import { IDivBase } from '../../web-element/web-abstract/html-element/div/div.interface';
 import { AttachmentControl } from './basic/attachment/attachment.class';
 import { DateControl } from './basic/date/date.class';
 import { MultilineInputControl } from './basic/multiline-input/multiline-input.class';
@@ -13,7 +13,7 @@ import { TableControl } from './complex/table/table.class';
 import { ConnectionControl } from './complex/connection/connection.class';
 import { IFormItem } from './form-item/form-item.interface';
 
-export interface IWebControl extends IDivComponent {
+export interface IWebControl extends IDivBase {
   childNodes: [IFormItem],
 }
 

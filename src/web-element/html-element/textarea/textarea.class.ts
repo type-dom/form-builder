@@ -1,8 +1,7 @@
-import { FinalComponent } from '../../../web-abstract/web-component/final-component/final-component.abstract';
-import { HtmlElement } from '../html-element.abstract';
+import { HtmlElement } from '../../web-abstract/html-element/html-element.abstract';
 import { ITextarea } from './textarea.interface';
 
-export class Textarea extends FinalComponent implements ITextarea {
+export class Textarea extends HtmlElement implements ITextarea {
   tagName: 'textarea';
   className: 'TextArea';
   dom: HTMLTextAreaElement;

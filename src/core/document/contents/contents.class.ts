@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
 import { IWebDocumentContents } from './contents.interface';
 import { WebPage } from '../../page/web-page.class';
 import { WebDocument } from '../web-document.class';
@@ -10,7 +10,7 @@ import { IWebPage } from '../../page/web-page.interface';
 //    是否要新增页面属性？？？
 //    多页面时，默认页面不应该清空
 //    加载多页面时，要同步到 tab数量属性中。
-export class WebDocumentContents extends DivComponent implements IWebDocumentContents {
+export class WebDocumentContents extends DivBase implements IWebDocumentContents {
   className: 'WebDocumentContents';
   // todo 这样的子元素类型是有问题的。要优化
   //      tabs contents

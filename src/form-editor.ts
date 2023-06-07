@@ -5,7 +5,7 @@ import { WebDocument } from './core/document/web-document.class';
 import { IWebDocument } from './core/document/web-document.interface';
 import { WebPage } from './core/page/web-page.class';
 import { IOptionConfig } from './core/controls/web-control.interface';
-import { WebLayout } from './layout/layout.class';
+import { LayoutWrapper } from './layout/layout.class';
 import { ControlProperty } from './layout/body/right/contents/control-property/control-property';
 import { FormProperty } from './layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './layout/body/right/contents/field-property/field-property';
@@ -34,7 +34,7 @@ export class FormEditor {
   // 选中的表格单元格
   selectedTableDataCell?: WebTableDataCell | null;
 
-  layout: WebLayout;
+  layout: LayoutWrapper;
   // 对话框
   dialog: WebDialog;
   // 消息框
@@ -59,7 +59,7 @@ export class FormEditor {
     // console.log('this.el.clientHeight is ', this.el.clientHeight);
     this.events = [];
     this.mode = mode;
-    this.layout = new WebLayout(this);
+    this.layout = new LayoutWrapper(this);
     this.dialog = new WebDialog(this);
     this.messageBox = new MessageBox(this);
     this.layout.childNodes.push(this.dialog, this.messageBox);

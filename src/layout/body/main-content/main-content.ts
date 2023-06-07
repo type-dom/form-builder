@@ -1,13 +1,13 @@
 import { WebDocument } from '../../../core/document/web-document.class';
 import { StylePosition } from '../../../web-element/web-style.enum';
-import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
-import { WebBody } from '../body';
+import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
+import { BodyWrapper } from '../body';
 
-export class BodyMainContent extends DivComponent {
+export class BodyMainContent extends DivBase {
   className: 'BodyMainContent';
   childNodes: (WebDocument)[];
 
-  constructor(public parent: WebBody) {
+  constructor(public parent: BodyWrapper) {
     super();
     this.className = 'BodyMainContent';
     this.propObj = {

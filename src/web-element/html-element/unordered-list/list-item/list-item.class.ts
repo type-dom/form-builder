@@ -1,5 +1,5 @@
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
-import { HtmlElement } from '../../html-element.abstract';
+import { HtmlElement } from '../../../web-abstract/html-element/html-element.abstract';
 import { IListItem } from './list-item.interface';
 
 export class ListItem extends HtmlElement implements IListItem {

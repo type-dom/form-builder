@@ -1,4 +1,4 @@
-import { HtmlElement } from '../html-element.abstract';
+import { HtmlElement } from '../../web-abstract/html-element/html-element.abstract';
 import { IHeader } from './header.interface';
 
 export class Header extends HtmlElement implements IHeader {

@@ -1,4 +1,4 @@
-import { WebElement } from '../web-element.abstract';
+import { WebElement } from '../../web-element.abstract';
 import { IHtmlElement } from './html-element.interface';
 
 /**

@@ -1,15 +1,15 @@
-import { DivComponent } from '../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
 import { Display } from '../../../web-element/web-style.enum';
-import { WebHeader } from '../header';
+import { HeaderWrapper } from '../header';
 import { PreviewButton } from './preiew-button/preview-button';
-import { SaveButton } from './save-button/save-button';
+// import { SaveButton } from './save-button/save-button';
 
-export class Navbar extends DivComponent {
+export class Navbar extends DivBase {
   className: 'Navbar';
   private readonly previewBtn: PreviewButton;
   // private readonly saveBtn: SaveButton;
 
-  constructor(public parent: WebHeader) {
+  constructor(public parent: HeaderWrapper) {
     super();
     this.className = 'Navbar';
     this.propObj = {

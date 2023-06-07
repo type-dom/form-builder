@@ -1,10 +1,10 @@
-import { DivComponent } from '../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
 import { RadioItem } from '../../core/controls/form-item/radio-item/radio-item.class';
 import { RadioOption } from './radio-option/radio-option.class';
 import { IRadioGroup } from './radio-group.interface';
 import { IOption } from '../../core/controls/web-control.interface';
 
-export class RadioGroup extends DivComponent implements IRadioGroup {
+export class RadioGroup extends DivBase implements IRadioGroup {
   className: 'RadioGroup';
   childNodes: RadioOption[];
   value: string | number | boolean;

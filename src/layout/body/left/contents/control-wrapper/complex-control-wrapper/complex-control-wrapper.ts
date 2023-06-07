@@ -1,9 +1,9 @@
-import { DivComponent } from '../../../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { WebComponent } from '../../../../../../web-element/web-abstract/web-component/web-component.abstract';
 import { ComplexMenus } from '../../../../../../core/menus/complex-menus/complex-menus';
 import { ExpandHeading } from '../../../../../../components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';
 
-export class ComplexControlWrapper extends DivComponent {
+export class ComplexControlWrapper extends WebComponent {
   className: 'ComplexControlWrapper';
   childNodes: [ExpandHeading, ComplexMenus];
   complexControlMenus: ComplexMenus;

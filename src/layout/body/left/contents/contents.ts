@@ -1,8 +1,8 @@
-import { DivComponent } from '../../../../web-abstract/web-component/div-component/div-component.abstract';
+import { DivBase } from '../../../../web-element/web-abstract/html-element/div/div.abstract';
 import { BodyLeft } from '../left';
 import { ControlWrapper } from './control-wrapper/control-wrapper';
 
-export class LeftContents extends DivComponent {
+export class LeftContents extends DivBase {
   className: 'LeftContents';
   childNodes: [ControlWrapper];
   controlMenus: ControlWrapper;

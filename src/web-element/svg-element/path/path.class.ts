@@ -1,5 +1,5 @@
-import { SvgComponent } from '../../../web-abstract/web-component/svg-component/svg-component.abstract';
-import { SvgElement } from '../svg-element.abstract';
+import { SvgElement } from '../../web-abstract/svg-element/svg-element.abstract';
+import { SvgBase } from '../../web-abstract/svg-element/svg/svg.abstract';
 import { ISvgPath, ISvgPathProperty } from './path.interface';
 
 export class SvgPath extends SvgElement implements ISvgPath {
@@ -8,7 +8,7 @@ export class SvgPath extends SvgElement implements ISvgPath {
   className: 'SvgPath';
   propObj: ISvgPathProperty;
   childNodes: [];
-  constructor(public parent: SvgComponent) {
+  constructor(public parent: SvgBase) {
     super();
     this.tagName = 'path';
     this.dom = document.createElementNS('http://www.w3.org/2000/svg', this.tagName);
