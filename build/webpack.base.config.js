@@ -337,7 +337,15 @@ module.exports = {
         pathRewrite: {
           '^/api': ''
         }
-      }
+      },
+      // '/source': {
+      //   target: 'http://219.239.83.20:18800/',
+      //   secure: false, // 这是签名认证，http和https区分的参数设置
+      //   // 发送请求时，请求路径重写：将 /api/xxx --> /xxx （去掉/api）
+      //   pathRewrite: {
+      //     '^/source': ''
+      //   }
+      // }
     },
     //  boolean string [string] object [object]
     // 该配置项允许配置从目录提供静态文件的选项（默认是 'public' 文件夹）。

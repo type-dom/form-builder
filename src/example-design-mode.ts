@@ -52,6 +52,12 @@ class ExampleDesignMode {
       console.log('this.editor on ready');
     });
     // this.events = [];
+    // fetch('/source').then(res => { // 可以获取 html页面
+    //   console.log('res is ', res);
+    //   return res.text();
+    // }).then(text => {
+    //   console.log('text is ', text);
+    // });
     this.initEvents();
   }
 
