@@ -423,7 +423,6 @@ export class FormEditor {
    * 选中表格时单独处理。
    * @param menu
    */
-  //
   setSelectedMenu(menu: ControlMenu | null): void {
     if (menu) {
       // 要先移除之前选中的菜单的选中状态
