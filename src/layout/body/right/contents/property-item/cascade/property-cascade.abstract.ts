@@ -116,7 +116,10 @@ export abstract class PropertyCascade extends PropertyItem {
 
   resetCascadeConfigResultValue(value: string | number | boolean): void {
     // this.editor.selectedControl?.propObj.attrObj.optionConfig''
-    this.cascadeConfig = Object.assign(this.cascadeConfig, { resultValue: value });
+    // this.cascadeConfig = Object.assign(this.cascadeConfig, { resultValue: value });
+    if (this.cascadeConfig) {
+      this.cascadeConfig.resultValue = value;
+    }
   }
 
   // todo vue项目中返回的是选中的项目。只有一层，没有两层。

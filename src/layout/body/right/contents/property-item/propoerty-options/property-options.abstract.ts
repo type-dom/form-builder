@@ -136,7 +136,8 @@ export abstract class PropertyOptions extends PropertyItem {
   }
   resetOptionConfigResultValue(value: string | number | boolean): void {
     // this.editor.selectedControl?.propObj.attrObj.optionConfig''
-    this.optionConfig = Object.assign(this.optionConfig, { resultValue: value });
+    // this.optionConfig = Object.assign(this.optionConfig, { resultValue: value });
+    if (this.optionConfig) this.optionConfig.resultValue = value;
   }
   // vue项目中返回的是选中的项目。只有一层，没有两层。
   resetConfig(optionConfig: IOptionConfig): void {
