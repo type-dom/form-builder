@@ -1,4 +1,4 @@
-import { ComplexControlWrapper } from '../../../layout/body/left/contents/control-wrapper/complex-control-wrapper/complex-control-wrapper';
+import { ComplexControlWrapper } from '../../../views/layout/body/left/contents/control-wrapper/complex-control-wrapper/complex-control-wrapper';
 import { Display } from '../../../type-node/web-style.enum';
 import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
 import { ControlMenu } from '../menu.abstract';

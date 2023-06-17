@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from '../../type-node/type-element/type-html/div/div.abstract';
-import { LayoutWrapper } from '../../layout/layout.class';
-import { BodyMainContent } from '../../layout/body/main-content/main-content';
+import { LayoutWrapper } from '../../views/layout/layout';
+import { BodyMainContent } from '../../views/layout/body/main-content/main-content';
 import { IOptionConfig } from '../controls/web-control.interface';
 import { fieldConfig } from '../controls/web-control.const';
 import { IWebDocument } from './web-document.interface';

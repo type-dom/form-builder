@@ -1,14 +1,8 @@
 import { filter, fromEvent, switchMap, of, Observable, Subscription, map, Subject } from 'rxjs';
-import { ControlMenu } from './core/menus/menu.abstract';
-import { WebControl } from './core/controls/web-control.abstract';
-import { WebDocument } from './core/document/web-document.class';
-import { IWebDocument } from './core/document/web-document.interface';
-import { WebPage } from './core/page/web-page.class';
-import { IOptionConfig } from './core/controls/web-control.interface';
-import { LayoutWrapper } from './layout/layout.class';
-import { ControlProperty } from './layout/body/right/contents/control-property/control-property';
-import { FormProperty } from './layout/body/right/contents/form-property/form-property';
-import { FieldProperty } from './layout/body/right/contents/field-property/field-property';
+import { LayoutWrapper } from './views/layout/layout';
+import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
+import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
+import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
 import { Cursor } from './type-node/web-style.enum';
 import { WebTableDataCell } from './type-node/web-element/html-element/table/data-cell/data-cell.class';
 import { ListItem } from './type-node/web-element/html-element/unordered-list/list-item/list-item.class';
@@ -17,11 +11,17 @@ import { Span } from './type-node/web-element/html-element/span/span.class';
 import { toJSON } from './type-node/type-element/type-element.function';
 import { WebDialog } from './type-node/components/dialog/dialog';
 import { MessageBox } from './type-node/components/message-box/message-box';
+import { WebTextNode } from './type-node/web-text-node/web-text-node.class';
+import { WebForm } from './type-node/components/form/form';
+import { ControlMenu } from './core/menus/menu.abstract';
+import { WebControl } from './core/controls/web-control.abstract';
+import { WebDocument } from './core/document/web-document.class';
+import { IWebDocument } from './core/document/web-document.interface';
+import { WebPage } from './core/page/web-page.class';
+import { IOptionConfig } from './core/controls/web-control.interface';
 import { ConnectionControl } from './core/controls/complex/connection/connection.class';
 import { TableControl } from './core/controls/complex/table/table.class';
 import { ITableField } from './core/controls/complex/table/table.interface';
-import { WebTextNode } from './type-node/web-text-node/web-text-node.class';
-import { WebForm } from './type-node/components/form/form';
 import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
 
 export class FormEditor {

@@ -26,7 +26,7 @@ module.exports = {
     formMode: './src/example-fill-mode.ts',
     readonlyMode: './src/example-readonly-mode.ts',
     // lib: './src/example-lib.ts'
-    // layout: './src/layout/layout.class.ts'
+    // layout: './src/layout/layout.ts'
   },
   // 出口
   output: {
