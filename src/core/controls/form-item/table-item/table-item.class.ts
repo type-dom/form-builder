@@ -6,7 +6,7 @@ import { WebTableRow } from '../../../../type-node/web-element/html-element/tabl
 import { IWebTableRow } from '../../../../type-node/web-element/html-element/table/row/row.interface';
 import { Display } from '../../../../type-node/web-style.enum';
 import { toJSON } from '../../../../type-node/type-element/type-element.function';
-import { AddSvg } from '../../../../components/svgs/add/add';
+import { AddSvg } from '../../../../type-node/components/svgs/add/add';
 import { TableControl } from '../../complex/table/table.class';
 import { FormItem } from '../form-item.abstract';
 import { ITableItem } from './table-item.interface';

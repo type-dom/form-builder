@@ -11,7 +11,7 @@ import { IOption, IOptionConfig } from '../../../../../../core/controls/web-cont
 import { RadioControl } from '../../../../../../core/controls/basic/radio/radio.class';
 import { CheckboxControl } from '../../../../../../core/controls/basic/checkbox/checkbox.class';
 import { SelectControl } from '../../../../../../core/controls/basic/select/select.class';
-import { ThreeDotsSvg } from '../../../../../../components/svgs/three-dots/three-dots';
+import { ThreeDotsSvg } from '../../../../../../type-node/components/svgs/three-dots/three-dots';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertyOptions extends PropertyItem {

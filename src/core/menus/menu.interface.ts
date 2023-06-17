@@ -1,6 +1,6 @@
 import { ControlClass } from '../controls/web-control.interface';
-import { IDivBase } from '../../type-node/type-element/type-html/div/div.interface';
+import { ITypeDiv } from '../../type-node/type-element/type-html/div/div.interface';
 
-export interface IControlMenu extends IDivBase {
+export interface IControlMenu extends ITypeDiv {
   ControlClass: ControlClass;
 }

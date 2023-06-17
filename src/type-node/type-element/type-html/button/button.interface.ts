@@ -1,5 +1,5 @@
 import { ITypeHtml } from '../type-html.interface';
 
-export interface IButtonBase extends ITypeHtml {
+export interface ITypeButton extends ITypeHtml {
   tagName: 'button',
 }

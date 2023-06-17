@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
-import { ButtonBase } from '../../../../type-node/type-element/type-html/button/button.abstract';
+import { TypeButton } from '../../../../type-node/type-element/type-html/button/button.abstract';
 import { WebTextNode } from '../../../../type-node/web-text-node/web-text-node.class';
 import { Navbar } from '../navbar';
 
-export class SaveButton extends ButtonBase {
+export class SaveButton extends TypeButton {
   className: 'SaveButton';
   constructor(public parent: Navbar) {
     super();

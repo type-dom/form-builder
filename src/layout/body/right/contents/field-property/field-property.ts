@@ -1,5 +1,5 @@
 import { Display } from '../../../../../type-node/web-style.enum';
-import { DivBase } from '../../../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../../../type-node/type-element/type-html/div/div.abstract';
 import { ReadonlyProperty } from '../control-property/readonly/control-readonly';
 import { MinValueProperty } from '../control-property/min-value/control-min-value';
 import { MaxValueProperty } from '../control-property/max-value/control-max-value';
@@ -14,7 +14,7 @@ import { ControlOnChangeProperty } from '../control-property/change-event/contro
 import { MultipleProperty } from '../control-property/multiple/control-multiple';
 
 // 字段属性内容栏
-export class FieldProperty extends DivBase {
+export class FieldProperty extends TypeDiv {
   className: 'FieldProperty';
   childNodes: [
     ControlFieldProperty,

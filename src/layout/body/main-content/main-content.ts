@@ -1,9 +1,9 @@
 import { WebDocument } from '../../../core/document/web-document.class';
 import { StylePosition } from '../../../type-node/web-style.enum';
-import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
 import { BodyWrapper } from '../body';
 
-export class BodyMainContent extends DivBase {
+export class BodyMainContent extends TypeDiv {
   className: 'BodyMainContent';
   childNodes: (WebDocument)[];
 

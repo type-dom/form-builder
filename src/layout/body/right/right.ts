@@ -1,9 +1,9 @@
-import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
 import { BodyWrapper } from '../body';
 import { RightContents } from './contents/contents';
 import { BodyRightTabs } from './tabs/tabs';
 
-export class BodyRight extends DivBase {
+export class BodyRight extends TypeDiv {
   className: 'BodyRight';
   childNodes: [BodyRightTabs, RightContents];
 

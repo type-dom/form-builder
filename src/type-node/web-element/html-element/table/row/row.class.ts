@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
-import { DeleteSvg } from '../../../../../components/svgs/delete/delete';
+import { DeleteSvg } from '../../../../components/svgs/delete/delete';
 import { Span } from '../../span/span.class';
 import { StylePosition } from '../../../../web-style.enum';
 import { WebTableDataCell } from '../data-cell/data-cell.class';

@@ -1,4 +1,4 @@
 import { ITypeHtml } from '../type-html.interface';
-export interface ISpanBase extends ITypeHtml {
+export interface ITypeSpan extends ITypeHtml {
   tagName: 'span',
 }

@@ -1,8 +1,8 @@
-import { DivBase } from '../../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../../type-node/type-element/type-html/div/div.abstract';
 import { StylePosition } from '../../../../type-node/web-style.enum';
 import { Logo } from '../logo';
 
-export class Reference extends DivBase {
+export class Reference extends TypeDiv {
   className: 'Reference';
   constructor(public parent: Logo) {
     super();

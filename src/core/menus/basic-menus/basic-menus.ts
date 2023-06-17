@@ -1,5 +1,5 @@
 import { BasicControlWrapper } from '../../../layout/body/left/contents/control-wrapper/basic-control-wrapper/basic-control-wrapper';
-import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
 import { Display } from '../../../type-node/web-style.enum';
 import { ControlMenu } from '../menu.abstract';
 import { NumericalMenu } from './numerical/numerical-menu';
@@ -12,7 +12,7 @@ import { TimeMenu } from './time/time-menu';
 import { AttachmentMenu } from './attachment/attachment-menu';
 import { CheckboxMenu } from './checkbox/checkbox-menu';
 
-export class BasicMenus extends DivBase {
+export class BasicMenus extends TypeDiv {
   className: 'BasicControlMenus';
   childNodes: ControlMenu[];
   constructor(public parent: BasicControlWrapper) {

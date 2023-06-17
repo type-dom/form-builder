@@ -1,6 +1,6 @@
 import { TypeHtml } from '../type-html.abstract';
-import { ILabelBase } from './label.interface';
-export abstract class LabelBase extends TypeHtml implements ILabelBase {
+import { ITypeLabel } from './label.interface';
+export abstract class TypeLabel extends TypeHtml implements ITypeLabel {
   tagName: 'label';
   dom: HTMLLabelElement;
   protected constructor() {

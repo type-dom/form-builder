@@ -1,12 +1,12 @@
 import { fromEvent } from 'rxjs';
 import { WebTextNode } from '../../../../type-node/web-text-node/web-text-node.class';
 import { toJSON } from '../../../../type-node/type-element/type-element.function';
-import { ButtonBase } from '../../../../type-node/type-element/type-html/button/button.abstract';
+import { TypeButton } from '../../../../type-node/type-element/type-html/button/button.abstract';
 import { WebDocument } from '../../../../core/document/web-document.class';
 import { IWebDocument } from '../../../../core/document/web-document.interface';
 import { Navbar } from '../navbar';
 
-export class PreviewButton extends ButtonBase {
+export class PreviewButton extends TypeButton {
   className: 'PreviewButton';
   constructor(public parent: Navbar) {
     super();

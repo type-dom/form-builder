@@ -1,11 +1,11 @@
 import { fromEvent } from 'rxjs';
 import { FormEditor } from '../form-editor';
-import { DivBase } from '../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../type-node/type-element/type-html/div/div.abstract';
 import { WebDocument } from '../core/document/web-document.class';
-import { WebForm } from '../components/form/form';
+import { WebForm } from '../type-node/components/form/form';
 import { HeaderWrapper } from './header/header';
 import { BodyWrapper } from './body/body';
-export class LayoutWrapper extends DivBase {
+export class LayoutWrapper extends TypeDiv {
   className: 'LayoutWrapper';
   parent = this;
 

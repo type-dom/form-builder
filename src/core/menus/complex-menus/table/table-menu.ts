@@ -1,4 +1,4 @@
-import { TableSvg } from '../../../../components/svgs/table/table';
+import { TableSvg } from '../../../../type-node/components/svgs/table/table';
 import { Span } from '../../../../type-node/web-element/html-element/span/span.class';
 import { TableControl } from '../../../controls/complex/table/table.class';
 import { ControlMenu } from '../../menu.abstract';

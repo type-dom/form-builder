@@ -1,4 +1,4 @@
-import { RadioGroup } from '../../../../components/radio-group/radio-group.class';
+import { RadioGroup } from '../../../../type-node/components/radio-group/radio-group.class';
 import { Span } from '../../../../type-node/web-element/html-element/span/span.class';
 import { Label } from '../../../../type-node/web-element/html-element/label/label.class';
 import { WebControl } from '../../web-control.abstract';

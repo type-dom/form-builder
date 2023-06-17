@@ -6,15 +6,15 @@ import { Textarea } from '../../../type-node/web-element/html-element/textarea/t
 import { ILabel } from '../../../type-node/web-element/html-element/label/label.interface';
 import { Span } from '../../../type-node/web-element/html-element/span/span.class';
 import { Select } from '../../../type-node/web-element/html-element/select/select.class';
-import { RadioGroup } from '../../../components/radio-group/radio-group.class';
-import { CheckboxGroup } from '../../../components/checkbox-group/checkbox-group.class';
-import { DeleteSvg } from '../../../components/svgs/delete/delete';
+import { RadioGroup } from '../../../type-node/components/radio-group/radio-group.class';
+import { CheckboxGroup } from '../../../type-node/components/checkbox-group/checkbox-group.class';
+import { DeleteSvg } from '../../../type-node/components/svgs/delete/delete';
 import { WebTextNode } from '../../../type-node/web-text-node/web-text-node.class';
-import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
 import { formItemStyle, labelStyle } from '../web-control.const';
 import { IFormItem, ItemContent } from './form-item.interface';
 
-export abstract class FormItem extends DivBase implements IFormItem {
+export abstract class FormItem extends TypeDiv implements IFormItem {
   abstract className: string;
   // abstract parent: WebControl;
   abstract childNodes: [Label, ItemContent, Span];

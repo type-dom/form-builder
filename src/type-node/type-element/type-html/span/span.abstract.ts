@@ -1,7 +1,6 @@
 import { TypeHtml } from '../type-html.abstract';
-import { ISpanBase } from './span.interface';
-
-export abstract class SpanBase extends TypeHtml implements ISpanBase {
+import { ITypeSpan } from './span.interface';
+export abstract class TypeSpan extends TypeHtml implements ITypeSpan {
   tagName: 'span';
   dom: HTMLSpanElement;
   protected constructor() {

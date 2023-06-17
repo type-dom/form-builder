@@ -5,8 +5,8 @@ import { ControlClass, IWebControl } from '../../../../../core/controls/web-cont
 import { TableControl } from '../../../../../core/controls/complex/table/table.class';
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
 import { IWebTextNode } from '../../../../web-text-node/web-text-node.interface';
-import { RadioGroup } from '../../../../../components/radio-group/radio-group.class';
-import { CheckboxGroup } from '../../../../../components/checkbox-group/checkbox-group.class';
+import { RadioGroup } from '../../../../components/radio-group/radio-group.class';
+import { CheckboxGroup } from '../../../../components/checkbox-group/checkbox-group.class';
 import { ControlClassMap } from '../../../../../constants';
 import { Input } from '../../input/input.class';
 import { Select } from '../../select/select.class';

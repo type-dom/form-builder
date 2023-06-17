@@ -1,8 +1,8 @@
-import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
 import { TypeSvg } from '../../../type-node/type-element/type-svg/type-svg.abstract';
-import { LogoSvg } from '../../../components/svgs/logo/logo';
+import { LogoSvg } from '../../../type-node/components/svgs/logo/logo';
 import { HeaderWrapper } from '../header';
-export class Logo extends DivBase {
+export class Logo extends TypeDiv {
   className: 'Logo';
   childNodes: TypeSvg[];
   constructor(public parent: HeaderWrapper) {

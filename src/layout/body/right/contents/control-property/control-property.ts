@@ -1,4 +1,4 @@
-import { DivBase } from '../../../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../../../type-node/type-element/type-html/div/div.abstract';
 import { Division } from '../../../../../type-node/web-element/html-element/division/division.class';
 import { WebTextNode } from '../../../../../type-node/web-text-node/web-text-node.class';
 import { RightContents } from '../contents';
@@ -19,7 +19,7 @@ import { Display } from '../../../../../type-node/web-style.enum';
 import { ReadonlyProperty } from './readonly/control-readonly';
 
 
-export class ControlProperty extends DivBase {
+export class ControlProperty extends TypeDiv {
   className: 'ControlProperty';
   childNodes: [
     ControlFieldProperty,

@@ -15,13 +15,13 @@ import { ListItem } from './type-node/web-element/html-element/unordered-list/li
 import { WebTableRow } from './type-node/web-element/html-element/table/row/row.class';
 import { Span } from './type-node/web-element/html-element/span/span.class';
 import { toJSON } from './type-node/type-element/type-element.function';
-import { WebDialog } from './components/dialog/dialog';
-import { MessageBox } from './components/message-box/message-box';
+import { WebDialog } from './type-node/components/dialog/dialog';
+import { MessageBox } from './type-node/components/message-box/message-box';
 import { ConnectionControl } from './core/controls/complex/connection/connection.class';
 import { TableControl } from './core/controls/complex/table/table.class';
 import { ITableField } from './core/controls/complex/table/table.interface';
 import { WebTextNode } from './type-node/web-text-node/web-text-node.class';
-import { WebForm } from './components/form/form';
+import { WebForm } from './type-node/components/form/form';
 import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
 
 export class FormEditor {
@@ -49,7 +49,7 @@ export class FormEditor {
   events: Subscription[];
   editorElObservable: Observable<Event>;
   onReady: Observable<void>;
-  readyEvent: Subject<void>
+  readyEvent: Subject<void>;
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
     this.el = editorEl;
     if (!this.el.clientHeight) {

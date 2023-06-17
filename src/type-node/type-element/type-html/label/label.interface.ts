@@ -1,4 +1,4 @@
 import { ITypeHtml } from '../type-html.interface';
-export interface ILabelBase extends ITypeHtml {
+export interface ITypeLabel extends ITypeHtml {
   tagName: 'label',
 }

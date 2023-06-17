@@ -1,4 +1,4 @@
-import { IDivBase } from '../../type-node/type-element/type-html/div/div.interface';
+import { ITypeDiv } from '../../type-node/type-element/type-html/div/div.interface';
 import { IWebControl } from '../controls/web-control.interface';
 
 export interface IWebPageBackground {
@@ -7,7 +7,7 @@ export interface IWebPageBackground {
   image: string, // 图像背景，type为2是有效
 }
 
-export interface IWebPage extends IDivBase {
+export interface IWebPage extends ITypeDiv {
   className: 'WebPage',
   childNodes: IWebControl[],
 }

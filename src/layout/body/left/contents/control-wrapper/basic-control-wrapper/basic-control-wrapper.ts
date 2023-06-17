@@ -1,6 +1,6 @@
 import { TypeComponent } from '../../../../../../type-node/type-element/type-component/type-component.abstract';
 import { BasicMenus } from '../../../../../../core/menus/basic-menus/basic-menus';
-import { ExpandHeading } from '../../../../../../components/expand-heading';
+import { ExpandHeading } from '../../../../../../type-node/components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';
 export class BasicControlWrapper extends TypeComponent {
   className: 'BasicControlWrapper';

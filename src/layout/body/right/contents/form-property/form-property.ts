@@ -1,4 +1,4 @@
-import { DivBase } from '../../../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../../../type-node/type-element/type-html/div/div.abstract';
 import { RightContents } from '../contents';
 import { FormSizeProperty } from './form-size/form-size';
 import { LabelWidthProperty } from './label-width/label-width';
@@ -9,7 +9,7 @@ import { BeforeSubmitProperty } from './before-submit/before-submit';
 import { AfterSubmitProperty } from './after-submit/after-submit';
 import { TabCountProperty } from './tab-count/tab-count';
 
-export class FormProperty extends DivBase {
+export class FormProperty extends TypeDiv {
   className: 'FormProperty';
   childNodes: [
     FormSizeProperty,

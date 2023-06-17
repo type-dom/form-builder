@@ -1,7 +1,7 @@
 import { fromEvent, Subscription } from 'rxjs';
-import { DivBase } from '../../type-node/type-element/type-html/div/div.abstract';
-import { CheckboxOption } from '../../components/checkbox-group/checkbox-option/checkbox-option.class';
-import { RadioOption } from '../../components/radio-group/radio-option/radio-option.class';
+import { TypeDiv } from '../../type-node/type-element/type-html/div/div.abstract';
+import { CheckboxOption } from '../../type-node/components/checkbox-group/checkbox-option/checkbox-option.class';
+import { RadioOption } from '../../type-node/components/radio-group/radio-option/radio-option.class';
 import { Select } from '../../type-node/web-element/html-element/select/select.class';
 import { Label } from '../../type-node/web-element/html-element/label/label.class';
 import { Input } from '../../type-node/web-element/html-element/input/input.class';
@@ -17,7 +17,7 @@ import { IOptionConfig, IWebControl } from './web-control.interface';
 import { controlStyle } from './web-control.const';
 import { ItemContent } from './form-item/form-item.interface';
 
-export abstract class WebControl extends DivBase implements IWebControl {
+export abstract class WebControl extends TypeDiv implements IWebControl {
   abstract className: string;
   // 控件都有这个属性
   abstract formItem: FormItem;
