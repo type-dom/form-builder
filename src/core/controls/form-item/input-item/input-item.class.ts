@@ -1,6 +1,6 @@
-import { Input } from '../../../../type-node/web-element/html-element/input/input.class';
-import { Span } from '../../../../type-node/web-element/html-element/span/span.class';
-import { Label } from '../../../../type-node/web-element/html-element/label/label.class';
+import { Input } from '../../../../../type-node/web-element/html-element/input/input.class';
+import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
+import { Label } from '../../../../../type-node/web-element/html-element/label/label.class';
 import { WebControl } from '../../web-control.abstract';
 import { itemContentStyle } from '../../web-control.const';
 import { FormItem } from '../form-item.abstract';

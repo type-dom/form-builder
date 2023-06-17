@@ -1,6 +1,6 @@
-import { Span } from '../../../../type-node/web-element/html-element/span/span.class';
-import { Label } from '../../../../type-node/web-element/html-element/label/label.class';
-import { Select } from '../../../../type-node/web-element/html-element/select/select.class';
+import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
+import { Label } from '../../../../../type-node/web-element/html-element/label/label.class';
+import { Select } from '../../../../../type-node/web-element/html-element/select/select.class';
 import { itemContentStyle } from '../../web-control.const';
 import { WebControl } from '../../web-control.abstract';
 import { ConfigItem } from '../config-item/config-item.class';

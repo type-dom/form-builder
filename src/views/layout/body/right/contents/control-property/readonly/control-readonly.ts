@@ -3,7 +3,7 @@ import { WebControl } from '../../../../../../../core/controls/web-control.abstr
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
-import { WebTextNode } from '../../../../../../../type-node/web-text-node/web-text-node.class';
+import { WebTextNode } from '../../../../../../../../type-node/web-text-node/web-text-node.class';
 
 const readonlyConfigs: IOptionConfig = {
   name: '只读' + Math.random(),

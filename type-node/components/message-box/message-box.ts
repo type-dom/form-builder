@@ -1,6 +1,6 @@
 import { WebTextNode } from '../../web-text-node/web-text-node.class';
 import { Span } from '../../web-element/html-element/span/span.class';
-import { FormEditor } from '../../../form-editor';
+import { FormEditor } from '../../../src/form-editor';
 import { Overlay } from '../overlay/overlay.abstract';
 
 export class MessageBox extends Overlay {

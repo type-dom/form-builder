@@ -1,17 +1,17 @@
 import { fromEvent, Observable } from 'rxjs';
-import { Label } from '../../../../../../../type-node/web-element/html-element/label/label.class';
-import { Division } from '../../../../../../../type-node/web-element/html-element/division/division.class';
-import { Select } from '../../../../../../../type-node/web-element/html-element/select/select.class';
-import { Button } from '../../../../../../../type-node/web-element/html-element/button/button.class';
-import { Display } from '../../../../../../../type-node/web-style.enum';
-import { WebTextNode } from '../../../../../../../type-node/web-text-node/web-text-node.class';
+import { Label } from '../../../../../../../../type-node/web-element/html-element/label/label.class';
+import { Division } from '../../../../../../../../type-node/web-element/html-element/division/division.class';
+import { Select } from '../../../../../../../../type-node/web-element/html-element/select/select.class';
+import { Button } from '../../../../../../../../type-node/web-element/html-element/button/button.class';
+import { Display } from '../../../../../../../../type-node/web-style.enum';
+import { WebTextNode } from '../../../../../../../../type-node/web-text-node/web-text-node.class';
 import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 import { RadioControl } from '../../../../../../../core/controls/basic/radio/radio.class';
 import { CheckboxControl } from '../../../../../../../core/controls/basic/checkbox/checkbox.class';
 import { SelectControl } from '../../../../../../../core/controls/basic/select/select.class';
-import { ThreeDotsSvg } from '../../../../../../../type-node/components/svgs/three-dots/three-dots';
+import { ThreeDotsSvg } from '../../../../../../../../type-node/components/svgs/three-dots/three-dots';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertyOptions extends PropertyItem {

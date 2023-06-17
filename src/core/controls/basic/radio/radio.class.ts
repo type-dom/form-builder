@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../type-node/web-element/html-element/table/data-cell/data-cell.class';
+import { WebTableDataCell } from '../../../../../type-node/web-element/html-element/table/data-cell/data-cell.class';
 import { deepClone } from '../../../../utils';
 import { WebPage } from '../../../page/web-page.class';
 import { RadioItem } from '../../form-item/radio-item/radio-item.class';

@@ -1,5 +1,5 @@
-import { Display } from '../../../../../../type-node/web-style.enum';
-import { TypeDiv } from '../../../../../../type-node/type-element/type-html/div/div.abstract';
+import { Display } from '../../../../../../../type-node/web-style.enum';
+import { TypeDiv } from '../../../../../../../type-node/type-element/type-html/div/div.abstract';
 import { LeftContents } from '../contents';
 import { BasicControlWrapper } from './basic-control-wrapper/basic-control-wrapper';
 import { ComplexControlWrapper } from './complex-control-wrapper/complex-control-wrapper';

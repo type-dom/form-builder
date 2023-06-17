@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
-import { FormEditor } from '../../form-editor';
-import { humpToMiddleLine } from '../../utils';
+import { FormEditor } from '../../src/form-editor';
+import { humpToMiddleLine } from '../../src/utils';
 import { WebTextNode } from '../web-text-node/web-text-node.class';
 import { Cursor, Display } from '../web-style.enum';
 import { IWebStyle } from '../web-style.interface';

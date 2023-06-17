@@ -1,4 +1,4 @@
-import { ITypeDiv } from '../../type-node/type-element/type-html/div/div.interface';
+import { ITypeDiv } from '../../../type-node/type-element/type-html/div/div.interface';
 import { AttachmentControl } from './basic/attachment/attachment.class';
 import { DateControl } from './basic/date/date.class';
 import { MultilineInputControl } from './basic/multiline-input/multiline-input.class';

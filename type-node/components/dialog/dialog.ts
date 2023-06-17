@@ -1,5 +1,5 @@
 import { Overlay } from '../overlay/overlay.abstract';
-import { FormEditor } from '../../../form-editor';
+import { FormEditor } from '../../../src/form-editor';
 
 export class WebDialog extends Overlay {
   className: 'WebDialog';

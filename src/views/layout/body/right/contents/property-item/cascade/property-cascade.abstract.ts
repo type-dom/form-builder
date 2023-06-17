@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
-import { Label } from '../../../../../../../type-node/web-element/html-element/label/label.class';
-import { Division } from '../../../../../../../type-node/web-element/html-element/division/division.class';
-import { Select } from '../../../../../../../type-node/web-element/html-element/select/select.class';
-import { Button } from '../../../../../../../type-node/web-element/html-element/button/button.class';
-import { Display } from '../../../../../../../type-node/web-style.enum';
+import { Label } from '../../../../../../../../type-node/web-element/html-element/label/label.class';
+import { Division } from '../../../../../../../../type-node/web-element/html-element/division/division.class';
+import { Select } from '../../../../../../../../type-node/web-element/html-element/select/select.class';
+import { Button } from '../../../../../../../../type-node/web-element/html-element/button/button.class';
+import { Display } from '../../../../../../../../type-node/web-style.enum';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 import { PropertyItem } from '../property-item.abstract';

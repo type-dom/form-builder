@@ -1,4 +1,4 @@
-import { IOption } from '../../../../core/controls/web-control.interface';
+import { IOption } from '../../../../src/core/controls/web-control.interface';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { WebOption } from './option/option.class';
 import { ISelect } from './select.interface';

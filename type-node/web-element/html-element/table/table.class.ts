@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
-import { TableItem } from '../../../../core/controls/form-item/table-item/table-item.class';
-import { ITableConfig, ITableField } from '../../../../core/controls/complex/table/table.interface';
-import { WebControl } from '../../../../core/controls/web-control.abstract';
+import { TableItem } from '../../../../src/core/controls/form-item/table-item/table-item.class';
+import { ITableConfig, ITableField } from '../../../../src/core/controls/complex/table/table.interface';
+import { WebControl } from '../../../../src/core/controls/web-control.abstract';
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
 import { toJSON } from '../../../type-element/type-element.function';
 import { Span } from '../span/span.class';

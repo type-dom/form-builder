@@ -1,8 +1,8 @@
-import { Button } from '../../../../../../../type-node/web-element/html-element/button/button.class';
-import { Label } from '../../../../../../../type-node/web-element/html-element/label/label.class';
-import { Span } from '../../../../../../../type-node/web-element/html-element/span/span.class';
-import { Display } from '../../../../../../../type-node/web-style.enum';
-import { WebTextNode } from '../../../../../../../type-node/web-text-node/web-text-node.class';
+import { Button } from '../../../../../../../../type-node/web-element/html-element/button/button.class';
+import { Label } from '../../../../../../../../type-node/web-element/html-element/label/label.class';
+import { Span } from '../../../../../../../../type-node/web-element/html-element/span/span.class';
+import { Display } from '../../../../../../../../type-node/web-style.enum';
+import { WebTextNode } from '../../../../../../../../type-node/web-text-node/web-text-node.class';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertySpan extends PropertyItem {

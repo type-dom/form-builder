@@ -1,8 +1,8 @@
 import { TypeDiv } from '../../type-element/type-html/div/div.abstract';
-import { RadioItem } from '../../../core/controls/form-item/radio-item/radio-item.class';
+import { RadioItem } from '../../../src/core/controls/form-item/radio-item/radio-item.class';
 import { RadioOption } from './radio-option/radio-option.class';
 import { IRadioGroup } from './radio-group.interface';
-import { IOption } from '../../../core/controls/web-control.interface';
+import { IOption } from '../../../src/core/controls/web-control.interface';
 
 export class RadioGroup extends TypeDiv implements IRadioGroup {
   className: 'RadioGroup';

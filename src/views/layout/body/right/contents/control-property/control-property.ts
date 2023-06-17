@@ -1,6 +1,6 @@
-import { TypeDiv } from '../../../../../../type-node/type-element/type-html/div/div.abstract';
-import { Division } from '../../../../../../type-node/web-element/html-element/division/division.class';
-import { WebTextNode } from '../../../../../../type-node/web-text-node/web-text-node.class';
+import { TypeDiv } from '../../../../../../../type-node/type-element/type-html/div/div.abstract';
+import { Division } from '../../../../../../../type-node/web-element/html-element/division/division.class';
+import { WebTextNode } from '../../../../../../../type-node/web-text-node/web-text-node.class';
 import { RightContents } from '../contents';
 // control property
 import { ControlFieldProperty } from './field/control-field';
@@ -15,7 +15,7 @@ import { MultipleProperty } from './multiple/control-multiple';
 import { ControlOnChangeProperty } from './change-event/control-on-change';
 import { ControlConnectionProperty } from './connection/control-connection';
 import { TableColumnProperty } from './table-column/table-column';
-import { Display } from '../../../../../../type-node/web-style.enum';
+import { Display } from '../../../../../../../type-node/web-style.enum';
 import { ReadonlyProperty } from './readonly/control-readonly';
 
 

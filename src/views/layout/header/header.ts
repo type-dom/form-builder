@@ -1,5 +1,5 @@
-import { Display } from '../../../type-node/web-style.enum';
-import { TypeHtml } from '../../../type-node/type-element/type-html/type-html.abstract';
+import { Display } from '../../../../type-node/web-style.enum';
+import { TypeHtml } from '../../../../type-node/type-element/type-html/type-html.abstract';
 import { LayoutWrapper } from '../layout';
 import { Navbar } from './navbar/navbar';
 // import { Logo } from './logo/logo';

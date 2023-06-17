@@ -1,4 +1,4 @@
-import { ITypeDiv } from '../../type-node/type-element/type-html/div/div.interface';
+import { ITypeDiv } from '../../../type-node/type-element/type-html/div/div.interface';
 import { IWebControl } from '../controls/web-control.interface';
 
 export interface IWebPageBackground {

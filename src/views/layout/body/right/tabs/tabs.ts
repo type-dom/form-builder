@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { Display } from '../../../../../type-node/web-style.enum';
-import { UlBase } from '../../../../../type-node/type-element/type-html/ul/ul.abstract';
-import { ListItem } from '../../../../../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
-import { WebTextNode } from '../../../../../type-node/web-text-node/web-text-node.class';
+import { Display } from '../../../../../../type-node/web-style.enum';
+import { UlBase } from '../../../../../../type-node/type-element/type-html/ul/ul.abstract';
+import { ListItem } from '../../../../../../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
+import { WebTextNode } from '../../../../../../type-node/web-text-node/web-text-node.class';
 import { BodyRight } from '../right';
 
 export class BodyRightTabs extends UlBase {

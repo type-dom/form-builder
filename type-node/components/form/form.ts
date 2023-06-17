@@ -1,6 +1,6 @@
 import { TypeDiv } from '../../type-element/type-html/div/div.abstract';
 import { StylePosition } from '../../web-style.enum';
-import { LayoutWrapper } from '../../../views/layout/layout';
+import { LayoutWrapper } from '../../../src/views/layout/layout';
 import { FormHeader } from './header/header';
 import { FormBody } from './body/body';
 import { FormFooter } from './footer/footer';
