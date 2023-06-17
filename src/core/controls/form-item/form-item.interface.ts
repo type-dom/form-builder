@@ -8,7 +8,7 @@ import { Select } from '../../../type-node/web-element/html-element/select/selec
 import { ISelect } from '../../../type-node/web-element/html-element/select/select.interface';
 import { ILabel } from '../../../type-node/web-element/html-element/label/label.interface';
 import { ISpan } from '../../../type-node/web-element/html-element/span/span.interface';
-import { IDivBase } from '../../../type-node/type-element/html-element/div/div.interface';
+import { IDivBase } from '../../../type-node/type-element/type-html/div/div.interface';
 import { RadioGroup } from '../../../components/radio-group/radio-group.class';
 import { IRadioGroup } from '../../../components/radio-group/radio-group.interface';
 import { CheckboxGroup } from '../../../components/checkbox-group/checkbox-group.class';

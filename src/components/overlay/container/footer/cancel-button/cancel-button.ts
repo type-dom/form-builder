@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { WebTextNode } from '../../../../../type-node/web-text-node/web-text-node.class';
-import { ButtonBase } from '../../../../../type-node/type-element/html-element/button/button.abstract';
+import { ButtonBase } from '../../../../../type-node/type-element/type-html/button/button.abstract';
 import { OverlayFooter } from '../footer';
 
 export class CancelButton extends ButtonBase {

@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { UlBase } from '../../../type-node/type-element/html-element/ul/ul.abstract';
+import { UlBase } from '../../../type-node/type-element/type-html/ul/ul.abstract';
 import { ListItem } from '../../../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
 import { IWebStyle } from '../../../type-node/web-style.interface';
 import { Display } from '../../../type-node/web-style.enum';

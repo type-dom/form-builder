@@ -1,13 +1,13 @@
-import { HtmlElement } from '../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { ITextarea } from './textarea.interface';
 
-export class Textarea extends HtmlElement implements ITextarea {
+export class Textarea extends TypeHtml implements ITextarea {
   tagName: 'textarea';
   className: 'TextArea';
   dom: HTMLTextAreaElement;
   childNodes: [];
   value: string | number | boolean | undefined;
-  constructor(public parent: HtmlElement) {
+  constructor(public parent: TypeHtml) {
     super();
     this.tagName = 'textarea';
     this.className = 'TextArea';

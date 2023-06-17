@@ -1,10 +1,10 @@
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
-import { HtmlElement } from '../../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { WebTableHead } from '../head/head.class';
 import { IWebTableHeader } from './header.interface';
 
 // 表格表头
-export class WebTableHeader extends HtmlElement implements IWebTableHeader {
+export class WebTableHeader extends TypeHtml implements IWebTableHeader {
   tagName: 'th';
   className: 'WebTableHeader';
   dom: HTMLElement;

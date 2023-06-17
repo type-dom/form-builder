@@ -10,7 +10,7 @@ import { RadioGroup } from '../../../components/radio-group/radio-group.class';
 import { CheckboxGroup } from '../../../components/checkbox-group/checkbox-group.class';
 import { DeleteSvg } from '../../../components/svgs/delete/delete';
 import { WebTextNode } from '../../../type-node/web-text-node/web-text-node.class';
-import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
 import { formItemStyle, labelStyle } from '../web-control.const';
 import { IFormItem, ItemContent } from './form-item.interface';
 

@@ -1,5 +1,5 @@
 import { ITypeProperty } from '../../../type-element/type-element.interface';
-import { ISvgElement } from '../../../type-element/svg-element/svg-element.interface';
+import { ITypeSvg } from '../../../type-element/type-svg/type-svg.interface';
 /**
  * width 和 height 属性可定义矩形的高度和宽度
  * x 属性定义矩形的左侧位置（例如，x="0" 定义矩形到浏览器窗口左侧的距离是 0px）
@@ -31,7 +31,7 @@ export interface ISvgRectProperty extends ITypeProperty {
     height: number, // px
   }
 }
-export interface ISvgRect extends ISvgElement {
+export interface ISvgRect extends ITypeSvg {
   tagName: 'rect';
   className: 'SvgRect';
   propObj: ISvgRectProperty;

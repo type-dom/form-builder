@@ -1,16 +1,16 @@
 import { IOption } from '../../../../core/controls/web-control.interface';
-import { HtmlElement } from '../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { WebOption } from './option/option.class';
 import { ISelect } from './select.interface';
 import { fromEvent } from 'rxjs';
 
-export class Select extends HtmlElement implements ISelect {
+export class Select extends TypeHtml implements ISelect {
   tagName: 'select';
   dom: HTMLSelectElement;
   className: 'Select';
   childNodes: WebOption[];
   value?: string | number | boolean;
-  constructor(public parent: HtmlElement) {
+  constructor(public parent: TypeHtml) {
     super();
     this.tagName = 'select';
     this.dom = document.createElement(this.tagName);

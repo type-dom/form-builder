@@ -1,4 +1,4 @@
-import { DivBase } from '../../../../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../../../../type-node/type-element/type-html/div/div.abstract';
 import { Division } from '../../../../../type-node/web-element/html-element/division/division.class';
 import { WebTextNode } from '../../../../../type-node/web-text-node/web-text-node.class';
 import { RightContents } from '../contents';

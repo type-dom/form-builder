@@ -1,5 +1,5 @@
 import { ITypeProperty } from '../../../type-element/type-element.interface';
-import { ISvgElement } from '../../../type-element/svg-element/svg-element.interface';
+import { ITypeSvg } from '../../../type-element/type-svg/type-svg.interface';
 /**
  * x1 属性在 x 轴定义线条的开始
  * y1 属性在 y 轴定义线条的开始
@@ -21,7 +21,7 @@ export interface ISvgLineProperty extends ITypeProperty {
     y2: number,
   }
 }
-export interface ISvgLine extends ISvgElement {
+export interface ISvgLine extends ITypeSvg {
   tagName: 'line';
   className: 'SvgLine';
   propObj: ISvgLineProperty;

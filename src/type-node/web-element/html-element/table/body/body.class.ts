@@ -1,9 +1,9 @@
-import { HtmlElement } from '../../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { WebTable } from '../table.class';
 import { WebTableRow } from '../row/row.class';
 import { IWebTableBody } from './body.interface';
 
-export class WebTableBody extends HtmlElement implements IWebTableBody {
+export class WebTableBody extends TypeHtml implements IWebTableBody {
   tagName: 'tbody';
   className: 'WebTableBody';
   dom: HTMLTableSectionElement;

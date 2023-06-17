@@ -1,11 +1,11 @@
-import { HtmlElement } from '../../type-node/type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../type-node/type-element/type-html/type-html.abstract';
 import { Display } from '../../type-node/web-style.enum';
 import { LayoutWrapper } from '../layout.class';
 import { BodyLeft } from './left/left';
 import { BodyRight } from './right/right';
 import { BodyMainContent } from './main-content/main-content';
 
-export class BodyWrapper extends HtmlElement {
+export class BodyWrapper extends TypeHtml {
   tagName: 'section';
   dom: HTMLElement;
   className: 'BodyWrapper';

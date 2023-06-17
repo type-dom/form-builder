@@ -1,6 +1,6 @@
 import { ITypeElement } from '../type-element.interface';
-import { IHtmlElement } from '../html-element/html-element.interface';
-export interface ITypeComponent extends IHtmlElement {
+import { ITypeHtml } from '../type-html/type-html.interface';
+export interface ITypeComponent extends ITypeHtml {
   tagName: 'div';
   childNodes: Array<ITypeElement>;// contents
 }

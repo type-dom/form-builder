@@ -1,11 +1,11 @@
 import { TypeElement } from '../type-element.abstract';
-import { IHtmlElement } from './html-element.interface';
+import { ITypeHtml } from './type-html.interface';
 /**
  * HTML标签
  */
-export abstract class HtmlElement extends TypeElement implements IHtmlElement {
+export abstract class TypeHtml extends TypeElement implements ITypeHtml {
   // abstract tagName: string;
   // abstract className: string;
-  abstract parent: HtmlElement;
+  abstract parent: TypeHtml;
   abstract dom: HTMLElement;
 }

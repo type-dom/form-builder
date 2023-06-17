@@ -1,7 +1,7 @@
-import { IHtmlElement } from '../../../type-element/html-element/html-element.interface';
+import { ITypeHtml } from '../../../type-element/type-html/type-html.interface';
 import { IWebOption } from './option/option.interface';
 
-export interface ISelect extends IHtmlElement {
+export interface ISelect extends ITypeHtml {
   className: 'Select',
   childNodes: IWebOption[];
 }

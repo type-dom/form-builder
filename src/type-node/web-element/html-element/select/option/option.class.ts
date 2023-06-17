@@ -1,13 +1,12 @@
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
-import { HtmlElement } from '../../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { Select } from '../select.class';
 import { IWebOption } from './option.interface';
-
-export class WebOption extends HtmlElement implements IWebOption {
+export class WebOption extends TypeHtml implements IWebOption {
   tagName: 'option';
   className: 'WebOption';
   dom: HTMLOptionElement;
-  childNodes: (HtmlElement | WebTextNode)[];
+  childNodes: (TypeHtml | WebTextNode)[];
   text: WebTextNode;
   constructor(public parent: Select) {
     super();

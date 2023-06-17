@@ -1,11 +1,11 @@
-import { HtmlElement } from '../../../type-node/type-element/html-element/html-element.abstract';
-import { SvgBase } from '../../../type-node/type-element/svg-element/svg/svg.abstract';
+import { TypeHtml } from '../../../type-node/type-element/type-html/type-html.abstract';
+import { SvgBase } from '../../../type-node/type-element/type-svg/svg/svg.abstract';
 import { SvgPath } from '../../../type-node/web-element/svg-element/path/path.class';
 
 export class AddSvg extends SvgBase {
   className: 'AddSvg';
   childNodes: [SvgPath];
-  constructor(public parent: HtmlElement) {
+  constructor(public parent: TypeHtml) {
     super();
     this.className = 'AddSvg';
     this.resetSize(24, 24);

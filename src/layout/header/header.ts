@@ -1,10 +1,10 @@
 import { Display } from '../../type-node/web-style.enum';
-import { HtmlElement } from '../../type-node/type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../type-node/type-element/type-html/type-html.abstract';
 import { LayoutWrapper } from '../layout.class';
 import { Navbar } from './navbar/navbar';
 // import { Logo } from './logo/logo';
 
-export class HeaderWrapper extends HtmlElement {
+export class HeaderWrapper extends TypeHtml {
   tagName: 'header';
   className: 'HeaderWrapper';
   childNodes: [Navbar]

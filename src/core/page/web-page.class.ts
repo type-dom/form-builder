@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { DivBase } from '../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../type-node/type-element/type-html/div/div.abstract';
 import { StylePosition } from '../../type-node/web-style.enum';
 import { ControlClassMap } from '../../constants';
 import { WebDocumentContents } from '../document/contents/contents.class';

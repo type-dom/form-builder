@@ -1,12 +1,12 @@
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { HtmlElement } from '../html-element.abstract';
+import { TypeHtml } from '../type-html.abstract';
 import { buttonStyle } from './button.const';
 import { IButtonBase } from './button.interface';
 
-export abstract class ButtonBase extends HtmlElement implements IButtonBase {
+export abstract class ButtonBase extends TypeHtml implements IButtonBase {
   tagName: 'button';
   abstract className: string;
-  abstract parent: HtmlElement;
+  abstract parent: TypeHtml;
   dom: HTMLButtonElement;
   textNode: WebTextNode;
   protected constructor() {

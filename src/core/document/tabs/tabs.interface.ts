@@ -1,4 +1,4 @@
-import { IUlBase } from '../../../type-node/type-element/html-element/ul/ul.interface';
+import { IUlBase } from '../../../type-node/type-element/type-html/ul/ul.interface';
 
 export interface IWebDocumentTabs extends IUlBase {
   className: 'WebDocumentTabs',

@@ -1,6 +1,6 @@
 import { WebDocument } from '../../../core/document/web-document.class';
 import { StylePosition } from '../../../type-node/web-style.enum';
-import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
 import { BodyWrapper } from '../body';
 
 export class BodyMainContent extends DivBase {

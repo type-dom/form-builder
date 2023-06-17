@@ -1,13 +1,13 @@
-import { HtmlElement } from '../../html-element/html-element.abstract';
-import { SvgElement } from '../svg-element.abstract';
+import { TypeHtml } from '../../type-html/type-html.abstract';
+import { TypeSvg } from '../type-svg.abstract';
 import { ISvgBase } from './svg.interface';
 
-export abstract class SvgBase extends SvgElement implements ISvgBase {
+export abstract class SvgBase extends TypeSvg implements ISvgBase {
   abstract className: string;
-  abstract parent: HtmlElement;
+  abstract parent: TypeHtml;
   tagName: 'svg';
   dom: SVGSVGElement;
-  childNodes: SvgElement[];
+  childNodes: TypeSvg[];
   width: string | number = '100%';
   height: string | number = '100%';
   protected constructor() {

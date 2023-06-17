@@ -1,8 +1,7 @@
-import { SvgElement } from '../../../type-element/svg-element/svg-element.abstract';
-import { SvgBase } from '../../../type-element/svg-element/svg/svg.abstract';
+import { TypeSvg } from '../../../type-element/type-svg/type-svg.abstract';
+import { SvgBase } from '../../../type-element/type-svg/svg/svg.abstract';
 import { ISvgPath, ISvgPathProperty } from './path.interface';
-
-export class SvgPath extends SvgElement implements ISvgPath {
+export class SvgPath extends TypeSvg implements ISvgPath {
   tagName: 'path';
   dom: SVGPathElement;
   className: 'SvgPath';

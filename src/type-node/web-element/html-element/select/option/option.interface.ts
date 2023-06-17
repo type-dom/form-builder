@@ -1,8 +1,7 @@
 import { IWebTextNode } from '../../../../web-text-node/web-text-node.interface';
-import { IHtmlElement } from '../../../../type-element/html-element/html-element.interface';
-
-export interface IWebOption extends IHtmlElement {
+import { ITypeHtml } from '../../../../type-element/type-html/type-html.interface';
+export interface IWebOption extends ITypeHtml {
   tagName: 'option',
   className: 'WebOption',
-  childNodes: (IHtmlElement | IWebTextNode)[],
+  childNodes: (ITypeHtml | IWebTextNode)[],
 }

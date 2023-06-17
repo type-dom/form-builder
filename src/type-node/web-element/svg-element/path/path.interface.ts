@@ -1,5 +1,5 @@
 import { ITypeProperty } from '../../../type-element/type-element.interface';
-import { ISvgElement } from '../../../type-element/svg-element/svg-element.interface';
+import { ITypeSvg } from '../../../type-element/type-svg/type-svg.interface';
 export interface ISvgPathProperty extends ITypeProperty {
   styleObj: {
     fill?: string; // white;
@@ -27,7 +27,7 @@ export interface ISvgPathProperty extends ITypeProperty {
  *  Z = closepath
  *  注释：以上所有命令均允许小写字母。大写表示绝对定位，小写表示相对定位。
  */
-export interface ISvgPath extends ISvgElement {
+export interface ISvgPath extends ITypeSvg {
   tagName: 'path',
   propObj: ISvgPathProperty
   className: 'SvgPath',

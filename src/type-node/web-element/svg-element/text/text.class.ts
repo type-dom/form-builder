@@ -1,9 +1,9 @@
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { SvgBase } from '../../../type-element/svg-element/svg/svg.abstract';
-import { SvgElement } from '../../../type-element/svg-element/svg-element.abstract';
+import { SvgBase } from '../../../type-element/type-svg/svg/svg.abstract';
+import { TypeSvg } from '../../../type-element/type-svg/type-svg.abstract';
 import { ISvgText, ISvgTextProperty } from './text.interface';
 
-export class SvgText extends SvgElement implements ISvgText {
+export class SvgText extends TypeSvg implements ISvgText {
   tagName: 'text';
   dom: SVGTextElement;
   className: 'SvgText';

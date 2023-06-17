@@ -1,10 +1,10 @@
 import { fromEvent } from 'rxjs';
-import { HtmlElement } from '../type-node/type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../type-node/type-element/type-html/type-html.abstract';
 import { TypeComponent } from '../type-node/type-element/type-component/type-component.abstract';
 import { Span } from '../type-node/web-element/html-element/span/span.class';
 import { WebTextNode } from '../type-node/web-text-node/web-text-node.class';
 import { TriangleSvg } from './svgs/triangle/triangle';
-export class ExpandHeading extends HtmlElement {
+export class ExpandHeading extends TypeHtml {
   tagName: 'h3';
   className: 'ExpandHeading';
   dom: HTMLHeadingElement;

@@ -1,6 +1,6 @@
-import { ISvgElement } from '../../../type-element/svg-element/svg-element.interface';
+import { ITypeSvg } from '../../../type-element/type-svg/type-svg.interface';
 
-export interface ISvgCircle extends ISvgElement {
+export interface ISvgCircle extends ITypeSvg {
   tagName: 'circle',
   className: 'SvgCircle',
   childNodes: [],

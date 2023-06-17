@@ -1,8 +1,8 @@
+import { TypeSvg } from '../../../type-element/type-svg/type-svg.abstract';
 import { SvgSvg } from '../svg/svg.class';
-import { SvgElement } from '../../../type-element/svg-element/svg-element.abstract';
 import { ISvgLine, ISvgLineProperty } from './line.interface';
 
-export class SvgLine extends SvgElement implements ISvgLine {
+export class SvgLine extends TypeSvg implements ISvgLine {
   tagName: 'line';
   className: 'SvgLine';
   dom: SVGLineElement;

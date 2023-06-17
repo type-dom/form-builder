@@ -1,7 +1,7 @@
-import { SvgElement } from '../../../type-element/svg-element/svg-element.abstract';
+import { TypeSvg } from '../../../type-element/type-svg/type-svg.abstract';
 import { ISvgEllipse, ISvgEllipseProperty } from './ellipse.interface';
 
-export class SvgEllipse extends SvgElement implements ISvgEllipse {
+export class SvgEllipse extends TypeSvg implements ISvgEllipse {
   tagName: 'ellipse';
   className: 'SvgEllipse';
   dom: SVGEllipseElement;
@@ -12,7 +12,7 @@ export class SvgEllipse extends SvgElement implements ISvgEllipse {
   rx = 0;
   ry = 0;
 
-  constructor(public parent: SvgElement) {
+  constructor(public parent: TypeSvg) {
     super();
     this.tagName = 'ellipse';
     this.className = 'SvgEllipse';

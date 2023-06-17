@@ -1,13 +1,13 @@
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
-import { HtmlElement } from '../../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { IListItem } from './list-item.interface';
 
-export class ListItem extends HtmlElement implements IListItem {
+export class ListItem extends TypeHtml implements IListItem {
   tagName: 'li';
   className: 'ListItem';
   dom: HTMLLIElement;
-  childNodes: (HtmlElement | WebTextNode)[];
-  constructor(public parent: HtmlElement) {
+  childNodes: (TypeHtml | WebTextNode)[];
+  constructor(public parent: TypeHtml) {
     super();
     this.tagName = 'li';
     this.dom = document.createElement(this.tagName);

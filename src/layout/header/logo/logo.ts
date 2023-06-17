@@ -1,11 +1,10 @@
-import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
-import { SvgElement } from '../../../type-node/type-element/svg-element/svg-element.abstract';
+import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeSvg } from '../../../type-node/type-element/type-svg/type-svg.abstract';
 import { LogoSvg } from '../../../components/svgs/logo/logo';
 import { HeaderWrapper } from '../header';
-
 export class Logo extends DivBase {
   className: 'Logo';
-  childNodes: SvgElement[];
+  childNodes: TypeSvg[];
   constructor(public parent: HeaderWrapper) {
     super();
     this.className = 'Logo';

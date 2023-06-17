@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { HtmlElement } from '../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { TableItem } from '../../../../core/controls/form-item/table-item/table-item.class';
 import { ITableConfig, ITableField } from '../../../../core/controls/complex/table/table.interface';
 import { WebControl } from '../../../../core/controls/web-control.abstract';
@@ -14,7 +14,7 @@ import { IWebTableHead } from './head/head.interface';
 import { WebTableDataCell } from './data-cell/data-cell.class';
 
 // todo 是否有选项列和操作列。
-export class WebTable extends HtmlElement implements IWebTable {
+export class WebTable extends TypeHtml implements IWebTable {
   tagName: 'table';
   className: 'WebTable';
   dom: HTMLTableElement;

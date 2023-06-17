@@ -1,6 +1,6 @@
-import { IHtmlElement } from '../../../type-element/html-element/html-element.interface';
+import { ITypeHtml } from '../../../type-element/type-html/type-html.interface';
 
-export interface ITextarea extends IHtmlElement {
+export interface ITextarea extends ITypeHtml {
   tagName: 'textarea',
   className: 'TextArea',
   childNodes: [],

@@ -1,8 +1,7 @@
-import { SvgElement } from '../../../type-element/svg-element/svg-element.abstract';
+import { TypeSvg } from '../../../type-element/type-svg/type-svg.abstract';
 import { SvgSvg } from '../svg/svg.class';
 import { ISvgRect, ISvgRectProperty } from './rect.interface';
-
-export class SvgRect extends SvgElement implements ISvgRect {
+export class SvgRect extends TypeSvg implements ISvgRect {
   tagName: 'rect';
   className: 'SvgRect';
   dom: SVGRectElement;

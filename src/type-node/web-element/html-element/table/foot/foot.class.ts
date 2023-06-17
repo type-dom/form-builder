@@ -1,13 +1,13 @@
-import { HtmlElement } from '../../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { WebTableRow } from '../row/row.class';
 import { IWebTableFoot } from './foot.interface';
 
-export class WebTableFoot extends HtmlElement implements IWebTableFoot {
+export class WebTableFoot extends TypeHtml implements IWebTableFoot {
   tagName: 'tfoot';
   className: 'WebTableFoot';
   dom: HTMLElement;
   childNodes: WebTableRow[];
-  constructor(public parent: HtmlElement) {
+  constructor(public parent: TypeHtml) {
     super();
     this.tagName = 'tfoot';
     this.dom = document.createElement(this.tagName);

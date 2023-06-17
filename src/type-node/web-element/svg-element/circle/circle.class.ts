@@ -1,8 +1,8 @@
-import { SvgElement } from '../../../type-element/svg-element/svg-element.abstract';
+import { TypeSvg } from '../../../type-element/type-svg/type-svg.abstract';
 import { SvgSvg } from '../svg/svg.class';
 import { ISvgCircle } from './circle.interface';
 
-export class SvgCircle extends SvgElement implements ISvgCircle {
+export class SvgCircle extends TypeSvg implements ISvgCircle {
   tagName: 'circle';
   className: 'SvgCircle';
   dom: SVGCircleElement;

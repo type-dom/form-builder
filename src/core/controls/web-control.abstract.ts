@@ -1,5 +1,5 @@
 import { fromEvent, Subscription } from 'rxjs';
-import { DivBase } from '../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../type-node/type-element/type-html/div/div.abstract';
 import { CheckboxOption } from '../../components/checkbox-group/checkbox-option/checkbox-option.class';
 import { RadioOption } from '../../components/radio-group/radio-option/radio-option.class';
 import { Select } from '../../type-node/web-element/html-element/select/select.class';

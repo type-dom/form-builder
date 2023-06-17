@@ -11,11 +11,11 @@ import { ControlClassMap } from '../../../../../constants';
 import { Input } from '../../input/input.class';
 import { Select } from '../../select/select.class';
 import { Textarea } from '../../textarea/textarea.class';
-import { HtmlElement } from '../../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { WebTableRow } from '../row/row.class';
 import { IWebTableDataCell } from './data-cell.interface';
 
-export class WebTableDataCell extends HtmlElement implements IWebTableDataCell {
+export class WebTableDataCell extends TypeHtml implements IWebTableDataCell {
   tagName: 'td';
   className: 'WebTableDataCell';
   dom: HTMLElement;

@@ -1,7 +1,7 @@
-import { ISvgElement } from '../../../type-element/svg-element/svg-element.interface';
+import { ITypeSvg } from '../../../type-element/type-svg/type-svg.interface';
 
-export interface ISvgSvg extends ISvgElement {
+export interface ISvgSvg extends ITypeSvg {
   tagName: 'svg',
   className: 'SvgSvg',
-  childNodes: ISvgElement[],
+  childNodes: ITypeSvg[],
 }

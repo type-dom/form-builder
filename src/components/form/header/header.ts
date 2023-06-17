@@ -1,5 +1,5 @@
 import { WebTextNode } from '../../../type-node/web-text-node/web-text-node.class';
-import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
 import { WebForm } from '../form';
 
 export class FormHeader extends DivBase {

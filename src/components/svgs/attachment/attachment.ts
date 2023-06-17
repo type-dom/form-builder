@@ -1,11 +1,10 @@
-import { SvgBase } from '../../../type-node/type-element/svg-element/svg/svg.abstract';
+import { SvgBase } from '../../../type-node/type-element/type-svg/svg/svg.abstract';
 import { SvgPath } from '../../../type-node/web-element/svg-element/path/path.class';
-import { HtmlElement } from '../../../type-node/type-element/html-element/html-element.abstract';
-
+import { TypeHtml } from '../../../type-node/type-element/type-html/type-html.abstract';
 export class AttachmentSvg extends SvgBase {
   className: 'AttachmentSvg';
   childNodes: [SvgPath];
-  constructor(public parent: HtmlElement) {
+  constructor(public parent: TypeHtml) {
     super();
     this.className = 'AttachmentSvg';
     const path = new SvgPath(this);

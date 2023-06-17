@@ -1,5 +1,5 @@
 import { WebForm } from '../form';
-import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../../type-node/type-element/type-html/div/div.abstract';
 
 // 表单主体部分的内容要另外添加。
 export class FormBody extends DivBase {

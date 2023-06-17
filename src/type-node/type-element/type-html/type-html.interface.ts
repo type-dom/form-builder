@@ -4,8 +4,8 @@
 import { IWebTextNode } from '../../web-text-node/web-text-node.interface';
 import { ITypeElement } from '../type-element.interface';
 
-export interface IHtmlElement extends ITypeElement {
+export interface ITypeHtml extends ITypeElement {
   // tagName: string;
   // className: string;
-  childNodes: Array<IHtmlElement | IWebTextNode>;// contents
+  childNodes: Array<ITypeElement | IWebTextNode>;// contents
 }

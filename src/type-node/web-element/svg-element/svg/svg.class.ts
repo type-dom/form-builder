@@ -1,11 +1,11 @@
-import { SvgBase } from '../../../type-element/svg-element/svg/svg.abstract';
-import { HtmlElement } from '../../../type-element/html-element/html-element.abstract';
+import { SvgBase } from '../../../type-element/type-svg/svg/svg.abstract';
+import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { ISvgSvg } from './svg.interface';
 
 // scalable vector graphic 可伸缩矢量图型
 export class SvgSvg extends SvgBase implements ISvgSvg {
   className: 'SvgSvg';
-  constructor(public parent: HtmlElement) {
+  constructor(public parent: TypeHtml) {
     super();
     this.className = 'SvgSvg';
   }

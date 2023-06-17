@@ -1,4 +1,4 @@
-import { DivBase } from '../../../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../../../type-node/type-element/type-html/div/div.abstract';
 import { StylePosition } from '../../../../type-node/web-style.enum';
 import { Logo } from '../logo';
 

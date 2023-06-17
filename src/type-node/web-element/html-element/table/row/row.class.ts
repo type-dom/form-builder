@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { HtmlElement } from '../../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { DeleteSvg } from '../../../../../components/svgs/delete/delete';
 import { Span } from '../../span/span.class';
 import { StylePosition } from '../../../../web-style.enum';
@@ -7,8 +7,7 @@ import { WebTableDataCell } from '../data-cell/data-cell.class';
 import { IWebTableDataCell } from '../data-cell/data-cell.interface';
 import { WebTable } from '../table.class';
 import { IWebTableRow } from './row.interface';
-
-export class WebTableRow extends HtmlElement implements IWebTableRow {
+export class WebTableRow extends TypeHtml implements IWebTableRow {
   tagName: 'tr';
   className: 'WebTableRow';
   dom: HTMLTableRowElement;

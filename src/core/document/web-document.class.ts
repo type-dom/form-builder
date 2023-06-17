@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { DivBase } from '../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../type-node/type-element/type-html/div/div.abstract';
 import { LayoutWrapper } from '../../layout/layout.class';
 import { BodyMainContent } from '../../layout/body/main-content/main-content';
 import { IOptionConfig } from '../controls/web-control.interface';

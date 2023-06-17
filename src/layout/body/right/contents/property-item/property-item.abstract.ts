@@ -6,7 +6,7 @@ import { Button } from '../../../../../type-node/web-element/html-element/button
 import { Select } from '../../../../../type-node/web-element/html-element/select/select.class';
 import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
 import { WebTextNode } from '../../../../../type-node/web-text-node/web-text-node.class';
-import { DivBase } from '../../../../../type-node/type-element/html-element/div/div.abstract';
+import { DivBase } from '../../../../../type-node/type-element/type-html/div/div.abstract';
 import { labelStyle } from '../../../../../core/controls/web-control.const';
 import { ControlProperty } from '../control-property/control-property';
 import { FormProperty } from '../form-property/form-property';

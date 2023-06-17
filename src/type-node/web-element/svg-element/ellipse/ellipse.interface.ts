@@ -1,5 +1,5 @@
 import { ITypeProperty } from '../../../type-element/type-element.interface';
-import { ISvgElement } from '../../../type-element/svg-element/svg-element.interface';
+import { ITypeSvg } from '../../../type-element/type-svg/type-svg.interface';
 /**
  * cx 属性定义圆点的 x 坐标
  * cy 属性定义圆点的 y 坐标
@@ -21,7 +21,7 @@ export interface ISvgEllipseProperty extends ITypeProperty {
     ry: number,
   }
 }
-export interface ISvgEllipse extends ISvgElement {
+export interface ISvgEllipse extends ITypeSvg {
   tagName: 'ellipse';
   className: 'SvgEllipse';
   propObj: ISvgEllipseProperty;

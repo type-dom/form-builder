@@ -1,13 +1,13 @@
-import { HtmlElement } from '../../../type-element/html-element/html-element.abstract';
+import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { IInput } from './input.interface';
 
-export class Input extends HtmlElement implements IInput {
+export class Input extends TypeHtml implements IInput {
   tagName: 'input';
   dom: HTMLInputElement;
   className: 'Input';
   childNodes: [];
   // value: string | number | boolean | undefined;
-  constructor(public parent: HtmlElement) {
+  constructor(public parent: TypeHtml) {
     super();
     this.tagName = 'input';
     this.dom = document.createElement(this.tagName);
