@@ -1,6 +1,6 @@
 export interface INodeAttr {
   name: string,
-  value: string
+  value: string | number | boolean;
 }
 export interface IComponent {
   name: string,
@@ -8,7 +8,7 @@ export interface IComponent {
 }
 export interface ITypeNode {
   nodeName: string;
-  nodeValue: string;
+  nodeValue?: string;
   parentNode: ITypeNode | null;
   childNodes: ITypeNode[];
   attributes?: INodeAttr[];

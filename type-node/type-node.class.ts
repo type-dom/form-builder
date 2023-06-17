@@ -1,17 +1,23 @@
 import { IComponent, INodeAttr, ITypeNode } from './type-node.interface';
-export abstract class TypeNode implements ITypeNode {
+export class TypeNode implements ITypeNode {
   nodeName: string;
-  nodeValue: string;
+  nodeValue: string | undefined;
   // eslint-disable-next-line no-use-before-define
   parentNode: TypeNode | null;
   // eslint-disable-next-line no-use-before-define
   childNodes: TypeNode[];
   attributes?: INodeAttr[];
-  protected constructor(nodeName: string, nodeValue: string) {
+  dom: HTMLElement | SVGElement | Text;
+  constructor(nodeName: string, nodeValue?: string) {
     this.nodeName = nodeName;
     this.nodeValue = nodeValue;
     this.parentNode = null;
     this.childNodes = [];
+    if (nodeValue !== undefined) {
+      this.dom = document.createTextNode(nodeValue);
+    } else {
+      this.dom = document.createElement(nodeName);
+    }
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
   }
   get firstChild(): TypeNode {
@@ -112,14 +118,14 @@ export abstract class TypeNode implements ITypeNode {
   }
   dump(buffer: string[]): string | undefined {
     if (this.nodeName === '#text') {
-      buffer.push(encodeToXmlString(this.nodeValue));
+      buffer.push(encodeToXmlString(this.nodeValue || ''));
       return;
     }
     buffer.push(`<${this.nodeName}`);
     if (this.attributes) {
       for (const attribute of this.attributes) {
         buffer.push(
-          ` ${attribute.name}="${encodeToXmlString(attribute.value)}"`
+          ` ${attribute.name}="${encodeToXmlString(attribute.value.toString())}"`
         );
       }
     }

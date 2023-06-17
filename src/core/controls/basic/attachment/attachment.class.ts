@@ -8,7 +8,7 @@ import { IAttachmentControl } from './attachment.interface';
 export class AttachmentControl extends WebBasicControl implements IAttachmentControl {
   className: 'AttachmentControl';
   formItem: InputItem;
-  childNodes: [InputItem]
+  childNodes: [InputItem];
   attachmentObservable: Observable<Event>;
   constructor(parent: WebPage | WebTableDataCell) {
     super(parent);

@@ -23,6 +23,7 @@ import { ConnectionControl } from './core/controls/complex/connection/connection
 import { TableControl } from './core/controls/complex/table/table.class';
 import { ITableField } from './core/controls/complex/table/table.interface';
 import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
+import { Test } from './views/test/test';
 
 export class FormEditor {
   // 光标
@@ -62,7 +63,8 @@ export class FormEditor {
     this.layout = new LayoutWrapper(this);
     this.dialog = new WebDialog(this);
     this.messageBox = new MessageBox(this);
-    this.layout.childNodes.push(this.dialog, this.messageBox);
+    const test = new Test(this);
+    this.layout.childNodes.push(this.dialog, this.messageBox, test);
     this.layout.render();
     // console.log('editorEl is ', editorEl);
     editorEl.appendChild(this.layout.dom);
