@@ -1,12 +1,12 @@
 import { TypeElement } from '../type-element.abstract';
 import { HtmlElement } from '../html-element/html-element.abstract';
 import { DivBase } from '../html-element/div/div.abstract';
-import { IWebComponent } from './web-component.interface';
+import { ITypeComponent } from './type-component.interface';
 /**
  * 组件基类
  * 子节点是 TypeElement, 不包括 WebTextNode
  */
-export abstract class WebComponent extends DivBase implements IWebComponent {
+export abstract class TypeComponent extends DivBase implements ITypeComponent {
   abstract parent: HtmlElement;
   childNodes: TypeElement[];  // 没有WebTextNode
   protected constructor() {

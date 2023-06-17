@@ -1,8 +1,8 @@
-import { WebComponent } from '../../../../../../type-node/type-element/web-component/web-component.abstract';
+import { TypeComponent } from '../../../../../../type-node/type-element/type-component/type-component.abstract';
 import { BasicMenus } from '../../../../../../core/menus/basic-menus/basic-menus';
 import { ExpandHeading } from '../../../../../../components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';
-export class BasicControlWrapper extends WebComponent {
+export class BasicControlWrapper extends TypeComponent {
   className: 'BasicControlWrapper';
   childNodes: [ExpandHeading, BasicMenus];
   basicControlMenus = new BasicMenus(this);

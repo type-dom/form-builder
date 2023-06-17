@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { HtmlElement } from '../type-node/type-element/html-element/html-element.abstract';
-import { WebComponent } from '../type-node/type-element/web-component/web-component.abstract';
+import { TypeComponent } from '../type-node/type-element/type-component/type-component.abstract';
 import { Span } from '../type-node/web-element/html-element/span/span.class';
 import { WebTextNode } from '../type-node/web-text-node/web-text-node.class';
 import { TriangleSvg } from './svgs/triangle/triangle';
@@ -11,7 +11,7 @@ export class ExpandHeading extends HtmlElement {
   childNodes: [TriangleSvg, Span];
   svg: TriangleSvg;
   title: Span;
-  constructor(public parent: WebComponent, title: string) {
+  constructor(public parent: TypeComponent, title: string) {
     super();
     this.tagName = 'h3';
     this.dom = document.createElement(this.tagName);
