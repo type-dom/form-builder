@@ -1,7 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
-import { ButtonBase } from '../../../../web-element/web-abstract/html-element/button/button.abstract';
-import { buttonStyle } from '../../../../web-element/web-abstract/html-element/button/button.const';
-import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
+import { ButtonBase } from '../../../../type-node/type-element/html-element/button/button.abstract';
+import { buttonStyle } from '../../../../type-node/type-element/html-element/button/button.const';
+import { WebTextNode } from '../../../../type-node/web-text-node/web-text-node.class';
 import { FormFooter } from '../footer';
 
 export class SubmitButton extends ButtonBase {

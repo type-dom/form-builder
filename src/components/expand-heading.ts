@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { HtmlElement } from '../web-element/web-abstract/html-element/html-element.abstract';
-import { WebComponent } from '../web-element/web-abstract/web-component/web-component.abstract';
-import { Span } from '../web-element/html-element/span/span.class';
-import { WebTextNode } from '../web-text-node/web-text-node.class';
+import { HtmlElement } from '../type-node/type-element/html-element/html-element.abstract';
+import { WebComponent } from '../type-node/type-element/web-component/web-component.abstract';
+import { Span } from '../type-node/web-element/html-element/span/span.class';
+import { WebTextNode } from '../type-node/web-text-node/web-text-node.class';
 import { TriangleSvg } from './svgs/triangle/triangle';
 export class ExpandHeading extends HtmlElement {
   tagName: 'h3';

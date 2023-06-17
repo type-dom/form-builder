@@ -1,5 +1,5 @@
-import { IWebStyle } from '../../web-element/web-style.interface';
-import { Display } from '../../web-element/web-style.enum';
+import { IWebStyle } from '../../type-node/web-style.interface';
+import { Display } from '../../type-node/web-style.enum';
 import { IOptionConfig } from './web-control.interface';
 
 export const controlStyle: Partial<IWebStyle> = {

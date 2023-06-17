@@ -1,5 +1,5 @@
-import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
-import { Display } from '../../../web-element/web-style.enum';
+import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
+import { Display } from '../../../type-node/web-style.enum';
 import { HeaderWrapper } from '../header';
 import { PreviewButton } from './preiew-button/preview-button';
 // import { SaveButton } from './save-button/save-button';

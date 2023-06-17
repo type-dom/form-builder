@@ -1,5 +1,5 @@
-import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
-import { StylePosition } from '../../web-element/web-style.enum';
+import { DivBase } from '../../type-node/type-element/html-element/div/div.abstract';
+import { StylePosition } from '../../type-node/web-style.enum';
 import { LayoutWrapper } from '../../layout/layout.class';
 import { FormHeader } from './header/header';
 import { FormBody } from './body/body';

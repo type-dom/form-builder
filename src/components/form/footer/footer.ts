@@ -1,5 +1,5 @@
 import { fromEvent, Observable } from 'rxjs';
-import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
+import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
 import { WebForm } from '../form';
 import { SubmitButton } from './submit-button/submit-button';
 

@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
+import { DivBase } from '../../type-node/type-element/html-element/div/div.abstract';
 import { LayoutWrapper } from '../../layout/layout.class';
 import { BodyMainContent } from '../../layout/body/main-content/main-content';
 import { IOptionConfig } from '../controls/web-control.interface';
@@ -7,7 +7,7 @@ import { fieldConfig } from '../controls/web-control.const';
 import { IWebDocument } from './web-document.interface';
 import { WebDocumentContents } from './contents/contents.class';
 import { WebDocumentTabs } from './tabs/tabs.class';
-import { toJSON } from '../../web-element/web-element.function';
+import { toJSON } from '../../type-node/type-element/type-element.function';
 import { IWebPage } from '../page/web-page.interface';
 import { IWebDocumentContents } from './contents/contents.interface';
 

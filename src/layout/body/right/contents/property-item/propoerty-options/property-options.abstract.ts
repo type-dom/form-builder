@@ -1,10 +1,10 @@
 import { fromEvent, Observable } from 'rxjs';
-import { Label } from '../../../../../../web-element/html-element/label/label.class';
-import { Division } from '../../../../../../web-element/html-element/division/division.class';
-import { Select } from '../../../../../../web-element/html-element/select/select.class';
-import { Button } from '../../../../../../web-element/html-element/button/button.class';
-import { Display } from '../../../../../../web-element/web-style.enum';
-import { WebTextNode } from '../../../../../../web-text-node/web-text-node.class';
+import { Label } from '../../../../../../type-node/web-element/html-element/label/label.class';
+import { Division } from '../../../../../../type-node/web-element/html-element/division/division.class';
+import { Select } from '../../../../../../type-node/web-element/html-element/select/select.class';
+import { Button } from '../../../../../../type-node/web-element/html-element/button/button.class';
+import { Display } from '../../../../../../type-node/web-style.enum';
+import { WebTextNode } from '../../../../../../type-node/web-text-node/web-text-node.class';
 import { WebControl } from '../../../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../../../core/controls/web-control.const';
 import { IOption, IOptionConfig } from '../../../../../../core/controls/web-control.interface';

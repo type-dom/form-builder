@@ -1,4 +1,4 @@
-import { DivBase } from '../../../../web-element/web-abstract/html-element/div/div.abstract';
+import { DivBase } from '../../../../type-node/type-element/html-element/div/div.abstract';
 import { OverlayContainer } from '../container';
 import { CancelButton } from './cancel-button/cancel-button';
 import { ConfirmButton } from './confirm-button/confirm-button';

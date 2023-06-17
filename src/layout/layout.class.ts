@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { FormEditor } from '../form-editor';
-import { DivBase } from '../web-element/web-abstract/html-element/div/div.abstract';
+import { DivBase } from '../type-node/type-element/html-element/div/div.abstract';
 import { WebDocument } from '../core/document/web-document.class';
 import { WebForm } from '../components/form/form';
 import { HeaderWrapper } from './header/header';

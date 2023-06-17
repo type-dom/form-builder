@@ -1,5 +1,5 @@
-import { WebTextNode } from '../../web-text-node/web-text-node.class';
-import { Span } from '../../web-element/html-element/span/span.class';
+import { WebTextNode } from '../../type-node/web-text-node/web-text-node.class';
+import { Span } from '../../type-node/web-element/html-element/span/span.class';
 import { FormEditor } from '../../form-editor';
 import { Overlay } from '../overlay/overlay.abstract';
 

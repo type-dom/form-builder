@@ -1,5 +1,5 @@
-import { HtmlElement } from '../../web-element/web-abstract/html-element/html-element.abstract';
-import { Display } from '../../web-element/web-style.enum';
+import { HtmlElement } from '../../type-node/type-element/html-element/html-element.abstract';
+import { Display } from '../../type-node/web-style.enum';
 import { LayoutWrapper } from '../layout.class';
 import { BodyLeft } from './left/left';
 import { BodyRight } from './right/right';

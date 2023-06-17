@@ -1,5 +1,5 @@
-import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
-import { SvgElement } from '../../../web-element/web-abstract/svg-element/svg-element.abstract';
+import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
+import { SvgElement } from '../../../type-node/type-element/svg-element/svg-element.abstract';
 import { LogoSvg } from '../../../components/svgs/logo/logo';
 import { HeaderWrapper } from '../header';
 

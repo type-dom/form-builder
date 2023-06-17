@@ -1,5 +1,5 @@
-import { Display } from '../../../../../web-element/web-style.enum';
-import { DivBase } from '../../../../../web-element/web-abstract/html-element/div/div.abstract';
+import { Display } from '../../../../../type-node/web-style.enum';
+import { DivBase } from '../../../../../type-node/type-element/html-element/div/div.abstract';
 import { ReadonlyProperty } from '../control-property/readonly/control-readonly';
 import { MinValueProperty } from '../control-property/min-value/control-min-value';
 import { MaxValueProperty } from '../control-property/max-value/control-max-value';

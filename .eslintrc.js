@@ -457,17 +457,14 @@ module.exports = {
     //   }
     // ],
     // 变量必须先定义后使用
-    'no-use-before-define': [
-      'error',
-      {
-        functions: false,
-        classes: false,
-        variables: false
-      }
-    ],
-
-
-
+    // 'no-use-before-define': [
+    //   'error',
+    //   {
+    //     functions: false,
+    //     classes: false,
+    //     variables: true
+    //   }
+    // ],
     //
     //
     // Node.js 和 CommonJS

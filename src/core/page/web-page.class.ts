@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
-import { StylePosition } from '../../web-element/web-style.enum';
+import { DivBase } from '../../type-node/type-element/html-element/div/div.abstract';
+import { StylePosition } from '../../type-node/web-style.enum';
 import { ControlClassMap } from '../../constants';
 import { WebDocumentContents } from '../document/contents/contents.class';
 import { WebControl } from '../controls/web-control.abstract';

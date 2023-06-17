@@ -1,4 +1,4 @@
-import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
+import { DivBase } from '../../type-node/type-element/html-element/div/div.abstract';
 import { RadioItem } from '../../core/controls/form-item/radio-item/radio-item.class';
 import { RadioOption } from './radio-option/radio-option.class';
 import { IRadioGroup } from './radio-group.interface';

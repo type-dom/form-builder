@@ -1,8 +1,8 @@
-import { WebElement } from '../../../../../web-element/web-element.abstract';
-import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
+import { TypeElement } from '../../../../../type-node/type-element/type-element.abstract';
+import { WebTextNode } from '../../../../../type-node/web-text-node/web-text-node.class';
 import { OverlayHeader } from '../header';
 
-export class OverlayTitle extends WebElement {
+export class OverlayTitle extends TypeElement {
   tagName: 'span';
   className: 'OverlayTitle';
   childNodes: WebTextNode[];

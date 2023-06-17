@@ -1,6 +1,6 @@
-import { IInput } from '../../../web-element/html-element/input/input.interface';
-import { IWebTextNode } from '../../../web-text-node/web-text-node.interface';
-import { ISpanBase } from '../../../web-element/web-abstract/html-element/span/span.interface';
+import { IInput } from '../../../type-node/web-element/html-element/input/input.interface';
+import { IWebTextNode } from '../../../type-node/web-text-node/web-text-node.interface';
+import { ISpanBase } from '../../../type-node/type-element/html-element/span/span.interface';
 
 export interface IRadioOption extends ISpanBase {
   className: 'RadioOption',

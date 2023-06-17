@@ -1,4 +1,4 @@
-import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
+import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
 import { BodyWrapper } from '../body';
 import { RightContents } from './contents/contents';
 import { BodyRightTabs } from './tabs/tabs';

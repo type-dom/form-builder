@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { SpanBase } from '../../../web-element/web-abstract/html-element/span/span.abstract';
-import { Input } from '../../../web-element/html-element/input/input.class';
-import { WebTextNode } from '../../../web-text-node/web-text-node.class';
+import { SpanBase } from '../../../type-node/type-element/html-element/span/span.abstract';
+import { Input } from '../../../type-node/web-element/html-element/input/input.class';
+import { WebTextNode } from '../../../type-node/web-text-node/web-text-node.class';
 import { CheckboxGroup } from '../checkbox-group.class';
 import { ICheckboxOption } from './checkbox-option.interface';
 

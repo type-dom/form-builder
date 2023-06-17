@@ -1,6 +1,6 @@
-import { HtmlElement } from '../../../web-element/web-abstract/html-element/html-element.abstract';
-import { SvgBase } from '../../../web-element/web-abstract/svg-element/svg/svg.abstract';
-import { SvgPath } from '../../../web-element/svg-element/path/path.class';
+import { HtmlElement } from '../../../type-node/type-element/html-element/html-element.abstract';
+import { SvgBase } from '../../../type-node/type-element/svg-element/svg/svg.abstract';
+import { SvgPath } from '../../../type-node/web-element/svg-element/path/path.class';
 
 export class AddSvg extends SvgBase {
   className: 'AddSvg';

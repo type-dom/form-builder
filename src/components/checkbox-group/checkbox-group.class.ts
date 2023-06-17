@@ -1,5 +1,5 @@
-import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
-import { HtmlElement } from '../../web-element/web-abstract/html-element/html-element.abstract';
+import { DivBase } from '../../type-node/type-element/html-element/div/div.abstract';
+import { HtmlElement } from '../../type-node/type-element/html-element/html-element.abstract';
 import { IOption } from '../../core/controls/web-control.interface';
 import { CheckboxOption } from './checkbox-option/checkbox-option.class';
 import { ICheckboxGroup } from './checkbox-group.interface';

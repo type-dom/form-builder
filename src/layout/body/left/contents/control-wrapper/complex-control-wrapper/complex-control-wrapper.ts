@@ -1,4 +1,4 @@
-import { WebComponent } from '../../../../../../web-element/web-abstract/web-component/web-component.abstract';
+import { WebComponent } from '../../../../../../type-node/type-element/web-component/web-component.abstract';
 import { ComplexMenus } from '../../../../../../core/menus/complex-menus/complex-menus';
 import { ExpandHeading } from '../../../../../../components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';

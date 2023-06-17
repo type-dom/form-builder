@@ -1,4 +1,4 @@
-import { IDivBase } from '../../web-element/web-abstract/html-element/div/div.interface';
+import { IDivBase } from '../../type-node/type-element/html-element/div/div.interface';
 import { AttachmentControl } from './basic/attachment/attachment.class';
 import { DateControl } from './basic/date/date.class';
 import { MultilineInputControl } from './basic/multiline-input/multiline-input.class';

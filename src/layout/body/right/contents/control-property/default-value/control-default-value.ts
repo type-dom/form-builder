@@ -2,7 +2,7 @@ import { fromEvent, Observable } from 'rxjs';
 import { ThreeDotsSvg } from '../../../../../../components/svgs/three-dots/three-dots';
 import { SingleInputControl } from '../../../../../../core/controls/basic/single-input/single-input.class';
 import { MultilineInputControl } from '../../../../../../core/controls/basic/multiline-input/multiline-input.class';
-import { WebTextNode } from '../../../../../../web-text-node/web-text-node.class';
+import { WebTextNode } from '../../../../../../type-node/web-text-node/web-text-node.class';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';

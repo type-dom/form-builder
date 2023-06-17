@@ -1,4 +1,4 @@
-import { DivBase } from '../../../../web-element/web-abstract/html-element/div/div.abstract';
+import { DivBase } from '../../../../type-node/type-element/html-element/div/div.abstract';
 import { BodyRight } from '../right';
 import { ControlProperty } from './control-property/control-property';
 import { FormProperty } from './form-property/form-property';

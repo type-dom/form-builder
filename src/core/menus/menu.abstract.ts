@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { DivBase } from '../../web-element/web-abstract/html-element/div/div.abstract';
-import { SvgBase } from '../../web-element/web-abstract/svg-element/svg/svg.abstract';
-import { Span } from '../../web-element/html-element/span/span.class';
-import { WebTextNode } from '../../web-text-node/web-text-node.class';
+import { DivBase } from '../../type-node/type-element/html-element/div/div.abstract';
+import { SvgBase } from '../../type-node/type-element/svg-element/svg/svg.abstract';
+import { Span } from '../../type-node/web-element/html-element/span/span.class';
+import { WebTextNode } from '../../type-node/web-text-node/web-text-node.class';
 import { ControlClass } from '../controls/web-control.interface';
 import { TableControl } from '../controls/complex/table/table.class';
 import { labelStyle } from '../controls/web-control.const';

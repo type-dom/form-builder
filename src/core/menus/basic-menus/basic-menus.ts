@@ -1,6 +1,6 @@
 import { BasicControlWrapper } from '../../../layout/body/left/contents/control-wrapper/basic-control-wrapper/basic-control-wrapper';
-import { DivBase } from '../../../web-element/web-abstract/html-element/div/div.abstract';
-import { Display } from '../../../web-element/web-style.enum';
+import { DivBase } from '../../../type-node/type-element/html-element/div/div.abstract';
+import { Display } from '../../../type-node/web-style.enum';
 import { ControlMenu } from '../menu.abstract';
 import { NumericalMenu } from './numerical/numerical-menu';
 import { SingleInputMenu } from './single-input/single-input-menu';

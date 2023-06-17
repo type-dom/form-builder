@@ -1,10 +1,10 @@
 import { fromEvent } from 'rxjs';
-import { UlBase } from '../../../web-element/web-abstract/html-element/ul/ul.abstract';
-import { ListItem } from '../../../web-element/html-element/unordered-list/list-item/list-item.class';
-import { IWebStyle } from '../../../web-element/web-style.interface';
-import { Display } from '../../../web-element/web-style.enum';
-import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { IWebTextNode } from '../../../web-text-node/web-text-node.interface';
+import { UlBase } from '../../../type-node/type-element/html-element/ul/ul.abstract';
+import { ListItem } from '../../../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
+import { IWebStyle } from '../../../type-node/web-style.interface';
+import { Display } from '../../../type-node/web-style.enum';
+import { WebTextNode } from '../../../type-node/web-text-node/web-text-node.class';
+import { IWebTextNode } from '../../../type-node/web-text-node/web-text-node.interface';
 import { WebDocument } from '../web-document.class';
 import { IWebDocumentTabs } from './tabs.interface';
 
