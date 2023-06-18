@@ -3,7 +3,6 @@
  */
 import { ITypeNode } from '../type-node.interface';
 import { IWebStyle } from '../web-style.interface';
-import { IWebTextNode } from '../web-text-node/web-text-node.interface';
 import { Button } from '../web-element/html-element/button/button.class';
 import { Division } from '../web-element/html-element/division/division.class';
 import { Heading } from '../web-element/html-element/heading/heading.class';

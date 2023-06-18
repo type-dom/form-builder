@@ -46,6 +46,7 @@ function encodeToDomString(str: string) {
  * abstract syntax tree 抽象语法树 抽象节点类
  */
 export abstract class TypeNode implements ITypeNode {
+  abstract className?: string;
   abstract dom: HTMLElement | SVGElement | Text;
   nodeName: string;
   nodeValue?: string | number | boolean;
