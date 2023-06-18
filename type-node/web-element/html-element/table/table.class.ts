@@ -62,7 +62,7 @@ export class WebTable extends TypeHtml implements IWebTable {
     tableHead.childNodes.forEach((th, index) => {
       const field: ITableField = {} as ITableField;
       field.name = tableHead.childNodes[index].attrObj.name as string;
-      field.label = tableHead.childNodes[index].childNodes[0].text;
+      field.label = tableHead.childNodes[index].childNodes[0].nodeValue;
       tableHeader.push(field);
     });
     return tableHeader;
@@ -170,7 +170,7 @@ export class WebTable extends TypeHtml implements IWebTable {
         if (td.control instanceof WebControl) {
           td.control.setValue(trJson[this.tableHeader[index].name] || '');
         } else if (td.control instanceof WebTextNode) {
-          td.control.text = trJson[this.tableHeader[index].name] || '';
+          td.control.nodeValue = trJson[this.tableHeader[index].name] || '';
         }
       });
       this.appendChild(tableRow);

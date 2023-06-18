@@ -65,7 +65,8 @@ export const formJson: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '首k页'
+              'nodeName': '#text',
+              'nodeValue': '首k页',
             }
           ]
         },
@@ -98,7 +99,8 @@ export const formJson: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '第2kk页'
+              'nodeName': '#text',
+              'nodeValue': '第2kk页'
             }
           ]
         },
@@ -131,7 +133,8 @@ export const formJson: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '第3kkk页'
+              'nodeName': '#text',
+              'nodeValue': '第3kkk页'
             }
           ]
         }
@@ -233,7 +236,8 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '单选'
+                          'nodeName': '#text',
+                          'nodeValue': '单选'
                         }
                       ]
                     },
@@ -291,7 +295,8 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
@@ -320,7 +325,8 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
@@ -349,7 +355,8 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
@@ -460,7 +467,8 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '复选'
+                          'nodeName': '#text',
+                          'nodeValue': '复选'
                         }
                       ]
                     },
@@ -518,7 +526,8 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
@@ -547,7 +556,8 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
@@ -576,7 +586,8 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
@@ -687,7 +698,8 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '下拉选择框'
+                          'nodeName': '#text',
+                          'nodeValue': '下拉选择框'
                         }
                       ]
                     },
@@ -735,7 +747,8 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '请选择'
+                              'nodeName': '#text',
+                              'nodeValue': '请选择'
                             }
                           ]
                         },
@@ -753,7 +766,8 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
@@ -771,7 +785,8 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
@@ -789,7 +804,8 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
@@ -899,7 +915,8 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '附件'
+                          'nodeName': '#text',
+                          'nodeValue': '附件'
                         }
                       ]
                     },
@@ -1068,7 +1085,8 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '关联选项'
+                          'nodeName': '#text',
+                          'nodeValue': '关联选项'
                         }
                       ]
                     },
@@ -1206,7 +1224,8 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '表格名称'
+                          'nodeName': '#text',
+                          'nodeValue': '表格名称'
                         }
                       ]
                     },
@@ -1245,7 +1264,8 @@ export const formJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段3-1'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段3-1'
                                 }
                               ]
                             },
@@ -1261,7 +1281,8 @@ export const formJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段3-2'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段3-2'
                                 }
                               ]
                             },
@@ -1277,7 +1298,8 @@ export const formJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段3-3'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段3-3'
                                 }
                               ]
                             }
@@ -1347,7 +1369,8 @@ export const formJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -1395,7 +1418,8 @@ export const formJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -1413,7 +1437,8 @@ export const formJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
@@ -1431,7 +1456,8 @@ export const formJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
@@ -1449,7 +1475,8 @@ export const formJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
@@ -1558,7 +1585,8 @@ export const formJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单选'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单选'
                                             }
                                           ]
                                         },
@@ -1616,7 +1644,8 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
@@ -1645,7 +1674,8 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
@@ -1674,7 +1704,8 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
@@ -1783,7 +1814,8 @@ export const formJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '复选'
+                                              'nodeName': '#text',
+                                              'nodeValue': '复选'
                                             }
                                           ]
                                         },
@@ -1841,7 +1873,8 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
@@ -1870,7 +1903,8 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
@@ -1899,7 +1933,8 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
@@ -2103,7 +2138,8 @@ export const tableJson: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '首页'
+              'nodeName': '#text',
+              'nodeValue': '首页'
             }
           ]
         }
@@ -2201,7 +2237,8 @@ export const tableJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '表格名称'
+                          'nodeName': '#text',
+                          'nodeValue': '表格名称'
                         }
                       ]
                     },
@@ -2240,7 +2277,8 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段1-1'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段1-1'
                                 }
                               ]
                             },
@@ -2256,7 +2294,8 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段1-2'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段1-2'
                                 }
                               ]
                             },
@@ -2272,7 +2311,8 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段1-3'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段1-3'
                                 }
                               ]
                             }
@@ -2345,7 +2385,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -2392,7 +2433,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -2411,7 +2453,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
@@ -2429,7 +2472,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
@@ -2447,7 +2491,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
@@ -2557,7 +2602,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -2604,7 +2650,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -2623,7 +2670,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
@@ -2641,7 +2689,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
@@ -2659,7 +2708,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
@@ -2768,7 +2818,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单行输入'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单行输入'
                                             }
                                           ]
                                         },
@@ -2920,7 +2971,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -2967,7 +3019,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -2985,7 +3038,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
@@ -3004,7 +3058,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
@@ -3022,7 +3077,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
@@ -3132,7 +3188,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -3179,7 +3236,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -3197,7 +3255,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
@@ -3216,7 +3275,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
@@ -3234,7 +3294,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
@@ -3343,7 +3404,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单行输入'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单行输入'
                                             }
                                           ]
                                         },
@@ -3495,7 +3557,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -3542,7 +3605,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -3560,7 +3624,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
@@ -3578,7 +3643,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
@@ -3597,7 +3663,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
@@ -3707,7 +3774,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -3754,7 +3822,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -3772,7 +3841,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
@@ -3790,7 +3860,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
@@ -3809,7 +3880,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
@@ -3918,7 +3990,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单行输入'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单行输入'
                                             }
                                           ]
                                         },
@@ -4070,7 +4143,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -4118,7 +4192,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -4136,7 +4211,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
@@ -4154,7 +4230,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
@@ -4172,7 +4249,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
@@ -4282,7 +4360,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -4330,7 +4409,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -4348,7 +4428,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
@@ -4366,7 +4447,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
@@ -4384,7 +4466,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
@@ -4493,7 +4576,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单行输入'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单行输入'
                                             }
                                           ]
                                         },
@@ -4682,7 +4766,8 @@ export const tableJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '表格名称'
+                          'nodeName': '#text',
+                          'nodeValue': '表格名称'
                         }
                       ]
                     },
@@ -4721,7 +4806,8 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段2-1'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段2-1'
                                 }
                               ]
                             },
@@ -4737,7 +4823,8 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段2-2'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段2-2'
                                 }
                               ]
                             },
@@ -4753,7 +4840,8 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段2-3'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段2-3'
                                 }
                               ]
                             }
@@ -4826,7 +4914,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
@@ -4874,7 +4963,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
@@ -4892,7 +4982,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
@@ -4910,7 +5001,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
@@ -4928,7 +5020,8 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
@@ -5038,7 +5131,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单选'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单选'
                                             }
                                           ]
                                         },
@@ -5096,7 +5190,8 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
@@ -5125,7 +5220,8 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
@@ -5154,7 +5250,8 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
@@ -5264,7 +5361,8 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '复选'
+                                              'nodeName': '#text',
+                                              'nodeValue': '复选'
                                             }
                                           ]
                                         },
@@ -5322,7 +5420,8 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项三/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项三/1'
                                                 }
                                               ]
                                             },
@@ -5351,7 +5450,8 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项三/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项三/2'
                                                 }
                                               ]
                                             },
@@ -5380,7 +5480,8 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项三/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项三/3'
                                                 }
                                               ]
                                             }
@@ -5570,7 +5671,8 @@ export const oldFormJson: IWebDocument = {
       },
       'childNodes': [{
         'className': 'WebTextNode',
-        'text': '首页'
+        'nodeName': '#text',
+        'nodeValue': '首页'
       }]
     }]
   }, {
@@ -5658,7 +5760,8 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': [{
                 'className': 'WebTextNode',
-                'text': '名称'
+                'nodeName': '#text',
+                'nodeValue': '名称'
               }]
             }, {
               'tagName': 'input',
@@ -5779,7 +5882,8 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': [{
                 'className': 'WebTextNode',
-                'text': '理由'
+                'nodeName': '#text',
+                'nodeValue': '理由'
               }]
             }, {
               'tagName': 'input',
@@ -5900,7 +6004,8 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': [{
                 'className': 'WebTextNode',
-                'text': '日期'
+                'nodeName': '#text',
+                'nodeValue': '日期'
               }]
             }, {
               'tagName': 'input',
@@ -6021,7 +6126,8 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': [{
                 'className': 'WebTextNode',
-                'text': '状态'
+                'nodeName': '#text',
+                'nodeValue': '状态'
               }]
             }, {
               'tagName': 'input',
@@ -6159,7 +6265,8 @@ export const testJson1: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '首页'
+              'nodeName': '#text',
+              'nodeValue': '首页'
             }
           ]
         },
@@ -6191,7 +6298,8 @@ export const testJson1: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '第2页'
+              'nodeName': '#text',
+              'nodeValue': '第2页'
             }
           ]
         }
@@ -6292,7 +6400,8 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '单选'
+                          'nodeName': '#text',
+                          'nodeValue': '单选'
                         }
                       ]
                     },
@@ -6350,7 +6459,8 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
@@ -6379,7 +6489,8 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
@@ -6408,7 +6519,8 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
@@ -6518,7 +6630,8 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '复选'
+                          'nodeName': '#text',
+                          'nodeValue': '复选'
                         }
                       ]
                     },
@@ -6576,7 +6689,8 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
@@ -6605,7 +6719,8 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
@@ -6634,7 +6749,8 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
@@ -6744,7 +6860,8 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '下拉选择框'
+                          'nodeName': '#text',
+                          'nodeValue': '下拉选择框'
                         }
                       ]
                     },
@@ -6792,7 +6909,8 @@ export const testJson1: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '请选择'
+                              'nodeName': '#text',
+                              'nodeValue': '请选择'
                             }
                           ]
                         },
@@ -6810,7 +6928,8 @@ export const testJson1: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
@@ -6828,7 +6947,8 @@ export const testJson1: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
@@ -6846,7 +6966,8 @@ export const testJson1: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
@@ -6955,7 +7076,8 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '附件'
+                          'nodeName': '#text',
+                          'nodeValue': '附件'
                         }
                       ]
                     },
@@ -7122,7 +7244,8 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '关联选项'
+                          'nodeName': '#text',
+                          'nodeValue': '关联选项'
                         }
                       ]
                     },
@@ -7358,7 +7481,8 @@ export const taskJson: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '首页'
+              'nodeName': '#text',
+              'nodeValue': '首页'
             }
           ]
         }
@@ -7457,7 +7581,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务类型'
+                          'nodeName': '#text',
+                          'nodeValue': '任务类型'
                         }
                       ]
                     },
@@ -7517,7 +7642,8 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
@@ -7548,7 +7674,8 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
@@ -7579,7 +7706,8 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
@@ -7687,7 +7815,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务名称'
+                          'nodeName': '#text',
+                          'nodeValue': '任务名称'
                         }
                       ]
                     },
@@ -7824,7 +7953,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务编号'
+                          'nodeName': '#text',
+                          'nodeValue': '任务编号'
                         }
                       ]
                     },
@@ -7962,7 +8092,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': 'PDT归属'
+                          'nodeName': '#text',
+                          'nodeValue': 'PDT归属'
                         }
                       ]
                     },
@@ -8022,7 +8153,8 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
@@ -8053,7 +8185,8 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
@@ -8084,7 +8217,8 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
@@ -8193,7 +8327,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '片区归属'
+                          'nodeName': '#text',
+                          'nodeValue': '片区归属'
                         }
                       ]
                     },
@@ -8253,7 +8388,8 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
@@ -8284,7 +8420,8 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
@@ -8315,7 +8452,8 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
@@ -8423,7 +8561,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务下达人'
+                          'nodeName': '#text',
+                          'nodeValue': '任务下达人'
                         }
                       ]
                     },
@@ -8560,7 +8699,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务接收人'
+                          'nodeName': '#text',
+                          'nodeValue': '任务接收人'
                         }
                       ]
                     },
@@ -8697,7 +8837,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务背景'
+                          'nodeName': '#text',
+                          'nodeValue': '任务背景'
                         }
                       ]
                     },
@@ -8834,7 +8975,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务内容'
+                          'nodeName': '#text',
+                          'nodeValue': '任务内容'
                         }
                       ]
                     },
@@ -8971,7 +9113,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务完成标准'
+                          'nodeName': '#text',
+                          'nodeValue': '任务完成标准'
                         }
                       ]
                     },
@@ -9108,7 +9251,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务输出物'
+                          'nodeName': '#text',
+                          'nodeValue': '任务输出物'
                         }
                       ]
                     },
@@ -9245,7 +9389,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '计划开始日期'
+                          'nodeName': '#text',
+                          'nodeValue': '计划开始日期'
                         }
                       ]
                     },
@@ -9382,7 +9527,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '计划完成日期'
+                          'nodeName': '#text',
+                          'nodeValue': '计划完成日期'
                         }
                       ]
                     },
@@ -9520,7 +9666,8 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '计划工时'
+                          'nodeName': '#text',
+                          'nodeValue': '计划工时'
                         }
                       ]
                     },

@@ -22,9 +22,9 @@ export class Label extends TypeHtml implements ILabel {
     this.setPropObj(labelLiteral.propObj);
     for (const idx in labelLiteral.childNodes) {
       if (this.childNodes[idx]) {
-        this.childNodes[0].setText(labelLiteral.childNodes[0].text);
+        this.childNodes[0].setText(labelLiteral.childNodes[0].nodeValue);
       } else {
-        const child = new WebTextNode(this, labelLiteral.childNodes[0].text);
+        const child = new WebTextNode(this, labelLiteral.childNodes[0].nodeValue);
         this.appendChild(child);
       }
     }

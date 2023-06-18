@@ -150,13 +150,13 @@ export class WebDocumentTabs extends UlBase {
       // 判断对应的子对象是否存在，
       if (this.childNodes[index]) {
         if (index < literal.childNodes.length) {
-          (this.childNodes[index].childNodes[0] as WebTextNode).setText((liJson.childNodes[0] as IWebTextNode).text);
+          (this.childNodes[index].childNodes[0] as WebTextNode).setText((liJson.childNodes[0] as IWebTextNode).nodeValue);
         }
       } else { // 如果不存在，
         // 要创建子节点
         const liObj = new ListItem(this);
         liObj.addStyleObj(Object.assign({}, this.liStyle));
-        const text = (liJson.childNodes[0] as IWebTextNode).text;
+        const text = (liJson.childNodes[0] as IWebTextNode).nodeValue;
         const textNode = new WebTextNode(liObj, text);
         liObj.addChild(textNode);
         this.appendChild(liObj);

@@ -75,7 +75,8 @@ export function toJSON(element: TypeElement): ITypeElement {
         // }
         return {
           className: child.className,
-          text: child.text, // textContent
+          nodeName: '#text',
+          nodeValue: child.nodeValue, // textContent
         } as IWebTextNode;
       }
     })

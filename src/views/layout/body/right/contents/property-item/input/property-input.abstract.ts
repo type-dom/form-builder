@@ -45,7 +45,7 @@ export abstract class PropertyInput extends PropertyItem {
     this.content.setAttribute('placeholder', placeholder);
   }
 
-  resetInputValue(value: string | number = ''): void {
+  resetInputValue(value: string | number | boolean = ''): void {
     this.content.setAttribute('value', value);
     this.content.dom.value = String(value);
   }

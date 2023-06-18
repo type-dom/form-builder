@@ -48,18 +48,18 @@ function encodeToDomString(str: string) {
 export abstract class TypeNode implements ITypeNode {
   dom: HTMLElement | SVGElement | Text;
   nodeName: string;
-  nodeValue?: string;
+  nodeValue?: string | number | boolean;
   // eslint-disable-next-line no-use-before-define
   parentNode: TypeNode | null;
   // eslint-disable-next-line no-use-before-define
   childNodes: TypeNode[];
   attributes: INodeAttr[];
-  protected constructor(nodeName: string, nodeValue?: string) {
+  protected constructor(nodeName: string, nodeValue?: string | number | boolean) {
     this.nodeName = nodeName;
     this.nodeValue = nodeValue;
     this.parentNode = null;
     if (this.nodeName === '#text') {
-      this.dom = document.createTextNode(this.nodeValue || '');
+      this.dom = document.createTextNode(this.nodeValue?.toString() || '');
     } else {
       this.dom = document.createElement(this.nodeName);
     }
@@ -81,7 +81,7 @@ export abstract class TypeNode implements ITypeNode {
     }
     return childNodes[index + 1];
   }
-  get textContent(): string {
+  get textContent(): string | number | boolean {
     if (!this.childNodes) {
       return this.nodeValue || '';
     }
@@ -165,7 +165,7 @@ export abstract class TypeNode implements ITypeNode {
   }
   dump(buffer: string[]): void {
     if (this.nodeName === '#text') {
-      buffer.push(encodeToDomString(this.nodeValue || ''));
+      buffer.push(encodeToDomString(this.nodeValue?.toString() || ''));
       return;
     }
     buffer.push(`<${this.nodeName}`);
@@ -183,7 +183,7 @@ export abstract class TypeNode implements ITypeNode {
       }
       buffer.push(`</${this.nodeName}>`);
     } else if (this.nodeValue) {
-      buffer.push(`>${encodeToDomString(this.nodeValue)}</${this.nodeName}>`);
+      buffer.push(`>${encodeToDomString(this.nodeValue.toString())}</${this.nodeName}>`);
     } else {
       buffer.push('/>');
     }

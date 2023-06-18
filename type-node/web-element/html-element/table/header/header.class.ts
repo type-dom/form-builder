@@ -24,10 +24,10 @@ export class WebTableHeader extends TypeHtml implements IWebTableHeader {
     }
     thLiteral.childNodes.forEach((textNode, index) => {
       if (this.childNodes[index]) {
-        this.childNodes[index].setText(textNode.text);
+        this.childNodes[index].setText(textNode.nodeValue);
       } else {
         const textObj = new WebTextNode(this);
-        textObj.setText(textNode.text);
+        textObj.setText(textNode.nodeValue);
         this.appendChild(textObj);
       }
     });

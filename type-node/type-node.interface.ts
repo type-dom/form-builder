@@ -8,8 +8,8 @@ export interface IComponent {
 }
 export interface ITypeNode {
   nodeName: string;
-  nodeValue?: string;
-  parentNode: ITypeNode | null;
-  childNodes: ITypeNode[];
+  nodeValue?: string | number | boolean;
+  parentNode?: ITypeNode | null;
+  childNodes?: ITypeNode[];
   attributes?: INodeAttr[];
 }

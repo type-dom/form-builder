@@ -47,11 +47,11 @@ export class WebTableDataCell extends TypeHtml implements IWebTableDataCell {
     this.initEvents();
   }
 
-  get value(): string {
+  get value(): string | number | boolean {
     if (this.control instanceof WebControl) {
       return (this.control.formItem.itemContent as (Input | Textarea | Select | RadioGroup | CheckboxGroup)).value as string;
     } else {
-      return this.control.text;
+      return this.control.nodeValue;
     }
   }
   // 注意： 这里没有对单元格重新渲染
@@ -82,10 +82,10 @@ export class WebTableDataCell extends TypeHtml implements IWebTableDataCell {
     const controlLiteral = tdLiteral.childNodes[0];
     if (controlLiteral.className === 'WebTextNode') {
       if (this.control instanceof WebTextNode) {
-        this.control.setText((controlLiteral as IWebTextNode).text);
+        this.control.setText((controlLiteral as IWebTextNode).nodeValue);
       } else {
         console.error('单元格的字面量和控件不一致');
-        this.control = new WebTextNode(this, (controlLiteral as IWebTextNode).text);
+        this.control = new WebTextNode(this, (controlLiteral as IWebTextNode).nodeValue);
         this.childNodes = [this.control];
         this.control.render();
       }

@@ -7,22 +7,28 @@
  * text-run下，在选中时，生成新的text节点。 但背景颜色怎么设置？ 自带的选中？
  *
  */
+import { TypeNode } from '../type-node.class';
 import { TypeElement } from '../type-element/type-element.abstract';
 import { IWebTextNode } from './web-text-node.interface';
-export class WebTextNode implements IWebTextNode {
+export class WebTextNode extends TypeNode implements IWebTextNode {
   className: 'WebTextNode';
   // childNodes: [string];
-  text: string
+  // nodeName: '#text';
+  nodeValue: string;
+  // text: string;
   dom: Text;
   /**
    * @param parent
    * @param text
    */
   constructor(public parent: TypeElement, text = '') { // \u200c
+    super('#text', text);
     this.className = 'WebTextNode';
+    // this.nodeName = '#text';
+    // this.nodeValue = text;
     // this.childNodes = [text];
-    this.text = text;
-    this.dom = document.createTextNode(text);
+    this.nodeValue = text;
+    this.dom = document.createTextNode(text.toString());
   }
   // get textContentLength(): number {
   //   return this.textContent.length;
@@ -34,16 +40,16 @@ export class WebTextNode implements IWebTextNode {
   }
   // todo delete
   // get textContent(): string {
-  //   return this.text;
+  //   return this.nodeValue;
   // }
   get length(): number {
-    return this.text.length;
+    return this.nodeValue.length;
   }
   setParent(parent: TypeElement): void {
     this.parent = parent;
   }
   setText(text: string): void {
-    this.text = text;
+    this.nodeValue = text;
     this.render();
   }
   /**
@@ -56,7 +62,7 @@ export class WebTextNode implements IWebTextNode {
     if (content === '') {
       return;
     }
-    this.text = this.text.concat(content);
+    this.nodeValue = this.nodeValue.concat(content);
     // this.render();
     this.parent.render();
   }
@@ -70,7 +76,7 @@ export class WebTextNode implements IWebTextNode {
     if (startOffset >= endOffset) {
       return '';
     }
-    return this.text.slice(startOffset, endOffset);
+    return this.nodeValue.slice(startOffset, endOffset);
     // return this.textContent.substring(startIndex, endIndex);
   }
   /**
@@ -81,7 +87,7 @@ export class WebTextNode implements IWebTextNode {
    * @param endOffset 结束位置
    */
   insertText(text: string, startOffset: number, endOffset = startOffset): void {
-    const content = this.text;
+    const content = this.nodeValue;
     const preContent = content.substring(0, startOffset);
     const endContent = content.substring(endOffset);
     const newContent = preContent.concat(text, endContent);
@@ -107,16 +113,16 @@ export class WebTextNode implements IWebTextNode {
     // 光标状态 删除光标前一个字符
     if (startOffset === endOffset) {
       // todo slice substring
-      preContent = this.text.slice(0, startOffset - 1);
-      endContent = this.text.slice(endOffset);
+      preContent = this.nodeValue.slice(0, startOffset - 1);
+      endContent = this.nodeValue.slice(endOffset);
       //  todo 直接设置editor.startOffset
       // startOffset -= 1;
       // endOffset -= 1;
     } else { // 选择状态 删除选中的文字
-      preContent = this.text.slice(0, startOffset);
+      preContent = this.nodeValue.slice(0, startOffset);
       // console.log('preContent is ', preContent);
       // console.log('endOffset is ', endOffset);
-      endContent = this.text.slice(endOffset);
+      endContent = this.nodeValue.slice(endOffset);
       // console.log('endContent is ', endContent);
       // endOffset = startOffset;
     }
@@ -128,7 +134,7 @@ export class WebTextNode implements IWebTextNode {
     this.parent.render();
   }
   render(): void {
-    this.dom.textContent = this.text || '';  // '\u200b'; // &zwnj; \u200c &zwsp;
+    this.dom.textContent = this.nodeValue || '';  // '\u200b'; // &zwnj; \u200c &zwsp;
   }
 }
 

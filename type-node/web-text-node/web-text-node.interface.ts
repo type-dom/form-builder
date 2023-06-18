@@ -1,5 +1,11 @@
-// 文本节点字面量
-export interface IWebTextNode {
+/**
+ * 文本节点字面量
+ * @author xjf
+ * @date 2023/6/18 18:06
+  */
+import { ITypeNode } from '../type-node.interface';
+export interface IWebTextNode extends ITypeNode {
   className: 'WebTextNode';
-  text: string;
+  nodeValue: string;
+  // text: string;
 }

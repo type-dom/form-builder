@@ -276,7 +276,7 @@ export class FormEditor {
         formData[key] = formIdJson[key];
       }
     }
-    const tableData: Record<string, string>[] = [];
+    const tableData: Record<string, string | number | boolean>[] = [];
     formData.table = tableData;
     this.allControls.forEach((ctrl) => {
       if (ctrl instanceof TableControl) {
@@ -288,7 +288,7 @@ export class FormEditor {
         const tableHead: ITableField[] = [];
         tableHeader.childNodes.forEach((th) => {
           tableHead.push({
-            label: th.childNodes[0].text,
+            label: th.childNodes[0].nodeValue.toString(),
             name: th.attrObj.name as string,
           });
         });
@@ -297,7 +297,7 @@ export class FormEditor {
           if (index > 0) {
             // console.log('tr is ', tr);
             if (tr instanceof WebTableRow) {
-              let data: { [propName: string]: string } = {};
+              let data: { [propName: string]: string | number | boolean } = {};
               const rowId = tr.rowId;
               if (rowId) {
                 const rowIdJson = JSON.parse(rowId);
@@ -312,7 +312,7 @@ export class FormEditor {
                 }
                 const item = td.childNodes[0];
                 if (item instanceof WebTextNode) {
-                  data[tableHead[index].name] = item.text;
+                  data[tableHead[index].name] = item.nodeValue;
                 } else {
                   data[tableHead[index].name] = item.value; // WebControl.value;
                 }

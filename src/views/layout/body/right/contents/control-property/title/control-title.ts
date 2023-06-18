@@ -31,8 +31,8 @@ export class ControlTitleProperty extends PropertyInput {
       return;
     }
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    if (this.editor.selectedControl?.formItem.labelText?.text) {
-      this.resetInputValue(this.editor.selectedControl.formItem.labelText.text);
+    if (this.editor.selectedControl?.formItem.labelText?.nodeValue) {
+      this.resetInputValue(this.editor.selectedControl.formItem.labelText.nodeValue);
     } else {
       this.resetInputValue('');
     }
