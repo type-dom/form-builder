@@ -8,15 +8,15 @@ import { IWebTableHead } from './head.interface';
 
 // 表格页眉
 export class WebTableHead extends TypeHtml implements IWebTableHead {
-  tagName: 'thead';
+  nodeName: 'thead';
   className: 'WebTableHead';
   dom: HTMLTableSectionElement;
   childNodes: WebTableHeader[];
 
   constructor(public parent: WebTable, th: ITableField[] = []) {
-    super();
-    this.tagName = 'thead';
-    this.dom = document.createElement(this.tagName);
+    super('thead');
+    this.nodeName = 'thead';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'WebTableHead';
     this.childNodes = [];
     this.setHeadItems(th);

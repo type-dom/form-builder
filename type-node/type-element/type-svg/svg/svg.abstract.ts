@@ -5,14 +5,14 @@ import { ITypeSvgSvg } from './svg.interface';
 export abstract class TypeSvgSvg extends TypeSvg implements ITypeSvgSvg {
   abstract className: string;
   abstract parent: TypeHtml;
-  tagName: 'svg';
+  nodeName: 'svg';
   dom: SVGSVGElement;
   childNodes: TypeSvg[];
   width: string | number = '100%';
   height: string | number = '100%';
   protected constructor() {
-    super();
-    this.tagName = 'svg';
+    super('svg');
+    this.nodeName = 'svg';
     this.dom = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     this.propObj.attrObj = {
       version: '1.1',

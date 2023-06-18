@@ -2,7 +2,7 @@ import { TypeSvg } from '../../../type-element/type-svg/type-svg.abstract';
 import { SvgSvg } from '../svg/svg.class';
 import { ISvgRect, ISvgRectProperty } from './rect.interface';
 export class SvgRect extends TypeSvg implements ISvgRect {
-  tagName: 'rect';
+  nodeName: 'rect';
   className: 'SvgRect';
   dom: SVGRectElement;
   propObj: ISvgRectProperty;
@@ -10,10 +10,10 @@ export class SvgRect extends TypeSvg implements ISvgRect {
   width = 60;
   height = 60;
   constructor(public parent: SvgSvg) {
-    super();
-    this.tagName = 'rect';
+    super('rect');
+    this.nodeName = 'rect';
     this.className = 'SvgRect';
-    this.dom = document.createElementNS('http://www.w3.org/2000/svg', this.tagName);
+    this.dom = document.createElementNS('http://www.w3.org/2000/svg', this.nodeName);
     this.childNodes = [];
     this.propObj = {
       styleObj: {

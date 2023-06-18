@@ -4,7 +4,7 @@ export interface IInputAttribute extends ITypeAttribute {
   type: keyof typeof InputEnum,
 }
 export interface IInput extends ITypeElement {
-  tagName: 'input',
+  nodeName: 'input',
   className: 'Input',
   childNodes: [],
 }

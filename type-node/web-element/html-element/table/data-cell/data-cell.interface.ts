@@ -6,7 +6,7 @@ import { ITypeHtml } from '../../../../type-element/type-html/type-html.interfac
 
 export type TableDataCellChild = Exclude<WebControl, TableControl>
 export interface IWebTableDataCell extends ITypeHtml {
-  tagName: 'td',
+  nodeName: 'td',
   className: 'WebTableDataCell',
   childNodes: (IWebControl | IWebTextNode)[],
 }

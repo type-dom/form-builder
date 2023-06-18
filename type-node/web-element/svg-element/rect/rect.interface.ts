@@ -32,7 +32,7 @@ export interface ISvgRectProperty extends ITypeProperty {
   }
 }
 export interface ISvgRect extends ITypeSvg {
-  tagName: 'rect';
+  nodeName: 'rect';
   className: 'SvgRect';
   propObj: ISvgRectProperty;
   childNodes: [];

@@ -28,7 +28,7 @@ export interface ISvgPathProperty extends ITypeProperty {
  *  注释：以上所有命令均允许小写字母。大写表示绝对定位，小写表示相对定位。
  */
 export interface ISvgPath extends ITypeSvg {
-  tagName: 'path',
+  nodeName: 'path',
   propObj: ISvgPathProperty
   className: 'SvgPath',
   childNodes: []

@@ -1,6 +1,8 @@
 /**
  * 虚拟dom的数据结构字面量接口。
  */
+import { ITypeNode } from '../type-node.interface';
+import { IWebStyle } from '../web-style.interface';
 import { IWebTextNode } from '../web-text-node/web-text-node.interface';
 import { Button } from '../web-element/html-element/button/button.class';
 import { Division } from '../web-element/html-element/division/division.class';
@@ -20,7 +22,6 @@ import { WebTableHead } from '../web-element/html-element/table/head/head.class'
 import { WebTableBody } from '../web-element/html-element/table/body/body.class';
 import { WebTableFoot } from '../web-element/html-element/table/foot/foot.class';
 import { WebTableHeader } from '../web-element/html-element/table/header/header.class';
-import { IWebStyle } from '../web-style.interface';
 export interface ITypeAttribute {
   // id?: string;
   class?: string;
@@ -34,13 +35,12 @@ export interface ITypeProperty {
 /**
  * 虚拟 DOM 节点的 *字面量* 表示。
  */
-export interface ITypeElement {
-  tagName: string;
+export interface ITypeElement extends ITypeNode {
   className: string; // todo enum ??
   propObj: ITypeProperty;
   // childPropObj?: IWebSectionProperty;
   // items?: Array<IWebSectionItem>;
-  childNodes: Array<ITypeElement | IWebTextNode>;// contents
+  childNodes: Array<ITypeNode>;// contents
 }
 export interface IWebBoundBox {
   top: number;

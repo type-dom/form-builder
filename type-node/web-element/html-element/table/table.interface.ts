@@ -3,7 +3,7 @@ import { IWebTableHead } from './head/head.interface';
 import { IWebTableRow } from './row/row.interface';
 
 export interface IWebTable extends ITypeHtml {
-  tagName: 'table',
+  nodeName: 'table',
   className: 'WebTable',
   childNodes: (IWebTableRow | IWebTableHead)[],
 }

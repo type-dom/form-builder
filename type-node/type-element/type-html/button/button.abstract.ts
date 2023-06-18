@@ -5,13 +5,13 @@ import { ITypeButton } from './button.interface';
 export abstract class TypeButton extends TypeHtml implements ITypeButton {
   abstract className: string;
   abstract parent: TypeHtml;
-  tagName: 'button';
+  nodeName: 'button';
   dom: HTMLButtonElement;
   textNode: WebTextNode;
   protected constructor() {
-    super();
-    this.tagName = 'button';
-    this.dom = document.createElement(this.tagName);
+    super('button');
+    this.nodeName = 'button';
+    this.dom = document.createElement(this.nodeName);
     this.propObj = {
       styleObj: Object.assign({}, buttonStyle),
       attrObj: {

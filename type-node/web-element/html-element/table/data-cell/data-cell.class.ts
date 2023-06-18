@@ -16,16 +16,16 @@ import { WebTableRow } from '../row/row.class';
 import { IWebTableDataCell } from './data-cell.interface';
 
 export class WebTableDataCell extends TypeHtml implements IWebTableDataCell {
-  tagName: 'td';
+  nodeName: 'td';
   className: 'WebTableDataCell';
   dom: HTMLElement;
   childNodes: [WebControl | WebTextNode]; // 有可能是Input
   control: WebControl | WebTextNode;
 
   constructor(public parent: WebTableRow, value: string | number | boolean) {
-    super();
-    this.tagName = 'td';
-    this.dom = document.createElement(this.tagName);
+    super('td');
+    this.nodeName = 'td';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'WebTableDataCell';
     // this.propObj.attrObj.border = '1px solid black;';
     // this.childNodes = [];

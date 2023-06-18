@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { UlBase } from '../../../../type-node/type-element/type-html/ul/ul.abstract';
+import { TypeUl } from '../../../../type-node/type-element/type-html/ul/ul.abstract';
 import { ListItem } from '../../../../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
 import { IWebStyle } from '../../../../type-node/web-style.interface';
 import { Display } from '../../../../type-node/web-style.enum';
@@ -8,7 +8,7 @@ import { IWebTextNode } from '../../../../type-node/web-text-node/web-text-node.
 import { WebDocument } from '../web-document.class';
 import { IWebDocumentTabs } from './tabs.interface';
 
-export class WebDocumentTabs extends UlBase {
+export class WebDocumentTabs extends TypeUl {
   className: 'WebDocumentTabs';
   liStyle: Partial<IWebStyle>;
 

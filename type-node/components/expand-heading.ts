@@ -5,16 +5,16 @@ import { Span } from '../web-element/html-element/span/span.class';
 import { WebTextNode } from '../web-text-node/web-text-node.class';
 import { TriangleSvg } from './svgs/triangle/triangle';
 export class ExpandHeading extends TypeHtml {
-  tagName: 'h3';
+  nodeName: 'h3';
   className: 'ExpandHeading';
   dom: HTMLHeadingElement;
   childNodes: [TriangleSvg, Span];
   svg: TriangleSvg;
   title: Span;
   constructor(public parent: TypeComponent, title: string) {
-    super();
-    this.tagName = 'h3';
-    this.dom = document.createElement(this.tagName);
+    super('h3');
+    this.nodeName = 'h3';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'ExpandHeading';
     this.propObj = {
       styleObj: {

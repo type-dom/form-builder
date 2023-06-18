@@ -6,7 +6,7 @@ import { BodyRight } from './right/right';
 import { BodyMainContent } from './main-content/main-content';
 
 export class BodyWrapper extends TypeHtml {
-  tagName: 'section';
+  nodeName: 'section';
   dom: HTMLElement;
   className: 'BodyWrapper';
   childNodes: [BodyLeft, BodyMainContent, BodyRight];
@@ -14,9 +14,9 @@ export class BodyWrapper extends TypeHtml {
   content: BodyMainContent;
   right: BodyRight;
   constructor(public parent: LayoutWrapper) {
-    super();
-    this.tagName = 'section';
-    this.dom = document.createElement(this.tagName);
+    super('section');
+    this.nodeName = 'section';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'BodyWrapper';
     console.log('this.editor.el.clientHeight is ', this.editor.el.clientHeight);
     this.propObj = {

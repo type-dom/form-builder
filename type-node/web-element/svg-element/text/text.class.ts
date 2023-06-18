@@ -4,15 +4,15 @@ import { TypeSvg } from '../../../type-element/type-svg/type-svg.abstract';
 import { ISvgText, ISvgTextProperty } from './text.interface';
 
 export class SvgText extends TypeSvg implements ISvgText {
-  tagName: 'text';
+  nodeName: 'text';
   dom: SVGTextElement;
   className: 'SvgText';
   propObj: ISvgTextProperty;
   childNodes: WebTextNode[];
   constructor(public parent: TypeSvgSvg) {
-    super();
-    this.tagName = 'text';
-    this.dom = document.createElementNS('http://www.w3.org/2000/svg', this.tagName);
+    super('text');
+    this.nodeName = 'text';
+    this.dom = document.createElementNS('http://www.w3.org/2000/svg', this.nodeName);
     this.className = 'SvgText';
     this.propObj = {
       styleObj: {},

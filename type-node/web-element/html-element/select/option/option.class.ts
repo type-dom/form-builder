@@ -3,15 +3,15 @@ import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract'
 import { Select } from '../select.class';
 import { IWebOption } from './option.interface';
 export class WebOption extends TypeHtml implements IWebOption {
-  tagName: 'option';
+  nodeName: 'option';
   className: 'WebOption';
   dom: HTMLOptionElement;
   childNodes: (TypeHtml | WebTextNode)[];
   text: WebTextNode;
   constructor(public parent: Select) {
-    super();
-    this.tagName = 'option';
-    this.dom = document.createElement(this.tagName);
+    super('option');
+    this.nodeName = 'option';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'WebOption';
     this.propObj.attrObj = {
       name: 'option'

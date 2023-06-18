@@ -4,7 +4,7 @@ import { buttonStyle } from '../../../../type-element/type-html/button/button.co
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
 import { FormFooter } from '../footer';
 export class SubmitButton extends TypeButton {
-  tagName: 'button';
+  nodeName: 'button';
   className: 'SubmitButton';
   dom: HTMLButtonElement;
   childNodes: [WebTextNode];
@@ -12,8 +12,8 @@ export class SubmitButton extends TypeButton {
   submitObservable: Observable<Event>;
   constructor(public parent: FormFooter) {
     super();
-    this.tagName = 'button';
-    this.dom = document.createElement(this.tagName);
+    this.nodeName = 'button';
+    this.dom = document.createElement(this.nodeName);
 
     this.className = 'SubmitButton';
     this.propObj = {

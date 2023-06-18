@@ -11,9 +11,15 @@ export class XNode extends TypeNode implements IXNode {
   className: 'XNode';
   components: TypeNode[];
   slots: TypeNode[];
+  dom: Text | HTMLElement | SVGElement;
   constructor(nodeName: string, nodeValue?: string) {
     super(nodeName, nodeValue);
     this.className = 'XNode';
+    if (this.nodeName === '#text') {
+      this.dom = document.createTextNode(this.nodeValue?.toString() || '');
+    } else {
+      this.dom = document.createElement(this.nodeName);
+    }
     this.components = [];
     this.slots = [];
   }

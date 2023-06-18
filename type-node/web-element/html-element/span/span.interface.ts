@@ -1,7 +1,5 @@
-import { IWebTextNode } from '../../../web-text-node/web-text-node.interface';
-import { ITypeHtml } from '../../../type-element/type-html/type-html.interface';
-export interface ISpan extends ITypeHtml {
-  tagName: 'span',
+import { ITypeSpan } from '../../../type-element/type-html/span/span.interface';
+export interface ISpan extends ITypeSpan {
   className: 'Span',
-  childNodes: (IWebTextNode | ITypeHtml)[],
+  // childNodes: (IWebTextNode | ITypeHtml)[],
 }

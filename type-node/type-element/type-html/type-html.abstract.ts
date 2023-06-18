@@ -4,8 +4,8 @@
 import { TypeElement } from '../type-element.abstract';
 import { ITypeHtml } from './type-html.interface';
 export abstract class TypeHtml extends TypeElement implements ITypeHtml {
-  // abstract tagName: string;
+  // abstract nodeName: string;
   // abstract className: string;
-  abstract parent: TypeHtml;
+  abstract parent: TypeElement;
   abstract dom: HTMLElement;
 }

@@ -1,6 +1,7 @@
 import { Subscription } from 'rxjs';
 import { FormEditor } from '../../src/form-editor';
 import { humpToMiddleLine } from '../../src/utils';
+import { TypeNode } from '../type-node.class';
 import { WebTextNode } from '../web-text-node/web-text-node.class';
 import { Cursor, Display } from '../web-style.enum';
 import { IWebStyle } from '../web-style.interface';
@@ -17,22 +18,20 @@ import {
  * 与对应的导出时的数据结构是不一样的。
  * todo 是否需要把相关的操作也添加进来。
  */
-export abstract class TypeElement implements ITypeElement {
-  abstract tagName: string;
+export abstract class TypeElement extends TypeNode implements ITypeElement {
   abstract className: string;
   abstract parent: TypeElement;
   abstract dom: HTMLElement | SVGElement;
-  childNodes: Array<TypeElement | WebTextNode>;
   propObj: ITypeProperty;
   events: Subscription[];
   // initEvents?(): () => any;
 
-  protected constructor() {
+  protected constructor(nodeName: string, nodeValue?: string) {
+    super(nodeName, nodeValue);
     this.propObj = {
       attrObj: {},
       styleObj: {}
     };
-    this.childNodes = [];
     this.events = [];
   }
   // 父级是FormEditor的，要单独写 get editor.
@@ -63,11 +62,11 @@ export abstract class TypeElement implements ITypeElement {
     return this.propObj.styleObj;
   }
 
-  get firstChild(): TypeElement | WebTextNode {
+  get firstChild(): TypeNode {
     return this.childNodes[0];
   }
 
-  get lastChild(): TypeElement | WebTextNode {
+  get lastChild(): TypeNode {
     return this.childNodes[this.length - 1];
   }
 
@@ -330,7 +329,7 @@ export abstract class TypeElement implements ITypeElement {
    * WebPage是单独处理的。
    * @param newChild
    */
-  renderChild(newChild: TypeElement | WebTextNode): void {
+  renderChild(newChild: TypeNode): void {
     newChild.render();
     this.dom.appendChild(newChild.dom);
   }
@@ -472,7 +471,7 @@ export abstract class TypeElement implements ITypeElement {
   // //   // this.styleObj.forEach((value, key) => {
   // //   //   styleObj[key] = value;
   // //   // })
-  // //   return new VElement(this.tagName, {
+  // //   return new VElement(this.nodeName, {
   // //     classes: [...this.classes],
   // //     attrs,
   // //     styles,
@@ -489,7 +488,7 @@ export abstract class TypeElement implements ITypeElement {
   //   return this;
   // }
 
-  findChildAtIndex(index: number): TypeElement | WebTextNode | null {
+  findChildAtIndex(index: number): TypeNode | null {
     return this.childNodes[index] || null;
   }
 

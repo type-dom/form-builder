@@ -2,7 +2,7 @@ import { TypeSvg } from '../../../type-element/type-svg/type-svg.abstract';
 import { ISvgEllipse, ISvgEllipseProperty } from './ellipse.interface';
 
 export class SvgEllipse extends TypeSvg implements ISvgEllipse {
-  tagName: 'ellipse';
+  nodeName: 'ellipse';
   className: 'SvgEllipse';
   dom: SVGEllipseElement;
   propObj: ISvgEllipseProperty;
@@ -13,10 +13,10 @@ export class SvgEllipse extends TypeSvg implements ISvgEllipse {
   ry = 0;
 
   constructor(public parent: TypeSvg) {
-    super();
-    this.tagName = 'ellipse';
+    super('ellipse');
+    this.nodeName = 'ellipse';
     this.className = 'SvgEllipse';
-    this.dom = document.createElementNS('http://www.w3.org/2000/svg', this.tagName);
+    this.dom = document.createElementNS('http://www.w3.org/2000/svg', this.nodeName);
     this.childNodes = [];
     this.propObj = {
       styleObj: {

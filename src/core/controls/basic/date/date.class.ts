@@ -10,8 +10,8 @@ export class DateControl extends WebBasicControl implements IDateControl {
   childNodes: [InputItem]
   constructor(parent: WebPage | WebTableDataCell) {
     super(parent);
-    this.tagName = 'div';
-    this.dom = document.createElement(this.tagName);
+    this.nodeName = 'div';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'DateControl';
     this.propObj.attrObj.name = 'date-control';
     // this.createInputItem('数字输入', '请输入数字');

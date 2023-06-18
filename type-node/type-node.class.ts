@@ -46,7 +46,7 @@ function encodeToDomString(str: string) {
  * abstract syntax tree 抽象语法树 抽象节点类
  */
 export abstract class TypeNode implements ITypeNode {
-  dom: HTMLElement | SVGElement | Text;
+  abstract dom: HTMLElement | SVGElement | Text;
   nodeName: string;
   nodeValue?: string | number | boolean;
   // eslint-disable-next-line no-use-before-define
@@ -58,11 +58,11 @@ export abstract class TypeNode implements ITypeNode {
     this.nodeName = nodeName;
     this.nodeValue = nodeValue;
     this.parentNode = null;
-    if (this.nodeName === '#text') {
-      this.dom = document.createTextNode(this.nodeValue?.toString() || '');
-    } else {
-      this.dom = document.createElement(this.nodeName);
-    }
+    // if (this.nodeName === '#text') {
+    //   this.dom = document.createTextNode(this.nodeValue?.toString() || '');
+    // } else {
+    //   this.dom = document.createElement(this.nodeName);
+    // }
     this.attributes = [];
     this.childNodes = [];
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });

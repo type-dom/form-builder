@@ -1,11 +1,11 @@
 import { TypeHtml } from '../type-html.abstract';
 import { ITypeLabel } from './label.interface';
 export abstract class TypeLabel extends TypeHtml implements ITypeLabel {
-  tagName: 'label';
+  nodeName: 'label';
   dom: HTMLLabelElement;
   protected constructor() {
-    super();
-    this.tagName = 'label';
-    this.dom = document.createElement(this.tagName);
+    super('label');
+    this.nodeName = 'label';
+    this.dom = document.createElement(this.nodeName);
   }
 }

@@ -15,7 +15,7 @@ import { WebTableDataCell } from './data-cell/data-cell.class';
 
 // todo 是否有选项列和操作列。
 export class WebTable extends TypeHtml implements IWebTable {
-  tagName: 'table';
+  nodeName: 'table';
   className: 'WebTable';
   dom: HTMLTableElement;
   childNodes: [WebTableHead, ...WebTableRow[]];
@@ -23,9 +23,9 @@ export class WebTable extends TypeHtml implements IWebTable {
   readonly tableHead: WebTableHead;
 
   constructor(public parent: TableItem) {
-    super();
-    this.tagName = 'table';
-    this.dom = document.createElement(this.tagName);
+    super('table');
+    this.nodeName = 'table';
+    this.dom = document.createElement(this.nodeName);
     this.propObj = {
       attrObj: {
         border: '1', // 表格的边框宽度 1px;

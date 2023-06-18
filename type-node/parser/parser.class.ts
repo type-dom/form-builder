@@ -309,7 +309,7 @@ export class Parser {
 
   /**
    * 在开始的元素
-   * @param name  tagName
+   * @param name  nodeName
    * @param attributes
    * @param isEmpty
    */
@@ -333,7 +333,7 @@ export class Parser {
 
   /**
    * 在结束的元素
-   * @param name 应该是tagName
+   * @param name 应该是nodeName
    */
   onEndElement(name: string): TypeNode | null {
     // console.log('onEndElement . name is ', name);

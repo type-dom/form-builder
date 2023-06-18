@@ -12,8 +12,8 @@ export class NumericalControl extends WebBasicControl implements INumericalContr
   maxValue?: number;
   constructor(parent: WebPage | WebTableDataCell) {
     super(parent);
-    this.tagName = 'div';
-    this.dom = document.createElement(this.tagName);
+    this.nodeName = 'div';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'NumericalControl';
     this.propObj.attrObj.name = 'numerical-control';
     this.formItem = new InputItem(this, '数字输入');

@@ -2,15 +2,15 @@ import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { IInput } from './input.interface';
 
 export class Input extends TypeHtml implements IInput {
-  tagName: 'input';
+  nodeName: 'input';
   dom: HTMLInputElement;
   className: 'Input';
   childNodes: [];
   // value: string | number | boolean | undefined;
   constructor(public parent: TypeHtml) {
-    super();
-    this.tagName = 'input';
-    this.dom = document.createElement(this.tagName);
+    super('input');
+    this.nodeName = 'input';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'Input';
     this.childNodes = [];
   }

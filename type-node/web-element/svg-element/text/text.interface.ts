@@ -26,7 +26,7 @@ export interface ISvgTextProperty extends ITypeProperty {
   }
 }
 export interface ISvgText extends ITypeElement {
-  tagName: 'text',
+  nodeName: 'text',
   propObj: ISvgTextProperty,
   className: 'SvgText',
   childNodes: IWebTextNode[]

@@ -1,8 +1,7 @@
-import { ITypeHtml } from '../../../type-element/type-html/type-html.interface';
+import { ITypeUl } from '../../../type-element/type-html/ul/ul.interface';
 import { IListItem } from './list-item/list-item.interface';
 
-export interface IUnorderedList extends ITypeHtml {
-  tagName: 'ul',
+export interface IUnorderedList extends ITypeUl {
   className: 'UnorderedList',
   childNodes: IListItem[],
 }

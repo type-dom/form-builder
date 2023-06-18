@@ -1,16 +1,12 @@
 import { WebTextNode } from '../../../web-text-node/web-text-node.class';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
+import { TypeLabel } from '../../../type-element/type-html/label/label.abstract';
 import { ILabel } from './label.interface';
-
-export class Label extends TypeHtml implements ILabel {
-  tagName: 'label';
+export class Label extends TypeLabel implements ILabel {
   className: 'Label';
-  dom: HTMLLabelElement;
   childNodes: WebTextNode[];
   constructor(public parent: TypeHtml) {
     super();
-    this.tagName = 'label';
-    this.dom = document.createElement(this.tagName);
     this.className = 'Label';
     this.propObj.attrObj = {
       name: 'label'

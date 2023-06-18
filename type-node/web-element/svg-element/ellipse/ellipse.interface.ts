@@ -22,7 +22,7 @@ export interface ISvgEllipseProperty extends ITypeProperty {
   }
 }
 export interface ISvgEllipse extends ITypeSvg {
-  tagName: 'ellipse';
+  nodeName: 'ellipse';
   className: 'SvgEllipse';
   propObj: ISvgEllipseProperty;
   childNodes: [];

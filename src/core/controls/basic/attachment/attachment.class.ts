@@ -12,8 +12,8 @@ export class AttachmentControl extends WebBasicControl implements IAttachmentCon
   attachmentObservable: Observable<Event>;
   constructor(parent: WebPage | WebTableDataCell) {
     super(parent);
-    this.tagName = 'div';
-    this.dom = document.createElement(this.tagName);
+    this.nodeName = 'div';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'AttachmentControl';
     this.propObj.attrObj.name = 'attachment-control';
     // this.createInputItem('数字输入', '请输入数字');

@@ -21,7 +21,7 @@ export abstract class PropertyItem extends TypeDiv {
   button: Button;
   protected constructor(labelText: string) {
     super();
-    this.tagName = 'div';
+    this.nodeName = 'div';
     this.dom = document.createElement('div');
     this.propObj.styleObj = {
       // border: '1px solid #1890ff',

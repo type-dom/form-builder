@@ -4,14 +4,14 @@ import { WebTableRow } from '../row/row.class';
 import { IWebTableBody } from './body.interface';
 
 export class WebTableBody extends TypeHtml implements IWebTableBody {
-  tagName: 'tbody';
+  nodeName: 'tbody';
   className: 'WebTableBody';
   dom: HTMLTableSectionElement;
   childNodes: WebTableRow[];
   constructor(public parent: WebTable) {
-    super();
-    this.tagName = 'tbody';
-    this.dom = document.createElement(this.tagName);
+    super('tbody');
+    this.nodeName = 'tbody';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'WebTableBody';
     this.childNodes = [];
   }

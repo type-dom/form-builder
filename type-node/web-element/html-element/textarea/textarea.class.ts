@@ -2,16 +2,16 @@ import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { ITextarea } from './textarea.interface';
 
 export class Textarea extends TypeHtml implements ITextarea {
-  tagName: 'textarea';
+  nodeName: 'textarea';
   className: 'TextArea';
   dom: HTMLTextAreaElement;
   childNodes: [];
   value: string | number | boolean | undefined;
   constructor(public parent: TypeHtml) {
-    super();
-    this.tagName = 'textarea';
+    super('textarea');
+    this.nodeName = 'textarea';
     this.className = 'TextArea';
-    this.dom = document.createElement(this.tagName);
+    this.dom = document.createElement(this.nodeName);
     this.propObj.styleObj = {
       outline: 'none',
     };

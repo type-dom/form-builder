@@ -2,7 +2,7 @@ import { ITypeHtml } from '../../../../type-element/type-html/type-html.interfac
 import { IWebTableDataCell } from '../data-cell/data-cell.interface';
 
 export interface IWebTableRow extends ITypeHtml {
-  tagName: 'tr',
+  nodeName: 'tr',
   className: 'WebTableRow',
   childNodes: IWebTableDataCell[],
 }

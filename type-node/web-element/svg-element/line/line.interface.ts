@@ -22,7 +22,7 @@ export interface ISvgLineProperty extends ITypeProperty {
   }
 }
 export interface ISvgLine extends ITypeSvg {
-  tagName: 'line';
+  nodeName: 'line';
   className: 'SvgLine';
   propObj: ISvgLineProperty;
   childNodes: [];

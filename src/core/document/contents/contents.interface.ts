@@ -2,7 +2,7 @@ import { ITypeDiv } from '../../../../type-node/type-element/type-html/div/div.i
 import { IWebPage } from '../../page/web-page.interface';
 
 export interface IWebDocumentContents extends ITypeDiv {
-  tagName: 'div',
+  nodeName: 'div',
   className: 'WebDocumentContents',
   childNodes: IWebPage[],
 }

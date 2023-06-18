@@ -3,15 +3,15 @@ import { TypeDiv } from '../../../type-element/type-html/div/div.abstract';
 import { WebForm } from '../form';
 
 export class FormHeader extends TypeDiv {
-  tagName: 'div';
+  nodeName: 'div';
   className: 'FormHeader';
   childNodes: [WebTextNode];
   dom: HTMLDivElement;
 
   constructor(public parent: WebForm) {
     super();
-    this.tagName = 'div';
-    this.dom = document.createElement(this.tagName);
+    this.nodeName = 'div';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'FormHeader';
     this.propObj = {
       styleObj: {

@@ -59,7 +59,8 @@ export function getScroll(area?: Element): {x: number; y:number} {
  */
 export function toJSON(element: TypeElement): ITypeElement {
   return {
-    tagName: element.tagName,
+    // nodeName: element.nodeName,
+    nodeName: element.nodeName,
     className: element.className,
     propObj: {
       styleObj: Object.assign({}, element.styleObj), // 两层。浅拷贝
@@ -74,7 +75,7 @@ export function toJSON(element: TypeElement): ITypeElement {
         //   console.error('c is ', c);
         // }
         return {
-          className: child.className,
+          className: 'WebTextNode',
           nodeName: '#text',
           nodeValue: child.nodeValue, // textContent
         } as IWebTextNode;

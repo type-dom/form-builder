@@ -8,16 +8,16 @@ import { IWebTableDataCell } from '../data-cell/data-cell.interface';
 import { WebTable } from '../table.class';
 import { IWebTableRow } from './row.interface';
 export class WebTableRow extends TypeHtml implements IWebTableRow {
-  tagName: 'tr';
+  nodeName: 'tr';
   className: 'WebTableRow';
   dom: HTMLTableRowElement;
   childNodes: WebTableDataCell[];
   deleteSpan: Span;
   constructor(public parent: WebTable, trData: Record<string, string | number | boolean>) {
-    super();
+    super('tr');
     // console.log('trData is ', trData);
-    this.tagName = 'tr';
-    this.dom = document.createElement(this.tagName);
+    this.nodeName = 'tr';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'WebTableRow';
     this.childNodes = [];
     for (const key in trData) {

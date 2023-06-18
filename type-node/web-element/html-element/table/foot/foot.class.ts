@@ -3,14 +3,14 @@ import { WebTableRow } from '../row/row.class';
 import { IWebTableFoot } from './foot.interface';
 
 export class WebTableFoot extends TypeHtml implements IWebTableFoot {
-  tagName: 'tfoot';
+  nodeName: 'tfoot';
   className: 'WebTableFoot';
   dom: HTMLElement;
   childNodes: WebTableRow[];
   constructor(public parent: TypeHtml) {
-    super();
-    this.tagName = 'tfoot';
-    this.dom = document.createElement(this.tagName);
+    super('tfoot');
+    this.nodeName = 'tfoot';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'WebTableFoot';
     this.childNodes = [];
   }

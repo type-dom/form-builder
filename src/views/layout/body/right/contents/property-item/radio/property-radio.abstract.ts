@@ -1,8 +1,9 @@
 import { fromEvent } from 'rxjs';
+import { TypeElement } from '../../../../../../../../type-node/type-element/type-element.abstract';
+import { WebTextNode } from '../../../../../../../../type-node/web-text-node/web-text-node.class';
 import { Label } from '../../../../../../../../type-node/web-element/html-element/label/label.class';
 import { Division } from '../../../../../../../../type-node/web-element/html-element/division/division.class';
 import { Button } from '../../../../../../../../type-node/web-element/html-element/button/button.class';
-import { WebTextNode } from '../../../../../../../../type-node/web-text-node/web-text-node.class';
 import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 
 import { PropertyItem } from '../property-item.abstract';
@@ -81,13 +82,18 @@ export abstract class PropertyRadio extends PropertyItem {
           }
           this.selectedOpt = btn as Button;
           if (btn instanceof WebTextNode) return;
-          btn.setStyleObj({
-            backgroundColor: '#00f',
-            color: '#fff',
-          });
-          btn.setAttribute('checked', true);
-          this.resultValue = btn.attrObj.value as string;
-          this.reset(this.resultValue);
+          if (btn instanceof TypeElement) {
+            btn.setStyleObj({
+              backgroundColor: '#00f',
+              color: '#fff',
+            });
+            btn.setAttribute('checked', true);
+            this.resultValue = btn.attrObj.value as string;
+            this.reset(this.resultValue);
+          } else {
+          //   todo
+          }
+
         })
       );
     });

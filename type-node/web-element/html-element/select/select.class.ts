@@ -5,15 +5,15 @@ import { ISelect } from './select.interface';
 import { fromEvent } from 'rxjs';
 
 export class Select extends TypeHtml implements ISelect {
-  tagName: 'select';
+  nodeName: 'select';
   dom: HTMLSelectElement;
   className: 'Select';
   childNodes: WebOption[];
   value?: string | number | boolean;
   constructor(public parent: TypeHtml) {
-    super();
-    this.tagName = 'select';
-    this.dom = document.createElement(this.tagName);
+    super('select');
+    this.nodeName = 'select';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'Select';
     this.propObj.attrObj = {
       name: 'select'

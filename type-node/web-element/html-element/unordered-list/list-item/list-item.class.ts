@@ -1,16 +1,15 @@
 import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
 import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { IListItem } from './list-item.interface';
-
 export class ListItem extends TypeHtml implements IListItem {
-  tagName: 'li';
+  nodeName: 'li';
   className: 'ListItem';
   dom: HTMLLIElement;
   childNodes: (TypeHtml | WebTextNode)[];
   constructor(public parent: TypeHtml) {
-    super();
-    this.tagName = 'li';
-    this.dom = document.createElement(this.tagName);
+    super('li');
+    this.nodeName = 'li';
+    this.dom = document.createElement(this.nodeName);
     this.className = 'ListItem';
     this.childNodes = [];
     this.propObj = {

@@ -1,18 +1,14 @@
-import { TypeElement } from '../../../../../type-element/type-element.abstract';
 import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
+import { TypeSpan } from '../../../../../type-element/type-html/span/span.abstract';
 import { OverlayHeader } from '../header';
 
-export class OverlayTitle extends TypeElement {
-  tagName: 'span';
+export class OverlayTitle extends TypeSpan {
   className: 'OverlayTitle';
   childNodes: WebTextNode[];
-  dom: HTMLSpanElement;
   text: WebTextNode;
 
   constructor(public parent: OverlayHeader) {
     super();
-    this.tagName = 'span';
-    this.dom = document.createElement(this.tagName);
     this.className = 'OverlayTitle';
     this.propObj = {
       styleObj: {

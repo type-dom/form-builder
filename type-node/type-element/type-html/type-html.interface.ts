@@ -1,10 +1,8 @@
 /**
  * html虚拟标签。
  */
-import { IWebTextNode } from '../../web-text-node/web-text-node.interface';
+import { ITypeNode } from '../../type-node.interface';
 import { ITypeElement } from '../type-element.interface';
 export interface ITypeHtml extends ITypeElement {
-  // tagName: string;
-  // className: string;
-  childNodes: Array<ITypeElement | IWebTextNode>;// contents
+  childNodes: Array<ITypeNode>;// contents
 }

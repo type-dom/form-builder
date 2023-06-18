@@ -3,7 +3,7 @@ import { SvgSvg } from '../svg/svg.class';
 import { ISvgLine, ISvgLineProperty } from './line.interface';
 
 export class SvgLine extends TypeSvg implements ISvgLine {
-  tagName: 'line';
+  nodeName: 'line';
   className: 'SvgLine';
   dom: SVGLineElement;
   propObj: ISvgLineProperty;
@@ -14,10 +14,10 @@ export class SvgLine extends TypeSvg implements ISvgLine {
   y2 = 0;
 
   constructor(public parent: SvgSvg) {
-    super();
-    this.tagName = 'line';
+    super('line');
+    this.nodeName = 'line';
     this.className = 'SvgLine';
-    this.dom = document.createElementNS('http://www.w3.org/2000/svg', this.tagName);
+    this.dom = document.createElementNS('http://www.w3.org/2000/svg', this.nodeName);
     this.childNodes = [];
     this.propObj = {
       styleObj: {
