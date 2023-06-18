@@ -1,7 +1,7 @@
-import { SvgBase } from '../../../type-element/type-svg/svg/svg.abstract';
+import { TypeSvgSvg } from '../../../type-element/type-svg/svg/svg.abstract';
 import { SvgPath } from '../../../web-element/svg-element/path/path.class';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
-export class AttachmentSvg extends SvgBase {
+export class AttachmentSvg extends TypeSvgSvg {
   className: 'AttachmentSvg';
   childNodes: [SvgPath];
   constructor(public parent: TypeHtml) {

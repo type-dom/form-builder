@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
-import { SvgBase } from '../../../type-node/type-element/type-svg/svg/svg.abstract';
+import { TypeSvgSvg } from '../../../type-node/type-element/type-svg/svg/svg.abstract';
 import { Span } from '../../../type-node/web-element/html-element/span/span.class';
 import { WebTextNode } from '../../../type-node/web-text-node/web-text-node.class';
 import { ControlClass } from '../controls/web-control.interface';
@@ -11,8 +11,8 @@ import { IControlMenu } from './menu.interface';
 
 export abstract class ControlMenu extends TypeDiv implements IControlMenu {
   abstract ControlClass: ControlClass;
-  abstract childNodes: [SvgBase, Span];
-  abstract svg: SvgBase;
+  abstract childNodes: [TypeSvgSvg, Span];
+  abstract svg: TypeSvgSvg;
   readonly titleSpan: Span;
   textNode: WebTextNode;
   protected constructor() {

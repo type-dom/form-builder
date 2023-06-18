@@ -1,8 +1,8 @@
-import { SvgBase } from '../../../type-element/type-svg/svg/svg.abstract';
+import { TypeSvgSvg } from '../../../type-element/type-svg/svg/svg.abstract';
 import { SvgPath } from '../../../web-element/svg-element/path/path.class';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 
-export class CheckboxSvg extends SvgBase {
+export class CheckboxSvg extends TypeSvgSvg {
   className: 'CheckboxSvg';
   childNodes: [SvgPath];
   constructor(public parent: TypeHtml) {

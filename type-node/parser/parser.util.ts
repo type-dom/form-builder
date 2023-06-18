@@ -1,4 +1,4 @@
-import { XMLEntities } from './parser.const';
+import { Entities } from './parser.const';
 export function isWhitespace(s: string, index: number): boolean {
   const ch = s[index];
   return ch === ' ' || ch === '\n' || ch === '\r' || ch === '\t';
@@ -23,7 +23,7 @@ export function encodeToDomString(value: string | number | boolean = ''): string
     }
     if (0x20 <= char && char <= 0x7e) {
       // ascii
-      const entity = XMLEntities[char];
+      const entity = Entities[char];
       if (entity) {
         if (start < i) {
           buffer.push(str.substring(start, i));

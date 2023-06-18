@@ -1,6 +1,6 @@
 import { ITypeSvg } from '../type-svg.interface';
 
-export interface ISvgBase extends ITypeSvg {
+export interface ITypeSvgSvg extends ITypeSvg {
   tagName: 'svg',
   childNodes: ITypeSvg[],
 }

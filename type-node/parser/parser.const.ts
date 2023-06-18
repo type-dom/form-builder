@@ -1,4 +1,4 @@
-export const XMLParserErrorCode: Record<string, number> = {
+export const ParserErrorCode: Record<string, number> = {
   NoError: 0,
   EndOfDocument: -1,
   UnterminatedCdat: -2,
@@ -11,7 +11,7 @@ export const XMLParserErrorCode: Record<string, number> = {
   UnterminatedElement: -9,
   ElementNeverBegun: -10,
 };
-export const XMLEntities: Record<number, string> = {
+export const Entities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',
   /* & */ 0x26: '&amp;',

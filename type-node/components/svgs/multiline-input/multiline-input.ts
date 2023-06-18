@@ -1,8 +1,8 @@
 import { SvgPath } from '../../../web-element/svg-element/path/path.class';
-import { SvgBase } from '../../../type-element/type-svg/svg/svg.abstract';
+import { TypeSvgSvg } from '../../../type-element/type-svg/svg/svg.abstract';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 
-export class MultilineInputSvg extends SvgBase {
+export class MultilineInputSvg extends TypeSvgSvg {
   className: 'MultilineInputSvg';
   childNodes: [SvgPath];
   constructor(public parent: TypeHtml) {
