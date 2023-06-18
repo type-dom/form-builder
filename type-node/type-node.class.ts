@@ -1,4 +1,5 @@
 import { IComponent, INodeAttr, ITypeNode } from './type-node.interface';
+import {WebTextNode} from "./web-text-node/web-text-node.class";
 const XMLEntities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',
@@ -42,33 +43,30 @@ function encodeToDomString(str: string) {
   return buffer.join('');
 }
 /**
- * 虚拟DOM， TypeNode 抽象节点类, 所有节点类的基础类；
+ * 虚拟DOM，TypeNode 抽象节点类, 所有节点类的基础类；
  * abstract syntax tree 抽象语法树 抽象节点类
  */
 export abstract class TypeNode implements ITypeNode {
   abstract className?: string;
   abstract dom: HTMLElement | SVGElement | Text;
   nodeName: string;
-  nodeValue?: string | number | boolean;
+  nodeValue?: string;
   // eslint-disable-next-line no-use-before-define
   parentNode: TypeNode | null;
   // eslint-disable-next-line no-use-before-define
-  childNodes: TypeNode[];
-  attributes: INodeAttr[];
-  protected constructor(nodeName: string, nodeValue?: string | number | boolean) {
+  childNodes?: TypeNode[];
+  attributes?: INodeAttr[];
+  protected constructor(nodeName: string, nodeValue?: string) {
     this.nodeName = nodeName;
-    this.nodeValue = nodeValue;
+    if (nodeValue !== undefined) {
+      this.nodeValue = nodeValue;
+    }
     this.parentNode = null;
-    // if (this.nodeName === '#text') {
-    //   this.dom = document.createTextNode(this.nodeValue?.toString() || '');
-    // } else {
-    //   this.dom = document.createElement(this.nodeName);
-    // }
-    this.attributes = [];
-    this.childNodes = [];
+    // this.attributes = [];
+    // this.childNodes = [];
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
   }
-  get firstChild(): TypeNode {
+  get firstChild(): TypeNode | undefined {
     return this.childNodes && this.childNodes[0];
   }
   get nextSibling(): TypeNode | undefined {
@@ -96,7 +94,7 @@ export abstract class TypeNode implements ITypeNode {
     return this.childNodes || [];
   }
   hasChildNodes(): boolean {
-    return this.childNodes && this.childNodes.length > 0;
+    return this.childNodes ? this.childNodes.length > 0 : false;
   }
   /**
    * Search a node in the tree with the given path
@@ -130,7 +128,7 @@ export abstract class TypeNode implements ITypeNode {
         } else {
           const [parent] = stack.pop()!;
           let siblingPos = 0;
-          for (const child of parent.childNodes) {
+          for (const child of parent.childNodes!) {
             if (component.name === child.nodeName) {
               if (siblingPos === component.pos) {
                 return child.searchNode(paths, pos + 1);
@@ -152,9 +150,9 @@ export abstract class TypeNode implements ITypeNode {
         while (stack.length !== 0) {
           const [parent, currentPos] = stack.pop()!;
           const newPos = currentPos + 1;
-          if (newPos < parent.childNodes.length) {
+          if (newPos < parent.childNodes!.length) {
             stack.push([parent, newPos]);
-            node = parent.childNodes[newPos];
+            node = parent.childNodes![newPos];
             break;
           }
         }
@@ -179,8 +177,10 @@ export abstract class TypeNode implements ITypeNode {
     }
     if (this.hasChildNodes()) {
       buffer.push('>');
-      for (const child of this.childNodes) {
-        child.dump(buffer);
+      if (this.childNodes) {
+        for (const child of this.childNodes) {
+          child.dump(buffer);
+        }
       }
       buffer.push(`</${this.nodeName}>`);
     } else if (this.nodeValue) {
@@ -190,17 +190,19 @@ export abstract class TypeNode implements ITypeNode {
     }
   }
   render(): void {
+    // TypeElement WebTextNode XNode;
     if (this.dom instanceof Text) {
       return;
     } else {
-      for (const attr of this.attributes) {
+      // TypeElement 类，this.attributes，this.childNodes必有值
+      for (const attr of this.attributes!) {
         if (attr.name.startsWith('@')) {
           console.log('attr.name is ', attr.name);
           continue; // 不呢能用return；
         }
         this.dom.setAttribute(attr.name, attr.value.toString());
       }
-      for (const child of this.childNodes) {
+      for (const child of this.childNodes!) {
         this.dom.appendChild(child.dom);
         if (child.nodeName !== '#text') {
           child.render();

@@ -5,6 +5,7 @@ import { TypeNode } from '../type-node.class';
 import { WebTextNode } from '../web-text-node/web-text-node.class';
 import { Cursor, Display } from '../web-style.enum';
 import { IWebStyle } from '../web-style.interface';
+import { INodeAttr } from '../type-node.interface';
 import {
   ITypeAttribute,
   IWebBoundBox,
@@ -23,6 +24,8 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
   abstract parent: TypeElement;
   abstract dom: HTMLElement | SVGElement;
   propObj: ITypeProperty;
+  attributes: INodeAttr[];
+  childNodes: TypeNode[];
   events: Subscription[];
   // initEvents?(): () => any;
 
@@ -32,6 +35,8 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
       attrObj: {},
       styleObj: {}
     };
+    this.attributes = [];
+    this.childNodes = [];
     this.events = [];
   }
   // 父级是FormEditor的，要单独写 get editor.
