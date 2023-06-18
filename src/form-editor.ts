@@ -63,12 +63,12 @@ export class FormEditor {
     this.layout = new LayoutWrapper(this);
     this.dialog = new WebDialog(this);
     this.messageBox = new MessageBox(this);
-    const test = new Test(this);
-    this.layout.childNodes.push(this.dialog, this.messageBox, test);
+    this.layout.childNodes.push(this.dialog, this.messageBox);
     this.layout.render();
     // console.log('editorEl is ', editorEl);
     editorEl.appendChild(this.layout.dom);
-
+    const test = new Test(this);
+    editorEl.appendChild(test.dom);
     // this.currentPage = this.defaultPage;
     this.selectedMenu = null;
     this.selectedControl = null;

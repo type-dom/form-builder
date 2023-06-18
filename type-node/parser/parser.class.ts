@@ -1,5 +1,6 @@
-import { TypeNode } from '../type-node.class';
 import { INodeAttr } from '../type-node.interface';
+import { TypeNode } from '../type-node.class';
+import { XNode } from '../x-node/x-node.class';
 import { ParserErrorCode } from './parser.const';
 import { isWhitespace, isWhitespaceString } from './parser.util';
 import { IContent, IInstruction, IParam } from './parser.interface';
@@ -44,7 +45,7 @@ export class Parser {
     });
   }
   /**
-   * 解析字符串，----> TypeNode
+   * 解析字符串，----> XNode
    * @param s
    * @param start
    */
@@ -151,7 +152,7 @@ export class Parser {
    * 解析xml字符串
    * @param s
    */
-  parseXml(s: string): void {
+  parseNode(s: string): void {
     // console.log('parseXml . ');
     // console.log('s is ', s);
     let i = 0;
@@ -276,12 +277,12 @@ export class Parser {
     console.log('doctypeContent is ', doctypeContent);
   }
   parseFromString(data: string): TypeNode | undefined {
-    console.log('ofd-xml-parser parseFromString . ');
+    console.log('parser parseFromString . ');
     this._currentFragment = [];
     this._stack = [];
     this._errorCode = ParserErrorCode.NoError;
 
-    this.parseXml(data.trim());
+    this.parseNode(data.trim());
 
     if (this._errorCode !== ParserErrorCode.NoError) {
       return undefined; // return undefined on error
@@ -298,11 +299,11 @@ export class Parser {
     if (isWhitespaceString(text)) {
       return;
     }
-    const node = new TypeNode('#text', text);
+    const node = new XNode('#text', text);
     this._currentFragment.push(node);
   }
   onCdata(text: string): void {
-    const node = new TypeNode('#text', text);
+    const node = new XNode('#text', text);
     this._currentFragment.push(node);
   }
 
@@ -316,7 +317,7 @@ export class Parser {
     if (this._lowerCaseName) {
       name = name.toLowerCase();
     }
-    const node = new TypeNode(name);
+    const node = new XNode(name);
     node.childNodes = [];
     if (this._hasAttributes) {
       node.attributes = attributes;
@@ -344,16 +345,7 @@ export class Parser {
     }
     // 对应的字节点
     for (const child of lastElement.children) {
-      if (child.nodeName === '#text') {
-        // console.log('text TypeNode . ');
-        // switch (name?.trim()) {
-        //   default:
-        //     // console.log('child.value default is ', child.value);
-        //   // result.children = [child.nodeValue]; 注：标签和文本混合时，会清除标签；
-        //     // result.children.push(child.nodeValue); // todo 可能会引起其它问题；
-        // }
-      }
-      // child.parent = lastElement;
+      child.parentNode = lastElement;
     }
     return lastElement;
   }
