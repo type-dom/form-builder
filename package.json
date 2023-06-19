@@ -17,7 +17,10 @@
   },
   "keywords": [
     "typescript",
-    "webpack"
+    "webpack",
+    "TypeNode",
+    "FormEditor",
+    "Class Code"
   ],
   "author": "Xu",
   "license": "ISC",
