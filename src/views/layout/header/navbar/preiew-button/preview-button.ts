@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { WebTextNode } from '../../../../../../type-node/web-text-node/web-text-node.class';
+import { TextNode } from '../../../../../../type-node/text-node/text-node.class';
 import { toJSON } from '../../../../../../type-node/type-element/type-element.function';
 import { TypeButton } from '../../../../../../type-node/type-element/type-html/button/button.abstract';
 import { WebDocument } from '../../../../../core/document/web-document.class';
@@ -14,7 +14,7 @@ export class PreviewButton extends TypeButton {
     this.addStyleObj({
       margin: 'auto 20px',
     });
-    const text = new WebTextNode(this, '预览');
+    const text = new TextNode(this, '预览');
     this.childNodes = [text];
     this.initEvents();
   }

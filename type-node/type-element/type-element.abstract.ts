@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 import { FormEditor } from '../../src/form-editor';
 import { humpToMiddleLine } from '../../src/utils';
 import { TypeNode } from '../type-node.class';
-import { WebTextNode } from '../web-text-node/web-text-node.class';
+import { TextNode } from '../text-node/text-node.class';
 import { Cursor, Display } from '../web-style.enum';
 import { IWebStyle } from '../web-style.interface';
 import { INodeAttr } from '../type-node.interface';
@@ -317,15 +317,15 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
    * 渲染到dom上
    * @param newChild
    */
-  // abstract appendChild(newChild: TypeElement | WebTextNode): TypeElement | WebTextNode;
-  appendChild(newChild: TypeElement| WebTextNode): void {
+  // abstract appendChild(newChild: TypeElement | TextNode): TypeElement | TextNode;
+  appendChild(newChild: TypeElement| TextNode): void {
     newChild.setParent(this); // 如果不是子类，是其它地方的对象加过来，要重设其父类。
     this.childNodes.push(newChild);
     this.renderChild(newChild);
     // this.dom.appendChild(newChild.render().dom);
     // return this;
   }
-  addChild(newChild: TypeElement | WebTextNode): void {
+  addChild(newChild: TypeElement | TextNode): void {
     this.childNodes.push(newChild);
   }
   /**
@@ -350,7 +350,7 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
    * @param child
    * @param index 要插入的目标位置
    */
-  // insertChild(child: TypeElement | WebTextNode, index: number) {
+  // insertChild(child: TypeElement | TextNode, index: number) {
   //   this.childNodes.splice(index, 0, child);
   //   child.setParent(this);
   //   return child;
@@ -363,7 +363,7 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
    * @param newChild
    * @param index 数组下标
    */
-  insertChild(newChild: TypeElement | WebTextNode, index: number): HTMLElement | SVGElement | Text {
+  insertChild(newChild: TypeElement | TextNode, index: number): HTMLElement | SVGElement | Text {
     // 判断newChild是否已经插入到数据层中。默认应该先插入数据层，再插入dom树。
     // if (!this.parent) {
     //   console.error('newChild has no parent . ');
@@ -497,7 +497,7 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
     return this.childNodes[index] || null;
   }
 
-  findChildIndex(child: TypeElement | WebTextNode): number {
+  findChildIndex(child: TypeElement | TextNode): number {
     return this.childNodes.findIndex(item => item === child);
   }
 

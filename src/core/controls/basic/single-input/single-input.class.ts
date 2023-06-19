@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../../type-node/web-element/html-element/table/data-cell/data-cell.class';
+import { WebTableDataCell } from '../../../../../type-node/element/html-element/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
 import { InputItem } from '../../form-item/input-item/input-item.class';
 import { WebBasicControl } from '../basic.abstract';

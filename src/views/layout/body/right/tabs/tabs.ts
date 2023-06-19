@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
 import { Display } from '../../../../../../type-node/web-style.enum';
 import { TypeUl } from '../../../../../../type-node/type-element/type-html/ul/ul.abstract';
-import { ListItem } from '../../../../../../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
-import { WebTextNode } from '../../../../../../type-node/web-text-node/web-text-node.class';
+import { ListItem } from '../../../../../../type-node/element/html-element/unordered-list/list-item/list-item.class';
+import { TextNode } from '../../../../../../type-node/text-node/text-node.class';
 import { BodyRight } from '../right';
 
 export class BodyRightTabs extends TypeUl {
@@ -36,16 +36,16 @@ export class BodyRightTabs extends TypeUl {
     // 字段属性是动态显示的。只有选中表格的单元格才会触发。
     this.fieldTab = new ListItem(this);
     this.fieldTab.addStyleObj(Object.assign({}, liStyle, { display: 'none' }));
-    this.fieldTab.childNodes = [new WebTextNode(this.fieldTab, '字段属性')];
+    this.fieldTab.childNodes = [new TextNode(this.fieldTab, '字段属性')];
 
     this.controlTab = new ListItem(this);
     // li1.setAttribute('class', 'attribute__menu-active');
     this.controlTab.setStyleObj(Object.assign({}, liStyle, { display: 'none' }));
-    this.controlTab.childNodes = [new WebTextNode(this.controlTab, '控件属性')];
+    this.controlTab.childNodes = [new TextNode(this.controlTab, '控件属性')];
 
     this.formTab = new ListItem(this);
     this.formTab.addStyleObj(Object.assign({}, liStyle, { backgroundColor: '#ffffff' }));
-    this.formTab.childNodes = [new WebTextNode(this.formTab, '表单属性')];
+    this.formTab.childNodes = [new TextNode(this.formTab, '表单属性')];
     this.childNodes = [this.fieldTab, this.controlTab, this.formTab];
     this.initEvents();
   }

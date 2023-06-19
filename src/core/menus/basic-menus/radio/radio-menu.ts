@@ -1,5 +1,5 @@
 import { RadioSvg } from '../../../../../type-node/components/svgs/radio/radio';
-import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
+import { Span } from '../../../../../type-node/element/html-element/span/span.class';
 import { RadioControl } from '../../../controls/basic/radio/radio.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';

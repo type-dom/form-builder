@@ -1,9 +1,8 @@
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
-import { WebTextNode } from '../../../../../../../../type-node/web-text-node/web-text-node.class';
+import { TextNode } from '../../../../../../../../type-node/text-node/text-node.class';
 
 const readonlyConfigs: IOptionConfig = {
   name: '只读' + Math.random(),
@@ -63,7 +62,7 @@ export class ReadonlyProperty extends PropertyRadio {
       console.error('this.editor.selectedTableDataCell is null . ');
       return;
     }
-    if (this.editor.selectedTableDataCell?.control instanceof WebTextNode) {
+    if (this.editor.selectedTableDataCell?.control instanceof TextNode) {
       console.error('this.editor.selectedTableDataCell?.control is not WebControl . ');
       return;
     }

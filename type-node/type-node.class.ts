@@ -1,5 +1,4 @@
 import { IComponent, INodeAttr, ITypeNode } from './type-node.interface';
-import {WebTextNode} from "./web-text-node/web-text-node.class";
 const XMLEntities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',
@@ -51,9 +50,7 @@ export abstract class TypeNode implements ITypeNode {
   abstract dom: HTMLElement | SVGElement | Text;
   nodeName: string;
   nodeValue?: string;
-  // eslint-disable-next-line no-use-before-define
   parentNode: TypeNode | null;
-  // eslint-disable-next-line no-use-before-define
   childNodes?: TypeNode[];
   attributes?: INodeAttr[];
   protected constructor(nodeName: string, nodeValue?: string) {
@@ -62,8 +59,6 @@ export abstract class TypeNode implements ITypeNode {
       this.nodeValue = nodeValue;
     }
     this.parentNode = null;
-    // this.attributes = [];
-    // this.childNodes = [];
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
   }
   get firstChild(): TypeNode | undefined {
@@ -190,7 +185,7 @@ export abstract class TypeNode implements ITypeNode {
     }
   }
   render(): void {
-    // TypeElement WebTextNode XNode;
+    // TypeElement TextNode XNode;
     if (this.dom instanceof Text) {
       return;
     } else {

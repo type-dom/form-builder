@@ -1,5 +1,5 @@
 import { TypeSvgSvg } from '../../../type-element/type-svg/svg/svg.abstract';
-import { SvgPath } from '../../../web-element/svg-element/path/path.class';
+import { SvgPath } from '../../../element/svg-element/path/path.class';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 export class AttachmentSvg extends TypeSvgSvg {
   className: 'AttachmentSvg';

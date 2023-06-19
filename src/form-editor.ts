@@ -4,14 +4,14 @@ import { ControlProperty } from './views/layout/body/right/contents/control-prop
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
 import { Cursor } from '../type-node/web-style.enum';
-import { WebTableDataCell } from '../type-node/web-element/html-element/table/data-cell/data-cell.class';
-import { ListItem } from '../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
-import { WebTableRow } from '../type-node/web-element/html-element/table/row/row.class';
-import { Span } from '../type-node/web-element/html-element/span/span.class';
+import { WebTableDataCell } from '../type-node/element/html-element/table/data-cell/data-cell.class';
+import { ListItem } from '../type-node/element/html-element/unordered-list/list-item/list-item.class';
+import { WebTableRow } from '../type-node/element/html-element/table/row/row.class';
+import { Span } from '../type-node/element/html-element/span/span.class';
 import { toJSON } from '../type-node/type-element/type-element.function';
 import { WebDialog } from '../type-node/components/dialog/dialog';
 import { MessageBox } from '../type-node/components/message-box/message-box';
-import { WebTextNode } from '../type-node/web-text-node/web-text-node.class';
+import { TextNode } from '../type-node/text-node/text-node.class';
 import { WebForm } from '../type-node/components/form/form';
 import { ControlMenu } from './core/menus/menu.abstract';
 import { WebControl } from './core/controls/web-control.abstract';
@@ -311,7 +311,7 @@ export class FormEditor {
                   return;
                 }
                 const item = td.childNodes[0];
-                if (item instanceof WebTextNode) {
+                if (item instanceof TextNode) {
                   data[tableHead[index].name] = item.nodeValue;
                 } else {
                   data[tableHead[index].name] = item.value; // WebControl.value;

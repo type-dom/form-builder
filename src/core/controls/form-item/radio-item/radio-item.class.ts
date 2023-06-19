@@ -1,6 +1,6 @@
 import { RadioGroup } from '../../../../../type-node/components/radio-group/radio-group.class';
-import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
-import { Label } from '../../../../../type-node/web-element/html-element/label/label.class';
+import { Span } from '../../../../../type-node/element/html-element/span/span.class';
+import { Label } from '../../../../../type-node/element/html-element/label/label.class';
 import { WebControl } from '../../web-control.abstract';
 import { itemContentStyle } from '../../web-control.const';
 import { ConfigItem } from '../config-item/config-item.class';

@@ -1,14 +1,14 @@
 import { fromEvent, Observable } from 'rxjs';
 import { TypeButton } from '../../../../type-element/type-html/button/button.abstract';
 import { buttonStyle } from '../../../../type-element/type-html/button/button.const';
-import { WebTextNode } from '../../../../web-text-node/web-text-node.class';
+import { TextNode } from '../../../../text-node/text-node.class';
 import { FormFooter } from '../footer';
 export class SubmitButton extends TypeButton {
   nodeName: 'button';
   className: 'SubmitButton';
   dom: HTMLButtonElement;
-  childNodes: [WebTextNode];
-  textNode: WebTextNode;
+  childNodes: [TextNode];
+  textNode: TextNode;
   submitObservable: Observable<Event>;
   constructor(public parent: FormFooter) {
     super();
@@ -22,7 +22,7 @@ export class SubmitButton extends TypeButton {
       },
       styleObj: buttonStyle,
     };
-    this.textNode = new WebTextNode(this, '提交');
+    this.textNode = new TextNode(this, '提交');
     this.childNodes = [this.textNode];
     this.submitObservable = fromEvent(this.dom, 'click');
     this.initEvents();

@@ -1,12 +1,12 @@
-import { Button } from '../../../../../../../../type-node/web-element/html-element/button/button.class';
-import { Label } from '../../../../../../../../type-node/web-element/html-element/label/label.class';
-import { Span } from '../../../../../../../../type-node/web-element/html-element/span/span.class';
+import { Button } from '../../../../../../../../type-node/element/html-element/button/button.class';
+import { Label } from '../../../../../../../../type-node/element/html-element/label/label.class';
+import { Span } from '../../../../../../../../type-node/element/html-element/span/span.class';
 import { Display } from '../../../../../../../../type-node/web-style.enum';
-import { WebTextNode } from '../../../../../../../../type-node/web-text-node/web-text-node.class';
+import { TextNode } from '../../../../../../../../type-node/text-node/text-node.class';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertySpan extends PropertyItem {
-  private readonly text: WebTextNode;
+  private readonly text: TextNode;
   childNodes: [Label, Span, Button];
   content: Span;
   protected constructor(labelText = '控件名称') {
@@ -37,7 +37,7 @@ export abstract class PropertySpan extends PropertyItem {
         name: 'property-span',
       }
     };
-    this.text = new WebTextNode(this.content, '显示');
+    this.text = new TextNode(this.content, '显示');
     this.content.addChild(this.text);
 
     this.button.setStyleObj({

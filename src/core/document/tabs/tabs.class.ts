@@ -1,10 +1,10 @@
 import { fromEvent } from 'rxjs';
 import { TypeUl } from '../../../../type-node/type-element/type-html/ul/ul.abstract';
-import { ListItem } from '../../../../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
+import { ListItem } from '../../../../type-node/element/html-element/unordered-list/list-item/list-item.class';
 import { IWebStyle } from '../../../../type-node/web-style.interface';
 import { Display } from '../../../../type-node/web-style.enum';
-import { WebTextNode } from '../../../../type-node/web-text-node/web-text-node.class';
-import { IWebTextNode } from '../../../../type-node/web-text-node/web-text-node.interface';
+import { TextNode } from '../../../../type-node/text-node/text-node.class';
+import { ITextNode } from '../../../../type-node/text-node/text-node.interface';
 import { WebDocument } from '../web-document.class';
 import { IWebDocumentTabs } from './tabs.interface';
 
@@ -82,7 +82,7 @@ export class WebDocumentTabs extends TypeUl {
       for (let i = 0; i < num; i++) {
         if (!this.childNodes[i]) { // 如果不存在，创建子节点
           const liObj = new ListItem(this);
-          const text = new WebTextNode(liObj, 'tab标签');
+          const text = new TextNode(liObj, 'tab标签');
           if (i === 0) {
             text.setText('首页');
           } else {
@@ -107,7 +107,7 @@ export class WebDocumentTabs extends TypeUl {
         console.log('tabs没有子节点。');
         const liObj = new ListItem(this);
         liObj.addStyleObj(Object.assign({}, this.liStyle));
-        const text = new WebTextNode(liObj, '首页');
+        const text = new TextNode(liObj, '首页');
         liObj.addChild(text);
         this.appendChild(liObj);
       } else { // 原来有多页时
@@ -150,14 +150,14 @@ export class WebDocumentTabs extends TypeUl {
       // 判断对应的子对象是否存在，
       if (this.childNodes[index]) {
         if (index < literal.childNodes.length) {
-          (this.childNodes[index].childNodes[0] as WebTextNode).setText((liJson.childNodes[0] as IWebTextNode).nodeValue);
+          (this.childNodes[index].childNodes[0] as TextNode).setText((liJson.childNodes[0] as ITextNode).nodeValue);
         }
       } else { // 如果不存在，
         // 要创建子节点
         const liObj = new ListItem(this);
         liObj.addStyleObj(Object.assign({}, this.liStyle));
-        const text = (liJson.childNodes[0] as IWebTextNode).nodeValue;
-        const textNode = new WebTextNode(liObj, text);
+        const text = (liJson.childNodes[0] as ITextNode).nodeValue;
+        const textNode = new TextNode(liObj, text);
         liObj.addChild(textNode);
         this.appendChild(liObj);
       }
@@ -210,7 +210,7 @@ export class WebDocumentTabs extends TypeUl {
         for (const li of this.childNodes) {
           if (li.dom === e.target && this.editor.mode === 'design') { // 选中的tab
             // console.log('li.dom.innerText is ', li.dom.innerText);
-            (li.childNodes[0] as WebTextNode).setText(li.dom.innerText);
+            (li.childNodes[0] as TextNode).setText(li.dom.innerText);
           }
         }
       }),

@@ -1,5 +1,5 @@
-import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
-import { Label } from '../../../../../type-node/web-element/html-element/label/label.class';
+import { Span } from '../../../../../type-node/element/html-element/span/span.class';
+import { Label } from '../../../../../type-node/element/html-element/label/label.class';
 import { CheckboxGroup } from '../../../../../type-node/components/checkbox-group/checkbox-group.class';
 import { WebControl } from '../../web-control.abstract';
 import { itemContentStyle } from '../../web-control.const';

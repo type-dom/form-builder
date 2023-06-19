@@ -1,11 +1,11 @@
-import { WebTextNode } from '../../../web-text-node/web-text-node.class';
+import { TextNode } from '../../../text-node/text-node.class';
 import { TypeDiv } from '../../../type-element/type-html/div/div.abstract';
 import { WebForm } from '../form';
 
 export class FormHeader extends TypeDiv {
   nodeName: 'div';
   className: 'FormHeader';
-  childNodes: [WebTextNode];
+  childNodes: [TextNode];
   dom: HTMLDivElement;
 
   constructor(public parent: WebForm) {
@@ -27,7 +27,7 @@ export class FormHeader extends TypeDiv {
       }
     };
 
-    const textNode = new WebTextNode(this, parent.title);
+    const textNode = new TextNode(this, parent.title);
     this.childNodes = [textNode];
   }
 }

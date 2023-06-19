@@ -1,11 +1,11 @@
-import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
+import { TextNode } from '../../../../../text-node/text-node.class';
 import { TypeSpan } from '../../../../../type-element/type-html/span/span.abstract';
 import { OverlayHeader } from '../header';
 
 export class OverlayTitle extends TypeSpan {
   className: 'OverlayTitle';
-  childNodes: WebTextNode[];
-  text: WebTextNode;
+  childNodes: TextNode[];
+  text: TextNode;
 
   constructor(public parent: OverlayHeader) {
     super();
@@ -20,7 +20,7 @@ export class OverlayTitle extends TypeSpan {
         name: 'overlay-title',
       }
     };
-    this.text = new WebTextNode(this, '标题');
+    this.text = new TextNode(this, '标题');
     this.childNodes = [this.text];
   }
 }

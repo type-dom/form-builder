@@ -1,6 +1,6 @@
 import { TypeSvgSvg } from '../../../type-element/type-svg/svg/svg.abstract';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
-import { SvgPath } from '../../../web-element/svg-element/path/path.class';
+import { SvgPath } from '../../../element/svg-element/path/path.class';
 
 export class CloseSvg extends TypeSvgSvg {
   className: 'CloseSvg';

@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { TypeDiv } from '../../web-component/div-component/div-component.class';
 import { WebLayout } from '../../layout/layout.class';
 import { BodyMainContent } from '../../layout/body/main-content/main-content';
-import { WebTextNode } from '../../web-text-node/web-text-node.class';
+import { TextNode } from '../../text-node/text-node.class';
 import { Division } from '../../web-element/division/division.class';
 import { Input } from '../../web-element/input/input.class';
 import { Span } from '../../web-element/span/span.class';
@@ -120,7 +120,7 @@ export class WebDocument extends TypeDiv implements IWebDocument {
             this.currentTabNameInputLabel.hide();
             return;
           }
-          (this.currentTabNameInputLabel.childNodes[0] as WebTextNode).setText((page.childNodes[0] as any).text);
+          (this.currentTabNameInputLabel.childNodes[0] as TextNode).setText((page.childNodes[0] as any).text);
           // span.createInstance(page);
           // this.appendChild(span);
         } else if (page.className === 'Input') {
@@ -134,7 +134,7 @@ export class WebDocument extends TypeDiv implements IWebDocument {
             this.setTabNameButton.hide();
             return;
           }
-          (this.setTabNameButton.childNodes[0] as WebTextNode).setText((page.childNodes[0] as any).text);
+          (this.setTabNameButton.childNodes[0] as TextNode).setText((page.childNodes[0] as any).text);
         } else if (page.className === 'Division') {
           if (this.editor.mode !== 'design') {
             this.tabHeaders.setStyleObj({
@@ -142,7 +142,7 @@ export class WebDocument extends TypeDiv implements IWebDocument {
             });
           }
           (this.tabHeaders.childNodes as Division[]).forEach((tab, index) => {
-            (tab.childNodes[0] as WebTextNode).setText(((page.childNodes[index] as TypeElement).childNodes[0] as WebTextNode).text);
+            (tab.childNodes[0] as TextNode).setText(((page.childNodes[index] as TypeElement).childNodes[0] as TextNode).text);
           });
         } else {
           console.error('error. ');
@@ -181,7 +181,7 @@ export class WebDocument extends TypeDiv implements IWebDocument {
       };
 
       this.currentTabNameInputLabel = new Span(this);
-      let tempTextNode = new WebTextNode(this, '点击Tab修改名称:');
+      let tempTextNode = new TextNode(this, '点击Tab修改名称:');
       this.currentTabNameInputLabel.setStyleObj({ // 修改Tab名称Label的样式
         position: 'absolute',
         top: '10px',
@@ -192,7 +192,7 @@ export class WebDocument extends TypeDiv implements IWebDocument {
       this.currentTabNameInputLabel.addChild(tempTextNode);
 
       // 修改Tab名称按钮
-      let btnTextNode = new WebTextNode(this, '确定');
+      let btnTextNode = new TextNode(this, '确定');
       this.setTabNameButton = new Button(this);
       this.setTabNameButton.setStyleObj({   // 修改Tab名称确认Button的样式
         position: 'absolute',
@@ -254,7 +254,7 @@ export class WebDocument extends TypeDiv implements IWebDocument {
           position: 'absolute',
           left: leftMargin,
         });
-        let textNode = new WebTextNode(this, 'tab头部' + (i + 1));
+        let textNode = new TextNode(this, 'tab头部' + (i + 1));
         tempdiv.addChild(textNode);
         this.tabHeaders.addChild(tempdiv);
 

@@ -1,11 +1,11 @@
 import { fromEvent } from 'rxjs';
-import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
+import { TextNode } from '../../../../../text-node/text-node.class';
 import { TypeButton } from '../../../../../type-element/type-html/button/button.abstract';
 import { OverlayFooter } from '../footer';
 
 export class CancelButton extends TypeButton {
   className: 'CancelButton';
-  childNodes: [WebTextNode];
+  childNodes: [TextNode];
 
   constructor(public parent: OverlayFooter) {
     super();

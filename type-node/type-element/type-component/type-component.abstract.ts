@@ -4,11 +4,11 @@ import { TypeDiv } from '../type-html/div/div.abstract';
 import { ITypeComponent } from './type-component.interface';
 /**
  * 组件基类
- * 子节点是 TypeElement, 不包括 WebTextNode
+ * 子节点是 TypeElement, 不包括 TextNode
  */
 export abstract class TypeComponent extends TypeDiv implements ITypeComponent {
   abstract parent: TypeHtml;
-  childNodes: TypeElement[];  // 没有WebTextNode
+  childNodes: TypeElement[];  // 没有TextNode
   protected constructor() {
     super();
     this.childNodes = [];

@@ -1,6 +1,6 @@
 import { TypeDiv } from '../../../../../../../type-node/type-element/type-html/div/div.abstract';
-import { Division } from '../../../../../../../type-node/web-element/html-element/division/division.class';
-import { WebTextNode } from '../../../../../../../type-node/web-text-node/web-text-node.class';
+import { Division } from '../../../../../../../type-node/element/html-element/division/division.class';
+import { TextNode } from '../../../../../../../type-node/text-node/text-node.class';
 import { RightContents } from '../contents';
 // control property
 import { ControlFieldProperty } from './field/control-field';
@@ -83,7 +83,7 @@ export class ControlProperty extends TypeDiv {
       this.controlConnection,
     ];
     const labelValidate = new Division(this);
-    labelValidate.addChild(new WebTextNode(labelValidate, '校验'));
+    labelValidate.addChild(new TextNode(labelValidate, '校验'));
     labelValidate.addStyleObj({
       textAlign: 'center',
       padding: '10px 0',
@@ -106,7 +106,7 @@ export class ControlProperty extends TypeDiv {
     this.addChild(this.controlTableColumn);
 
     const eventsDiv = new Division(this);
-    eventsDiv.addChild(new WebTextNode(eventsDiv, '监听事件'));
+    eventsDiv.addChild(new TextNode(eventsDiv, '监听事件'));
     this.controlOnChange = new ControlOnChangeProperty(this);
     this.controlOnChange.hide();
     this.addChild(this.controlOnChange);

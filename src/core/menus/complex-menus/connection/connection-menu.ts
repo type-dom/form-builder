@@ -1,4 +1,4 @@
-import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
+import { Span } from '../../../../../type-node/element/html-element/span/span.class';
 import { ConnectionSvg } from '../../../../../type-node/components/svgs/connetion/connection';
 import { ConnectionControl } from '../../../controls/complex/connection/connection.class';
 import { ControlMenu } from '../../menu.abstract';

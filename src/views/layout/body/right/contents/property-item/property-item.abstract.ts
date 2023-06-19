@@ -1,11 +1,11 @@
-import { Label } from '../../../../../../../type-node/web-element/html-element/label/label.class';
-import { Input } from '../../../../../../../type-node/web-element/html-element/input/input.class';
-import { Textarea } from '../../../../../../../type-node/web-element/html-element/textarea/textarea.class';
-import { Division } from '../../../../../../../type-node/web-element/html-element/division/division.class';
-import { Button } from '../../../../../../../type-node/web-element/html-element/button/button.class';
-import { Select } from '../../../../../../../type-node/web-element/html-element/select/select.class';
-import { Span } from '../../../../../../../type-node/web-element/html-element/span/span.class';
-import { WebTextNode } from '../../../../../../../type-node/web-text-node/web-text-node.class';
+import { Label } from '../../../../../../../type-node/element/html-element/label/label.class';
+import { Input } from '../../../../../../../type-node/element/html-element/input/input.class';
+import { Textarea } from '../../../../../../../type-node/element/html-element/textarea/textarea.class';
+import { Division } from '../../../../../../../type-node/element/html-element/division/division.class';
+import { Button } from '../../../../../../../type-node/element/html-element/button/button.class';
+import { Select } from '../../../../../../../type-node/element/html-element/select/select.class';
+import { Span } from '../../../../../../../type-node/element/html-element/span/span.class';
+import { TextNode } from '../../../../../../../type-node/text-node/text-node.class';
 import { TypeDiv } from '../../../../../../../type-node/type-element/type-html/div/div.abstract';
 import { labelStyle } from '../../../../../../core/controls/web-control.const';
 import { ControlProperty } from '../control-property/control-property';
@@ -34,7 +34,7 @@ export abstract class PropertyItem extends TypeDiv {
     };
 
     this.label = new Label(this);
-    const text = new WebTextNode(this.label, labelText);
+    const text = new TextNode(this.label, labelText);
     this.label.childNodes.push(text);
     this.label.propObj.styleObj = Object.assign({}, labelStyle);
     this.button = new Button(this);

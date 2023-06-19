@@ -1,15 +1,15 @@
 import { fromEvent } from 'rxjs';
 import { TypeSpan } from '../../../type-element/type-html/span/span.abstract';
-import { Input } from '../../../web-element/html-element/input/input.class';
-import { WebTextNode } from '../../../web-text-node/web-text-node.class';
+import { Input } from '../../../element/html-element/input/input.class';
+import { TextNode } from '../../../text-node/text-node.class';
 import { CheckboxGroup } from '../checkbox-group.class';
 import { ICheckboxOption } from './checkbox-option.interface';
 
 export class CheckboxOption extends TypeSpan implements ICheckboxOption {
   className: 'CheckboxOption';
-  childNodes: [Input, WebTextNode];
+  childNodes: [Input, TextNode];
   input: Input;
-  text: WebTextNode;
+  text: TextNode;
   constructor(public parent: CheckboxGroup) {
     super();
     this.className = 'CheckboxOption';
@@ -21,7 +21,7 @@ export class CheckboxOption extends TypeSpan implements ICheckboxOption {
       // value: opt.value,
       // checked: opt.checked || false
     });
-    this.text = new WebTextNode(this, '');
+    this.text = new TextNode(this, '');
     this.childNodes = [this.input, this.text];
     this.initEvents();
   }

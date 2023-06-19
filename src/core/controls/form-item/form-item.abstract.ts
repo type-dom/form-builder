@@ -1,15 +1,15 @@
 import { IWebStyle } from '../../../../type-node/web-style.interface';
-import { WebTable } from '../../../../type-node/web-element/html-element/table/table.class';
-import { Input } from '../../../../type-node/web-element/html-element/input/input.class';
-import { Label } from '../../../../type-node/web-element/html-element/label/label.class';
-import { Textarea } from '../../../../type-node/web-element/html-element/textarea/textarea.class';
-import { ILabel } from '../../../../type-node/web-element/html-element/label/label.interface';
-import { Span } from '../../../../type-node/web-element/html-element/span/span.class';
-import { Select } from '../../../../type-node/web-element/html-element/select/select.class';
+import { WebTable } from '../../../../type-node/element/html-element/table/table.class';
+import { Input } from '../../../../type-node/element/html-element/input/input.class';
+import { Label } from '../../../../type-node/element/html-element/label/label.class';
+import { Textarea } from '../../../../type-node/element/html-element/textarea/textarea.class';
+import { ILabel } from '../../../../type-node/element/html-element/label/label.interface';
+import { Span } from '../../../../type-node/element/html-element/span/span.class';
+import { Select } from '../../../../type-node/element/html-element/select/select.class';
 import { RadioGroup } from '../../../../type-node/components/radio-group/radio-group.class';
 import { CheckboxGroup } from '../../../../type-node/components/checkbox-group/checkbox-group.class';
 import { DeleteSvg } from '../../../../type-node/components/svgs/delete/delete';
-import { WebTextNode } from '../../../../type-node/web-text-node/web-text-node.class';
+import { TextNode } from '../../../../type-node/text-node/text-node.class';
 import { TypeDiv } from '../../../../type-node/type-element/type-html/div/div.abstract';
 import { formItemStyle, labelStyle } from '../web-control.const';
 import { IFormItem, ItemContent } from './form-item.interface';
@@ -21,7 +21,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
   abstract itemContent: Input | Textarea | Select | RadioGroup | CheckboxGroup | WebTable;
 
   label: Label;
-  labelText: WebTextNode;
+  labelText: TextNode;
   labelStyle: Partial<IWebStyle>;
   deleteSpan: Span;
 
@@ -33,7 +33,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
     this.label = new Label(this);
     this.labelStyle = Object.assign({}, labelStyle);
     this.label.propObj.styleObj = this.labelStyle;
-    this.labelText = new WebTextNode(this.label, labelText);
+    this.labelText = new TextNode(this.label, labelText);
     this.label.childNodes.push(this.labelText);
     this.deleteSpan = new Span(this);
     this.deleteSpan.setStyleObj({

@@ -1,5 +1,5 @@
 import { TimeSvg } from '../../../../../type-node/components/svgs/time/time';
-import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
+import { Span } from '../../../../../type-node/element/html-element/span/span.class';
 import { TimeControl } from '../../../controls/basic/time/time.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';

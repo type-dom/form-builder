@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
 import { TypeHtml } from '../type-element/type-html/type-html.abstract';
 import { TypeComponent } from '../type-element/type-component/type-component.abstract';
-import { Span } from '../web-element/html-element/span/span.class';
-import { WebTextNode } from '../web-text-node/web-text-node.class';
+import { Span } from '../element/html-element/span/span.class';
+import { TextNode } from '../text-node/text-node.class';
 import { TriangleSvg } from './svgs/triangle/triangle';
 export class ExpandHeading extends TypeHtml {
   nodeName: 'h3';
@@ -34,7 +34,7 @@ export class ExpandHeading extends TypeHtml {
 
     this.title = new Span(this);
     // span.setStyle('verticalAlign', 'middle');
-    this.title.childNodes = [new WebTextNode(this, title)];
+    this.title.childNodes = [new TextNode(this, title)];
     this.childNodes = [this.svg, this.title];
 
     this.initEvents();

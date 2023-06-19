@@ -1,5 +1,5 @@
-import { WebTextNode } from '../../web-text-node/web-text-node.class';
-import { Span } from '../../web-element/html-element/span/span.class';
+import { TextNode } from '../../text-node/text-node.class';
+import { Span } from '../../element/html-element/span/span.class';
 import { FormEditor } from '../../../src/form-editor';
 import { Overlay } from '../overlay/overlay.abstract';
 
@@ -18,7 +18,7 @@ export class MessageBox extends Overlay {
 
   confirm(message: string): void {
     const span = new Span(this.container.body);
-    const textNode = new WebTextNode(span, message);
+    const textNode = new TextNode(span, message);
     span.addChild(textNode);
     this.container.body.appendChild(span);
     // this.container.footer.

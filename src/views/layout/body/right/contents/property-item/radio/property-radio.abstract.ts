@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
 import { TypeElement } from '../../../../../../../../type-node/type-element/type-element.abstract';
-import { WebTextNode } from '../../../../../../../../type-node/web-text-node/web-text-node.class';
-import { Label } from '../../../../../../../../type-node/web-element/html-element/label/label.class';
-import { Division } from '../../../../../../../../type-node/web-element/html-element/division/division.class';
-import { Button } from '../../../../../../../../type-node/web-element/html-element/button/button.class';
+import { TextNode } from '../../../../../../../../type-node/text-node/text-node.class';
+import { Label } from '../../../../../../../../type-node/element/html-element/label/label.class';
+import { Division } from '../../../../../../../../type-node/element/html-element/division/division.class';
+import { Button } from '../../../../../../../../type-node/element/html-element/button/button.class';
 import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 
 import { PropertyItem } from '../property-item.abstract';
@@ -30,7 +30,7 @@ export abstract class PropertyRadio extends PropertyItem {
       let button;
       if (!this.optionDiv.childNodes[index]) {
         button = new Button(this.optionDiv);
-        const label = new WebTextNode(button, option.label);
+        const label = new TextNode(button, option.label);
         button.childNodes = [label];
         this.optionDiv.addChild(button);
       } else {
@@ -81,7 +81,7 @@ export abstract class PropertyRadio extends PropertyItem {
             this.selectedOpt.setAttribute('checked', false);
           }
           this.selectedOpt = btn as Button;
-          if (btn instanceof WebTextNode) return;
+          if (btn instanceof TextNode) return;
           if (btn instanceof TypeElement) {
             btn.setStyleObj({
               backgroundColor: '#00f',

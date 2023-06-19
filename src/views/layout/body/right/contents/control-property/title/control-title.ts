@@ -1,4 +1,4 @@
-import { WebTableHead } from '../../../../../../../../type-node/web-element/html-element/table/head/head.class';
+import { WebTableHead } from '../../../../../../../../type-node/element/html-element/table/head/head.class';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';

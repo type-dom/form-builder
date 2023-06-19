@@ -34,7 +34,7 @@
 ## 框架介绍
 
     1、技术栈
-        –	虚拟dom：WebElement
+        –	虚拟DOM：TypeNode
         –	webpack
         –	typescript
         –	抽象类
@@ -44,18 +44,15 @@
         –	build
         –	public
         –	src
-        –	assets
-        –	core:
-        –	menus
-        –	controls
-        –	fields
-        –	document
-        –	page
-        –	layout 布局
-        –	style
-        –	web-element
-        –	web-svg
-        –	web-text-node
+            –	assets
+            –	core:
+                –	controls
+                –	document
+                –	menus
+                –	page
+            –	views 页面布局
+            –	style
+        –	type-node 依赖基础库
         –	test
 
 ## 添加控件的过程

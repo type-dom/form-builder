@@ -1,10 +1,10 @@
 import { fromEvent, Observable } from 'rxjs';
-import { Label } from '../../../../../../../../type-node/web-element/html-element/label/label.class';
-import { Division } from '../../../../../../../../type-node/web-element/html-element/division/division.class';
-import { Select } from '../../../../../../../../type-node/web-element/html-element/select/select.class';
-import { Button } from '../../../../../../../../type-node/web-element/html-element/button/button.class';
+import { Label } from '../../../../../../../../type-node/element/html-element/label/label.class';
+import { Division } from '../../../../../../../../type-node/element/html-element/division/division.class';
+import { Select } from '../../../../../../../../type-node/element/html-element/select/select.class';
+import { Button } from '../../../../../../../../type-node/element/html-element/button/button.class';
 import { Display } from '../../../../../../../../type-node/web-style.enum';
-import { WebTextNode } from '../../../../../../../../type-node/web-text-node/web-text-node.class';
+import { TextNode } from '../../../../../../../../type-node/text-node/text-node.class';
 import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
@@ -83,13 +83,13 @@ export abstract class PropertyOptions extends PropertyItem {
       display: 'inline-block',
       width: '50%',
     });
-    labelDiv.addChild(new WebTextNode(labelDiv, '标签'));
+    labelDiv.addChild(new TextNode(labelDiv, '标签'));
     const valueDiv = new Division(this.firstDiv);
     valueDiv.addStyleObj({
       display: 'inline-block',
       width: '50%',
     });
-    valueDiv.addChild(new WebTextNode(valueDiv, '值'));
+    valueDiv.addChild(new TextNode(valueDiv, '值'));
     this.firstDiv.childNodes = [labelDiv, valueDiv];
     this.optionsContent = new Division(this.selectConfigDiv);
     this.selectConfigDiv.childNodes = [this.selectDiv, this.firstDiv, this.optionsContent];
@@ -171,7 +171,7 @@ export abstract class PropertyOptions extends PropertyItem {
         optIndex,
         optType: 'label',
       });
-      labelDiv.addChild(new WebTextNode(labelDiv, opt.label));
+      labelDiv.addChild(new TextNode(labelDiv, opt.label));
       const valueDiv = new Division(optDiv);
       valueDiv.addStyleObj(styleObj);
       valueDiv.addAttrObj({
@@ -179,7 +179,7 @@ export abstract class PropertyOptions extends PropertyItem {
         optIndex,
         optType: 'value',
       });
-      valueDiv.addChild(new WebTextNode(valueDiv, String(opt.value)));
+      valueDiv.addChild(new TextNode(valueDiv, String(opt.value)));
 
       // const deleteDiv = new Division(optDiv);
       // deleteDiv.setStyleObj({
@@ -224,14 +224,14 @@ export abstract class PropertyOptions extends PropertyItem {
         optIndex,
         optType: 'label',
       });
-      labelDiv.addChild(new WebTextNode(labelDiv, opt.label));
+      labelDiv.addChild(new TextNode(labelDiv, opt.label));
       const valueDiv = new Division(optDiv);
       valueDiv.addStyleObj(styleObj);
       valueDiv.addAttrObj({
         optIndex,
         optType: 'value',
       });
-      valueDiv.addChild(new WebTextNode(valueDiv, String(opt.value)));
+      valueDiv.addChild(new TextNode(valueDiv, String(opt.value)));
       optDiv.childNodes = [labelDiv, valueDiv];
       this.optionsContent.appendChild(optDiv);
     });

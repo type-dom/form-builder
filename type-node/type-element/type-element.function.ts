@@ -1,4 +1,4 @@
-import { IWebTextNode } from '../web-text-node/web-text-node.interface';
+import { ITextNode } from '../text-node/text-node.interface';
 import { IWebStyle } from '../web-style.interface';
 import { ITypeAttribute, ITypeElement } from './type-element.interface';
 import { TypeElement } from './type-element.abstract';
@@ -75,10 +75,10 @@ export function toJSON(element: TypeElement): ITypeElement {
         //   console.error('c is ', c);
         // }
         return {
-          className: 'WebTextNode',
+          className: 'TextNode',
           nodeName: '#text',
           nodeValue: child.nodeValue, // textContent
-        } as IWebTextNode;
+        } as ITextNode;
       }
     })
   } as ITypeElement;
