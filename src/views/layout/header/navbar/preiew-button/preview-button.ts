@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { TextNode } from '../../../../../../type-node/text-node/text-node.class';
-import { toJSON } from '../../../../../../type-node/type-element/type-element.function';
-import { TypeButton } from '../../../../../../type-node/type-element/type-html/button/button.abstract';
+import { TextNode } from '../../../../../../type-dom/text-node/text-node.class';
+import { toJSON } from '../../../../../../type-dom/type-element/type-element.function';
+import { TypeButton } from '../../../../../../type-dom/type-element/type-html/button/button.abstract';
 import { WebDocument } from '../../../../../core/document/web-document.class';
 import { IWebDocument } from '../../../../../core/document/web-document.interface';
 import { Navbar } from '../navbar';

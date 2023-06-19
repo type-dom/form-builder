@@ -7,7 +7,7 @@
  * text-run下，在选中时，生成新的text节点。 但背景颜色怎么设置？ 自带的选中？
  *
  */
-import { TypeNode } from '../type-node.class';
+import { TypeNode } from '../type-node/type-node.class';
 import { TypeElement } from '../type-element/type-element.abstract';
 import { ITextNode } from './text-node.interface';
 export class TextNode extends TypeNode implements ITextNode {

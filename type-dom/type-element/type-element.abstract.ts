@@ -1,11 +1,11 @@
 import { Subscription } from 'rxjs';
 import { FormEditor } from '../../src/form-editor';
 import { humpToMiddleLine } from '../../src/utils';
-import { TypeNode } from '../type-node.class';
+import { TypeNode } from '../type-node/type-node.class';
 import { TextNode } from '../text-node/text-node.class';
 import { Cursor, Display } from '../web-style.enum';
 import { IWebStyle } from '../web-style.interface';
-import { INodeAttr } from '../type-node.interface';
+import { INodeAttr } from '../type-node/type-node.interface';
 import {
   ITypeAttribute,
   IWebBoundBox,

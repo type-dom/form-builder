@@ -1,6 +1,6 @@
 import { WebDocument } from '../../../../core/document/web-document.class';
-import { StylePosition } from '../../../../../type-node/web-style.enum';
-import { TypeDiv } from '../../../../../type-node/type-element/type-html/div/div.abstract';
+import { StylePosition } from '../../../../../type-dom/web-style.enum';
+import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
 import { BodyWrapper } from '../body';
 
 export class BodyMainContent extends TypeDiv {

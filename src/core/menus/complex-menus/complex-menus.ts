@@ -1,6 +1,6 @@
 import { ComplexControlWrapper } from '../../../views/layout/body/left/contents/control-wrapper/complex-control-wrapper/complex-control-wrapper';
-import { Display } from '../../../../type-node/web-style.enum';
-import { TypeDiv } from '../../../../type-node/type-element/type-html/div/div.abstract';
+import { Display } from '../../../../type-dom/web-style.enum';
+import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
 import { ControlMenu } from '../menu.abstract';
 import { TableMenu } from './table/table-menu';
 import { ConnectionMenu } from './connection/connection-menu';

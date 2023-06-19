@@ -1,7 +1,7 @@
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-import { Input } from '../../../../../../../../type-node/element/html-element/input/input.class';
-import { Textarea } from '../../../../../../../../type-node/element/html-element/textarea/textarea.class';
-import { TextNode } from '../../../../../../../../type-node/text-node/text-node.class';
+import { Input } from '../../../../../../../../type-dom/element/html-element/input/input.class';
+import { Textarea } from '../../../../../../../../type-dom/element/html-element/textarea/textarea.class';
+import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';

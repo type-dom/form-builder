@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../../type-node/element/html-element/table/data-cell/data-cell.class';
+import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { deepClone } from '../../../../utils';
 import { WebPage } from '../../../page/web-page.class';
 import { SelectItem } from '../../form-item/select-item/select-item.class';

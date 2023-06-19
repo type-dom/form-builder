@@ -1,5 +1,5 @@
-import { SelectSvg } from '../../../../../type-node/components/svgs/select/select';
-import { Span } from '../../../../../type-node/element/html-element/span/span.class';
+import { SelectSvg } from '../../../../../type-dom/components/svgs/select/select';
+import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
 import { SelectControl } from '../../../controls/basic/select/select.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';

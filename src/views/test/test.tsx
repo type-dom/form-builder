@@ -1,6 +1,6 @@
-import { TypeHtml } from '../../../type-node/type-element/type-html/type-html.abstract';
-import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
-import { Parser } from '../../../type-node/parser/parser.class';
+import { TypeHtml } from '../../../type-dom/type-element/type-html/type-html.abstract';
+import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
+import { Parser } from '../../../type-dom/parser/parser.class';
 import { FormEditor } from '../../form-editor';
 import template from './test.html';
 export class Test extends TypeDiv {

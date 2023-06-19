@@ -1,5 +1,5 @@
-import { MultilineInputSvg } from '../../../../../type-node/components/svgs/multiline-input/multiline-input';
-import { Span } from '../../../../../type-node/element/html-element/span/span.class';
+import { MultilineInputSvg } from '../../../../../type-dom/components/svgs/multiline-input/multiline-input';
+import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
 import { MultilineInputControl } from '../../../controls/basic/multiline-input/multiline-input.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';

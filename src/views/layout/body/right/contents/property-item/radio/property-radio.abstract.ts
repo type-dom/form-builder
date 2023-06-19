@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
-import { TypeElement } from '../../../../../../../../type-node/type-element/type-element.abstract';
-import { TextNode } from '../../../../../../../../type-node/text-node/text-node.class';
-import { Label } from '../../../../../../../../type-node/element/html-element/label/label.class';
-import { Division } from '../../../../../../../../type-node/element/html-element/division/division.class';
-import { Button } from '../../../../../../../../type-node/element/html-element/button/button.class';
+import { TypeElement } from '../../../../../../../../type-dom/type-element/type-element.abstract';
+import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
+import { Label } from '../../../../../../../../type-dom/element/html-element/label/label.class';
+import { Division } from '../../../../../../../../type-dom/element/html-element/division/division.class';
+import { Button } from '../../../../../../../../type-dom/element/html-element/button/button.class';
 import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 
 import { PropertyItem } from '../property-item.abstract';

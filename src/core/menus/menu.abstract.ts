@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
-import { TypeSvgSvg } from '../../../type-node/type-element/type-svg/svg/svg.abstract';
-import { Span } from '../../../type-node/element/html-element/span/span.class';
-import { TextNode } from '../../../type-node/text-node/text-node.class';
+import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeSvgSvg } from '../../../type-dom/type-element/type-svg/svg/svg.abstract';
+import { Span } from '../../../type-dom/element/html-element/span/span.class';
+import { TextNode } from '../../../type-dom/text-node/text-node.class';
 import { ControlClass } from '../controls/web-control.interface';
 import { TableControl } from '../controls/complex/table/table.class';
 import { labelStyle } from '../controls/web-control.const';

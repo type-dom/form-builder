@@ -1,7 +1,7 @@
 /**
  * 虚拟dom的数据结构字面量接口。
  */
-import { ITypeNode } from '../type-node.interface';
+import { ITypeNode } from '../type-node/type-node.interface';
 import { IWebStyle } from '../web-style.interface';
 import { Button } from '../element/html-element/button/button.class';
 import { Division } from '../element/html-element/division/division.class';

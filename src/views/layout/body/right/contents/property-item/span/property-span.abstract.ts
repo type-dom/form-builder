@@ -1,8 +1,8 @@
-import { Button } from '../../../../../../../../type-node/element/html-element/button/button.class';
-import { Label } from '../../../../../../../../type-node/element/html-element/label/label.class';
-import { Span } from '../../../../../../../../type-node/element/html-element/span/span.class';
-import { Display } from '../../../../../../../../type-node/web-style.enum';
-import { TextNode } from '../../../../../../../../type-node/text-node/text-node.class';
+import { Button } from '../../../../../../../../type-dom/element/html-element/button/button.class';
+import { Label } from '../../../../../../../../type-dom/element/html-element/label/label.class';
+import { Span } from '../../../../../../../../type-dom/element/html-element/span/span.class';
+import { Display } from '../../../../../../../../type-dom/web-style.enum';
+import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertySpan extends PropertyItem {

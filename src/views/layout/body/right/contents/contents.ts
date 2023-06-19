@@ -1,4 +1,4 @@
-import { TypeDiv } from '../../../../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../../../../type-dom/type-element/type-html/div/div.abstract';
 import { BodyRight } from '../right';
 import { ControlProperty } from './control-property/control-property';
 import { FormProperty } from './form-property/form-property';

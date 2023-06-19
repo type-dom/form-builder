@@ -2,7 +2,7 @@ import { IOptionConfig } from '../../../../../../../core/controls/web-control.in
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
-import { TextNode } from '../../../../../../../../type-node/text-node/text-node.class';
+import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
 
 const readonlyConfigs: IOptionConfig = {
   name: '只读' + Math.random(),

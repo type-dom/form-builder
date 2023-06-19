@@ -1,6 +1,6 @@
-import { TypeComponent } from '../../../../../../../../type-node/type-element/type-component/type-component.abstract';
+import { TypeComponent } from '../../../../../../../../type-dom/type-element/type-component/type-component.abstract';
 import { ComplexMenus } from '../../../../../../../core/menus/complex-menus/complex-menus';
-import { ExpandHeading } from '../../../../../../../../type-node/components/expand-heading';
+import { ExpandHeading } from '../../../../../../../../type-dom/components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';
 
 export class ComplexControlWrapper extends TypeComponent {

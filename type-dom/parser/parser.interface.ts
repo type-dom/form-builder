@@ -1,4 +1,4 @@
-import { INodeAttr } from '../type-node.interface';
+import { INodeAttr } from '../type-node/type-node.interface';
 
 export interface IAttribute {
   name: string,

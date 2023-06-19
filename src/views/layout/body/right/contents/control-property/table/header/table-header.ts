@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { Label } from '../../../../../../../../../type-node/element/html-element/label/label.class';
-import { Division } from '../../../../../../../../../type-node/element/html-element/division/division.class';
-import { Button } from '../../../../../../../../../type-node/element/html-element/button/button.class';
+import { Label } from '../../../../../../../../../type-dom/element/html-element/label/label.class';
+import { Division } from '../../../../../../../../../type-dom/element/html-element/division/division.class';
+import { Button } from '../../../../../../../../../type-dom/element/html-element/button/button.class';
 import { TableControl } from '../../../../../../../../core/controls/complex/table/table.class';
 import { PropertyItem } from '../../../property-item/property-item.abstract';
 import { ControlProperty } from '../../control-property';

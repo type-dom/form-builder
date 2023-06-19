@@ -1,5 +1,5 @@
-import { TypeDiv } from '../../../../../type-node/type-element/type-html/div/div.abstract';
-import { Display } from '../../../../../type-node/web-style.enum';
+import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { Display } from '../../../../../type-dom/web-style.enum';
 import { HeaderWrapper } from '../header';
 import { PreviewButton } from './preiew-button/preview-button';
 // import { SaveButton } from './save-button/save-button';

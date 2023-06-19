@@ -1,8 +1,8 @@
-import { Span } from '../../../../../type-node/element/html-element/span/span.class';
-import { Label } from '../../../../../type-node/element/html-element/label/label.class';
-import { Select } from '../../../../../type-node/element/html-element/select/select.class';
-import { RadioGroup } from '../../../../../type-node/components/radio-group/radio-group.class';
-import { CheckboxGroup } from '../../../../../type-node/components/checkbox-group/checkbox-group.class';
+import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
+import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
+import { Select } from '../../../../../type-dom/element/html-element/select/select.class';
+import { RadioGroup } from '../../../../../type-dom/components/radio-group/radio-group.class';
+import { CheckboxGroup } from '../../../../../type-dom/components/checkbox-group/checkbox-group.class';
 import { FormItem } from '../form-item.abstract';
 import { IConfigItem } from './config-item.interface';
 

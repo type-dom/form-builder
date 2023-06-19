@@ -1,7 +1,7 @@
 import { IComponent, INodeAttr, ITypeNode } from './type-node.interface';
-import { FormEditor } from '../src/form-editor';
-import { TypeElement } from './type-element/type-element.abstract';
-import { XNode } from './x-node/x-node.class';
+import { FormEditor } from '../../src/form-editor';
+import { TypeElement } from '../type-element/type-element.abstract';
+import { XNode } from '../x-node/x-node.class';
 const XMLEntities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',

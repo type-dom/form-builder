@@ -1,5 +1,5 @@
-import { NumericalSvg } from '../../../../../type-node/components/svgs/numerical/numerical';
-import { Span } from '../../../../../type-node/element/html-element/span/span.class';
+import { NumericalSvg } from '../../../../../type-dom/components/svgs/numerical/numerical';
+import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
 import { NumericalControl } from '../../../controls/basic/numerical/numerical.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';

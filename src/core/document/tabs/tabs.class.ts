@@ -1,10 +1,10 @@
 import { fromEvent } from 'rxjs';
-import { TypeUl } from '../../../../type-node/type-element/type-html/ul/ul.abstract';
-import { ListItem } from '../../../../type-node/element/html-element/unordered-list/list-item/list-item.class';
-import { IWebStyle } from '../../../../type-node/web-style.interface';
-import { Display } from '../../../../type-node/web-style.enum';
-import { TextNode } from '../../../../type-node/text-node/text-node.class';
-import { ITextNode } from '../../../../type-node/text-node/text-node.interface';
+import { TypeUl } from '../../../../type-dom/type-element/type-html/ul/ul.abstract';
+import { ListItem } from '../../../../type-dom/element/html-element/unordered-list/list-item/list-item.class';
+import { IWebStyle } from '../../../../type-dom/web-style.interface';
+import { Display } from '../../../../type-dom/web-style.enum';
+import { TextNode } from '../../../../type-dom/text-node/text-node.class';
+import { ITextNode } from '../../../../type-dom/text-node/text-node.interface';
 import { WebDocument } from '../web-document.class';
 import { IWebDocumentTabs } from './tabs.interface';
 

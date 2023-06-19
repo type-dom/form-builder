@@ -1,4 +1,4 @@
-import { ITypeProperty } from './type-element/type-element.interface';
+import { ITypeProperty } from '../type-element/type-element.interface';
 
 export interface INodeAttr {
   name: string,

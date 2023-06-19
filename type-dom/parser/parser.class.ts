@@ -1,5 +1,5 @@
-import { INodeAttr } from '../type-node.interface';
-import { TypeNode } from '../type-node.class';
+import { INodeAttr } from '../type-node/type-node.interface';
+import { TypeNode } from '../type-node/type-node.class';
 import { XNode } from '../x-node/x-node.class';
 import { ParserErrorCode } from './parser.const';
 import { isWhitespace, isWhitespaceString } from './parser.util';

@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
-import { StylePosition } from '../../../type-node/web-style.enum';
+import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
+import { StylePosition } from '../../../type-dom/web-style.enum';
 import { ControlClassMap } from '../../constants';
 import { WebDocumentContents } from '../document/contents/contents.class';
 import { WebControl } from '../controls/web-control.abstract';

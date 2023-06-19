@@ -1,6 +1,6 @@
-import { TypeDiv } from '../../../../../type-node/type-element/type-html/div/div.abstract';
-import { TypeSvg } from '../../../../../type-node/type-element/type-svg/type-svg.abstract';
-import { LogoSvg } from '../../../../../type-node/components/svgs/logo/logo';
+import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeSvg } from '../../../../../type-dom/type-element/type-svg/type-svg.abstract';
+import { LogoSvg } from '../../../../../type-dom/components/svgs/logo/logo';
 import { HeaderWrapper } from '../header';
 export class Logo extends TypeDiv {
   className: 'Logo';

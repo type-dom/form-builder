@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { TypeButton } from '../../../../../../type-node/type-element/type-html/button/button.abstract';
-import { TextNode } from '../../../../../../type-node/text-node/text-node.class';
+import { TypeButton } from '../../../../../../type-dom/type-element/type-html/button/button.abstract';
+import { TextNode } from '../../../../../../type-dom/text-node/text-node.class';
 import { Navbar } from '../navbar';
 
 export class SaveButton extends TypeButton {

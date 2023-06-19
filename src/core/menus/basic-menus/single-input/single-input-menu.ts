@@ -1,5 +1,5 @@
-import { SingleInputSvg } from '../../../../../type-node/components/svgs/single-input/single-input';
-import { Span } from '../../../../../type-node/element/html-element/span/span.class';
+import { SingleInputSvg } from '../../../../../type-dom/components/svgs/single-input/single-input';
+import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
 import { SingleInputControl } from '../../../controls/basic/single-input/single-input.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';

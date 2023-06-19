@@ -1,6 +1,6 @@
-import { ILabel } from '../../../../../type-node/element/html-element/label/label.interface';
-import { ITextarea } from '../../../../../type-node/element/html-element/textarea/textarea.interface';
-import { ISpan } from '../../../../../type-node/element/html-element/span/span.interface';
+import { ILabel } from '../../../../../type-dom/element/html-element/label/label.interface';
+import { ITextarea } from '../../../../../type-dom/element/html-element/textarea/textarea.interface';
+import { ISpan } from '../../../../../type-dom/element/html-element/span/span.interface';
 import { IFormItem } from '../form-item.interface';
 
 export interface ITextareaItem extends IFormItem {

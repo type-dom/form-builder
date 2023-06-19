@@ -2,10 +2,13 @@
  * XNode是一个通用Node类，可以是其它类的父节点，也可以是其它类的子节点
  * todo 还需要其它虚拟类吗？  如需要，如何适配？？
  */
-import { TypeNode } from '../type-node.class';
+import { TypeNode } from '../type-node/type-node.class';
 import { IXNode } from './x-node.interface';
 /**
  * 实体节点类
+ * 包含了元素节点和文本节点的节点类；
+ * 主要是有模板页面时用到，解析文本DOM。
+ * 也要能生成 json 格式字符串。
  */
 export class XNode extends TypeNode implements IXNode {
   className: 'XNode';
