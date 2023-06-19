@@ -1,9 +1,8 @@
-import { IWebComponent } from '../../web-component/web-component.interface';
+import { ITypeDiv } from '../../../type-node/type-element/type-html/div/div.interface';
 import { IWebDocumentContents } from './contents/contents.interface';
 import { IWebDocumentTabs } from './tabs/tabs.interface';
-
-export interface IWebDocument extends IWebComponent {
-  tagName: 'div',
+export interface IWebDocument extends ITypeDiv {
+  nodeName: 'div',
   className: 'WebDocument',
   childNodes: [IWebDocumentTabs, IWebDocumentContents],
 }

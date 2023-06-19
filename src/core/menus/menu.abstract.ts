@@ -1,18 +1,18 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
-import { SvgComponent } from '../../web-component/svg-component/svg-component.abstract';
-import { Span } from '../../web-element/span/span.class';
-import { WebTextNode } from '../../web-text-node/web-text-node.class';
+import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { TypeSvgSvg } from '../../../type-node/type-element/type-svg/svg/svg.abstract';
+import { Span } from '../../../type-node/web-element/html-element/span/span.class';
+import { WebTextNode } from '../../../type-node/web-text-node/web-text-node.class';
 import { ControlClass } from '../controls/web-control.interface';
 import { TableControl } from '../controls/complex/table/table.class';
 import { labelStyle } from '../controls/web-control.const';
 import { menuStyle } from './menu.const';
 import { IControlMenu } from './menu.interface';
 
-export abstract class ControlMenu extends DivComponent implements IControlMenu {
+export abstract class ControlMenu extends TypeDiv implements IControlMenu {
   abstract ControlClass: ControlClass;
-  abstract childNodes: [SvgComponent, Span];
-  abstract svg: SvgComponent;
+  abstract childNodes: [TypeSvgSvg, Span];
+  abstract svg: TypeSvgSvg;
   readonly titleSpan: Span;
   textNode: WebTextNode;
   protected constructor() {

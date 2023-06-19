@@ -1,5 +1,5 @@
-import { Span } from '../../../../web-element/span/span.class';
-import { ConnectionSvg } from '../../../../components/svgs/connetion/connection';
+import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
+import { ConnectionSvg } from '../../../../../type-node/components/svgs/connetion/connection';
 import { ConnectionControl } from '../../../controls/complex/connection/connection.class';
 import { ControlMenu } from '../../menu.abstract';
 import { ComplexMenus } from '../complex-menus';
@@ -16,7 +16,7 @@ export class ConnectionMenu extends ControlMenu {
     this.ControlClass = ConnectionControl;
     this.addAttrName('connection-menu');
     this.svg = new ConnectionSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('关联选项');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

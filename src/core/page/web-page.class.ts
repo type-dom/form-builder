@@ -1,17 +1,15 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
-import { StylePosition } from '../../web-element/web-style.enum';
+import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { StylePosition } from '../../../type-node/web-style.enum';
 import { ControlClassMap } from '../../constants';
 import { WebDocumentContents } from '../document/contents/contents.class';
 import { WebControl } from '../controls/web-control.abstract';
 import { IWebPage } from './web-page.interface';
-
-export class WebPage extends DivComponent implements IWebPage {
+export class WebPage extends TypeDiv implements IWebPage {
   className: 'WebPage';
   childNodes: WebControl[];
   dragStartIndex: number;
   dragDropIndex: number;
-
   // controlObjMap: Map<number, WebControl> = new Map();
   constructor(public parent: WebDocumentContents) {
     super();
@@ -39,7 +37,6 @@ export class WebPage extends DivComponent implements IWebPage {
       pageIndex: 1,
       name: 'web-page',
     });
-
     this.childNodes = [];
     this.dragStartIndex = 0;
     this.dragDropIndex = 0;

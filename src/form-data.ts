@@ -8,7 +8,7 @@ export interface IFormData {
 
 // 测试数据
 export const formJson: IWebDocument = {
-  'tagName': 'div',
+  'nodeName': 'div',
   'className': 'WebDocument',
   'propObj': {
     'styleObj': {},
@@ -19,7 +19,7 @@ export const formJson: IWebDocument = {
   },
   'childNodes': [
     {
-      'tagName': 'ul',
+      'nodeName': 'ul',
       'className': 'WebDocumentTabs',
       'propObj': {
         'styleObj': {
@@ -37,7 +37,7 @@ export const formJson: IWebDocument = {
       },
       'childNodes': [
         {
-          'tagName': 'li',
+          'nodeName': 'li',
           'className': 'ListItem',
           'propObj': {
             'styleObj': {
@@ -64,13 +64,14 @@ export const formJson: IWebDocument = {
           },
           'childNodes': [
             {
-              'className': 'WebTextNode',
-              'text': '首k页'
+              // 'className': 'WebTextNode',
+              'nodeName': '#text',
+              'nodeValue': '首k页',
             }
           ]
         },
         {
-          'tagName': 'li',
+          'nodeName': 'li',
           'className': 'ListItem',
           'propObj': {
             'styleObj': {
@@ -97,13 +98,14 @@ export const formJson: IWebDocument = {
           },
           'childNodes': [
             {
-              'className': 'WebTextNode',
-              'text': '第2kk页'
+              // 'className': 'WebTextNode',
+              'nodeName': '#text',
+              'nodeValue': '第2kk页'
             }
           ]
         },
         {
-          'tagName': 'li',
+          'nodeName': 'li',
           'className': 'ListItem',
           'propObj': {
             'styleObj': {
@@ -130,15 +132,16 @@ export const formJson: IWebDocument = {
           },
           'childNodes': [
             {
-              'className': 'WebTextNode',
-              'text': '第3kkk页'
+              // 'className': 'WebTextNode',
+              'nodeName': '#text',
+              'nodeValue': '第3kkk页'
             }
           ]
         }
       ]
     },
     {
-      'tagName': 'div',
+      'nodeName': 'div',
       'className': 'WebDocumentContents',
       'propObj': {
         'styleObj': {},
@@ -148,7 +151,7 @@ export const formJson: IWebDocument = {
       },
       'childNodes': [
         {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'WebPage',
           'propObj': {
             'styleObj': {
@@ -173,7 +176,7 @@ export const formJson: IWebDocument = {
           },
           'childNodes': [
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'RadioControl',
               'propObj': {
                 'styleObj': {
@@ -197,7 +200,7 @@ export const formJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'RadioItem',
                   'propObj': {
                     'styleObj': {
@@ -212,7 +215,7 @@ export const formJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -233,12 +236,13 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '单选'
+                          'nodeName': '#text',
+                          'nodeValue': '单选'
                         }
                       ]
                     },
                     {
-                      'tagName': 'div',
+                      'nodeName': 'div',
                       'className': 'RadioGroup',
                       'propObj': {
                         'styleObj': {
@@ -267,7 +271,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {},
@@ -275,7 +279,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -291,12 +295,13 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {},
@@ -304,7 +309,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -320,12 +325,13 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {},
@@ -333,7 +339,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -349,14 +355,15 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -367,7 +374,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -381,7 +388,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -400,7 +407,7 @@ export const formJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'CheckboxControl',
               'propObj': {
                 'styleObj': {
@@ -424,7 +431,7 @@ export const formJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'CheckboxItem',
                   'propObj': {
                     'styleObj': {
@@ -439,7 +446,7 @@ export const formJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -460,12 +467,13 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '复选'
+                          'nodeName': '#text',
+                          'nodeValue': '复选'
                         }
                       ]
                     },
                     {
-                      'tagName': 'div',
+                      'nodeName': 'div',
                       'className': 'CheckboxGroup',
                       'propObj': {
                         'styleObj': {
@@ -494,7 +502,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'CheckboxOption',
                           'propObj': {
                             'styleObj': {},
@@ -502,7 +510,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -518,12 +526,13 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'CheckboxOption',
                           'propObj': {
                             'styleObj': {},
@@ -531,7 +540,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -547,12 +556,13 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'CheckboxOption',
                           'propObj': {
                             'styleObj': {},
@@ -560,7 +570,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -576,14 +586,15 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -594,7 +605,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -608,7 +619,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -627,7 +638,7 @@ export const formJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'SelectControl',
               'propObj': {
                 'styleObj': {
@@ -651,7 +662,7 @@ export const formJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'SelectItem',
                   'propObj': {
                     'styleObj': {
@@ -666,7 +677,7 @@ export const formJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -687,12 +698,13 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '下拉选择框'
+                          'nodeName': '#text',
+                          'nodeValue': '下拉选择框'
                         }
                       ]
                     },
                     {
-                      'tagName': 'select',
+                      'nodeName': 'select',
                       'className': 'Select',
                       'propObj': {
                         'styleObj': {
@@ -721,7 +733,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'option',
+                          'nodeName': 'option',
                           'className': 'WebOption',
                           'propObj': {
                             'styleObj': {},
@@ -735,12 +747,13 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '请选择'
+                              'nodeName': '#text',
+                              'nodeValue': '请选择'
                             }
                           ]
                         },
                         {
-                          'tagName': 'option',
+                          'nodeName': 'option',
                           'className': 'WebOption',
                           'propObj': {
                             'styleObj': {},
@@ -753,12 +766,13 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
                         {
-                          'tagName': 'option',
+                          'nodeName': 'option',
                           'className': 'WebOption',
                           'propObj': {
                             'styleObj': {},
@@ -771,12 +785,13 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
                         {
-                          'tagName': 'option',
+                          'nodeName': 'option',
                           'className': 'WebOption',
                           'propObj': {
                             'styleObj': {},
@@ -789,14 +804,15 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -807,7 +823,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -821,7 +837,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -840,7 +856,7 @@ export const formJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'AttachmentControl',
               'propObj': {
                 'styleObj': {
@@ -863,7 +879,7 @@ export const formJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'InputItem',
                   'propObj': {
                     'styleObj': {
@@ -878,7 +894,7 @@ export const formJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -899,12 +915,13 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '附件'
+                          'nodeName': '#text',
+                          'nodeValue': '附件'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -936,7 +953,7 @@ export const formJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -947,7 +964,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -961,7 +978,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -982,7 +999,7 @@ export const formJson: IWebDocument = {
           ]
         },
         {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'WebPage',
           'propObj': {
             'styleObj': {
@@ -1007,7 +1024,7 @@ export const formJson: IWebDocument = {
           },
           'childNodes': [
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'ConnectionControl',
               'propObj': {
                 'styleObj': {
@@ -1030,7 +1047,7 @@ export const formJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'ButtonItem',
                   'propObj': {
                     'styleObj': {
@@ -1047,7 +1064,7 @@ export const formJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -1068,12 +1085,13 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '关联选项'
+                          'nodeName': '#text',
+                          'nodeValue': '关联选项'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -1105,7 +1123,7 @@ export const formJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -1116,7 +1134,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -1130,7 +1148,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -1149,7 +1167,7 @@ export const formJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'TableControl',
               'propObj': {
                 'styleObj': {
@@ -1170,7 +1188,7 @@ export const formJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'TableItem',
                   'propObj': {
                     'styleObj': {
@@ -1185,7 +1203,7 @@ export const formJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -1206,12 +1224,13 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '表格名称'
+                          'nodeName': '#text',
+                          'nodeValue': '表格名称'
                         }
                       ]
                     },
                     {
-                      'tagName': 'table',
+                      'nodeName': 'table',
                       'className': 'WebTable',
                       'propObj': {
                         'styleObj': {
@@ -1226,7 +1245,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'thead',
+                          'nodeName': 'thead',
                           'className': 'WebTableHead',
                           'propObj': {
                             'styleObj': {},
@@ -1234,7 +1253,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'th',
+                              'nodeName': 'th',
                               'className': 'WebTableHeader',
                               'propObj': {
                                 'styleObj': {},
@@ -1245,12 +1264,13 @@ export const formJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段3-1'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段3-1'
                                 }
                               ]
                             },
                             {
-                              'tagName': 'th',
+                              'nodeName': 'th',
                               'className': 'WebTableHeader',
                               'propObj': {
                                 'styleObj': {},
@@ -1261,12 +1281,13 @@ export const formJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段3-2'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段3-2'
                                 }
                               ]
                             },
                             {
-                              'tagName': 'th',
+                              'nodeName': 'th',
                               'className': 'WebTableHeader',
                               'propObj': {
                                 'styleObj': {},
@@ -1277,14 +1298,15 @@ export const formJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段3-3'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段3-3'
                                 }
                               ]
                             }
                           ]
                         },
                         {
-                          'tagName': 'tr',
+                          'nodeName': 'tr',
                           'className': 'WebTableRow',
                           'propObj': {
                             'styleObj': {},
@@ -1292,7 +1314,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -1305,7 +1327,7 @@ export const formJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -1317,7 +1339,7 @@ export const formJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -1325,7 +1347,7 @@ export const formJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -1347,12 +1369,13 @@ export const formJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -1381,7 +1404,7 @@ export const formJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1395,12 +1418,13 @@ export const formJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1413,12 +1437,13 @@ export const formJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1431,12 +1456,13 @@ export const formJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1449,14 +1475,15 @@ export const formJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -1468,7 +1495,7 @@ export const formJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1482,7 +1509,7 @@ export const formJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -1503,7 +1530,7 @@ export const formJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -1516,7 +1543,7 @@ export const formJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'RadioControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -1528,7 +1555,7 @@ export const formJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'RadioItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -1536,7 +1563,7 @@ export const formJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -1558,12 +1585,13 @@ export const formJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单选'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单选'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'div',
+                                          'nodeName': 'div',
                                           'className': 'RadioGroup',
                                           'propObj': {
                                             'styleObj': {
@@ -1592,7 +1620,7 @@ export const formJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'RadioOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1600,7 +1628,7 @@ export const formJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -1616,12 +1644,13 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'RadioOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1629,7 +1658,7 @@ export const formJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -1645,12 +1674,13 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'RadioOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1658,7 +1688,7 @@ export const formJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -1674,14 +1704,15 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -1693,7 +1724,7 @@ export const formJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1707,7 +1738,7 @@ export const formJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -1728,7 +1759,7 @@ export const formJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -1741,7 +1772,7 @@ export const formJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'CheckboxControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -1753,7 +1784,7 @@ export const formJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'CheckboxItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -1761,7 +1792,7 @@ export const formJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -1783,12 +1814,13 @@ export const formJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '复选'
+                                              'nodeName': '#text',
+                                              'nodeValue': '复选'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'div',
+                                          'nodeName': 'div',
                                           'className': 'CheckboxGroup',
                                           'propObj': {
                                             'styleObj': {
@@ -1817,7 +1849,7 @@ export const formJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'CheckboxOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1825,7 +1857,7 @@ export const formJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -1841,12 +1873,13 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'CheckboxOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1854,7 +1887,7 @@ export const formJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -1870,12 +1903,13 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'CheckboxOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1883,7 +1917,7 @@ export const formJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -1899,14 +1933,15 @@ export const formJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -1918,7 +1953,7 @@ export const formJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -1932,7 +1967,7 @@ export const formJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -1957,7 +1992,7 @@ export const formJson: IWebDocument = {
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -1968,7 +2003,7 @@ export const formJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -1982,7 +2017,7 @@ export const formJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -2003,7 +2038,7 @@ export const formJson: IWebDocument = {
           ]
         },
         {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'WebPage',
           'propObj': {
             'styleObj': {
@@ -2049,7 +2084,7 @@ export const formData: IFormData = {
 
 // 2张表格
 export const tableJson: IWebDocument = {
-  'tagName': 'div',
+  'nodeName': 'div',
   'className': 'WebDocument',
   'propObj': {
     'styleObj': {},
@@ -2060,7 +2095,7 @@ export const tableJson: IWebDocument = {
   },
   'childNodes': [
     {
-      'tagName': 'ul',
+      'nodeName': 'ul',
       'className': 'WebDocumentTabs',
       'propObj': {
         'styleObj': {
@@ -2077,7 +2112,7 @@ export const tableJson: IWebDocument = {
       },
       'childNodes': [
         {
-          'tagName': 'li',
+          'nodeName': 'li',
           'className': 'ListItem',
           'propObj': {
             'styleObj': {
@@ -2102,15 +2137,16 @@ export const tableJson: IWebDocument = {
           },
           'childNodes': [
             {
-              'className': 'WebTextNode',
-              'text': '首页'
+              // 'className': 'WebTextNode',
+              'nodeName': '#text',
+              'nodeValue': '首页'
             }
           ]
         }
       ]
     },
     {
-      'tagName': 'div',
+      'nodeName': 'div',
       'className': 'WebDocumentContents',
       'propObj': {
         'styleObj': {},
@@ -2120,7 +2156,7 @@ export const tableJson: IWebDocument = {
       },
       'childNodes': [
         {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'WebPage',
           'propObj': {
             'styleObj': {
@@ -2144,7 +2180,7 @@ export const tableJson: IWebDocument = {
           },
           'childNodes': [
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'TableControl',
               'propObj': {
                 'styleObj': {
@@ -2165,7 +2201,7 @@ export const tableJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'TableItem',
                   'propObj': {
                     'styleObj': {
@@ -2180,7 +2216,7 @@ export const tableJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -2201,12 +2237,13 @@ export const tableJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '表格名称'
+                          'nodeName': '#text',
+                          'nodeValue': '表格名称'
                         }
                       ]
                     },
                     {
-                      'tagName': 'table',
+                      'nodeName': 'table',
                       'className': 'WebTable',
                       'propObj': {
                         'styleObj': {
@@ -2221,7 +2258,7 @@ export const tableJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'thead',
+                          'nodeName': 'thead',
                           'className': 'WebTableHead',
                           'propObj': {
                             'styleObj': {},
@@ -2229,7 +2266,7 @@ export const tableJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'th',
+                              'nodeName': 'th',
                               'className': 'WebTableHeader',
                               'propObj': {
                                 'styleObj': {},
@@ -2240,12 +2277,13 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段1-1'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段1-1'
                                 }
                               ]
                             },
                             {
-                              'tagName': 'th',
+                              'nodeName': 'th',
                               'className': 'WebTableHeader',
                               'propObj': {
                                 'styleObj': {},
@@ -2256,12 +2294,13 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段1-2'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段1-2'
                                 }
                               ]
                             },
                             {
-                              'tagName': 'th',
+                              'nodeName': 'th',
                               'className': 'WebTableHeader',
                               'propObj': {
                                 'styleObj': {},
@@ -2272,14 +2311,15 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段1-3'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段1-3'
                                 }
                               ]
                             }
                           ]
                         },
                         {
-                          'tagName': 'tr',
+                          'nodeName': 'tr',
                           'className': 'WebTableRow',
                           'propObj': {
                             'styleObj': {},
@@ -2289,7 +2329,7 @@ export const tableJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -2302,7 +2342,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -2315,7 +2355,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -2323,7 +2363,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -2345,12 +2385,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -2379,7 +2420,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2392,12 +2433,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2411,12 +2453,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2429,12 +2472,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2447,14 +2491,15 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -2466,7 +2511,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2480,7 +2525,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -2501,7 +2546,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -2514,7 +2559,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -2527,7 +2572,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -2535,7 +2580,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -2557,12 +2602,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -2591,7 +2637,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2604,12 +2650,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2623,12 +2670,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2641,12 +2689,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2659,14 +2708,15 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -2678,7 +2728,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2692,7 +2742,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -2713,7 +2763,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -2726,7 +2776,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SingleInputControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -2738,7 +2788,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'InputItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -2746,7 +2796,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -2768,12 +2818,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单行输入'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单行输入'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'input',
+                                          'nodeName': 'input',
                                           'className': 'Input',
                                           'propObj': {
                                             'styleObj': {
@@ -2805,7 +2856,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': []
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -2817,7 +2868,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2831,7 +2882,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -2854,7 +2905,7 @@ export const tableJson: IWebDocument = {
                           ]
                         },
                         {
-                          'tagName': 'tr',
+                          'nodeName': 'tr',
                           'className': 'WebTableRow',
                           'propObj': {
                             'styleObj': {},
@@ -2864,7 +2915,7 @@ export const tableJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -2877,7 +2928,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -2890,7 +2941,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -2898,7 +2949,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -2920,12 +2971,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -2954,7 +3006,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2967,12 +3019,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -2985,12 +3038,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3004,12 +3058,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3022,14 +3077,15 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -3041,7 +3097,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3055,7 +3111,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -3076,7 +3132,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -3089,7 +3145,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -3102,7 +3158,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -3110,7 +3166,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -3132,12 +3188,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -3166,7 +3223,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3179,12 +3236,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3197,12 +3255,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3216,12 +3275,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3234,14 +3294,15 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -3253,7 +3314,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3267,7 +3328,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -3288,7 +3349,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -3301,7 +3362,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SingleInputControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -3313,7 +3374,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'InputItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -3321,7 +3382,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -3343,12 +3404,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单行输入'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单行输入'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'input',
+                                          'nodeName': 'input',
                                           'className': 'Input',
                                           'propObj': {
                                             'styleObj': {
@@ -3380,7 +3442,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': []
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -3392,7 +3454,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3406,7 +3468,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -3429,7 +3491,7 @@ export const tableJson: IWebDocument = {
                           ]
                         },
                         {
-                          'tagName': 'tr',
+                          'nodeName': 'tr',
                           'className': 'WebTableRow',
                           'propObj': {
                             'styleObj': {},
@@ -3439,7 +3501,7 @@ export const tableJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -3452,7 +3514,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -3465,7 +3527,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -3473,7 +3535,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -3495,12 +3557,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -3529,7 +3592,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3542,12 +3605,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3560,12 +3624,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3578,12 +3643,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3597,14 +3663,15 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -3616,7 +3683,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3630,7 +3697,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -3651,7 +3718,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -3664,7 +3731,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -3677,7 +3744,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -3685,7 +3752,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -3707,12 +3774,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -3741,7 +3809,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3754,12 +3822,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3772,12 +3841,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3790,12 +3860,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3809,14 +3880,15 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -3828,7 +3900,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3842,7 +3914,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -3863,7 +3935,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -3876,7 +3948,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SingleInputControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -3888,7 +3960,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'InputItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -3896,7 +3968,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -3918,12 +3990,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单行输入'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单行输入'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'input',
+                                          'nodeName': 'input',
                                           'className': 'Input',
                                           'propObj': {
                                             'styleObj': {
@@ -3955,7 +4028,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': []
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -3967,7 +4040,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -3981,7 +4054,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -4004,7 +4077,7 @@ export const tableJson: IWebDocument = {
                           ]
                         },
                         {
-                          'tagName': 'tr',
+                          'nodeName': 'tr',
                           'className': 'WebTableRow',
                           'propObj': {
                             'styleObj': {},
@@ -4014,7 +4087,7 @@ export const tableJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -4027,7 +4100,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -4040,7 +4113,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -4048,7 +4121,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -4070,12 +4143,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -4104,7 +4178,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4118,12 +4192,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4136,12 +4211,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4154,12 +4230,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4172,14 +4249,15 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -4191,7 +4269,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4205,7 +4283,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -4226,7 +4304,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -4239,7 +4317,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -4252,7 +4330,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -4260,7 +4338,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -4282,12 +4360,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -4316,7 +4395,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4330,12 +4409,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4348,12 +4428,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4366,12 +4447,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4384,14 +4466,15 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -4403,7 +4486,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4417,7 +4500,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -4438,7 +4521,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -4451,7 +4534,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SingleInputControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -4463,7 +4546,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'InputItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -4471,7 +4554,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -4493,12 +4576,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单行输入'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单行输入'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'input',
+                                          'nodeName': 'input',
                                           'className': 'Input',
                                           'propObj': {
                                             'styleObj': {
@@ -4530,7 +4614,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': []
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -4542,7 +4626,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4556,7 +4640,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -4581,7 +4665,7 @@ export const tableJson: IWebDocument = {
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -4592,7 +4676,7 @@ export const tableJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -4606,7 +4690,7 @@ export const tableJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -4625,7 +4709,7 @@ export const tableJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'TableControl',
               'propObj': {
                 'styleObj': {
@@ -4646,7 +4730,7 @@ export const tableJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'TableItem',
                   'propObj': {
                     'styleObj': {
@@ -4661,7 +4745,7 @@ export const tableJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -4682,12 +4766,13 @@ export const tableJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '表格名称'
+                          'nodeName': '#text',
+                          'nodeValue': '表格名称'
                         }
                       ]
                     },
                     {
-                      'tagName': 'table',
+                      'nodeName': 'table',
                       'className': 'WebTable',
                       'propObj': {
                         'styleObj': {
@@ -4702,7 +4787,7 @@ export const tableJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'thead',
+                          'nodeName': 'thead',
                           'className': 'WebTableHead',
                           'propObj': {
                             'styleObj': {},
@@ -4710,7 +4795,7 @@ export const tableJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'th',
+                              'nodeName': 'th',
                               'className': 'WebTableHeader',
                               'propObj': {
                                 'styleObj': {},
@@ -4721,12 +4806,13 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段2-1'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段2-1'
                                 }
                               ]
                             },
                             {
-                              'tagName': 'th',
+                              'nodeName': 'th',
                               'className': 'WebTableHeader',
                               'propObj': {
                                 'styleObj': {},
@@ -4737,12 +4823,13 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段2-2'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段2-2'
                                 }
                               ]
                             },
                             {
-                              'tagName': 'th',
+                              'nodeName': 'th',
                               'className': 'WebTableHeader',
                               'propObj': {
                                 'styleObj': {},
@@ -4753,14 +4840,15 @@ export const tableJson: IWebDocument = {
                               'childNodes': [
                                 {
                                   'className': 'WebTextNode',
-                                  'text': '字段2-3'
+                                  'nodeName': '#text',
+                                  'nodeValue': '字段2-3'
                                 }
                               ]
                             }
                           ]
                         },
                         {
-                          'tagName': 'tr',
+                          'nodeName': 'tr',
                           'className': 'WebTableRow',
                           'propObj': {
                             'styleObj': {},
@@ -4770,7 +4858,7 @@ export const tableJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -4783,7 +4871,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'SelectControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -4796,7 +4884,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'SelectItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -4804,7 +4892,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -4826,12 +4914,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '下拉选择框'
+                                              'nodeName': '#text',
+                                              'nodeValue': '下拉选择框'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'select',
+                                          'nodeName': 'select',
                                           'className': 'Select',
                                           'propObj': {
                                             'styleObj': {
@@ -4860,7 +4949,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4874,12 +4963,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '请选择'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '请选择'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4892,12 +4982,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4910,12 +5001,13 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'option',
+                                              'nodeName': 'option',
                                               'className': 'WebOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4928,14 +5020,15 @@ export const tableJson: IWebDocument = {
                                               'childNodes': [
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项一/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项一/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -4947,7 +5040,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -4961,7 +5054,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -4982,7 +5075,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -4995,7 +5088,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'RadioControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -5008,7 +5101,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'RadioItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -5016,7 +5109,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -5038,12 +5131,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '单选'
+                                              'nodeName': '#text',
+                                              'nodeValue': '单选'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'div',
+                                          'nodeName': 'div',
                                           'className': 'RadioGroup',
                                           'propObj': {
                                             'styleObj': {
@@ -5072,7 +5166,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'RadioOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -5080,7 +5174,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -5096,12 +5190,13 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'RadioOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -5109,7 +5204,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -5125,12 +5220,13 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'RadioOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -5138,7 +5234,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -5154,14 +5250,15 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项二/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项二/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -5173,7 +5270,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -5187,7 +5284,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -5208,7 +5305,7 @@ export const tableJson: IWebDocument = {
                               ]
                             },
                             {
-                              'tagName': 'td',
+                              'nodeName': 'td',
                               'className': 'WebTableDataCell',
                               'propObj': {
                                 'styleObj': {
@@ -5221,7 +5318,7 @@ export const tableJson: IWebDocument = {
                               },
                               'childNodes': [
                                 {
-                                  'tagName': 'div',
+                                  'nodeName': 'div',
                                   'className': 'CheckboxControl',
                                   'propObj': {
                                     'styleObj': {},
@@ -5234,7 +5331,7 @@ export const tableJson: IWebDocument = {
                                   },
                                   'childNodes': [
                                     {
-                                      'tagName': 'div',
+                                      'nodeName': 'div',
                                       'className': 'CheckboxItem',
                                       'propObj': {
                                         'styleObj': {},
@@ -5242,7 +5339,7 @@ export const tableJson: IWebDocument = {
                                       },
                                       'childNodes': [
                                         {
-                                          'tagName': 'label',
+                                          'nodeName': 'label',
                                           'className': 'Label',
                                           'propObj': {
                                             'styleObj': {
@@ -5264,12 +5361,13 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'className': 'WebTextNode',
-                                              'text': '复选'
+                                              'nodeName': '#text',
+                                              'nodeValue': '复选'
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'div',
+                                          'nodeName': 'div',
                                           'className': 'CheckboxGroup',
                                           'propObj': {
                                             'styleObj': {
@@ -5298,7 +5396,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'CheckboxOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -5306,7 +5404,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -5322,12 +5420,13 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项三/1'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项三/1'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'CheckboxOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -5335,7 +5434,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -5351,12 +5450,13 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项三/2'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项三/2'
                                                 }
                                               ]
                                             },
                                             {
-                                              'tagName': 'span',
+                                              'nodeName': 'span',
                                               'className': 'CheckboxOption',
                                               'propObj': {
                                                 'styleObj': {},
@@ -5364,7 +5464,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'input',
+                                                  'nodeName': 'input',
                                                   'className': 'Input',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -5380,14 +5480,15 @@ export const tableJson: IWebDocument = {
                                                 },
                                                 {
                                                   'className': 'WebTextNode',
-                                                  'text': '选项三/3'
+                                                  'nodeName': '#text',
+                                                  'nodeValue': '选项三/3'
                                                 }
                                               ]
                                             }
                                           ]
                                         },
                                         {
-                                          'tagName': 'span',
+                                          'nodeName': 'span',
                                           'className': 'Span',
                                           'propObj': {
                                             'styleObj': {
@@ -5399,7 +5500,7 @@ export const tableJson: IWebDocument = {
                                           },
                                           'childNodes': [
                                             {
-                                              'tagName': 'svg',
+                                              'nodeName': 'svg',
                                               'className': 'DeleteSvg',
                                               'propObj': {
                                                 'styleObj': {},
@@ -5413,7 +5514,7 @@ export const tableJson: IWebDocument = {
                                               },
                                               'childNodes': [
                                                 {
-                                                  'tagName': 'path',
+                                                  'nodeName': 'path',
                                                   'className': 'SvgPath',
                                                   'propObj': {
                                                     'styleObj': {},
@@ -5438,7 +5539,7 @@ export const tableJson: IWebDocument = {
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -5449,7 +5550,7 @@ export const tableJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -5463,7 +5564,7 @@ export const tableJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -5523,7 +5624,7 @@ export const tableData: IFormData = {
 };
 
 export const oldFormJson: IWebDocument = {
-  'tagName': 'div',
+  'nodeName': 'div',
   'className': 'WebDocument',
   'propObj': {
     'styleObj': {},
@@ -5534,7 +5635,7 @@ export const oldFormJson: IWebDocument = {
     }
   },
   'childNodes': [{
-    'tagName': 'ul',
+    'nodeName': 'ul',
     'className': 'WebDocumentTabs',
     'propObj': {
       'styleObj': {
@@ -5546,7 +5647,7 @@ export const oldFormJson: IWebDocument = {
       'attrObj': { 'name': 'document-tabs' }
     },
     'childNodes': [{
-      'tagName': 'li',
+      'nodeName': 'li',
       'className': 'ListItem',
       'propObj': {
         'styleObj': {
@@ -5570,11 +5671,12 @@ export const oldFormJson: IWebDocument = {
       },
       'childNodes': [{
         'className': 'WebTextNode',
-        'text': '首页'
+        'nodeName': '#text',
+        'nodeValue': '首页'
       }]
     }]
   }, {
-    'tagName': 'div',
+    'nodeName': 'div',
     'className': 'WebDocumentContents',
     'propObj': {
       'styleObj': {},
@@ -5582,7 +5684,7 @@ export const oldFormJson: IWebDocument = {
     },
     'childNodes': [
       {
-        'tagName': 'div',
+        'nodeName': 'div',
         'className': 'WebPage',
         'propObj': {
           'styleObj': {
@@ -5605,7 +5707,7 @@ export const oldFormJson: IWebDocument = {
           }
         },
         'childNodes': [{
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'SingleInputControl',
           'propObj': {
             'styleObj': {
@@ -5626,7 +5728,7 @@ export const oldFormJson: IWebDocument = {
             }
           },
           'childNodes': [{
-            'tagName': 'div',
+            'nodeName': 'div',
             'className': 'InputItem',
             'propObj': {
               'styleObj': {
@@ -5640,7 +5742,7 @@ export const oldFormJson: IWebDocument = {
               'attrObj': {}
             },
             'childNodes': [{
-              'tagName': 'label',
+              'nodeName': 'label',
               'className': 'Label',
               'propObj': {
                 'styleObj': {
@@ -5658,10 +5760,11 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': [{
                 'className': 'WebTextNode',
-                'text': '名称'
+                'nodeName': '#text',
+                'nodeValue': '名称'
               }]
             }, {
-              'tagName': 'input',
+              'nodeName': 'input',
               'className': 'Input',
               'propObj': {
                 'styleObj': {
@@ -5691,7 +5794,7 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': []
             }, {
-              'tagName': 'span',
+              'nodeName': 'span',
               'className': 'Span',
               'propObj': {
                 'styleObj': {
@@ -5701,7 +5804,7 @@ export const oldFormJson: IWebDocument = {
                 'attrObj': {}
               },
               'childNodes': [{
-                'tagName': 'svg',
+                'nodeName': 'svg',
                 'className': 'DeleteSvg',
                 'propObj': {
                   'styleObj': {},
@@ -5714,7 +5817,7 @@ export const oldFormJson: IWebDocument = {
                   }
                 },
                 'childNodes': [{
-                  'tagName': 'path',
+                  'nodeName': 'path',
                   'className': 'SvgPath',
                   'propObj': {
                     'styleObj': {},
@@ -5726,7 +5829,7 @@ export const oldFormJson: IWebDocument = {
             }]
           }]
         }, {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'SingleInputControl',
           'propObj': {
             'styleObj': {
@@ -5747,7 +5850,7 @@ export const oldFormJson: IWebDocument = {
             }
           },
           'childNodes': [{
-            'tagName': 'div',
+            'nodeName': 'div',
             'className': 'InputItem',
             'propObj': {
               'styleObj': {
@@ -5761,7 +5864,7 @@ export const oldFormJson: IWebDocument = {
               'attrObj': {}
             },
             'childNodes': [{
-              'tagName': 'label',
+              'nodeName': 'label',
               'className': 'Label',
               'propObj': {
                 'styleObj': {
@@ -5779,10 +5882,11 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': [{
                 'className': 'WebTextNode',
-                'text': '理由'
+                'nodeName': '#text',
+                'nodeValue': '理由'
               }]
             }, {
-              'tagName': 'input',
+              'nodeName': 'input',
               'className': 'Input',
               'propObj': {
                 'styleObj': {
@@ -5812,7 +5916,7 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': []
             }, {
-              'tagName': 'span',
+              'nodeName': 'span',
               'className': 'Span',
               'propObj': {
                 'styleObj': {
@@ -5822,7 +5926,7 @@ export const oldFormJson: IWebDocument = {
                 'attrObj': {}
               },
               'childNodes': [{
-                'tagName': 'svg',
+                'nodeName': 'svg',
                 'className': 'DeleteSvg',
                 'propObj': {
                   'styleObj': {},
@@ -5835,7 +5939,7 @@ export const oldFormJson: IWebDocument = {
                   }
                 },
                 'childNodes': [{
-                  'tagName': 'path',
+                  'nodeName': 'path',
                   'className': 'SvgPath',
                   'propObj': {
                     'styleObj': {},
@@ -5847,7 +5951,7 @@ export const oldFormJson: IWebDocument = {
             }]
           }]
         }, {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'DateControl',
           'propObj': {
             'styleObj': {
@@ -5868,7 +5972,7 @@ export const oldFormJson: IWebDocument = {
             }
           },
           'childNodes': [{
-            'tagName': 'div',
+            'nodeName': 'div',
             'className': 'InputItem',
             'propObj': {
               'styleObj': {
@@ -5882,7 +5986,7 @@ export const oldFormJson: IWebDocument = {
               'attrObj': {}
             },
             'childNodes': [{
-              'tagName': 'label',
+              'nodeName': 'label',
               'className': 'Label',
               'propObj': {
                 'styleObj': {
@@ -5900,10 +6004,11 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': [{
                 'className': 'WebTextNode',
-                'text': '日期'
+                'nodeName': '#text',
+                'nodeValue': '日期'
               }]
             }, {
-              'tagName': 'input',
+              'nodeName': 'input',
               'className': 'Input',
               'propObj': {
                 'styleObj': {
@@ -5933,7 +6038,7 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': []
             }, {
-              'tagName': 'span',
+              'nodeName': 'span',
               'className': 'Span',
               'propObj': {
                 'styleObj': {
@@ -5943,7 +6048,7 @@ export const oldFormJson: IWebDocument = {
                 'attrObj': {}
               },
               'childNodes': [{
-                'tagName': 'svg',
+                'nodeName': 'svg',
                 'className': 'DeleteSvg',
                 'propObj': {
                   'styleObj': {},
@@ -5956,7 +6061,7 @@ export const oldFormJson: IWebDocument = {
                   }
                 },
                 'childNodes': [{
-                  'tagName': 'path',
+                  'nodeName': 'path',
                   'className': 'SvgPath',
                   'propObj': {
                     'styleObj': {},
@@ -5968,7 +6073,7 @@ export const oldFormJson: IWebDocument = {
             }]
           }]
         }, {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'SingleInputControl',
           'propObj': {
             'styleObj': {
@@ -5989,7 +6094,7 @@ export const oldFormJson: IWebDocument = {
             }
           },
           'childNodes': [{
-            'tagName': 'div',
+            'nodeName': 'div',
             'className': 'InputItem',
             'propObj': {
               'styleObj': {
@@ -6003,7 +6108,7 @@ export const oldFormJson: IWebDocument = {
               'attrObj': {}
             },
             'childNodes': [{
-              'tagName': 'label',
+              'nodeName': 'label',
               'className': 'Label',
               'propObj': {
                 'styleObj': {
@@ -6021,10 +6126,11 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': [{
                 'className': 'WebTextNode',
-                'text': '状态'
+                'nodeName': '#text',
+                'nodeValue': '状态'
               }]
             }, {
-              'tagName': 'input',
+              'nodeName': 'input',
               'className': 'Input',
               'propObj': {
                 'styleObj': {
@@ -6054,7 +6160,7 @@ export const oldFormJson: IWebDocument = {
               },
               'childNodes': []
             }, {
-              'tagName': 'span',
+              'nodeName': 'span',
               'className': 'Span',
               'propObj': {
                 'styleObj': {
@@ -6064,7 +6170,7 @@ export const oldFormJson: IWebDocument = {
                 'attrObj': {}
               },
               'childNodes': [{
-                'tagName': 'svg',
+                'nodeName': 'svg',
                 'className': 'DeleteSvg',
                 'propObj': {
                   'styleObj': {},
@@ -6077,7 +6183,7 @@ export const oldFormJson: IWebDocument = {
                   }
                 },
                 'childNodes': [{
-                  'tagName': 'path',
+                  'nodeName': 'path',
                   'className': 'SvgPath',
                   'propObj': {
                     'styleObj': {},
@@ -6103,7 +6209,7 @@ export const oldFormData: IFormData = {
 };
 
 export const testJson1: IWebDocument = {
-  'tagName': 'div',
+  'nodeName': 'div',
   'className': 'WebDocument',
   'propObj': {
     'styleObj': {},
@@ -6114,7 +6220,7 @@ export const testJson1: IWebDocument = {
   },
   'childNodes': [
     {
-      'tagName': 'ul',
+      'nodeName': 'ul',
       'className': 'WebDocumentTabs',
       'propObj': {
         'styleObj': {
@@ -6132,7 +6238,7 @@ export const testJson1: IWebDocument = {
       },
       'childNodes': [
         {
-          'tagName': 'li',
+          'nodeName': 'li',
           'className': 'ListItem',
           'propObj': {
             'styleObj': {
@@ -6159,12 +6265,13 @@ export const testJson1: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '首页'
+              'nodeName': '#text',
+              'nodeValue': '首页'
             }
           ]
         },
         {
-          'tagName': 'li',
+          'nodeName': 'li',
           'className': 'ListItem',
           'propObj': {
             'styleObj': {
@@ -6191,14 +6298,15 @@ export const testJson1: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '第2页'
+              'nodeName': '#text',
+              'nodeValue': '第2页'
             }
           ]
         }
       ]
     },
     {
-      'tagName': 'div',
+      'nodeName': 'div',
       'className': 'WebDocumentContents',
       'propObj': {
         'styleObj': {},
@@ -6208,7 +6316,7 @@ export const testJson1: IWebDocument = {
       },
       'childNodes': [
         {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'WebPage',
           'propObj': {
             'styleObj': {
@@ -6233,7 +6341,7 @@ export const testJson1: IWebDocument = {
           },
           'childNodes': [
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'RadioControl',
               'propObj': {
                 'styleObj': {
@@ -6256,7 +6364,7 @@ export const testJson1: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'RadioItem',
                   'propObj': {
                     'styleObj': {
@@ -6271,7 +6379,7 @@ export const testJson1: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -6292,12 +6400,13 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '单选'
+                          'nodeName': '#text',
+                          'nodeValue': '单选'
                         }
                       ]
                     },
                     {
-                      'tagName': 'div',
+                      'nodeName': 'div',
                       'className': 'RadioGroup',
                       'propObj': {
                         'styleObj': {
@@ -6326,7 +6435,7 @@ export const testJson1: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {},
@@ -6334,7 +6443,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -6350,12 +6459,13 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {},
@@ -6363,7 +6473,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -6379,12 +6489,13 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {},
@@ -6392,7 +6503,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -6408,14 +6519,15 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -6426,7 +6538,7 @@ export const testJson1: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -6440,7 +6552,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -6459,7 +6571,7 @@ export const testJson1: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'CheckboxControl',
               'propObj': {
                 'styleObj': {
@@ -6482,7 +6594,7 @@ export const testJson1: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'CheckboxItem',
                   'propObj': {
                     'styleObj': {
@@ -6497,7 +6609,7 @@ export const testJson1: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -6518,12 +6630,13 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '复选'
+                          'nodeName': '#text',
+                          'nodeValue': '复选'
                         }
                       ]
                     },
                     {
-                      'tagName': 'div',
+                      'nodeName': 'div',
                       'className': 'CheckboxGroup',
                       'propObj': {
                         'styleObj': {
@@ -6552,7 +6665,7 @@ export const testJson1: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'CheckboxOption',
                           'propObj': {
                             'styleObj': {},
@@ -6560,7 +6673,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -6576,12 +6689,13 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'CheckboxOption',
                           'propObj': {
                             'styleObj': {},
@@ -6589,7 +6703,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -6605,12 +6719,13 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'CheckboxOption',
                           'propObj': {
                             'styleObj': {},
@@ -6618,7 +6733,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -6634,14 +6749,15 @@ export const testJson1: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -6652,7 +6768,7 @@ export const testJson1: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -6666,7 +6782,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -6685,7 +6801,7 @@ export const testJson1: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'SelectControl',
               'propObj': {
                 'styleObj': {
@@ -6708,7 +6824,7 @@ export const testJson1: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'SelectItem',
                   'propObj': {
                     'styleObj': {
@@ -6723,7 +6839,7 @@ export const testJson1: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -6744,12 +6860,13 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '下拉选择框'
+                          'nodeName': '#text',
+                          'nodeValue': '下拉选择框'
                         }
                       ]
                     },
                     {
-                      'tagName': 'select',
+                      'nodeName': 'select',
                       'className': 'Select',
                       'propObj': {
                         'styleObj': {
@@ -6778,7 +6895,7 @@ export const testJson1: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'option',
+                          'nodeName': 'option',
                           'className': 'WebOption',
                           'propObj': {
                             'styleObj': {},
@@ -6792,12 +6909,13 @@ export const testJson1: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '请选择'
+                              'nodeName': '#text',
+                              'nodeValue': '请选择'
                             }
                           ]
                         },
                         {
-                          'tagName': 'option',
+                          'nodeName': 'option',
                           'className': 'WebOption',
                           'propObj': {
                             'styleObj': {},
@@ -6810,12 +6928,13 @@ export const testJson1: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
                         {
-                          'tagName': 'option',
+                          'nodeName': 'option',
                           'className': 'WebOption',
                           'propObj': {
                             'styleObj': {},
@@ -6828,12 +6947,13 @@ export const testJson1: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
                         {
-                          'tagName': 'option',
+                          'nodeName': 'option',
                           'className': 'WebOption',
                           'propObj': {
                             'styleObj': {},
@@ -6846,14 +6966,15 @@ export const testJson1: IWebDocument = {
                           'childNodes': [
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -6864,7 +6985,7 @@ export const testJson1: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -6878,7 +6999,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -6897,7 +7018,7 @@ export const testJson1: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'AttachmentControl',
               'propObj': {
                 'styleObj': {
@@ -6919,7 +7040,7 @@ export const testJson1: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'InputItem',
                   'propObj': {
                     'styleObj': {
@@ -6934,7 +7055,7 @@ export const testJson1: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -6955,12 +7076,13 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '附件'
+                          'nodeName': '#text',
+                          'nodeValue': '附件'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -6991,7 +7113,7 @@ export const testJson1: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -7002,7 +7124,7 @@ export const testJson1: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -7016,7 +7138,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -7037,7 +7159,7 @@ export const testJson1: IWebDocument = {
           ]
         },
         {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'WebPage',
           'propObj': {
             'styleObj': {
@@ -7062,7 +7184,7 @@ export const testJson1: IWebDocument = {
           },
           'childNodes': [
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'ConnectionControl',
               'propObj': {
                 'styleObj': {
@@ -7084,7 +7206,7 @@ export const testJson1: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'ButtonItem',
                   'propObj': {
                     'styleObj': {
@@ -7101,7 +7223,7 @@ export const testJson1: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -7122,12 +7244,13 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '关联选项'
+                          'nodeName': '#text',
+                          'nodeValue': '关联选项'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -7159,7 +7282,7 @@ export const testJson1: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -7170,7 +7293,7 @@ export const testJson1: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -7184,7 +7307,7 @@ export const testJson1: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -7305,7 +7428,7 @@ export const fieldsConfig: IOptionConfig = {
 };
 
 export const taskJson: IWebDocument = {
-  'tagName': 'div',
+  'nodeName': 'div',
   'className': 'WebDocument',
   'propObj': {
     'styleObj': {},
@@ -7316,7 +7439,7 @@ export const taskJson: IWebDocument = {
   },
   'childNodes': [
     {
-      'tagName': 'ul',
+      'nodeName': 'ul',
       'className': 'WebDocumentTabs',
       'propObj': {
         'styleObj': {
@@ -7333,7 +7456,7 @@ export const taskJson: IWebDocument = {
       },
       'childNodes': [
         {
-          'tagName': 'li',
+          'nodeName': 'li',
           'className': 'ListItem',
           'propObj': {
             'styleObj': {
@@ -7358,14 +7481,15 @@ export const taskJson: IWebDocument = {
           'childNodes': [
             {
               'className': 'WebTextNode',
-              'text': '首页'
+              'nodeName': '#text',
+              'nodeValue': '首页'
             }
           ]
         }
       ]
     },
     {
-      'tagName': 'div',
+      'nodeName': 'div',
       'className': 'WebDocumentContents',
       'propObj': {
         'styleObj': {},
@@ -7375,7 +7499,7 @@ export const taskJson: IWebDocument = {
       },
       'childNodes': [
         {
-          'tagName': 'div',
+          'nodeName': 'div',
           'className': 'WebPage',
           'propObj': {
             'styleObj': {
@@ -7399,7 +7523,7 @@ export const taskJson: IWebDocument = {
           },
           'childNodes': [
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'RadioControl',
               'propObj': {
                 'styleObj': {
@@ -7421,7 +7545,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'RadioItem',
                   'propObj': {
                     'styleObj': {
@@ -7436,7 +7560,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -7457,12 +7581,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务类型'
+                          'nodeName': '#text',
+                          'nodeValue': '任务类型'
                         }
                       ]
                     },
                     {
-                      'tagName': 'div',
+                      'nodeName': 'div',
                       'className': 'RadioGroup',
                       'propObj': {
                         'styleObj': {
@@ -7491,7 +7616,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {
@@ -7501,7 +7626,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -7517,12 +7642,13 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {
@@ -7532,7 +7658,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -7548,12 +7674,13 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {
@@ -7563,7 +7690,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -7579,14 +7706,15 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -7597,7 +7725,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -7611,7 +7739,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -7630,7 +7758,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'SingleInputControl',
               'propObj': {
                 'styleObj': {
@@ -7651,7 +7779,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'InputItem',
                   'propObj': {
                     'styleObj': {
@@ -7666,7 +7794,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -7687,12 +7815,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务名称'
+                          'nodeName': '#text',
+                          'nodeValue': '任务名称'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -7723,7 +7852,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -7734,7 +7863,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -7748,7 +7877,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -7767,7 +7896,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'SingleInputControl',
               'propObj': {
                 'styleObj': {
@@ -7788,7 +7917,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'InputItem',
                   'propObj': {
                     'styleObj': {
@@ -7803,7 +7932,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -7824,12 +7953,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务编号'
+                          'nodeName': '#text',
+                          'nodeValue': '任务编号'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -7860,7 +7990,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -7871,7 +8001,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -7885,7 +8015,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -7904,7 +8034,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'RadioControl',
               'propObj': {
                 'styleObj': {
@@ -7926,7 +8056,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'RadioItem',
                   'propObj': {
                     'styleObj': {
@@ -7941,7 +8071,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -7962,12 +8092,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': 'PDT归属'
+                          'nodeName': '#text',
+                          'nodeValue': 'PDT归属'
                         }
                       ]
                     },
                     {
-                      'tagName': 'div',
+                      'nodeName': 'div',
                       'className': 'RadioGroup',
                       'propObj': {
                         'styleObj': {
@@ -7996,7 +8127,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {
@@ -8006,7 +8137,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -8022,12 +8153,13 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {
@@ -8037,7 +8169,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -8053,12 +8185,13 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {
@@ -8068,7 +8201,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -8084,14 +8217,15 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -8102,7 +8236,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -8116,7 +8250,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -8135,7 +8269,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'RadioControl',
               'propObj': {
                 'styleObj': {
@@ -8157,7 +8291,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'RadioItem',
                   'propObj': {
                     'styleObj': {
@@ -8172,7 +8306,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -8193,12 +8327,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '片区归属'
+                          'nodeName': '#text',
+                          'nodeValue': '片区归属'
                         }
                       ]
                     },
                     {
-                      'tagName': 'div',
+                      'nodeName': 'div',
                       'className': 'RadioGroup',
                       'propObj': {
                         'styleObj': {
@@ -8227,7 +8362,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {
@@ -8237,7 +8372,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -8253,12 +8388,13 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/1'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/1'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {
@@ -8268,7 +8404,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -8284,12 +8420,13 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/2'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/2'
                             }
                           ]
                         },
                         {
-                          'tagName': 'span',
+                          'nodeName': 'span',
                           'className': 'RadioOption',
                           'propObj': {
                             'styleObj': {
@@ -8299,7 +8436,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'input',
+                              'nodeName': 'input',
                               'className': 'Input',
                               'propObj': {
                                 'styleObj': {},
@@ -8315,14 +8452,15 @@ export const taskJson: IWebDocument = {
                             },
                             {
                               'className': 'WebTextNode',
-                              'text': '选项一/3'
+                              'nodeName': '#text',
+                              'nodeValue': '选项一/3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -8333,7 +8471,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -8347,7 +8485,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -8366,7 +8504,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'SingleInputControl',
               'propObj': {
                 'styleObj': {
@@ -8387,7 +8525,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'InputItem',
                   'propObj': {
                     'styleObj': {
@@ -8402,7 +8540,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -8423,12 +8561,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务下达人'
+                          'nodeName': '#text',
+                          'nodeValue': '任务下达人'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -8459,7 +8598,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -8470,7 +8609,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -8484,7 +8623,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -8503,7 +8642,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'SingleInputControl',
               'propObj': {
                 'styleObj': {
@@ -8524,7 +8663,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'InputItem',
                   'propObj': {
                     'styleObj': {
@@ -8539,7 +8678,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -8560,12 +8699,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务接收人'
+                          'nodeName': '#text',
+                          'nodeValue': '任务接收人'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -8596,7 +8736,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -8607,7 +8747,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -8621,7 +8761,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -8640,7 +8780,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'MultilineInputControl',
               'propObj': {
                 'styleObj': {
@@ -8661,7 +8801,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'TextareaItem',
                   'propObj': {
                     'styleObj': {
@@ -8676,7 +8816,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -8697,12 +8837,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务背景'
+                          'nodeName': '#text',
+                          'nodeValue': '任务背景'
                         }
                       ]
                     },
                     {
-                      'tagName': 'textarea',
+                      'nodeName': 'textarea',
                       'className': 'TextArea',
                       'propObj': {
                         'styleObj': {
@@ -8733,7 +8874,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -8744,7 +8885,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -8758,7 +8899,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -8777,7 +8918,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'MultilineInputControl',
               'propObj': {
                 'styleObj': {
@@ -8798,7 +8939,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'TextareaItem',
                   'propObj': {
                     'styleObj': {
@@ -8813,7 +8954,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -8834,12 +8975,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务内容'
+                          'nodeName': '#text',
+                          'nodeValue': '任务内容'
                         }
                       ]
                     },
                     {
-                      'tagName': 'textarea',
+                      'nodeName': 'textarea',
                       'className': 'TextArea',
                       'propObj': {
                         'styleObj': {
@@ -8870,7 +9012,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -8881,7 +9023,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -8895,7 +9037,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -8914,7 +9056,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'MultilineInputControl',
               'propObj': {
                 'styleObj': {
@@ -8935,7 +9077,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'TextareaItem',
                   'propObj': {
                     'styleObj': {
@@ -8950,7 +9092,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -8971,12 +9113,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务完成标准'
+                          'nodeName': '#text',
+                          'nodeValue': '任务完成标准'
                         }
                       ]
                     },
                     {
-                      'tagName': 'textarea',
+                      'nodeName': 'textarea',
                       'className': 'TextArea',
                       'propObj': {
                         'styleObj': {
@@ -9007,7 +9150,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -9018,7 +9161,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -9032,7 +9175,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -9051,7 +9194,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'MultilineInputControl',
               'propObj': {
                 'styleObj': {
@@ -9072,7 +9215,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'TextareaItem',
                   'propObj': {
                     'styleObj': {
@@ -9087,7 +9230,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -9108,12 +9251,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '任务输出物'
+                          'nodeName': '#text',
+                          'nodeValue': '任务输出物'
                         }
                       ]
                     },
                     {
-                      'tagName': 'textarea',
+                      'nodeName': 'textarea',
                       'className': 'TextArea',
                       'propObj': {
                         'styleObj': {
@@ -9144,7 +9288,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -9155,7 +9299,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -9169,7 +9313,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -9188,7 +9332,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'DateControl',
               'propObj': {
                 'styleObj': {
@@ -9209,7 +9353,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'InputItem',
                   'propObj': {
                     'styleObj': {
@@ -9224,7 +9368,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -9245,12 +9389,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '计划开始日期'
+                          'nodeName': '#text',
+                          'nodeValue': '计划开始日期'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -9281,7 +9426,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -9292,7 +9437,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -9306,7 +9451,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -9325,7 +9470,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'DateControl',
               'propObj': {
                 'styleObj': {
@@ -9346,7 +9491,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'InputItem',
                   'propObj': {
                     'styleObj': {
@@ -9361,7 +9506,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -9382,12 +9527,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '计划完成日期'
+                          'nodeName': '#text',
+                          'nodeValue': '计划完成日期'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -9418,7 +9564,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -9429,7 +9575,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -9443,7 +9589,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},
@@ -9462,7 +9608,7 @@ export const taskJson: IWebDocument = {
               ]
             },
             {
-              'tagName': 'div',
+              'nodeName': 'div',
               'className': 'NumericalControl',
               'propObj': {
                 'styleObj': {
@@ -9484,7 +9630,7 @@ export const taskJson: IWebDocument = {
               },
               'childNodes': [
                 {
-                  'tagName': 'div',
+                  'nodeName': 'div',
                   'className': 'InputItem',
                   'propObj': {
                     'styleObj': {
@@ -9499,7 +9645,7 @@ export const taskJson: IWebDocument = {
                   },
                   'childNodes': [
                     {
-                      'tagName': 'label',
+                      'nodeName': 'label',
                       'className': 'Label',
                       'propObj': {
                         'styleObj': {
@@ -9520,12 +9666,13 @@ export const taskJson: IWebDocument = {
                       'childNodes': [
                         {
                           'className': 'WebTextNode',
-                          'text': '计划工时'
+                          'nodeName': '#text',
+                          'nodeValue': '计划工时'
                         }
                       ]
                     },
                     {
-                      'tagName': 'input',
+                      'nodeName': 'input',
                       'className': 'Input',
                       'propObj': {
                         'styleObj': {
@@ -9555,7 +9702,7 @@ export const taskJson: IWebDocument = {
                       'childNodes': []
                     },
                     {
-                      'tagName': 'span',
+                      'nodeName': 'span',
                       'className': 'Span',
                       'propObj': {
                         'styleObj': {
@@ -9566,7 +9713,7 @@ export const taskJson: IWebDocument = {
                       },
                       'childNodes': [
                         {
-                          'tagName': 'svg',
+                          'nodeName': 'svg',
                           'className': 'DeleteSvg',
                           'propObj': {
                             'styleObj': {},
@@ -9580,7 +9727,7 @@ export const taskJson: IWebDocument = {
                           },
                           'childNodes': [
                             {
-                              'tagName': 'path',
+                              'nodeName': 'path',
                               'className': 'SvgPath',
                               'propObj': {
                                 'styleObj': {},

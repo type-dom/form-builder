@@ -68,11 +68,14 @@
 
 ## 设计表单模式和填表模式及只读表单模式的地址(webpack.base.config.js中有配置)
 
-> 1、localhost:8118/example-design-mode.html 设计表单模式示例
+> 1、http://localhost:8118/example-design-mode.html 设计表单模式示例
+![design-mode.png](design-mode.png)
 
-> 2、localhost:8118/example-fill-mode.html 填表模式示例
+> 2、http://localhost:8118/example-fill-mode.html 填表模式示例
+![fill-mode.png](fill-mode.png)
 
-> 3、localhost:8118/example-readonly-mode.html 只读表单模式示例
+> 3、http://localhost:8118/example-readonly-mode.html 只读表单模式示例
+![read-mode.png](read-mode.png)
 
 ## onChange 监听写法
 

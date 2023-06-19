@@ -1,28 +1,29 @@
 import { filter, fromEvent, switchMap, of, Observable, Subscription, map, Subject } from 'rxjs';
+import { LayoutWrapper } from './views/layout/layout';
+import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
+import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
+import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
+import { Cursor } from '../type-node/web-style.enum';
+import { WebTableDataCell } from '../type-node/web-element/html-element/table/data-cell/data-cell.class';
+import { ListItem } from '../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
+import { WebTableRow } from '../type-node/web-element/html-element/table/row/row.class';
+import { Span } from '../type-node/web-element/html-element/span/span.class';
+import { toJSON } from '../type-node/type-element/type-element.function';
+import { WebDialog } from '../type-node/components/dialog/dialog';
+import { MessageBox } from '../type-node/components/message-box/message-box';
+import { WebTextNode } from '../type-node/web-text-node/web-text-node.class';
+import { WebForm } from '../type-node/components/form/form';
 import { ControlMenu } from './core/menus/menu.abstract';
 import { WebControl } from './core/controls/web-control.abstract';
 import { WebDocument } from './core/document/web-document.class';
 import { IWebDocument } from './core/document/web-document.interface';
 import { WebPage } from './core/page/web-page.class';
 import { IOptionConfig } from './core/controls/web-control.interface';
-import { WebLayout } from './layout/layout.class';
-import { ControlProperty } from './layout/body/right/contents/control-property/control-property';
-import { FormProperty } from './layout/body/right/contents/form-property/form-property';
-import { FieldProperty } from './layout/body/right/contents/field-property/field-property';
-import { Cursor } from './web-element/web-style.enum';
-import { WebTableDataCell } from './web-element/table/data-cell/data-cell.class';
-import { ListItem } from './web-element/unordered-list/list-item/list-item.class';
-import { toJSON } from './web-element/web-element.function';
-import { WebDialog } from './components/dialog/dialog';
-import { MessageBox } from './components/message-box/message-box';
 import { ConnectionControl } from './core/controls/complex/connection/connection.class';
 import { TableControl } from './core/controls/complex/table/table.class';
 import { ITableField } from './core/controls/complex/table/table.interface';
-import { WebTableRow } from './web-element/table/row/row.class';
-import { WebTextNode } from './web-text-node/web-text-node.class';
-import { Span } from './web-element/span/span.class';
-import { WebForm } from './components/form/form';
 import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
+import { Test } from './views/test/test';
 
 export class FormEditor {
   // 光标
@@ -34,7 +35,7 @@ export class FormEditor {
   // 选中的表格单元格
   selectedTableDataCell?: WebTableDataCell | null;
 
-  layout: WebLayout;
+  layout: LayoutWrapper;
   // 对话框
   dialog: WebDialog;
   // 消息框
@@ -49,7 +50,7 @@ export class FormEditor {
   events: Subscription[];
   editorElObservable: Observable<Event>;
   onReady: Observable<void>;
-  readyEvent: Subject<void>
+  readyEvent: Subject<void>;
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
     this.el = editorEl;
     if (!this.el.clientHeight) {
@@ -59,14 +60,15 @@ export class FormEditor {
     // console.log('this.el.clientHeight is ', this.el.clientHeight);
     this.events = [];
     this.mode = mode;
-    this.layout = new WebLayout(this);
+    this.layout = new LayoutWrapper(this);
     this.dialog = new WebDialog(this);
     this.messageBox = new MessageBox(this);
     this.layout.childNodes.push(this.dialog, this.messageBox);
     this.layout.render();
     // console.log('editorEl is ', editorEl);
     editorEl.appendChild(this.layout.dom);
-
+    const test = new Test(this);
+    editorEl.appendChild(test.dom);
     // this.currentPage = this.defaultPage;
     this.selectedMenu = null;
     this.selectedControl = null;
@@ -274,7 +276,7 @@ export class FormEditor {
         formData[key] = formIdJson[key];
       }
     }
-    const tableData: Record<string, string>[] = [];
+    const tableData: Record<string, string | number | boolean>[] = [];
     formData.table = tableData;
     this.allControls.forEach((ctrl) => {
       if (ctrl instanceof TableControl) {
@@ -284,18 +286,18 @@ export class FormEditor {
         const tableHeader = table.childNodes[0];
         // console.log('tableHeader is ', tableHeader);
         const tableHead: ITableField[] = [];
-        tableHeader.childNodes.forEach(th => {
+        tableHeader.childNodes.forEach((th) => {
           tableHead.push({
-            label: th.childNodes[0].text,
+            label: th.childNodes[0].nodeValue.toString(),
             name: th.attrObj.name as string,
           });
         });
         // console.log('tableHead is ', tableHead);
-        table.childNodes.forEach((tr, index) => {
+        table.childNodes.forEach((tr: WebTableRow | unknown, index: number) => {
           if (index > 0) {
             // console.log('tr is ', tr);
             if (tr instanceof WebTableRow) {
-              let data: { [propName: string]: string } = {};
+              let data: { [propName: string]: string | number | boolean } = {};
               const rowId = tr.rowId;
               if (rowId) {
                 const rowIdJson = JSON.parse(rowId);
@@ -310,7 +312,7 @@ export class FormEditor {
                 }
                 const item = td.childNodes[0];
                 if (item instanceof WebTextNode) {
-                  data[tableHead[index].name] = item.text;
+                  data[tableHead[index].name] = item.nodeValue;
                 } else {
                   data[tableHead[index].name] = item.value; // WebControl.value;
                 }
@@ -423,7 +425,6 @@ export class FormEditor {
    * 选中表格时单独处理。
    * @param menu
    */
-  //
   setSelectedMenu(menu: ControlMenu | null): void {
     if (menu) {
       // 要先移除之前选中的菜单的选中状态

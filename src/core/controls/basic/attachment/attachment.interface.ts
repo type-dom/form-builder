@@ -1,7 +1,7 @@
+import { ITypeDiv } from '../../../../../type-node/type-element/type-html/div/div.interface';
 import { IInputItem } from '../../form-item/input-item/input-item.interface';
-import { IDivComponent } from '../../../../web-component/div-component/div-component.interface';
 
-export interface IAttachmentControl extends IDivComponent {
+export interface IAttachmentControl extends ITypeDiv {
   className: 'AttachmentControl',
   childNodes: IInputItem[],
 }

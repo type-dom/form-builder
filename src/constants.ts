@@ -20,24 +20,24 @@ import { SelectItem } from './core/controls/form-item/select-item/select-item.cl
 import { CheckboxItem } from './core/controls/form-item/checkbox-item/checkbox-item.class';
 import { TableItem } from './core/controls/form-item/table-item/table-item.class';
 import { ControlClass } from './core/controls/web-control.interface';
-import { Division } from './web-element/division/division.class';
-import { Input } from './web-element/input/input.class';
-import { Label } from './web-element/label/label.class';
-import { Span } from './web-element/span/span.class';
-import { Button } from './web-element/button/button.class';
-import { Heading } from './web-element/heading/heading.class';
-import { ListItem } from './web-element/unordered-list/list-item/list-item.class';
-import { Select } from './web-element/select/select.class';
-import { WebOption } from './web-element/select/option/option.class';
-import { WebTable } from './web-element/table/table.class';
-import { WebTableRow } from './web-element/table/row/row.class';
-import { WebTableDataCell } from './web-element/table/data-cell/data-cell.class';
-import { WebTableBody } from './web-element/table/body/body.class';
-import { WebTableHead } from './web-element/table/head/head.class';
-import { WebTableHeader } from './web-element/table/header/header.class';
-import { Textarea } from './web-element/textarea/textarea.class';
-import { UnorderedList } from './web-element/unordered-list/unordered-list.class';
-import { ElementClass } from './web-element/web-element.interface';
+import { Division } from '../type-node/web-element/html-element/division/division.class';
+import { Input } from '../type-node/web-element/html-element/input/input.class';
+import { Label } from '../type-node/web-element/html-element/label/label.class';
+import { Span } from '../type-node/web-element/html-element/span/span.class';
+import { Button } from '../type-node/web-element/html-element/button/button.class';
+import { Heading } from '../type-node/web-element/html-element/heading/heading.class';
+import { ListItem } from '../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
+import { Select } from '../type-node/web-element/html-element/select/select.class';
+import { WebOption } from '../type-node/web-element/html-element/select/option/option.class';
+import { WebTable } from '../type-node/web-element/html-element/table/table.class';
+import { WebTableRow } from '../type-node/web-element/html-element/table/row/row.class';
+import { WebTableDataCell } from '../type-node/web-element/html-element/table/data-cell/data-cell.class';
+import { WebTableBody } from '../type-node/web-element/html-element/table/body/body.class';
+import { WebTableHead } from '../type-node/web-element/html-element/table/head/head.class';
+import { WebTableHeader } from '../type-node/web-element/html-element/table/header/header.class';
+import { Textarea } from '../type-node/web-element/html-element/textarea/textarea.class';
+import { UnorderedList } from '../type-node/web-element/html-element/unordered-list/unordered-list.class';
+import { ElementClass } from '../type-node/type-element/type-element.interface';
 
 export const defaultTextStyle = {
   fontFamily: '宋体',

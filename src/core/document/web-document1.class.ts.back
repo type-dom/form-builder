@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../web-component/div-component/div-component.class';
+import { TypeDiv } from '../../web-component/div-component/div-component.class';
 import { WebLayout } from '../../layout/layout.class';
 import { BodyMainContent } from '../../layout/body/main-content/main-content';
 import { WebTextNode } from '../../web-text-node/web-text-node.class';
@@ -7,7 +7,7 @@ import { Division } from '../../web-element/division/division.class';
 import { Input } from '../../web-element/input/input.class';
 import { Span } from '../../web-element/span/span.class';
 import { Button } from '../../web-element/button/button.class';
-import { WebElement } from '../../web-element/web-element.class';
+import { TypeElement } from '../../web-element/web-element.class';
 import { WebPage } from '../web-page/web-page.class';
 import { IWebPage } from '../web-page/web-page.interface';
 import { IWebDocument } from './web-document1.interface';
@@ -21,7 +21,7 @@ import { fieldConfig } from '../controls/web-control.const';
 //    是否要新增页面属性？？？
 //    多页面时，默认页面不应该清空
 //    加载多页面时，要同步到 tab数量属性中。
-export class WebDocument extends DivComponent implements IWebDocument {
+export class WebDocument extends TypeDiv implements IWebDocument {
   className: 'WebDocument';
   // todo 这样的子元素类型是有问题的。要优化
   //      tabs contents
@@ -142,7 +142,7 @@ export class WebDocument extends DivComponent implements IWebDocument {
             });
           }
           (this.tabHeaders.childNodes as Division[]).forEach((tab, index) => {
-            (tab.childNodes[0] as WebTextNode).setText(((page.childNodes[index] as WebElement).childNodes[0] as WebTextNode).text);
+            (tab.childNodes[0] as WebTextNode).setText(((page.childNodes[index] as TypeElement).childNodes[0] as WebTextNode).text);
           });
         } else {
           console.error('error. ');

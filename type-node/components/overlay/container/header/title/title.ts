@@ -1,0 +1,26 @@
+import { WebTextNode } from '../../../../../web-text-node/web-text-node.class';
+import { TypeSpan } from '../../../../../type-element/type-html/span/span.abstract';
+import { OverlayHeader } from '../header';
+
+export class OverlayTitle extends TypeSpan {
+  className: 'OverlayTitle';
+  childNodes: WebTextNode[];
+  text: WebTextNode;
+
+  constructor(public parent: OverlayHeader) {
+    super();
+    this.className = 'OverlayTitle';
+    this.propObj = {
+      styleObj: {
+        lineHeight: '16px',
+        fontSize: '16px',
+        color: '#000',
+      },
+      attrObj: {
+        name: 'overlay-title',
+      }
+    };
+    this.text = new WebTextNode(this, '标题');
+    this.childNodes = [this.text];
+  }
+}

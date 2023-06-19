@@ -1,14 +1,14 @@
 import { fromEvent } from 'rxjs';
-import { UlComponent } from '../../../web-component/ul-component/ul-component.abstract';
-import { ListItem } from '../../../web-element/unordered-list/list-item/list-item.class';
-import { IWebStyle } from '../../../web-element/web-style.interface';
-import { Display } from '../../../web-element/web-style.enum';
-import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { IWebTextNode } from '../../../web-text-node/web-text-node.interface';
+import { TypeUl } from '../../../../type-node/type-element/type-html/ul/ul.abstract';
+import { ListItem } from '../../../../type-node/web-element/html-element/unordered-list/list-item/list-item.class';
+import { IWebStyle } from '../../../../type-node/web-style.interface';
+import { Display } from '../../../../type-node/web-style.enum';
+import { WebTextNode } from '../../../../type-node/web-text-node/web-text-node.class';
+import { IWebTextNode } from '../../../../type-node/web-text-node/web-text-node.interface';
 import { WebDocument } from '../web-document.class';
 import { IWebDocumentTabs } from './tabs.interface';
 
-export class WebDocumentTabs extends UlComponent {
+export class WebDocumentTabs extends TypeUl {
   className: 'WebDocumentTabs';
   liStyle: Partial<IWebStyle>;
 
@@ -150,13 +150,13 @@ export class WebDocumentTabs extends UlComponent {
       // 判断对应的子对象是否存在，
       if (this.childNodes[index]) {
         if (index < literal.childNodes.length) {
-          (this.childNodes[index].childNodes[0] as WebTextNode).setText((liJson.childNodes[0] as IWebTextNode).text);
+          (this.childNodes[index].childNodes[0] as WebTextNode).setText((liJson.childNodes[0] as IWebTextNode).nodeValue);
         }
       } else { // 如果不存在，
         // 要创建子节点
         const liObj = new ListItem(this);
         liObj.addStyleObj(Object.assign({}, this.liStyle));
-        const text = (liJson.childNodes[0] as IWebTextNode).text;
+        const text = (liJson.childNodes[0] as IWebTextNode).nodeValue;
         const textNode = new WebTextNode(liObj, text);
         liObj.addChild(textNode);
         this.appendChild(liObj);

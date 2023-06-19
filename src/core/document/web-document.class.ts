@@ -1,13 +1,13 @@
 import { fromEvent } from 'rxjs';
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
-import { WebLayout } from '../../layout/layout.class';
-import { BodyMainContent } from '../../layout/body/main-content/main-content';
+import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { LayoutWrapper } from '../../views/layout/layout';
+import { BodyMainContent } from '../../views/layout/body/main-content/main-content';
 import { IOptionConfig } from '../controls/web-control.interface';
 import { fieldConfig } from '../controls/web-control.const';
 import { IWebDocument } from './web-document.interface';
 import { WebDocumentContents } from './contents/contents.class';
 import { WebDocumentTabs } from './tabs/tabs.class';
-import { toJSON } from '../../web-element/web-element.function';
+import { toJSON } from '../../../type-node/type-element/type-element.function';
 import { IWebPage } from '../page/web-page.interface';
 import { IWebDocumentContents } from './contents/contents.interface';
 
@@ -16,7 +16,7 @@ import { IWebDocumentContents } from './contents/contents.interface';
 //    是否要新增页面属性？？？
 //    多页面时，默认页面不应该清空
 //    加载多页面时，要同步到 tab数量属性中。
-export class WebDocument extends DivComponent implements IWebDocument {
+export class WebDocument extends TypeDiv implements IWebDocument {
   className: 'WebDocument';
   // todo 这样的子元素类型是有问题的。要优化
   //      tabs contents
@@ -26,7 +26,7 @@ export class WebDocument extends DivComponent implements IWebDocument {
 
   tabs: WebDocumentTabs;
   contents: WebDocumentContents;
-  constructor(public parent: BodyMainContent | WebLayout) {
+  constructor(public parent: BodyMainContent | LayoutWrapper) {
     super();
     this.className = 'WebDocument';
     this.propObj = {

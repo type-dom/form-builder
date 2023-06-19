@@ -1,5 +1,5 @@
-import { TableSvg } from '../../../../components/svgs/table/table';
-import { Span } from '../../../../web-element/span/span.class';
+import { TableSvg } from '../../../../../type-node/components/svgs/table/table';
+import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
 import { TableControl } from '../../../controls/complex/table/table.class';
 import { ControlMenu } from '../../menu.abstract';
 import { ComplexMenus } from '../complex-menus';
@@ -16,7 +16,7 @@ export class TableMenu extends ControlMenu {
     this.ControlClass = TableControl;
     this.addAttrName('table-menu');
     this.svg = new TableSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('表格');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

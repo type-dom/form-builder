@@ -1,23 +1,23 @@
-import { Input } from '../../../web-element/input/input.class';
-import { IInput } from '../../../web-element/input/input.interface';
-import { Textarea } from '../../../web-element/textarea/textarea.class';
-import { ITextarea } from '../../../web-element/textarea/textarea.interface';
-import { WebTable } from '../../../web-element/table/table.class';
-import { IWebTable } from '../../../web-element/table/table.interface';
-import { Select } from '../../../web-element/select/select.class';
-import { ISelect } from '../../../web-element/select/select.interface';
-import { ILabel } from '../../../web-element/label/label.interface';
-import { ISpan } from '../../../web-element/span/span.interface';
-import { IDivComponent } from '../../../web-component/div-component/div-component.interface';
-import { RadioGroup } from '../../../components/radio-group/radio-group.class';
-import { IRadioGroup } from '../../../components/radio-group/radio-group.interface';
-import { CheckboxGroup } from '../../../components/checkbox-group/checkbox-group.class';
-import { ICheckboxGroup } from '../../../components/checkbox-group/checkbox-group.interface';
+import { Input } from '../../../../type-node/web-element/html-element/input/input.class';
+import { IInput } from '../../../../type-node/web-element/html-element/input/input.interface';
+import { Textarea } from '../../../../type-node/web-element/html-element/textarea/textarea.class';
+import { ITextarea } from '../../../../type-node/web-element/html-element/textarea/textarea.interface';
+import { WebTable } from '../../../../type-node/web-element/html-element/table/table.class';
+import { IWebTable } from '../../../../type-node/web-element/html-element/table/table.interface';
+import { Select } from '../../../../type-node/web-element/html-element/select/select.class';
+import { ISelect } from '../../../../type-node/web-element/html-element/select/select.interface';
+import { ILabel } from '../../../../type-node/web-element/html-element/label/label.interface';
+import { ISpan } from '../../../../type-node/web-element/html-element/span/span.interface';
+import { ITypeDiv } from '../../../../type-node/type-element/type-html/div/div.interface';
+import { RadioGroup } from '../../../../type-node/components/radio-group/radio-group.class';
+import { IRadioGroup } from '../../../../type-node/components/radio-group/radio-group.interface';
+import { CheckboxGroup } from '../../../../type-node/components/checkbox-group/checkbox-group.class';
+import { ICheckboxGroup } from '../../../../type-node/components/checkbox-group/checkbox-group.interface';
 
 export type ItemContent = Input | Textarea | Select | RadioGroup | CheckboxGroup | WebTable;
 export type IItemContent = IInput | ITextarea | ISelect | IRadioGroup | ICheckboxGroup | IWebTable;
 
-export interface IFormItem extends IDivComponent {
+export interface IFormItem extends ITypeDiv {
   className: string, // 'ButtonItem' | 'CheckboxItem' | 'ConfigItem' | 'InputItem' | 'RadioItem' | 'SelectItem' | 'TableItem' | 'TextareaItem',
   childNodes: [ILabel, IItemContent, ISpan],
 }

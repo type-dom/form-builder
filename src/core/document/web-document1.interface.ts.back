@@ -8,7 +8,7 @@ import { IWebDocumentContents } from './contents/contents.interface';
 import { IWebDocumentTabs } from './tabs/tabs.interface';
 
 export interface IWebDocument extends IWebComponent {
-  tagName: 'div',
+  nodeName: 'div',
   className: 'WebDocument',
   childNodes: (IWebPage| ISpan | IInput | IButton | IDivision | IWebDocumentContents | IWebDocumentTabs)[],
 }

@@ -1,15 +1,15 @@
 import { fromEvent, Subscription } from 'rxjs';
-import { DivComponent } from '../../web-component/div-component/div-component.abstract';
-import { CheckboxOption } from '../../components/checkbox-group/checkbox-option/checkbox-option.class';
-import { RadioOption } from '../../components/radio-group/radio-option/radio-option.class';
-import { Select } from '../../web-element/select/select.class';
-import { Label } from '../../web-element/label/label.class';
-import { Input } from '../../web-element/input/input.class';
-import { Textarea } from '../../web-element/textarea/textarea.class';
-import { WebTable } from '../../web-element/table/table.class';
-import { WebTableRow } from '../../web-element/table/row/row.class';
-import { WebTableDataCell } from '../../web-element/table/data-cell/data-cell.class';
-import { toJSON } from '../../web-element/web-element.function';
+import { TypeDiv } from '../../../type-node/type-element/type-html/div/div.abstract';
+import { CheckboxOption } from '../../../type-node/components/checkbox-group/checkbox-option/checkbox-option.class';
+import { RadioOption } from '../../../type-node/components/radio-group/radio-option/radio-option.class';
+import { Select } from '../../../type-node/web-element/html-element/select/select.class';
+import { Label } from '../../../type-node/web-element/html-element/label/label.class';
+import { Input } from '../../../type-node/web-element/html-element/input/input.class';
+import { Textarea } from '../../../type-node/web-element/html-element/textarea/textarea.class';
+import { WebTable } from '../../../type-node/web-element/html-element/table/table.class';
+import { WebTableRow } from '../../../type-node/web-element/html-element/table/row/row.class';
+import { WebTableDataCell } from '../../../type-node/web-element/html-element/table/data-cell/data-cell.class';
+import { toJSON } from '../../../type-node/type-element/type-element.function';
 import { ControlClassMap } from '../../constants';
 import { WebPage } from '../page/web-page.class';
 import { FormItem } from './form-item/form-item.abstract';
@@ -17,7 +17,7 @@ import { IOptionConfig, IWebControl } from './web-control.interface';
 import { controlStyle } from './web-control.const';
 import { ItemContent } from './form-item/form-item.interface';
 
-export abstract class WebControl extends DivComponent implements IWebControl {
+export abstract class WebControl extends TypeDiv implements IWebControl {
   abstract className: string;
   // 控件都有这个属性
   abstract formItem: FormItem;

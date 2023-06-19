@@ -1,20 +1,20 @@
-import { IWebStyle } from '../../../web-element/web-style.interface';
-import { WebTable } from '../../../web-element/table/table.class';
-import { Input } from '../../../web-element/input/input.class';
-import { Label } from '../../../web-element/label/label.class';
-import { Textarea } from '../../../web-element/textarea/textarea.class';
-import { ILabel } from '../../../web-element/label/label.interface';
-import { Span } from '../../../web-element/span/span.class';
-import { Select } from '../../../web-element/select/select.class';
-import { RadioGroup } from '../../../components/radio-group/radio-group.class';
-import { CheckboxGroup } from '../../../components/checkbox-group/checkbox-group.class';
-import { DeleteSvg } from '../../../components/svgs/delete/delete';
-import { WebTextNode } from '../../../web-text-node/web-text-node.class';
-import { DivComponent } from '../../../web-component/div-component/div-component.abstract';
+import { IWebStyle } from '../../../../type-node/web-style.interface';
+import { WebTable } from '../../../../type-node/web-element/html-element/table/table.class';
+import { Input } from '../../../../type-node/web-element/html-element/input/input.class';
+import { Label } from '../../../../type-node/web-element/html-element/label/label.class';
+import { Textarea } from '../../../../type-node/web-element/html-element/textarea/textarea.class';
+import { ILabel } from '../../../../type-node/web-element/html-element/label/label.interface';
+import { Span } from '../../../../type-node/web-element/html-element/span/span.class';
+import { Select } from '../../../../type-node/web-element/html-element/select/select.class';
+import { RadioGroup } from '../../../../type-node/components/radio-group/radio-group.class';
+import { CheckboxGroup } from '../../../../type-node/components/checkbox-group/checkbox-group.class';
+import { DeleteSvg } from '../../../../type-node/components/svgs/delete/delete';
+import { WebTextNode } from '../../../../type-node/web-text-node/web-text-node.class';
+import { TypeDiv } from '../../../../type-node/type-element/type-html/div/div.abstract';
 import { formItemStyle, labelStyle } from '../web-control.const';
 import { IFormItem, ItemContent } from './form-item.interface';
 
-export abstract class FormItem extends DivComponent implements IFormItem {
+export abstract class FormItem extends TypeDiv implements IFormItem {
   abstract className: string;
   // abstract parent: WebControl;
   abstract childNodes: [Label, ItemContent, Span];
@@ -44,7 +44,7 @@ export abstract class FormItem extends DivComponent implements IFormItem {
       backgroundColor: '#fff'
     });
     const svg = new DeleteSvg(this.deleteSpan);
-    svg.reset(20, 20);
+    svg.resetSize(20, 20);
     this.deleteSpan.addChild(svg);
   }
 

@@ -1,5 +1,5 @@
-import { RadioSvg } from '../../../../components/svgs/radio/radio';
-import { Span } from '../../../../web-element/span/span.class';
+import { RadioSvg } from '../../../../../type-node/components/svgs/radio/radio';
+import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
 import { RadioControl } from '../../../controls/basic/radio/radio.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';
@@ -15,7 +15,7 @@ export class RadioMenu extends ControlMenu {
     this.ControlClass = RadioControl;
     this.addAttrName('radio-menu');
     this.svg = new RadioSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('单选');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

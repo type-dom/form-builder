@@ -1,8 +1,8 @@
+import { ITypeDiv } from '../../../../../type-node/type-element/type-html/div/div.interface';
 import { InputItem } from '../../form-item/input-item/input-item.class';
-import { IDivComponent } from '../../../../web-component/div-component/div-component.interface';
 
-export interface ISingleInputControl extends IDivComponent {
-  tagName: 'div',
+export interface ISingleInputControl extends ITypeDiv {
+  nodeName: 'div',
   className: 'SingleInputControl',
   childNodes: InputItem[],
 }

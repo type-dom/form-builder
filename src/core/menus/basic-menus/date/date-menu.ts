@@ -1,5 +1,5 @@
-import { DateSvg } from '../../../../components/svgs/date/date';
-import { Span } from '../../../../web-element/span/span.class';
+import { DateSvg } from '../../../../../type-node/components/svgs/date/date';
+import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
 import { DateControl } from '../../../controls/basic/date/date.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';
@@ -17,7 +17,7 @@ export class DateMenu extends ControlMenu {
     this.ControlClass = DateControl;
     this.addAttrName('date-menu');
     this.svg = new DateSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('日期');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

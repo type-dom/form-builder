@@ -1,5 +1,5 @@
-import { TimeSvg } from '../../../../components/svgs/time/time';
-import { Span } from '../../../../web-element/span/span.class';
+import { TimeSvg } from '../../../../../type-node/components/svgs/time/time';
+import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
 import { TimeControl } from '../../../controls/basic/time/time.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';
@@ -16,7 +16,7 @@ export class TimeMenu extends ControlMenu {
     this.ControlClass = TimeControl;
     this.addAttrName('time-menu');
     this.svg = new TimeSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('时间');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();

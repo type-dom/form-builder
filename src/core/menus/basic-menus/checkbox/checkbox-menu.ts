@@ -1,5 +1,5 @@
-import { CheckboxSvg } from '../../../../components/svgs/checkbox/checkbox';
-import { Span } from '../../../../web-element/span/span.class';
+import { CheckboxSvg } from '../../../../../type-node/components/svgs/checkbox/checkbox';
+import { Span } from '../../../../../type-node/web-element/html-element/span/span.class';
 import { CheckboxControl } from '../../../controls/basic/checkbox/checkbox.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';
@@ -15,7 +15,7 @@ export class CheckboxMenu extends ControlMenu {
     this.ControlClass = CheckboxControl;
     this.addAttrName('checkbox-menu');
     this.svg = new CheckboxSvg(this);
-    this.svg.reset(24, 24);
+    this.svg.resetSize(24, 24);
     this.textNode.setText('复选');
     this.childNodes = [this.svg, this.titleSpan];
     this.initEvents();
