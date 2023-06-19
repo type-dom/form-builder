@@ -65,6 +65,8 @@ export class FormEditor {
     this.messageBox = new MessageBox(this);
     this.layout.childNodes.push(this.dialog, this.messageBox);
     this.layout.render();
+    const json = this.layout.toJSON();
+    console.log('json is ', json);
     // console.log('editorEl is ', editorEl);
     editorEl.appendChild(this.layout.dom);
     const test = new Test(this);

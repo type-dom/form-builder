@@ -7,13 +7,13 @@
  * text-run下，在选中时，生成新的text节点。 但背景颜色怎么设置？ 自带的选中？
  *
  */
-import { TypeNode } from '../type-node/type-node.class';
+import { TypeNode } from '../type-node/type-node.abstract';
 import { TypeElement } from '../type-element/type-element.abstract';
 import { ITextNode } from './text-node.interface';
 export class TextNode extends TypeNode implements ITextNode {
   className: 'TextNode';
   // childNodes: [string];
-  // nodeName: '#text';
+  nodeName: '#text';
   nodeValue: string;
   // text: string;
   dom: Text;
@@ -24,9 +24,7 @@ export class TextNode extends TypeNode implements ITextNode {
   constructor(public parent: TypeElement, text = '') { // \u200c
     super('#text', text);
     this.className = 'TextNode';
-    // this.nodeName = '#text';
-    // this.nodeValue = text;
-    // this.childNodes = [text];
+    this.nodeName = '#text';
     this.nodeValue = text;
     this.dom = document.createTextNode(text.toString());
   }

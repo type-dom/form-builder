@@ -71,9 +71,6 @@ export function toJSON(element: TypeElement): ITypeElement {
       if (child instanceof TypeElement) {
         return toJSON(child);
       } else {
-        // if (c.textContent) {
-        //   console.error('c is ', c);
-        // }
         return {
           className: 'TextNode',
           nodeName: '#text',

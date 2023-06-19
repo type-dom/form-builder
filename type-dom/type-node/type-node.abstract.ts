@@ -1,7 +1,8 @@
 import { IComponent, INodeAttr, ITypeNode } from './type-node.interface';
 import { FormEditor } from '../../src/form-editor';
-import { TypeElement } from '../type-element/type-element.abstract';
 import { XNode } from '../x-node/x-node.class';
+import { TypeElement } from '../type-element/type-element.abstract';
+import { ITextNode } from '../text-node/text-node.interface';
 const XMLEntities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',
@@ -47,10 +48,18 @@ function encodeToDomString(str: string) {
 /**
  * 虚拟DOM，TypeNode 抽象节点类, 所有节点类的基础类；
  * abstract syntax tree 抽象语法树 抽象节点类
+ * 子类有:
+ *    TypeElement
+ *    TextNode
+ *    XNode
  */
 export abstract class TypeNode implements ITypeNode {
   abstract className: string; // 最终实体类的名称，解析转换时需要创建对应的类；
   abstract dom: HTMLElement | SVGElement | Text;
+  /**
+   * 渲染出真实DOM
+   */
+  abstract render(): void;
   nodeName: string;
   nodeValue?: string;
   parentNode: TypeElement | XNode | null;
@@ -200,25 +209,22 @@ export abstract class TypeNode implements ITypeNode {
       buffer.push('/>');
     }
   }
-  render(): void {
-    // TypeElement TextNode XNode;
-    if (this.dom instanceof Text) {
-      return;
-    } else {
-      // TypeElement 类，this.attributes，this.childNodes必有值
-      for (const attr of this.attributes!) {
-        if (attr.name.startsWith('@')) {
-          console.log('attr.name is ', attr.name);
-          continue; // 不呢能用return；
+  toJSON(): ITypeNode {
+    return {
+      nodeName: this.nodeName,
+      className: this.className,
+      attributes: this.attributes,
+      childNodes: this.children.map(child => {
+        if (child.nodeName === '#text') {
+          return {
+            className: 'TextNode',
+            nodeName: '#text',
+            nodeValue: child.nodeValue, // textContent
+          } as ITextNode;
+        } else {
+          return child.toJSON();
         }
-        this.dom.setAttribute(attr.name, attr.value.toString());
-      }
-      for (const child of this.childNodes!) {
-        this.dom.appendChild(child.dom);
-        if (child.nodeName !== '#text') {
-          child.render();
-        }
-      }
-    }
+      })
+    } as ITypeNode;
   }
 }

@@ -2,7 +2,7 @@
  * XNode是一个通用Node类，可以是其它类的父节点，也可以是其它类的子节点
  * todo 还需要其它虚拟类吗？  如需要，如何适配？？
  */
-import { TypeNode } from '../type-node/type-node.class';
+import { TypeNode } from '../type-node/type-node.abstract';
 import { IXNode } from './x-node.interface';
 /**
  * 实体节点类
@@ -26,6 +26,27 @@ export class XNode extends TypeNode implements IXNode {
     }
     this.components = [];
     this.slots = [];
+  }
+  render(): void {
+    // TypeElement TextNode XNode;
+    if (this.dom instanceof Text) {
+      return;
+    } else {
+      // TypeElement 类，this.attributes，this.childNodes必有值
+      for (const attr of this.attributes!) {
+        if (attr.name.startsWith('@')) {
+          console.log('attr.name is ', attr.name);
+          continue; // 不呢能用return；
+        }
+        this.dom.setAttribute(attr.name, attr.value.toString());
+      }
+      for (const child of this.childNodes!) {
+        this.dom.appendChild(child.dom);
+        if (child.nodeName !== '#text') {
+          child.render();
+        }
+      }
+    }
   }
 }
 // Vuejs 虚拟DOM

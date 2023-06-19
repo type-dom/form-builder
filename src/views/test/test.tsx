@@ -13,6 +13,8 @@ export class Test extends TypeDiv {
     console.log('template is ', template);
     const parser = new Parser({});
     const node = parser.parseFromString(template);
+    const nodeJson = node?.toJSON();
+    console.log('nodeJson is ', nodeJson);
     node?.render();
     console.log('node is ', node);
     if (node?.dom) {
