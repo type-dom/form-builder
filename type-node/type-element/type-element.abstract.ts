@@ -12,6 +12,7 @@ import {
   ITypeElement,
   ITypeProperty
 } from './type-element.interface';
+import { XNode } from '../x-node/x-node.class';
 /**
  * 这是浏览器端的document数据结构。
  * 要尽量向虚拟dom的数据结构靠拢。

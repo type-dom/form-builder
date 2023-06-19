@@ -1,4 +1,7 @@
 import { IComponent, INodeAttr, ITypeNode } from './type-node.interface';
+import { FormEditor } from '../src/form-editor';
+import { TypeElement } from './type-element/type-element.abstract';
+import { XNode } from './x-node/x-node.class';
 const XMLEntities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',
@@ -46,11 +49,11 @@ function encodeToDomString(str: string) {
  * abstract syntax tree 抽象语法树 抽象节点类
  */
 export abstract class TypeNode implements ITypeNode {
-  abstract className?: string;
+  abstract className: string; // 最终实体类的名称，解析转换时需要创建对应的类；
   abstract dom: HTMLElement | SVGElement | Text;
   nodeName: string;
   nodeValue?: string;
-  parentNode: TypeNode | null;
+  parentNode: TypeElement | XNode | null;
   childNodes?: TypeNode[];
   attributes?: INodeAttr[];
   protected constructor(nodeName: string, nodeValue?: string) {
@@ -60,6 +63,19 @@ export abstract class TypeNode implements ITypeNode {
     }
     this.parentNode = null;
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
+  }
+  get editor(): FormEditor {
+    // console.log('this.className is ', this.className);
+    // if (this instanceof WebLayout) {
+    //   return this.formEditor;
+    // }
+    // if (this.parent instanceof WebLayout) {
+    //   return this.parent.formEditor;
+    // }
+    if (this.parentNode === null) {
+      throw Error('this.parentNode is undefined . ');
+    }
+    return this.parentNode.editor;
   }
   get firstChild(): TypeNode | undefined {
     return this.childNodes && this.childNodes[0];

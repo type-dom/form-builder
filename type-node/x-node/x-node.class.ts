@@ -11,6 +11,7 @@ export class XNode extends TypeNode implements IXNode {
   className: 'XNode';
   components: TypeNode[];
   slots: TypeNode[];
+  // parentNode: TypeElement | XNode | null;
   dom: Text | HTMLElement | SVGElement;
   constructor(nodeName: string, nodeValue?: string) {
     super(nodeName, nodeValue);

@@ -4,10 +4,12 @@ import { XNode } from '../x-node/x-node.class';
 import { ParserErrorCode } from './parser.const';
 import { isWhitespace, isWhitespaceString } from './parser.util';
 import { IContent, IInstruction, IParam } from './parser.interface';
+import { TypeElement } from '../type-element/type-element.abstract';
 /**
  * The code for XMLParser copied from pdf.js
  * 虚拟DOM字符串解析工具
  * DOM对象和String字符串之间的转换
+ * 字符串解析为XNode对象。？？？？todo 解析为 className 对应的类。
  */
 export class Parser {
   private _currentFragment: TypeNode[];
@@ -149,11 +151,11 @@ export class Parser {
     };
   }
   /**
-   * 解析xml字符串
+   * 解析dom字符串
    * @param s
    */
-  parseNode(s: string): void {
-    // console.log('parseXml . ');
+  parseDom(s: string): void {
+    // console.log('parseDom . ');
     // console.log('s is ', s);
     let i = 0;
     while (i < s.length) {
@@ -282,7 +284,7 @@ export class Parser {
     this._stack = [];
     this._errorCode = ParserErrorCode.NoError;
 
-    this.parseNode(data.trim());
+    this.parseDom(data.trim());
 
     if (this._errorCode !== ParserErrorCode.NoError) {
       return undefined; // return undefined on error
@@ -317,6 +319,8 @@ export class Parser {
     if (this._lowerCaseName) {
       name = name.toLowerCase();
     }
+    // todo 根据className创建各个定义的类，包括 XNode
+    console.log('className is ', name);
     const node = new XNode(name);
     node.childNodes = [];
     if (this._hasAttributes) {
@@ -328,14 +332,14 @@ export class Parser {
     }
     // 存入缓存
     this._stack.push(this._currentFragment);
-    this._currentFragment = node.children;
+    this._currentFragment = node.children as XNode[];
   }
 
   /**
    * 在结束的元素
    * @param name 应该是nodeName
    */
-  onEndElement(name: string): TypeNode | null {
+  onEndElement(name?: string): TypeNode | null {
     // console.log('onEndElement . name is ', name);
     // 取回缓存的节点
     this._currentFragment = this._stack?.pop() || [];
@@ -345,7 +349,7 @@ export class Parser {
     }
     // 对应的字节点
     for (const child of lastElement.children) {
-      child.parentNode = lastElement;
+      child.parentNode = lastElement as TypeElement | XNode;
     }
     return lastElement;
   }
