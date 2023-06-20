@@ -2,20 +2,18 @@ import { Subscription } from 'rxjs';
 import { FormEditor } from '../../src/form-editor';
 import { humpToMiddleLine } from '../../src/utils';
 import { TypeNode } from '../type-node/type-node.abstract';
+import { INodeAttr } from '../type-node/type-node.interface';
 import { TextNode } from '../text-node/text-node.class';
 import { Cursor, Display } from '../web-style.enum';
 import { IWebStyle } from '../web-style.interface';
-import { INodeAttr } from '../type-node/type-node.interface';
 import {
   ITypeAttribute,
   IWebBoundBox,
   ITypeElement,
   ITypeProperty
 } from './type-element.interface';
-import { XNode } from '../x-node/x-node.class';
 /**
- * 这是浏览器端的document数据结构。
- * 要尽量向虚拟dom的数据结构靠拢。
+ * 虚拟dom的数据结构
  * 可以对应到虚拟dom树。 createDom(tag, attr, children)
  * 与对应的导出时的数据结构是不一样的。
  * todo 是否需要把相关的操作也添加进来。

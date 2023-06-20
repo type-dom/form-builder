@@ -278,6 +278,11 @@ export class Parser {
   onDoctype(doctypeContent: string): void {
     console.log('doctypeContent is ', doctypeContent);
   }
+  /**
+   * 在解析Ajax获取页面时，也可以用的
+   * 将 dom字符串，解析为 虚拟dom
+   * @param data
+   */
   parseFromString(data: string): TypeNode | undefined {
     console.log('parser parseFromString . ');
     this._currentFragment = [];

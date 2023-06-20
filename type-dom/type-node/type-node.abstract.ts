@@ -1,9 +1,10 @@
-import { IComponent, INodeAttr, ITypeNode } from './type-node.interface';
+import { Subscription } from 'rxjs';
+import { INodeAttr, IPath, ITypeNode } from './type-node.interface';
 import { FormEditor } from '../../src/form-editor';
 import { XNode } from '../x-node/x-node.class';
 import { TypeElement } from '../type-element/type-element.abstract';
 import { ITextNode } from '../text-node/text-node.interface';
-const XMLEntities: Record<number, string> = {
+const Entities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',
   /* & */ 0x26: '&amp;',
@@ -17,7 +18,7 @@ function encodeToDomString(str: string) {
     const char = str.codePointAt(i)!;
     if (0x20 <= char && char <= 0x7e) {
       // ascii
-      const entity = XMLEntities[char];
+      const entity = Entities[char];
       if (entity) {
         if (start < i) {
           buffer.push(str.substring(start, i));
@@ -54,6 +55,9 @@ function encodeToDomString(str: string) {
  *    XNode
  */
 export abstract class TypeNode implements ITypeNode {
+  /**
+   * 在生成dom字符串时，可以转为 attributes 的一个元素 { name: 'className', value: string }
+   */
   abstract className: string; // 最终实体类的名称，解析转换时需要创建对应的类；
   abstract dom: HTMLElement | SVGElement | Text;
   /**
@@ -65,6 +69,7 @@ export abstract class TypeNode implements ITypeNode {
   parentNode: TypeElement | XNode | null;
   childNodes?: TypeNode[];
   attributes?: INodeAttr[];
+  events?: Subscription[];
   protected constructor(nodeName: string, nodeValue?: string) {
     this.nodeName = nodeName;
     if (nodeValue !== undefined) {
@@ -128,7 +133,7 @@ export abstract class TypeNode implements ITypeNode {
    * @returns {TypeNode} The node corresponding
    * to the path or null if not found.
    */
-  searchNode(paths: IComponent[], pos: number): TypeNode | null {
+  searchNode(paths: IPath[], pos: number): TypeNode | null {
     if (pos >= paths.length) {
       return this;
     }
@@ -209,6 +214,11 @@ export abstract class TypeNode implements ITypeNode {
       buffer.push('/>');
     }
   }
+  /**
+   * 保存json数据时使用。
+   * 把当前数据层对象转换为 JSON 字面量。
+   * 但是就数据层存储而言，是不需要转化page及其子元素的。
+   */
   toJSON(): ITypeNode {
     return {
       nodeName: this.nodeName,
