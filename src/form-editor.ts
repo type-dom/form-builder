@@ -70,6 +70,8 @@ export class FormEditor {
     // console.log('editorEl is ', editorEl);
     editorEl.appendChild(this.layout.dom);
     const test = new Test(this);
+    console.log('test is ', test);
+    test.render();
     editorEl.appendChild(test.dom);
     // this.currentPage = this.defaultPage;
     this.selectedMenu = null;

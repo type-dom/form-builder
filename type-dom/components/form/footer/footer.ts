@@ -1,4 +1,3 @@
-import { fromEvent, Observable } from 'rxjs';
 import { TypeDiv } from '../../../type-element/type-html/div/div.abstract';
 import { WebForm } from '../form';
 import { SubmitButton } from './submit-button/submit-button';
@@ -22,7 +21,6 @@ export class FormFooter extends TypeDiv {
         name: 'form-foot'
       }
     };
-
     this.submitBtn = new SubmitButton(this);
     this.childNodes = [this.submitBtn];
   }

@@ -24,6 +24,7 @@ import { WebTableHeader } from '../element/html-element/table/header/header.clas
 export interface ITypeAttribute {
   // id?: string;
   class?: string;
+  name?: string;
   [key: string]: string | number | boolean | unknown | undefined;
 }
 export interface ITypeProperty {

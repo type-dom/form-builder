@@ -1,4 +1,5 @@
 import { ITypeProperty } from '../type-element/type-element.interface';
+import { TypeNode } from './type-node.abstract';
 
 export interface INodeAttr {
   name: string,
@@ -13,8 +14,9 @@ export interface IPath {
  * json格式的接口，也是json存储的数据结构
  */
 export interface ITypeNode {
-  nodeName: string;
+  nodeName?: string;
   className?: string;
+  TypeClass?: any; // todo 如何设置？？？
   // propObj与attributes应该可以相互转换，而且都是只在TypeElement和XNode中有。
   // TextNode 没有 attributes和propObj
   propObj?: ITypeProperty;

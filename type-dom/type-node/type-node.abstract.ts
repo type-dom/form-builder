@@ -57,6 +57,7 @@ function encodeToDomString(str: string) {
 export abstract class TypeNode implements ITypeNode {
   /**
    * 在生成dom字符串时，可以转为 attributes 的一个元素 { name: 'className', value: string }
+   * 在定义className时，要把当前类写入到TypeMap中；
    */
   abstract className: string; // 最终实体类的名称，解析转换时需要创建对应的类；
   abstract dom: HTMLElement | SVGElement | Text;
@@ -77,9 +78,6 @@ export abstract class TypeNode implements ITypeNode {
     }
     this.parentNode = null;
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
-  }
-  static createItems(ITypeNode): void {
-  //  ... todo 基于json对象创建类实例
   }
   get editor(): FormEditor {
     // console.log('this.className is ', this.className);
@@ -120,6 +118,57 @@ export abstract class TypeNode implements ITypeNode {
   }
   get children(): TypeNode[] {
     return this.childNodes || [];
+  }
+  // 在定义className时，要把当前类写入到TypeMap中；
+  //   todo 创建类实例时都要运行一遍。
+  // setClassName(className: string, TypeClass: any) {
+  //   this.className = className;
+  //   const isExisted = TypeNode.typeMap.hasOwnProperty(className);
+  //   if (!isExisted) {
+  //     TypeNode.typeMap[className] = TypeClass;
+  //   } else {
+  //     if (TypeNode.typeMap[className] === TypeClass) {
+  //       console.log('this.className has been existed . ');
+  //     } else {
+  //       throw Error('this.className has been defined . ');
+  //     }
+  //   }
+  //   console.log('TypeNode.typeMap is ', TypeNode.typeMap);
+  // }
+  /**
+   * 基于json对象创建类实例
+   *   todo 运行时，类可能还没有写入 typeMap ????
+   * @param parent
+   * @param nodes
+   */
+  createItems(parent: TypeElement, nodes: ITypeNode[]): TypeElement[] {
+    const items: TypeElement[] = [];
+    for (const node of nodes) {
+      //  todo
+      if (node.TypeClass === undefined) {
+        console.error('node.TypeClass is undefined . ');
+        continue;
+      }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      const item = new node.TypeClass() as TypeElement; // 创建类实例
+      console.log('item is ', item);
+      item.parentNode = parent;
+      if (node.nodeName) {
+        item.nodeName = node.nodeName;
+      }
+      if (node.nodeValue) {
+        item.nodeValue = node.nodeValue;
+      }
+      if (node.attributes) {
+        item.attributes = node.attributes;
+      }
+      items.push(item);
+      if (node.childNodes) {
+        item.childNodes = item.createItems(item, node.childNodes);
+      }
+    }
+    return items;
   }
   hasChildNodes(): boolean {
     return this.childNodes ? this.childNodes.length > 0 : false;
