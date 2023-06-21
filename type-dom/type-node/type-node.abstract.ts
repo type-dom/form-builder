@@ -78,6 +78,9 @@ export abstract class TypeNode implements ITypeNode {
     this.parentNode = null;
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
   }
+  static createItems(ITypeNode): void {
+  //  ... todo 基于json对象创建类实例
+  }
   get editor(): FormEditor {
     // console.log('this.className is ', this.className);
     // if (this instanceof WebLayout) {
