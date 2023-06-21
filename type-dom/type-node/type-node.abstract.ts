@@ -221,6 +221,7 @@ export abstract class TypeNode implements ITypeNode {
    * 保存json数据时使用。
    * 把当前数据层对象转换为 JSON 字面量。
    * 但是就数据层存储而言，是不需要转化page及其子元素的。
+   * todo events如何处理？？
    */
   toJSON(): ITypeNode {
     return {

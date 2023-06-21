@@ -101,17 +101,17 @@ export class Parser {
       attrValue = s.substring(pos, attrEndIndex);
       // todo 不同值的处理
       let value = this._resolveEntities(attrValue);
-      if (value === 'true' || value === 'false') {
-        attributes.push({
-          name: attrName,
-          value: value === 'true',
-        });
-      } else {
-        attributes.push({
-          name: attrName,
-          value: value,
-        });
-      }
+      // if (value === 'true' || value === 'false') {
+      //   attributes.push({
+      //     name: attrName,
+      //     value: value === 'true',
+      //   });
+      // } else {
+      attributes.push({
+        name: attrName,
+        value: value,
+      });
+      // }
       pos = attrEndIndex + 1;
       skipWs();
     }
