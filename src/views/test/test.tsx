@@ -1,9 +1,8 @@
 import { TypeHtml } from '../../../type-dom/type-element/type-html/type-html.abstract';
 import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
-import { Parser } from '../../../type-dom/parser/parser.class';
+// import { Parser } from '../../../type-dom/parser/parser.class';
 import { FormEditor } from '../../form-editor';
 import template from './test.html';
-import { Division } from '../../../type-dom/element/html-element/division/division.class';
 import { TextNode } from '../../../type-dom/text-node/text-node.class';
 import { Span } from '../../../type-dom/element/html-element/span/span.class';
 export class Test extends TypeDiv {
