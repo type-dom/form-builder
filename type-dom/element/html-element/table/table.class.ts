@@ -6,21 +6,21 @@ import { WebControl } from '../../../../src/core/controls/web-control.abstract';
 import { TextNode } from '../../../text-node/text-node.class';
 import { toJSON } from '../../../type-element/type-element.function';
 import { Span } from '../span/span.class';
-import { IWebTable } from './table.interface';
-import { WebTableRow } from './row/row.class';
-import { WebTableHead } from './head/head.class';
-import { IWebTableRow } from './row/row.interface';
-import { IWebTableHead } from './head/head.interface';
-import { WebTableDataCell } from './data-cell/data-cell.class';
+import { TableRow } from './row/row.class';
+import { TableHead } from './head/head.class';
+import { ITableRow } from './row/row.interface';
+import { ITableHead } from './head/head.interface';
+import { TableDataCell } from './data-cell/data-cell.class';
+import { ITable } from './table.interface';
 
 // todo 是否有选项列和操作列。
-export class WebTable extends TypeHtml implements IWebTable {
+export class Table extends TypeHtml implements ITable {
   nodeName: 'table';
-  className: 'WebTable';
+  className: 'Table';
   dom: HTMLTableElement;
-  childNodes: [WebTableHead, ...WebTableRow[]];
+  childNodes: [TableHead, ...TableRow[]];
   config?: ITableConfig;
-  readonly tableHead: WebTableHead;
+  readonly tableHead: TableHead;
 
   constructor(public parent: TableItem) {
     super('table');
@@ -46,8 +46,8 @@ export class WebTable extends TypeHtml implements IWebTable {
         // textAlign: 'center',
       },
     };
-    this.className = 'WebTable';
-    this.tableHead = new WebTableHead(this);
+    this.className = 'Table';
+    this.tableHead = new TableHead(this);
     this.childNodes = [this.tableHead];
     // this.initEvents();
   }
@@ -77,13 +77,13 @@ export class WebTable extends TypeHtml implements IWebTable {
     // console.log('tableHeader is ', this.tableHeader);
     this.childNodes.forEach((tr, index) => {
       if (index > 0) { // 两重保证
-        if (tr instanceof WebTableRow) {
+        if (tr instanceof TableRow) {
           // console.log('tr is ', tr);
           const data: Record<string, string | number | boolean> = {};
-          tr.childNodes.forEach((td: WebTableDataCell | Span, index) => {
+          tr.childNodes.forEach((td: TableDataCell | Span, index) => {
             // console.log('this.tableHeader[' + index + '] is ', this.tableHeader[index]);
             // console.log('td.value is ', td.value);
-            if (td instanceof WebTableDataCell) {
+            if (td instanceof TableDataCell) {
               data[this.tableHeader[index].name] = td.value;
             }
             // console.log('data is ', data);
@@ -130,7 +130,7 @@ export class WebTable extends TypeHtml implements IWebTable {
       // 数据行的第一行，一般应该是已经存在的，这样才能获取到数据行中设置的控件信息。
       }
 
-      const trObj = new WebTableRow(this, tr);
+      const trObj = new TableRow(this, tr);
       this.childNodes.push(trObj);
     });
     // console.log('table boundBox is ', this.boundBox);
@@ -146,7 +146,7 @@ export class WebTable extends TypeHtml implements IWebTable {
    */
   setTableData(tableData: Record<string, string>[]): void {
     console.log('setTableData . ');
-    const rowLiteral = toJSON(this.childNodes[1]) as IWebTableRow;
+    const rowLiteral = toJSON(this.childNodes[1]) as ITableRow;
     this.childNodes.forEach((tr, index) => {
       if (index > 0) {
         tr.dom.remove();
@@ -154,7 +154,7 @@ export class WebTable extends TypeHtml implements IWebTable {
     });
     this.childNodes.length = 1;
     tableData.forEach(trJson => {
-      const tableRow = new WebTableRow(this, trJson);
+      const tableRow = new TableRow(this, trJson);
       tableRow.createInstance(rowLiteral);
       for (const key in trJson) {
         if (key.endsWith('.ID')) {
@@ -163,7 +163,7 @@ export class WebTable extends TypeHtml implements IWebTable {
           });
         }
       }
-      tableRow.childNodes.forEach((td: WebTableDataCell | Span, index) => {
+      tableRow.childNodes.forEach((td: TableDataCell | Span, index) => {
         if (td instanceof Span) { // 最后的删除对象。
           return;
         }
@@ -213,9 +213,9 @@ export class WebTable extends TypeHtml implements IWebTable {
       // console.log('tableHead', this.tableHead);
       this.childNodes.forEach((tr, index) => {
         if (index > 0) {
-          if (tr instanceof WebTableRow) {
+          if (tr instanceof TableRow) {
             for (let i = 0; i < diff; i++) {
-              const td = new WebTableDataCell(tr, '');
+              const td = new TableDataCell(tr, '');
               // const control = new SingleInputControl(td);
               // control.formItem.deleteSpan.hide();
               // td.addChild(control);
@@ -229,7 +229,7 @@ export class WebTable extends TypeHtml implements IWebTable {
       console.log('config.tableHeader is ', config.tableHeader);
       this.childNodes.forEach((tr, index) => {
         if (index > 0) {
-          if (tr instanceof WebTableRow) {
+          if (tr instanceof TableRow) {
             tr.childNodes.forEach((td, index) => {
               if (index > value - 1) {
                 td.dom.remove();
@@ -243,25 +243,25 @@ export class WebTable extends TypeHtml implements IWebTable {
     this.tableHead.setHeadItems(config.tableHeader);
     this.tableHead.render();
   }
-  createInstance(tableLiteral: IWebTable): void {
+  createInstance(tableLiteral: ITable): void {
     super.createInstance(tableLiteral);
     for (let index = 0; index < tableLiteral.childNodes.length; index++) {
       const trLiteral = tableLiteral.childNodes[index];
       if (index === 0) {
-        this.tableHead.createInstance(trLiteral as IWebTableHead);
+        this.tableHead.createInstance(trLiteral as ITableHead);
       } else {
         // todo 设计模式下，应该只有一行
         if (this.editor.mode === 'design') {
           if (index === 1) {
-            (this.childNodes[index]).createInstance(trLiteral as IWebTableRow);
+            (this.childNodes[index]).createInstance(trLiteral as ITableRow);
             break; // 断出
           }
         }
-        if ((this.childNodes[index]) instanceof WebTableRow) {
-          (this.childNodes[index] as WebTableRow).createInstance(trLiteral as IWebTableRow);
+        if ((this.childNodes[index]) instanceof TableRow) {
+          (this.childNodes[index] as TableRow).createInstance(trLiteral as ITableRow);
         } else {
-          const trObj = new WebTableRow(this, {});
-          trObj.createInstance(trLiteral as IWebTableRow);
+          const trObj = new TableRow(this, {});
+          trObj.createInstance(trLiteral as ITableRow);
           this.addChild(trObj);
         }
       }

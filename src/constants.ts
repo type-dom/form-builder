@@ -29,12 +29,12 @@ import { Heading } from '../type-dom/element/html-element/heading/heading.class'
 import { ListItem } from '../type-dom/element/html-element/unordered-list/list-item/list-item.class';
 import { Select } from '../type-dom/element/html-element/select/select.class';
 import { WebOption } from '../type-dom/element/html-element/select/option/option.class';
-import { WebTable } from '../type-dom/element/html-element/table/table.class';
-import { WebTableRow } from '../type-dom/element/html-element/table/row/row.class';
-import { WebTableDataCell } from '../type-dom/element/html-element/table/data-cell/data-cell.class';
-import { WebTableBody } from '../type-dom/element/html-element/table/body/body.class';
-import { WebTableHead } from '../type-dom/element/html-element/table/head/head.class';
-import { WebTableHeader } from '../type-dom/element/html-element/table/header/header.class';
+import { Table } from '../type-dom/element/html-element/table/table.class';
+import { TableRow } from '../type-dom/element/html-element/table/row/row.class';
+import { TableDataCell } from '../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableBody } from '../type-dom/element/html-element/table/body/body.class';
+import { TableHead } from '../type-dom/element/html-element/table/head/head.class';
+import { TableHeader } from '../type-dom/element/html-element/table/header/header.class';
 import { Textarea } from '../type-dom/element/html-element/textarea/textarea.class';
 import { UnorderedList } from '../type-dom/element/html-element/unordered-list/unordered-list.class';
 import { ElementClass } from '../type-dom/type-element/type-element.interface';
@@ -138,12 +138,12 @@ export const ElementClassMap: Record<string, ElementClass> = {
   WebOption,
   Select,
   Span,
-  WebTable,
-  WebTableRow,
-  WebTableDataCell,
-  WebTableBody,
-  WebTableHead,
-  WebTableHeader,
+  Table,
+  TableRow,
+  TableDataCell,
+  TableBody,
+  TableHead,
+  TableHeader,
   Textarea,
   UnorderedList,
 };

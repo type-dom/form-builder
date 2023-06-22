@@ -5,8 +5,8 @@ import { TableControl } from '../../../../../src/core/controls/complex/table/tab
 import { ITypeHtml } from '../../../../type-element/type-html/type-html.interface';
 
 export type TableDataCellChild = Exclude<WebControl, TableControl>
-export interface IWebTableDataCell extends ITypeHtml {
+export interface ITableDataCell extends ITypeHtml {
   nodeName: 'td',
-  className: 'WebTableDataCell',
+  className: 'TableDataCell',
   childNodes: (IWebControl | ITextNode)[],
 }

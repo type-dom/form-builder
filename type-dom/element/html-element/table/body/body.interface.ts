@@ -1,8 +1,8 @@
 import { ITypeHtml } from '../../../../type-element/type-html/type-html.interface';
-import { IWebTableRow } from '../row/row.interface';
+import { ITableRow } from '../row/row.interface';
 
-export interface IWebTableBody extends ITypeHtml {
+export interface ITableBody extends ITypeHtml {
   nodeName: 'tbody',
-  className: 'WebTableBody',
-  childNodes: IWebTableRow[],
+  className: 'TableBody',
+  childNodes: ITableRow[],
 }

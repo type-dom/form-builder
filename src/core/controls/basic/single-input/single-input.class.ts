@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
 import { InputItem } from '../../form-item/input-item/input-item.class';
 import { WebBasicControl } from '../basic.abstract';
@@ -8,7 +8,7 @@ export class SingleInputControl extends WebBasicControl implements ISingleInputC
   className: 'SingleInputControl';
   childNodes: [InputItem];
   formItem: InputItem;
-  constructor(parent: WebPage | WebTableDataCell) {
+  constructor(parent: WebPage | TableDataCell) {
     super(parent);
     // console.log('TableControl constructor input值',parent);
     // console.log('TableControl constructor input值2222',this);

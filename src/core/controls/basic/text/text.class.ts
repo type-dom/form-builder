@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
 import { InputItem } from '../../form-item/input-item/input-item.class';
 import { WebBasicControl } from '../basic.abstract';
@@ -8,7 +8,7 @@ export class TextControl extends WebBasicControl implements ITextControl {
   className: 'TextControl';
   childNodes: [InputItem];
   formItem: InputItem;
-  constructor(parent: WebPage | WebTableDataCell) {
+  constructor(parent: WebPage | TableDataCell) {
     super(parent);
     this.className = 'TextControl';
     this.propObj.attrObj.name = 'text-control';

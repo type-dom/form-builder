@@ -1,24 +1,24 @@
 import { TextNode } from '../../../../text-node/text-node.class';
 import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
-import { WebTableHead } from '../head/head.class';
-import { IWebTableHeader } from './header.interface';
+import { TableHead } from '../head/head.class';
+import { ITableHeader } from './header.interface';
 
 // 表格表头
-export class WebTableHeader extends TypeHtml implements IWebTableHeader {
+export class TableHeader extends TypeHtml implements ITableHeader {
   nodeName: 'th';
-  className: 'WebTableHeader';
+  className: 'TableHeader';
   dom: HTMLElement;
   childNodes: TextNode[];
 
-  constructor(public parent: WebTableHead) {
+  constructor(public parent: TableHead) {
     super('th');
     this.nodeName = 'th';
     this.dom = document.createElement(this.nodeName);
-    this.className = 'WebTableHeader';
+    this.className = 'TableHeader';
     this.childNodes = [];
   }
 
-  createInstance(thLiteral: IWebTableHeader): void {
+  createInstance(thLiteral: ITableHeader): void {
     if (thLiteral.propObj) {
       this.setPropObj(thLiteral.propObj);
     }

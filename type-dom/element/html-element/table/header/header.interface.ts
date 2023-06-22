@@ -1,8 +1,8 @@
 import { ITextNode } from '../../../../text-node/text-node.interface';
 import { ITypeHtml } from '../../../../type-element/type-html/type-html.interface';
 
-export interface IWebTableHeader extends ITypeHtml {
+export interface ITableHeader extends ITypeHtml {
   nodeName: 'th',
-  className: 'WebTableHeader',
+  className: 'TableHeader',
   childNodes: ITextNode[]
 }

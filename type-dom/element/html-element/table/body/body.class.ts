@@ -1,18 +1,18 @@
 import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
-import { WebTable } from '../table.class';
-import { WebTableRow } from '../row/row.class';
-import { IWebTableBody } from './body.interface';
+import { Table } from '../table.class';
+import { TableRow } from '../row/row.class';
+import { ITableBody } from './body.interface';
 
-export class WebTableBody extends TypeHtml implements IWebTableBody {
+export class TableBody extends TypeHtml implements ITableBody {
   nodeName: 'tbody';
-  className: 'WebTableBody';
+  className: 'TableBody';
   dom: HTMLTableSectionElement;
-  childNodes: WebTableRow[];
-  constructor(public parent: WebTable) {
+  childNodes: TableRow[];
+  constructor(public parent: Table) {
     super('tbody');
     this.nodeName = 'tbody';
     this.dom = document.createElement(this.nodeName);
-    this.className = 'WebTableBody';
+    this.className = 'TableBody';
     this.childNodes = [];
   }
 }

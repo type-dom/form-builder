@@ -12,21 +12,21 @@ import { Input } from '../../input/input.class';
 import { Select } from '../../select/select.class';
 import { Textarea } from '../../textarea/textarea.class';
 import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
-import { WebTableRow } from '../row/row.class';
-import { IWebTableDataCell } from './data-cell.interface';
+import { TableRow } from '../row/row.class';
+import { ITableDataCell } from './data-cell.interface';
 
-export class WebTableDataCell extends TypeHtml implements IWebTableDataCell {
+export class TableDataCell extends TypeHtml implements ITableDataCell {
   nodeName: 'td';
-  className: 'WebTableDataCell';
+  className: 'TableDataCell';
   dom: HTMLElement;
   childNodes: [WebControl | TextNode]; // 有可能是Input
   control: WebControl | TextNode;
 
-  constructor(public parent: WebTableRow, value: string | number | boolean) {
+  constructor(public parent: TableRow, value: string | number | boolean) {
     super('td');
     this.nodeName = 'td';
     this.dom = document.createElement(this.nodeName);
-    this.className = 'WebTableDataCell';
+    this.className = 'TableDataCell';
     // this.propObj.attrObj.border = '1px solid black;';
     // this.childNodes = [];
     // todo 要区分是输入框，还是绑定值。
@@ -77,7 +77,7 @@ export class WebTableDataCell extends TypeHtml implements IWebTableDataCell {
     // this.render();
   }
 
-  createInstance(tdLiteral: IWebTableDataCell): void {
+  createInstance(tdLiteral: ITableDataCell): void {
     this.setPropObj(tdLiteral.propObj);
     const controlLiteral = tdLiteral.childNodes[0];
     if (controlLiteral.className === 'TextNode') {

@@ -4,9 +4,9 @@ import { ControlProperty } from './views/layout/body/right/contents/control-prop
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
 import { Cursor } from '../type-dom/web-style.enum';
-import { WebTableDataCell } from '../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableRow } from '../type-dom/element/html-element/table/row/row.class';
+import { TableDataCell } from '../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { ListItem } from '../type-dom/element/html-element/unordered-list/list-item/list-item.class';
-import { WebTableRow } from '../type-dom/element/html-element/table/row/row.class';
 import { Span } from '../type-dom/element/html-element/span/span.class';
 import { toJSON } from '../type-dom/type-element/type-element.function';
 import { WebDialog } from '../type-dom/components/dialog/dialog';
@@ -33,7 +33,7 @@ export class FormEditor {
   // 选中的控件
   selectedControl: WebControl | null;
   // 选中的表格单元格
-  selectedTableDataCell?: WebTableDataCell | null;
+  selectedTableDataCell?: TableDataCell | null;
 
   layout: LayoutWrapper;
   // 对话框
@@ -297,10 +297,10 @@ export class FormEditor {
           });
         });
         // console.log('tableHead is ', tableHead);
-        table.childNodes.forEach((tr: WebTableRow | unknown, index: number) => {
+        table.childNodes.forEach((tr: TableRow | unknown, index: number) => {
           if (index > 0) {
             // console.log('tr is ', tr);
-            if (tr instanceof WebTableRow) {
+            if (tr instanceof TableRow) {
               let data: { [propName: string]: string | number | boolean } = {};
               const rowId = tr.rowId;
               if (rowId) {
@@ -309,7 +309,7 @@ export class FormEditor {
                   data[key] = rowIdJson[key];
                 }
               }
-              tr.childNodes.forEach((td: WebTableDataCell | Span, index) => {
+              tr.childNodes.forEach((td: TableDataCell | Span, index) => {
                 // console.log('td is ', td);
                 if (td instanceof Span) { // 是删除按钮
                   return;
@@ -389,7 +389,7 @@ export class FormEditor {
    * todo setSelectedControl setSelectedTableDataCell 联动问题
    * @param tableDataCell
    */
-  setSelectedTableDataCell(tableDataCell: WebTableDataCell | null): void {
+  setSelectedTableDataCell(tableDataCell: TableDataCell | null): void {
     console.error('setSelectedTableDataCell . tableDataCell is ', tableDataCell);
     if (tableDataCell) {
       if (this.selectedTableDataCell === tableDataCell) { // 重复选中同一单元格

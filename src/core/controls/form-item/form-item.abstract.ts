@@ -1,5 +1,5 @@
 import { IWebStyle } from '../../../../type-dom/web-style.interface';
-import { WebTable } from '../../../../type-dom/element/html-element/table/table.class';
+import { Table } from '../../../../type-dom/element/html-element/table/table.class';
 import { Input } from '../../../../type-dom/element/html-element/input/input.class';
 import { Label } from '../../../../type-dom/element/html-element/label/label.class';
 import { Textarea } from '../../../../type-dom/element/html-element/textarea/textarea.class';
@@ -18,7 +18,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
   abstract className: string;
   // abstract parent: WebControl;
   abstract childNodes: [Label, ItemContent, Span];
-  abstract itemContent: Input | Textarea | Select | RadioGroup | CheckboxGroup | WebTable;
+  abstract itemContent: Input | Textarea | Select | RadioGroup | CheckboxGroup | Table;
 
   label: Label;
   labelText: TextNode;

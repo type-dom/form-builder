@@ -1,5 +1,5 @@
 import { fromEvent, Observable } from 'rxjs';
-import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
 import { InputItem } from '../../form-item/input-item/input-item.class';
 import { WebBasicControl } from '../basic.abstract';
@@ -10,7 +10,7 @@ export class AttachmentControl extends WebBasicControl implements IAttachmentCon
   formItem: InputItem;
   childNodes: [InputItem];
   attachmentObservable: Observable<Event>;
-  constructor(parent: WebPage | WebTableDataCell) {
+  constructor(parent: WebPage | TableDataCell) {
     super(parent);
     this.nodeName = 'div';
     this.dom = document.createElement(this.nodeName);

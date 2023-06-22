@@ -6,9 +6,9 @@ import { Select } from '../../../type-dom/element/html-element/select/select.cla
 import { Label } from '../../../type-dom/element/html-element/label/label.class';
 import { Input } from '../../../type-dom/element/html-element/input/input.class';
 import { Textarea } from '../../../type-dom/element/html-element/textarea/textarea.class';
-import { WebTable } from '../../../type-dom/element/html-element/table/table.class';
-import { WebTableRow } from '../../../type-dom/element/html-element/table/row/row.class';
-import { WebTableDataCell } from '../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { Table } from '../../../type-dom/element/html-element/table/table.class';
+import { TableRow } from '../../../type-dom/element/html-element/table/row/row.class';
+import { TableDataCell } from '../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { toJSON } from '../../../type-dom/type-element/type-element.function';
 import { ControlClassMap } from '../../constants';
 import { WebPage } from '../page/web-page.class';
@@ -26,11 +26,11 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
   onChange?: Subscription;
   changeStr?: string;
 
-  protected constructor(public parent: WebPage | WebTableDataCell) {
+  protected constructor(public parent: WebPage | TableDataCell) {
     super();
     // console.log('WebControl constructor . ');
     WebControl.maxCtrlId++;
-    // todo parent WebPage WebTableDataCell 分别处理
+    // todo parent WebPage TableDataCell 分别处理
     if (this.parent instanceof WebPage) {
       // 动态创建的要渲染
       this.addStyleObj(Object.assign({}, controlStyle));
@@ -158,7 +158,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
     this.onChange?.unsubscribe();
   }
 
-  // todo 在WebPage下和WebTableDataCell下分开处理。
+  // todo 在WebPage下和TableDataCell下分开处理。
   initEvents(): void {
     this.events.push(
       // 点击控件
@@ -169,7 +169,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
         if (this.parent instanceof WebPage) {
           this.editor.setSelectedControl(this);
         }
-        if (this.parent instanceof WebTableDataCell) {
+        if (this.parent instanceof TableDataCell) {
           this.editor.setSelectedTableDataCell(this.parent);
         }
       }),
@@ -302,7 +302,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
           this.formItem.itemContent.render(); // 要单独渲染
         } // 表格中，在外面td还会渲染一遍。
         break;
-      case 'WebTable': // TableControl控件另外处理
+      case 'Table': // TableControl控件另外处理
         break;
       default:
         console.error('没有控件类型 。 ');
@@ -336,10 +336,10 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
         });
         break;
       case 'TableControl':
-        if (this.formItem.itemContent instanceof WebTable) {
+        if (this.formItem.itemContent instanceof Table) {
           this.formItem.itemContent.childNodes.forEach((tr, index) => {
             if (index > 0) {
-              if (tr instanceof WebTableRow) {
+              if (tr instanceof TableRow) {
                 tr.childNodes.forEach(td => {
                   if (td.control instanceof WebControl) {
                     td.control.setDisabled();
@@ -377,10 +377,10 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
         this.formItem.itemContent.removeAttribute('disabled');
         break;
       case 'TableControl':
-        if (this.formItem.itemContent instanceof WebTable) {
+        if (this.formItem.itemContent instanceof Table) {
           this.formItem.itemContent.childNodes.forEach((tr, index) => {
             if (index > 0) {
-              if (tr instanceof WebTableRow) {
+              if (tr instanceof TableRow) {
                 tr.childNodes.forEach(td => {
                   if (td.control instanceof WebControl) {
                     td.control.removeDisabled();

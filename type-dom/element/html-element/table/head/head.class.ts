@@ -2,22 +2,22 @@ import { fromEvent } from 'rxjs';
 import { TextNode } from '../../../../text-node/text-node.class';
 import { ITableField } from '../../../../../src/core/controls/complex/table/table.interface';
 import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
-import { WebTableHeader } from '../header/header.class';
-import { WebTable } from '../table.class';
-import { IWebTableHead } from './head.interface';
+import { TableHeader } from '../header/header.class';
+import { Table } from '../table.class';
+import { ITableHead } from './head.interface';
 
 // 表格页眉
-export class WebTableHead extends TypeHtml implements IWebTableHead {
+export class TableHead extends TypeHtml implements ITableHead {
   nodeName: 'thead';
-  className: 'WebTableHead';
+  className: 'TableHead';
   dom: HTMLTableSectionElement;
-  childNodes: WebTableHeader[];
+  childNodes: TableHeader[];
 
-  constructor(public parent: WebTable, th: ITableField[] = []) {
+  constructor(public parent: Table, th: ITableField[] = []) {
     super('thead');
     this.nodeName = 'thead';
     this.dom = document.createElement(this.nodeName);
-    this.className = 'WebTableHead';
+    this.className = 'TableHead';
     this.childNodes = [];
     this.setHeadItems(th);
     this.initEvents();
@@ -27,7 +27,7 @@ export class WebTableHead extends TypeHtml implements IWebTableHead {
     this.clearChildDom();
     this.clearChildNodes();
     for (const field of th) {
-      const tableHeader = new WebTableHeader(this);
+      const tableHeader = new TableHeader(this);
       const text = new TextNode(tableHeader, field.label);
       tableHeader.setAttrName(field.name);
       tableHeader.childNodes.push(text);
@@ -35,7 +35,7 @@ export class WebTableHead extends TypeHtml implements IWebTableHead {
     }
   }
 
-  createInstance(tHeadLiteral: IWebTableHead): void {
+  createInstance(tHeadLiteral: ITableHead): void {
     if (tHeadLiteral.propObj) {
       this.setPropObj(tHeadLiteral.propObj);
     }
@@ -43,7 +43,7 @@ export class WebTableHead extends TypeHtml implements IWebTableHead {
       if (this.childNodes[index]) {
         this.childNodes[index].createInstance(child);
       } else {
-        const th = new WebTableHeader(this);
+        const th = new TableHeader(this);
         th.createInstance(child);
         this.appendChild(th);
       }

@@ -3,25 +3,25 @@ import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract'
 import { DeleteSvg } from '../../../../components/svgs/delete/delete';
 import { Span } from '../../span/span.class';
 import { StylePosition } from '../../../../web-style.enum';
-import { WebTableDataCell } from '../data-cell/data-cell.class';
-import { IWebTableDataCell } from '../data-cell/data-cell.interface';
-import { WebTable } from '../table.class';
-import { IWebTableRow } from './row.interface';
-export class WebTableRow extends TypeHtml implements IWebTableRow {
+import { TableDataCell } from '../data-cell/data-cell.class';
+import { ITableDataCell } from '../data-cell/data-cell.interface';
+import { Table } from '../table.class';
+import { ITableRow } from './row.interface';
+export class TableRow extends TypeHtml implements ITableRow {
   nodeName: 'tr';
-  className: 'WebTableRow';
+  className: 'TableRow';
   dom: HTMLTableRowElement;
-  childNodes: WebTableDataCell[];
+  childNodes: TableDataCell[];
   deleteSpan: Span;
-  constructor(public parent: WebTable, trData: Record<string, string | number | boolean>) {
+  constructor(public parent: Table, trData: Record<string, string | number | boolean>) {
     super('tr');
     // console.log('trData is ', trData);
     this.nodeName = 'tr';
     this.dom = document.createElement(this.nodeName);
-    this.className = 'WebTableRow';
+    this.className = 'TableRow';
     this.childNodes = [];
     for (const key in trData) {
-      const tdObj = new WebTableDataCell(this, trData[key]);
+      const tdObj = new TableDataCell(this, trData[key]);
       this.addChild(tdObj);
     }
     // 要创建每一行的删除。
@@ -63,9 +63,9 @@ export class WebTableRow extends TypeHtml implements IWebTableRow {
       })
     );
   }
-  createInstance(trLiteral: IWebTableRow): void {
+  createInstance(trLiteral: ITableRow): void {
     // TODO 字面量和对象的子节点之间的关系处理待优化
-    trLiteral.childNodes.forEach((child: IWebTableDataCell | Span, index) => {
+    trLiteral.childNodes.forEach((child: ITableDataCell | Span, index) => {
       if (child.className === 'Span') {
         trLiteral.childNodes.splice(index, 1);
       }
@@ -78,7 +78,7 @@ export class WebTableRow extends TypeHtml implements IWebTableRow {
       if (this.childNodes[index]) {
         this.childNodes[index].createInstance(td);
       } else {
-        const tdObj = new WebTableDataCell(this, '');
+        const tdObj = new TableDataCell(this, '');
         tdObj.createInstance(td);
         this.appendChild(tdObj);
       }

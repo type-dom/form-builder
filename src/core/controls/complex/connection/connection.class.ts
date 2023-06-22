@@ -1,5 +1,5 @@
 import { fromEvent, Observable } from 'rxjs';
-import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
 import { ButtonItem } from '../../form-item/button-item/button-item.class';
 import { WebComplexControl } from '../complex.abstract';
@@ -11,7 +11,7 @@ export class ConnectionControl extends WebComplexControl implements IConnectionC
   formItem: ButtonItem;
   readonly connectionItemObservable: Observable<Event>;
 
-  constructor(parent: WebPage | WebTableDataCell) {
+  constructor(parent: WebPage | TableDataCell) {
     super(parent);
     this.className = 'ConnectionControl';
     this.propObj.attrObj.name = 'connection-control';

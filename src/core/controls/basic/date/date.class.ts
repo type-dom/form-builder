@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
 import { InputItem } from '../../form-item/input-item/input-item.class';
 import { WebBasicControl } from '../basic.abstract';
@@ -7,8 +7,8 @@ import { IDateControl } from './date.interface';
 export class DateControl extends WebBasicControl implements IDateControl {
   className: 'DateControl';
   formItem: InputItem;
-  childNodes: [InputItem]
-  constructor(parent: WebPage | WebTableDataCell) {
+  childNodes: [InputItem];
+  constructor(parent: WebPage | TableDataCell) {
     super(parent);
     this.nodeName = 'div';
     this.dom = document.createElement(this.nodeName);

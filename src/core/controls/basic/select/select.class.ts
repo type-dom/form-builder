@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { deepClone } from '../../../../utils';
 import { WebPage } from '../../../page/web-page.class';
 import { SelectItem } from '../../form-item/select-item/select-item.class';
@@ -11,7 +11,7 @@ export class SelectControl extends WebBasicControl implements ISelectControl {
   className: 'SelectControl';
   childNodes: [SelectItem];
   formItem: SelectItem;
-  constructor(parent: WebPage | WebTableDataCell) {
+  constructor(parent: WebPage | TableDataCell) {
     super(parent);
     this.className = 'SelectControl';
     this.propObj.attrObj.name = 'select-control';

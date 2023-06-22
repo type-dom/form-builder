@@ -1,7 +1,7 @@
 import { ITypeElement } from '../../../../type-element/type-element.interface';
-import { IWebTableRow } from '../row/row.interface';
-export interface IWebTableFoot extends ITypeElement {
+import { ITableRow } from '../row/row.interface';
+export interface ITableFoot extends ITypeElement {
   nodeName: 'tfoot',
-  className: 'WebTableFoot',
-  childNodes: IWebTableRow[],
+  className: 'TableFoot',
+  childNodes: ITableRow[],
 }

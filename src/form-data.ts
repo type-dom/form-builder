@@ -1231,7 +1231,7 @@ export const formJson: IWebDocument = {
                     },
                     {
                       'nodeName': 'table',
-                      'className': 'WebTable',
+                      'className': 'Table',
                       'propObj': {
                         'styleObj': {
                           'height': '100%',
@@ -1246,7 +1246,7 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'nodeName': 'thead',
-                          'className': 'WebTableHead',
+                          'className': 'TableHead',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {}
@@ -1254,7 +1254,7 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'th',
-                              'className': 'WebTableHeader',
+                              'className': 'TableHeader',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -1271,7 +1271,7 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'WebTableHeader',
+                              'className': 'TableHeader',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -1288,7 +1288,7 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'WebTableHeader',
+                              'className': 'TableHeader',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -1307,7 +1307,7 @@ export const formJson: IWebDocument = {
                         },
                         {
                           'nodeName': 'tr',
-                          'className': 'WebTableRow',
+                          'className': 'TableRow',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {}
@@ -1315,7 +1315,7 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -1531,7 +1531,7 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -1760,7 +1760,7 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -2244,7 +2244,7 @@ export const tableJson: IWebDocument = {
                     },
                     {
                       'nodeName': 'table',
-                      'className': 'WebTable',
+                      'className': 'Table',
                       'propObj': {
                         'styleObj': {
                           'height': '100%',
@@ -2259,7 +2259,7 @@ export const tableJson: IWebDocument = {
                       'childNodes': [
                         {
                           'nodeName': 'thead',
-                          'className': 'WebTableHead',
+                          'className': 'TableHead',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {}
@@ -2267,7 +2267,7 @@ export const tableJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'th',
-                              'className': 'WebTableHeader',
+                              'className': 'TableHeader',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -2284,7 +2284,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'WebTableHeader',
+                              'className': 'TableHeader',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -2301,7 +2301,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'WebTableHeader',
+                              'className': 'TableHeader',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -2320,7 +2320,7 @@ export const tableJson: IWebDocument = {
                         },
                         {
                           'nodeName': 'tr',
-                          'className': 'WebTableRow',
+                          'className': 'TableRow',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -2330,7 +2330,7 @@ export const tableJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -2547,7 +2547,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -2764,7 +2764,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -2906,7 +2906,7 @@ export const tableJson: IWebDocument = {
                         },
                         {
                           'nodeName': 'tr',
-                          'className': 'WebTableRow',
+                          'className': 'TableRow',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -2916,7 +2916,7 @@ export const tableJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -3133,7 +3133,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -3350,7 +3350,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -3492,7 +3492,7 @@ export const tableJson: IWebDocument = {
                         },
                         {
                           'nodeName': 'tr',
-                          'className': 'WebTableRow',
+                          'className': 'TableRow',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -3502,7 +3502,7 @@ export const tableJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -3719,7 +3719,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -3936,7 +3936,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -4078,7 +4078,7 @@ export const tableJson: IWebDocument = {
                         },
                         {
                           'nodeName': 'tr',
-                          'className': 'WebTableRow',
+                          'className': 'TableRow',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -4088,7 +4088,7 @@ export const tableJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -4305,7 +4305,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -4522,7 +4522,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -4773,7 +4773,7 @@ export const tableJson: IWebDocument = {
                     },
                     {
                       'nodeName': 'table',
-                      'className': 'WebTable',
+                      'className': 'Table',
                       'propObj': {
                         'styleObj': {
                           'height': '100%',
@@ -4788,7 +4788,7 @@ export const tableJson: IWebDocument = {
                       'childNodes': [
                         {
                           'nodeName': 'thead',
-                          'className': 'WebTableHead',
+                          'className': 'TableHead',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {}
@@ -4796,7 +4796,7 @@ export const tableJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'th',
-                              'className': 'WebTableHeader',
+                              'className': 'TableHeader',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -4813,7 +4813,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'WebTableHeader',
+                              'className': 'TableHeader',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -4830,7 +4830,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'WebTableHeader',
+                              'className': 'TableHeader',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -4849,7 +4849,7 @@ export const tableJson: IWebDocument = {
                         },
                         {
                           'nodeName': 'tr',
-                          'className': 'WebTableRow',
+                          'className': 'TableRow',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -4859,7 +4859,7 @@ export const tableJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -5076,7 +5076,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',
@@ -5306,7 +5306,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'td',
-                              'className': 'WebTableDataCell',
+                              'className': 'TableDataCell',
                               'propObj': {
                                 'styleObj': {
                                   'borderWidth': '1px',

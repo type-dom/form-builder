@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
 import { TextareaItem } from '../../form-item/textarea-item/textarea-item.class';
 import { WebBasicControl } from '../basic.abstract';
@@ -9,7 +9,7 @@ export class MultilineInputControl extends WebBasicControl implements IMultiline
   childNodes: [TextareaItem];
   formItem: TextareaItem;
 
-  constructor(parent: WebPage | WebTableDataCell) {
+  constructor(parent: WebPage | TableDataCell) {
     super(parent);
     // console.log('parent', parent);
     this.className = 'MultilineInputControl';

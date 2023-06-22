@@ -1,9 +1,9 @@
 import { fromEvent } from 'rxjs';
 import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
-import { WebTable } from '../../../../../type-dom/element/html-element/table/table.class';
-import { WebTableRow } from '../../../../../type-dom/element/html-element/table/row/row.class';
-import { IWebTableRow } from '../../../../../type-dom/element/html-element/table/row/row.interface';
+import { Table } from '../../../../../type-dom/element/html-element/table/table.class';
+import { TableRow } from '../../../../../type-dom/element/html-element/table/row/row.class';
+import { ITableRow } from '../../../../../type-dom/element/html-element/table/row/row.interface';
 import { Display } from '../../../../../type-dom/web-style.enum';
 import { toJSON } from '../../../../../type-dom/type-element/type-element.function';
 import { AddSvg } from '../../../../../type-dom/components/svgs/add/add';
@@ -13,8 +13,8 @@ import { ITableItem } from './table-item.interface';
 
 export class TableItem extends FormItem implements ITableItem {
   className: 'TableItem';
-  childNodes: [Label, WebTable, Span];
-  itemContent: WebTable;
+  childNodes: [Label, Table, Span];
+  itemContent: Table;
   addSpan: Span;
 
   constructor(public parent: TableControl, labelText = '表格') {
@@ -31,7 +31,7 @@ export class TableItem extends FormItem implements ITableItem {
       padding: '10px',
     };
     this.className = 'TableItem';
-    this.itemContent = new WebTable(this);
+    this.itemContent = new Table(this);
     this.addSpan = new Span(this);
     this.addSpan.setStyleObj({
       display: Display.block,
@@ -56,9 +56,9 @@ export class TableItem extends FormItem implements ITableItem {
           tr[head.name] = ' ';
         }
         this.itemContent.config?.tableData.push(tr);
-        const tableRow = new WebTableRow(this.itemContent, tr);
+        const tableRow = new TableRow(this.itemContent, tr);
         // console.log('toJSON(this.itemContent.childNodes[1] is ', toJSON(this.itemContent.childNodes[1]));
-        tableRow.createInstance(toJSON(this.itemContent.childNodes[1]) as IWebTableRow);
+        tableRow.createInstance(toJSON(this.itemContent.childNodes[1]) as ITableRow);
         this.itemContent.appendChild(tableRow);
       })
     );
@@ -67,7 +67,7 @@ export class TableItem extends FormItem implements ITableItem {
   createInstance(itemLiteral: ITableItem): void {
     super.createInstance(itemLiteral);
     // 单独对table的值进行修改
-    // console.log('this.itemContent is WebTable ', this.itemContent);
+    // console.log('this.itemContent is Table ', this.itemContent);
     // console.log('itemContentLiteral', itemLiteral.childNodes[1]);
     this.itemContent.createInstance(itemLiteral.childNodes[1]);
   }

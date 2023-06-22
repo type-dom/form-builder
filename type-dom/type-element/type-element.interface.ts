@@ -13,14 +13,14 @@ import { WebOption } from '../element/html-element/select/option/option.class';
 import { Select } from '../element/html-element/select/select.class';
 import { Span } from '../element/html-element/span/span.class';
 import { Textarea } from '../element/html-element/textarea/textarea.class';
-import { WebTable } from '../element/html-element/table/table.class';
 import { UnorderedList } from '../element/html-element/unordered-list/unordered-list.class';
-import { WebTableRow } from '../element/html-element/table/row/row.class';
-import { WebTableDataCell } from '../element/html-element/table/data-cell/data-cell.class';
-import { WebTableHead } from '../element/html-element/table/head/head.class';
-import { WebTableBody } from '../element/html-element/table/body/body.class';
-import { WebTableFoot } from '../element/html-element/table/foot/foot.class';
-import { WebTableHeader } from '../element/html-element/table/header/header.class';
+import { Table } from '../element/html-element/table/table.class';
+import { TableRow } from '../element/html-element/table/row/row.class';
+import { TableDataCell } from '../element/html-element/table/data-cell/data-cell.class';
+import { TableHead } from '../element/html-element/table/head/head.class';
+import { TableBody } from '../element/html-element/table/body/body.class';
+import { TableFoot } from '../element/html-element/table/foot/foot.class';
+import { TableHeader } from '../element/html-element/table/header/header.class';
 export interface ITypeAttribute {
   // id?: string;
   class?: string;
@@ -52,6 +52,6 @@ export type ElementClass = typeof Button | typeof Division | typeof Heading
   | typeof Input | typeof Textarea | typeof Label| typeof Span
   | typeof Select | typeof WebOption
   | typeof UnorderedList | typeof ListItem
-  | typeof WebTable | typeof WebTableRow | typeof WebTableDataCell
-  | typeof WebTableHeader
-  | typeof WebTableHead | typeof WebTableBody | typeof WebTableFoot;
+  | typeof Table | typeof TableRow | typeof TableDataCell
+  | typeof TableHeader
+  | typeof TableHead | typeof TableBody | typeof TableFoot;

@@ -2,8 +2,8 @@ import { Input } from '../../../../type-dom/element/html-element/input/input.cla
 import { IInput } from '../../../../type-dom/element/html-element/input/input.interface';
 import { Textarea } from '../../../../type-dom/element/html-element/textarea/textarea.class';
 import { ITextarea } from '../../../../type-dom/element/html-element/textarea/textarea.interface';
-import { WebTable } from '../../../../type-dom/element/html-element/table/table.class';
-import { IWebTable } from '../../../../type-dom/element/html-element/table/table.interface';
+import { Table } from '../../../../type-dom/element/html-element/table/table.class';
+import { ITable } from '../../../../type-dom/element/html-element/table/table.interface';
 import { Select } from '../../../../type-dom/element/html-element/select/select.class';
 import { ISelect } from '../../../../type-dom/element/html-element/select/select.interface';
 import { ILabel } from '../../../../type-dom/element/html-element/label/label.interface';
@@ -14,8 +14,8 @@ import { IRadioGroup } from '../../../../type-dom/components/radio-group/radio-g
 import { CheckboxGroup } from '../../../../type-dom/components/checkbox-group/checkbox-group.class';
 import { ICheckboxGroup } from '../../../../type-dom/components/checkbox-group/checkbox-group.interface';
 
-export type ItemContent = Input | Textarea | Select | RadioGroup | CheckboxGroup | WebTable;
-export type IItemContent = IInput | ITextarea | ISelect | IRadioGroup | ICheckboxGroup | IWebTable;
+export type ItemContent = Input | Textarea | Select | RadioGroup | CheckboxGroup | Table;
+export type IItemContent = IInput | ITextarea | ISelect | IRadioGroup | ICheckboxGroup | ITable;
 
 export interface IFormItem extends ITypeDiv {
   className: string, // 'ButtonItem' | 'CheckboxItem' | 'ConfigItem' | 'InputItem' | 'RadioItem' | 'SelectItem' | 'TableItem' | 'TextareaItem',

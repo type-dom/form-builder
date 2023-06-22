@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { deepClone } from '../../../../utils';
 import { WebPage } from '../../../page/web-page.class';
 import { defaultOptionConfig } from '../../web-control.const';
@@ -11,7 +11,7 @@ export class CheckboxControl extends WebControl implements ICheckboxControl {
   className: 'CheckboxControl';
   childNodes: [CheckboxItem];
   formItem: CheckboxItem;
-  constructor(parent: WebPage | WebTableDataCell) {
+  constructor(parent: WebPage | TableDataCell) {
     super(parent);
     this.className = 'CheckboxControl';
     this.propObj.attrObj.name = 'checkbox-control';

@@ -1,4 +1,4 @@
-import { WebTableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { deepClone } from '../../../../utils';
 import { WebPage } from '../../../page/web-page.class';
 import { RadioItem } from '../../form-item/radio-item/radio-item.class';
@@ -12,7 +12,7 @@ export class RadioControl extends WebBasicControl implements IRadioControl {
   childNodes: [RadioItem];
   formItem: RadioItem;
   // optionsConfig: IOptionConfig;
-  constructor(parent: WebPage | WebTableDataCell) {
+  constructor(parent: WebPage | TableDataCell) {
     super(parent);
     this.className = 'RadioControl';
     this.propObj.attrObj.name = 'radio-control';

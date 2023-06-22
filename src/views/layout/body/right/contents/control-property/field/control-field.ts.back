@@ -51,7 +51,7 @@ export class ControlFieldProperty extends PropertySelect {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
 
     //  选中表格控件时，该属性控制隐藏了。
-    // if (this.editor.selectedControl?.itemContent instanceof WebTable) {
+    // if (this.editor.selectedControl?.itemContent instanceof Table) {
     //   // this.setStyle('display', 'none');
     // }
 

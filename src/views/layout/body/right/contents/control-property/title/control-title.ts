@@ -1,4 +1,4 @@
-import { WebTableHead } from '../../../../../../../../type-dom/element/html-element/table/head/head.class';
+import { TableHead } from '../../../../../../../../type-dom/element/html-element/table/head/head.class';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
@@ -50,8 +50,8 @@ export class ControlTitleProperty extends PropertyInput {
       if (tableHeader && index !== undefined) {
         tableHeader[index].label = value;
         // 修改表头标签
-        (table.childNodes[0] as WebTableHead).childNodes[index].childNodes[0].setText(value);
-        (table.childNodes[0] as WebTableHead).childNodes[index].render();
+        (table.childNodes[0] as TableHead).childNodes[index].childNodes[0].setText(value);
+        (table.childNodes[0] as TableHead).childNodes[index].render();
       }
       console.log('tableHeader is ', tableHeader);
       return;
