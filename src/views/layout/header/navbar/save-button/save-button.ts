@@ -1,6 +1,5 @@
 import { fromEvent } from 'rxjs';
 import { TypeButton } from '../../../../../../type-dom/type-element/type-html/button/button.abstract';
-import { TextNode } from '../../../../../../type-dom/text-node/text-node.class';
 import { Navbar } from '../navbar';
 
 export class SaveButton extends TypeButton {
@@ -11,8 +10,7 @@ export class SaveButton extends TypeButton {
     this.addStyleObj({
       margin: 'auto 20px',
     });
-    const text = new TextNode(this, '保存');
-    this.childNodes = [text];
+    this.setTitle('保存');
     this.initEvents();
   }
   initEvents(): void {

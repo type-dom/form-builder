@@ -21,10 +21,8 @@ export class ConfirmButton extends TypeButton {
         name: 'confirm-button',
       }
     };
-
-    // this.svg = new CloseSvg(this);
+    this.setTitle('确认');
     this.childNodes = [this.textNode];
-
     this.initEvents();
   }
   initEvents(): void {

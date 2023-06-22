@@ -35,17 +35,45 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
     this.label.propObj.styleObj = this.labelStyle;
     this.labelText = new TextNode(this.label, labelText);
     this.label.childNodes.push(this.labelText);
-    this.deleteSpan = new Span(this);
-    this.deleteSpan.setStyleObj({
-      // position: 'absolute',
-      // top: '30px',
-      // right: '1px',
-      float: 'right',
-      backgroundColor: '#fff'
-    });
-    const svg = new DeleteSvg(this.deleteSpan);
-    svg.resetSize(20, 20);
-    this.deleteSpan.addChild(svg);
+    this.deleteSpan = this.createItem(this, {
+      TypeClass: Span,
+      propObj: {
+        styleObj: {
+          // position: 'absolute',
+          // top: '30px',
+          // right: '1px',
+          float: 'right',
+          backgroundColor: '#fff'
+        },
+        attrObj: {
+          name: 'delete-span',
+        }
+      },
+      childNodes: [
+        {
+          TypeClass: DeleteSvg,
+          propObj: {
+            styleObj: {},
+            attrObj: {
+              name: 'delete-svg',
+              width: 20,
+              height: 20
+            }
+          }
+        }
+      ]
+    }) as Span;
+    //   new Span(this);
+    // this.deleteSpan.setStyleObj({
+    //   // position: 'absolute',
+    //   // top: '30px',
+    //   // right: '1px',
+    //   float: 'right',
+    //   backgroundColor: '#fff'
+    // });
+    // const svg = new DeleteSvg(this.deleteSpan);
+    // svg.resetSize(20, 20);
+    // this.deleteSpan.addChild(svg);
   }
 
   // 控件在表格中的控件样式

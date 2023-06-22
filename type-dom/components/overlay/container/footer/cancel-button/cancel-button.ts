@@ -1,12 +1,9 @@
 import { fromEvent } from 'rxjs';
-import { TextNode } from '../../../../../text-node/text-node.class';
 import { TypeButton } from '../../../../../type-element/type-html/button/button.abstract';
 import { OverlayFooter } from '../footer';
 
 export class CancelButton extends TypeButton {
   className: 'CancelButton';
-  childNodes: [TextNode];
-
   constructor(public parent: OverlayFooter) {
     super();
     this.className = 'CancelButton';
@@ -22,10 +19,7 @@ export class CancelButton extends TypeButton {
         name: 'cancel-button',
       }
     };
-
-    // this.svg = new CloseSvg(this);
-    this.childNodes = [this.textNode];
-
+    this.setTitle('取消');
     this.initEvents();
   }
   initEvents(): void {

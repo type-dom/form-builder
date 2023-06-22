@@ -25,8 +25,10 @@ export class Navbar extends TypeDiv {
         name: 'navbar'
       }
     };
-
-    this.previewBtn = new PreviewButton(this);
+    this.previewBtn = this.createItem(this, {
+      TypeClass: PreviewButton,
+    }) as PreviewButton;
+    // this.previewBtn = new PreviewButton(this);
     // this.saveBtn = new SaveButton(this);
     this.childNodes.push(this.previewBtn);
   }

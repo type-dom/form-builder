@@ -1,19 +1,20 @@
 import { INodeAttr } from '../type-node/type-node.interface';
 import { TypeNode } from '../type-node/type-node.abstract';
-import { XNode } from '../x-node/x-node.class';
+import { TypeElement } from '../type-element/type-element.abstract';
+import { TextNode } from '../text-node/text-node.class';
+import { XElement } from '../x-element/x-element.class';
 import { ParserErrorCode } from './parser.const';
 import { isWhitespace, isWhitespaceString } from './parser.util';
 import { IContent, IInstruction, IParam } from './parser.interface';
-import { TypeElement } from '../type-element/type-element.abstract';
 /**
  * The code for XMLParser copied from pdf.js
  * 虚拟DOM字符串解析工具
  * DOM对象和String字符串之间的转换
- * 字符串解析为XNode对象。？？？？todo 解析为 className 对应的类。
+ * 字符串解析为(XElement | TextNode)对象。？？？？todo 解析为 className 对应的类。
  */
 export class Parser {
-  private _currentFragment: TypeNode[];
-  private _stack: TypeNode[][];
+  private _currentFragment: (XElement | TextNode)[];
+  private _stack: (XElement | TextNode)[][];
   private _errorCode: number;
   private readonly _hasAttributes: boolean | undefined;
   private readonly _lowerCaseName: boolean | undefined;
@@ -47,7 +48,7 @@ export class Parser {
     });
   }
   /**
-   * 解析字符串，----> XNode
+   * 解析字符串，----> (XElement | TextNode)
    * @param s
    * @param start
    */
@@ -306,11 +307,13 @@ export class Parser {
     if (isWhitespaceString(text)) {
       return;
     }
-    const node = new XNode('#text', text);
+    const xEl = new XElement('span');
+    const node = new TextNode(xEl, text);
     this._currentFragment.push(node);
   }
   onCdata(text: string): void {
-    const node = new XNode('#text', text);
+    const xEl = new XElement('span');
+    const node = new TextNode(xEl, text);
     this._currentFragment.push(node);
   }
 
@@ -324,9 +327,9 @@ export class Parser {
     if (this._lowerCaseName) {
       name = name.toLowerCase();
     }
-    // todo 根据className创建各个定义的类，包括 XNode
+    // todo 根据className创建各个定义的类，包括 (XElement | TextNode)
     console.log('className is ', name);
-    const node = new XNode(name);
+    const node = new XElement(name);
     node.childNodes = [];
     if (this._hasAttributes) {
       node.attributes = attributes;
@@ -337,24 +340,25 @@ export class Parser {
     }
     // 存入缓存
     this._stack.push(this._currentFragment);
-    this._currentFragment = node.children as XNode[];
+    this._currentFragment = node.children as (XElement | TextNode)[];
   }
 
   /**
    * 在结束的元素
    * @param name 应该是nodeName
    */
-  onEndElement(name?: string): TypeNode | null {
+  onEndElement(name?: string): (XElement | TextNode) | null {
     // console.log('onEndElement . name is ', name);
     // 取回缓存的节点
     this._currentFragment = this._stack?.pop() || [];
     const lastElement = this._currentFragment?.at(-1);
+    console.log('lastElement is ', lastElement);
     if (!lastElement) {
       return null;
     }
     // 对应的字节点
     for (const child of lastElement.children) {
-      child.parentNode = lastElement as TypeElement | XNode;
+      child.parent = lastElement as TypeElement;
     }
     return lastElement;
   }

@@ -7,7 +7,6 @@ export class SubmitButton extends TypeButton {
   nodeName: 'button';
   className: 'SubmitButton';
   dom: HTMLButtonElement;
-  childNodes: [TextNode];
   textNode: TextNode;
   submitObservable: Observable<Event>;
   constructor(public parent: FormFooter) {
@@ -23,7 +22,6 @@ export class SubmitButton extends TypeButton {
       styleObj: buttonStyle,
     };
     this.textNode = new TextNode(this, '提交');
-    this.childNodes = [this.textNode];
     this.submitObservable = fromEvent(this.dom, 'click');
     this.initEvents();
   }

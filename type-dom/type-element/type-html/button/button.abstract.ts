@@ -19,6 +19,7 @@ export abstract class TypeButton extends TypeHtml implements ITypeButton {
       }
     };
     this.textNode = new TextNode(this, '按钮');
+    this.childNodes = [this.textNode]; // 默认值
   }
   setTitle(title: string): void {
     this.textNode.setText(title);

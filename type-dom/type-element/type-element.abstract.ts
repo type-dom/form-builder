@@ -2,7 +2,6 @@ import { Subscription } from 'rxjs';
 import { FormEditor } from '../../src/form-editor';
 import { humpToMiddleLine } from '../../src/utils';
 import { TypeNode } from '../type-node/type-node.abstract';
-import { INodeAttr } from '../type-node/type-node.interface';
 import { TextNode } from '../text-node/text-node.class';
 import { Cursor, Display } from '../web-style.enum';
 import { IWebStyle } from '../web-style.interface';
@@ -23,13 +22,13 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
   abstract parent: TypeElement;
   abstract dom: HTMLElement | SVGElement;
   propObj: ITypeProperty;
-  attributes: INodeAttr[];
+  // attributes: INodeAttr[];
   childNodes: TypeNode[];
   events: Subscription[];
   // initEvents?(): () => any;
 
-  protected constructor(nodeName: string, nodeValue?: string) {
-    super(nodeName, nodeValue);
+  protected constructor(nodeName: string) {
+    super(nodeName);
     this.propObj = {
       attrObj: {},
       styleObj: {}
@@ -159,7 +158,7 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
     }
     return this;
   }
-  addStyleObj(styles: Partial<IWebStyle>): TypeElement {
+  addStyleObj(styles: Partial<IWebStyle>): void {
     for (const key in styles) {
       if (Object.hasOwnProperty.call(styles, key)) {
         // todo 如何优化
@@ -167,9 +166,8 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
         this.addStyle(key as keyof IWebStyle, value);
       }
     }
-    return this;
   }
-  renderStyleObj(styles: Partial<IWebStyle>): TypeElement {
+  renderStyleObj(styles: Partial<IWebStyle>): void {
     for (const key in styles) {
       if (Object.hasOwnProperty.call(styles, key)) {
         // todo 如何优化
@@ -177,9 +175,8 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
         this.renderStyle(key as keyof IWebStyle, value);
       }
     }
-    return this;
   }
-  setStyle(key: keyof IWebStyle, value: string | number | boolean): TypeElement {
+  setStyle(key: keyof IWebStyle, value: string | number | boolean): void {
     // todo 是否要删除属性。
     // if (!value) {
     //   delete this.propObj.styleObj[key];
@@ -193,7 +190,6 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
     this.renderStyle(key, value);
     // todo error
     // Object.defineProperty(this.propObj.styleObj, key, value);
-    return this;
   }
   addStyle(key: string, value: string | number | boolean): void {
     (this.propObj.styleObj as Record<string, string | number | boolean>)[key] = value;

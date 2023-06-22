@@ -1,9 +1,9 @@
 import { Subscription } from 'rxjs';
-import { INodeAttr, IPath, ITypeNode } from './type-node.interface';
 import { FormEditor } from '../../src/form-editor';
-import { XNode } from '../x-node/x-node.class';
 import { TypeElement } from '../type-element/type-element.abstract';
+import { ITypeProperty } from '../type-element/type-element.interface';
 import { ITextNode } from '../text-node/text-node.interface';
+import { INodeAttr, IPath, ITypeNode } from './type-node.interface';
 const Entities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',
@@ -61,13 +61,14 @@ export abstract class TypeNode implements ITypeNode {
    */
   abstract className: string; // 最终实体类的名称，解析转换时需要创建对应的类；
   abstract dom: HTMLElement | SVGElement | Text;
+  propObj?: ITypeProperty;
   /**
    * 渲染出真实DOM
    */
   abstract render(): void;
   nodeName: string;
   nodeValue?: string;
-  parentNode: TypeElement | XNode | null;
+  parent?: TypeElement;
   childNodes?: TypeNode[];
   attributes?: INodeAttr[];
   events?: Subscription[];
@@ -76,7 +77,7 @@ export abstract class TypeNode implements ITypeNode {
     if (nodeValue !== undefined) {
       this.nodeValue = nodeValue;
     }
-    this.parentNode = null;
+    // this.parent = null;
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
   }
   get editor(): FormEditor {
@@ -87,16 +88,16 @@ export abstract class TypeNode implements ITypeNode {
     // if (this.parent instanceof WebLayout) {
     //   return this.parent.formEditor;
     // }
-    if (this.parentNode === null) {
+    if (this.parent === undefined) {
       throw Error('this.parentNode is undefined . ');
     }
-    return this.parentNode.editor;
+    return this.parent.editor;
   }
   get firstChild(): TypeNode | undefined {
     return this.childNodes && this.childNodes[0];
   }
   get nextSibling(): TypeNode | undefined {
-    const childNodes = this.parentNode?.childNodes;
+    const childNodes = this.parent?.childNodes;
     if (!childNodes) {
       return undefined;
     }
@@ -135,37 +136,58 @@ export abstract class TypeNode implements ITypeNode {
   //   }
   //   console.log('TypeNode.typeMap is ', TypeNode.typeMap);
   // }
+  createItem(parent: TypeElement, node: ITypeNode): TypeNode | undefined {
+    if (node.TypeClass === undefined) {
+      console.error('node.TypeClass is undefined . ');
+      return;
+    }
+    const item = new node.TypeClass() as TypeNode; // 创建类实例
+    item.parent = parent;
+    console.log('item is ', item);
+    if (node.propObj) {
+      if (item instanceof TypeElement) {
+        item.addStyleObj(node.propObj.styleObj);
+        item.addAttrObj(node.propObj.attrObj);
+      } else {
+        throw Error('TextNode propObj is undefined . ');
+      }
+    }
+    if (node.nodeName) {
+      item.nodeName = node.nodeName;
+    }
+    if (node.nodeValue !== undefined) { // 如果是文本节点，则退出迭代; XNode,TextNode会有
+      if (item.nodeValue !== undefined) {
+        item.nodeValue = node.nodeValue;
+        return item;
+      } else {
+        throw Error('TypeClass is not TextNode, but nodeValue exist. ');
+      }
+    }
+    if (node.childNodes) {
+      if (item.childNodes !== undefined) {
+        item.childNodes = item.createItems(item as TypeElement, node.childNodes);
+      } else {
+        throw Error('TypeClass is TextNode, but has childNodes . ');
+      }
+    }
+    return item;
+  }
   /**
    * 基于json对象创建类实例
    *   todo 运行时，类可能还没有写入 typeMap ????
    * @param parent
    * @param nodes
    */
-  createItems(parent: TypeElement, nodes: ITypeNode[]): TypeElement[] {
-    const items: TypeElement[] = [];
+  createItems(parent: TypeElement, nodes: ITypeNode[]): TypeNode[] {
+    const items: TypeNode[] = [];
     for (const node of nodes) {
-      //  todo
       if (node.TypeClass === undefined) {
         console.error('node.TypeClass is undefined . ');
         continue;
       }
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      const item = new node.TypeClass() as TypeElement; // 创建类实例
-      console.log('item is ', item);
-      item.parentNode = parent;
-      if (node.nodeName) {
-        item.nodeName = node.nodeName;
-      }
-      if (node.nodeValue) {
-        item.nodeValue = node.nodeValue;
-      }
-      if (node.attributes) {
-        item.attributes = node.attributes;
-      }
-      items.push(item);
-      if (node.childNodes) {
-        item.childNodes = item.createItems(item, node.childNodes);
+      const item = this.createItem(parent, node);
+      if (item) {
+        items.push(item);
       }
     }
     return items;

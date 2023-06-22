@@ -22,7 +22,7 @@ export interface ITypeNode {
   propObj?: ITypeProperty;
   // nodeValue只在 TextNode中才有。
   nodeValue?: string;
-  parentNode?: ITypeNode | null;
+  parent?: ITypeNode | null;
   // TextNode 没有 childNodes
   childNodes?: ITypeNode[];
   attributes?: INodeAttr[];

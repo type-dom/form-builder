@@ -24,9 +24,9 @@ export class OverlayFooter extends TypeDiv {
     };
     this.cancelBtn = new CancelButton(this);
     // cancelBtn.hide();
-    this.cancelBtn.setTitle('取消');
+    // this.cancelBtn.setTitle('取消');
     this.confirmBtn = new ConfirmButton(this);
-    this.confirmBtn.setTitle('确定');
+    // this.confirmBtn.setTitle('确定');
     this.childNodes = [this.cancelBtn, this.confirmBtn];
   }
 }

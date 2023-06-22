@@ -1,5 +1,4 @@
 import { fromEvent } from 'rxjs';
-import { TextNode } from '../../../../../../type-dom/text-node/text-node.class';
 import { toJSON } from '../../../../../../type-dom/type-element/type-element.function';
 import { TypeButton } from '../../../../../../type-dom/type-element/type-html/button/button.abstract';
 import { WebDocument } from '../../../../../core/document/web-document.class';
@@ -14,8 +13,8 @@ export class PreviewButton extends TypeButton {
     this.addStyleObj({
       margin: 'auto 20px',
     });
-    const text = new TextNode(this, '预览');
-    this.childNodes = [text];
+    this.setTitle('预览');
+    // this.childNodes = [this.textNode];
     this.initEvents();
   }
   initEvents(): void {
