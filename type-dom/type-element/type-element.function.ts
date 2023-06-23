@@ -46,7 +46,6 @@ export function getScroll(area?: Element): {x: number; y:number} {
         ? document.body.scrollLeft
         : document.documentElement.scrollLeft,
   };
-
   return {
     y: area && area.scrollTop >= 0 ? area.scrollTop : body.top,
     x: area && area.scrollLeft >= 0 ? area.scrollLeft : body.left,
@@ -79,4 +78,7 @@ export function toJSON(element: TypeElement): ITypeElement {
       }
     })
   } as ITypeElement;
+}
+export function humpToMiddleLine(str: string): string {
+  return str.replace(/([A-Z])/g, '-$1').toLowerCase();
 }

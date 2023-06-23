@@ -1,5 +1,5 @@
 /**
- * 引用与非引用值 深拷贝方法
+ * 引用类型与非引用类型 深拷贝方法
  * @param data
  */
 export function deepClone<T>(data: T): T {
@@ -19,7 +19,4 @@ export function deepClone<T>(data: T): T {
     }
   }
   return item;
-}
-export function humpToMiddleLine(str: string): string {
-  return str.replace(/([A-Z])/g, '-$1').toLowerCase();
 }

@@ -1,6 +1,7 @@
 import { TypeDiv } from '../../../../../../../type-dom/type-element/type-html/div/div.abstract';
 import { Division } from '../../../../../../../type-dom/element/html-element/division/division.class';
 import { TextNode } from '../../../../../../../type-dom/text-node/text-node.class';
+import { Display } from '../../../../../../../type-dom/web-style.enum';
 import { RightContents } from '../contents';
 // control property
 import { ControlFieldProperty } from './field/control-field';
@@ -15,10 +16,7 @@ import { MultipleProperty } from './multiple/control-multiple';
 import { ControlOnChangeProperty } from './change-event/control-on-change';
 import { ControlConnectionProperty } from './connection/control-connection';
 import { TableColumnProperty } from './table-column/table-column';
-import { Display } from '../../../../../../../type-dom/web-style.enum';
 import { ReadonlyProperty } from './readonly/control-readonly';
-
-
 export class ControlProperty extends TypeDiv {
   className: 'ControlProperty';
   childNodes: [
@@ -30,7 +28,6 @@ export class ControlProperty extends TypeDiv {
     ControlOptionsProperty,
     ControlConnectionProperty,
   ];
-
   readonly controlField: ControlFieldProperty;
   readonly controlTitle: ControlTitleProperty;
   readonly controlPlaceholder: ControlPlaceholderProperty;
@@ -111,7 +108,6 @@ export class ControlProperty extends TypeDiv {
     this.controlOnChange.hide();
     this.addChild(this.controlOnChange);
   }
-
   reset(): void {
     // todo 依据选中的控件设置控件属性显示
     const className = this.editor.selectedControl?.className;

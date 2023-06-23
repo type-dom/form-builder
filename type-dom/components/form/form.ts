@@ -1,4 +1,5 @@
 import { TypeDiv } from '../../type-element/type-html/div/div.abstract';
+import { TypeRoot } from '../../type-root/type-root.class';
 import { StylePosition } from '../../web-style.enum';
 import { LayoutWrapper } from '../../../src/views/layout/layout';
 import { FormHeader } from './header/header';
@@ -12,7 +13,7 @@ export class WebForm extends TypeDiv {
   body: FormBody;
   footer: FormFooter;
   title: string;
-  constructor(public parent: LayoutWrapper) {
+  constructor(public parent: LayoutWrapper | TypeRoot) {
     super();
     this.className = 'WebForm';
     this.propObj = {

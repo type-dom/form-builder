@@ -14,7 +14,6 @@ export class Section extends TypeHtml {
     this.propObj = {
       styleObj: {
         display: Display.flex,
-        // height: 'calc(' + this.editor.el.clientHeight + 'px - 60px)',
         justifyContent: 'space-between'
       },
       attrObj: {

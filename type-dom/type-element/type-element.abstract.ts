@@ -1,18 +1,19 @@
 import { Subscription } from 'rxjs';
-import { FormEditor } from '../../src/form-editor';
-import { humpToMiddleLine } from '../../src/utils';
+import { TypeRoot } from '../type-root/type-root.class';
 import { TypeNode } from '../type-node/type-node.abstract';
 import { TextNode } from '../text-node/text-node.class';
 import { Cursor, Display } from '../web-style.enum';
 import { IWebStyle } from '../web-style.interface';
+import { humpToMiddleLine } from './type-element.function';
 import {
   ITypeAttribute,
   IWebBoundBox,
   ITypeElement,
   ITypeProperty
 } from './type-element.interface';
+import {FormEditor} from "../../src/form-editor";
 /**
- * 虚拟dom的数据结构
+ * 虚拟元素Element的数据结构
  * 可以对应到虚拟dom树。 createDom(tag, attr, children)
  * 与对应的导出时的数据结构是不一样的。
  * todo 是否需要把相关的操作也添加进来。

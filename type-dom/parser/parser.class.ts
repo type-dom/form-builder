@@ -8,8 +8,8 @@ import { isWhitespace, isWhitespaceString } from './parser.util';
 import { IContent, IInstruction, IParam } from './parser.interface';
 /**
  * The code for XMLParser copied from pdf.js
- * 虚拟DOM字符串解析工具
- * DOM对象和String字符串之间的转换
+ * 虚拟DOM/XML字符串解析工具
+ * DOM/XML对象和String字符串之间的转换
  * 字符串解析为(XElement | TextNode)对象。？？？？todo 解析为 className 对应的类。
  */
 export class Parser {
@@ -327,8 +327,8 @@ export class Parser {
     if (this._lowerCaseName) {
       name = name.toLowerCase();
     }
-    // todo 根据className创建各个定义的类，包括 (XElement | TextNode)
-    console.log('className is ', name);
+    // todo 根据name创建各个定义的类，包括 (XElement | TextNode)
+    console.log('name is ', name);
     const node = new XElement(name);
     node.childNodes = [];
     if (this._hasAttributes) {

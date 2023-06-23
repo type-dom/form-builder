@@ -17,6 +17,7 @@ export class MessageBox extends Overlay {
   }
 
   confirm(message: string): void {
+    // this.root.app.
     const span = new Span(this.container.body);
     const textNode = new TextNode(span, message);
     span.addChild(textNode);

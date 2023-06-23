@@ -1,4 +1,4 @@
-// 顺序不能随意调换，可能会加载报错。 todo 如何解决
+// 顺序不能随意调换，可能会加载报错。 WebControl todo 如何解决
 import { filter, fromEvent, switchMap, of, Observable, Subscription, map, Subject } from 'rxjs';
 import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
@@ -15,22 +15,21 @@ import { MessageBox } from '../type-dom/components/message-box/message-box';
 import { TextNode } from '../type-dom/text-node/text-node.class';
 import { WebForm } from '../type-dom/components/form/form';
 import { ControlMenu } from './core/menus/menu.abstract';
-import { WebControl } from './core/controls/web-control.abstract';
 import { WebDocument } from './core/document/web-document.class';
 import { IWebDocument } from './core/document/web-document.interface';
 import { WebPage } from './core/page/web-page.class';
+import { WebControl } from './core/controls/web-control.abstract';
 import { IOptionConfig } from './core/controls/web-control.interface';
+import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
 import { ConnectionControl } from './core/controls/complex/connection/connection.class';
 import { TableControl } from './core/controls/complex/table/table.class';
 import { ITableField } from './core/controls/complex/table/table.interface';
-import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
 import { Test } from './views/test/test';
-import { TypeRoot } from '../type-dom/type-root/type-root.class';
+import { AppRoot } from './app-root';
 /**
  * 应用直接继承 TypeRoot ;
  */
-export class FormEditor extends TypeRoot {
-  className: 'FormEditor';
+export class FormEditor {
   // 光标
   cursor?: Cursor | null;
   // 选中的菜单
@@ -55,9 +54,8 @@ export class FormEditor extends TypeRoot {
   editorElObservable: Observable<Event>;
   onReady: Observable<void>;
   readyEvent: Subject<void>;
+  appRoot: AppRoot;
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
-    super(editorEl);
-    this.className = 'FormEditor';
     this.el = editorEl;
     if (!this.el.clientHeight) {
       // this.el.setAttribute('clientHeight', '500px');
@@ -66,11 +64,12 @@ export class FormEditor extends TypeRoot {
     // console.log('this.el.clientHeight is ', this.el.clientHeight);
     this.events = [];
     this.mode = mode;
+    this.appRoot = new AppRoot(editorEl, this);
     this.layout = new LayoutWrapper(this);
     this.dialog = new WebDialog(this);
     this.messageBox = new MessageBox(this);
     // this.layout.childNodes.push(this.dialog, this.messageBox);
-    this.childNodes = [this.layout, this.dialog, this.messageBox];
+    this.appRoot.childNodes = [this.layout, this.dialog, this.messageBox];
     // this.root.createItem(this.root,{
     //   TypeClass: LayoutWrapper,
     //   propObj: {
@@ -94,8 +93,8 @@ export class FormEditor extends TypeRoot {
     //     }
     //   ]
     // });
-    this.render();
-    const json = this.toJSON();
+    this.appRoot.render();
+    const json = this.appRoot.toJSON();
     console.log('json is ', json);
     // console.log('editorEl is ', editorEl);
     // editorEl.appendChild(this.layout.dom);

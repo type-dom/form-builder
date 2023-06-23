@@ -50,7 +50,6 @@ export abstract class Overlay extends TypeDiv {
   }
   clearBody(): void {
     // this.container.body.clearChildDom();
-    // this.editor.form
   }
   initEvents(): void {
     this.events.push(

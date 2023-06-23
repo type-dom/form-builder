@@ -69,7 +69,7 @@ export abstract class TypeNode implements ITypeNode {
   abstract render(): void;
   nodeName: string;
   nodeValue?: string;
-  parent?: TypeElement;
+  abstract parent?: TypeElement;
   childNodes?: TypeNode[];
   attributes?: INodeAttr[];
   events?: Subscription[];
@@ -78,7 +78,6 @@ export abstract class TypeNode implements ITypeNode {
     if (nodeValue !== undefined) {
       this.nodeValue = nodeValue;
     }
-    // this.parent = null;
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
   }
   get editor(): FormEditor { // FormEditor 是业务类，不能在框架中定义。
