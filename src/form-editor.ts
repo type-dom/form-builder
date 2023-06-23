@@ -4,7 +4,6 @@ import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
-import { RootElement } from '../type-dom/root-element/root-element.class';
 import { Cursor } from '../type-dom/web-style.enum';
 import { TableRow } from '../type-dom/element/html-element/table/row/row.class';
 import { TableDataCell } from '../type-dom/element/html-element/table/data-cell/data-cell.class';
@@ -26,9 +25,12 @@ import { TableControl } from './core/controls/complex/table/table.class';
 import { ITableField } from './core/controls/complex/table/table.interface';
 import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
 import { Test } from './views/test/test';
-
-export class FormEditor {
-  root: RootElement;
+import { TypeRoot } from '../type-dom/type-root/type-root.class';
+/**
+ * 应用直接继承 TypeRoot ;
+ */
+export class FormEditor extends TypeRoot {
+  className: 'FormEditor';
   // 光标
   cursor?: Cursor | null;
   // 选中的菜单
@@ -54,6 +56,8 @@ export class FormEditor {
   onReady: Observable<void>;
   readyEvent: Subject<void>;
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
+    super(editorEl);
+    this.className = 'FormEditor';
     this.el = editorEl;
     if (!this.el.clientHeight) {
       // this.el.setAttribute('clientHeight', '500px');
@@ -62,12 +66,11 @@ export class FormEditor {
     // console.log('this.el.clientHeight is ', this.el.clientHeight);
     this.events = [];
     this.mode = mode;
-    this.root = new RootElement(editorEl);
     this.layout = new LayoutWrapper(this);
     this.dialog = new WebDialog(this);
     this.messageBox = new MessageBox(this);
-    this.layout.childNodes.push(this.dialog, this.messageBox);
-    this.root.childNodes = [this.layout];
+    // this.layout.childNodes.push(this.dialog, this.messageBox);
+    this.childNodes = [this.layout, this.dialog, this.messageBox];
     // this.root.createItem(this.root,{
     //   TypeClass: LayoutWrapper,
     //   propObj: {
@@ -91,8 +94,8 @@ export class FormEditor {
     //     }
     //   ]
     // });
-    this.root.render();
-    const json = this.root.toJSON();
+    this.render();
+    const json = this.toJSON();
     console.log('json is ', json);
     // console.log('editorEl is ', editorEl);
     // editorEl.appendChild(this.layout.dom);

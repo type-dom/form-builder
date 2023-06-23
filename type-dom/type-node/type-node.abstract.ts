@@ -2,9 +2,9 @@ import { Subscription } from 'rxjs';
 import { FormEditor } from '../../src/form-editor';
 import { TypeElement } from '../type-element/type-element.abstract';
 import { ITypeProperty } from '../type-element/type-element.interface';
+import { TypeRoot } from '../type-root/type-root.class';
 import { ITextNode } from '../text-node/text-node.interface';
 import { INodeAttr, IPath, ITypeNode } from './type-node.interface';
-import {RootElement} from "../root-element/root-element.class";
 const Entities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',
@@ -94,7 +94,7 @@ export abstract class TypeNode implements ITypeNode {
     }
     return this.parent.editor;
   }
-  get root(): RootElement {
+  get root(): TypeRoot {
     if (this.parent === undefined) {
       throw Error('this.parentNode is undefined . ');
     }

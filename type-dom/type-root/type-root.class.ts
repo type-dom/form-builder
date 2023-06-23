@@ -1,24 +1,23 @@
 /**
- * RootElement是一个根元素节点类，是其它类的父节点
+ * TypeRoot是一个根元素节点类，是其它类的父节点
  * 在开发中，作为项目根节点使用，挂载到对应的 ID 上。
  */
 import { TypeDiv } from '../type-element/type-html/div/div.abstract';
-import { IRootElement } from './root-element.interface';
+import { ITypeRoot } from './type-root.interface';
 /**
  * el 元素对象或ID；
  * parent 只有自己 this
  */
-export class RootElement extends TypeDiv implements IRootElement {
-  className: 'RootElement';
-  parent: RootElement;
-  constructor(el: HTMLElement | string) {
+export abstract class TypeRoot extends TypeDiv implements ITypeRoot {
+  // className: string;
+  parent: TypeRoot;
+  protected constructor(el: HTMLElement | string) {
     super();
-    this.className = 'RootElement';
-    this.parent = this;
     this.propObj = {
       attrObj: {},
       styleObj: {}
     };
+    this.parent = this;
     if (el instanceof HTMLElement) {
       el.appendChild(this.dom);
     } else {
@@ -30,7 +29,7 @@ export class RootElement extends TypeDiv implements IRootElement {
       }
     }
   }
-  get root() {
+  get root(): TypeRoot {
     return this;
   }
 }
