@@ -1,6 +1,5 @@
-import { ITypeNode } from '../type-node/type-node.interface';
-import { ITypeProperty } from '../type-element/type-element.interface';
-export interface IXElement extends ITypeNode {
+import { ITypeElement, ITypeProperty } from '../type-element/type-element.interface';
+export interface IXElement extends ITypeElement {
   className: 'XElement',
   propObj: ITypeProperty;
 }

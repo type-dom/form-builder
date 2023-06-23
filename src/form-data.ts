@@ -734,7 +734,7 @@ export const formJson: IWebDocument = {
                       'childNodes': [
                         {
                           'nodeName': 'option',
-                          'className': 'WebOption',
+                          'className': 'SelectOption',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -754,7 +754,7 @@ export const formJson: IWebDocument = {
                         },
                         {
                           'nodeName': 'option',
-                          'className': 'WebOption',
+                          'className': 'SelectOption',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -773,7 +773,7 @@ export const formJson: IWebDocument = {
                         },
                         {
                           'nodeName': 'option',
-                          'className': 'WebOption',
+                          'className': 'SelectOption',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -792,7 +792,7 @@ export const formJson: IWebDocument = {
                         },
                         {
                           'nodeName': 'option',
-                          'className': 'WebOption',
+                          'className': 'SelectOption',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -1405,7 +1405,7 @@ export const formJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -1425,7 +1425,7 @@ export const formJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -1444,7 +1444,7 @@ export const formJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -1463,7 +1463,7 @@ export const formJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -2421,7 +2421,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -2440,7 +2440,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -2460,7 +2460,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -2479,7 +2479,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -2638,7 +2638,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -2657,7 +2657,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -2677,7 +2677,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -2696,7 +2696,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3007,7 +3007,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3026,7 +3026,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3045,7 +3045,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3065,7 +3065,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3224,7 +3224,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3243,7 +3243,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3262,7 +3262,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3282,7 +3282,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3593,7 +3593,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3612,7 +3612,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3631,7 +3631,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3650,7 +3650,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3810,7 +3810,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3829,7 +3829,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3848,7 +3848,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -3867,7 +3867,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4179,7 +4179,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4199,7 +4199,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4218,7 +4218,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4237,7 +4237,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4396,7 +4396,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4416,7 +4416,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4435,7 +4435,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4454,7 +4454,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4950,7 +4950,7 @@ export const tableJson: IWebDocument = {
                                           'childNodes': [
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4970,7 +4970,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -4989,7 +4989,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -5008,7 +5008,7 @@ export const tableJson: IWebDocument = {
                                             },
                                             {
                                               'nodeName': 'option',
-                                              'className': 'WebOption',
+                                              'className': 'SelectOption',
                                               'propObj': {
                                                 'styleObj': {},
                                                 'attrObj': {
@@ -6896,7 +6896,7 @@ export const testJson1: IWebDocument = {
                       'childNodes': [
                         {
                           'nodeName': 'option',
-                          'className': 'WebOption',
+                          'className': 'SelectOption',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -6916,7 +6916,7 @@ export const testJson1: IWebDocument = {
                         },
                         {
                           'nodeName': 'option',
-                          'className': 'WebOption',
+                          'className': 'SelectOption',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -6935,7 +6935,7 @@ export const testJson1: IWebDocument = {
                         },
                         {
                           'nodeName': 'option',
-                          'className': 'WebOption',
+                          'className': 'SelectOption',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {
@@ -6954,7 +6954,7 @@ export const testJson1: IWebDocument = {
                         },
                         {
                           'nodeName': 'option',
-                          'className': 'WebOption',
+                          'className': 'SelectOption',
                           'propObj': {
                             'styleObj': {},
                             'attrObj': {

@@ -4,6 +4,7 @@ import { TypeElement } from '../type-element/type-element.abstract';
 import { ITypeProperty } from '../type-element/type-element.interface';
 import { ITextNode } from '../text-node/text-node.interface';
 import { INodeAttr, IPath, ITypeNode } from './type-node.interface';
+import {RootElement} from "../root-element/root-element.class";
 const Entities: Record<number, string> = {
   /* < */ 0x3c: '&lt;',
   /* > */ 0x3e: '&gt;',
@@ -80,7 +81,7 @@ export abstract class TypeNode implements ITypeNode {
     // this.parent = null;
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
   }
-  get editor(): FormEditor {
+  get editor(): FormEditor { // FormEditor 是业务类，不能在框架中定义。
     // console.log('this.className is ', this.className);
     // if (this instanceof WebLayout) {
     //   return this.formEditor;
@@ -92,6 +93,12 @@ export abstract class TypeNode implements ITypeNode {
       throw Error('this.parentNode is undefined . ');
     }
     return this.parent.editor;
+  }
+  get root(): RootElement {
+    if (this.parent === undefined) {
+      throw Error('this.parentNode is undefined . ');
+    }
+    return this.parent.root;
   }
   get firstChild(): TypeNode | undefined {
     return this.childNodes && this.childNodes[0];
@@ -136,6 +143,11 @@ export abstract class TypeNode implements ITypeNode {
   //   }
   //   console.log('TypeNode.typeMap is ', TypeNode.typeMap);
   // }
+  /**
+   * 不独立为一个函数，是因为在这里，可以直接 this. 的方式调用。
+   * @param parent 不一定是this，还可以是父级、子级等等。
+   * @param node
+   */
   createItem(parent: TypeElement, node: ITypeNode): TypeNode | undefined {
     if (node.TypeClass === undefined) {
       console.error('node.TypeClass is undefined . ');

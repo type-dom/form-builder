@@ -1,8 +1,10 @@
+// 顺序不能随意调换，可能会加载报错。 todo 如何解决
 import { filter, fromEvent, switchMap, of, Observable, Subscription, map, Subject } from 'rxjs';
 import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
+import { RootElement } from '../type-dom/root-element/root-element.class';
 import { Cursor } from '../type-dom/web-style.enum';
 import { TableRow } from '../type-dom/element/html-element/table/row/row.class';
 import { TableDataCell } from '../type-dom/element/html-element/table/data-cell/data-cell.class';
@@ -26,6 +28,7 @@ import { AttachmentControl } from './core/controls/basic/attachment/attachment.c
 import { Test } from './views/test/test';
 
 export class FormEditor {
+  root: RootElement;
   // 光标
   cursor?: Cursor | null;
   // 选中的菜单
@@ -34,7 +37,6 @@ export class FormEditor {
   selectedControl: WebControl | null;
   // 选中的表格单元格
   selectedTableDataCell?: TableDataCell | null;
-
   layout: LayoutWrapper;
   // 对话框
   dialog: WebDialog;
@@ -60,15 +62,40 @@ export class FormEditor {
     // console.log('this.el.clientHeight is ', this.el.clientHeight);
     this.events = [];
     this.mode = mode;
+    this.root = new RootElement(editorEl);
     this.layout = new LayoutWrapper(this);
     this.dialog = new WebDialog(this);
     this.messageBox = new MessageBox(this);
     this.layout.childNodes.push(this.dialog, this.messageBox);
-    this.layout.render();
-    const json = this.layout.toJSON();
+    this.root.childNodes = [this.layout];
+    // this.root.createItem(this.root,{
+    //   TypeClass: LayoutWrapper,
+    //   propObj: {
+    //     styleObj: {},
+    //     attrObj: {}
+    //   },
+    //   childNodes: [
+    //     {
+    //       TypeClass: WebDialog,
+    //       propObj: {
+    //         styleObj: {},
+    //         attrObj: {},
+    //       }
+    //     },
+    //     {
+    //       TypeClass: MessageBox,
+    //       propObj: {
+    //         styleObj: {},
+    //         attrObj: {}
+    //       }
+    //     }
+    //   ]
+    // });
+    this.root.render();
+    const json = this.root.toJSON();
     console.log('json is ', json);
     // console.log('editorEl is ', editorEl);
-    editorEl.appendChild(this.layout.dom);
+    // editorEl.appendChild(this.layout.dom);
     const test = new Test(this);
     console.log('test is ', test);
     test.render();

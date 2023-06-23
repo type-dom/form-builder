@@ -1,18 +1,19 @@
+import { TypeNode } from '../../../../type-node/type-node.abstract';
 import { TextNode } from '../../../../text-node/text-node.class';
 import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { Select } from '../select.class';
-import { IWebOption } from './option.interface';
-export class WebOption extends TypeHtml implements IWebOption {
+import { ISelectOption } from './option.interface';
+export class SelectOption extends TypeHtml implements ISelectOption {
   nodeName: 'option';
-  className: 'WebOption';
+  className: 'SelectOption';
   dom: HTMLOptionElement;
-  childNodes: (TypeHtml | TextNode)[];
+  childNodes: TypeNode[];
   text: TextNode;
   constructor(public parent: Select) {
     super('option');
     this.nodeName = 'option';
     this.dom = document.createElement(this.nodeName);
-    this.className = 'WebOption';
+    this.className = 'SelectOption';
     this.propObj.attrObj = {
       name: 'option'
     };

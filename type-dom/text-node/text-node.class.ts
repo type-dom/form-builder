@@ -1,11 +1,6 @@
 /**
  * 虚拟文本节点。
  * ----> 本身不会渲染成标签。没有对应的HTML标签。
- *
- * -----> ? 选中状态
- * 有什么用处？？？？
- * text-run下，在选中时，生成新的text节点。 但背景颜色怎么设置？ 自带的选中？
- *
  */
 import { TypeNode } from '../type-node/type-node.abstract';
 import { TypeElement } from '../type-element/type-element.abstract';

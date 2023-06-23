@@ -23,7 +23,7 @@ export abstract class Overlay extends TypeDiv {
       overflow: 'auto',
       display: Display.none,
     });
-    document.body.appendChild(this.dom);
+    document.body.appendChild(this.dom); // 挂载在 body 上
     this.container = new OverlayContainer(this);
     this.childNodes = [this.container];
     this.initEvents();

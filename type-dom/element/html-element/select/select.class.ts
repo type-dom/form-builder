@@ -1,6 +1,6 @@
 import { IOption } from '../../../../src/core/controls/web-control.interface';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
-import { WebOption } from './option/option.class';
+import { SelectOption } from './option/option.class';
 import { ISelect } from './select.interface';
 import { fromEvent } from 'rxjs';
 
@@ -8,7 +8,7 @@ export class Select extends TypeHtml implements ISelect {
   nodeName: 'select';
   dom: HTMLSelectElement;
   className: 'Select';
-  childNodes: WebOption[];
+  childNodes: SelectOption[];
   value?: string | number | boolean;
   constructor(public parent: TypeHtml) {
     super('select');
@@ -24,7 +24,7 @@ export class Select extends TypeHtml implements ISelect {
   setOptions(options: IOption[], value: string | number | boolean): void {
     this.clearChildNodes();
     this.clearChildDom();
-    const firstOpt = new WebOption(this);
+    const firstOpt = new SelectOption(this);
     firstOpt.text.setText('请选择');
     firstOpt.addAttrObj({
       label: '请选择',
@@ -32,7 +32,7 @@ export class Select extends TypeHtml implements ISelect {
     });
     this.addChild(firstOpt);
     options.forEach(opt => {
-      const optObj = new WebOption(this);
+      const optObj = new SelectOption(this);
       optObj.text.setText(opt.label);
       optObj.addAttrObj({
         label: opt.label,

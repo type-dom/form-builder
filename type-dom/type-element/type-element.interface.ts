@@ -9,8 +9,8 @@ import { Heading } from '../element/html-element/heading/heading.class';
 import { Input } from '../element/html-element/input/input.class';
 import { Label } from '../element/html-element/label/label.class';
 import { ListItem } from '../element/html-element/unordered-list/list-item/list-item.class';
-import { WebOption } from '../element/html-element/select/option/option.class';
 import { Select } from '../element/html-element/select/select.class';
+import { SelectOption } from '../element/html-element/select/option/option.class';
 import { Span } from '../element/html-element/span/span.class';
 import { Textarea } from '../element/html-element/textarea/textarea.class';
 import { UnorderedList } from '../element/html-element/unordered-list/unordered-list.class';
@@ -48,10 +48,3 @@ export interface IWebBoundBox {
   width: number;
   height: number;
 }
-export type ElementClass = typeof Button | typeof Division | typeof Heading
-  | typeof Input | typeof Textarea | typeof Label| typeof Span
-  | typeof Select | typeof WebOption
-  | typeof UnorderedList | typeof ListItem
-  | typeof Table | typeof TableRow | typeof TableDataCell
-  | typeof TableHeader
-  | typeof TableHead | typeof TableBody | typeof TableFoot;
