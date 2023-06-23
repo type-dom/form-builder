@@ -36,7 +36,7 @@ export class TableControl extends WebComplexControl implements ITableControl {
   configTable(config: ITableConfig): void {
     this.formItem.itemContent.setTable(config);
     // console.log('table control config is ', config);
-    if (this.editor.mode === 'fill') {
+    if (this.appRoot.mode === 'fill') {
       // 填表模式下，将表格控件删除按钮替换位添加按钮。
       this.formItem.childNodes.splice(2, 1, this.formItem.addSpan);
     } else {
@@ -54,7 +54,7 @@ export class TableControl extends WebComplexControl implements ITableControl {
       fromEvent(this.label.dom, 'click').subscribe((e) => {
         // console.log('table control click . ');
         console.log('e.target is ', e.target);
-        this.editor.setSelectedTableDataCell(null);
+        this.appRoot.setSelectedTableDataCell(null);
       })
     );
   }

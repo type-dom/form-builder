@@ -2,6 +2,7 @@
  * TypeRoot是一个元素根节点抽象类
  * 作为前端项目的入口文件要继承根节点抽象类，并挂载到对应的 ID 上。
  */
+import { AppRoot } from '../../src/app-root';
 import { TypeDiv } from '../type-element/type-html/div/div.abstract';
 import { ITypeRoot } from './type-root.interface';
 /**
@@ -9,6 +10,7 @@ import { ITypeRoot } from './type-root.interface';
  * parent 只有自己 TypeRoot
  */
 export abstract class TypeRoot extends TypeDiv implements ITypeRoot {
+  abstract get appRoot(): AppRoot;
   parent: TypeRoot;
   // abstract app: any;
   protected constructor(el: HTMLElement | string) {
@@ -29,11 +31,4 @@ export abstract class TypeRoot extends TypeDiv implements ITypeRoot {
       }
     }
   }
-  get root(): TypeRoot {
-    return this;
-  }
-  // abstract get app(): any;
-  // getApp<T>(): T {
-  //   return this.app;
-  // }
 }

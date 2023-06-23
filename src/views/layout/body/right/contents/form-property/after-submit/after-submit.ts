@@ -11,10 +11,10 @@ export class AfterSubmitProperty extends PropertyTextarea {
     this.addAttrName('after-submit-property');
   }
   get afterSubmitStr(): string {
-    return this.editor.webDocument.propObj.attrObj['after-submit'] as string;
+    return this.appRoot.webDocument.propObj.attrObj['after-submit'] as string;
   }
   set afterSubmitStr(value: string) {
-    this.editor.webDocument.setAttribute('after-submit', value);
+    this.appRoot.webDocument.setAttribute('after-submit', value);
   }
   reset(value?: string): void {
     if (value !== undefined) { // 输入值的操作

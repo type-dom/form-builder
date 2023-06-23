@@ -16,11 +16,11 @@ export class SaveButton extends TypeButton {
   initEvents(): void {
     this.events.push(
       fromEvent(this.dom, 'click').subscribe(() => {
-        this.editor.messageBox.show();
-        this.editor.messageBox.setTitle('提醒');
-        this.editor.messageBox.confirm('你确定要保存表单吗？');
-        // this.editor.dialog.preview(this.editor.page);
-        // console.log('this.editor.form json is ', toJSON(this.editor.page));
+        this.appRoot.messageBox.show();
+        this.appRoot.messageBox.setTitle('提醒');
+        this.appRoot.messageBox.confirm('你确定要保存表单吗？');
+        // this.appRoot.dialog.preview(this.appRoot.page);
+        // console.log('this.appRoot.form json is ', toJSON(this.appRoot.page));
       })
     );
   }

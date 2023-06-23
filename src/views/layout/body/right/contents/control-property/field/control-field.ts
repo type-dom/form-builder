@@ -15,11 +15,11 @@ export class ControlFieldProperty extends PropertyCascade {
   }
 
   get fieldName(): string {
-    return this.editor?.selectedControl?.attrObj['field-name'] as string;
+    return this.appRoot?.selectedControl?.attrObj['field-name'] as string;
   }
 
   set fieldName(value: string) { // 是由二级下拉选择组装起来的，由 . 隔开，第1个是，第一级的值，第2个是第二级的值
-    this.editor.selectedControl?.setAttribute('field-name', value);
+    this.appRoot.selectedControl?.setAttribute('field-name', value);
   }
 
   resetFieldConfig(config: IOptionConfig): void {
@@ -40,7 +40,7 @@ export class ControlFieldProperty extends PropertyCascade {
       this.fieldName = value;
       return;
     }
-    if (this.editor.selectedControl instanceof TableControl) {
+    if (this.appRoot.selectedControl instanceof TableControl) {
       this.hide();
       return;
     }
@@ -53,8 +53,8 @@ export class ControlFieldProperty extends PropertyCascade {
         // const secondStageValue = this.fieldName.split('.')[1];
         this.fieldConfig = Object.assign(this.fieldConfig, { resultValue: this.fieldName });
         // console.log('this.fieldConfig is ', this.fieldConfig);
-        // if (!this.editor.selectedControl) throw Error('请先选中某个控件');
-        // this.resetFieldConfig(this.editor.selectedControl, this.fieldConfig);
+        // if (!this.appRoot.selectedControl) throw Error('请先选中某个控件');
+        // this.resetFieldConfig(this.appRoot.selectedControl, this.fieldConfig);
         this.resetCascadeConfig(this.fieldConfig);
       } else {
         console.error('this.fieldConfig is undefined . ');
@@ -70,8 +70,8 @@ export class ControlFieldProperty extends PropertyCascade {
         //   label: '请先选择上级',
         //   value: 0
         // }], 0);
-        // if (!this.editor.selectedControl) throw Error('请先选中某个控件');
-        // this.resetFieldConfig(this.editor.selectedControl, this.fieldConfig);
+        // if (!this.appRoot.selectedControl) throw Error('请先选中某个控件');
+        // this.resetFieldConfig(this.appRoot.selectedControl, this.fieldConfig);
         // this.select.resetConfig(this.fieldConfig);
         this.resetCascadeConfig(this.fieldConfig);
       } else {
@@ -82,8 +82,8 @@ export class ControlFieldProperty extends PropertyCascade {
   }
   fieldPropertyReset(value?: string): void {
     // console.log('control field value is ', value);
-    if (!this.editor.selectedTableDataCell) {
-      console.error('this.editor.selectedTableDataCell is undefined . ');
+    if (!this.appRoot.selectedTableDataCell) {
+      console.error('this.appRoot.selectedTableDataCell is undefined . ');
       return;
     }
     // todo 二级下拉选择的值。二级下拉选中时触发。
@@ -93,9 +93,9 @@ export class ControlFieldProperty extends PropertyCascade {
       //     this.select.resetConfig(this.fieldConfig);
       //   }
       // }
-      const table = this.editor.selectedTableDataCell.parent.parent;
+      const table = this.appRoot.selectedTableDataCell.parent.parent;
       const tableHeader = table.config?.tableHeader;
-      const index = this.editor.selectedTableDataCell.index;
+      const index = this.appRoot.selectedTableDataCell.index;
       // console.log('tableHeader is ', tableHeader);
       // console.log('index is ', index);
 
@@ -108,8 +108,8 @@ export class ControlFieldProperty extends PropertyCascade {
       return;
     }
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    const tableHeader = this.editor.selectedTableDataCell.parent.parent.config?.tableHeader;
-    const index = this.editor.selectedTableDataCell.index;
+    const tableHeader = this.appRoot.selectedTableDataCell.parent.parent.config?.tableHeader;
+    const index = this.appRoot.selectedTableDataCell.index;
     // console.log('tableHeader is ', tableHeader);
     // console.log('index is ', index);
 
@@ -118,8 +118,8 @@ export class ControlFieldProperty extends PropertyCascade {
       // console.log('tableHeader[index].label is ', tableHeader[index].label);
       this.fieldConfig = Object.assign(this.fieldConfig, { resultValue: tableHeader[index].name });
       console.log('this.fieldConfig is ', this.fieldConfig);
-      // if (!this.editor.selectedControl) throw Error('请先选中某个控件');
-      // this.resetFieldConfig(this.editor.selectedControl, this.fieldConfig);
+      // if (!this.appRoot.selectedControl) throw Error('请先选中某个控件');
+      // this.resetFieldConfig(this.appRoot.selectedControl, this.fieldConfig);
       this.resetCascadeConfig(this.fieldConfig);
     }
   }

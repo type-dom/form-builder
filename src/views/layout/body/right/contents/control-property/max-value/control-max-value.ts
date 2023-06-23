@@ -25,16 +25,16 @@ export class MaxValueProperty extends PropertyInput {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.editor.selectedControl instanceof NumericalControl) {
-        this.editor.selectedControl?.formItem.itemContent.setAttribute('max', value);
+      if (this.appRoot.selectedControl instanceof NumericalControl) {
+        this.appRoot.selectedControl?.formItem.itemContent.setAttribute('max', value);
       } else {
         console.error('选中的控件不是数字控件。');
       }
       return;
     }
-    if (this.editor.selectedControl instanceof NumericalControl) {
+    if (this.appRoot.selectedControl instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MaxValue = this.editor.selectedControl.formItem.itemContent.propObj.attrObj.max as string;
+      const MaxValue = this.appRoot.selectedControl.formItem.itemContent.propObj.attrObj.max as string;
       if (MaxValue) {
         this.resetInputValue(MaxValue);
       } else {
@@ -47,16 +47,16 @@ export class MaxValueProperty extends PropertyInput {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.editor.selectedTableDataCell?.control instanceof NumericalControl) {
-        this.editor.selectedTableDataCell.control.formItem.itemContent.setAttribute('max', value);
+      if (this.appRoot.selectedTableDataCell?.control instanceof NumericalControl) {
+        this.appRoot.selectedTableDataCell.control.formItem.itemContent.setAttribute('max', value);
       } else {
-        console.error('this.editor.selectedTableDataCell?.control is null . ');
+        console.error('this.appRoot.selectedTableDataCell?.control is null . ');
       }
       return;
     }
-    if (this.editor.selectedTableDataCell?.control instanceof NumericalControl) {
+    if (this.appRoot.selectedTableDataCell?.control instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MaxValue = this.editor.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.max as string;
+      const MaxValue = this.appRoot.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.max as string;
       if (MaxValue) {
         this.resetInputValue(MaxValue);
       } else {

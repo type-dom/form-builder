@@ -46,7 +46,7 @@ export class FormColumnProperty extends PropertyRadio {
   reset(value?: string): void {
     if (value !== undefined) {
       controlStyle.width = value; // 改变新建控件的宽度。
-      this.editor.allControls.forEach(control => {
+      this.appRoot.allControls.forEach(control => {
         if (control.className === 'TableControl') {
           control.setStyleObj({
             width: '100%',

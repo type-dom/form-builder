@@ -21,11 +21,11 @@ export class TabCountProperty extends PropertyInput {
 
   reset(value?: string): void {
     if (value !== undefined) {
-      this.editor.webDocument.tabs.setTabs(parseInt(value, 10));
+      this.appRoot.webDocument.tabs.setTabs(parseInt(value, 10));
       return;
     }
     // todo 根据已有的页面数，设置 tab数量
-    const count = this.editor.webDocument.tabs.childNodes.length;
+    const count = this.appRoot.webDocument.tabs.childNodes.length;
     // console.error('count is ', count);
     if (count) {
       this.resetInputValue(String(count));

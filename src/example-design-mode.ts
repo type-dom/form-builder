@@ -1,6 +1,6 @@
 import { debounce, debounceTime, switchMap, fromEvent, map, filter, Observable, Subscription, merge } from 'rxjs';
 import './styles/index.scss';
-import { FormEditor } from './form-editor';
+import { AppRoot } from './app-root';
 import {
   fieldsConfig,
   formData,
@@ -31,12 +31,12 @@ fromEvent(document, 'DOMContentLoaded').subscribe(e => {
 // });
 
 class ExampleDesignMode {
-  private editor: FormEditor;
+  private editor: AppRoot;
 
   // private events: Subscription[];
 
   constructor(public el: HTMLElement) {
-    this.editor = new FormEditor(el);
+    this.editor = new AppRoot(el);
     // 测试混合表单
     // this.editor.createInstance(formJson);
     // this.editor.setFormData(exampleData);

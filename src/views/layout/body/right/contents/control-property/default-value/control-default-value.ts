@@ -31,28 +31,28 @@ export class ControlDefaultValueProperty extends PropertyInput {
   }
   get formula(): string {
     if (this.parent instanceof ControlProperty) {
-      if (!this.editor.selectedControl) throw Error('没有选中的控件');
-      return this.editor.selectedControl?.attrObj.formula as string;
+      if (!this.appRoot.selectedControl) throw Error('没有选中的控件');
+      return this.appRoot.selectedControl?.attrObj.formula as string;
     } else {
-      if (!this.editor.selectedTableDataCell) throw Error('没有选中的单元格控件');
-      return this.editor.selectedTableDataCell?.attrObj.formula as string;
+      if (!this.appRoot.selectedTableDataCell) throw Error('没有选中的单元格控件');
+      return this.appRoot.selectedTableDataCell?.attrObj.formula as string;
     }
   }
   set formula(value: string) {
     if (this.parent instanceof ControlProperty) {
-      if (!this.editor.selectedControl) throw Error('没有选中的控件');
-      this.editor.selectedControl.setAttribute('formula', value);
+      if (!this.appRoot.selectedControl) throw Error('没有选中的控件');
+      this.appRoot.selectedControl.setAttribute('formula', value);
     } else {
-      if (!this.editor.selectedTableDataCell) throw Error('没有选中的单元格控件');
-      this.editor.selectedTableDataCell?.setAttribute('formula', value);
+      if (!this.appRoot.selectedTableDataCell) throw Error('没有选中的单元格控件');
+      this.appRoot.selectedTableDataCell?.setAttribute('formula', value);
       return;
     }
   }
   // get formulaVisible(): boolean {
-  //   return this.editor.selectedControl?.attrObj['formula-visible'] as boolean;
+  //   return this.appRoot.selectedControl?.attrObj['formula-visible'] as boolean;
   // }
   // set formulaVisible(value: boolean) {
-  //   this.editor.selectedControl?.setAttribute('formula-visible', value);
+  //   this.appRoot.selectedControl?.setAttribute('formula-visible', value);
   // }
   // initEvents(): void {
   //   super.initEvents();
@@ -61,11 +61,11 @@ export class ControlDefaultValueProperty extends PropertyInput {
   //   //     console.log('this.button.dom click . ');
   //   //     // this.formulaVisible = true;
   //   //     // console.log('this.formulaVisible is ', this.formulaVisible);
-  //   //     // this.editor.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
-  //   //     console.log('this.editor.formulaVisibleObservable is ', this.editor.formulaVisibleObservable);
-  //   //     // this.editor.dialog.setTitle('公式');
+  //   //     // this.appRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
+  //   //     console.log('this.appRoot.formulaVisibleObservable is ', this.appRoot.formulaVisibleObservable);
+  //   //     // this.appRoot.dialog.setTitle('公式');
   //   //     // if (!this.textarea) {
-  //   //     //   this.textarea = new Textarea(this.editor.dialog.container.body);
+  //   //     //   this.textarea = new Textarea(this.appRoot.dialog.container.body);
   //   //     //   this.textarea.setStyleObj({
   //   //     //     width: '100%',
   //   //     //     minHeight: '80px',
@@ -73,9 +73,9 @@ export class ControlDefaultValueProperty extends PropertyInput {
   //   //     // }
   //   //     // // todo 加载之前保存的公式
   //   //     // this.textarea.setValue('');
-  //   //     // this.editor.dialog.container.body.childNodes = [this.textarea];
-  //   //     // this.editor.dialog.container.body.render();
-  //   //     // this.editor.dialog.show();
+  //   //     // this.appRoot.dialog.container.body.childNodes = [this.textarea];
+  //   //     // this.appRoot.dialog.container.body.render();
+  //   //     // this.appRoot.dialog.show();
   //   //   }),
   //   // );
   // }
@@ -91,19 +91,19 @@ export class ControlDefaultValueProperty extends PropertyInput {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) { // 输入值的操作
-      if (this.editor.selectedControl instanceof SingleInputControl ||
-        this.editor.selectedControl instanceof MultilineInputControl) {
-        this.editor.selectedControl?.resetDefaultValue(value);
+      if (this.appRoot.selectedControl instanceof SingleInputControl ||
+        this.appRoot.selectedControl instanceof MultilineInputControl) {
+        this.appRoot.selectedControl?.resetDefaultValue(value);
       } else {
-        console.error('this.editor.selectedControl is not SingleInputControl or MultilineInputControl . ');
+        console.error('this.appRoot.selectedControl is not SingleInputControl or MultilineInputControl . ');
       }
       return;
     }
     // 选中控件
     if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-    if (this.editor.selectedControl instanceof SingleInputControl ||
-      this.editor.selectedControl instanceof MultilineInputControl) {
-      const defaultValue = this.editor.selectedControl?.defaultValue;
+    if (this.appRoot.selectedControl instanceof SingleInputControl ||
+      this.appRoot.selectedControl instanceof MultilineInputControl) {
+      const defaultValue = this.appRoot.selectedControl?.defaultValue;
       if (defaultValue) {
         this.resetInputValue(defaultValue);
       } else {
@@ -114,35 +114,35 @@ export class ControlDefaultValueProperty extends PropertyInput {
     }
   }
   fieldPropertyReset(value?: string): void {
-    if (!this.editor.selectedTableDataCell) {
-      console.error('this.editor.selectedTableDataCell is null .');
+    if (!this.appRoot.selectedTableDataCell) {
+      console.error('this.appRoot.selectedTableDataCell is null .');
       return;
     }
-    if (this.editor.selectedTableDataCell.control instanceof TextNode) {
-      console.error('this.editor.selectedTableDataCell.control instanceof TextNode');
+    if (this.appRoot.selectedTableDataCell.control instanceof TextNode) {
+      console.error('this.appRoot.selectedTableDataCell.control instanceof TextNode');
       return;
     }
     if (value !== undefined) { // 输入值的操作
-      if (this.editor.selectedTableDataCell.control instanceof SingleInputControl ||
-        this.editor.selectedTableDataCell.control instanceof MultilineInputControl) {
-        this.editor.selectedTableDataCell.control.resetDefaultValue(value);
+      if (this.appRoot.selectedTableDataCell.control instanceof SingleInputControl ||
+        this.appRoot.selectedTableDataCell.control instanceof MultilineInputControl) {
+        this.appRoot.selectedTableDataCell.control.resetDefaultValue(value);
       } else {
-        console.error('this.editor.selectedTableDataCell.control SingleInputControl or MultilineInputControl . ');
+        console.error('this.appRoot.selectedTableDataCell.control SingleInputControl or MultilineInputControl . ');
       }
       return;
     }
-    if (this.editor.selectedTableDataCell.control instanceof SingleInputControl ||
-      this.editor.selectedTableDataCell.control instanceof MultilineInputControl) {
+    if (this.appRoot.selectedTableDataCell.control instanceof SingleInputControl ||
+      this.appRoot.selectedTableDataCell.control instanceof MultilineInputControl) {
       // 选中控件
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const defaultValue = this.editor.selectedTableDataCell.control.defaultValue;
+      const defaultValue = this.appRoot.selectedTableDataCell.control.defaultValue;
       if (defaultValue) {
         this.resetInputValue(defaultValue);
       } else {
         this.resetInputValue('');
       }
     } else {
-      console.error('this.editor.selectedTableDataCell.control is not SingleInputControl or MultilineInputControl . ');
+      console.error('this.appRoot.selectedTableDataCell.control is not SingleInputControl or MultilineInputControl . ');
       this.hide();
     }
   }

@@ -1,5 +1,5 @@
-import { TextNode } from '../../../text-node/text-node.class';
-import { TypeDiv } from '../../../type-element/type-html/div/div.abstract';
+import { TextNode } from '../../../../type-dom/text-node/text-node.class';
+import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
 import { WebForm } from '../form';
 
 export class FormHeader extends TypeDiv {

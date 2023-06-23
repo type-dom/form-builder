@@ -27,26 +27,26 @@ export class ControlTitleProperty extends PropertyInput {
   // 选中控件时，重置控件属性 ---> 重置控件标题
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      this.editor.selectedControl?.resetLabelText(this.content.dom.value);
+      this.appRoot.selectedControl?.resetLabelText(this.content.dom.value);
       return;
     }
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    if (this.editor.selectedControl?.formItem.labelText?.nodeValue) {
-      this.resetInputValue(this.editor.selectedControl.formItem.labelText.nodeValue);
+    if (this.appRoot.selectedControl?.formItem.labelText?.nodeValue) {
+      this.resetInputValue(this.appRoot.selectedControl.formItem.labelText.nodeValue);
     } else {
       this.resetInputValue('');
     }
   }
 
   fieldPropertyReset(value?: string): void {
-    if (!this.editor.selectedTableDataCell) {
-      console.error('this.editor.selectedTableDataCell is null .');
+    if (!this.appRoot.selectedTableDataCell) {
+      console.error('this.appRoot.selectedTableDataCell is null .');
       return;
     }
     if (value !== undefined) {
-      const table = this.editor.selectedTableDataCell.parent.parent;
-      const tableHeader = this.editor.selectedTableDataCell.parent.parent.config?.tableHeader;
-      const index = this.editor.selectedTableDataCell.index;
+      const table = this.appRoot.selectedTableDataCell.parent.parent;
+      const tableHeader = this.appRoot.selectedTableDataCell.parent.parent.config?.tableHeader;
+      const index = this.appRoot.selectedTableDataCell.index;
       if (tableHeader && index !== undefined) {
         tableHeader[index].label = value;
         // 修改表头标签
@@ -57,9 +57,9 @@ export class ControlTitleProperty extends PropertyInput {
       return;
     }
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    const tableHeader = this.editor.selectedTableDataCell?.parent.parent.config?.tableHeader;
+    const tableHeader = this.appRoot.selectedTableDataCell?.parent.parent.config?.tableHeader;
     // console.log('tableHeader is ', tableHeader);
-    const index = this.editor.selectedTableDataCell?.index;
+    const index = this.appRoot.selectedTableDataCell?.index;
     // console.log('index is ', index);
     if (tableHeader && index !== undefined) {
       // console.log('tableHeader[index].label is ', tableHeader[index].label);

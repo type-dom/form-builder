@@ -1,18 +1,15 @@
 import { TypeHtml } from '../../../type-dom/type-element/type-html/type-html.abstract';
 import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
-// import { Parser } from '../../../type-dom/parser/parser.class';
-import { FormEditor } from '../../form-editor';
-import template from './test.html';
+import { AppRoot } from '../../app-root';
 import { TextNode } from '../../../type-dom/text-node/text-node.class';
 import { Span } from '../../../type-dom/element/html-element/span/span.class';
 import { Parser } from '../../../type-dom/parser/parser.class';
+import template from './test.html';
 export class Test extends TypeDiv {
   className: 'Test';
-  parent: TypeHtml;
-  constructor(public formEditor: FormEditor) {
+  constructor(public parent: AppRoot) {
     super();
     this.className = 'Test';
-    this.parent = this;
     // this.childNodes = this.createItems(this, [{
     //   TypeClass: Span,
     //   propObj: {

@@ -34,7 +34,7 @@ export abstract class ControlMenu extends TypeDiv implements IControlMenu {
       }),
       // 鼠标出
       fromEvent(this.dom, 'mouseout').subscribe(() => {
-        if (this.editor.selectedMenu !== this) {
+        if (this.appRoot.selectedMenu !== this) {
           this.setStyleObj({
             backgroundColor: '#eee',
             background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
@@ -48,21 +48,21 @@ export abstract class ControlMenu extends TypeDiv implements IControlMenu {
       }),
       // 点击后直接创建控件，并加载到页面中
       fromEvent(this.dom, 'click').subscribe(() => {
-        this.editor.setSelectedMenu(this);
-        console.log('this.editor.selectedMenu is ', this.editor.selectedMenu);
+        this.appRoot.setSelectedMenu(this);
+        console.log('this.appRoot.selectedMenu is ', this.appRoot.selectedMenu);
         // console.log('control is ', control);
-        // console.log('this.editor.selectedTableDataCell is ', this.editor.selectedTableDataCell);
+        // console.log('this.appRoot.selectedTableDataCell is ', this.appRoot.selectedTableDataCell);
         // console.log('this.ControlClass.name is ', this.ControlClass.name);
         // console.log('TableControl.name is ', TableControl.name);
         // 判断是否选中表格的单元格
-        if (this.editor.selectedTableDataCell && this.ControlClass !== TableControl) { // 修改表格单元格的控件。
-          this.editor.selectedTableDataCell.setControl(this.ControlClass as Exclude<ControlClass, typeof TableControl>);
+        if (this.appRoot.selectedTableDataCell && this.ControlClass !== TableControl) { // 修改表格单元格的控件。
+          this.appRoot.selectedTableDataCell.setControl(this.ControlClass as Exclude<ControlClass, typeof TableControl>);
           // todo 修改单元格中的控件时， 要触发 字段属性 reset
-          this.editor.fieldProperty.reset();
-          this.editor.selectedTableDataCell.render();
+          this.appRoot.fieldProperty.reset();
+          this.appRoot.selectedTableDataCell.render();
         } else { // 添加到页面中
           // 创建控件
-          const control = new this.ControlClass(this.editor.currentPage); // todo currentPage
+          const control = new this.ControlClass(this.appRoot.currentPage); // todo currentPage
 
           // 表格控件不受表单列数设置影响。
           if (control instanceof TableControl) {
@@ -75,9 +75,9 @@ export abstract class ControlMenu extends TypeDiv implements IControlMenu {
               width: 'calc(100% - ' + labelStyle.width + ')',
             });
           }
-          // console.log('add control this.editor.currentPage is ', this.editor.currentPage);
-          this.editor.currentPage.appendChild(control);
-          this.editor.setSelectedControl(control);
+          // console.log('add control this.appRoot.currentPage is ', this.appRoot.currentPage);
+          this.appRoot.currentPage.appendChild(control);
+          this.appRoot.setSelectedControl(control);
         }
       }),
     );

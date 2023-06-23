@@ -1,19 +1,14 @@
 import { fromEvent, Observable } from 'rxjs';
-import { TypeButton } from '../../../../type-element/type-html/button/button.abstract';
-import { buttonStyle } from '../../../../type-element/type-html/button/button.const';
-import { TextNode } from '../../../../text-node/text-node.class';
+import { TypeButton } from '../../../../../type-dom/type-element/type-html/button/button.abstract';
+import { buttonStyle } from '../../../../../type-dom/type-element/type-html/button/button.const';
+import { TextNode } from '../../../../../type-dom/text-node/text-node.class';
 import { FormFooter } from '../footer';
 export class SubmitButton extends TypeButton {
-  nodeName: 'button';
   className: 'SubmitButton';
-  dom: HTMLButtonElement;
   textNode: TextNode;
   submitObservable: Observable<Event>;
   constructor(public parent: FormFooter) {
     super();
-    this.nodeName = 'button';
-    this.dom = document.createElement(this.nodeName);
-
     this.className = 'SubmitButton';
     this.propObj = {
       attrObj: {
@@ -26,16 +21,16 @@ export class SubmitButton extends TypeButton {
     this.initEvents();
   }
   get beforeSubmitStr(): string {
-    return this.editor.webDocument.attrObj['before-submit'] as string;
+    return this.appRoot.webDocument.attrObj['before-submit'] as string;
   }
   get afterSubmitStr(): string {
-    return this.editor.webDocument.attrObj['after-submit'] as string;
+    return this.appRoot.webDocument.attrObj['after-submit'] as string;
   }
   initEvents(): void {
     this.events.push(
       this.submitObservable.subscribe(() => {
         console.log('submit . ');
-        console.log('this.editor.exampleData is ', this.editor.formData);
+        console.log('this.appRoot.exampleData is ', this.appRoot.formData);
         this.submit();
       })
     );
@@ -46,7 +41,7 @@ export class SubmitButton extends TypeButton {
       this.createFun(this.beforeSubmitStr);
     }
     // todo submit方法 是否也要设计表单时确定 ？？？
-    console.log('this.editor.webDocument', this.editor.webDocument);
+    console.log('this.appRoot.webDocument', this.appRoot.webDocument);
     if (this.afterSubmitStr) {
       this.createFun(this.afterSubmitStr);
     }
@@ -54,6 +49,6 @@ export class SubmitButton extends TypeButton {
   createFun(value: string | number | boolean): void {
     // eslint-disable-next-line no-new-func
     const fun = new Function('return ' + value);
-    fun(this.editor.webDocument);
+    fun(this.appRoot.webDocument);
   }
 }

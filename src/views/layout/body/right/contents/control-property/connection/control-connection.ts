@@ -28,10 +28,10 @@ export class ControlConnectionProperty extends PropertySpan {
   //   this.events.push(
   //     fromEvent(this.button.dom, 'click').subscribe(() => {
   //       console.log('this.btn.dom click . ');
-  //       // this.editor.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
-  //       console.log('this.editor.connectionObservable is ', this.editor.connectionObservable);
-  //       // this.editor.selectedControl?.resetConnectionItem('ddd');
-  //       // console.log('this.selectionControl.connectionItem is ', this.editor.selectedControl?.connectionItem);
+  //       // this.appRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
+  //       console.log('this.appRoot.connectionObservable is ', this.appRoot.connectionObservable);
+  //       // this.appRoot.selectedControl?.resetConnectionItem('ddd');
+  //       // console.log('this.selectionControl.connectionItem is ', this.appRoot.selectedControl?.connectionItem);
   //     }),
   //   );
   // }
@@ -47,18 +47,18 @@ export class ControlConnectionProperty extends PropertySpan {
   }
   controlPropertyReset(label?:string, value?: string): void {
     if (value !== undefined && label !== undefined) { // 输入值的操作
-      if (this.editor.selectedControl instanceof ConnectionControl) {
-        this.editor.selectedControl.resetConnectionConfig(label, value);
+      if (this.appRoot.selectedControl instanceof ConnectionControl) {
+        this.appRoot.selectedControl.resetConnectionConfig(label, value);
         this.resetText(label);
       } else {
         console.error('当前控件不是关联选项控件.');
       }
       return;
     }
-    if (this.editor.selectedControl instanceof ConnectionControl) {
+    if (this.appRoot.selectedControl instanceof ConnectionControl) {
       // 选中控件
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const label = this.editor.selectedControl?.connectionConfigLabel;
+      const label = this.appRoot.selectedControl?.connectionConfigLabel;
       if (label) {
         this.resetText(label);
       } else {
@@ -70,17 +70,17 @@ export class ControlConnectionProperty extends PropertySpan {
   }
   fieldPropertyReset(label?:string, value?: string): void {
     if (value !== undefined && label !== undefined) { // 输入值的操作
-      if (this.editor.selectedTableDataCell?.control instanceof ConnectionControl) {
-        this.editor.selectedTableDataCell.control.resetConnectionConfig(label, value);
+      if (this.appRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+        this.appRoot.selectedTableDataCell.control.resetConnectionConfig(label, value);
         this.resetText(label);
       } else {
         console.error('当前控件不是关联选项控件');
       }
       return;
     }
-    if (this.editor.selectedTableDataCell?.control instanceof ConnectionControl) {
+    if (this.appRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const label = this.editor.selectedTableDataCell.control?.connectionConfigLabel;
+      const label = this.appRoot.selectedTableDataCell.control?.connectionConfigLabel;
       if (label) {
         this.resetText(label);
       } else {

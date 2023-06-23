@@ -53,7 +53,7 @@ export class TableHead extends TypeHtml implements ITableHead {
   initEvents(): void {
     this.events.push(
       fromEvent(this.dom, 'click').subscribe(() => {
-        this.editor.setSelectedTableDataCell(null);
+        this.appRoot.setSelectedTableDataCell(null);
       })
     );
   }

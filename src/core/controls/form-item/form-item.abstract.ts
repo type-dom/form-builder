@@ -93,7 +93,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
     this.itemContent.setPropObj(itemContentLiteral.propObj);
     // 实例化 ----> 在子类中实例化 todo 只有 TableItem中重写了 ？？？
     // this.itemContent.createInstance(itemContentLiteral);
-    if (this.editor.mode !== 'design') {
+    if (this.appRoot.mode !== 'design') {
       this.deleteSpan.hide();
     }
   }

@@ -67,7 +67,7 @@ export abstract class PropertyCascade extends PropertyItem {
   }
 
   get fieldConfig(): IOptionConfig | undefined {
-    const fieldConfigStr = this.editor.webDocument.attrObj['field-config'];
+    const fieldConfigStr = this.appRoot.webDocument.attrObj['field-config'];
     if (fieldConfigStr) {
       const configJson = JSON.parse(fieldConfigStr as string) as IOptionConfig;
       let optionConfig: IOptionConfig = {
@@ -111,11 +111,11 @@ export abstract class PropertyCascade extends PropertyItem {
   }
 
   set fieldConfig(value: IOptionConfig | undefined) {
-    this.editor.webDocument.setAttribute('field-config', JSON.stringify(value));
+    this.appRoot.webDocument.setAttribute('field-config', JSON.stringify(value));
   }
 
   resetCascadeConfigResultValue(value: string | number | boolean): void {
-    // this.editor.selectedControl?.propObj.attrObj.optionConfig''
+    // this.appRoot.selectedControl?.propObj.attrObj.optionConfig''
     // this.cascadeConfig = Object.assign(this.cascadeConfig, { resultValue: value });
     if (this.cascadeConfig) {
       this.cascadeConfig.resultValue = value;

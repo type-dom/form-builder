@@ -45,42 +45,42 @@ export class RequiredProperty extends PropertyRadio {
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
       if (
-        this.editor.selectedControl?.itemContent instanceof Input
-        || this.editor.selectedControl?.itemContent instanceof Textarea
+        this.appRoot.selectedControl?.itemContent instanceof Input
+        || this.appRoot.selectedControl?.itemContent instanceof Textarea
       ) {
-        this.editor.selectedControl?.itemContent.setAttribute('required', !!value);
+        this.appRoot.selectedControl?.itemContent.setAttribute('required', !!value);
       }
       return;
     }
     // when select control
     console.log('this.styleObj.display is ', this.styleObj.display);
     if (this.styleObj.display === 'none') this.show();
-    const required = !!this.editor.selectedControl?.formItem.itemContent.attrObj.required;
+    const required = !!this.appRoot.selectedControl?.formItem.itemContent.attrObj.required;
     console.log('required is ', required);
     this.resetResultValue(required ? 'required' : '');
   }
   fieldPropertyReset(value?: string): void {
-    if (!this.editor.selectedTableDataCell) {
-      console.error('this.editor.selectedTableDataCell is null . ');
+    if (!this.appRoot.selectedTableDataCell) {
+      console.error('this.appRoot.selectedTableDataCell is null . ');
       return;
     }
-    if (this.editor.selectedTableDataCell.control instanceof TextNode) {
-      console.error('this.editor.selectedTableDataCell.control is not WebControl . ');
+    if (this.appRoot.selectedTableDataCell.control instanceof TextNode) {
+      console.error('this.appRoot.selectedTableDataCell.control is not WebControl . ');
       return;
     }
     if (value !== undefined) {
       if (
-        this.editor.selectedTableDataCell.control.itemContent instanceof Input
-        || this.editor.selectedTableDataCell.control.itemContent instanceof Textarea
+        this.appRoot.selectedTableDataCell.control.itemContent instanceof Input
+        || this.appRoot.selectedTableDataCell.control.itemContent instanceof Textarea
       ) {
-        this.editor.selectedTableDataCell.control.itemContent.setAttribute('required', !!value);
+        this.appRoot.selectedTableDataCell.control.itemContent.setAttribute('required', !!value);
       }
       return;
     }
     // when select control
     console.log('this.styleObj.display is ', this.styleObj.display);
     if (this.styleObj.display === 'none') this.show();
-    const required = !!this.editor.selectedTableDataCell.control.formItem.itemContent.attrObj.required;
+    const required = !!this.appRoot.selectedTableDataCell.control.formItem.itemContent.attrObj.required;
     console.log('required is ', required);
     this.resetResultValue(required ? 'required' : '');
   }

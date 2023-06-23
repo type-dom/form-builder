@@ -138,7 +138,7 @@ export class WebDocument extends TypeDiv implements IWebDocument {
         // console.log(this.allPages, 'this.allPages');
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          this.editor.setSelectedControl(null);
+          this.appRoot.setSelectedControl(null);
         }
       })
     );

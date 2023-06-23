@@ -18,11 +18,11 @@ export class BodyWrapper extends TypeHtml {
     this.nodeName = 'section';
     this.dom = document.createElement(this.nodeName);
     this.className = 'BodyWrapper';
-    console.log('this.editor.el.clientHeight is ', this.editor.el.clientHeight);
+    console.log('this.editor.el.clientHeight is ', this.appRoot.el.clientHeight);
     this.propObj = {
       styleObj: {
         display: Display.flex,
-        height: 'calc(' + this.editor.el.clientHeight + 'px - 60px)',
+        height: 'calc(' + this.appRoot.el.clientHeight + 'px - 60px)',
         justifyContent: 'space-between'
       },
       attrObj: {

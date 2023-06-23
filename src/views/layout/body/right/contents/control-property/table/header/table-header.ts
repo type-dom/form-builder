@@ -26,11 +26,11 @@ export class TableHeaderProperty extends PropertyItem {
 
   // todo 只修改选中的表格
   reset(value: string): void {
-    if (this.editor.selectedControl instanceof TableControl) {
-      const webTable = this.editor.selectedControl.formItem.itemContent;
+    if (this.appRoot.selectedControl instanceof TableControl) {
+      const webTable = this.appRoot.selectedControl.formItem.itemContent;
       if (webTable.config?.mode) {
         webTable.config.mode = value as 'editable' | 'disabled' | undefined;
-        this.editor.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
+        this.appRoot.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
         webTable.setTable(webTable.config);
         console.log('webTable is ', webTable);
         webTable.render();

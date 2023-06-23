@@ -83,7 +83,7 @@ export class TableRow extends TypeHtml implements ITableRow {
         this.appendChild(tdObj);
       }
     });
-    if (this.editor.mode === 'fill') {
+    if (this.appRoot.mode === 'fill') {
       // console.log('table row mod design ');
       // todo 只在dom上渲染，而不加到子节点上。
       this.appendChild(this.deleteSpan);

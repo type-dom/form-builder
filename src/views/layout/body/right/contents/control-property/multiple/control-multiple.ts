@@ -42,14 +42,14 @@ export class MultipleProperty extends PropertyRadio {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.editor.selectedControl instanceof AttachmentControl) {
-        this.editor.selectedControl.itemContent.setAttribute('multiple', !!value);
+      if (this.appRoot.selectedControl instanceof AttachmentControl) {
+        this.appRoot.selectedControl.itemContent.setAttribute('multiple', !!value);
       }
       return;
     }
-    if (this.editor.selectedControl instanceof AttachmentControl) {
+    if (this.appRoot.selectedControl instanceof AttachmentControl) {
       if (this.styleObj.display === 'none') this.show();
-      const multiple = !!this.editor.selectedControl?.formItem.itemContent.attrObj.multiple;
+      const multiple = !!this.appRoot.selectedControl?.formItem.itemContent.attrObj.multiple;
       this.resetResultValue(multiple ? 'multiple' : '');
     } else {
       this.hide();
@@ -57,16 +57,16 @@ export class MultipleProperty extends PropertyRadio {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.editor.selectedTableDataCell?.control instanceof AttachmentControl) {
-        this.editor.selectedTableDataCell.control.itemContent.setAttribute('multiple', !!value);
+      if (this.appRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
+        this.appRoot.selectedTableDataCell.control.itemContent.setAttribute('multiple', !!value);
       } else {
-        console.error('this.editor.selectedTableDataCell.control is not AttachmentControl . ');
+        console.error('this.appRoot.selectedTableDataCell.control is not AttachmentControl . ');
       }
       return;
     }
-    if (this.editor.selectedTableDataCell?.control instanceof AttachmentControl) {
+    if (this.appRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
       if (this.styleObj.display === 'none') this.show();
-      const multiple = !!this.editor.selectedTableDataCell.control.formItem.itemContent.attrObj.multiple;
+      const multiple = !!this.appRoot.selectedTableDataCell.control.formItem.itemContent.attrObj.multiple;
       this.resetResultValue(multiple ? 'multiple' : '');
       return;
     } else {

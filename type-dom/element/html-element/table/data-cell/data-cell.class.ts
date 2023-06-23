@@ -106,7 +106,7 @@ export class TableDataCell extends TypeHtml implements ITableDataCell {
         // 阻止冒泡 ？？？ TODO 为什么要阻止冒泡 ----> 点击表格控件其它区域时要取消选中单元格。
         // e.stopPropagation();
         // 单元格选中状态。
-        this.editor.setSelectedTableDataCell(this);
+        this.appRoot.setSelectedTableDataCell(this);
       }),
     );
   }

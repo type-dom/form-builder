@@ -19,17 +19,17 @@ export class TableColumnProperty extends PropertyInput {
 
   reset(value?: string): void {
     if (value !== undefined) {
-      if (this.editor.selectedControl instanceof TableControl) {
-        const table = this.editor.selectedControl.formItem.itemContent;
+      if (this.appRoot.selectedControl instanceof TableControl) {
+        const table = this.appRoot.selectedControl.formItem.itemContent;
         table.changeColumnCount(Number(value));
       } else {
         console.error('不是表格控件');
       }
     } else {
-      if (this.editor.selectedControl instanceof TableControl) {
+      if (this.appRoot.selectedControl instanceof TableControl) {
         if (this.styleObj.display === 'none') this.show();
         //  todo 根据表头数，设置现在的数量
-        const table = this.editor.selectedControl.formItem.itemContent;
+        const table = this.appRoot.selectedControl.formItem.itemContent;
         const tableHead = table.tableHead;
         const count = tableHead.length;
         const config = table.config;

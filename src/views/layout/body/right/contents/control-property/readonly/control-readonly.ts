@@ -43,42 +43,42 @@ export class ReadonlyProperty extends PropertyRadio {
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
       if (value === 'disabled') {
-        this.editor.selectedControl?.setDisabled();
+        this.appRoot.selectedControl?.setDisabled();
       } else {
-        this.editor.selectedControl?.removeDisabled();
+        this.appRoot.selectedControl?.removeDisabled();
       }
       return;
     }
     // when select control
     console.log('this.styleObj.display is ', this.styleObj.display);
-    // if (this.editor.selectedTableDataCell?.control instanceof )
+    // if (this.appRoot.selectedTableDataCell?.control instanceof )
     if (this.styleObj.display === 'none') this.show();
-    let disabled = this.editor.selectedControl?.formItem.itemContent.attrObj.disabled as boolean;
+    let disabled = this.appRoot.selectedControl?.formItem.itemContent.attrObj.disabled as boolean;
     console.log('disabled is ', disabled);
     this.resetResultValue(disabled ? 'disabled' : '');
   }
   fieldPropertyReset(value?: string): void {
-    if (!this.editor.selectedTableDataCell) {
-      console.error('this.editor.selectedTableDataCell is null . ');
+    if (!this.appRoot.selectedTableDataCell) {
+      console.error('this.appRoot.selectedTableDataCell is null . ');
       return;
     }
-    if (this.editor.selectedTableDataCell?.control instanceof TextNode) {
-      console.error('this.editor.selectedTableDataCell?.control is not WebControl . ');
+    if (this.appRoot.selectedTableDataCell?.control instanceof TextNode) {
+      console.error('this.appRoot.selectedTableDataCell?.control is not WebControl . ');
       return;
     }
     if (value !== undefined) {
       if (value === 'disabled') {
-        this.editor.selectedTableDataCell?.control.setDisabled();
+        this.appRoot.selectedTableDataCell?.control.setDisabled();
       } else {
-        this.editor.selectedTableDataCell?.control.removeDisabled();
+        this.appRoot.selectedTableDataCell?.control.removeDisabled();
       }
       return;
     }
     console.log('this.styleObj.display is ', this.styleObj.display);
-    // if (this.editor.selectedTableDataCell?.control instanceof )
+    // if (this.appRoot.selectedTableDataCell?.control instanceof )
     if (this.styleObj.display === 'none') this.show();
     // todo 字段属性栏中设置。
-    let disabled = this.editor.selectedTableDataCell.control.formItem.itemContent.attrObj.disabled as boolean;
+    let disabled = this.appRoot.selectedTableDataCell.control.formItem.itemContent.attrObj.disabled as boolean;
     console.log('disabled is ', disabled);
     this.resetResultValue(disabled ? 'disabled' : '');
   }

@@ -251,7 +251,7 @@ export class Table extends TypeHtml implements ITable {
         this.tableHead.createInstance(trLiteral as ITableHead);
       } else {
         // todo 设计模式下，应该只有一行
-        if (this.editor.mode === 'design') {
+        if (this.appRoot.mode === 'design') {
           if (index === 1) {
             (this.childNodes[index]).createInstance(trLiteral as ITableRow);
             break; // 断出

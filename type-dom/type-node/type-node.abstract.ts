@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { FormEditor } from '../../src/form-editor';
+import { AppRoot } from '../../src/app-root';
 import { TypeElement } from '../type-element/type-element.abstract';
 import { ITypeProperty } from '../type-element/type-element.interface';
 import { TypeRoot } from '../type-root/type-root.class';
@@ -80,18 +80,12 @@ export abstract class TypeNode implements ITypeNode {
     }
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
   }
-  get editor(): FormEditor { // FormEditor 是业务类，不能在框架中定义。
-    // console.log('this.className is ', this.className);
-    // if (this instanceof WebLayout) {
-    //   return this.formEditor;
-    // }
-    // if (this.parent instanceof WebLayout) {
-    //   return this.parent.formEditor;
-    // }
+  // 通用化变量名称
+  get appRoot(): AppRoot {
     if (this.parent === undefined) {
       throw Error('this.parentNode is undefined . ');
     }
-    return this.parent.editor;
+    return this.parent?.appRoot;
   }
   get root(): TypeRoot {
     if (this.parent === undefined) {

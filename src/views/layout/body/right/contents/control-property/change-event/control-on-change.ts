@@ -25,14 +25,14 @@ export class ControlOnChangeProperty extends PropertyTextarea {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) { // 输入值的操作
-      // this.editor.selectedControl?.addOnChange(this.input.dom.value);
+      // this.appRoot.selectedControl?.addOnChange(this.input.dom.value);
       return;
     }
     // 选中控件
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    // if (this.editor.selectedControl?.itemContent instanceof Input ||
-    //   this.editor.selectedControl?.itemContent instanceof Textarea) {
-    const changeStr = this.editor.selectedControl?.changeStr;
+    // if (this.appRoot.selectedControl?.itemContent instanceof Input ||
+    //   this.appRoot.selectedControl?.itemContent instanceof Textarea) {
+    const changeStr = this.appRoot.selectedControl?.changeStr;
     if (changeStr) {
       this.resetInputValue(changeStr);
     } else {
@@ -41,15 +41,15 @@ export class ControlOnChangeProperty extends PropertyTextarea {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) { // 输入值的操作
-      // this.editor.selectedControl?.addOnChange(this.input.dom.value);
+      // this.appRoot.selectedControl?.addOnChange(this.input.dom.value);
       return;
     }
     // 选中控件
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    // if (this.editor.selectedControl?.itemContent instanceof Input ||
-    //   this.editor.selectedControl?.itemContent instanceof Textarea) {
-    if (this.editor.selectedTableDataCell?.control instanceof WebControl) {
-      const changeStr = this.editor.selectedTableDataCell?.control?.changeStr;
+    // if (this.appRoot.selectedControl?.itemContent instanceof Input ||
+    //   this.appRoot.selectedControl?.itemContent instanceof Textarea) {
+    if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
+      const changeStr = this.appRoot.selectedTableDataCell?.control?.changeStr;
       if (changeStr) {
         this.resetInputValue(changeStr);
       } else {
@@ -60,22 +60,22 @@ export class ControlOnChangeProperty extends PropertyTextarea {
   addOnChange(value: string): void {
     if (this.parent instanceof ControlProperty) {
       if (value.trim()) { // 输入值的操作
-        this.editor.selectedControl?.addOnChange(this.content.dom.value);
+        this.appRoot.selectedControl?.addOnChange(this.content.dom.value);
         return;
       } else {
-        this.editor.selectedControl?.removeOnChange();
+        this.appRoot.selectedControl?.removeOnChange();
       }
     }
     if (this.parent instanceof FieldProperty) {
-      if (this.editor.selectedTableDataCell?.control instanceof WebControl) {
+      if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
         if (value.trim()) { // 输入值的操作
-          this.editor.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
+          this.appRoot.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
           return;
         } else {
-          this.editor.selectedTableDataCell?.control?.removeOnChange();
+          this.appRoot.selectedTableDataCell?.control?.removeOnChange();
         }
       } else {
-        console.error('this.editor.selectedTableDataCell?.control is not WebControl . ');
+        console.error('this.appRoot.selectedTableDataCell?.control is not WebControl . ');
       }
     }
   }

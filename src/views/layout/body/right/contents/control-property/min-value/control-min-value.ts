@@ -25,16 +25,16 @@ export class MinValueProperty extends PropertyInput {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.editor.selectedControl instanceof NumericalControl) {
-        this.editor.selectedControl.formItem.itemContent.setAttribute('min', value);
+      if (this.appRoot.selectedControl instanceof NumericalControl) {
+        this.appRoot.selectedControl.formItem.itemContent.setAttribute('min', value);
       } else {
-        console.error('this.editor.selectedControl is not NumericalControl .');
+        console.error('this.appRoot.selectedControl is not NumericalControl .');
       }
       return;
     }
-    if (this.editor.selectedControl instanceof NumericalControl) {
+    if (this.appRoot.selectedControl instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MinValue = this.editor.selectedControl.formItem.itemContent.propObj.attrObj.min as string;
+      const MinValue = this.appRoot.selectedControl.formItem.itemContent.propObj.attrObj.min as string;
       if (MinValue) {
         this.resetInputValue(MinValue);
       } else {
@@ -46,16 +46,16 @@ export class MinValueProperty extends PropertyInput {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.editor.selectedTableDataCell?.control instanceof NumericalControl) {
-        this.editor.selectedTableDataCell.control.formItem.itemContent.setAttribute('min', value);
+      if (this.appRoot.selectedTableDataCell?.control instanceof NumericalControl) {
+        this.appRoot.selectedTableDataCell.control.formItem.itemContent.setAttribute('min', value);
       } else {
-        console.error('this.editor.selectedTableDataCell.control is not NumericalControl .');
+        console.error('this.appRoot.selectedTableDataCell.control is not NumericalControl .');
       }
       return;
     }
-    if (this.editor.selectedTableDataCell?.control instanceof NumericalControl) {
+    if (this.appRoot.selectedTableDataCell?.control instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MinValue = this.editor.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.min as string;
+      const MinValue = this.appRoot.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.min as string;
       if (MinValue) {
         this.resetInputValue(MinValue);
       } else {

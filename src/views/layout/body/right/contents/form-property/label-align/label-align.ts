@@ -39,7 +39,7 @@ export class LabelAlignProperty extends PropertyRadio {
   reset(value?: string): void {
     if (value !== undefined) {
       labelStyle.textAlign = value; // 改变新建控件的宽度。
-      this.editor.allControls.forEach(control => { // 循环遍历改变样式
+      this.appRoot.allControls.forEach(control => { // 循环遍历改变样式
         if (control instanceof TableControl) {
           return;
         }

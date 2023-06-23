@@ -1,21 +1,16 @@
+import { AppRoot } from '../../../src/app-root';
 import { TextNode } from '../../text-node/text-node.class';
 import { Span } from '../../element/html-element/span/span.class';
-import { FormEditor } from '../../../src/form-editor';
 import { Overlay } from '../overlay/overlay.abstract';
-
 export class MessageBox extends Overlay {
   className: 'MessageBox';
-  parent: MessageBox;
-
-  constructor(public formEditor: FormEditor) {
+  constructor(public parent: AppRoot) {
     super();
     this.className = 'MessageBox';
-    this.parent = this;
     this.addAttrObj({
       name: 'message-box',
     });
   }
-
   confirm(message: string): void {
     // this.root.app.
     const span = new Span(this.container.body);
@@ -23,8 +18,5 @@ export class MessageBox extends Overlay {
     span.addChild(textNode);
     this.container.body.appendChild(span);
     // this.container.footer.
-  }
-  get editor(): FormEditor {
-    return this.formEditor;
   }
 }

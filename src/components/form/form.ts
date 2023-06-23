@@ -1,11 +1,10 @@
-import { TypeDiv } from '../../type-element/type-html/div/div.abstract';
-import { TypeRoot } from '../../type-root/type-root.class';
-import { StylePosition } from '../../web-style.enum';
-import { LayoutWrapper } from '../../../src/views/layout/layout';
+import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeRoot } from '../../../type-dom/type-root/type-root.class';
+import { StylePosition } from '../../../type-dom/web-style.enum';
+import { LayoutWrapper } from '../../views/layout/layout';
 import { FormHeader } from './header/header';
 import { FormBody } from './body/body';
 import { FormFooter } from './footer/footer';
-
 export class WebForm extends TypeDiv {
   className: 'WebForm';
   childNodes: [FormHeader, FormBody, FormFooter];
@@ -33,7 +32,7 @@ export class WebForm extends TypeDiv {
     this.header = new FormHeader(this);
     this.body = new FormBody(this);
     this.footer = new FormFooter(this);
-    if (this.editor.mode === 'readonly') {
+    if (this.appRoot.mode === 'readonly') {
       this.footer.hide();
     }
     this.childNodes = [this.header, this.body, this.footer];

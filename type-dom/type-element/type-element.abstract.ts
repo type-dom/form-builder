@@ -11,7 +11,6 @@ import {
   ITypeElement,
   ITypeProperty
 } from './type-element.interface';
-import {FormEditor} from "../../src/form-editor";
 /**
  * 虚拟元素Element的数据结构
  * 可以对应到虚拟dom树。 createDom(tag, attr, children)
@@ -38,18 +37,6 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
     this.childNodes = [];
     this.events = [];
   }
-  // 父级是FormEditor的，要单独写 get editor.
-  get editor(): FormEditor {
-    // console.log('this.className is ', this.className);
-    // if (this instanceof WebLayout) {
-    //   return this.formEditor;
-    // }
-    // if (this.parent instanceof WebLayout) {
-    //   return this.parent.formEditor;
-    // }
-    return this.parent.editor;
-  }
-
   get length(): number {
     return this.childNodes.length;
   }
@@ -123,11 +110,11 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
       this.setStyle('cursor', value);
       // this.propObj.styleObj.cursor = value;
       // this.dom.style.cursor = value;
-      this.editor.cursor = value;
+      this.appRoot.cursor = value;
     } else {
       //  todo
       this.setStyle('cursor', '');
-      this.editor.cursor = null;
+      this.appRoot.cursor = null;
     }
   }
 

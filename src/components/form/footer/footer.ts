@@ -1,4 +1,4 @@
-import { TypeDiv } from '../../../type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
 import { WebForm } from '../form';
 import { SubmitButton } from './submit-button/submit-button';
 

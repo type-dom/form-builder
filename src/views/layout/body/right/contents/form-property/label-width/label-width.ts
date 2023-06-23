@@ -23,7 +23,7 @@ export class LabelWidthProperty extends PropertyInput {
     if (value !== undefined) {
       // 这里改变的是全局的样式，不是某个控件的标签宽度
       labelStyle.width = value + 'px';
-      this.editor.allControls.forEach(control => {
+      this.appRoot.allControls.forEach(control => {
         if (control instanceof TableControl) {
           return;
         }

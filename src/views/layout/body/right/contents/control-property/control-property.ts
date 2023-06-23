@@ -110,7 +110,7 @@ export class ControlProperty extends TypeDiv {
   }
   reset(): void {
     // todo 依据选中的控件设置控件属性显示
-    const className = this.editor.selectedControl?.className;
+    const className = this.appRoot.selectedControl?.className;
     console.log('className is ', className);
     // todo 控制项的显示和隐藏，是在这里判断，还是放在reset中更合理？？？
     // switch (className) {
@@ -197,7 +197,7 @@ export class ControlProperty extends TypeDiv {
     //     this.controlReadOnly.hide();
     //     break;
     // }
-    if (!this.editor.selectedControl) {
+    if (!this.appRoot.selectedControl) {
       this.controlField.hide();
       this.controlTitle.hide();
       this.controlPlaceholder.hide();

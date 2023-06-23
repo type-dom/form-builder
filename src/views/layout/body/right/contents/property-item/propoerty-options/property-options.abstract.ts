@@ -119,23 +119,23 @@ export abstract class PropertyOptions extends PropertyItem {
     this.initEvents();
   }
   get optionConfig(): IOptionConfig | undefined {
-    if (this.editor.selectedTableDataCell?.control instanceof WebControl) {
-      return this.editor.selectedTableDataCell?.control.optionConfig;
+    if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
+      return this.appRoot.selectedTableDataCell?.control.optionConfig;
     }
-    return this.editor.selectedControl?.optionConfig;
+    return this.appRoot.selectedControl?.optionConfig;
   }
   set optionConfig(optConfig: IOptionConfig | undefined) {
-    if (this.editor.selectedTableDataCell?.control instanceof WebControl) {
-      this.editor.selectedTableDataCell.control.optionConfig = optConfig;
+    if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
+      this.appRoot.selectedTableDataCell.control.optionConfig = optConfig;
       return;
     }
-    if (!this.editor.selectedControl?.optionConfig) {
+    if (!this.appRoot.selectedControl?.optionConfig) {
       throw Error('没有选中的控件, optionConfig');
     }
-    this.editor.selectedControl.optionConfig = optConfig;
+    this.appRoot.selectedControl.optionConfig = optConfig;
   }
   resetOptionConfigResultValue(value: string | number | boolean): void {
-    // this.editor.selectedControl?.propObj.attrObj.optionConfig''
+    // this.appRoot.selectedControl?.propObj.attrObj.optionConfig''
     // this.optionConfig = Object.assign(this.optionConfig, { resultValue: value });
     if (this.optionConfig) this.optionConfig.resultValue = value;
   }
@@ -240,33 +240,33 @@ export abstract class PropertyOptions extends PropertyItem {
   // 重置控件
   resetControl(): void {
     // 选中的是单元格中的控件
-    if (this.editor.selectedTableDataCell?.control instanceof RadioControl
-      || this.editor.selectedTableDataCell?.control instanceof CheckboxControl
-      || this.editor.selectedTableDataCell?.control instanceof SelectControl
+    if (this.appRoot.selectedTableDataCell?.control instanceof RadioControl
+      || this.appRoot.selectedTableDataCell?.control instanceof CheckboxControl
+      || this.appRoot.selectedTableDataCell?.control instanceof SelectControl
     ) {
-      if (this.editor.selectedTableDataCell?.control.optionConfig) {
+      if (this.appRoot.selectedTableDataCell?.control.optionConfig) {
         // todo config 要配resultValue
-        this.editor.selectedTableDataCell?.control?.setOptionConfig(this.editor.selectedTableDataCell?.control.optionConfig);
-        this.editor.selectedTableDataCell?.control?.formItem.itemContent.render();
+        this.appRoot.selectedTableDataCell?.control?.setOptionConfig(this.appRoot.selectedTableDataCell?.control.optionConfig);
+        this.appRoot.selectedTableDataCell?.control?.formItem.itemContent.render();
       } else {
-        console.error('this.editor.selectedTableDataCell?.control.optionConfig is undefined . ');
+        console.error('this.appRoot.selectedTableDataCell?.control.optionConfig is undefined . ');
       }
       return;
     }
-    if (this.editor.selectedControl instanceof RadioControl
-      || this.editor.selectedControl instanceof CheckboxControl
-      || this.editor.selectedControl instanceof SelectControl
+    if (this.appRoot.selectedControl instanceof RadioControl
+      || this.appRoot.selectedControl instanceof CheckboxControl
+      || this.appRoot.selectedControl instanceof SelectControl
     ) {
       //  选项属性刷新后，还要刷新控件。
-      const type = (this.editor.selectedControl instanceof RadioControl) ? 'radio'
-        : (this.editor.selectedControl instanceof CheckboxControl) ? 'checkbox' : 'select';
+      const type = (this.appRoot.selectedControl instanceof RadioControl) ? 'radio'
+        : (this.appRoot.selectedControl instanceof CheckboxControl) ? 'checkbox' : 'select';
       console.log('type is ', type);
-      if (this.editor.selectedControl.optionConfig) {
-        console.log('this.editor.selectedControl.optionConfig is ', this.editor.selectedControl.optionConfig);
-        this.editor.selectedControl?.setOptionConfig(this.editor.selectedControl.optionConfig);
-        this.editor.selectedControl?.formItem.itemContent.render();
+      if (this.appRoot.selectedControl.optionConfig) {
+        console.log('this.appRoot.selectedControl.optionConfig is ', this.appRoot.selectedControl.optionConfig);
+        this.appRoot.selectedControl?.setOptionConfig(this.appRoot.selectedControl.optionConfig);
+        this.appRoot.selectedControl?.formItem.itemContent.render();
       } else {
-        console.error('this.editor.selectedControl.optionConfig is undefined . ');
+        console.error('this.appRoot.selectedControl.optionConfig is undefined . ');
       }
     }
   }

@@ -137,7 +137,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
     if (!this.onChange) {
       this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
         // console.log('this.formItem.itemContent.dom  ' + eventName);
-        fun(this.editor.selectedControl, this.editor.functionMap);
+        fun(this.appRoot.selectedControl, this.appRoot.functionMap);
       });
       this.events.push(
         // fromEvent(this.dom, 'click').subscribe(() => {
@@ -150,7 +150,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
     this.onChange.unsubscribe();
     this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
       // console.log('this.formItem.itemContent.dom  ' + eventName);
-      fun(this.editor.selectedControl, this.editor.functionMap);
+      fun(this.appRoot.selectedControl, this.appRoot.functionMap);
     });
   }
 
@@ -165,12 +165,12 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       fromEvent(this.dom, 'mousedown').subscribe(() => {
         // console.log('web control mousedown ');
         // console.log('this.index is ', this.index);
-        // console.log('this.editor is ', this.editor);
+        // console.log('this.appRoot is ', this.appRoot);
         if (this.parent instanceof WebPage) {
-          this.editor.setSelectedControl(this);
+          this.appRoot.setSelectedControl(this);
         }
         if (this.parent instanceof TableDataCell) {
-          this.editor.setSelectedTableDataCell(this.parent);
+          this.appRoot.setSelectedTableDataCell(this.parent);
         }
       }),
       fromEvent(this.dom, 'dragover').subscribe((evt) => {
@@ -180,7 +180,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       }),
       fromEvent(this.dom, 'dragstart').subscribe(() => {
         // console.log('web-control dragstart . ');
-        if (this.editor.mode !== 'design') {
+        if (this.appRoot.mode !== 'design') {
           return;
         }
         if (this.parent instanceof WebPage) {
@@ -190,7 +190,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       }),
       fromEvent(this.dom, 'drop').subscribe(() => {
         // console.log('webControl drop . ');
-        if (this.editor.mode !== 'design') {
+        if (this.appRoot.mode !== 'design') {
           return;
         }
         if (this.parent instanceof WebPage) {
@@ -201,7 +201,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       fromEvent(this.dom, 'dragend').subscribe(() => {
         // console.log('web control dragend . ');
         // console.log('this.index is ', this.index);
-        if (this.editor.mode !== 'design') {
+        if (this.appRoot.mode !== 'design') {
           return;
         }
         if (this.parent instanceof WebPage) {
@@ -227,7 +227,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       fromEvent(this.formItem.deleteSpan.dom, 'click').subscribe(() => {
         // console.log('this.formItem.deleteDiv.dom click . ');
         this.parent.childNodes.splice(this.index, 1);
-        this.editor.setSelectedControl(null);
+        this.appRoot.setSelectedControl(null);
         this.parent.render();
       })
     );

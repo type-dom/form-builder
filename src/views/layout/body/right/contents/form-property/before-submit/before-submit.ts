@@ -11,10 +11,10 @@ export class BeforeSubmitProperty extends PropertyTextarea {
     this.addAttrName('before-submit-property');
   }
   get beforeSubmitStr(): string {
-    return this.editor.webDocument.propObj.attrObj['before-submit'] as string;
+    return this.appRoot.webDocument.propObj.attrObj['before-submit'] as string;
   }
   set beforeSubmitStr(value: string) {
-    this.editor.webDocument.setAttribute('before-submit', value);
+    this.appRoot.webDocument.setAttribute('before-submit', value);
   }
   reset(value?: string): void {
     if (value !== undefined) { // 输入值的操作

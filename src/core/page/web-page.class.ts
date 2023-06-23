@@ -25,8 +25,8 @@ export class WebPage extends TypeDiv implements IWebPage {
       margin: '5mm',
       // paddingTop:'5px',
       minHeight: '300px',
-      maxHeight: 'calc(' + this.editor.el.clientHeight + 'px - 60px - 10mm)',
-      // height: 'calc(' + this.editor.el.clientHeight + 'px - 60px - 10mm)',
+      maxHeight: 'calc(' + this.appRoot.el.clientHeight + 'px - 60px - 10mm)',
+      // height: 'calc(' + this.appRoot.el.clientHeight + 'px - 60px - 10mm)',
       overflowY: 'auto',
       backgroundColor: '#fff',
       backgroundImage: '',
@@ -59,7 +59,7 @@ export class WebPage extends TypeDiv implements IWebPage {
       fromEvent(this.dom, 'click').subscribe((e) => {
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          this.editor.setSelectedControl(null);
+          this.appRoot.setSelectedControl(null);
         }
       })
     );
@@ -69,10 +69,10 @@ export class WebPage extends TypeDiv implements IWebPage {
     if (pageJson.propObj) {
       this.setPropObj(pageJson.propObj);
     }
-    // console.log('this.editor.el.clientHeight is ', this.editor.el.clientHeight);
+    // console.log('this.appRoot.el.clientHeight is ', this.appRoot.el.clientHeight);
     // console.log('this.parent.tabs.dom.clientHeight is ', this.parent.parent.tabs.dom.clientHeight);
     this.setStyleObj({
-      maxHeight: 'calc(' + (this.editor.el.clientHeight - this.parent.parent.tabs.dom.clientHeight) + 'px - 60px - 10mm)',
+      maxHeight: 'calc(' + (this.appRoot.el.clientHeight - this.parent.parent.tabs.dom.clientHeight) + 'px - 60px - 10mm)',
       overflowY: 'auto',
     });
     this.childNodes = [];

@@ -9,7 +9,7 @@ import {
   taskJson,
   taskData
 } from './form-data';
-import { FormEditor } from './form-editor';
+import { AppRoot } from './app-root';
 import './styles/index.scss';
 // 在页面中调用时
 fromEvent(document, 'DOMContentLoaded').subscribe(e => {
@@ -19,7 +19,7 @@ fromEvent(document, 'DOMContentLoaded').subscribe(e => {
   if (formEl) {
     formEl.style.maxWidth = '800px';
     formEl.style.margin = '0 auto';
-    const editor = new FormEditor(formEl, 'fill');
+    const editor = new AppRoot(formEl, 'fill');
     console.log('editor is ', editor);
 
     // 测试混合表单

@@ -15,9 +15,9 @@ export class WebDocumentTabs extends TypeUl {
   constructor(public parent: WebDocument) {
     super();
     this.className = 'WebDocumentTabs';
-    console.log('this.editor.el.clientWidth is ', this.editor.el.clientWidth);
-    const width = this.editor.mode === 'design'
-      ? this.editor.el.clientWidth - 595 + 'px'
+    console.log('this.appRoot.el.clientWidth is ', this.appRoot.el.clientWidth);
+    const width = this.appRoot.mode === 'design'
+      ? this.appRoot.el.clientWidth - 595 + 'px'
       : '100%';
     this.propObj = {
       styleObj: {
@@ -126,8 +126,8 @@ export class WebDocumentTabs extends TypeUl {
     console.log('web document tabs createInstance . ');
     //  todo
     this.setPropObj(literal.propObj);
-    const width = this.editor.mode === 'design'
-      ? (this.editor.el.clientWidth - 595) + 'px'
+    const width = this.appRoot.mode === 'design'
+      ? (this.appRoot.el.clientWidth - 595) + 'px'
       : '100%';
     this.setStyleObj({
       // display: 'block',
@@ -181,7 +181,7 @@ export class WebDocumentTabs extends TypeUl {
               if (index === li.index) {
                 page.show();
                 this.parent.contents.currentPage = page;
-                console.log('this.editor.currentPage is ', this.editor.currentPage);
+                console.log('this.appRoot.currentPage is ', this.appRoot.currentPage);
               } else {
                 page.hide();
               }
@@ -195,7 +195,7 @@ export class WebDocumentTabs extends TypeUl {
       fromEvent(this.dom, 'dblclick').subscribe((e) => {
         console.log('web document tabs double click . ');
         for (const li of this.childNodes) {
-          if (li.dom === e.target && this.editor.mode === 'design') { // 选中的tab
+          if (li.dom === e.target && this.appRoot.mode === 'design') { // 选中的tab
             li.setAttrObj({
               contenteditable: true,
             });
@@ -208,7 +208,7 @@ export class WebDocumentTabs extends TypeUl {
       }),
       fromEvent(this.dom, 'input').subscribe((e) => {
         for (const li of this.childNodes) {
-          if (li.dom === e.target && this.editor.mode === 'design') { // 选中的tab
+          if (li.dom === e.target && this.appRoot.mode === 'design') { // 选中的tab
             // console.log('li.dom.innerText is ', li.dom.innerText);
             (li.childNodes[0] as TextNode).setText(li.dom.innerText);
           }

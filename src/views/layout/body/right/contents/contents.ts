@@ -17,7 +17,7 @@ export class RightContents extends TypeDiv {
     this.className = 'RightContents';
     this.propObj = {
       styleObj: {
-        height: 'calc(' + this.editor.el.clientHeight + 'px - 100px)',
+        height: 'calc(' + this.appRoot.el.clientHeight + 'px - 100px)',
         overflowY: 'auto',
         margin: '0 5px 5px',
         border: '1px solid #ccc',

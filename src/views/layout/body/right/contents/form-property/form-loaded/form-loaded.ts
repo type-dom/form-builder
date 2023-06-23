@@ -41,7 +41,7 @@ export class FormLoadedProperty extends PropertyTextarea {
         // eslint-disable-next-line no-new-func
         const fun = new Function('return ' + value)();
         console.log('fun is ', fun);
-        fun(this.editor.webDocument);
+        fun(this.appRoot.webDocument);
       });
       return;
     } else {
