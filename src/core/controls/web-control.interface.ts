@@ -11,7 +11,7 @@ import { TimeControl } from './basic/time/time.class';
 import { CheckboxControl } from './basic/checkbox/checkbox.class';
 import { TableControl } from './complex/table/table.class';
 import { ConnectionControl } from './complex/connection/connection.class';
-import { IFormItem } from './form-item/form-item.interface';
+import { IFormItem } from '../../components/form/form-item/form-item.interface';
 
 export interface IWebControl extends ITypeDiv {
   childNodes: [IFormItem],

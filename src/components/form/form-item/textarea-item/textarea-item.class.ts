@@ -1,8 +1,8 @@
 import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
 import { Textarea } from '../../../../../type-dom/element/html-element/textarea/textarea.class';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
-import { WebControl } from '../../web-control.abstract';
-import { itemContentStyle } from '../../web-control.const';
+import { WebControl } from '../../../../core/controls/web-control.abstract';
+import { itemContentStyle } from '../../../../core/controls/web-control.const';
 import { FormItem } from '../form-item.abstract';
 import { ITextareaItem } from './textarea-item.interface';
 

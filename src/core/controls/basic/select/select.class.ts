@@ -1,7 +1,7 @@
 import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { deepClone } from '../../../../utils';
 import { WebPage } from '../../../page/web-page.class';
-import { SelectItem } from '../../form-item/select-item/select-item.class';
+import { SelectItem } from '../../../../components/form/form-item/select-item/select-item.class';
 import { defaultOptionConfig } from '../../web-control.const';
 import { IOptionConfig, IWebControl } from '../../web-control.interface';
 import { WebBasicControl } from '../basic.abstract';

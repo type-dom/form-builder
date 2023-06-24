@@ -1,7 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
 import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
-import { InputItem } from '../../form-item/input-item/input-item.class';
+import { InputItem } from '../../../../components/form/form-item/input-item/input-item.class';
 import { WebBasicControl } from '../basic.abstract';
 import { IAttachmentControl } from './attachment.interface';
 

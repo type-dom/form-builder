@@ -1,6 +1,6 @@
 import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
-import { TextareaItem } from '../../form-item/textarea-item/textarea-item.class';
+import { TextareaItem } from '../../../../components/form/form-item/textarea-item/textarea-item.class';
 import { WebBasicControl } from '../basic.abstract';
 import { IMultilineInputControl } from './multiline-input.inerface';
 

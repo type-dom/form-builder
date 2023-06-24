@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
-import { TableItem } from '../../../../src/core/controls/form-item/table-item/table-item.class';
+import { TableItem } from '../../../../src/components/form/form-item/table-item/table-item.class';
 import { ITableConfig, ITableField } from '../../../../src/core/controls/complex/table/table.interface';
 import { WebControl } from '../../../../src/core/controls/web-control.abstract';
 import { TextNode } from '../../../text-node/text-node.class';

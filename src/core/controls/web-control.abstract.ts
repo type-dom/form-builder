@@ -12,10 +12,10 @@ import { TableDataCell } from '../../../type-dom/element/html-element/table/data
 import { toJSON } from '../../../type-dom/type-element/type-element.function';
 import { ControlClassMap } from '../../constants';
 import { WebPage } from '../page/web-page.class';
-import { FormItem } from './form-item/form-item.abstract';
+import { FormItem } from '../../components/form/form-item/form-item.abstract';
 import { IOptionConfig, IWebControl } from './web-control.interface';
 import { controlStyle } from './web-control.const';
-import { ItemContent } from './form-item/form-item.interface';
+import { ItemContent } from '../../components/form/form-item/form-item.interface';
 
 export abstract class WebControl extends TypeDiv implements IWebControl {
   abstract className: string;

@@ -2,8 +2,8 @@ import { fromEvent } from 'rxjs';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
 import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
 import { Input } from '../../../../../type-dom/element/html-element/input/input.class';
-import { WebControl } from '../../web-control.abstract';
-import { itemContentStyle } from '../../web-control.const';
+import { WebControl } from '../../../../core/controls/web-control.abstract';
+import { itemContentStyle } from '../../../../core/controls/web-control.const';
 import { FormItem } from '../form-item.abstract';
 import { IButtonItem } from './button-item.interface';
 

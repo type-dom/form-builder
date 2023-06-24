@@ -7,7 +7,7 @@ import { Table } from '../../../../../type-dom/element/html-element/table/table.
 import { TableRow } from '../../../../../type-dom/element/html-element/table/row/row.class';
 import { ITableRow } from '../../../../../type-dom/element/html-element/table/row/row.interface';
 import { AddSvg } from '../../../../../type-dom/components/svgs/add/add';
-import { TableControl } from '../../complex/table/table.class';
+import { TableControl } from '../../../../core/controls/complex/table/table.class';
 import { FormItem } from '../form-item.abstract';
 import { ITableItem } from './table-item.interface';
 

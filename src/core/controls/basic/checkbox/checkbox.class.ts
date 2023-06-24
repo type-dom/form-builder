@@ -4,7 +4,7 @@ import { WebPage } from '../../../page/web-page.class';
 import { defaultOptionConfig } from '../../web-control.const';
 import { IOptionConfig, IWebControl } from '../../web-control.interface';
 import { WebControl } from '../../web-control.abstract';
-import { CheckboxItem } from '../../form-item/checkbox-item/checkbox-item.class';
+import { CheckboxItem } from '../../../../components/form/form-item/checkbox-item/checkbox-item.class';
 import { ICheckboxControl } from './checkbox.interface';
 
 export class CheckboxControl extends WebControl implements ICheckboxControl {

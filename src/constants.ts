@@ -13,12 +13,12 @@ import { RadioControl } from './core/controls/basic/radio/radio.class';
 import { CheckboxControl } from './core/controls/basic/checkbox/checkbox.class';
 import { TableControl } from './core/controls/complex/table/table.class';
 import { ConnectionControl } from './core/controls/complex/connection/connection.class';
-import { InputItem } from './core/controls/form-item/input-item/input-item.class';
-import { RadioItem } from './core/controls/form-item/radio-item/radio-item.class';
-import { TextareaItem } from './core/controls/form-item/textarea-item/textarea-item.class';
-import { SelectItem } from './core/controls/form-item/select-item/select-item.class';
-import { CheckboxItem } from './core/controls/form-item/checkbox-item/checkbox-item.class';
-import { TableItem } from './core/controls/form-item/table-item/table-item.class';
+import { InputItem } from './components/form/form-item/input-item/input-item.class';
+import { RadioItem } from './components/form/form-item/radio-item/radio-item.class';
+import { TextareaItem } from './components/form/form-item/textarea-item/textarea-item.class';
+import { SelectItem } from './components/form/form-item/select-item/select-item.class';
+import { CheckboxItem } from './components/form/form-item/checkbox-item/checkbox-item.class';
+import { TableItem } from './components/form/form-item/table-item/table-item.class';
 import { ControlClass } from './core/controls/web-control.interface';
 
 export const defaultTextStyle = {
