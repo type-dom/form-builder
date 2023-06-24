@@ -1,7 +1,6 @@
-import { ITypeElement } from '../../../../type-element/type-element.interface';
+import { ITypeTableFoot } from '../../../../type-element/type-html/table/foot/foot.interface';
 import { ITableRow } from '../row/row.interface';
-export interface ITableFoot extends ITypeElement {
-  nodeName: 'tfoot',
+export interface ITableFoot extends ITypeTableFoot {
   className: 'TableFoot',
   childNodes: ITableRow[],
 }

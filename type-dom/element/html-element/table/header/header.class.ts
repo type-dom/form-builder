@@ -1,21 +1,15 @@
 import { TextNode } from '../../../../text-node/text-node.class';
-import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
+import { TypeTableHeader } from '../../../../type-element/type-html/table/header/header.class';
 import { TableHead } from '../head/head.class';
 import { ITableHeader } from './header.interface';
 
 // 表格表头
-export class TableHeader extends TypeHtml implements ITableHeader {
-  nodeName: 'th';
+export class TableHeader extends TypeTableHeader implements ITableHeader {
   className: 'TableHeader';
-  dom: HTMLElement;
-  childNodes: TextNode[];
 
   constructor(public parent: TableHead) {
-    super('th');
-    this.nodeName = 'th';
-    this.dom = document.createElement(this.nodeName);
+    super();
     this.className = 'TableHeader';
-    this.childNodes = [];
   }
 
   createInstance(thLiteral: ITableHeader): void {

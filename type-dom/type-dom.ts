@@ -20,32 +20,33 @@ import { TableHead } from './element/html-element/table/head/head.class';
 import { TableDataCell } from './element/html-element/table/data-cell/data-cell.class';
 import { SelectOption } from './element/html-element/select/option/option.class';
 import { TableFoot } from './element/html-element/table/foot/foot.class';
+import {TypeTableBody} from "./type-element/type-html/table/body/body.class";
 // 命名空间  TypeDom
-const TypeDom = {
-  XElement,
-  TextNode,
-  Division,
-  Span,
-  Button,
-  Header,
-  Section,
-  Heading,
-  UnorderedList,
-  ListItem,
-  Select,
-  SelectOption,
-  Label,
-  Input,
-  Textarea,
-  Table,
-  TableHeader,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableDataCell,
-  TableFoot,
+class TypeDom {
+  static XElement = XElement;
+  static TextNode = TextNode;
+  static Division = Division;
+  static Span = Span;
+  static Button = Button;
+  static Header = Header;
+  static Section = Section;
+  static Heading = Heading;
+  static UnorderedList = UnorderedList;
+  static ListItem = ListItem;
+  static Select = Select;
+  static SelectOption = SelectOption;
+  static Label = Label;
+  static Input = Input;
+  static Textarea = Textarea;
+  static Table = Table;
+  static TableHeader = TableHeader;
+  static TableHead = TableHead;
+  static TableBody = TableBody;
+  static TableRow = TableRow;
+  static TableDataCell = TableDataCell;
+  static TableFoot = TableFoot;
 
-};
+}
 export default TypeDom;
 
 export type ITypeClass = typeof Button | typeof Division | typeof Heading

@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
+import { TypeTableRow } from '../../../../type-element/type-html/table/row/row.class';
 import { DeleteSvg } from '../../../../components/svgs/delete/delete';
 import { Span } from '../../span/span.class';
 import { StylePosition } from '../../../../web-style.enum';
@@ -7,17 +7,13 @@ import { TableDataCell } from '../data-cell/data-cell.class';
 import { ITableDataCell } from '../data-cell/data-cell.interface';
 import { Table } from '../table.class';
 import { ITableRow } from './row.interface';
-export class TableRow extends TypeHtml implements ITableRow {
-  nodeName: 'tr';
+export class TableRow extends TypeTableRow implements ITableRow {
   className: 'TableRow';
-  dom: HTMLTableRowElement;
   childNodes: TableDataCell[];
   deleteSpan: Span;
   constructor(public parent: Table, trData: Record<string, string | number | boolean>) {
-    super('tr');
+    super();
     // console.log('trData is ', trData);
-    this.nodeName = 'tr';
-    this.dom = document.createElement(this.nodeName);
     this.className = 'TableRow';
     this.childNodes = [];
     for (const key in trData) {

@@ -1,20 +1,18 @@
 import { fromEvent } from 'rxjs';
 import { TextNode } from '../../../../text-node/text-node.class';
 import { ITableField } from '../../../../../src/core/controls/complex/table/table.interface';
-import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
+import { TypeTableHead } from '../../../../type-element/type-html/table/head/head.class';
 import { TableHeader } from '../header/header.class';
 import { Table } from '../table.class';
 import { ITableHead } from './head.interface';
 
 // 表格页眉
-export class TableHead extends TypeHtml implements ITableHead {
-  nodeName: 'thead';
+export class TableHead extends TypeTableHead implements ITableHead {
   className: 'TableHead';
-  dom: HTMLTableSectionElement;
   childNodes: TableHeader[];
 
   constructor(public parent: Table, th: ITableField[] = []) {
-    super('thead');
+    super();
     this.nodeName = 'thead';
     this.dom = document.createElement(this.nodeName);
     this.className = 'TableHead';

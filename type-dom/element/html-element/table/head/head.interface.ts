@@ -1,7 +1,6 @@
-import { ITypeElement } from '../../../../type-element/type-element.interface';
 import { ITableHeader } from '../header/header.interface';
-export interface ITableHead extends ITypeElement {
-  nodeName: 'thead',
+import { ITypeTableHead } from '../../../../type-element/type-html/table/head/head.interface';
+export interface ITableHead extends ITypeTableHead {
   className: 'TableHead',
   childNodes: ITableHeader[]
 }

@@ -1,11 +1,11 @@
 import { fromEvent } from 'rxjs';
+import { Display } from '../../../../../type-dom/web-style.enum';
+import { toJSON } from '../../../../../type-dom/type-element/type-element.function';
 import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
 import { Table } from '../../../../../type-dom/element/html-element/table/table.class';
 import { TableRow } from '../../../../../type-dom/element/html-element/table/row/row.class';
 import { ITableRow } from '../../../../../type-dom/element/html-element/table/row/row.interface';
-import { Display } from '../../../../../type-dom/web-style.enum';
-import { toJSON } from '../../../../../type-dom/type-element/type-element.function';
 import { AddSvg } from '../../../../../type-dom/components/svgs/add/add';
 import { TableControl } from '../../complex/table/table.class';
 import { FormItem } from '../form-item.abstract';
@@ -19,6 +19,7 @@ export class TableItem extends FormItem implements ITableItem {
 
   constructor(public parent: TableControl, labelText = '表格') {
     super(labelText);
+    this.className = 'TableItem';
     this.label.propObj.styleObj = {
       display: 'block',
       width: '100%',
@@ -30,7 +31,6 @@ export class TableItem extends FormItem implements ITableItem {
       fontSize: '20px',
       padding: '10px',
     };
-    this.className = 'TableItem';
     this.itemContent = new Table(this);
     this.addSpan = new Span(this);
     this.addSpan.setStyleObj({

@@ -1,8 +1,7 @@
-import { ITypeHtml } from '../../../../type-element/type-html/type-html.interface';
+import { ITypeTableBody } from '../../../../type-element/type-html/table/body/body.interface';
 import { ITableRow } from '../row/row.interface';
 
-export interface ITableBody extends ITypeHtml {
-  nodeName: 'tbody',
+export interface ITableBody extends ITypeTableBody {
   className: 'TableBody',
   childNodes: ITableRow[],
 }

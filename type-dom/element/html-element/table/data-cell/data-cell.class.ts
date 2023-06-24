@@ -8,22 +8,20 @@ import { ITextNode } from '../../../../text-node/text-node.interface';
 import { RadioGroup } from '../../../../components/radio-group/radio-group.class';
 import { CheckboxGroup } from '../../../../components/checkbox-group/checkbox-group.class';
 import { ControlClassMap } from '../../../../../src/constants';
+import { TypeTableDataCell } from '../../../../type-element/type-html/table/data-cell/data-cell.class';
 import { Input } from '../../input/input.class';
 import { Select } from '../../select/select.class';
 import { Textarea } from '../../textarea/textarea.class';
-import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
 import { TableRow } from '../row/row.class';
 import { ITableDataCell } from './data-cell.interface';
 
-export class TableDataCell extends TypeHtml implements ITableDataCell {
-  nodeName: 'td';
+export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
   className: 'TableDataCell';
-  dom: HTMLElement;
   childNodes: [WebControl | TextNode]; // 有可能是Input
   control: WebControl | TextNode;
 
   constructor(public parent: TableRow, value: string | number | boolean) {
-    super('td');
+    super();
     this.nodeName = 'td';
     this.dom = document.createElement(this.nodeName);
     this.className = 'TableDataCell';

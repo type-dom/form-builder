@@ -12,9 +12,10 @@ import { ITableRow } from './row/row.interface';
 import { ITableHead } from './head/head.interface';
 import { TableDataCell } from './data-cell/data-cell.class';
 import { ITable } from './table.interface';
+import { TypeTable } from '../../../type-element/type-html/table/table.class';
 
 // todo 是否有选项列和操作列。
-export class Table extends TypeHtml implements ITable {
+export class Table extends TypeTable implements ITable {
   nodeName: 'table';
   className: 'Table';
   dom: HTMLTableElement;
@@ -23,7 +24,7 @@ export class Table extends TypeHtml implements ITable {
   readonly tableHead: TableHead;
 
   constructor(public parent: TableItem) {
-    super('table');
+    super();
     this.nodeName = 'table';
     this.dom = document.createElement(this.nodeName);
     this.propObj = {

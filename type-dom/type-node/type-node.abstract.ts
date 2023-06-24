@@ -65,6 +65,7 @@ export abstract class TypeNode implements ITypeNode {
   propObj?: ITypeProperty;
   /**
    * 渲染出真实DOM
+   *
    */
   abstract render(): void;
   nodeName: string;
@@ -85,7 +86,10 @@ export abstract class TypeNode implements ITypeNode {
     if (this.parent === undefined) {
       throw Error('this.parentNode is undefined . ');
     }
-    return this.parent?.appRoot;
+    if (this.parent.className === this.className) {
+      throw Error('get appRoot this.parent.className === this.className, and is ' + this.className);
+    }
+    return this.parent.appRoot;
   }
   get root(): TypeRoot {
     if (this.parent === undefined) {
@@ -146,6 +150,7 @@ export abstract class TypeNode implements ITypeNode {
       console.error('node.TypeClass is undefined . ');
       return;
     }
+    // XElement 必须有nodeName,默认为div。
     const item = new node.TypeClass() as TypeNode; // 创建类实例
     item.parent = parent;
     console.log('item is ', item);
@@ -157,8 +162,10 @@ export abstract class TypeNode implements ITypeNode {
         throw Error('TextNode propObj is undefined . ');
       }
     }
+    // XElement时，可以单独穿nodeName.
     if (node.nodeName) {
       item.nodeName = node.nodeName;
+      item.dom = document.createElement(this.nodeName); // XElement 默认nodeName是div
     }
     if (node.nodeValue !== undefined) { // 如果是文本节点，则退出迭代; XNode,TextNode会有
       if (item.nodeValue !== undefined) {

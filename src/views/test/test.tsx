@@ -31,12 +31,12 @@ export class Test extends TypeDiv {
     const node = parser.parseFromString(template);
     const nodeJson = node?.toJSON();
     console.log('nodeJson is ', nodeJson);
-    node?.render();
+    // node?.render();
     console.log('node is ', node);
-    if (node?.dom) {
-      this.dom.appendChild(node?.dom);
-    }
-    // this.childNodes = [node];
+    // if (node?.dom) {
+    //   this.dom.appendChild(node?.dom);
+    // }
+    this.childNodes = [node!];
     let buffer: string[] = [];
     node?.dump(buffer);
     console.log('buffer str is ', buffer.join(''));

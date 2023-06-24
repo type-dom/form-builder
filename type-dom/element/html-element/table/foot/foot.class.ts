@@ -1,16 +1,13 @@
 import { TypeHtml } from '../../../../type-element/type-html/type-html.abstract';
+import { TypeTableFoot } from '../../../../type-element/type-html/table/foot/foot.class';
 import { TableRow } from '../row/row.class';
 import { ITableFoot } from './foot.interface';
 
-export class TableFoot extends TypeHtml implements ITableFoot {
-  nodeName: 'tfoot';
+export class TableFoot extends TypeTableFoot implements ITableFoot {
   className: 'TableFoot';
-  dom: HTMLElement;
   childNodes: TableRow[];
   constructor(public parent: TypeHtml) {
-    super('tfoot');
-    this.nodeName = 'tfoot';
-    this.dom = document.createElement(this.nodeName);
+    super();
     this.className = 'TableFoot';
     this.childNodes = [];
   }

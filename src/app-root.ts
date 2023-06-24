@@ -31,7 +31,7 @@ import { Test } from './views/test/test';
  * 应用直接继承 TypeRoot ;
  */
 export class AppRoot extends TypeRoot {
-  className: 'FormEditor';
+  className: 'AppRoot';
   // 光标
   cursor?: Cursor | null;
   // 选中的菜单
@@ -58,7 +58,7 @@ export class AppRoot extends TypeRoot {
   readyEvent: Subject<void>;
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
     super(editorEl);
-    this.className = 'FormEditor';
+    this.className = 'AppRoot';
     this.el = editorEl;
     if (!this.el.clientHeight) {
       // this.el.setAttribute('clientHeight', '500px');
@@ -673,5 +673,3 @@ export class AppRoot extends TypeRoot {
     });
   }
 }
-// 导出为自定义的类名；
-export const FormEditor = AppRoot;

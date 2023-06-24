@@ -1,8 +1,7 @@
 import { Subscription } from 'rxjs';
-import { TypeRoot } from '../type-root/type-root.class';
 import { TypeNode } from '../type-node/type-node.abstract';
 import { TextNode } from '../text-node/text-node.class';
-import { Cursor, Display } from '../web-style.enum';
+import { Display } from '../web-style.enum';
 import { IWebStyle } from '../web-style.interface';
 import { humpToMiddleLine } from './type-element.function';
 import {
@@ -104,20 +103,6 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
   renderAttrId(id: string): void {
     this.dom.setAttribute('id', id);
   }
-
-  setCursor(value?: Cursor): void {
-    if (value) {
-      this.setStyle('cursor', value);
-      // this.propObj.styleObj.cursor = value;
-      // this.dom.style.cursor = value;
-      this.appRoot.cursor = value;
-    } else {
-      //  todo
-      this.setStyle('cursor', '');
-      this.appRoot.cursor = null;
-    }
-  }
-
   // 设置属性
   setPropObj(propObj: ITypeProperty): void {
     if (this.propObj) {  // 清理原有属性
