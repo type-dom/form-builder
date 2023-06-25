@@ -3,6 +3,7 @@ import { XElement } from '../../../x-element/x-element.class';
 import { TypeHtml } from '../type-html.abstract';
 import { buttonStyle } from './button.const';
 import { ITypeButton } from './button.interface';
+// todo 所有继承的具体类，应该统一成一个封装的自定义Button组件。而不是象现在这样，各自定义新的具体类。
 export abstract class TypeButton extends TypeHtml implements ITypeButton {
   abstract className: string;
   abstract parent: TypeHtml | XElement;

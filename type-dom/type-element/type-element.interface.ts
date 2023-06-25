@@ -3,28 +3,12 @@
  */
 import { ITypeNode } from '../type-node/type-node.interface';
 import { IWebStyle } from '../web-style.interface';
-import { Button } from '../element/html-element/button/button.class';
-import { Division } from '../element/html-element/division/division.class';
-import { Heading } from '../element/html-element/heading/heading.class';
-import { Input } from '../element/html-element/input/input.class';
-import { Label } from '../element/html-element/label/label.class';
-import { ListItem } from '../element/html-element/unordered-list/list-item/list-item.class';
-import { Select } from '../element/html-element/select/select.class';
-import { SelectOption } from '../element/html-element/select/option/option.class';
-import { Span } from '../element/html-element/span/span.class';
-import { Textarea } from '../element/html-element/textarea/textarea.class';
-import { UnorderedList } from '../element/html-element/unordered-list/unordered-list.class';
-import { Table } from '../element/html-element/table/table.class';
-import { TableRow } from '../element/html-element/table/row/row.class';
-import { TableDataCell } from '../element/html-element/table/data-cell/data-cell.class';
-import { TableHead } from '../element/html-element/table/head/head.class';
-import { TableBody } from '../element/html-element/table/body/body.class';
-import { TableFoot } from '../element/html-element/table/foot/foot.class';
-import { TableHeader } from '../element/html-element/table/header/header.class';
 export interface ITypeAttribute {
   // id?: string;
-  class?: string;
-  name?: string;
+  class?: string,
+  name?: string,
+  type?: string,
+  start?: string,
   [key: string]: string | number | boolean | unknown | undefined;
 }
 export interface ITypeProperty {

@@ -14,7 +14,6 @@ import { toJSON } from '../type-dom/type-element/type-element.function';
 import { WebDialog } from '../type-dom/components/dialog/dialog';
 import { MessageBox } from '../type-dom/components/message-box/message-box';
 import { TextNode } from '../type-dom/text-node/text-node.class';
-import { WebForm } from './components/form/form';
 import { ControlMenu } from './core/menus/menu.abstract';
 import { WebDocument } from './core/document/web-document.class';
 import { IWebDocument } from './core/document/web-document.interface';
@@ -25,6 +24,7 @@ import { AttachmentControl } from './core/controls/basic/attachment/attachment.c
 import { ConnectionControl } from './core/controls/complex/connection/connection.class';
 import { TableControl } from './core/controls/complex/table/table.class';
 import { ITableField } from './core/controls/complex/table/table.interface';
+import { WebForm } from './components/form/form';
 import { Test } from './views/test/test';
 /**
  * 应用根节点，必须存在。

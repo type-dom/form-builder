@@ -20,7 +20,6 @@ import { TableHead } from './element/html-element/table/head/head.class';
 import { TableDataCell } from './element/html-element/table/data-cell/data-cell.class';
 import { SelectOption } from './element/html-element/select/option/option.class';
 import { TableFoot } from './element/html-element/table/foot/foot.class';
-import {TypeTableBody} from "./type-element/type-html/table/body/body.class";
 // 命名空间  TypeDom
 class TypeDom {
   static XElement = XElement;

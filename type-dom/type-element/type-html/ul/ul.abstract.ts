@@ -1,10 +1,10 @@
-import { ListItem } from '../../../element/html-element/unordered-list/list-item/list-item.class';
 import { TypeHtml } from '../type-html.abstract';
 import { ITypeUl } from './ul.interface';
+import { TypeLi } from './li/li.class';
 export abstract class TypeUl extends TypeHtml implements ITypeUl {
   nodeName: 'ul';
   dom: HTMLUListElement;
-  childNodes: ListItem[];
+  childNodes: TypeLi[];
   protected constructor() {
     super('ul');
     this.nodeName = 'ul';
