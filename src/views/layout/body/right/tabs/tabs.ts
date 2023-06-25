@@ -1,11 +1,11 @@
 import { fromEvent } from 'rxjs';
 import { Display } from '../../../../../../type-dom/web-style.enum';
-import { TypeUl } from '../../../../../../type-dom/type-element/type-html/ul/ul.abstract';
+import { TypeUL } from '../../../../../../type-dom/type-element/type-html/ul/ul.abstract';
 import { ListItem } from '../../../../../../type-dom/element/html-element/unordered-list/list-item/list-item.class';
 import { TextNode } from '../../../../../../type-dom/text-node/text-node.class';
 import { BodyRight } from '../right';
 
-export class BodyRightTabs extends TypeUl {
+export class BodyRightTabs extends TypeUL {
   className: 'BodyRightTabs';
 
   fieldTab: ListItem;

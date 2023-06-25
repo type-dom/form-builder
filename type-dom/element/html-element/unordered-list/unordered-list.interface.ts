@@ -1,4 +1,4 @@
-import { ITypeUl } from '../../../type-element/type-html/ul/ul.interface';
-export interface IUnorderedList extends ITypeUl {
+import { ITypeUL } from '../../../type-element/type-html/ul/ul.interface';
+export interface IUnorderedList extends ITypeUL {
   className: 'UnorderedList'
 }

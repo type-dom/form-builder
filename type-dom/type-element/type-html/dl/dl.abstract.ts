@@ -7,7 +7,7 @@ import { ITypeDL } from './dl.interface';
 export abstract class TypeDL extends TypeHtml implements ITypeDL {
   nodeName: 'dl';
   dom: HTMLDListElement;
-  // childNodes: (TypeLi | TypeUl)[];
+  // childNodes: (TypeLI | TypeUL)[];
   // type, start 在属性中单独配置，不需要在构造函数中传参
   protected constructor() {
     super('dl');

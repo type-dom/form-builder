@@ -1,6 +1,9 @@
 import { TypeHtml } from '../../type-html.abstract';
-import { ITypeLi } from './li.interface';
-export abstract class TypeLi extends TypeHtml implements ITypeLi {
+import { ITypeLI } from './li.interface';
+/**
+ * 列表项 list item
+ */
+export abstract class TypeLI extends TypeHtml implements ITypeLI {
   nodeName: 'li';
   dom: HTMLLIElement;
   protected constructor() {

@@ -1,4 +1,4 @@
 import { ITypeHtml } from '../../type-html.interface';
-export interface ITypeLi extends ITypeHtml {
+export interface ITypeLI extends ITypeHtml {
   nodeName: 'li',
 }
