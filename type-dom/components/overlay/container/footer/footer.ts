@@ -11,17 +11,13 @@ export class OverlayFooter extends TypeDiv {
   constructor(public parent: OverlayContainer) {
     super();
     this.className = 'OverlayFooter';
-    this.propObj = {
-      styleObj: {
-        padding: '20px',
-        paddingTop: '10px',
-        textAlign: 'right',
-        boxSizing: 'border-box',
-      },
-      attrObj: {
-        name: 'overlay-foot',
-      }
-    };
+    this.addStyleObj({
+      padding: '20px',
+      paddingTop: '10px',
+      textAlign: 'right',
+      boxSizing: 'border-box',
+    });
+    this.addAttrName('overlay-foot');
     this.cancelBtn = new CancelButton(this);
     // cancelBtn.hide();
     // this.cancelBtn.setTitle('取消');

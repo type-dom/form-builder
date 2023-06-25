@@ -7,18 +7,14 @@ export class CancelButton extends TypeButton {
   constructor(public parent: OverlayFooter) {
     super();
     this.className = 'CancelButton';
-    this.propObj = {
-      styleObj: {
-        // backgroundColor: '#f00',
-        // color: '#FFF',
-        margin: 'auto 10px',
-        // outline: 'none',
-        // border: '1px solid #f00',
-      },
-      attrObj: {
-        name: 'cancel-button',
-      }
-    };
+    this.addStyleObj({
+      // backgroundColor: '#f00',
+      // color: '#FFF',
+      margin: 'auto 10px',
+      // outline: 'none',
+      // border: '1px solid #f00',
+    });
+    this.addAttrName('cancel-button');
     this.setTitle('取消');
     this.initEvents();
   }
