@@ -9,7 +9,7 @@ export const controlStyle: Partial<IWebStyle> = {
   display: 'inline-block',
   width: '100%',
   // height: '95px',
-  padding: '10px',
+  padding: '10px 10px 0 10px',
   marginBottom: '10px!important',
   border: '1px dashed #e2e0e0',
   boxSizing: 'border-box',  // todo content-box or border-box
