@@ -1,15 +1,10 @@
-import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { TypeElement } from '../../../type-element/type-element.abstract';
+import { TypeSection } from '../../../type-element/type-html/section/section.abstract';
 import { Display } from '../../../web-style.enum';
-export class Section extends TypeHtml {
+export class Section extends TypeSection {
   className: 'Section';
-  nodeName: 'section';
-  dom: HTMLElement;
-  // childNodes: TypeNode[];
   constructor(public parent: TypeElement) {
-    super('section');
-    this.nodeName = 'section';
-    this.dom = document.createElement(this.nodeName);
+    super();
     this.className = 'Section';
     this.propObj = {
       styleObj: {
