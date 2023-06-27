@@ -56,7 +56,7 @@ export interface IWebStyle {
   fontFamily: string; // 字体
   fontSize: string; // 字号
   fontStyle: string; // 风格 斜体 normal - 文本正常显示 italic - 文本斜体显示 oblique - 文本倾斜显示
-  fontWeight: string; // 字重 100 400 700 900 粗体/bold
+  fontWeight: string | number; // 字重 100 400 700 900 粗体/bold
   // background 背景
   background: string;
   backgroundColor: string;
@@ -159,4 +159,5 @@ export interface IWebStyle {
   overflowY: string;
   listStyle: string;
   scrollBehavior: string;
+  userSelect: string;
 }

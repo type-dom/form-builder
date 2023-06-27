@@ -3,6 +3,7 @@ import { toJSON } from '../../../../../../type-dom/type-element/type-element.fun
 import { TypeButton } from '../../../../../../type-dom/type-element/type-html/button/button.abstract';
 import { WebDocument } from '../../../../../core/document/web-document.class';
 import { IWebDocument } from '../../../../../core/document/web-document.interface';
+import { tdButtonBase } from '../../../../../../type-dom/components/basic/td-button/td-button.const';
 import { Navbar } from '../navbar';
 
 export class PreviewButton extends TypeButton {
@@ -13,6 +14,7 @@ export class PreviewButton extends TypeButton {
     this.addStyleObj({
       margin: 'auto 20px',
     });
+    this.addStyleObj(tdButtonBase);
     this.setTitle('预览');
     // this.childNodes = [this.textNode];
     this.initEvents();
