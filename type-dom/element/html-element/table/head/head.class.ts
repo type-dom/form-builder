@@ -2,14 +2,14 @@ import { fromEvent } from 'rxjs';
 import { TextNode } from '../../../../text-node/text-node.class';
 import { ITableField } from '../../../../../src/core/controls/complex/table/table.interface';
 import { TypeTableHead } from '../../../../type-element/type-html/table/head/head.class';
-import { TableHeader } from '../header/header.class';
+import { TableHeaderCell } from '../header-cell/header-cell.class';
 import { Table } from '../table.class';
 import { ITableHead } from './head.interface';
 
 // 表格页眉
 export class TableHead extends TypeTableHead implements ITableHead {
   className: 'TableHead';
-  childNodes: TableHeader[];
+  childNodes: TableHeaderCell[];
 
   constructor(public parent: Table, th: ITableField[] = []) {
     super();
@@ -25,7 +25,7 @@ export class TableHead extends TypeTableHead implements ITableHead {
     this.clearChildDom();
     this.clearChildNodes();
     for (const field of th) {
-      const tableHeader = new TableHeader(this);
+      const tableHeader = new TableHeaderCell(this);
       const text = new TextNode(tableHeader, field.label);
       tableHeader.setAttrName(field.name);
       tableHeader.childNodes.push(text);
@@ -41,7 +41,7 @@ export class TableHead extends TypeTableHead implements ITableHead {
       if (this.childNodes[index]) {
         this.childNodes[index].createInstance(child);
       } else {
-        const th = new TableHeader(this);
+        const th = new TableHeaderCell(this);
         th.createInstance(child);
         this.appendChild(th);
       }

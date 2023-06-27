@@ -1254,7 +1254,7 @@ export const formJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'th',
-                              'className': 'TableHeader',
+                              'className': 'TableHeaderCell',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -1271,7 +1271,7 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'TableHeader',
+                              'className': 'TableHeaderCell',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -1288,7 +1288,7 @@ export const formJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'TableHeader',
+                              'className': 'TableHeaderCell',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -2267,7 +2267,7 @@ export const tableJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'th',
-                              'className': 'TableHeader',
+                              'className': 'TableHeaderCell',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -2284,7 +2284,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'TableHeader',
+                              'className': 'TableHeaderCell',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -2301,7 +2301,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'TableHeader',
+                              'className': 'TableHeaderCell',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -4796,7 +4796,7 @@ export const tableJson: IWebDocument = {
                           'childNodes': [
                             {
                               'nodeName': 'th',
-                              'className': 'TableHeader',
+                              'className': 'TableHeaderCell',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -4813,7 +4813,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'TableHeader',
+                              'className': 'TableHeaderCell',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
@@ -4830,7 +4830,7 @@ export const tableJson: IWebDocument = {
                             },
                             {
                               'nodeName': 'th',
-                              'className': 'TableHeader',
+                              'className': 'TableHeaderCell',
                               'propObj': {
                                 'styleObj': {},
                                 'attrObj': {
