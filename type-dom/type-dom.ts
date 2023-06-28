@@ -14,7 +14,7 @@ import { Select } from './element/html-element/select/select.class';
 import { Label } from './element/html-element/label/label.class';
 import { Input } from './element/html-element/input/input.class';
 import { Textarea } from './element/html-element/textarea/textarea.class';
-import { TableHeader } from './element/html-element/table/header/header.class';
+import { TableHeader } from './element/html-element/table/header/header-cell.class';
 import { TableRow } from './element/html-element/table/row/row.class';
 import { TableHead } from './element/html-element/table/head/head.class';
 import { TableDataCell } from './element/html-element/table/data-cell/data-cell.class';
