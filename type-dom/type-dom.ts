@@ -14,7 +14,7 @@ import { Select } from './element/html-element/select/select.class';
 import { Label } from './element/html-element/label/label.class';
 import { Input } from './element/html-element/input/input.class';
 import { Textarea } from './element/html-element/textarea/textarea.class';
-import { TableHeader } from './element/html-element/table/header/header-cell.class';
+import { TableHeaderCell } from './element/html-element/table/header-cell/header-cell.class';
 import { TableRow } from './element/html-element/table/row/row.class';
 import { TableHead } from './element/html-element/table/head/head.class';
 import { TableDataCell } from './element/html-element/table/data-cell/data-cell.class';
@@ -38,7 +38,7 @@ class TypeDom {
   static Input = Input;
   static Textarea = Textarea;
   static Table = Table;
-  static TableHeader = TableHeader;
+  static TableHeader = TableHeaderCell;
   static TableHead = TableHead;
   static TableBody = TableBody;
   static TableRow = TableRow;
@@ -53,5 +53,5 @@ export type ITypeClass = typeof Button | typeof Division | typeof Heading
   | typeof Select | typeof SelectOption
   | typeof UnorderedList | typeof ListItem
   | typeof Table | typeof TableRow | typeof TableDataCell
-  | typeof TableHeader
+  | typeof TableHeaderCell
   | typeof TableHead | typeof TableBody | typeof TableFoot;
