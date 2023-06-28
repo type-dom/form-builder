@@ -1,7 +1,7 @@
 import { TypeElement } from '../../../type-element/type-element.abstract';
 import { TypeSection } from '../../../type-element/type-html/section/section.abstract';
 import { Display } from '../../../web-style.enum';
-export class Section extends TypeSection {
+export class SectionClass extends TypeSection {
   className: 'Section';
   constructor(public parent: TypeElement) {
     super();

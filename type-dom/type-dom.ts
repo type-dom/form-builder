@@ -7,7 +7,7 @@ import { XElement } from './x-element/x-element.class';
 import { Header } from './element/html-element/header/header.class';
 import { Button } from './element/html-element/button/button.class';
 import { Span } from './element/html-element/span/span.class';
-import { Section } from './element/html-element/section/section';
+import { SectionClass } from './element/html-element/section/section.class';
 import { Table } from './element/html-element/table/table.class';
 import { TableBody } from './element/html-element/table/body/body.class';
 import { Select } from './element/html-element/select/select.class';
@@ -28,7 +28,7 @@ class TypeDom {
   static Span = Span;
   static Button = Button;
   static Header = Header;
-  static Section = Section;
+  static Section = SectionClass;
   static Heading = Heading;
   static UnorderedList = UnorderedList;
   static ListItem = ListItem;
