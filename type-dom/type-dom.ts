@@ -38,7 +38,7 @@ class TypeDom {
   static Input = Input;
   static Textarea = Textarea;
   static Table = Table;
-  static TableHeader = TableHeaderCell;
+  static TableHeaderCell = TableHeaderCell;
   static TableHead = TableHead;
   static TableBody = TableBody;
   static TableRow = TableRow;
