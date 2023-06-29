@@ -1,4 +1,4 @@
-import { IWebStyle } from '../../../../type-dom/style/style.interface';
+import { IStyle } from '../../../../type-dom/style/style.interface';
 import { Table } from '../../../../type-dom/element/html-element/table/table.class';
 import { Input } from '../../../../type-dom/element/html-element/input/input.class';
 import { Label } from '../../../../type-dom/element/html-element/label/label.class';
@@ -22,7 +22,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
 
   label: Label;
   labelText: TextNode;
-  labelStyle: Partial<IWebStyle>;
+  labelStyle: Partial<IStyle>;
   deleteSpan: Span;
 
   protected constructor(labelText = '控件名称') {

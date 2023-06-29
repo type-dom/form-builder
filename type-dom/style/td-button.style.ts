@@ -1,10 +1,10 @@
-import { IWebStyle } from './style.interface';
+import { IStyle } from './style.interface';
 import { Cursor } from './style.enum';
 import { $borderColors, $colors, $fontSizes, $textColors } from './var';
 
 const borderRadiusBase = '4px';
 const fontWeightPrimary = 500;
-export const typeOpts: Record<string, Partial<IWebStyle>> = {
+export const typeOpts: Record<string, Partial<IStyle>> = {
   default: {
     color: $textColors.regular,
     fontWeight: fontWeightPrimary,
@@ -60,13 +60,13 @@ export const typeOpts: Record<string, Partial<IWebStyle>> = {
   }
 };
 
-export const sizeOpts: Record<string, Partial<IWebStyle>> = {
+export const sizeOpts: Record<string, Partial<IStyle>> = {
   mini: {},
   small: {},
   middle: {},
   large: {}
 };
-export const tdButtonBase: Partial<IWebStyle> = {
+export const tdButtonBase: Partial<IStyle> = {
   display: 'inline-flex',
   justifyContent: 'center',
   alignItems: 'center',

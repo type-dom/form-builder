@@ -1,8 +1,8 @@
-import { IWebStyle } from '../../../type-dom/style/style.interface';
+import { IStyle } from '../../../type-dom/style/style.interface';
 import { Display } from '../../../type-dom/style/style.enum';
 import { IOptionConfig } from './web-control.interface';
 
-export const controlStyle: Partial<IWebStyle> = {
+export const controlStyle: Partial<IStyle> = {
   // position: StylePosition.absolute,
   // left: '0',
   // top: '0',
@@ -16,7 +16,7 @@ export const controlStyle: Partial<IWebStyle> = {
   zIndex: 9,
 };
 
-export const formItemStyle: Partial<IWebStyle> = {
+export const formItemStyle: Partial<IStyle> = {
   border: '1px solid #1890ff',
   background: '#f3f9ff',
   padding: '10px',
@@ -25,7 +25,7 @@ export const formItemStyle: Partial<IWebStyle> = {
   display: 'block',
 };
 
-export const labelStyle: Partial<IWebStyle> = {
+export const labelStyle: Partial<IStyle> = {
   width: '100px',
   lineHeight: '32px',
   textAlign: 'right',
@@ -38,7 +38,7 @@ export const labelStyle: Partial<IWebStyle> = {
   boxSizing: 'border-box',
 };
 
-export const itemContentStyle: Partial<IWebStyle> = {
+export const itemContentStyle: Partial<IStyle> = {
   height: '32px',
   lineHeight: '32px',
   paddingLeft: '43px',

@@ -1,5 +1,5 @@
 import { ITextNode } from '../text-node/text-node.interface';
-import { IWebStyle } from '../style/style.interface';
+import { IStyle } from '../style/style.interface';
 import { ITypeAttribute, ITypeElement } from './type-element.interface';
 import { TypeElement } from './type-element.abstract';
 /**
@@ -7,11 +7,11 @@ import { TypeElement } from './type-element.abstract';
  * @param dom
  * @param styleObj
  */
-export function setStyles(dom: HTMLElement, styleObj: Partial<IWebStyle>): void {
+export function setStyles(dom: HTMLElement, styleObj: Partial<IStyle>): void {
   for (const key in styleObj) {
     // console.log('key is ', key);
     if (Object.hasOwnProperty.call(styleObj, key)) {
-      (dom.style as any)[key] = styleObj[key as keyof IWebStyle];
+      (dom.style as any)[key] = styleObj[key as keyof IStyle];
     }
   }
 }

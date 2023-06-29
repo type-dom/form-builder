@@ -2,7 +2,7 @@
  * 虚拟dom的数据结构字面量接口。
  */
 import { ITypeNode } from '../type-node/type-node.interface';
-import { IWebStyle } from '../style/style.interface';
+import { IStyle } from '../style/style.interface';
 export interface ITypeAttribute {
   // id?: string;
   class?: string,
@@ -13,7 +13,7 @@ export interface ITypeAttribute {
 }
 export interface ITypeProperty {
   attrObj: Partial<ITypeAttribute>;
-  styleObj: Partial<IWebStyle>;
+  styleObj: Partial<IStyle>;
   classes?: string[];
 }
 /**

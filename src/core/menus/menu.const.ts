@@ -1,7 +1,7 @@
 import { Display } from '../../../type-dom/style/style.enum';
-import { IWebStyle } from '../../../type-dom/style/style.interface';
+import { IStyle } from '../../../type-dom/style/style.interface';
 
-export const menuStyle: Partial<IWebStyle> = {
+export const menuStyle: Partial<IStyle> = {
   display: Display.flex,
   flexDirection: 'column',
   justifyContent: 'center',
@@ -18,7 +18,7 @@ export const menuStyle: Partial<IWebStyle> = {
   background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
 };
 
-export const menuActive: Partial<IWebStyle> = {
+export const menuActive: Partial<IStyle> = {
   backgroundColor: '#fae100',
   background: '#fae100'
 };

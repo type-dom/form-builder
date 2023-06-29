@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 import { TypeNode } from '../type-node/type-node.abstract';
 import { TextNode } from '../text-node/text-node.class';
 import { Display } from '../style/style.enum';
-import { IWebStyle } from '../style/style.interface';
+import { IStyle } from '../style/style.interface';
 import { humpToMiddleLine } from './type-element.function';
 import {
   ITypeAttribute,
@@ -48,7 +48,7 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
     return this.propObj.attrObj;
   }
 
-  get styleObj(): Partial<IWebStyle> {
+  get styleObj(): Partial<IStyle> {
     return this.propObj.styleObj;
   }
 
@@ -110,7 +110,7 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
         this.removeAttribute(key);
       }
       // for (const style in this.propObj.styleObj) {
-      //   this.removeStyle(style as keyof IWebStyle);
+      //   this.removeStyle(style as keyof IStyle);
       // }
       this.dom.removeAttribute('style');
     }
@@ -121,35 +121,35 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
 
   // todo 类型验证 set ???----> replace
   // todo 累加
-  setStyleObj(styles: Partial<IWebStyle>): TypeElement {
+  setStyleObj(styles: Partial<IStyle>): TypeElement {
     for (const key in styles) {
       if (Object.hasOwnProperty.call(styles, key)) {
         // todo 如何优化
-        const value = styles[key as keyof IWebStyle] as string | number | boolean;
-        this.setStyle(key as keyof IWebStyle, value);
+        const value = styles[key as keyof IStyle] as string | number | boolean;
+        this.setStyle(key as keyof IStyle, value);
       }
     }
     return this;
   }
-  addStyleObj(styles: Partial<IWebStyle>): void {
+  addStyleObj(styles: Partial<IStyle>): void {
     for (const key in styles) {
       if (Object.hasOwnProperty.call(styles, key)) {
         // todo 如何优化
-        const value = styles[key as keyof IWebStyle] as string | number | boolean;
-        this.addStyle(key as keyof IWebStyle, value);
+        const value = styles[key as keyof IStyle] as string | number | boolean;
+        this.addStyle(key as keyof IStyle, value);
       }
     }
   }
-  renderStyleObj(styles: Partial<IWebStyle>): void {
+  renderStyleObj(styles: Partial<IStyle>): void {
     for (const key in styles) {
       if (Object.hasOwnProperty.call(styles, key)) {
         // todo 如何优化
-        const value = styles[key as keyof IWebStyle] as string | number | boolean;
-        this.renderStyle(key as keyof IWebStyle, value);
+        const value = styles[key as keyof IStyle] as string | number | boolean;
+        this.renderStyle(key as keyof IStyle, value);
       }
     }
   }
-  setStyle(key: keyof IWebStyle, value: string | number | boolean): void {
+  setStyle(key: keyof IStyle, value: string | number | boolean): void {
     // todo 是否要删除属性。
     // if (!value) {
     //   delete this.propObj.styleObj[key];
@@ -167,11 +167,11 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
   addStyle(key: string, value: string | number | boolean): void {
     (this.propObj.styleObj as Record<string, string | number | boolean>)[key] = value;
   }
-  renderStyle(key: keyof IWebStyle, value: string | number | boolean): void {
+  renderStyle(key: keyof IStyle, value: string | number | boolean): void {
     this.dom.style[key as any] = String(value);
   }
   // 删除样式
-  removeStyle(key: keyof IWebStyle): TypeElement {
+  removeStyle(key: keyof IStyle): TypeElement {
     if (this.propObj.styleObj[key]) {
       delete this.propObj.styleObj[key];
     }
@@ -434,7 +434,7 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
   // 会循环调用
   // clone(): TypeElement {
   // //   const attrObj: { [key: string]: boolean | string | number } = {};
-  // //   const styleObj: Partial<IWebStyle> = {};
+  // //   const styleObj: Partial<IStyle> = {};
   // //   this.attrObj.forEach(((value, key) => {
   // //     attrs[key] = value
   // //   }));

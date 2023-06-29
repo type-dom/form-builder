@@ -5,7 +5,7 @@ import { Cursor, StylePosition, TextDecoration } from './style.enum';
  * todo 专有属性要分别设置。
  *  extends CSSStyleDeclaration
  */
-export interface IWebStyle {
+export interface IStyle {
   appearance: string;
   // border 边框
   border: string;
