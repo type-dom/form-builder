@@ -1,6 +1,6 @@
 import { getCssVar } from './function';
 
-type ITypes = 'primary' | 'success' | 'warning' | 'danger' | 'error' | 'info';
+type IType = 'primary' | 'success' | 'warning' | 'danger' | 'error' | 'info';
 const $types: ['primary', 'success', 'warning', 'danger', 'error', 'info'] =
   ['primary', 'success', 'warning', 'danger', 'error', 'info'];
 export const $colors: Record<string, any> = {
@@ -40,7 +40,7 @@ function mix(c1: string, c2: string, ratioI: string | number = 0.5) {
 // mix('#ff0000', '#3333ff', 0.5) // "#991a80"
 
 export function setColorMixLevel(
-  $type: ITypes,
+  $type: IType,
   $number: number,
   $mode = 'light',
   $mixColor = $colorWhite
