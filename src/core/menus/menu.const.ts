@@ -1,5 +1,5 @@
-import { Display } from '../../../type-dom/web-style.enum';
-import { IWebStyle } from '../../../type-dom/web-style.interface';
+import { Display } from '../../../type-dom/style/style.enum';
+import { IWebStyle } from '../../../type-dom/style/style.interface';
 
 export const menuStyle: Partial<IWebStyle> = {
   display: Display.flex,

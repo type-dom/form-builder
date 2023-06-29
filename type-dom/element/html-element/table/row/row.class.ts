@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { TypeTableRow } from '../../../../type-element/type-html/table/row/row.class';
 import { DeleteSvg } from '../../../../components/svgs/delete/delete';
 import { Span } from '../../span/span.class';
-import { StylePosition } from '../../../../web-style.enum';
+import { StylePosition } from '../../../../style/style.enum';
 import { TableDataCell } from '../data-cell/data-cell.class';
 import { ITableDataCell } from '../data-cell/data-cell.interface';
 import { Table } from '../table.class';

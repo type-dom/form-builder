@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { Textarea } from '../../../../../../../../type-dom/element/html-element/textarea/textarea.class';
 import { Label } from '../../../../../../../../type-dom/element/html-element/label/label.class';
 import { Button } from '../../../../../../../../type-dom/element/html-element/button/button.class';
-import { Display } from '../../../../../../../../type-dom/web-style.enum';
+import { Display } from '../../../../../../../../type-dom/style/style.enum';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertyTextarea extends PropertyItem {

@@ -1,4 +1,4 @@
-import { Cursor, StylePosition, TextDecoration } from './web-style.enum';
+import { Cursor, StylePosition, TextDecoration } from './style.enum';
 
 /**
  * 字体格式设置

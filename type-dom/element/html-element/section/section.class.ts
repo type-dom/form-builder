@@ -1,6 +1,6 @@
 import { TypeElement } from '../../../type-element/type-element.abstract';
 import { TypeSection } from '../../../type-element/type-html/section/section.abstract';
-import { Display } from '../../../web-style.enum';
+import { Display } from '../../../style/style.enum';
 export class SectionClass extends TypeSection {
   className: 'Section';
   constructor(public parent: TypeElement) {

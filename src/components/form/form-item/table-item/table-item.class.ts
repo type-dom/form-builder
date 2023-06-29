@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { Display } from '../../../../../type-dom/web-style.enum';
+import { Display } from '../../../../../type-dom/style/style.enum';
 import { toJSON } from '../../../../../type-dom/type-element/type-element.function';
 import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';

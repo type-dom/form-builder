@@ -1,4 +1,4 @@
-import { Display } from '../../../../type-dom/web-style.enum';
+import { Display } from '../../../../type-dom/style/style.enum';
 import { TypeHtml } from '../../../../type-dom/type-element/type-html/type-html.abstract';
 import { LayoutWrapper } from '../layout';
 import { Navbar } from './navbar/navbar';

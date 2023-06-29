@@ -1,8 +1,8 @@
 import { Subscription } from 'rxjs';
 import { TypeNode } from '../type-node/type-node.abstract';
 import { TextNode } from '../text-node/text-node.class';
-import { Display } from '../web-style.enum';
-import { IWebStyle } from '../web-style.interface';
+import { Display } from '../style/style.enum';
+import { IWebStyle } from '../style/style.interface';
 import { humpToMiddleLine } from './type-element.function';
 import {
   ITypeAttribute,

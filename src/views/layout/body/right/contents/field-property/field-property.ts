@@ -1,4 +1,4 @@
-import { Display } from '../../../../../../../type-dom/web-style.enum';
+import { Display } from '../../../../../../../type-dom/style/style.enum';
 import { TypeDiv } from '../../../../../../../type-dom/type-element/type-html/div/div.abstract';
 import { ReadonlyProperty } from '../control-property/readonly/control-readonly';
 import { MinValueProperty } from '../control-property/min-value/control-min-value';

@@ -1,5 +1,5 @@
-import { IWebStyle } from '../web-style.interface';
-import { Cursor } from '../web-style.enum';
+import { IWebStyle } from './style.interface';
+import { Cursor } from './style.enum';
 import { $borderColors, $colors, $fontSizes, $textColors } from './var';
 
 const borderRadiusBase = '4px';

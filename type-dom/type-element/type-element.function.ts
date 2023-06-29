@@ -1,5 +1,5 @@
 import { ITextNode } from '../text-node/text-node.interface';
-import { IWebStyle } from '../web-style.interface';
+import { IWebStyle } from '../style/style.interface';
 import { ITypeAttribute, ITypeElement } from './type-element.interface';
 import { TypeElement } from './type-element.abstract';
 /**

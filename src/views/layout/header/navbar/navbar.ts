@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
-import { Display } from '../../../../../type-dom/web-style.enum';
+import { Display } from '../../../../../type-dom/style/style.enum';
 import { TdButton } from '../../../../../type-dom/components/basic/td-button/td-button.class';
 import { HeaderWrapper } from '../header';
 import { PreviewButton } from './preiew-button/preview-button';

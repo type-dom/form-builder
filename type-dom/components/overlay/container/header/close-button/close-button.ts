@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeButton } from '../../../../../type-element/type-html/button/button.abstract';
-import { Cursor, StylePosition } from '../../../../../web-style.enum';
+import { Cursor, StylePosition } from '../../../../../style/style.enum';
 import { CloseSvg } from '../../../../svgs/close/close';
 import { OverlayHeader } from '../header';
 

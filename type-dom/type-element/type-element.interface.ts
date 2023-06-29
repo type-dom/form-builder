@@ -2,7 +2,7 @@
  * 虚拟dom的数据结构字面量接口。
  */
 import { ITypeNode } from '../type-node/type-node.interface';
-import { IWebStyle } from '../web-style.interface';
+import { IWebStyle } from '../style/style.interface';
 export interface ITypeAttribute {
   // id?: string;
   class?: string,

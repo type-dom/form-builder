@@ -1,4 +1,4 @@
-import { IWebStyle } from '../../../../type-dom/web-style.interface';
+import { IWebStyle } from '../../../../type-dom/style/style.interface';
 import { Table } from '../../../../type-dom/element/html-element/table/table.class';
 import { Input } from '../../../../type-dom/element/html-element/input/input.class';
 import { Label } from '../../../../type-dom/element/html-element/label/label.class';

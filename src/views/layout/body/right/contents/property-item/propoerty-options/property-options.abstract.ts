@@ -3,7 +3,7 @@ import { Label } from '../../../../../../../../type-dom/element/html-element/lab
 import { Division } from '../../../../../../../../type-dom/element/html-element/division/division.class';
 import { Select } from '../../../../../../../../type-dom/element/html-element/select/select.class';
 import { Button } from '../../../../../../../../type-dom/element/html-element/button/button.class';
-import { Display } from '../../../../../../../../type-dom/web-style.enum';
+import { Display } from '../../../../../../../../type-dom/style/style.enum';
 import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
 import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';

@@ -1,4 +1,4 @@
-import { IWebStyle } from '../../../web-style.interface';
+import { IWebStyle } from '../../../style/style.interface';
 // todo 具体样式应该在自定义组件中设置，而不是在基类中设置。
 export const buttonStyle: Partial<IWebStyle> = {
   // appearance: 'none',

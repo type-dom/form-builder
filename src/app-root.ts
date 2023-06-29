@@ -4,7 +4,7 @@ import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
-import { Cursor } from '../type-dom/web-style.enum';
+import { Cursor } from '../type-dom/style/style.enum';
 import { TypeRoot } from '../type-dom/type-root/type-root.class';
 import { TableRow } from '../type-dom/element/html-element/table/row/row.class';
 import { TableDataCell } from '../type-dom/element/html-element/table/data-cell/data-cell.class';

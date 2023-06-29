@@ -1,5 +1,5 @@
 import { WebDocument } from '../../../../core/document/web-document.class';
-import { StylePosition } from '../../../../../type-dom/web-style.enum';
+import { StylePosition } from '../../../../../type-dom/style/style.enum';
 import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
 import { BodyWrapper } from '../body';
 

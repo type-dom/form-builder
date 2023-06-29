@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { StylePosition } from '../../../web-style.enum';
+import { StylePosition } from '../../../style/style.enum';
 import { TypeDiv } from '../../../type-element/type-html/div/div.abstract';
 import { Overlay } from '../overlay.abstract';
 import { OverlayHeader } from './header/header';

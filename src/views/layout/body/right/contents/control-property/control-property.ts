@@ -1,7 +1,7 @@
 import { TypeDiv } from '../../../../../../../type-dom/type-element/type-html/div/div.abstract';
 import { Division } from '../../../../../../../type-dom/element/html-element/division/division.class';
 import { TextNode } from '../../../../../../../type-dom/text-node/text-node.class';
-import { Display } from '../../../../../../../type-dom/web-style.enum';
+import { Display } from '../../../../../../../type-dom/style/style.enum';
 import { RightContents } from '../contents';
 // control property
 import { ControlFieldProperty } from './field/control-field';

@@ -1,5 +1,5 @@
 import { TypeHtml } from '../../../../type-dom/type-element/type-html/type-html.abstract';
-import { Display } from '../../../../type-dom/web-style.enum';
+import { Display } from '../../../../type-dom/style/style.enum';
 import { LayoutWrapper } from '../layout';
 import { BodyLeft } from './left/left';
 import { BodyRight } from './right/right';
