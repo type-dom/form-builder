@@ -1,5 +1,6 @@
 import { debounce, debounceTime, switchMap, fromEvent, map, filter, Observable, Subscription, merge } from 'rxjs';
 import './styles/index.scss';
+// import '../type-dom/style/scss/index.scss';
 import { AppRoot } from './app-root';
 import {
   fieldsConfig,

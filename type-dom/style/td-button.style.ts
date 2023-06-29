@@ -1,20 +1,32 @@
 import { IStyle } from './style.interface';
 import { Cursor } from './style.enum';
-import { $borderColors, $colors, $fontSizes, $textColors, $borderRadius, $borderWidth, $borderStyle } from './var';
-
-const fontWeightPrimary = 500;
+import {
+  $borderColors,
+  $colors,
+  $fontSizes,
+  $textColors,
+  $borderRadius,
+  $borderWidth,
+  $borderStyle,
+  $colorWhite, $fontWeightPrimary, $buttonTextColor, $buttonBgColor, $buttonBorderColor, $button
+} from './var';
+export const $buttonIconSpanGap = {
+  large: '8px',
+  default: '6px',
+  small: '4px',
+};
 export const typeOpts: Record<string, Partial<IStyle>> = {
   default: {
     color: $textColors.regular,
-    fontWeight: fontWeightPrimary,
+    fontWeight: $fontWeightPrimary,
     border: $borderWidth + ' ' + $borderStyle + ' ' + $textColors.regular,
     borderColor: $textColors.regular,
     fontSize: $fontSizes.base,
     borderRadius: $borderRadius.base,
   },
   primary: {
-    color: '#fff',
-    fontWeight: fontWeightPrimary,
+    color: $colors.white,
+    fontWeight: $fontWeightPrimary,
     backgroundColor: $colors.primary.base,
     border: $borderWidth + ' ' + $borderStyle + ' ' + $borderColors[''],
     borderColor: $borderColors[''],
@@ -23,7 +35,7 @@ export const typeOpts: Record<string, Partial<IStyle>> = {
   },
   success: {
     color: $colors.white,
-    fontWeight: fontWeightPrimary,
+    fontWeight: $fontWeightPrimary,
     backgroundColor: $colors.success.base,
     border: $borderWidth + ' ' + $borderStyle + ' ' + $borderColors[''],
     borderColor: $borderColors[''],
@@ -31,8 +43,8 @@ export const typeOpts: Record<string, Partial<IStyle>> = {
     borderRadius: $borderRadius.base,
   },
   warning: {
-    color: '#fff',
-    fontWeight: fontWeightPrimary,
+    color: $colors.white,
+    fontWeight: $fontWeightPrimary,
     backgroundColor: $colors.warning.base,
     border: $borderWidth + ' ' + $borderStyle + ' ' + $colors.warning.base,
     borderColor: $colors.warning.base,
@@ -41,7 +53,7 @@ export const typeOpts: Record<string, Partial<IStyle>> = {
   },
   info: {
     color: '#fff',
-    fontWeight: fontWeightPrimary,
+    fontWeight: $fontWeightPrimary,
     backgroundColor: $colors.info.base,
     border: $borderWidth + ' ' + $borderStyle + ' ' + $colors.info.base,
     borderColor: $colors.info.base,
@@ -50,7 +62,7 @@ export const typeOpts: Record<string, Partial<IStyle>> = {
   },
   danger: {
     color: '#fff',
-    fontWeight: fontWeightPrimary,
+    fontWeight: $fontWeightPrimary,
     backgroundColor: $colors.danger.base,
     border: $borderWidth + ' ' + $borderStyle + ' ' + $colors.danger.base,
     borderColor: $colors.danger.base,
@@ -70,17 +82,23 @@ export const tdButtonBase: Partial<IStyle> = {
   justifyContent: 'center',
   alignItems: 'center',
   lineHeight: '1',
+  // min-height will expand when in flex
   height: '32px',
   whiteSpace: 'nowrap',
   cursor: Cursor.pointer,
+  color: $button.textColor,
   textAlign: 'center',
   boxSizing: 'border-box',
   outline: 'none',
   transition: '.1s',
+  fontWeight: $button.fontWeight, // getCssVar('button', 'font-weight');
   userSelect: 'none',
   verticalAlign: 'middle',
   appearance: 'none',
   // '-webkit-appearance': 'none',
+  backgroundColor: $button.bgColor, // getCssVar('button', 'bg-color');
+  // border: $border, // getCssVar('border'),
+  borderColor: $button.borderColor, // getCssVar('button', 'border-color');
   padding: '8px 15px',
 };
 
@@ -88,26 +106,26 @@ export const tdButtonBase: Partial<IStyle> = {
 export function buttonVariant($type: string) {
   const $buttonColorTypes: Record<string, Record<string, string[]>> = {
     '': {
-      'text-color': ['color', 'white'],
-      'bg-color': ['color', $type],
-      'border-color': ['color', $type],
-      'outline-color': ['color', $type, 'light-5'],
-      'active-color': ['color', $type, 'dark-2'],
+      textColor: $colorWhite,
+      bgColor: $colors[$type].base,
+      borderColor: $colors[$type].base,
+      outlineColor: $colors[$type]['light-5'],
+      activeColor: $colors[$type]['dark-2'],
     },
-    'hover': {
-      'text-color': ['color', 'white'],
+    hover: {
+      textColor: $colorWhite,
       'link-text-color': ['color', $type, 'light-5'],
-      'bg-color': ['color', $type, 'light-3'],
-      'border-color': ['color', $type, 'light-3'],
+      bgColor: $colors[$type]['light-3'], // ['color', $type, 'light-3'],
+      borderColor: $colors[$type]['light-3'], // ['color', $type, 'light-3'],
     },
-    'active': {
-      'bg-color': ['color', $type, 'dark-2'],
-      'border-color': ['color', $type, 'dark-2'],
+    active: {
+      bgColor: $colors[$type]['dark-2'], // ['color', $type, 'dark-2'],
+      borderColor: $colors[$type]['dark-2'] // ['color', $type, 'dark-2'],
     },
-    'disabled': {
-      'text-color': ['color', 'white'],
-      'bg-color': ['color', $type, 'light-5'],
-      'border-color': ['color', $type, 'light-5'],
+    disabled: {
+      textColor: $colorWhite,
+      bgColor: $colors[$type]['light-5'], // ['color', $type, 'light-5'],
+      borderColor: $colors[$type]['light-5'], // ['color', $type, 'light-5'],
     },
   };
   for (const $type1 in $buttonColorTypes) {
@@ -131,7 +149,7 @@ export function buttonVariant($type: string) {
 // &.is-text,
 // &.is-link {
 //   @include button-plain($type);
-//   }
+// }
 }
 
 

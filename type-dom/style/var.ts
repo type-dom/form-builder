@@ -1,5 +1,12 @@
-import { getCssVar } from './function';
-
+/**
+ * scss/var
+ */
+export const $fontWeightPrimary = 500;
+export const $fontLineHeightPrimary = '24px';
+/**
+ * 样式的通用全局变量
+ * scss/common/var
+ */
 type IType = 'primary' | 'success' | 'warning' | 'danger' | 'error' | 'info';
 const $types: ['primary', 'success', 'warning', 'danger', 'error', 'info'] =
   ['primary', 'success', 'warning', 'danger', 'error', 'info'];
@@ -45,6 +52,7 @@ export function setColorMixLevel(
   $mode = 'light',
   $mixColor = $colorWhite
 ) {
+  // $colors[$type][$mode] = {};
   $colors[$type][$mode + '-' + $number] = mix($mixColor, $colors[$type].base, Math.round($number * 10) / 100);
   // $colors =  map.deepMerge(
   //     $type: (
@@ -74,6 +82,8 @@ for (const $type of $types) {
   for (let $i = 1; $i < 10; $i++) {
     setColorMixLevel($type, $i, 'light', $colorWhite);
   }
+  // --el-color-primary-dark-2
+  setColorMixLevel($type, 2, 'dark', $colorBlack);
 }
 console.log('$colors is ', $colors);
 export const $textColors = {
@@ -100,6 +110,7 @@ export const $fillColors = {
   darker: '#e6e8eb',
   blank: '#ffffff',
 };
+// Background
 export const $bgColors = {
   '': '#ffffff',
   page: '#f2f3f5',
@@ -108,7 +119,7 @@ export const $bgColors = {
 // Border
 export const $borderWidth = '1px';
 export const $borderStyle = 'solid';
-export const $borderColorHover = getCssVar('text-color', 'disabled');
+export const $borderColorHover = $textColors.disabled;
 export const $borderRadius = {
   base: '4px',
   small: '2px',
@@ -121,6 +132,10 @@ export const $boxShadow = {
   light: '0px 0px 12px rgba(0, 0, 0, 0.12)',
   lighter: '0px 0px 6px rgba(0, 0, 0, 0.12)',
   dark: '0px 16px 48px 16px rgba(0, 0, 0, 0.08),0px 12px 32px rgba(0, 0, 0, 0.12),0px 8px 16px -8px rgba(0, 0, 0, 0.16)',
+};
+// Typography （排版）
+export const fontFamily = {
+  '': "'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif"
 };
 export const $fontSizes = {
   extraLarge: '20px',
@@ -139,26 +154,92 @@ export const $zIndex = {
 
 // Disable default
 export const $disabled = {
-  'bg-color': getCssVar('fill-color', 'light'),
-  'text-color': getCssVar('text-color', 'placeholder'),
-  'border-color': getCssVar('border-color', 'light'),
+  bgColor: $fillColors.light,
+  textColor: $textColors.placeholder,
+  borderColor: $borderColors.light
 };
 
 export const $commonComponentSize = {
-  'large': '40px',
-  'default': '32px',
-  'small': '24px',
+  large: '40px',
+  default: '32px',
+  small: '24px',
 };
 
 // overlay
-const $overlayColor = {
+export const $overlayColor = {
   '': 'rgba(0, 0, 0, 0.8)',
-  'light': 'rgba(0, 0, 0, 0.7)',
-  'lighter': 'rgba(0, 0, 0, 0.5)',
+  light: 'rgba(0, 0, 0, 0.7)',
+  lighter: 'rgba(0, 0, 0, 0.5)'
 };
 
 // mask
 const $maskColor = {
   '': 'rgba(255, 255, 255, 0.9)',
   'extra-light': 'rgba(255, 255, 255, 0.3)',
+};
+// Button
+// css3 var in packages/theme-chalk/src/button.scss
+export const $button = {
+  fontWeight: $fontWeightPrimary, // getCssVar('font-weight-primary'),
+  borderColor: $borderColors[''],
+  bgColor: $fillColors.blank,
+  textColor: $textColors.regular,
+  disabled: {
+    textColor: $disabled.textColor,
+    bgColor: $fillColors.blank,
+    borderColor: $borderColors.light,
+  },
+  divide: {
+    borderColor: 'rgba(' + $colorWhite + ', 0.5)'
+  },
+  hover: {
+    textColor: $colorPrimary,
+    bgColor: $colors.primary['light-9'],
+    borderColor: $colors.primary['light-7'],
+    link: {
+      textColor: $colors.info.base, // getCssVar('color-info'),
+    },
+  },
+  active: {
+    textColor: $colorPrimary,
+    borderColor: $colorPrimary, // 'hover-text-color'
+    bgColor: $colors.primary['light-9'], //  getCssVar('button', 'hover-bg-color),
+    color: $textColors.primary, // getCssVar('text-color', 'primary'),
+  },
+  outlineColor: $colors.primary['light-5'], // getCssVar('color-primary', 'light-5'),
+};
+
+export const $buttonBorderWidth = $borderWidth;
+
+// need mix, so do not use css var
+export const $buttonHoverTintPercent = '20%';
+export const $buttonActiveShadePercent = '10%';
+
+export const $buttonBorderColor: Record<string, string> = {};
+export const $buttonBgColor: Record<string, string> = {};
+export const $buttonTextColor = {};
+
+for (const $type of $types) {
+  $buttonBorderColor[$type] = $colors[$type].base;
+  $buttonBgColor[$type] = $colors[$type].base;
+}
+export const $buttonFontSize = {
+  large: $fontSizes.base,
+  default: $fontSizes.base,
+  small: '12px',
+};
+export const $buttonBorderRadius = {
+  large: $borderRadius.base,
+  default: $borderRadius.base,
+  small: (parseInt($borderRadius.base, 10) - 1) + 'px',
+};
+export const $buttonPaddingVertical = {
+  large: '13px',
+  default: '9px',
+  small: '6px',
+};
+export const $buttonPaddingHorizontal = {
+  large: '20px',
+  default: '16px',
+  small: '12px',
 };
