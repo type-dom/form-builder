@@ -1,7 +1,7 @@
 import { TypeButton } from '../../../type-element/type-html/button/button.abstract';
 import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
+import { tdButtonBase, typeOpts } from '../../../style/td-button.style';
 import { ITdButton, ITdButtonConfig } from './td-button.interface';
-import { tdButtonBase, typeOpts } from '../../styles/td-button.style';
 export class TdButton extends TypeButton implements ITdButton {
   className: 'TdButton';
   constructor(public parent: TypeHtml, config?: Partial<ITdButtonConfig>) {
