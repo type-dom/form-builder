@@ -1,4 +1,4 @@
-import {getCssVar} from "./function";
+import { getCssVar } from './function';
 
 type ITypes = 'primary' | 'success' | 'warning' | 'danger' | 'error' | 'info';
 const $types: ['primary', 'success', 'warning', 'danger', 'error', 'info'] =
