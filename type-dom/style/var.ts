@@ -7,8 +7,8 @@ export const $fontLineHeightPrimary = '24px';
  * 样式的通用全局变量
  * scss/common/var
  */
-type IType = 'primary' | 'success' | 'warning' | 'danger' | 'error' | 'info';
-const $types: ['primary', 'success', 'warning', 'danger', 'error', 'info'] =
+export type IType = 'primary' | 'success' | 'warning' | 'danger' | 'error' | 'info';
+export const $types: ['primary', 'success', 'warning', 'danger', 'error', 'info'] =
   ['primary', 'success', 'warning', 'danger', 'error', 'info'];
 export const $colors: Record<string, any> = {
   white: '#ffffff',

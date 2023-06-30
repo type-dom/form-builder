@@ -21,17 +21,6 @@ import { CheckboxItem } from './components/form/form-item/checkbox-item/checkbox
 import { TableItem } from './components/form/form-item/table-item/table-item.class';
 import { ControlClass } from './core/controls/web-control.interface';
 
-export const defaultTextStyle = {
-  fontFamily: '宋体',
-  fontSize: 14,
-  color: '#000',
-  backgroundColor: 'unset',
-  fontWeight: 'unset',
-  fontStyle: 'unset',
-  textDecoration: 'unset',
-  verticalAlign: 'unset'
-};
-
 // 一英寸等于25.4mm dpi (dot per inch)输出分辨率
 function getDPI() {
   const arrDPI = [];

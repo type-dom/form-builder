@@ -8,7 +8,12 @@ import {
   $borderRadius,
   $borderWidth,
   $borderStyle,
-  $colorWhite, $fontWeightPrimary, $buttonTextColor, $buttonBgColor, $buttonBorderColor, $button
+  $colorWhite,
+  $fontWeightPrimary,
+  $buttonTextColor,
+  $buttonBgColor,
+  $buttonBorderColor,
+  $button
 } from './var';
 export const $buttonIconSpanGap = {
   large: '8px',
@@ -52,7 +57,7 @@ export const typeOpts: Record<string, Partial<IStyle>> = {
     borderRadius: $borderRadius.base,
   },
   info: {
-    color: '#fff',
+    color: $colors.white,
     fontWeight: $fontWeightPrimary,
     backgroundColor: $colors.info.base,
     border: $borderWidth + ' ' + $borderStyle + ' ' + $colors.info.base,
@@ -61,7 +66,7 @@ export const typeOpts: Record<string, Partial<IStyle>> = {
     borderRadius: $borderRadius.base,
   },
   danger: {
-    color: '#fff',
+    color: $colors.white,
     fontWeight: $fontWeightPrimary,
     backgroundColor: $colors.danger.base,
     border: $borderWidth + ' ' + $borderStyle + ' ' + $colors.danger.base,

@@ -5,6 +5,7 @@ import { I } from '../../../element/html-element/i/i.class';
 import { tdButtonBase, typeOpts } from '../../../style/td-button.style';
 import { AddSvg } from '../../svgs/add/add';
 import { ITdButton, ITdButtonConfig } from './td-button.interface';
+import { $commonComponentSize } from '../../../style/var';
 export class TdButton extends TypeButton implements ITdButton {
   className: 'TdButton';
   span: Span;
@@ -45,9 +46,12 @@ export class TdButton extends TypeButton implements ITdButton {
       this.setTitle(config.title);
     }
     const type = config?.type ? config.type : 'default';
-    if (type) {
-      this.addStyleObj(typeOpts[type]);
-    }
+    this.addStyleObj(typeOpts[type]);
+    const size = config?.size ? config.size : 'default';
+    this.addStyleObj({
+      height: $commonComponentSize[size],
+
+    })
     // this.addAttrObj({
     //   type: 'primary', // success warn danger primary
     //   size: 'middle' // small middle, large

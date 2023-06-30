@@ -4,7 +4,9 @@ export interface ITdButton extends ITypeButton {
   className: 'TdButton',
   childNodes: ITypeNode[],
 }
-
+export type IButtonSize = '' | 'mini' | 'small' | 'medium' | 'large';
+export type IButtonType = 'default' | 'primary' | 'success' | 'warning' | 'info' | 'danger' | 'text' | ''
+export type IButtonNativeType = 'button' | 'submit' | 'reset';
 /**
  *     type、plain、round 和 circle 来定义按钮的样式。
  *         type: primary/success/warning/danger/info
@@ -19,15 +21,17 @@ export interface ITdButton extends ITypeButton {
  *     disabled  按钮是否为禁用状态
  */
 export interface ITdButtonConfig {
+  // FormItemProps
+  size: IButtonSize,
+  disabled: boolean,
   title: string,
-  type: 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info',
-  size: 'mini' | 'small' | 'middle' | 'large',
-  plain: boolean,
+  type: IButtonType,
   icon: string,
+  nativeType: IButtonNativeType,
   loading: boolean,
-  loadingIcon: string,
+  plain: boolean,
   round: boolean,
   circle: boolean,
+  loadingIcon: string,
   color: string,
-  disabled: boolean,
 }
