@@ -1,5 +1,6 @@
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 import { AttachmentControl } from '../../../../../../../core/controls/basic/attachment/attachment.class';
+import { AppRoot } from '../../../../../../../app-root';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
@@ -42,14 +43,14 @@ export class MultipleProperty extends PropertyRadio {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.appRoot.selectedControl instanceof AttachmentControl) {
-        this.appRoot.selectedControl.itemContent.setAttribute('multiple', !!value);
+      if (AppRoot.selectedControl instanceof AttachmentControl) {
+        AppRoot.selectedControl.itemContent.setAttribute('multiple', !!value);
       }
       return;
     }
-    if (this.appRoot.selectedControl instanceof AttachmentControl) {
+    if (AppRoot.selectedControl instanceof AttachmentControl) {
       if (this.styleObj.display === 'none') this.show();
-      const multiple = !!this.appRoot.selectedControl?.formItem.itemContent.attrObj.multiple;
+      const multiple = !!AppRoot.selectedControl?.formItem.itemContent.attrObj.multiple;
       this.resetResultValue(multiple ? 'multiple' : '');
     } else {
       this.hide();

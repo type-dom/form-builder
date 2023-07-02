@@ -2,6 +2,7 @@ import { PropertyInput } from '../../property-item/input/property-input.abstract
 import { ControlProperty } from '../control-property';
 import { NumericalControl } from '../../../../../../../core/controls/basic/numerical/numerical.class';
 import { FieldProperty } from '../../field-property/field-property';
+import { AppRoot } from '../../../../../../../app-root';
 
 // 最大值，只对数值控件有效
 export class MaxValueProperty extends PropertyInput {
@@ -25,16 +26,16 @@ export class MaxValueProperty extends PropertyInput {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.appRoot.selectedControl instanceof NumericalControl) {
-        this.appRoot.selectedControl?.formItem.itemContent.setAttribute('max', value);
+      if (AppRoot.selectedControl instanceof NumericalControl) {
+        AppRoot.selectedControl?.formItem.itemContent.setAttribute('max', value);
       } else {
         console.error('选中的控件不是数字控件。');
       }
       return;
     }
-    if (this.appRoot.selectedControl instanceof NumericalControl) {
+    if (AppRoot.selectedControl instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MaxValue = this.appRoot.selectedControl.formItem.itemContent.propObj.attrObj.max as string;
+      const MaxValue = AppRoot.selectedControl.formItem.itemContent.propObj.attrObj.max as string;
       if (MaxValue) {
         this.resetInputValue(MaxValue);
       } else {

@@ -93,9 +93,9 @@ class ExampleDesignMode {
         this.editor.setConnectionItemValue('label', 'value');
         return;
       }
-      if (this.editor.selectedControl instanceof ConnectionControl) {
-        console.log('this.editor.selectedControl.a is ', this.editor.selectedControl.connectionConfigLabel);
-        const value = this.editor.selectedControl.connectionConfigValue;
+      if (AppRoot.selectedControl instanceof ConnectionControl) {
+        console.log('this.editor.selectedControl.a is ', AppRoot.selectedControl.connectionConfigLabel);
+        const value = AppRoot.selectedControl.connectionConfigValue;
         if (value === undefined) {
           // todo 弹框提示
           throw Error('请先选择配置信息。 ');

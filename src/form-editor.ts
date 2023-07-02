@@ -54,7 +54,7 @@ export class FormEditor {
     this.appRoot.connectionItemObservable.subscribe(() => {
       console.log('this.appRoot.connectionItemObservable . ');
       if (this.appRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
-        console.log('this.appRoot.selectedControl.a is ', this.appRoot.selectedTableDataCell.control.connectionConfigLabel);
+        console.log('AppRoot.selectedControl.a is ', this.appRoot.selectedTableDataCell.control.connectionConfigLabel);
         const value = this.appRoot.selectedTableDataCell.control.connectionConfigValue;
         if (value === undefined) {
           throw Error('请先选择配置信息。 ');
@@ -63,9 +63,9 @@ export class FormEditor {
         this.appRoot.setConnectionItemValue('label', 'value');
         return;
       }
-      if (this.appRoot.selectedControl instanceof ConnectionControl) {
-        console.log('this.appRoot.selectedControl.a is ', this.appRoot.selectedControl.connectionConfigLabel);
-        const value = this.appRoot.selectedControl.connectionConfigValue;
+      if (AppRoot.selectedControl instanceof ConnectionControl) {
+        console.log('AppRoot.selectedControl.a is ', AppRoot.selectedControl.connectionConfigLabel);
+        const value = AppRoot.selectedControl.connectionConfigValue;
         if (value === undefined) {
           throw Error('请先选择配置信息。 ');
         }

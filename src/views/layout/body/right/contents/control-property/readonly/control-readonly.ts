@@ -1,8 +1,9 @@
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
+import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
+import { AppRoot } from '../../../../../../../app-root';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
-import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
 
 const readonlyConfigs: IOptionConfig = {
   name: '只读' + Math.random(),
@@ -43,9 +44,9 @@ export class ReadonlyProperty extends PropertyRadio {
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
       if (value === 'disabled') {
-        this.appRoot.selectedControl?.setDisabled();
+        AppRoot.selectedControl?.setDisabled();
       } else {
-        this.appRoot.selectedControl?.removeDisabled();
+        AppRoot.selectedControl?.removeDisabled();
       }
       return;
     }
@@ -53,7 +54,7 @@ export class ReadonlyProperty extends PropertyRadio {
     console.log('this.styleObj.display is ', this.styleObj.display);
     // if (this.appRoot.selectedTableDataCell?.control instanceof )
     if (this.styleObj.display === 'none') this.show();
-    let disabled = this.appRoot.selectedControl?.formItem.itemContent.attrObj.disabled as boolean;
+    let disabled = AppRoot.selectedControl?.formItem.itemContent.attrObj.disabled as boolean;
     console.log('disabled is ', disabled);
     this.resetResultValue(disabled ? 'disabled' : '');
   }

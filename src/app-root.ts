@@ -1,5 +1,5 @@
 // 顺序不能随意调换，可能会加载报错。 WebControl todo 如何解决
-import { filter, fromEvent, switchMap, of, Observable, Subscription, map, Subject } from 'rxjs';
+import { filter, fromEvent, switchMap, of, Observable, Subscription, Subject } from 'rxjs';
 import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
@@ -37,7 +37,7 @@ export class AppRoot extends TypeRoot {
   // 选中的菜单
   selectedMenu: ControlMenu | null;
   // 选中的控件
-  selectedControl: WebControl | null;
+  static selectedControl: WebControl | null;
   // 选中的表格单元格
   selectedTableDataCell?: TableDataCell | null;
   layout: LayoutWrapper;
@@ -106,11 +106,11 @@ export class AppRoot extends TypeRoot {
     editorEl.appendChild(test.dom);
     // this.currentPage = this.defaultPage;
     this.selectedMenu = null;
-    this.selectedControl = null;
+    AppRoot.selectedControl = null;
     // this.connectionItemObservable = null;
     this.editorElObservable = fromEvent(this.el, 'click')
       .pipe(filter(() => {
-        return !!this.selectedTableDataCell || !!this.selectedControl;
+        return !!this.selectedTableDataCell || !!AppRoot.selectedControl;
       }));
     this.functionMap = new Map();
     this.formProperty.reset();
@@ -209,7 +209,7 @@ export class AppRoot extends TypeRoot {
   get formulaVisibleObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        // console.log('this.editor.selectedControl is ', this.selectedControl);
+        // console.log('this.editor.selectedControl is ', AppRoot.selectedControl);
         // if (this.selectedTableDataCell) { // 表格单元格选中的控件
         //   return this.fieldProperty.fieldDefaultValue.formulaObservable;
         // }
@@ -224,7 +224,7 @@ export class AppRoot extends TypeRoot {
   get optionsConfigObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        // console.log('this.editor.selectedControl is ', this.selectedControl);
+        // console.log('this.editor.selectedControl is ', AppRoot.selectedControl);
         if (this.selectedTableDataCell) { // 表格单元格选中的控件
           // console.log('this.fieldProperty.fieldOptions.optionsConfigObservable is ', this.fieldProperty.fieldOptions.optionsConfigObservable);
           return this.fieldProperty.fieldOptions.optionsConfigObservable;
@@ -268,9 +268,9 @@ export class AppRoot extends TypeRoot {
           console.log('this.selectedTableDataCell.control.connectionItemObservable is ', this.selectedTableDataCell.control.connectionItemObservable);
           return this.selectedTableDataCell.control.connectionItemObservable;
         }
-        if (this.selectedControl instanceof ConnectionControl) {
-          console.log('this.selectedControl.connectionItemObservable is ', this.selectedControl.connectionItemObservable);
-          return this.selectedControl.connectionItemObservable;
+        if (AppRoot.selectedControl instanceof ConnectionControl) {
+          console.log('AppRoot.selectedControl.connectionItemObservable is ', AppRoot.selectedControl.connectionItemObservable);
+          return AppRoot.selectedControl.connectionItemObservable;
         }
         return of(null);
       }),
@@ -287,8 +287,8 @@ export class AppRoot extends TypeRoot {
         if (this.selectedTableDataCell?.control instanceof AttachmentControl) {
           return this.selectedTableDataCell.control.attachmentObservable;
         }
-        if (this.selectedControl instanceof AttachmentControl) {
-          return this.selectedControl.attachmentObservable;
+        if (AppRoot.selectedControl instanceof AttachmentControl) {
+          return AppRoot.selectedControl.attachmentObservable;
         }
         return of(null);
       }),
@@ -377,7 +377,7 @@ export class AppRoot extends TypeRoot {
     console.log('setSelectedControl . control is ', control);
     if (control) { // 选中控件
       // 如果重复选中一个控件，不做处理
-      if (this.selectedControl === control) {
+      if (AppRoot.selectedControl === control) {
         return;
       }
       // 如果选中的控件不是表格控件
@@ -387,10 +387,10 @@ export class AppRoot extends TypeRoot {
       }
 
       // 如果之前有选中的控件，则重置样式。
-      this.selectedControl?.setStyleObj({
+      AppRoot.selectedControl?.setStyleObj({
         border: '1px solid #e2e0e0',
       });
-      this.selectedControl = control;
+      AppRoot.selectedControl = control;
       control.setStyleObj({
         border: '1px solid #f00',
       });
@@ -400,11 +400,11 @@ export class AppRoot extends TypeRoot {
       // console.log('clone ', control.clone());
       // this.form.appendChild(control.clone());
     } else { // 清除选中的控件
-      if (this.selectedControl) {
-        this.selectedControl.setStyleObj({
+      if (AppRoot.selectedControl) {
+        AppRoot.selectedControl.setStyleObj({
           border: '1px solid #e2e0e0',
         });
-        this.selectedControl = null;
+        AppRoot.selectedControl = null;
         // 清除选中控件时，如果有选中的单元格，也要同步清除。
         if (this.selectedTableDataCell) {
           this.setSelectedTableDataCell(null);
@@ -577,16 +577,16 @@ export class AppRoot extends TypeRoot {
       });
       return;
     }
-    if (this.selectedControl instanceof ConnectionControl) {
-      this.selectedControl.setAttrObj({
+    if (AppRoot.selectedControl instanceof ConnectionControl) {
+      AppRoot.selectedControl.setAttrObj({
         value,
         label
       }); // 控件值
       // 在内容框中显示选中的值
-      this.selectedControl.formItem.itemContent.setAttrObj({
+      AppRoot.selectedControl.formItem.itemContent.setAttrObj({
         value: label // 显示值
       });
-      // this.selectedControl.connectionItemLabel = label;
+      // AppRoot.selectedControl.connectionItemLabel = label;
     } else {
       console.error('当前选中的控件不是关联选项控件');
       throw Error('当前选中的控件不是关联选项控件');
@@ -601,8 +601,8 @@ export class AppRoot extends TypeRoot {
       }); // 控件值
       return;
     }
-    if (this.selectedControl instanceof AttachmentControl) {
-      this.selectedControl.setAttrObj({
+    if (AppRoot.selectedControl instanceof AttachmentControl) {
+      AppRoot.selectedControl.setAttrObj({
         value: value,
         title: value,
       }); // 控件值

@@ -1,4 +1,5 @@
 import { TableHead } from '../../../../../../../../type-dom/element/html-element/table/head/head.class';
+import { AppRoot } from '../../../../../../../app-root';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
@@ -27,12 +28,12 @@ export class ControlTitleProperty extends PropertyInput {
   // 选中控件时，重置控件属性 ---> 重置控件标题
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      this.appRoot.selectedControl?.resetLabelText(this.content.dom.value);
+      AppRoot.selectedControl?.resetLabelText(this.content.dom.value);
       return;
     }
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    if (this.appRoot.selectedControl?.formItem.labelText?.nodeValue) {
-      this.resetInputValue(this.appRoot.selectedControl.formItem.labelText.nodeValue);
+    if (AppRoot.selectedControl?.formItem.labelText?.nodeValue) {
+      this.resetInputValue(AppRoot.selectedControl.formItem.labelText.nodeValue);
     } else {
       this.resetInputValue('');
     }

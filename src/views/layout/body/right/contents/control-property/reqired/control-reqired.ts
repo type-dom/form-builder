@@ -2,6 +2,7 @@ import { IOptionConfig } from '../../../../../../../core/controls/web-control.in
 import { Input } from '../../../../../../../../type-dom/element/html-element/input/input.class';
 import { Textarea } from '../../../../../../../../type-dom/element/html-element/textarea/textarea.class';
 import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
+import { AppRoot } from '../../../../../../../app-root';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';
@@ -45,17 +46,17 @@ export class RequiredProperty extends PropertyRadio {
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
       if (
-        this.appRoot.selectedControl?.itemContent instanceof Input
-        || this.appRoot.selectedControl?.itemContent instanceof Textarea
+        AppRoot.selectedControl?.itemContent instanceof Input
+        || AppRoot.selectedControl?.itemContent instanceof Textarea
       ) {
-        this.appRoot.selectedControl?.itemContent.setAttribute('required', !!value);
+        AppRoot.selectedControl?.itemContent.setAttribute('required', !!value);
       }
       return;
     }
     // when select control
     console.log('this.styleObj.display is ', this.styleObj.display);
     if (this.styleObj.display === 'none') this.show();
-    const required = !!this.appRoot.selectedControl?.formItem.itemContent.attrObj.required;
+    const required = !!AppRoot.selectedControl?.formItem.itemContent.attrObj.required;
     console.log('required is ', required);
     this.resetResultValue(required ? 'required' : '');
   }

@@ -138,7 +138,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
     if (!this.onChange) {
       this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
         // console.log('this.formItem.itemContent.dom  ' + eventName);
-        fun(this.appRoot.selectedControl, this.appRoot.functionMap);
+        fun(AppRoot.selectedControl, this.appRoot.functionMap);
       });
       this.events.push(
         // fromEvent(this.dom, 'click').subscribe(() => {
@@ -151,7 +151,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
     this.onChange.unsubscribe();
     this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
       // console.log('this.formItem.itemContent.dom  ' + eventName);
-      fun(this.appRoot.selectedControl, this.appRoot.functionMap);
+      fun(AppRoot.selectedControl, this.appRoot.functionMap);
     });
   }
 

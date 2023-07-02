@@ -115,7 +115,7 @@ export abstract class PropertyCascade extends PropertyItem {
   }
 
   resetCascadeConfigResultValue(value: string | number | boolean): void {
-    // this.appRoot.selectedControl?.propObj.attrObj.optionConfig''
+    // AppRoot.selectedControl?.propObj.attrObj.optionConfig''
     // this.cascadeConfig = Object.assign(this.cascadeConfig, { resultValue: value });
     if (this.cascadeConfig) {
       this.cascadeConfig.resultValue = value;

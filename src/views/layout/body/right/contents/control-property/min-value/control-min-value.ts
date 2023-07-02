@@ -2,6 +2,7 @@ import { NumericalControl } from '../../../../../../../core/controls/basic/numer
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
+import { AppRoot } from '../../../../../../../app-root';
 
 // 最大值，只对数值控件有效
 export class MinValueProperty extends PropertyInput {
@@ -25,16 +26,16 @@ export class MinValueProperty extends PropertyInput {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.appRoot.selectedControl instanceof NumericalControl) {
-        this.appRoot.selectedControl.formItem.itemContent.setAttribute('min', value);
+      if (AppRoot.selectedControl instanceof NumericalControl) {
+        AppRoot.selectedControl.formItem.itemContent.setAttribute('min', value);
       } else {
-        console.error('this.appRoot.selectedControl is not NumericalControl .');
+        console.error('AppRoot.selectedControl is not NumericalControl .');
       }
       return;
     }
-    if (this.appRoot.selectedControl instanceof NumericalControl) {
+    if (AppRoot.selectedControl instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MinValue = this.appRoot.selectedControl.formItem.itemContent.propObj.attrObj.min as string;
+      const MinValue = AppRoot.selectedControl.formItem.itemContent.propObj.attrObj.min as string;
       if (MinValue) {
         this.resetInputValue(MinValue);
       } else {

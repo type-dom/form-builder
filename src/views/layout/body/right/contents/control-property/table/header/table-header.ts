@@ -3,9 +3,9 @@ import { Label } from '../../../../../../../../../type-dom/element/html-element/
 import { Division } from '../../../../../../../../../type-dom/element/html-element/division/division.class';
 import { Button } from '../../../../../../../../../type-dom/element/html-element/button/button.class';
 import { TableControl } from '../../../../../../../../core/controls/complex/table/table.class';
+import { AppRoot } from '../../../../../../../../app-root';
 import { PropertyItem } from '../../../property-item/property-item.abstract';
 import { ControlProperty } from '../../control-property';
-
 // tableHeader 的设置
 // 表单尺寸属性
 export class TableHeaderProperty extends PropertyItem {
@@ -26,11 +26,11 @@ export class TableHeaderProperty extends PropertyItem {
 
   // todo 只修改选中的表格
   reset(value: string): void {
-    if (this.appRoot.selectedControl instanceof TableControl) {
-      const webTable = this.appRoot.selectedControl.formItem.itemContent;
+    if (AppRoot.selectedControl instanceof TableControl) {
+      const webTable = AppRoot.selectedControl.formItem.itemContent;
       if (webTable.config?.mode) {
         webTable.config.mode = value as 'editable' | 'disabled' | undefined;
-        this.appRoot.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
+        AppRoot.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
         webTable.setTable(webTable.config);
         console.log('webTable is ', webTable);
         webTable.render();

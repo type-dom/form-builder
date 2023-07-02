@@ -1,5 +1,6 @@
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
+import { AppRoot } from '../../../../../../../app-root';
 import { PropertyCascade } from '../../property-item/cascade/property-cascade.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
@@ -15,11 +16,11 @@ export class ControlFieldProperty extends PropertyCascade {
   }
 
   get fieldName(): string {
-    return this.appRoot?.selectedControl?.attrObj['field-name'] as string;
+    return AppRoot.selectedControl?.attrObj['field-name'] as string;
   }
 
   set fieldName(value: string) { // 是由二级下拉选择组装起来的，由 . 隔开，第1个是，第一级的值，第2个是第二级的值
-    this.appRoot.selectedControl?.setAttribute('field-name', value);
+    AppRoot.selectedControl?.setAttribute('field-name', value);
   }
 
   resetFieldConfig(config: IOptionConfig): void {
@@ -40,7 +41,7 @@ export class ControlFieldProperty extends PropertyCascade {
       this.fieldName = value;
       return;
     }
-    if (this.appRoot.selectedControl instanceof TableControl) {
+    if (AppRoot.selectedControl instanceof TableControl) {
       this.hide();
       return;
     }
@@ -53,8 +54,8 @@ export class ControlFieldProperty extends PropertyCascade {
         // const secondStageValue = this.fieldName.split('.')[1];
         this.fieldConfig = Object.assign(this.fieldConfig, { resultValue: this.fieldName });
         // console.log('this.fieldConfig is ', this.fieldConfig);
-        // if (!this.appRoot.selectedControl) throw Error('请先选中某个控件');
-        // this.resetFieldConfig(this.appRoot.selectedControl, this.fieldConfig);
+        // if (!AppRoot.selectedControl) throw Error('请先选中某个控件');
+        // this.resetFieldConfig(AppRoot.selectedControl, this.fieldConfig);
         this.resetCascadeConfig(this.fieldConfig);
       } else {
         console.error('this.fieldConfig is undefined . ');
@@ -70,8 +71,8 @@ export class ControlFieldProperty extends PropertyCascade {
         //   label: '请先选择上级',
         //   value: 0
         // }], 0);
-        // if (!this.appRoot.selectedControl) throw Error('请先选中某个控件');
-        // this.resetFieldConfig(this.appRoot.selectedControl, this.fieldConfig);
+        // if (!AppRoot.selectedControl) throw Error('请先选中某个控件');
+        // this.resetFieldConfig(AppRoot.selectedControl, this.fieldConfig);
         // this.select.resetConfig(this.fieldConfig);
         this.resetCascadeConfig(this.fieldConfig);
       } else {
@@ -118,8 +119,8 @@ export class ControlFieldProperty extends PropertyCascade {
       // console.log('tableHeader[index].label is ', tableHeader[index].label);
       this.fieldConfig = Object.assign(this.fieldConfig, { resultValue: tableHeader[index].name });
       console.log('this.fieldConfig is ', this.fieldConfig);
-      // if (!this.appRoot.selectedControl) throw Error('请先选中某个控件');
-      // this.resetFieldConfig(this.appRoot.selectedControl, this.fieldConfig);
+      // if (!AppRoot.selectedControl) throw Error('请先选中某个控件');
+      // this.resetFieldConfig(AppRoot.selectedControl, this.fieldConfig);
       this.resetCascadeConfig(this.fieldConfig);
     }
   }
