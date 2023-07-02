@@ -25,7 +25,7 @@ fromEvent(document, 'DOMContentLoaded').subscribe(e => {
     // 测试混合表单
     editor.createInstance(taskJson);
     // 给控件配值
-    editor.setFormData(taskData);
+    AppRoot.setFormData(taskData);
     // 老数据
     // editor.createInstance(oldFormJson);
     // // 给控件配值
@@ -37,7 +37,7 @@ fromEvent(document, 'DOMContentLoaded').subscribe(e => {
 
     // const tableControl = new TableControl(editor.layout.webDocument.defaultPage, '我的表格', list);
     // editor.layout.webDocument.defaultPage.childNodes.push(tableControl);
-    editor.setSelectedControl(editor.currentPage.childNodes[0]);
+    AppRoot.setSelectedControl(AppRoot.currentPage.childNodes[0]);
   }
 });
 

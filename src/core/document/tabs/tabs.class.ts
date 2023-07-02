@@ -16,9 +16,9 @@ export class WebDocumentTabs extends TypeUL {
   constructor(public parent: WebDocument) {
     super();
     this.className = 'WebDocumentTabs';
-    console.log('this.appRoot.el.clientWidth is ', this.appRoot.el.clientWidth);
+    console.log('AppRoot.el.clientWidth is ', AppRoot.el.clientWidth);
     const width = AppRoot.mode === 'design'
-      ? this.appRoot.el.clientWidth - 595 + 'px'
+      ? AppRoot.el.clientWidth - 595 + 'px'
       : '100%';
     this.propObj = {
       styleObj: {
@@ -128,7 +128,7 @@ export class WebDocumentTabs extends TypeUL {
     //  todo
     this.setPropObj(literal.propObj);
     const width = AppRoot.mode === 'design'
-      ? (this.appRoot.el.clientWidth - 595) + 'px'
+      ? (AppRoot.el.clientWidth - 595) + 'px'
       : '100%';
     this.setStyleObj({
       // display: 'block',
@@ -182,7 +182,7 @@ export class WebDocumentTabs extends TypeUL {
               if (index === li.index) {
                 page.show();
                 this.parent.contents.currentPage = page;
-                console.log('this.appRoot.currentPage is ', this.appRoot.currentPage);
+                console.log('AppRoot.currentPage is ', AppRoot.currentPage);
               } else {
                 page.hide();
               }

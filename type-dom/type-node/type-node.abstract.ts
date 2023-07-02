@@ -1,8 +1,6 @@
 import { Subscription } from 'rxjs';
-import { AppRoot } from '../../src/app-root';
 import { TypeElement } from '../type-element/type-element.abstract';
 import { ITypeProperty } from '../type-element/type-element.interface';
-import { TypeRoot } from '../type-root/type-root.class';
 import { ITextNode } from '../text-node/text-node.interface';
 import { INodeAttr, IPath, ITypeNode } from './type-node.interface';
 const Entities: Record<number, string> = {
@@ -81,22 +79,6 @@ export abstract class TypeNode implements ITypeNode {
       this.nodeValue = nodeValue;
     }
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
-  }
-  // 通用化变量名称
-  get appRoot(): AppRoot {
-    if (this.parent === undefined) {
-      throw Error('this.parentNode is undefined . ');
-    }
-    if (this.parent.className === this.className) {
-      throw Error('get appRoot this.parent.className === this.className, and is ' + this.className);
-    }
-    return this.parent.appRoot;
-  }
-  get root(): TypeRoot {
-    if (this.parent === undefined) {
-      throw Error('this.parentNode is undefined . ');
-    }
-    return this.parent.root;
   }
   get firstChild(): TypeNode | undefined {
     return this.childNodes && this.childNodes[0];

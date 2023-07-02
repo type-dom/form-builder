@@ -1,4 +1,5 @@
 import { TypeDiv } from '../../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { AppRoot } from '../../../../../app-root';
 import { BodyRight } from '../right';
 import { ControlProperty } from './control-property/control-property';
 import { FormProperty } from './form-property/form-property';
@@ -17,7 +18,7 @@ export class RightContents extends TypeDiv {
     this.className = 'RightContents';
     this.propObj = {
       styleObj: {
-        height: 'calc(' + this.appRoot.el.clientHeight + 'px - 100px)',
+        height: 'calc(' + AppRoot.el.clientHeight + 'px - 100px)',
         overflowY: 'auto',
         margin: '0 5px 5px',
         border: '1px solid #ccc',

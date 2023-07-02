@@ -29,8 +29,8 @@ export class ControlConnectionProperty extends PropertySpan {
   //   this.events.push(
   //     fromEvent(this.button.dom, 'click').subscribe(() => {
   //       console.log('this.btn.dom click . ');
-  //       // this.appRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
-  //       console.log('this.appRoot.connectionObservable is ', this.appRoot.connectionObservable);
+  //       // AppRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
+  //       console.log('AppRoot.connectionObservable is ', AppRoot.connectionObservable);
   //       // AppRoot.selectedControl?.resetConnectionItem('ddd');
   //       // console.log('this.selectionControl.connectionItem is ', AppRoot.selectedControl?.connectionItem);
   //     }),

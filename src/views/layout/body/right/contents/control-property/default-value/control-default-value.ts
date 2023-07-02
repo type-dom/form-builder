@@ -62,11 +62,11 @@ export class ControlDefaultValueProperty extends PropertyInput {
   //   //     console.log('this.button.dom click . ');
   //   //     // this.formulaVisible = true;
   //   //     // console.log('this.formulaVisible is ', this.formulaVisible);
-  //   //     // this.appRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
-  //   //     console.log('this.appRoot.formulaVisibleObservable is ', this.appRoot.formulaVisibleObservable);
-  //   //     // this.appRoot.dialog.setTitle('公式');
+  //   //     // AppRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
+  //   //     console.log('AppRoot.formulaVisibleObservable is ', AppRoot.formulaVisibleObservable);
+  //   //     // AppRoot.dialog.setTitle('公式');
   //   //     // if (!this.textarea) {
-  //   //     //   this.textarea = new Textarea(this.appRoot.dialog.container.body);
+  //   //     //   this.textarea = new Textarea(AppRoot.dialog.container.body);
   //   //     //   this.textarea.setStyleObj({
   //   //     //     width: '100%',
   //   //     //     minHeight: '80px',
@@ -74,9 +74,9 @@ export class ControlDefaultValueProperty extends PropertyInput {
   //   //     // }
   //   //     // // todo 加载之前保存的公式
   //   //     // this.textarea.setValue('');
-  //   //     // this.appRoot.dialog.container.body.childNodes = [this.textarea];
-  //   //     // this.appRoot.dialog.container.body.render();
-  //   //     // this.appRoot.dialog.show();
+  //   //     // AppRoot.dialog.container.body.childNodes = [this.textarea];
+  //   //     // AppRoot.dialog.container.body.render();
+  //   //     // AppRoot.dialog.show();
   //   //   }),
   //   // );
   // }

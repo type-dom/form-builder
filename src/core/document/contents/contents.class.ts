@@ -1,9 +1,10 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
-import { IWebDocumentContents } from './contents.interface';
+import { AppRoot } from '../../../app-root';
 import { WebPage } from '../../page/web-page.class';
-import { WebDocument } from '../web-document.class';
 import { IWebPage } from '../../page/web-page.interface';
+import { WebDocument } from '../web-document.class';
+import { IWebDocumentContents } from './contents.interface';
 
 // todo 处理多页面问题
 //    修改tab头部名称应该在属性中，或者双击选中时就可修改。
@@ -106,7 +107,7 @@ export class WebDocumentContents extends TypeDiv implements IWebDocumentContents
         // console.log(this.dom, 'this.dom.lastChild.childNodes');
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          this.appRoot.setSelectedControl(null);
+          AppRoot.setSelectedControl(null);
         }
       })
     );

@@ -10,7 +10,6 @@ import { ITypeRoot } from './type-root.interface';
  * parent 只有自己 TypeRoot
  */
 export abstract class TypeRoot extends TypeDiv implements ITypeRoot {
-  abstract get appRoot(): AppRoot;
   parent: TypeRoot;
   // abstract app: any;
   protected constructor(el: HTMLElement | string) {

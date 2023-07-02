@@ -138,7 +138,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
     if (!this.onChange) {
       this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
         // console.log('this.formItem.itemContent.dom  ' + eventName);
-        fun(AppRoot.selectedControl, this.appRoot.functionMap);
+        fun(AppRoot.selectedControl, AppRoot.functionMap);
       });
       this.events.push(
         // fromEvent(this.dom, 'click').subscribe(() => {
@@ -151,7 +151,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
     this.onChange.unsubscribe();
     this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
       // console.log('this.formItem.itemContent.dom  ' + eventName);
-      fun(AppRoot.selectedControl, this.appRoot.functionMap);
+      fun(AppRoot.selectedControl, AppRoot.functionMap);
     });
   }
 
@@ -166,12 +166,11 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       fromEvent(this.dom, 'mousedown').subscribe(() => {
         // console.log('web control mousedown ');
         // console.log('this.index is ', this.index);
-        // console.log('this.appRoot is ', this.appRoot);
         if (this.parent instanceof WebPage) {
-          this.appRoot.setSelectedControl(this);
+          AppRoot.setSelectedControl(this);
         }
         if (this.parent instanceof TableDataCell) {
-          this.appRoot.setSelectedTableDataCell(this.parent);
+          AppRoot.setSelectedTableDataCell(this.parent);
         }
       }),
       fromEvent(this.dom, 'dragover').subscribe((evt) => {
@@ -228,7 +227,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       fromEvent(this.formItem.deleteSpan.dom, 'click').subscribe(() => {
         // console.log('this.formItem.deleteDiv.dom click . ');
         this.parent.childNodes.splice(this.index, 1);
-        this.appRoot.setSelectedControl(null);
+        AppRoot.setSelectedControl(null);
         this.parent.render();
       })
     );

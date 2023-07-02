@@ -55,7 +55,7 @@ export class TableControl extends WebComplexControl implements ITableControl {
       fromEvent(this.label.dom, 'click').subscribe((e) => {
         // console.log('table control click . ');
         console.log('e.target is ', e.target);
-        this.appRoot.setSelectedTableDataCell(null);
+        AppRoot.setSelectedTableDataCell(null);
       })
     );
   }

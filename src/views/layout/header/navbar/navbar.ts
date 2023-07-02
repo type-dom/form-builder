@@ -13,6 +13,7 @@ import { TimeSvg } from '../../../../../type-dom/components/svgs/time/time';
 import { CloseSvg } from '../../../../../type-dom/components/svgs/close/close';
 import { ConnectionSvg } from '../../../../../type-dom/components/svgs/connetion/connection';
 import { DeleteSvg } from '../../../../../type-dom/components/svgs/delete/delete';
+import { AppRoot } from '../../../../app-root';
 // import { SaveButton } from './save-button/save-button';
 
 export class Navbar extends TypeDiv {
@@ -123,27 +124,27 @@ export class Navbar extends TypeDiv {
   initEvents(): void {
     this.events.push(
       fromEvent(this.previewBtn.dom, 'click').subscribe(() => {
-        this.appRoot.setSelectedControl(null);
-        this.appRoot.dialog.show();
-        this.appRoot.dialog.setTitle('预览');
+        AppRoot.setSelectedControl(null);
+        AppRoot.dialog.show();
+        AppRoot.dialog.setTitle('预览');
         this.preview();
-        console.log('this.appRoot.exampleData is ', this.appRoot.formData);
+        console.log('AppRoot.exampleData is ', AppRoot.formData);
       })
     );
   }
   preview(): void {
     console.log('preview . ');
-    this.appRoot.dialog.container.body.clearChildDom();
-    this.appRoot.dialog.container.body.clearChildNodes();
-    const document = toJSON(this.appRoot.webDocument) as IWebDocument;
+    AppRoot.dialog.container.body.clearChildDom();
+    AppRoot.dialog.container.body.clearChildNodes();
+    const document = toJSON(AppRoot.webDocument) as IWebDocument;
     console.log('document is ', document);
-    const docObj = new WebDocument(this.appRoot.layout.body.content);
+    const docObj = new WebDocument(AppRoot.layout.body.content);
     docObj.createInstance(document);
-    docObj.setParent(this.appRoot.dialog.container.body);
-    this.appRoot.dialog.container.body.appendChild(docObj);
+    docObj.setParent(AppRoot.dialog.container.body);
+    AppRoot.dialog.container.body.appendChild(docObj);
     // this.container.body.dom.appendChild(element.dom);
-    // this.appRoot.dialog.container.body.dom.appendChild(docObj.dom);
-    // this.appRoot.dialog.container.body.dom.childNodes.forEach(node => node.remove());
-    // this.appRoot.dialog.container.body.dom.appendChild(this.appRoot.webDocument.dom.cloneNode(true));
+    // AppRoot.dialog.container.body.dom.appendChild(docObj.dom);
+    // AppRoot.dialog.container.body.dom.childNodes.forEach(node => node.remove());
+    // AppRoot.dialog.container.body.dom.appendChild(AppRoot.webDocument.dom.cloneNode(true));
   }
 }

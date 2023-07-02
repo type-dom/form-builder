@@ -1,4 +1,5 @@
 import { fromEvent } from 'rxjs';
+import { AppRoot } from '../../../../../../../app-root';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { FormProperty } from '../form-property';
 
@@ -11,10 +12,10 @@ export class BeforeSubmitProperty extends PropertyTextarea {
     this.addAttrName('before-submit-property');
   }
   get beforeSubmitStr(): string {
-    return this.appRoot.webDocument.propObj.attrObj['before-submit'] as string;
+    return AppRoot.webDocument.propObj.attrObj['before-submit'] as string;
   }
   set beforeSubmitStr(value: string) {
-    this.appRoot.webDocument.setAttribute('before-submit', value);
+    AppRoot.webDocument.setAttribute('before-submit', value);
   }
   reset(value?: string): void {
     if (value !== undefined) { // 输入值的操作

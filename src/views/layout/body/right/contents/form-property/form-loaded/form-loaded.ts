@@ -1,4 +1,5 @@
 import { fromEvent, Subscription } from 'rxjs';
+import { AppRoot } from '../../../../../../../app-root';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { FormProperty } from '../form-property';
 
@@ -41,7 +42,7 @@ export class FormLoadedProperty extends PropertyTextarea {
         // eslint-disable-next-line no-new-func
         const fun = new Function('return ' + value)();
         console.log('fun is ', fun);
-        fun(this.appRoot.webDocument);
+        fun(AppRoot.webDocument);
       });
       return;
     } else {

@@ -1,4 +1,5 @@
 import { fromEvent } from 'rxjs';
+import { AppRoot } from '../../../../../src/app-root';
 import { TextNode } from '../../../../text-node/text-node.class';
 import { ITableField } from '../../../../../src/core/controls/complex/table/table.interface';
 import { TypeTableHead } from '../../../../type-element/type-html/table/head/head.class';
@@ -51,7 +52,7 @@ export class TableHead extends TypeTableHead implements ITableHead {
   initEvents(): void {
     this.events.push(
       fromEvent(this.dom, 'click').subscribe(() => {
-        this.appRoot.setSelectedTableDataCell(null);
+        AppRoot.setSelectedTableDataCell(null);
       })
     );
   }

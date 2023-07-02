@@ -1,10 +1,10 @@
 import { TypeHtml } from '../../../../type-dom/type-element/type-html/type-html.abstract';
 import { Display } from '../../../../type-dom/style/style.enum';
+import { AppRoot } from '../../../app-root';
 import { LayoutWrapper } from '../layout';
 import { BodyLeft } from './left/left';
 import { BodyRight } from './right/right';
 import { BodyMainContent } from './main-content/main-content';
-
 export class BodyWrapper extends TypeHtml {
   nodeName: 'section';
   dom: HTMLElement;
@@ -18,11 +18,11 @@ export class BodyWrapper extends TypeHtml {
     this.nodeName = 'section';
     this.dom = document.createElement(this.nodeName);
     this.className = 'BodyWrapper';
-    console.log('this.editor.el.clientHeight is ', this.appRoot.el.clientHeight);
+    console.log('this.editor.el.clientHeight is ', AppRoot.el.clientHeight);
     this.propObj = {
       styleObj: {
         display: Display.flex,
-        height: 'calc(' + this.appRoot.el.clientHeight + 'px - 60px)',
+        height: 'calc(' + AppRoot.el.clientHeight + 'px - 60px)',
         justifyContent: 'space-between'
       },
       attrObj: {

@@ -1,5 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeButton } from '../../../../../../type-dom/type-element/type-html/button/button.abstract';
+import { AppRoot } from '../../../../../app-root';
 import { Navbar } from '../navbar';
 
 export class SaveButton extends TypeButton {
@@ -16,11 +17,11 @@ export class SaveButton extends TypeButton {
   initEvents(): void {
     this.events.push(
       fromEvent(this.dom, 'click').subscribe(() => {
-        this.appRoot.messageBox.show();
-        this.appRoot.messageBox.setTitle('提醒');
-        this.appRoot.messageBox.confirm('你确定要保存表单吗？');
-        // this.appRoot.dialog.preview(this.appRoot.page);
-        // console.log('this.appRoot.form json is ', toJSON(this.appRoot.page));
+        AppRoot.messageBox.show();
+        AppRoot.messageBox.setTitle('提醒');
+        AppRoot.messageBox.confirm('你确定要保存表单吗？');
+        // AppRoot.dialog.preview(AppRoot.page);
+        // console.log('AppRoot.form json is ', toJSON(AppRoot.page));
       })
     );
   }

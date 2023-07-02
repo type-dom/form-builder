@@ -1,4 +1,5 @@
 import { fromEvent } from 'rxjs';
+import { AppRoot } from '../../../../../../../app-root';
 import { Label } from '../../../../../../../../type-dom/element/html-element/label/label.class';
 import { Division } from '../../../../../../../../type-dom/element/html-element/division/division.class';
 import { Select } from '../../../../../../../../type-dom/element/html-element/select/select.class';
@@ -67,7 +68,7 @@ export abstract class PropertyCascade extends PropertyItem {
   }
 
   get fieldConfig(): IOptionConfig | undefined {
-    const fieldConfigStr = this.appRoot.webDocument.attrObj['field-config'];
+    const fieldConfigStr = AppRoot.webDocument.attrObj['field-config'];
     if (fieldConfigStr) {
       const configJson = JSON.parse(fieldConfigStr as string) as IOptionConfig;
       let optionConfig: IOptionConfig = {
@@ -111,7 +112,7 @@ export abstract class PropertyCascade extends PropertyItem {
   }
 
   set fieldConfig(value: IOptionConfig | undefined) {
-    this.appRoot.webDocument.setAttribute('field-config', JSON.stringify(value));
+    AppRoot.webDocument.setAttribute('field-config', JSON.stringify(value));
   }
 
   resetCascadeConfigResultValue(value: string | number | boolean): void {
