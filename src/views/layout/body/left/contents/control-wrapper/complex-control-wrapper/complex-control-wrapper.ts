@@ -10,19 +10,15 @@ export class ComplexControlWrapper extends TypeContainer {
   constructor(public parent: ControlWrapper) {
     super();
     this.className = 'ComplexControlWrapper';
-    this.propObj = {
-      styleObj: {
-        border: '1px solid #dddddd',
-        borderRadius: '4px',
-        listStyle: 'none',
-        // padding-left: 0;
-        padding: '6px',
-        marginBottom: '5px'
-      },
-      attrObj: {
-        name: 'complex-control-wrapper'
-      }
-    };
+    this.addStyleObj({
+      border: '1px solid #dddddd',
+      borderRadius: '4px',
+      listStyle: 'none',
+      // padding-left: 0;
+      padding: '6px',
+      marginBottom: '5px'
+    });
+    this.addAttrName('complex-control-wrapper');
 
     const h3 = new ExpandHeading(this, '高级控件');
     this.complexControlMenus = new ComplexMenus(this);

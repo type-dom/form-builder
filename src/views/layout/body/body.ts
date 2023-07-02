@@ -1,34 +1,26 @@
-import { TypeHtml } from '../../../../type-dom/type-element/type-html/type-html.abstract';
+import { TypeSection } from '../../../../type-dom/type-element/type-html/section/section.abstract';
 import { Display } from '../../../../type-dom/style/style.enum';
 import { AppRoot } from '../../../app-root';
 import { LayoutWrapper } from '../layout';
 import { BodyLeft } from './left/left';
 import { BodyRight } from './right/right';
 import { BodyMainContent } from './main-content/main-content';
-export class BodyWrapper extends TypeHtml {
-  nodeName: 'section';
-  dom: HTMLElement;
+export class BodyWrapper extends TypeSection {
   className: 'BodyWrapper';
   childNodes: [BodyLeft, BodyMainContent, BodyRight];
   left: BodyLeft;
   content: BodyMainContent;
   right: BodyRight;
   constructor(public parent: LayoutWrapper) {
-    super('section');
-    this.nodeName = 'section';
-    this.dom = document.createElement(this.nodeName);
+    super();
     this.className = 'BodyWrapper';
     console.log('this.editor.el.clientHeight is ', AppRoot.el.clientHeight);
-    this.propObj = {
-      styleObj: {
-        display: Display.flex,
-        height: 'calc(' + AppRoot.el.clientHeight + 'px - 60px)',
-        justifyContent: 'space-between'
-      },
-      attrObj: {
-        name: 'body-wrapper'
-      }
-    };
+    this.addStyleObj({
+      display: Display.flex,
+      height: 'calc(' + AppRoot.el.clientHeight + 'px - 60px)',
+      justifyContent: 'space-between'
+    });
+    this.addAttrName('body-wrapper');
     // 可以传参给子节点。
     this.left = new BodyLeft(this);
     this.content = new BodyMainContent(this);

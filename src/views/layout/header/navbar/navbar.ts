@@ -3,7 +3,6 @@ import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.
 import { Display } from '../../../../../type-dom/style/style.enum';
 import { TdButton } from '../../../../../type-dom/components/basic/td-button/td-button.class';
 import { HeaderWrapper } from '../header';
-import { PreviewButton } from './preiew-button/preview-button';
 import { toJSON } from '../../../../../type-dom/type-element/type-element.function';
 import { IWebDocument } from '../../../../core/document/web-document.interface';
 import { WebDocument } from '../../../../core/document/web-document.class';
@@ -127,13 +126,23 @@ export class Navbar extends TypeDiv {
         AppRoot.setSelectedControl(null);
         AppRoot.dialog.show();
         AppRoot.dialog.setTitle('预览');
-        this.preview();
+        this.previewForm();
         console.log('AppRoot.exampleData is ', AppRoot.formData);
+      }),
+      fromEvent(this.saveBtn.dom, 'click').subscribe(() => {
+        AppRoot.messageBox.show();
+        AppRoot.messageBox.setTitle('提醒');
+        AppRoot.messageBox.confirm('你确定要保存表单吗？');
+        // AppRoot.dialog.preview(AppRoot.page);
+        // console.log('AppRoot.form json is ', toJSON(AppRoot.page));
       })
     );
   }
-  preview(): void {
-    console.log('preview . ');
+  /**
+   * 预览表单
+   */
+  previewForm(): void {
+    console.log('preview form . ');
     AppRoot.dialog.container.body.clearChildDom();
     AppRoot.dialog.container.body.clearChildNodes();
     const document = toJSON(AppRoot.webDocument) as IWebDocument;

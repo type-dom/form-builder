@@ -9,20 +9,16 @@ export class BodyLeft extends TypeDiv {
   constructor(public parent: BodyWrapper) {
     super();
     this.className = 'BodyLeft';
-    this.propObj = {
-      styleObj: {
-        height: '100%',
-        minWidth: '240px',
-        width: '240px',
-        backgroundColor: '#ffffff',
-        boxSizing: 'border-box',
-        // paddingBottom: '38px',
-        // borderTop: '1px solid #ddd',
-      },
-      attrObj: {
-        name: 'body-left'
-      }
-    };
+    this.addStyleObj({
+      height: '100%',
+      minWidth: '240px',
+      width: '240px',
+      backgroundColor: '#ffffff',
+      boxSizing: 'border-box',
+      // paddingBottom: '38px',
+      // borderTop: '1px solid #ddd',
+    });
+    this.addAttrName('body-left');
     this.contents = new LeftContents(this);
     this.childNodes = [this.contents];
   }

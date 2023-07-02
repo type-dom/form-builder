@@ -14,15 +14,11 @@ export class LayoutWrapper extends TypeDiv {
   constructor(public parent: AppRoot) {
     super();
     this.className = 'LayoutWrapper';
-    this.propObj = {
-      attrObj: {
-        name: 'layout',
-      },
-      styleObj: {
-        height: '100%',
-        // overflow: 'auto',
-      }
-    };
+    this.addAttrName('layout');
+    this.addStyleObj({
+      height: '100%',
+      // overflow: 'auto',
+    });
     this.webDocument = new WebDocument(this);
     this.header = new HeaderWrapper(this);
     this.body = new BodyWrapper(this); // WebBody ---> MainContent中会调用 webDocument,所以必须先创建webDocument

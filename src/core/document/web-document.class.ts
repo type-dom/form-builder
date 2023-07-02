@@ -30,24 +30,7 @@ export class WebDocument extends TypeDiv implements IWebDocument {
   constructor(public parent: BodyMainContent | LayoutWrapper) {
     super();
     this.className = 'WebDocument';
-    this.propObj = {
-      styleObj: {
-        // display: Display.flex,
-        // flexDirection: 'column',
-        // // width: 'min-content',
-        // minWidth: '500px',
-        // maxHeight: 'calc(100vh - 40px)',
-        // padding: '20px',
-        // boxSizing: 'border-box',
-        // margin: '0 auto',
-        // transformOrigin: '50% 0',
-        // // transform: 'scale(0.5)',
-        // overflowY: 'auto',
-      },
-      attrObj: {
-        name: 'document-content'
-      }
-    };
+    this.addAttrName('document-content');
     this.contents = new WebDocumentContents(this); // 要先创建。创建tabs时，会用到。
     this.tabs = new WebDocumentTabs(this);
     this.fieldConfig = fieldConfig; // 设置默认的字段选项。
