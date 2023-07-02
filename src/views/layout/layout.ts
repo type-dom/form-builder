@@ -26,7 +26,7 @@ export class LayoutWrapper extends TypeDiv {
     this.webDocument = new WebDocument(this);
     this.header = new HeaderWrapper(this);
     this.body = new BodyWrapper(this); // WebBody ---> MainContent中会调用 webDocument,所以必须先创建webDocument
-    if (parent.mode === 'design') {
+    if (AppRoot.mode === 'design') {
       this.childNodes.push(this.header, this.body);
       // console.log('this.formEditor.el.clientHeight is ', this.formEditor.el.clientHeight);
     } else {

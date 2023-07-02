@@ -46,7 +46,7 @@ export class AppRoot extends TypeRoot {
   // 消息框
   messageBox: MessageBox;
   // 编辑器模式，对应 设计模式， 填表模式， 只读模式
-  mode: 'design' | 'fill' | 'readonly';
+  static mode: 'design' | 'fill' | 'readonly';
   // todo tabs操作中重置。
   // currentPage: WebPage;
   // 集中出来外部传入的函数或方法。
@@ -66,7 +66,7 @@ export class AppRoot extends TypeRoot {
     }
     // console.log('this.el.clientHeight is ', this.el.clientHeight);
     this.events = [];
-    this.mode = mode;
+    AppRoot.mode = mode;
     this.layout = new LayoutWrapper(this);
     this.dialog = new WebDialog(this);
     this.messageBox = new MessageBox(this);
@@ -413,7 +413,7 @@ export class AppRoot extends TypeRoot {
       // this.controlTab.setStyle('display', 'none');
       // this.formTab.dom.click();
     }
-    if (this.mode === 'design') {
+    if (AppRoot.mode === 'design') {
       this.controlProperty.reset();
     }
   }
@@ -453,7 +453,7 @@ export class AppRoot extends TypeRoot {
       this.fieldTab.setStyle('display', 'none');
       this.controlTab.dom.click();
     }
-    if (this.mode === 'design') {
+    if (AppRoot.mode === 'design') {
       // 重置属性栏？？？
       this.fieldProperty.reset();
     }
@@ -667,7 +667,7 @@ export class AppRoot extends TypeRoot {
           }
         }
       }
-      if (this.mode === 'readonly') {
+      if (AppRoot.mode === 'readonly') {
         control.setDisabled();
       }
     });

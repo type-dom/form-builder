@@ -13,6 +13,7 @@ import { ITableHead } from './head/head.interface';
 import { TableDataCell } from './data-cell/data-cell.class';
 import { ITable } from './table.interface';
 import { TypeTable } from '../../../type-element/type-html/table/table.class';
+import { AppRoot } from '../../../../src/app-root';
 
 // todo 是否有选项列和操作列。
 export class Table extends TypeTable implements ITable {
@@ -252,7 +253,7 @@ export class Table extends TypeTable implements ITable {
         this.tableHead.createInstance(trLiteral as ITableHead);
       } else {
         // todo 设计模式下，应该只有一行
-        if (this.appRoot.mode === 'design') {
+        if (AppRoot.mode === 'design') {
           if (index === 1) {
             (this.childNodes[index]).createInstance(trLiteral as ITableRow);
             break; // 断出

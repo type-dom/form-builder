@@ -7,6 +7,7 @@ import { TextNode } from '../../../../type-dom/text-node/text-node.class';
 import { ITextNode } from '../../../../type-dom/text-node/text-node.interface';
 import { WebDocument } from '../web-document.class';
 import { IWebDocumentTabs } from './tabs.interface';
+import { AppRoot } from '../../../app-root';
 
 export class WebDocumentTabs extends TypeUL {
   className: 'WebDocumentTabs';
@@ -16,7 +17,7 @@ export class WebDocumentTabs extends TypeUL {
     super();
     this.className = 'WebDocumentTabs';
     console.log('this.appRoot.el.clientWidth is ', this.appRoot.el.clientWidth);
-    const width = this.appRoot.mode === 'design'
+    const width = AppRoot.mode === 'design'
       ? this.appRoot.el.clientWidth - 595 + 'px'
       : '100%';
     this.propObj = {
@@ -126,7 +127,7 @@ export class WebDocumentTabs extends TypeUL {
     console.log('web document tabs createInstance . ');
     //  todo
     this.setPropObj(literal.propObj);
-    const width = this.appRoot.mode === 'design'
+    const width = AppRoot.mode === 'design'
       ? (this.appRoot.el.clientWidth - 595) + 'px'
       : '100%';
     this.setStyleObj({
@@ -195,7 +196,7 @@ export class WebDocumentTabs extends TypeUL {
       fromEvent(this.dom, 'dblclick').subscribe((e) => {
         console.log('web document tabs double click . ');
         for (const li of this.childNodes) {
-          if (li.dom === e.target && this.appRoot.mode === 'design') { // 选中的tab
+          if (li.dom === e.target && AppRoot.mode === 'design') { // 选中的tab
             li.setAttrObj({
               contenteditable: true,
             });
@@ -208,7 +209,7 @@ export class WebDocumentTabs extends TypeUL {
       }),
       fromEvent(this.dom, 'input').subscribe((e) => {
         for (const li of this.childNodes) {
-          if (li.dom === e.target && this.appRoot.mode === 'design') { // 选中的tab
+          if (li.dom === e.target && AppRoot.mode === 'design') { // 选中的tab
             // console.log('li.dom.innerText is ', li.dom.innerText);
             (li.childNodes[0] as TextNode).setText(li.dom.innerText);
           }

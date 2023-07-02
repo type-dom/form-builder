@@ -16,6 +16,7 @@ import { FormItem } from '../../components/form/form-item/form-item.abstract';
 import { IOptionConfig, IWebControl } from './web-control.interface';
 import { controlStyle } from './web-control.const';
 import { ItemContent } from '../../components/form/form-item/form-item.interface';
+import { AppRoot } from '../../app-root';
 
 export abstract class WebControl extends TypeDiv implements IWebControl {
   abstract className: string;
@@ -180,7 +181,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       }),
       fromEvent(this.dom, 'dragstart').subscribe(() => {
         // console.log('web-control dragstart . ');
-        if (this.appRoot.mode !== 'design') {
+        if (AppRoot.mode !== 'design') {
           return;
         }
         if (this.parent instanceof WebPage) {
@@ -190,7 +191,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       }),
       fromEvent(this.dom, 'drop').subscribe(() => {
         // console.log('webControl drop . ');
-        if (this.appRoot.mode !== 'design') {
+        if (AppRoot.mode !== 'design') {
           return;
         }
         if (this.parent instanceof WebPage) {
@@ -201,7 +202,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       fromEvent(this.dom, 'dragend').subscribe(() => {
         // console.log('web control dragend . ');
         // console.log('this.index is ', this.index);
-        if (this.appRoot.mode !== 'design') {
+        if (AppRoot.mode !== 'design') {
           return;
         }
         if (this.parent instanceof WebPage) {
