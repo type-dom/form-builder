@@ -8,6 +8,7 @@ import { TableControl } from '../controls/complex/table/table.class';
 import { labelStyle } from '../controls/web-control.const';
 import { menuStyle } from './menu.const';
 import { IControlMenu } from './menu.interface';
+import { AppRoot } from '../../app-root';
 
 export abstract class ControlMenu extends TypeDiv implements IControlMenu {
   abstract ControlClass: ControlClass;
@@ -51,15 +52,15 @@ export abstract class ControlMenu extends TypeDiv implements IControlMenu {
         this.appRoot.setSelectedMenu(this);
         console.log('this.appRoot.selectedMenu is ', this.appRoot.selectedMenu);
         // console.log('control is ', control);
-        // console.log('this.appRoot.selectedTableDataCell is ', this.appRoot.selectedTableDataCell);
+        // console.log('AppRoot.selectedTableDataCell is ', AppRoot.selectedTableDataCell);
         // console.log('this.ControlClass.name is ', this.ControlClass.name);
         // console.log('TableControl.name is ', TableControl.name);
         // 判断是否选中表格的单元格
-        if (this.appRoot.selectedTableDataCell && this.ControlClass !== TableControl) { // 修改表格单元格的控件。
-          this.appRoot.selectedTableDataCell.setControl(this.ControlClass as Exclude<ControlClass, typeof TableControl>);
+        if (AppRoot.selectedTableDataCell && this.ControlClass !== TableControl) { // 修改表格单元格的控件。
+          AppRoot.selectedTableDataCell.setControl(this.ControlClass as Exclude<ControlClass, typeof TableControl>);
           // todo 修改单元格中的控件时， 要触发 字段属性 reset
           this.appRoot.fieldProperty.reset();
-          this.appRoot.selectedTableDataCell.render();
+          AppRoot.selectedTableDataCell.render();
         } else { // 添加到页面中
           // 创建控件
           const control = new this.ControlClass(this.appRoot.currentPage); // todo currentPage

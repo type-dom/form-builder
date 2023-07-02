@@ -49,8 +49,8 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
     // if (AppRoot.selectedControl?.itemContent instanceof Input ||
     //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
-    if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
-      const changeStr = this.appRoot.selectedTableDataCell?.control?.changeStr;
+    if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
+      const changeStr = AppRoot.selectedTableDataCell?.control?.changeStr;
       if (changeStr) {
         this.resetInputValue(changeStr);
       } else {
@@ -68,15 +68,15 @@ export class ControlOnChangeProperty extends PropertyTextarea {
       }
     }
     if (this.parent instanceof FieldProperty) {
-      if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
+      if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
         if (value.trim()) { // 输入值的操作
-          this.appRoot.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
+          AppRoot.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
           return;
         } else {
-          this.appRoot.selectedTableDataCell?.control?.removeOnChange();
+          AppRoot.selectedTableDataCell?.control?.removeOnChange();
         }
       } else {
-        console.error('this.appRoot.selectedTableDataCell?.control is not WebControl . ');
+        console.error('AppRoot.selectedTableDataCell?.control is not WebControl . ');
       }
     }
   }

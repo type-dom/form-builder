@@ -82,9 +82,9 @@ class ExampleDesignMode {
     });
     this.editor.connectionItemObservable.subscribe(() => {
       console.log('this.editor.connectionItemObservable . ');
-      if (this.editor.selectedTableDataCell?.control instanceof ConnectionControl) {
-        console.log('this.editor.selectedControl.a is ', this.editor.selectedTableDataCell.control.connectionConfigLabel);
-        const value = this.editor.selectedTableDataCell.control.connectionConfigValue;
+      if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+        console.log('this.editor.selectedControl.a is ', AppRoot.selectedTableDataCell.control.connectionConfigLabel);
+        const value = AppRoot.selectedTableDataCell.control.connectionConfigValue;
         if (value === undefined) {
           // todo 弹框提示
           throw Error('请先选择配置信息。 ');

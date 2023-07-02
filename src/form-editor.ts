@@ -53,9 +53,9 @@ export class FormEditor {
     });
     this.appRoot.connectionItemObservable.subscribe(() => {
       console.log('this.appRoot.connectionItemObservable . ');
-      if (this.appRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
-        console.log('AppRoot.selectedControl.a is ', this.appRoot.selectedTableDataCell.control.connectionConfigLabel);
-        const value = this.appRoot.selectedTableDataCell.control.connectionConfigValue;
+      if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+        console.log('AppRoot.selectedControl.a is ', AppRoot.selectedTableDataCell.control.connectionConfigLabel);
+        const value = AppRoot.selectedTableDataCell.control.connectionConfigValue;
         if (value === undefined) {
           throw Error('请先选择配置信息。 ');
         }

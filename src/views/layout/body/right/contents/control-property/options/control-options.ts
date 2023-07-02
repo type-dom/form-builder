@@ -55,18 +55,18 @@ export class ControlOptionsProperty extends PropertyOptions {
   fieldPropertyReset(value?: string | number | boolean): void {
     if (value !== undefined) {
       //  todo setValue
-      if (this.appRoot.selectedTableDataCell?.control instanceof RadioControl
-        || this.appRoot.selectedTableDataCell?.control instanceof CheckboxControl
-        || this.appRoot.selectedTableDataCell?.control instanceof SelectControl) {
-        this.appRoot.selectedTableDataCell.control.setValue(value);
+      if (AppRoot.selectedTableDataCell?.control instanceof RadioControl
+        || AppRoot.selectedTableDataCell?.control instanceof CheckboxControl
+        || AppRoot.selectedTableDataCell?.control instanceof SelectControl) {
+        AppRoot.selectedTableDataCell.control.setValue(value);
       }
       return;
     }
-    if (this.appRoot.selectedTableDataCell?.control instanceof RadioControl
-      || this.appRoot.selectedTableDataCell?.control instanceof CheckboxControl
-      || this.appRoot.selectedTableDataCell?.control instanceof SelectControl) {
+    if (AppRoot.selectedTableDataCell?.control instanceof RadioControl
+      || AppRoot.selectedTableDataCell?.control instanceof CheckboxControl
+      || AppRoot.selectedTableDataCell?.control instanceof SelectControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      const config = this.appRoot.selectedTableDataCell.control.optionConfig;
+      const config = AppRoot.selectedTableDataCell.control.optionConfig;
       // console.log('config is ', config);
       if (config) {
         this.resetConfig(config);

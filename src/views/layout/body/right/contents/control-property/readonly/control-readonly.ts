@@ -52,34 +52,34 @@ export class ReadonlyProperty extends PropertyRadio {
     }
     // when select control
     console.log('this.styleObj.display is ', this.styleObj.display);
-    // if (this.appRoot.selectedTableDataCell?.control instanceof )
+    // if (AppRoot.selectedTableDataCell?.control instanceof )
     if (this.styleObj.display === 'none') this.show();
     let disabled = AppRoot.selectedControl?.formItem.itemContent.attrObj.disabled as boolean;
     console.log('disabled is ', disabled);
     this.resetResultValue(disabled ? 'disabled' : '');
   }
   fieldPropertyReset(value?: string): void {
-    if (!this.appRoot.selectedTableDataCell) {
-      console.error('this.appRoot.selectedTableDataCell is null . ');
+    if (!AppRoot.selectedTableDataCell) {
+      console.error('AppRoot.selectedTableDataCell is null . ');
       return;
     }
-    if (this.appRoot.selectedTableDataCell?.control instanceof TextNode) {
-      console.error('this.appRoot.selectedTableDataCell?.control is not WebControl . ');
+    if (AppRoot.selectedTableDataCell?.control instanceof TextNode) {
+      console.error('AppRoot.selectedTableDataCell?.control is not WebControl . ');
       return;
     }
     if (value !== undefined) {
       if (value === 'disabled') {
-        this.appRoot.selectedTableDataCell?.control.setDisabled();
+        AppRoot.selectedTableDataCell?.control.setDisabled();
       } else {
-        this.appRoot.selectedTableDataCell?.control.removeDisabled();
+        AppRoot.selectedTableDataCell?.control.removeDisabled();
       }
       return;
     }
     console.log('this.styleObj.display is ', this.styleObj.display);
-    // if (this.appRoot.selectedTableDataCell?.control instanceof )
+    // if (AppRoot.selectedTableDataCell?.control instanceof )
     if (this.styleObj.display === 'none') this.show();
     // todo 字段属性栏中设置。
-    let disabled = this.appRoot.selectedTableDataCell.control.formItem.itemContent.attrObj.disabled as boolean;
+    let disabled = AppRoot.selectedTableDataCell.control.formItem.itemContent.attrObj.disabled as boolean;
     console.log('disabled is ', disabled);
     this.resetResultValue(disabled ? 'disabled' : '');
   }

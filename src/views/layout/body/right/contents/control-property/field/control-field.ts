@@ -83,8 +83,8 @@ export class ControlFieldProperty extends PropertyCascade {
   }
   fieldPropertyReset(value?: string): void {
     // console.log('control field value is ', value);
-    if (!this.appRoot.selectedTableDataCell) {
-      console.error('this.appRoot.selectedTableDataCell is undefined . ');
+    if (!AppRoot.selectedTableDataCell) {
+      console.error('AppRoot.selectedTableDataCell is undefined . ');
       return;
     }
     // todo 二级下拉选择的值。二级下拉选中时触发。
@@ -94,9 +94,9 @@ export class ControlFieldProperty extends PropertyCascade {
       //     this.select.resetConfig(this.fieldConfig);
       //   }
       // }
-      const table = this.appRoot.selectedTableDataCell.parent.parent;
+      const table = AppRoot.selectedTableDataCell.parent.parent;
       const tableHeader = table.config?.tableHeader;
-      const index = this.appRoot.selectedTableDataCell.index;
+      const index = AppRoot.selectedTableDataCell.index;
       // console.log('tableHeader is ', tableHeader);
       // console.log('index is ', index);
 
@@ -109,8 +109,8 @@ export class ControlFieldProperty extends PropertyCascade {
       return;
     }
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    const tableHeader = this.appRoot.selectedTableDataCell.parent.parent.config?.tableHeader;
-    const index = this.appRoot.selectedTableDataCell.index;
+    const tableHeader = AppRoot.selectedTableDataCell.parent.parent.config?.tableHeader;
+    const index = AppRoot.selectedTableDataCell.index;
     // console.log('tableHeader is ', tableHeader);
     // console.log('index is ', index);
 

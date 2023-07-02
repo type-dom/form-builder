@@ -120,14 +120,14 @@ export abstract class PropertyOptions extends PropertyItem {
     this.initEvents();
   }
   get optionConfig(): IOptionConfig | undefined {
-    if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
-      return this.appRoot.selectedTableDataCell?.control.optionConfig;
+    if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
+      return AppRoot.selectedTableDataCell?.control.optionConfig;
     }
     return AppRoot.selectedControl?.optionConfig;
   }
   set optionConfig(optConfig: IOptionConfig | undefined) {
-    if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
-      this.appRoot.selectedTableDataCell.control.optionConfig = optConfig;
+    if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
+      AppRoot.selectedTableDataCell.control.optionConfig = optConfig;
       return;
     }
     if (!AppRoot.selectedControl?.optionConfig) {
@@ -241,16 +241,16 @@ export abstract class PropertyOptions extends PropertyItem {
   // 重置控件
   resetControl(): void {
     // 选中的是单元格中的控件
-    if (this.appRoot.selectedTableDataCell?.control instanceof RadioControl
-      || this.appRoot.selectedTableDataCell?.control instanceof CheckboxControl
-      || this.appRoot.selectedTableDataCell?.control instanceof SelectControl
+    if (AppRoot.selectedTableDataCell?.control instanceof RadioControl
+      || AppRoot.selectedTableDataCell?.control instanceof CheckboxControl
+      || AppRoot.selectedTableDataCell?.control instanceof SelectControl
     ) {
-      if (this.appRoot.selectedTableDataCell?.control.optionConfig) {
+      if (AppRoot.selectedTableDataCell?.control.optionConfig) {
         // todo config 要配resultValue
-        this.appRoot.selectedTableDataCell?.control?.setOptionConfig(this.appRoot.selectedTableDataCell?.control.optionConfig);
-        this.appRoot.selectedTableDataCell?.control?.formItem.itemContent.render();
+        AppRoot.selectedTableDataCell?.control?.setOptionConfig(AppRoot.selectedTableDataCell?.control.optionConfig);
+        AppRoot.selectedTableDataCell?.control?.formItem.itemContent.render();
       } else {
-        console.error('this.appRoot.selectedTableDataCell?.control.optionConfig is undefined . ');
+        console.error('AppRoot.selectedTableDataCell?.control.optionConfig is undefined . ');
       }
       return;
     }

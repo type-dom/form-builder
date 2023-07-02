@@ -71,17 +71,17 @@ export class ControlConnectionProperty extends PropertySpan {
   }
   fieldPropertyReset(label?:string, value?: string): void {
     if (value !== undefined && label !== undefined) { // 输入值的操作
-      if (this.appRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
-        this.appRoot.selectedTableDataCell.control.resetConnectionConfig(label, value);
+      if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+        AppRoot.selectedTableDataCell.control.resetConnectionConfig(label, value);
         this.resetText(label);
       } else {
         console.error('当前控件不是关联选项控件');
       }
       return;
     }
-    if (this.appRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+    if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const label = this.appRoot.selectedTableDataCell.control?.connectionConfigLabel;
+      const label = AppRoot.selectedTableDataCell.control?.connectionConfigLabel;
       if (label) {
         this.resetText(label);
       } else {

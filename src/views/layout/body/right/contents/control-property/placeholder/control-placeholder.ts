@@ -55,20 +55,20 @@ export class ControlPlaceholderProperty extends PropertyInput {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.appRoot.selectedTableDataCell?.control instanceof SingleInputControl ||
-        this.appRoot.selectedTableDataCell?.control instanceof MultilineInputControl) {
-        this.appRoot.selectedTableDataCell.control.resetPlaceholder(this.content.dom.value);
+      if (AppRoot.selectedTableDataCell?.control instanceof SingleInputControl ||
+        AppRoot.selectedTableDataCell?.control instanceof MultilineInputControl) {
+        AppRoot.selectedTableDataCell.control.resetPlaceholder(this.content.dom.value);
       } else {
         throw Error('不是单行输入控件或者多行输入控件');
       }
       return;
     }
-    if (this.appRoot.selectedTableDataCell?.control instanceof SingleInputControl ||
-      this.appRoot.selectedTableDataCell?.control instanceof MultilineInputControl) {
+    if (AppRoot.selectedTableDataCell?.control instanceof SingleInputControl ||
+      AppRoot.selectedTableDataCell?.control instanceof MultilineInputControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      if (this.appRoot.selectedTableDataCell.control.itemContent instanceof Input ||
-        this.appRoot.selectedTableDataCell.control.itemContent instanceof Textarea) {
-        const placeholder = this.appRoot.selectedTableDataCell.control.itemContent.attrObj.placeholder as string;
+      if (AppRoot.selectedTableDataCell.control.itemContent instanceof Input ||
+        AppRoot.selectedTableDataCell.control.itemContent instanceof Textarea) {
+        const placeholder = AppRoot.selectedTableDataCell.control.itemContent.attrObj.placeholder as string;
         if (placeholder) {
           this.resetInputValue(placeholder);
         } else {

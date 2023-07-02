@@ -48,16 +48,16 @@ export class MaxValueProperty extends PropertyInput {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.appRoot.selectedTableDataCell?.control instanceof NumericalControl) {
-        this.appRoot.selectedTableDataCell.control.formItem.itemContent.setAttribute('max', value);
+      if (AppRoot.selectedTableDataCell?.control instanceof NumericalControl) {
+        AppRoot.selectedTableDataCell.control.formItem.itemContent.setAttribute('max', value);
       } else {
-        console.error('this.appRoot.selectedTableDataCell?.control is null . ');
+        console.error('AppRoot.selectedTableDataCell?.control is null . ');
       }
       return;
     }
-    if (this.appRoot.selectedTableDataCell?.control instanceof NumericalControl) {
+    if (AppRoot.selectedTableDataCell?.control instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MaxValue = this.appRoot.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.max as string;
+      const MaxValue = AppRoot.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.max as string;
       if (MaxValue) {
         this.resetInputValue(MaxValue);
       } else {

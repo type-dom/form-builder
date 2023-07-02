@@ -58,16 +58,16 @@ export class MultipleProperty extends PropertyRadio {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (this.appRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
-        this.appRoot.selectedTableDataCell.control.itemContent.setAttribute('multiple', !!value);
+      if (AppRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
+        AppRoot.selectedTableDataCell.control.itemContent.setAttribute('multiple', !!value);
       } else {
-        console.error('this.appRoot.selectedTableDataCell.control is not AttachmentControl . ');
+        console.error('AppRoot.selectedTableDataCell.control is not AttachmentControl . ');
       }
       return;
     }
-    if (this.appRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
+    if (AppRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
       if (this.styleObj.display === 'none') this.show();
-      const multiple = !!this.appRoot.selectedTableDataCell.control.formItem.itemContent.attrObj.multiple;
+      const multiple = !!AppRoot.selectedTableDataCell.control.formItem.itemContent.attrObj.multiple;
       this.resetResultValue(multiple ? 'multiple' : '');
       return;
     } else {

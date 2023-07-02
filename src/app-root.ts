@@ -39,7 +39,7 @@ export class AppRoot extends TypeRoot {
   // 选中的控件
   static selectedControl: WebControl | null;
   // 选中的表格单元格
-  selectedTableDataCell?: TableDataCell | null;
+  static selectedTableDataCell?: TableDataCell | null;
   layout: LayoutWrapper;
   // 对话框
   dialog: WebDialog;
@@ -110,7 +110,7 @@ export class AppRoot extends TypeRoot {
     // this.connectionItemObservable = null;
     this.editorElObservable = fromEvent(this.el, 'click')
       .pipe(filter(() => {
-        return !!this.selectedTableDataCell || !!AppRoot.selectedControl;
+        return !!AppRoot.selectedTableDataCell || !!AppRoot.selectedControl;
       }));
     this.functionMap = new Map();
     this.formProperty.reset();
@@ -210,7 +210,7 @@ export class AppRoot extends TypeRoot {
     return this.editorElObservable.pipe(
       switchMap(() => {
         // console.log('this.editor.selectedControl is ', AppRoot.selectedControl);
-        // if (this.selectedTableDataCell) { // 表格单元格选中的控件
+        // if (AppRoot.selectedTableDataCell) { // 表格单元格选中的控件
         //   return this.fieldProperty.fieldDefaultValue.formulaObservable;
         // }
         return this.controlProperty.controlDefaultValue.formulaObservable;
@@ -225,7 +225,7 @@ export class AppRoot extends TypeRoot {
     return this.editorElObservable.pipe(
       switchMap(() => {
         // console.log('this.editor.selectedControl is ', AppRoot.selectedControl);
-        if (this.selectedTableDataCell) { // 表格单元格选中的控件
+        if (AppRoot.selectedTableDataCell) { // 表格单元格选中的控件
           // console.log('this.fieldProperty.fieldOptions.optionsConfigObservable is ', this.fieldProperty.fieldOptions.optionsConfigObservable);
           return this.fieldProperty.fieldOptions.optionsConfigObservable;
         }
@@ -248,7 +248,7 @@ export class AppRoot extends TypeRoot {
   get connectionObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (this.selectedTableDataCell) { // 表格单元格选中的控件
+        if (AppRoot.selectedTableDataCell) { // 表格单元格选中的控件
           console.log('this.fieldProperty.fieldConnection.connectionObservable is ', this.fieldProperty.fieldConnection.connectionObservable);
           return this.fieldProperty.fieldConnection.connectionObservable;
         }
@@ -264,9 +264,9 @@ export class AppRoot extends TypeRoot {
   get connectionItemObservable(): Observable<Event | null> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (this.selectedTableDataCell?.control instanceof ConnectionControl) {
-          console.log('this.selectedTableDataCell.control.connectionItemObservable is ', this.selectedTableDataCell.control.connectionItemObservable);
-          return this.selectedTableDataCell.control.connectionItemObservable;
+        if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+          console.log('AppRoot.selectedTableDataCell.control.connectionItemObservable is ', AppRoot.selectedTableDataCell.control.connectionItemObservable);
+          return AppRoot.selectedTableDataCell.control.connectionItemObservable;
         }
         if (AppRoot.selectedControl instanceof ConnectionControl) {
           console.log('AppRoot.selectedControl.connectionItemObservable is ', AppRoot.selectedControl.connectionItemObservable);
@@ -284,8 +284,8 @@ export class AppRoot extends TypeRoot {
   get attachmentObservable(): Observable<Event | null> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (this.selectedTableDataCell?.control instanceof AttachmentControl) {
-          return this.selectedTableDataCell.control.attachmentObservable;
+        if (AppRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
+          return AppRoot.selectedTableDataCell.control.attachmentObservable;
         }
         if (AppRoot.selectedControl instanceof AttachmentControl) {
           return AppRoot.selectedControl.attachmentObservable;
@@ -382,7 +382,7 @@ export class AppRoot extends TypeRoot {
       }
       // 如果选中的控件不是表格控件
       // todo ??? 为什么要清理 ???
-      if (this.selectedTableDataCell && !(control instanceof TableControl)) {
+      if (AppRoot.selectedTableDataCell && !(control instanceof TableControl)) {
         this.setSelectedTableDataCell(null);
       }
 
@@ -406,7 +406,7 @@ export class AppRoot extends TypeRoot {
         });
         AppRoot.selectedControl = null;
         // 清除选中控件时，如果有选中的单元格，也要同步清除。
-        if (this.selectedTableDataCell) {
+        if (AppRoot.selectedTableDataCell) {
           this.setSelectedTableDataCell(null);
         }
       }
@@ -426,15 +426,15 @@ export class AppRoot extends TypeRoot {
   setSelectedTableDataCell(tableDataCell: TableDataCell | null): void {
     console.error('setSelectedTableDataCell . tableDataCell is ', tableDataCell);
     if (tableDataCell) {
-      if (this.selectedTableDataCell === tableDataCell) { // 重复选中同一单元格
+      if (AppRoot.selectedTableDataCell === tableDataCell) { // 重复选中同一单元格
         return;
       }
-      this.selectedTableDataCell?.setStyleObj({
+      AppRoot.selectedTableDataCell?.setStyleObj({
         borderWidth: '1px',
         borderStyle: 'solid',
         borderColor: '#DCDFE6',
       });
-      this.selectedTableDataCell = tableDataCell;
+      AppRoot.selectedTableDataCell = tableDataCell;
       tableDataCell.setStyleObj({
         borderWidth: '1px',
         borderStyle: 'solid',
@@ -444,12 +444,12 @@ export class AppRoot extends TypeRoot {
       this.fieldTab.setStyle('display', 'block'); // 字段的tab开始时隐藏的。
       // this.fieldTab.dom.click();
     } else { // 清除选中
-      if (this.selectedTableDataCell) {
-        this.selectedTableDataCell.setStyleObj({
+      if (AppRoot.selectedTableDataCell) {
+        AppRoot.selectedTableDataCell.setStyleObj({
           borderColor: '#DCDFE6',
         });
       }
-      this.selectedTableDataCell = null;
+      AppRoot.selectedTableDataCell = null;
       this.fieldTab.setStyle('display', 'none');
       this.controlTab.dom.click();
     }
@@ -535,7 +535,7 @@ export class AppRoot extends TypeRoot {
    * @param config
    */
   setControlOptionConfig(config: IOptionConfig): void {
-    if (this.selectedTableDataCell) {
+    if (AppRoot.selectedTableDataCell) {
       this.fieldProperty.fieldOptions.resetConfig(config);
       this.fieldProperty.fieldOptions.resetControl();
       return;
@@ -551,7 +551,7 @@ export class AppRoot extends TypeRoot {
    * @param value
    */
   setControlConnection(label: string, value: string): void {
-    if (this.selectedTableDataCell) {
+    if (AppRoot.selectedTableDataCell) {
       this.fieldProperty.fieldConnection.reset(label, value);
       return;
     }
@@ -566,13 +566,13 @@ export class AppRoot extends TypeRoot {
    * @param value
    */
   setConnectionItemValue(label: string, value: string): void {
-    if (this.selectedTableDataCell?.control instanceof ConnectionControl) {
-      this.selectedTableDataCell.control.setAttrObj({
+    if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+      AppRoot.selectedTableDataCell.control.setAttrObj({
         value,
         label
       }); // 控件值
       // 在内容框中显示选中的值
-      this.selectedTableDataCell.control.formItem.itemContent.setAttrObj({
+      AppRoot.selectedTableDataCell.control.formItem.itemContent.setAttrObj({
         value: label // 显示值
       });
       return;
@@ -594,8 +594,8 @@ export class AppRoot extends TypeRoot {
   }
   // 设置附件控件的值
   setAttachmentValue(label: string, value: string): void {
-    if (this.selectedTableDataCell?.control instanceof AttachmentControl) {
-      this.selectedTableDataCell.control.setAttrObj({
+    if (AppRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
+      AppRoot.selectedTableDataCell.control.setAttrObj({
         value: value,
         title: value,
       }); // 控件值
