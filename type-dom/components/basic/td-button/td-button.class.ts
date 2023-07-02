@@ -5,18 +5,19 @@ import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
 import { Span } from '../../../element/html-element/span/span.class';
 import { Template } from '../../../element/html-element/template/template.class';
 import { Slot } from '../../../element/html-element/slot/slot.class';
-import { $buttonStateColors, sizeOpts, tdButtonBase } from '../../../style/td-button.style';
+import { $buttonPlainColors, $buttonStateColors, sizeOpts, tdButtonBase } from '../../../style/td-button.style';
 import { $iconLeft, $iconLoading, $iconRight } from '../../../style/td-icon.style';
-import { $button, $colors, $textColors, IType } from '../../../style/var';
+import { $borderRadius, $button, $buttonPaddingVertical, $colors, $textColors, IType } from '../../../style/var';
 import { TdIcon } from '../td-icon/td-icon.class';
 import { ITdButton, ITdButtonConfig } from './td-button.interface';
 export class TdButton extends TypeButton implements ITdButton {
   className: 'TdButton';
+  childNodes: (Span | TdIcon)[];
   span: Span;
+  textNode: TextNode;
   template: Template;
   type?: IType;
-  textNode: TextNode;
-  childNodes: (Span | TdIcon)[];
+  plain?: boolean;
   constructor(public parent: TypeHtml, config?: Partial<ITdButtonConfig>) {
     super();
     this.className = 'TdButton';
@@ -58,10 +59,27 @@ export class TdButton extends TypeButton implements ITdButton {
     // this.type = type;
     if (config?.type) {
       this.type = config.type;
-      this.addStyleObj($buttonStateColors[config.type].default);
+      if (config?.plain) {
+        console.log('config.plain . ');
+        this.plain = config.plain;
+        console.log($buttonPlainColors[config.type].default);
+        this.addStyleObj($buttonPlainColors[config.type].default);
+      } else {
+        this.addStyleObj($buttonStateColors[config.type].default);
+      }
     }
     const size = config?.size ? config.size : 'middle';
     this.addStyleObj(sizeOpts[size]);
+    if (config?.round) {
+      this.addStyleObj({
+        borderRadius: $borderRadius.round,
+      });
+    } else if (config?.circle) {
+      this.addStyleObj({
+        borderRadius: $borderRadius.circle,
+        padding: $buttonPaddingVertical.default
+      });
+    }
     // this.addAttrObj({
     //   type: 'primary', // success warn danger primary
     //   size: 'middle' // small middle, large
@@ -75,14 +93,18 @@ export class TdButton extends TypeButton implements ITdButton {
         } else {
           this.setStyleObj({
             color: $button.hover.textColor,
-            backgroundColor: $colors['primary']['light-3'],
-            borderColor: $colors['primary']['light-3'],
+            backgroundColor: $button.hover.borderColor, // $colors['primary']['light-3'],
+            borderColor: $button.hover.borderColor,
           });
         }
       }),
       fromEvent(this.dom, 'mouseout').subscribe(() => {
         if (this.type) {
-          this.setStyleObj($buttonStateColors[this.type].default);
+          if (this.plain) {
+            this.setStyleObj($buttonPlainColors[this.type].default);
+          } else {
+            this.setStyleObj($buttonStateColors[this.type].default);
+          }
         } else {
           this.setStyleObj({
             color: $button.textColor,

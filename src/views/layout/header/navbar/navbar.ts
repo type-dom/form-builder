@@ -81,6 +81,7 @@ export class Navbar extends TypeDiv {
           SvgClass: ConnectionSvg,
           iconPosition: 'right',
           title: 'danger',
+          round: true,
           type: 'danger',
         },
       },
@@ -89,9 +90,10 @@ export class Navbar extends TypeDiv {
         config: {
           SvgClass: CloseSvg,
           iconPosition: 'right',
-          title: 'info',
+          // title: 'info',
           type: 'info',
-          size: 'large'
+          size: 'large',
+          circle: true
         }
       },
       {
@@ -111,6 +113,7 @@ export class Navbar extends TypeDiv {
           title: 'success',
           type: 'success',
           size: 'small',
+          plain: true
         }
       }
     ]);

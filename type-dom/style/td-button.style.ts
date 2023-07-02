@@ -75,7 +75,6 @@ export const tdButtonBase: Partial<IStyle> = {
   padding: '8px 15px',
 };
 export const $buttonStateColors: Record<string, Record<string, Partial<IStyle>>> = {};
-
 export function buttonVariant($type: IType) {
   const $buttonColorTypes: Record<string, Partial<IStyle>> = {
     default: {
@@ -131,4 +130,27 @@ for (const $type of ['default', 'primary', 'success', 'warning', 'danger', 'info
 //   @include button-variant($type);
 //   }
   buttonVariant($type as IType);
+}
+
+export const $buttonPlainColors: Record<string, Record<string, Partial<IStyle>>> = {};
+export function buttonPlain($type: IType) {
+  const $buttonColorTypes = {
+    default: {
+      color: $colors[$type].base,
+      backgroundColor: $colors[$type]['light-9'],
+      borderColor: $colors[$type]['light-5'],
+    },
+    hover: {
+      color: $colorWhite,
+      backgroundColor: $colors[$type].base,
+      borderColor: $colors[$type].base,
+    },
+    active: {
+      color: $colorWhite
+    }
+  };
+  $buttonPlainColors[$type] = $buttonColorTypes;
+}
+for (const $type of ['default', 'primary', 'success', 'warning', 'danger', 'info']) {
+  buttonPlain($type as IType);
 }
