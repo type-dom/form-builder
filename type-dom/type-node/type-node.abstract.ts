@@ -62,18 +62,19 @@ export abstract class TypeNode implements ITypeNode {
    */
   abstract className: string; // 最终实体类的名称，解析转换时需要创建对应的类；
   abstract dom: HTMLElement | SVGElement | Text;
-  propObj?: ITypeProperty;
+  abstract parent?: TypeElement;
   /**
    * 渲染出真实DOM
-   *
    */
   abstract render(): void;
+  // abstract setConfig?(): void;
+  propObj?: ITypeProperty;
   nodeName: string;
   nodeValue?: string;
-  abstract parent?: TypeElement;
   childNodes?: TypeNode[];
   attributes?: INodeAttr[];
   events?: Subscription[];
+  setConfig?(config: any): void;
   protected constructor(nodeName: string, nodeValue?: string) {
     this.nodeName = nodeName;
     if (nodeValue !== undefined) {
@@ -142,6 +143,7 @@ export abstract class TypeNode implements ITypeNode {
   // }
   /**
    * 不独立为一个函数，是因为在这里，可以直接 this. 的方式调用。
+   * 在UI组件中会重写
    * @param parent 不一定是this，还可以是父级、子级等等。
    * @param node
    */
@@ -175,6 +177,10 @@ export abstract class TypeNode implements ITypeNode {
         throw Error('TypeClass is not TextNode, but nodeValue exist. ');
       }
     }
+    // todo
+    if (node.config && item.setConfig) {
+      item.setConfig(node.config);
+    }
     if (node.childNodes) {
       if (item.childNodes !== undefined) {
         item.childNodes = item.createItems(item as TypeElement, node.childNodes);
@@ -185,6 +191,8 @@ export abstract class TypeNode implements ITypeNode {
     return item;
   }
   /**
+   * 创建子节点
+   * 与创建组件不同
    * 基于json对象创建类实例
    *   todo 运行时，类可能还没有写入 typeMap ????
    * @param parent

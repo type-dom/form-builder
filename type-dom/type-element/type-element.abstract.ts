@@ -6,7 +6,7 @@ import { IStyle } from '../style/style.interface';
 import { humpToMiddleLine } from './type-element.function';
 import {
   ITypeAttribute,
-  IWebBoundBox,
+  IBoundBox,
   ITypeElement,
   ITypeProperty
 } from './type-element.interface';
@@ -164,7 +164,7 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
     // todo error
     // Object.defineProperty(this.propObj.styleObj, key, value);
   }
-  addStyle(key: string, value: string | number | boolean): void {
+  addStyle(key: keyof IStyle, value: string | number | boolean): void {
     (this.propObj.styleObj as Record<string, string | number | boolean>)[key] = value;
   }
   renderStyle(key: keyof IStyle, value: string | number | boolean): void {
@@ -292,6 +292,9 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
     this.renderChild(newChild);
     // this.dom.appendChild(newChild.render().dom);
     // return this;
+  }
+  unshiftChild(newChild: TypeElement | TextNode): void {
+    this.childNodes.unshift(newChild);
   }
   addChild(newChild: TypeElement | TextNode): void {
     this.childNodes.push(newChild);
@@ -481,7 +484,7 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
     this.events.map(item => item.unsubscribe());
   }
 
-  get boundBox(): IWebBoundBox {
+  get boundBox(): IBoundBox {
     const { left, top, width, height } = this.dom.getBoundingClientRect();
     // console.log('left is ', left, 'top is ', top, 'width is ', width, 'height is ', height);
     return {

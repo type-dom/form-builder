@@ -1,9 +1,9 @@
-import { TypeComponent } from '../../../../../../../../type-dom/type-element/type-component/type-component.abstract';
+import { TypeContainer } from '../../../../../../../../type-dom/type-element/type-container/type-container.abstract';
 import { ComplexMenus } from '../../../../../../../core/menus/complex-menus/complex-menus';
 import { ExpandHeading } from '../../../../../../../../type-dom/components/expand-heading';
 import { ControlWrapper } from '../control-wrapper';
 
-export class ComplexControlWrapper extends TypeComponent {
+export class ComplexControlWrapper extends TypeContainer {
   className: 'ComplexControlWrapper';
   childNodes: [ExpandHeading, ComplexMenus];
   complexControlMenus: ComplexMenus;

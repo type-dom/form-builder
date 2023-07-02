@@ -1,8 +1,11 @@
+import { IType } from '../../../style/var';
+import { ISpan } from '../../../element/html-element/span/span.interface';
+import { ITdIcon } from '../td-icon/td-icon.interface';
 import { ITypeButton } from '../../../type-element/type-html/button/button.interface';
-import { ITypeNode } from '../../../type-node/type-node.interface';
 export interface ITdButton extends ITypeButton {
+  // nodeName: 'button',
   className: 'TdButton',
-  childNodes: ITypeNode[],
+  childNodes: (ISpan | ITdIcon)[],
 }
 
 /**
@@ -19,8 +22,10 @@ export interface ITdButton extends ITypeButton {
  *     disabled  按钮是否为禁用状态
  */
 export interface ITdButtonConfig {
+  SvgClass: any,
+  iconPosition: 'left' | 'right',
   title: string,
-  type: 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info',
+  type: IType,
   size: 'mini' | 'small' | 'middle' | 'large',
   plain: boolean,
   icon: string,
