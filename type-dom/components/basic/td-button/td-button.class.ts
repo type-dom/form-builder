@@ -16,8 +16,8 @@ export class TdButton extends TypeButton implements ITdButton {
   span: Span;
   textNode: TextNode;
   template: Template;
-  type?: IButtonType;
-  plain?: boolean;
+  private type?: IButtonType;
+  private plain?: boolean;
   constructor(public parent: TypeHtml, config?: Partial<ITdButtonConfig>) {
     super();
     this.className = 'TdButton';
@@ -80,10 +80,6 @@ export class TdButton extends TypeButton implements ITdButton {
         padding: $buttonPaddingVertical.default
       });
     }
-    // this.addAttrObj({
-    //   type: 'primary', // success warn danger primary
-    //   size: 'middle' // small middle, large
-    // });
   }
   initEvents() {
     this.events.push(
