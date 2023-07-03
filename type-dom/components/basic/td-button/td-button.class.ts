@@ -7,9 +7,11 @@ import { Template } from '../../../element/html-element/template/template.class'
 import { Slot } from '../../../element/html-element/slot/slot.class';
 import { $buttonPlainColors, $buttonStateColors, sizeOpts, tdButtonBase } from '../../../style/td-button.style';
 import { $iconLeft, $iconLoading, $iconRight } from '../../../style/td-icon.style';
-import { $borderRadius, $button, $buttonPaddingVertical, $colors, $textColors, IType } from '../../../style/var';
+import { $borderRadius, $button, $buttonPaddingVertical } from '../../../style/var';
 import { TdIcon } from '../td-icon/td-icon.class';
 import { IButtonType, ITdButton, ITdButtonConfig } from './td-button.interface';
+import { Cursor } from '../../../style/style.enum';
+
 export class TdButton extends TypeButton implements ITdButton {
   className: 'TdButton';
   childNodes: (Span | TdIcon)[];
@@ -18,6 +20,7 @@ export class TdButton extends TypeButton implements ITdButton {
   template: Template;
   private type?: IButtonType;
   private plain?: boolean;
+  private disabled?: boolean;
   constructor(public parent: TypeHtml, config?: Partial<ITdButtonConfig>) {
     super();
     this.className = 'TdButton';
@@ -62,10 +65,20 @@ export class TdButton extends TypeButton implements ITdButton {
       if (config?.plain) {
         console.log('config.plain . ');
         this.plain = config.plain;
-        console.log($buttonPlainColors[config.type].default);
-        this.addStyleObj($buttonPlainColors[config.type].default);
+        if (config.disabled) {
+          this.addStyleObj($buttonPlainColors[config.type].disabled);
+        } else {
+          console.log($buttonPlainColors[config.type].default);
+          this.addStyleObj($buttonPlainColors[config.type].default);
+        }
       } else {
-        this.addStyleObj($buttonStateColors[config.type].default);
+        if (config?.disabled) {
+          console.log('config?.disabled is true . $button.disabled is ', $button.disabled);
+          this.disabled = config.disabled;
+          this.addStyleObj($buttonStateColors[config.type].disabled);
+        } else {
+          this.addStyleObj($buttonStateColors[config.type].default);
+        }
       }
     }
     const size = config?.size ? config.size : 'middle';
@@ -81,32 +94,45 @@ export class TdButton extends TypeButton implements ITdButton {
       });
     }
   }
+  // 悬浮、聚焦、激活状态样式
   initEvents() {
     this.events.push(
       fromEvent(this.dom, 'mouseover').subscribe(() => {
-        if (this.type) {
-          this.setStyleObj($buttonStateColors[this.type].hover);
-        } else {
+        if (this.disabled) {
           this.setStyleObj({
-            color: $button.hover.textColor,
-            backgroundColor: $button.hover.borderColor, // $colors['primary']['light-3'],
-            borderColor: $button.hover.borderColor,
+            cursor: Cursor.notAllowed
           });
+        } else {
+          if (this.type) {
+            this.setStyleObj($buttonStateColors[this.type].hover);
+          } else {
+            this.setStyleObj({
+              color: $button.hover.textColor,
+              backgroundColor: $button.hover.borderColor, // $colors['primary']['light-3'],
+              borderColor: $button.hover.borderColor,
+            });
+          }
         }
       }),
       fromEvent(this.dom, 'mouseout').subscribe(() => {
-        if (this.type) {
-          if (this.plain) {
-            this.setStyleObj($buttonPlainColors[this.type].default);
-          } else {
-            this.setStyleObj($buttonStateColors[this.type].default);
-          }
-        } else {
+        if (this.disabled) {
           this.setStyleObj({
-            color: $button.textColor,
-            backgroundColor: $button.bgColor,
-            borderColor: $button.borderColor,
+            cursor: Cursor.auto,
           });
+        } else {
+          if (this.type) {
+            if (this.plain) {
+              this.setStyleObj($buttonPlainColors[this.type].default);
+            } else {
+              this.setStyleObj($buttonStateColors[this.type].default);
+            }
+          } else {
+            this.setStyleObj({
+              color: $button.textColor,
+              backgroundColor: $button.bgColor,
+              borderColor: $button.borderColor,
+            });
+          }
         }
       })
     );

@@ -38,6 +38,10 @@ export class TextNode extends TypeNode implements ITextNode {
   get length(): number {
     return this.nodeValue.length;
   }
+  setConfig(config: { title: string }) {
+    this.setText(config.title);
+  }
+
   setParent(parent: TypeElement): void {
     this.parent = parent;
   }

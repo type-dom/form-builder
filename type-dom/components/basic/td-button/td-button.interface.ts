@@ -7,7 +7,7 @@ export interface ITdButton extends ITypeButton {
   className: 'TdButton',
   childNodes: (ISpan | ITdIcon)[],
 }
-export type IButtonSize = '' | 'mini' | 'small' | 'medium' | 'large';
+export type IButtonSize = '' | 'mini' | 'small' | 'middle' | 'large';
 export type IButtonType = 'default' | 'primary' | 'success' | 'warning' | 'info' | 'danger' | 'text' | ''
 export type IButtonNativeType = 'button' | 'submit' | 'reset';
 /**

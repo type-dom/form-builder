@@ -293,6 +293,9 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
   addChild(newChild: TypeNode): void {
     this.childNodes.push(newChild);
   }
+  addChildren(...newChildren: TypeNode[]): void {
+    this.childNodes.push(...newChildren);
+  }
   /**
    * 通常与appendChild同时使用，但也有可能，分离开来使用
    * dom子节点会被重新渲染一遍。

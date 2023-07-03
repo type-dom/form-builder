@@ -194,4 +194,5 @@ export enum Cursor {
   text = 'text',
   wait = 'wait',
   help = 'help',
+  notAllowed = 'not-allowed'
 }

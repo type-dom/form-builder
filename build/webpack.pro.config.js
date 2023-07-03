@@ -47,7 +47,7 @@ module.exports = {
       // eval 会包裹 modules，通过 eval("string")，而 minimizer 不会处理字符串。
       // cheap 不存在列信息，minimizer 只产生单行，只会留下一个映射。
       // 使用支持的 devtool 值可以生成 source map。
-      // new TerserPlugin()
+      new TerserPlugin()
     ]
   },
 };

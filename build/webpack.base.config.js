@@ -25,6 +25,7 @@ module.exports = {
     editMode: './src/example-design-mode.ts',
     formMode: './src/example-fill-mode.ts',
     readonlyMode: './src/example-readonly-mode.ts',
+    uiComponentView: './src/ui-components-view.ts',
     // lib: './src/example-lib.ts'
     // layout: './src/layout/layout.ts'
   },
@@ -200,12 +201,12 @@ module.exports = {
       filename: 'example-readonly-mode.html',
       // chunks: ['read', 'vendor']
     }),
-    // new HtmlWebpackPlugin({
-    //   template: './public/example-lib.html',
-    //   title: 'lib',
-    //   filename: 'example-lib.html',
-    //   // chunks: ['read', 'vendor']
-    // }),
+    new HtmlWebpackPlugin({
+      template: './public/ui-components-view.html',
+      title: 'ui view',
+      filename: 'ui-components-view.html',
+      // chunks: ['read', 'vendor']
+    }),
     // 提取css
     new MiniCssExtractPlugin({
       filename: 'css/[name].css'  // 设置css输出的文件名

@@ -48,76 +48,7 @@ export class Navbar extends TypeDiv {
     });
     // this.previewBtn = new PreviewButton(this);
     // this.saveBtn = new SaveButton(this);
-    // const successBtn = new TdButton(this, {
-    //   SvgClass: AddSvg,
-    //   title: 'success',
-    //   type: 'success',
-    //   size: 'small',
-    // });
-    // const warningBtn = new TdButton(this, {
-    //   SvgClass: TimeSvg,
-    //   iconPosition: 'right',
-    //   title: 'warning',
-    //   type: 'warning',
-    //   size: 'middle',
-    // });
-    // const infoBtn = new TdButton(this, {
-    //   SvgClass: CloseSvg,
-    //   iconPosition: 'right',
-    //   title: 'info',
-    //   type: 'info',
-    //   size: 'large'
-    // });
-    // const dangerBtn = new TdButton(this, {
-    //   SvgClass: ConnectionSvg,
-    //   iconPosition: 'right',
-    //   title: 'danger',
-    //   type: 'danger',
-    // });
-    const items = this.createItems(this, [
-      {
-        TypeClass: TdButton,
-        config: {
-          SvgClass: ConnectionSvg,
-          iconPosition: 'right',
-          title: 'danger',
-          round: true,
-          type: 'danger',
-        },
-      },
-      {
-        TypeClass: TdButton,
-        config: {
-          SvgClass: CloseSvg,
-          iconPosition: 'right',
-          // title: 'info',
-          type: 'info',
-          size: 'large',
-          circle: true
-        }
-      },
-      {
-        TypeClass: TdButton,
-        config: {
-          SvgClass: TimeSvg,
-          iconPosition: 'right',
-          title: 'warning',
-          type: 'warning',
-          size: 'middle',
-        }
-      },
-      {
-        TypeClass: TdButton,
-        config: {
-          SvgClass: AddSvg,
-          title: 'success',
-          type: 'success',
-          size: 'small',
-          plain: true
-        }
-      }
-    ]);
-    this.childNodes.push(this.previewBtn, this.saveBtn, ...items);
+    this.addChildren(this.previewBtn, this.saveBtn);
     this.initEvents();
   }
   initEvents(): void {
