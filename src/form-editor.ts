@@ -72,30 +72,30 @@ export class FormEditor extends TypeRoot {
     FormEditor.dialog = new WebDialog(this);
     FormEditor.messageBox = new MessageBox(this);
     // FormEditor.layout.childNodes.push(this.dialog, this.messageBox);
-    // this.childNodes = [FormEditor.layout, FormEditor.dialog, FormEditor.messageBox];
-    this.createItem(this, {
-      TypeClass: LayoutWrapper,
-      // propObj: {
-      //   styleObj: {},
-      //   attrObj: {}
-      // },
-      childNodes: [
-        {
-          TypeClass: WebDialog,
-          // propObj: {
-          //   styleObj: {},
-          //   attrObj: {},
-          // }
-        },
-        {
-          TypeClass: MessageBox,
-          // propObj: {
-          //   styleObj: {},
-          //   attrObj: {}
-          // }
-        }
-      ]
-    });
+    this.childNodes = [FormEditor.layout, FormEditor.dialog, FormEditor.messageBox];
+    // this.createItem(this, {
+    //   TypeClass: LayoutWrapper,
+    //   // propObj: {
+    //   //   styleObj: {},
+    //   //   attrObj: {}
+    //   // },
+    //   childNodes: [
+    //     {
+    //       TypeClass: WebDialog,
+    //       // propObj: {
+    //       //   styleObj: {},
+    //       //   attrObj: {},
+    //       // }
+    //     },
+    //     {
+    //       TypeClass: MessageBox,
+    //       // propObj: {
+    //       //   styleObj: {},
+    //       //   attrObj: {}
+    //       // }
+    //     }
+    //   ]
+    // });
     this.render();
     const json = this.toJSON();
     console.log('json is ', json);
