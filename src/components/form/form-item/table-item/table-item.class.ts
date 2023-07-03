@@ -3,13 +3,13 @@ import { Display } from '../../../../../type-dom/style/style.enum';
 import { toJSON } from '../../../../../type-dom/type-element/type-element.function';
 import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
-import { Table } from '../../../../../type-dom/element/html-element/table/table.class';
-import { TableRow } from '../../../../../type-dom/element/html-element/table/row/row.class';
-import { ITableRow } from '../../../../../type-dom/element/html-element/table/row/row.interface';
 import { AddSvg } from '../../../../../type-dom/components/svgs/add/add';
 import { TableControl } from '../../../../core/controls/complex/table/table.class';
 import { FormItem } from '../form-item.abstract';
 import { ITableItem } from './table-item.interface';
+import { Table } from './table/table.class';
+import { TableRow } from './table/row/row.class';
+import { ITableRow } from './table/row/row.interface';
 
 export class TableItem extends FormItem implements ITableItem {
   className: 'TableItem';

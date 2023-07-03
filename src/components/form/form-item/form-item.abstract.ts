@@ -1,5 +1,4 @@
 import { IStyle } from '../../../../type-dom/style/style.interface';
-import { Table } from '../../../../type-dom/element/html-element/table/table.class';
 import { Input } from '../../../../type-dom/element/html-element/input/input.class';
 import { Label } from '../../../../type-dom/element/html-element/label/label.class';
 import { Textarea } from '../../../../type-dom/element/html-element/textarea/textarea.class';
@@ -14,6 +13,7 @@ import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abs
 import { AppRoot } from '../../../app-root';
 import { formItemStyle, labelStyle } from '../../../core/controls/web-control.const';
 import { IFormItem, ItemContent } from './form-item.interface';
+import { Table } from './table-item/table/table.class';
 
 export abstract class FormItem extends TypeDiv implements IFormItem {
   abstract className: string;

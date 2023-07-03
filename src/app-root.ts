@@ -6,8 +6,7 @@ import { FormProperty } from './views/layout/body/right/contents/form-property/f
 import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
 import { Cursor } from '../type-dom/style/style.enum';
 import { TypeRoot } from '../type-dom/type-root/type-root.class';
-import { TableRow } from '../type-dom/element/html-element/table/row/row.class';
-import { TableDataCell } from '../type-dom/element/html-element/table/data-cell/data-cell.class';
+
 import { ListItem } from '../type-dom/element/html-element/unordered-list/list-item/list-item.class';
 import { Span } from '../type-dom/element/html-element/span/span.class';
 import { toJSON } from '../type-dom/type-element/type-element.function';
@@ -26,6 +25,8 @@ import { TableControl } from './core/controls/complex/table/table.class';
 import { ITableField } from './core/controls/complex/table/table.interface';
 import { WebForm } from './components/form/form';
 import { Test } from './views/test/test';
+import { TableDataCell } from './components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { TableRow } from './components/form/form-item/table-item/table/row/row.class';
 /**
  * 应用根节点，必须存在。
  * 应用直接继承 TypeRoot ;

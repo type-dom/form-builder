@@ -2,8 +2,6 @@ import { Input } from '../../../../type-dom/element/html-element/input/input.cla
 import { IInput } from '../../../../type-dom/element/html-element/input/input.interface';
 import { Textarea } from '../../../../type-dom/element/html-element/textarea/textarea.class';
 import { ITextarea } from '../../../../type-dom/element/html-element/textarea/textarea.interface';
-import { Table } from '../../../../type-dom/element/html-element/table/table.class';
-import { ITable } from '../../../../type-dom/element/html-element/table/table.interface';
 import { Select } from '../../../../type-dom/element/html-element/select/select.class';
 import { ISelect } from '../../../../type-dom/element/html-element/select/select.interface';
 import { ILabel } from '../../../../type-dom/element/html-element/label/label.interface';
@@ -13,6 +11,8 @@ import { RadioGroup } from '../../../../type-dom/components/radio-group/radio-gr
 import { IRadioGroup } from '../../../../type-dom/components/radio-group/radio-group.interface';
 import { CheckboxGroup } from '../../../../type-dom/components/checkbox-group/checkbox-group.class';
 import { ICheckboxGroup } from '../../../../type-dom/components/checkbox-group/checkbox-group.interface';
+import { Table } from './table-item/table/table.class';
+import { ITable } from './table-item/table/table.interface';
 
 export type ItemContent = Input | Textarea | Select | RadioGroup | CheckboxGroup | Table;
 export type IItemContent = IInput | ITextarea | ISelect | IRadioGroup | ICheckboxGroup | ITable;

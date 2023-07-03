@@ -1,7 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
-import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
-import { WebPage } from '../../../page/web-page.class';
 import { ButtonItem } from '../../../../components/form/form-item/button-item/button-item.class';
+import { TableDataCell } from '../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { WebPage } from '../../../page/web-page.class';
 import { WebComplexControl } from '../complex.abstract';
 import { IConnectionControl } from './connection.interface';
 
@@ -10,7 +10,6 @@ export class ConnectionControl extends WebComplexControl implements IConnectionC
   childNodes: [ButtonItem];
   formItem: ButtonItem;
   readonly connectionItemObservable: Observable<Event>;
-
   constructor(parent: WebPage | TableDataCell) {
     super(parent);
     this.className = 'ConnectionControl';

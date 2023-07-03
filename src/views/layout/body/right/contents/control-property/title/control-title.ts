@@ -1,4 +1,4 @@
-import { TableHead } from '../../../../../../../../type-dom/element/html-element/table/head/head.class';
+import { TableHead } from '../../../../../../../components/form/form-item/table-item/table/head/head.class';
 import { AppRoot } from '../../../../../../../app-root';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';

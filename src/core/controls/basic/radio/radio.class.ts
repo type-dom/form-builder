@@ -1,7 +1,7 @@
-import { TableDataCell } from '../../../../../type-dom/element/html-element/table/data-cell/data-cell.class';
+import { RadioItem } from '../../../../components/form/form-item/radio-item/radio-item.class';
+import { TableDataCell } from '../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { deepClone } from '../../../../utils';
 import { WebPage } from '../../../page/web-page.class';
-import { RadioItem } from '../../../../components/form/form-item/radio-item/radio-item.class';
 import { defaultOptionConfig } from '../../web-control.const';
 import { IOptionConfig, IWebControl } from '../../web-control.interface';
 import { WebBasicControl } from '../basic.abstract';

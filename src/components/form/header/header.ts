@@ -1,13 +1,11 @@
 import { TextNode } from '../../../../type-dom/text-node/text-node.class';
 import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
 import { WebForm } from '../form';
-
 export class FormHeader extends TypeDiv {
   nodeName: 'div';
   className: 'FormHeader';
   childNodes: [TextNode];
   dom: HTMLDivElement;
-
   constructor(public parent: WebForm) {
     super();
     this.nodeName = 'div';

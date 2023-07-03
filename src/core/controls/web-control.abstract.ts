@@ -6,18 +6,17 @@ import { Select } from '../../../type-dom/element/html-element/select/select.cla
 import { Label } from '../../../type-dom/element/html-element/label/label.class';
 import { Input } from '../../../type-dom/element/html-element/input/input.class';
 import { Textarea } from '../../../type-dom/element/html-element/textarea/textarea.class';
-import { Table } from '../../../type-dom/element/html-element/table/table.class';
-import { TableRow } from '../../../type-dom/element/html-element/table/row/row.class';
-import { TableDataCell } from '../../../type-dom/element/html-element/table/data-cell/data-cell.class';
 import { toJSON } from '../../../type-dom/type-element/type-element.function';
 import { ControlClassMap } from '../../constants';
-import { WebPage } from '../page/web-page.class';
 import { FormItem } from '../../components/form/form-item/form-item.abstract';
-import { IOptionConfig, IWebControl } from './web-control.interface';
-import { controlStyle } from './web-control.const';
+import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { Table } from '../../components/form/form-item/table-item/table/table.class';
+import { TableRow } from '../../components/form/form-item/table-item/table/row/row.class';
 import { ItemContent } from '../../components/form/form-item/form-item.interface';
+import { IOptionConfig, IWebControl } from './web-control.interface';
+import { WebPage } from '../page/web-page.class';
+import { controlStyle } from './web-control.const';
 import { AppRoot } from '../../app-root';
-
 export abstract class WebControl extends TypeDiv implements IWebControl {
   abstract className: string;
   // 控件都有这个属性

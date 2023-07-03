@@ -1,5 +1,5 @@
-import { IWebControl } from '../../web-control.interface';
 import { ITableItem } from '../../../../components/form/form-item/table-item/table-item.interface';
+import { IWebControl } from '../../web-control.interface';
 
 export interface ITableField {
   label: string, // 字段标签
