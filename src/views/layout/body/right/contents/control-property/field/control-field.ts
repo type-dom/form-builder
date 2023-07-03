@@ -1,6 +1,6 @@
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyCascade } from '../../property-item/cascade/property-cascade.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
@@ -16,11 +16,11 @@ export class ControlFieldProperty extends PropertyCascade {
   }
 
   get fieldName(): string {
-    return AppRoot.selectedControl?.attrObj['field-name'] as string;
+    return FormEditor.selectedControl?.attrObj['field-name'] as string;
   }
 
   set fieldName(value: string) { // 是由二级下拉选择组装起来的，由 . 隔开，第1个是，第一级的值，第2个是第二级的值
-    AppRoot.selectedControl?.setAttribute('field-name', value);
+    FormEditor.selectedControl?.setAttribute('field-name', value);
   }
 
   resetFieldConfig(config: IOptionConfig): void {
@@ -41,7 +41,7 @@ export class ControlFieldProperty extends PropertyCascade {
       this.fieldName = value;
       return;
     }
-    if (AppRoot.selectedControl instanceof TableControl) {
+    if (FormEditor.selectedControl instanceof TableControl) {
       this.hide();
       return;
     }
@@ -83,7 +83,7 @@ export class ControlFieldProperty extends PropertyCascade {
   }
   fieldPropertyReset(value?: string): void {
     // console.log('control field value is ', value);
-    if (!AppRoot.selectedTableDataCell) {
+    if (!FormEditor.selectedTableDataCell) {
       console.error('AppRoot.selectedTableDataCell is undefined . ');
       return;
     }
@@ -94,9 +94,9 @@ export class ControlFieldProperty extends PropertyCascade {
       //     this.select.resetConfig(this.fieldConfig);
       //   }
       // }
-      const table = AppRoot.selectedTableDataCell.parent.parent;
+      const table = FormEditor.selectedTableDataCell.parent.parent;
       const tableHeader = table.config?.tableHeader;
-      const index = AppRoot.selectedTableDataCell.index;
+      const index = FormEditor.selectedTableDataCell.index;
       // console.log('tableHeader is ', tableHeader);
       // console.log('index is ', index);
 
@@ -109,8 +109,8 @@ export class ControlFieldProperty extends PropertyCascade {
       return;
     }
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    const tableHeader = AppRoot.selectedTableDataCell.parent.parent.config?.tableHeader;
-    const index = AppRoot.selectedTableDataCell.index;
+    const tableHeader = FormEditor.selectedTableDataCell.parent.parent.config?.tableHeader;
+    const index = FormEditor.selectedTableDataCell.index;
     // console.log('tableHeader is ', tableHeader);
     // console.log('index is ', index);
 

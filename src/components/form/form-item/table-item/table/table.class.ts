@@ -5,7 +5,7 @@ import { toJSON } from '../../../../../../type-dom/type-element/type-element.fun
 import { TextNode } from '../../../../../../type-dom/text-node/text-node.class';
 import { WebControl } from '../../../../../core/controls/web-control.abstract';
 import { ITableConfig, ITableField } from '../../../../../core/controls/complex/table/table.interface';
-import { AppRoot } from '../../../../../app-root';
+import { FormEditor } from '../../../../../form-editor';
 import { TableItem } from '../table-item.class';
 import { TableRow } from './row/row.class';
 import { TableHead } from './head/head.class';
@@ -252,7 +252,7 @@ export class Table extends TypeTable implements ITable {
         this.tableHead.createInstance(trLiteral as ITableHead);
       } else {
         // todo 设计模式下，应该只有一行
-        if (AppRoot.mode === 'design') {
+        if (FormEditor.mode === 'design') {
           if (index === 1) {
             (this.childNodes[index]).createInstance(trLiteral as ITableRow);
             break; // 断出

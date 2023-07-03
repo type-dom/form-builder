@@ -1,5 +1,5 @@
 import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
 
@@ -20,17 +20,17 @@ export class TableColumnProperty extends PropertyInput {
 
   reset(value?: string): void {
     if (value !== undefined) {
-      if (AppRoot.selectedControl instanceof TableControl) {
-        const table = AppRoot.selectedControl.formItem.itemContent;
+      if (FormEditor.selectedControl instanceof TableControl) {
+        const table = FormEditor.selectedControl.formItem.itemContent;
         table.changeColumnCount(Number(value));
       } else {
         console.error('不是表格控件');
       }
     } else {
-      if (AppRoot.selectedControl instanceof TableControl) {
+      if (FormEditor.selectedControl instanceof TableControl) {
         if (this.styleObj.display === 'none') this.show();
         //  todo 根据表头数，设置现在的数量
-        const table = AppRoot.selectedControl.formItem.itemContent;
+        const table = FormEditor.selectedControl.formItem.itemContent;
         const tableHead = table.tableHead;
         const count = tableHead.length;
         const config = table.config;

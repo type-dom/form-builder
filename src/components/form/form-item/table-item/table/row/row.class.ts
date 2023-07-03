@@ -3,7 +3,7 @@ import { TypeTableRow } from '../../../../../../../type-dom/type-element/type-ht
 import { Span } from '../../../../../../../type-dom/element/html-element/span/span.class';
 import { StylePosition } from '../../../../../../../type-dom/style/style.enum';
 import { DeleteSvg } from '../../../../../../../type-dom/components/svgs/delete/delete';
-import { AppRoot } from '../../../../../../app-root';
+import { FormEditor } from '../../../../../../form-editor';
 import { TableDataCell } from '../data-cell/data-cell.class';
 import { ITableDataCell } from '../data-cell/data-cell.interface';
 import { Table } from '../table.class';
@@ -80,7 +80,7 @@ export class TableRow extends TypeTableRow implements ITableRow {
         this.appendChild(tdObj);
       }
     });
-    if (AppRoot.mode === 'fill') {
+    if (FormEditor.mode === 'fill') {
       // console.log('table row mod design ');
       // todo 只在dom上渲染，而不加到子节点上。
       this.appendChild(this.deleteSpan);

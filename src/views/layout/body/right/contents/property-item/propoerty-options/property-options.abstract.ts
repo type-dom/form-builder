@@ -12,7 +12,7 @@ import { RadioControl } from '../../../../../../../core/controls/basic/radio/rad
 import { CheckboxControl } from '../../../../../../../core/controls/basic/checkbox/checkbox.class';
 import { SelectControl } from '../../../../../../../core/controls/basic/select/select.class';
 import { ThreeDotsSvg } from '../../../../../../../../type-dom/components/svgs/three-dots/three-dots';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertyOptions extends PropertyItem {
@@ -120,20 +120,20 @@ export abstract class PropertyOptions extends PropertyItem {
     this.initEvents();
   }
   get optionConfig(): IOptionConfig | undefined {
-    if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
-      return AppRoot.selectedTableDataCell?.control.optionConfig;
+    if (FormEditor.selectedTableDataCell?.control instanceof WebControl) {
+      return FormEditor.selectedTableDataCell?.control.optionConfig;
     }
-    return AppRoot.selectedControl?.optionConfig;
+    return FormEditor.selectedControl?.optionConfig;
   }
   set optionConfig(optConfig: IOptionConfig | undefined) {
-    if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
-      AppRoot.selectedTableDataCell.control.optionConfig = optConfig;
+    if (FormEditor.selectedTableDataCell?.control instanceof WebControl) {
+      FormEditor.selectedTableDataCell.control.optionConfig = optConfig;
       return;
     }
-    if (!AppRoot.selectedControl?.optionConfig) {
+    if (!FormEditor.selectedControl?.optionConfig) {
       throw Error('没有选中的控件, optionConfig');
     }
-    AppRoot.selectedControl.optionConfig = optConfig;
+    FormEditor.selectedControl.optionConfig = optConfig;
   }
   resetOptionConfigResultValue(value: string | number | boolean): void {
     // AppRoot.selectedControl?.propObj.attrObj.optionConfig''
@@ -241,31 +241,31 @@ export abstract class PropertyOptions extends PropertyItem {
   // 重置控件
   resetControl(): void {
     // 选中的是单元格中的控件
-    if (AppRoot.selectedTableDataCell?.control instanceof RadioControl
-      || AppRoot.selectedTableDataCell?.control instanceof CheckboxControl
-      || AppRoot.selectedTableDataCell?.control instanceof SelectControl
+    if (FormEditor.selectedTableDataCell?.control instanceof RadioControl
+      || FormEditor.selectedTableDataCell?.control instanceof CheckboxControl
+      || FormEditor.selectedTableDataCell?.control instanceof SelectControl
     ) {
-      if (AppRoot.selectedTableDataCell?.control.optionConfig) {
+      if (FormEditor.selectedTableDataCell?.control.optionConfig) {
         // todo config 要配resultValue
-        AppRoot.selectedTableDataCell?.control?.setOptionConfig(AppRoot.selectedTableDataCell?.control.optionConfig);
-        AppRoot.selectedTableDataCell?.control?.formItem.itemContent.render();
+        FormEditor.selectedTableDataCell?.control?.setOptionConfig(FormEditor.selectedTableDataCell?.control.optionConfig);
+        FormEditor.selectedTableDataCell?.control?.formItem.itemContent.render();
       } else {
         console.error('AppRoot.selectedTableDataCell?.control.optionConfig is undefined . ');
       }
       return;
     }
-    if (AppRoot.selectedControl instanceof RadioControl
-      || AppRoot.selectedControl instanceof CheckboxControl
-      || AppRoot.selectedControl instanceof SelectControl
+    if (FormEditor.selectedControl instanceof RadioControl
+      || FormEditor.selectedControl instanceof CheckboxControl
+      || FormEditor.selectedControl instanceof SelectControl
     ) {
       //  选项属性刷新后，还要刷新控件。
-      const type = (AppRoot.selectedControl instanceof RadioControl) ? 'radio'
-        : (AppRoot.selectedControl instanceof CheckboxControl) ? 'checkbox' : 'select';
+      const type = (FormEditor.selectedControl instanceof RadioControl) ? 'radio'
+        : (FormEditor.selectedControl instanceof CheckboxControl) ? 'checkbox' : 'select';
       console.log('type is ', type);
-      if (AppRoot.selectedControl.optionConfig) {
-        console.log('AppRoot.selectedControl.optionConfig is ', AppRoot.selectedControl.optionConfig);
-        AppRoot.selectedControl?.setOptionConfig(AppRoot.selectedControl.optionConfig);
-        AppRoot.selectedControl?.formItem.itemContent.render();
+      if (FormEditor.selectedControl.optionConfig) {
+        console.log('AppRoot.selectedControl.optionConfig is ', FormEditor.selectedControl.optionConfig);
+        FormEditor.selectedControl?.setOptionConfig(FormEditor.selectedControl.optionConfig);
+        FormEditor.selectedControl?.formItem.itemContent.render();
       } else {
         console.error('AppRoot.selectedControl.optionConfig is undefined . ');
       }

@@ -10,7 +10,7 @@ import { CheckboxGroup } from '../../../../type-dom/components/checkbox-group/ch
 import { DeleteSvg } from '../../../../type-dom/components/svgs/delete/delete';
 import { TextNode } from '../../../../type-dom/text-node/text-node.class';
 import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
-import { AppRoot } from '../../../app-root';
+import { FormEditor } from '../../../form-editor';
 import { formItemStyle, labelStyle } from '../../../core/controls/web-control.const';
 import { IFormItem, ItemContent } from './form-item.interface';
 import { Table } from './table-item/table/table.class';
@@ -94,7 +94,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
     this.itemContent.setPropObj(itemContentLiteral.propObj);
     // 实例化 ----> 在子类中实例化 todo 只有 TableItem中重写了 ？？？
     // this.itemContent.createInstance(itemContentLiteral);
-    if (AppRoot.mode !== 'design') {
+    if (FormEditor.mode !== 'design') {
       this.deleteSpan.hide();
     }
   }

@@ -3,7 +3,7 @@ import { Division } from '../../../../../../../type-dom/element/html-element/div
 import { TextNode } from '../../../../../../../type-dom/text-node/text-node.class';
 import { Display } from '../../../../../../../type-dom/style/style.enum';
 import { RightContents } from '../contents';
-import { AppRoot } from '../../../../../../app-root';
+import { FormEditor } from '../../../../../../form-editor';
 // control property
 import { ControlFieldProperty } from './field/control-field';
 import { ControlTitleProperty } from './title/control-title';
@@ -111,7 +111,7 @@ export class ControlProperty extends TypeDiv {
   }
   reset(): void {
     // todo 依据选中的控件设置控件属性显示
-    const className = AppRoot.selectedControl?.className;
+    const className = FormEditor.selectedControl?.className;
     console.log('className is ', className);
     // todo 控制项的显示和隐藏，是在这里判断，还是放在reset中更合理？？？
     // switch (className) {
@@ -198,7 +198,7 @@ export class ControlProperty extends TypeDiv {
     //     this.controlReadOnly.hide();
     //     break;
     // }
-    if (!AppRoot.selectedControl) {
+    if (!FormEditor.selectedControl) {
       this.controlField.hide();
       this.controlTitle.hide();
       this.controlPlaceholder.hide();

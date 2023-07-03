@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { AppRoot } from '../../../../app-root';
+import { FormEditor } from '../../../../form-editor';
 import { deepClone } from '../../../../utils';
 import { TableItem } from '../../../../components/form/form-item/table-item/table-item.class';
 import { WebPage } from '../../../page/web-page.class';
@@ -37,7 +37,7 @@ export class TableControl extends WebComplexControl implements ITableControl {
   configTable(config: ITableConfig): void {
     this.formItem.itemContent.setTable(config);
     // console.log('table control config is ', config);
-    if (AppRoot.mode === 'fill') {
+    if (FormEditor.mode === 'fill') {
       // 填表模式下，将表格控件删除按钮替换位添加按钮。
       this.formItem.childNodes.splice(2, 1, this.formItem.addSpan);
     } else {
@@ -55,7 +55,7 @@ export class TableControl extends WebComplexControl implements ITableControl {
       fromEvent(this.label.dom, 'click').subscribe((e) => {
         // console.log('table control click . ');
         console.log('e.target is ', e.target);
-        AppRoot.setSelectedTableDataCell(null);
+        FormEditor.setSelectedTableDataCell(null);
       })
     );
   }

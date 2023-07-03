@@ -1,13 +1,13 @@
 import { TypeHtml } from '../../../type-dom/type-element/type-html/type-html.abstract';
 import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
-import { AppRoot } from '../../app-root';
+import { FormEditor } from '../../form-editor';
 import { TextNode } from '../../../type-dom/text-node/text-node.class';
 import { Span } from '../../../type-dom/element/html-element/span/span.class';
 import { Parser } from '../../../type-dom/parser/parser.class';
 import template from './test.html';
 export class Test extends TypeDiv {
   className: 'Test';
-  constructor(public parent: AppRoot) {
+  constructor(public parent: FormEditor) {
     super();
     this.className = 'Test';
     // this.childNodes = this.createItems(this, [{

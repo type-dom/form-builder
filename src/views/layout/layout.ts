@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
 import { WebDocument } from '../../core/document/web-document.class';
 import { WebForm } from '../../components/form/form';
-import { AppRoot } from '../../app-root';
+import { FormEditor } from '../../form-editor';
 import { HeaderWrapper } from './header/header';
 import { BodyWrapper } from './body/body';
 export class LayoutWrapper extends TypeDiv {
@@ -11,7 +11,7 @@ export class LayoutWrapper extends TypeDiv {
   header: HeaderWrapper;
   body: BodyWrapper;
   form?: WebForm;
-  constructor(public parent: AppRoot) {
+  constructor(public parent: FormEditor) {
     super();
     this.className = 'LayoutWrapper';
     this.addAttrName('layout');
@@ -22,7 +22,7 @@ export class LayoutWrapper extends TypeDiv {
     this.webDocument = new WebDocument(this);
     this.header = new HeaderWrapper(this);
     this.body = new BodyWrapper(this); // WebBody ---> MainContent中会调用 webDocument,所以必须先创建webDocument
-    if (AppRoot.mode === 'design') {
+    if (FormEditor.mode === 'design') {
       this.childNodes.push(this.header, this.body);
       // console.log('this.formEditor.el.clientHeight is ', this.formEditor.el.clientHeight);
     } else {

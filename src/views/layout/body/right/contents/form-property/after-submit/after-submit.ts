@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { FormProperty } from '../form-property';
 
@@ -12,10 +12,10 @@ export class AfterSubmitProperty extends PropertyTextarea {
     this.addAttrName('after-submit-property');
   }
   get afterSubmitStr(): string {
-    return AppRoot.webDocument.propObj.attrObj['after-submit'] as string;
+    return FormEditor.webDocument.propObj.attrObj['after-submit'] as string;
   }
   set afterSubmitStr(value: string) {
-    AppRoot.webDocument.setAttribute('after-submit', value);
+    FormEditor.webDocument.setAttribute('after-submit', value);
   }
   reset(value?: string): void {
     if (value !== undefined) { // 输入值的操作

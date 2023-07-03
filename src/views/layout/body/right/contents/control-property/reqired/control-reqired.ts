@@ -2,7 +2,7 @@ import { IOptionConfig } from '../../../../../../../core/controls/web-control.in
 import { Input } from '../../../../../../../../type-dom/element/html-element/input/input.class';
 import { Textarea } from '../../../../../../../../type-dom/element/html-element/textarea/textarea.class';
 import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';
@@ -46,42 +46,42 @@ export class RequiredProperty extends PropertyRadio {
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
       if (
-        AppRoot.selectedControl?.itemContent instanceof Input
-        || AppRoot.selectedControl?.itemContent instanceof Textarea
+        FormEditor.selectedControl?.itemContent instanceof Input
+        || FormEditor.selectedControl?.itemContent instanceof Textarea
       ) {
-        AppRoot.selectedControl?.itemContent.setAttribute('required', !!value);
+        FormEditor.selectedControl?.itemContent.setAttribute('required', !!value);
       }
       return;
     }
     // when select control
     console.log('this.styleObj.display is ', this.styleObj.display);
     if (this.styleObj.display === 'none') this.show();
-    const required = !!AppRoot.selectedControl?.formItem.itemContent.attrObj.required;
+    const required = !!FormEditor.selectedControl?.formItem.itemContent.attrObj.required;
     console.log('required is ', required);
     this.resetResultValue(required ? 'required' : '');
   }
   fieldPropertyReset(value?: string): void {
-    if (!AppRoot.selectedTableDataCell) {
+    if (!FormEditor.selectedTableDataCell) {
       console.error('AppRoot.selectedTableDataCell is null . ');
       return;
     }
-    if (AppRoot.selectedTableDataCell.control instanceof TextNode) {
+    if (FormEditor.selectedTableDataCell.control instanceof TextNode) {
       console.error('AppRoot.selectedTableDataCell.control is not WebControl . ');
       return;
     }
     if (value !== undefined) {
       if (
-        AppRoot.selectedTableDataCell.control.itemContent instanceof Input
-        || AppRoot.selectedTableDataCell.control.itemContent instanceof Textarea
+        FormEditor.selectedTableDataCell.control.itemContent instanceof Input
+        || FormEditor.selectedTableDataCell.control.itemContent instanceof Textarea
       ) {
-        AppRoot.selectedTableDataCell.control.itemContent.setAttribute('required', !!value);
+        FormEditor.selectedTableDataCell.control.itemContent.setAttribute('required', !!value);
       }
       return;
     }
     // when select control
     console.log('this.styleObj.display is ', this.styleObj.display);
     if (this.styleObj.display === 'none') this.show();
-    const required = !!AppRoot.selectedTableDataCell.control.formItem.itemContent.attrObj.required;
+    const required = !!FormEditor.selectedTableDataCell.control.formItem.itemContent.attrObj.required;
     console.log('required is ', required);
     this.resetResultValue(required ? 'required' : '');
   }

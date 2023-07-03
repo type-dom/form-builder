@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { ControlProperty } from '../control-property';
@@ -33,7 +33,7 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
     // if (AppRoot.selectedControl?.itemContent instanceof Input ||
     //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
-    const changeStr = AppRoot.selectedControl?.changeStr;
+    const changeStr = FormEditor.selectedControl?.changeStr;
     if (changeStr) {
       this.resetInputValue(changeStr);
     } else {
@@ -49,8 +49,8 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
     // if (AppRoot.selectedControl?.itemContent instanceof Input ||
     //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
-    if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
-      const changeStr = AppRoot.selectedTableDataCell?.control?.changeStr;
+    if (FormEditor.selectedTableDataCell?.control instanceof WebControl) {
+      const changeStr = FormEditor.selectedTableDataCell?.control?.changeStr;
       if (changeStr) {
         this.resetInputValue(changeStr);
       } else {
@@ -61,19 +61,19 @@ export class ControlOnChangeProperty extends PropertyTextarea {
   addOnChange(value: string): void {
     if (this.parent instanceof ControlProperty) {
       if (value.trim()) { // 输入值的操作
-        AppRoot.selectedControl?.addOnChange(this.content.dom.value);
+        FormEditor.selectedControl?.addOnChange(this.content.dom.value);
         return;
       } else {
-        AppRoot.selectedControl?.removeOnChange();
+        FormEditor.selectedControl?.removeOnChange();
       }
     }
     if (this.parent instanceof FieldProperty) {
-      if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
+      if (FormEditor.selectedTableDataCell?.control instanceof WebControl) {
         if (value.trim()) { // 输入值的操作
-          AppRoot.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
+          FormEditor.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
           return;
         } else {
-          AppRoot.selectedTableDataCell?.control?.removeOnChange();
+          FormEditor.selectedTableDataCell?.control?.removeOnChange();
         }
       } else {
         console.error('AppRoot.selectedTableDataCell?.control is not WebControl . ');

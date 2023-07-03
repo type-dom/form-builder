@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
 import { labelStyle } from '../../../../../../../core/controls/web-control.const';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
@@ -24,7 +24,7 @@ export class LabelWidthProperty extends PropertyInput {
     if (value !== undefined) {
       // 这里改变的是全局的样式，不是某个控件的标签宽度
       labelStyle.width = value + 'px';
-      AppRoot.allControls.forEach(control => {
+      FormEditor.allControls.forEach(control => {
         if (control instanceof TableControl) {
           return;
         }

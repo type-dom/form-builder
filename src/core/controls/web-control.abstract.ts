@@ -16,7 +16,7 @@ import { ItemContent } from '../../components/form/form-item/form-item.interface
 import { IOptionConfig, IWebControl } from './web-control.interface';
 import { WebPage } from '../page/web-page.class';
 import { controlStyle } from './web-control.const';
-import { AppRoot } from '../../app-root';
+import { FormEditor } from '../../form-editor';
 export abstract class WebControl extends TypeDiv implements IWebControl {
   abstract className: string;
   // 控件都有这个属性
@@ -137,7 +137,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
     if (!this.onChange) {
       this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
         // console.log('this.formItem.itemContent.dom  ' + eventName);
-        fun(AppRoot.selectedControl, AppRoot.functionMap);
+        fun(FormEditor.selectedControl, FormEditor.functionMap);
       });
       this.events.push(
         // fromEvent(this.dom, 'click').subscribe(() => {
@@ -150,7 +150,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
     this.onChange.unsubscribe();
     this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
       // console.log('this.formItem.itemContent.dom  ' + eventName);
-      fun(AppRoot.selectedControl, AppRoot.functionMap);
+      fun(FormEditor.selectedControl, FormEditor.functionMap);
     });
   }
 
@@ -166,10 +166,10 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
         // console.log('web control mousedown ');
         // console.log('this.index is ', this.index);
         if (this.parent instanceof WebPage) {
-          AppRoot.setSelectedControl(this);
+          FormEditor.setSelectedControl(this);
         }
         if (this.parent instanceof TableDataCell) {
-          AppRoot.setSelectedTableDataCell(this.parent);
+          FormEditor.setSelectedTableDataCell(this.parent);
         }
       }),
       fromEvent(this.dom, 'dragover').subscribe((evt) => {
@@ -179,7 +179,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       }),
       fromEvent(this.dom, 'dragstart').subscribe(() => {
         // console.log('web-control dragstart . ');
-        if (AppRoot.mode !== 'design') {
+        if (FormEditor.mode !== 'design') {
           return;
         }
         if (this.parent instanceof WebPage) {
@@ -189,7 +189,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       }),
       fromEvent(this.dom, 'drop').subscribe(() => {
         // console.log('webControl drop . ');
-        if (AppRoot.mode !== 'design') {
+        if (FormEditor.mode !== 'design') {
           return;
         }
         if (this.parent instanceof WebPage) {
@@ -200,7 +200,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       fromEvent(this.dom, 'dragend').subscribe(() => {
         // console.log('web control dragend . ');
         // console.log('this.index is ', this.index);
-        if (AppRoot.mode !== 'design') {
+        if (FormEditor.mode !== 'design') {
           return;
         }
         if (this.parent instanceof WebPage) {
@@ -226,7 +226,7 @@ export abstract class WebControl extends TypeDiv implements IWebControl {
       fromEvent(this.formItem.deleteSpan.dom, 'click').subscribe(() => {
         // console.log('this.formItem.deleteDiv.dom click . ');
         this.parent.childNodes.splice(this.index, 1);
-        AppRoot.setSelectedControl(null);
+        FormEditor.setSelectedControl(null);
         this.parent.render();
       })
     );

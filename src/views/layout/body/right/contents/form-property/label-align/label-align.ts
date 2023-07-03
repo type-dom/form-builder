@@ -1,4 +1,4 @@
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { labelStyle } from '../../../../../../../core/controls/web-control.const';
 import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
@@ -40,7 +40,7 @@ export class LabelAlignProperty extends PropertyRadio {
   reset(value?: string): void {
     if (value !== undefined) {
       labelStyle.textAlign = value; // 改变新建控件的宽度。
-      AppRoot.allControls.forEach(control => { // 循环遍历改变样式
+      FormEditor.allControls.forEach(control => { // 循环遍历改变样式
         if (control instanceof TableControl) {
           return;
         }

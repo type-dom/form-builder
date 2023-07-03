@@ -1,6 +1,6 @@
 import { TypeSection } from '../../../../type-dom/type-element/type-html/section/section.abstract';
 import { Display } from '../../../../type-dom/style/style.enum';
-import { AppRoot } from '../../../app-root';
+import { FormEditor } from '../../../form-editor';
 import { LayoutWrapper } from '../layout';
 import { BodyLeft } from './left/left';
 import { BodyRight } from './right/right';
@@ -14,10 +14,10 @@ export class BodyWrapper extends TypeSection {
   constructor(public parent: LayoutWrapper) {
     super();
     this.className = 'BodyWrapper';
-    console.log('this.editor.el.clientHeight is ', AppRoot.el.clientHeight);
+    console.log('this.editor.el.clientHeight is ', FormEditor.el.clientHeight);
     this.addStyleObj({
       display: Display.flex,
-      height: 'calc(' + AppRoot.el.clientHeight + 'px - 60px)',
+      height: 'calc(' + FormEditor.el.clientHeight + 'px - 60px)',
       justifyContent: 'space-between'
     });
     this.addAttrName('body-wrapper');

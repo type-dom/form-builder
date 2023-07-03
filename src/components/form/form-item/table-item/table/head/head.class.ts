@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { TypeTableHead } from '../../../../../../../type-dom/type-element/type-html/table/head/head.class';
 import { TextNode } from '../../../../../../../type-dom/text-node/text-node.class';
 import { ITableField } from '../../../../../../core/controls/complex/table/table.interface';
-import { AppRoot } from '../../../../../../app-root';
+import { FormEditor } from '../../../../../../form-editor';
 import { TableHeaderCell } from '../header-cell/header-cell.class';
 import { Table } from '../table.class';
 import { ITableHead } from './head.interface';
@@ -52,7 +52,7 @@ export class TableHead extends TypeTableHead implements ITableHead {
   initEvents(): void {
     this.events.push(
       fromEvent(this.dom, 'click').subscribe(() => {
-        AppRoot.setSelectedTableDataCell(null);
+        FormEditor.setSelectedTableDataCell(null);
       })
     );
   }

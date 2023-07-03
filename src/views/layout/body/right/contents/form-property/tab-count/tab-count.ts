@@ -1,4 +1,4 @@
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { FormProperty } from '../form-property';
 
@@ -22,11 +22,11 @@ export class TabCountProperty extends PropertyInput {
 
   reset(value?: string): void {
     if (value !== undefined) {
-      AppRoot.webDocument.tabs.setTabs(parseInt(value, 10));
+      FormEditor.webDocument.tabs.setTabs(parseInt(value, 10));
       return;
     }
     // todo 根据已有的页面数，设置 tab数量
-    const count = AppRoot.webDocument.tabs.childNodes.length;
+    const count = FormEditor.webDocument.tabs.childNodes.length;
     // console.error('count is ', count);
     if (count) {
       this.resetInputValue(String(count));

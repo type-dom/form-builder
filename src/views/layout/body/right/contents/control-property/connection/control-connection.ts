@@ -1,7 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
 import { ThreeDotsSvg } from '../../../../../../../../type-dom/components/svgs/three-dots/three-dots';
 import { ConnectionControl } from '../../../../../../../core/controls/complex/connection/connection.class';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { PropertySpan } from '../../property-item/span/property-span.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
@@ -48,18 +48,18 @@ export class ControlConnectionProperty extends PropertySpan {
   }
   controlPropertyReset(label?:string, value?: string): void {
     if (value !== undefined && label !== undefined) { // 输入值的操作
-      if (AppRoot.selectedControl instanceof ConnectionControl) {
-        AppRoot.selectedControl.resetConnectionConfig(label, value);
+      if (FormEditor.selectedControl instanceof ConnectionControl) {
+        FormEditor.selectedControl.resetConnectionConfig(label, value);
         this.resetText(label);
       } else {
         console.error('当前控件不是关联选项控件.');
       }
       return;
     }
-    if (AppRoot.selectedControl instanceof ConnectionControl) {
+    if (FormEditor.selectedControl instanceof ConnectionControl) {
       // 选中控件
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const label = AppRoot.selectedControl?.connectionConfigLabel;
+      const label = FormEditor.selectedControl?.connectionConfigLabel;
       if (label) {
         this.resetText(label);
       } else {
@@ -71,17 +71,17 @@ export class ControlConnectionProperty extends PropertySpan {
   }
   fieldPropertyReset(label?:string, value?: string): void {
     if (value !== undefined && label !== undefined) { // 输入值的操作
-      if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
-        AppRoot.selectedTableDataCell.control.resetConnectionConfig(label, value);
+      if (FormEditor.selectedTableDataCell?.control instanceof ConnectionControl) {
+        FormEditor.selectedTableDataCell.control.resetConnectionConfig(label, value);
         this.resetText(label);
       } else {
         console.error('当前控件不是关联选项控件');
       }
       return;
     }
-    if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+    if (FormEditor.selectedTableDataCell?.control instanceof ConnectionControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const label = AppRoot.selectedTableDataCell.control?.connectionConfigLabel;
+      const label = FormEditor.selectedTableDataCell.control?.connectionConfigLabel;
       if (label) {
         this.resetText(label);
       } else {

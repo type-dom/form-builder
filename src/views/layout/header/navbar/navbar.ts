@@ -12,7 +12,7 @@ import { TimeSvg } from '../../../../../type-dom/components/svgs/time/time';
 import { CloseSvg } from '../../../../../type-dom/components/svgs/close/close';
 import { ConnectionSvg } from '../../../../../type-dom/components/svgs/connetion/connection';
 import { DeleteSvg } from '../../../../../type-dom/components/svgs/delete/delete';
-import { AppRoot } from '../../../../app-root';
+import { FormEditor } from '../../../../form-editor';
 // import { SaveButton } from './save-button/save-button';
 
 export class Navbar extends TypeDiv {
@@ -123,16 +123,16 @@ export class Navbar extends TypeDiv {
   initEvents(): void {
     this.events.push(
       fromEvent(this.previewBtn.dom, 'click').subscribe(() => {
-        AppRoot.setSelectedControl(null);
-        AppRoot.dialog.show();
-        AppRoot.dialog.setTitle('预览');
+        FormEditor.setSelectedControl(null);
+        FormEditor.dialog.show();
+        FormEditor.dialog.setTitle('预览');
         this.previewForm();
-        console.log('AppRoot.exampleData is ', AppRoot.formData);
+        console.log('AppRoot.exampleData is ', FormEditor.formData);
       }),
       fromEvent(this.saveBtn.dom, 'click').subscribe(() => {
-        AppRoot.messageBox.show();
-        AppRoot.messageBox.setTitle('提醒');
-        AppRoot.messageBox.confirm('你确定要保存表单吗？');
+        FormEditor.messageBox.show();
+        FormEditor.messageBox.setTitle('提醒');
+        FormEditor.messageBox.confirm('你确定要保存表单吗？');
         // AppRoot.dialog.preview(AppRoot.page);
         // console.log('AppRoot.form json is ', toJSON(AppRoot.page));
       })
@@ -143,14 +143,14 @@ export class Navbar extends TypeDiv {
    */
   previewForm(): void {
     console.log('preview form . ');
-    AppRoot.dialog.container.body.clearChildDom();
-    AppRoot.dialog.container.body.clearChildNodes();
-    const document = toJSON(AppRoot.webDocument) as IWebDocument;
+    FormEditor.dialog.container.body.clearChildDom();
+    FormEditor.dialog.container.body.clearChildNodes();
+    const document = toJSON(FormEditor.webDocument) as IWebDocument;
     console.log('document is ', document);
-    const docObj = new WebDocument(AppRoot.layout.body.content);
+    const docObj = new WebDocument(FormEditor.layout.body.content);
     docObj.createInstance(document);
-    docObj.setParent(AppRoot.dialog.container.body);
-    AppRoot.dialog.container.body.appendChild(docObj);
+    docObj.setParent(FormEditor.dialog.container.body);
+    FormEditor.dialog.container.body.appendChild(docObj);
     // this.container.body.dom.appendChild(element.dom);
     // AppRoot.dialog.container.body.dom.appendChild(docObj.dom);
     // AppRoot.dialog.container.body.dom.childNodes.forEach(node => node.remove());

@@ -7,7 +7,7 @@ import { TextNode } from '../../../../type-dom/text-node/text-node.class';
 import { ITextNode } from '../../../../type-dom/text-node/text-node.interface';
 import { WebDocument } from '../web-document.class';
 import { IWebDocumentTabs } from './tabs.interface';
-import { AppRoot } from '../../../app-root';
+import { FormEditor } from '../../../form-editor';
 
 export class WebDocumentTabs extends TypeUL {
   className: 'WebDocumentTabs';
@@ -16,9 +16,9 @@ export class WebDocumentTabs extends TypeUL {
   constructor(public parent: WebDocument) {
     super();
     this.className = 'WebDocumentTabs';
-    console.log('AppRoot.el.clientWidth is ', AppRoot.el.clientWidth);
-    const width = AppRoot.mode === 'design'
-      ? AppRoot.el.clientWidth - 595 + 'px'
+    console.log('AppRoot.el.clientWidth is ', FormEditor.el.clientWidth);
+    const width = FormEditor.mode === 'design'
+      ? FormEditor.el.clientWidth - 595 + 'px'
       : '100%';
     this.propObj = {
       styleObj: {
@@ -127,8 +127,8 @@ export class WebDocumentTabs extends TypeUL {
     console.log('web document tabs createInstance . ');
     //  todo
     this.setPropObj(literal.propObj);
-    const width = AppRoot.mode === 'design'
-      ? (AppRoot.el.clientWidth - 595) + 'px'
+    const width = FormEditor.mode === 'design'
+      ? (FormEditor.el.clientWidth - 595) + 'px'
       : '100%';
     this.setStyleObj({
       // display: 'block',
@@ -182,7 +182,7 @@ export class WebDocumentTabs extends TypeUL {
               if (index === li.index) {
                 page.show();
                 this.parent.contents.currentPage = page;
-                console.log('AppRoot.currentPage is ', AppRoot.currentPage);
+                console.log('AppRoot.currentPage is ', FormEditor.currentPage);
               } else {
                 page.hide();
               }
@@ -196,7 +196,7 @@ export class WebDocumentTabs extends TypeUL {
       fromEvent(this.dom, 'dblclick').subscribe((e) => {
         console.log('web document tabs double click . ');
         for (const li of this.childNodes) {
-          if (li.dom === e.target && AppRoot.mode === 'design') { // 选中的tab
+          if (li.dom === e.target && FormEditor.mode === 'design') { // 选中的tab
             li.setAttrObj({
               contenteditable: true,
             });
@@ -209,7 +209,7 @@ export class WebDocumentTabs extends TypeUL {
       }),
       fromEvent(this.dom, 'input').subscribe((e) => {
         for (const li of this.childNodes) {
-          if (li.dom === e.target && AppRoot.mode === 'design') { // 选中的tab
+          if (li.dom === e.target && FormEditor.mode === 'design') { // 选中的tab
             // console.log('li.dom.innerText is ', li.dom.innerText);
             (li.childNodes[0] as TextNode).setText(li.dom.innerText);
           }

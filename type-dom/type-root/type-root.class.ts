@@ -2,7 +2,7 @@
  * TypeRoot是一个元素根节点抽象类
  * 作为前端项目的入口文件要继承根节点抽象类，并挂载到对应的 ID 上。
  */
-import { AppRoot } from '../../src/app-root';
+import { FormEditor } from '../../src/form-editor';
 import { TypeDiv } from '../type-element/type-html/div/div.abstract';
 import { ITypeRoot } from './type-root.interface';
 /**

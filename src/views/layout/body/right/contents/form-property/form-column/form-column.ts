@@ -1,6 +1,6 @@
 import { controlStyle } from '../../../../../../../core/controls/web-control.const';
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FormProperty } from '../form-property';
 
@@ -47,7 +47,7 @@ export class FormColumnProperty extends PropertyRadio {
   reset(value?: string): void {
     if (value !== undefined) {
       controlStyle.width = value; // 改变新建控件的宽度。
-      AppRoot.allControls.forEach(control => {
+      FormEditor.allControls.forEach(control => {
         if (control.className === 'TableControl') {
           control.setStyleObj({
             width: '100%',

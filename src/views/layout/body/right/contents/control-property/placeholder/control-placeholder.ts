@@ -2,7 +2,7 @@ import { Textarea } from '../../../../../../../../type-dom/element/html-element/
 import { Input } from '../../../../../../../../type-dom/element/html-element/input/input.class';
 import { SingleInputControl } from '../../../../../../../core/controls/basic/single-input/single-input.class';
 import { MultilineInputControl } from '../../../../../../../core/controls/basic/multiline-input/multiline-input.class';
-import { AppRoot } from '../../../../../../../app-root';
+import { FormEditor } from '../../../../../../../form-editor';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
@@ -28,21 +28,21 @@ export class ControlPlaceholderProperty extends PropertyInput {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (AppRoot.selectedControl instanceof SingleInputControl ||
-        AppRoot.selectedControl instanceof MultilineInputControl) {
-        AppRoot.selectedControl?.resetPlaceholder(this.content.dom.value);
+      if (FormEditor.selectedControl instanceof SingleInputControl ||
+        FormEditor.selectedControl instanceof MultilineInputControl) {
+        FormEditor.selectedControl?.resetPlaceholder(this.content.dom.value);
       } else {
         throw Error('不是单行输入控件或者多行输入控件');
       }
       return;
     }
-    if (AppRoot.selectedControl instanceof SingleInputControl ||
-      AppRoot.selectedControl instanceof MultilineInputControl) {
+    if (FormEditor.selectedControl instanceof SingleInputControl ||
+      FormEditor.selectedControl instanceof MultilineInputControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      if (AppRoot.selectedControl?.itemContent instanceof Input ||
-        AppRoot.selectedControl?.itemContent instanceof Textarea) {
+      if (FormEditor.selectedControl?.itemContent instanceof Input ||
+        FormEditor.selectedControl?.itemContent instanceof Textarea) {
         // todo 表格中的控件和普通控件的placeholder取值不一样。普通控件能这样取，表格中控件却不行 ？？？
-        const placeholder = AppRoot.selectedControl?.itemContent?.dom.placeholder;
+        const placeholder = FormEditor.selectedControl?.itemContent?.dom.placeholder;
         if (placeholder) {
           this.resetInputValue(placeholder);
         } else {
@@ -55,20 +55,20 @@ export class ControlPlaceholderProperty extends PropertyInput {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (AppRoot.selectedTableDataCell?.control instanceof SingleInputControl ||
-        AppRoot.selectedTableDataCell?.control instanceof MultilineInputControl) {
-        AppRoot.selectedTableDataCell.control.resetPlaceholder(this.content.dom.value);
+      if (FormEditor.selectedTableDataCell?.control instanceof SingleInputControl ||
+        FormEditor.selectedTableDataCell?.control instanceof MultilineInputControl) {
+        FormEditor.selectedTableDataCell.control.resetPlaceholder(this.content.dom.value);
       } else {
         throw Error('不是单行输入控件或者多行输入控件');
       }
       return;
     }
-    if (AppRoot.selectedTableDataCell?.control instanceof SingleInputControl ||
-      AppRoot.selectedTableDataCell?.control instanceof MultilineInputControl) {
+    if (FormEditor.selectedTableDataCell?.control instanceof SingleInputControl ||
+      FormEditor.selectedTableDataCell?.control instanceof MultilineInputControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      if (AppRoot.selectedTableDataCell.control.itemContent instanceof Input ||
-        AppRoot.selectedTableDataCell.control.itemContent instanceof Textarea) {
-        const placeholder = AppRoot.selectedTableDataCell.control.itemContent.attrObj.placeholder as string;
+      if (FormEditor.selectedTableDataCell.control.itemContent instanceof Input ||
+        FormEditor.selectedTableDataCell.control.itemContent instanceof Textarea) {
+        const placeholder = FormEditor.selectedTableDataCell.control.itemContent.attrObj.placeholder as string;
         if (placeholder) {
           this.resetInputValue(placeholder);
         } else {
