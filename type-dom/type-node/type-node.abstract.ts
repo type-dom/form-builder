@@ -107,6 +107,9 @@ export abstract class TypeNode implements ITypeNode {
   get children(): TypeNode[] {
     return this.childNodes || [];
   }
+  setParent(parent: TypeElement): void {
+    this.parent = parent;
+  }
   // 在定义className时，要把当前类写入到TypeMap中；
   //   todo 创建类实例时都要运行一遍。
   // setClassName(className: string, TypeClass: any) {
@@ -136,8 +139,9 @@ export abstract class TypeNode implements ITypeNode {
     }
     // XElement 必须有nodeName,默认为div。
     const item = new node.TypeClass() as TypeNode; // 创建类实例
-    item.parent = parent;
     console.log('item is ', item);
+    item.setParent(parent);
+    parent.addChild(item);
     if (node.propObj) {
       if (item instanceof TypeElement) {
         item.addStyleObj(node.propObj.styleObj);

@@ -28,7 +28,8 @@ import { TableDataCell } from './components/form/form-item/table-item/table/data
 import { TableRow } from './components/form/form-item/table-item/table/row/row.class';
 /**
  * 应用根节点，必须存在。
- * 应用直接继承 TypeRoot ;
+ * 应用继承 TypeRoot;
+ * 因为属性和方法要全局调用，所以全部设置为静态 static; 包括get也设置为静态
  */
 export class FormEditor extends TypeRoot {
   className: 'FormEditor';
@@ -71,30 +72,30 @@ export class FormEditor extends TypeRoot {
     FormEditor.dialog = new WebDialog(this);
     FormEditor.messageBox = new MessageBox(this);
     // FormEditor.layout.childNodes.push(this.dialog, this.messageBox);
-    this.childNodes = [FormEditor.layout, FormEditor.dialog, FormEditor.messageBox];
-    // this.root.createItem(this.root,{
-    //   TypeClass: LayoutWrapper,
-    //   propObj: {
-    //     styleObj: {},
-    //     attrObj: {}
-    //   },
-    //   childNodes: [
-    //     {
-    //       TypeClass: WebDialog,
-    //       propObj: {
-    //         styleObj: {},
-    //         attrObj: {},
-    //       }
-    //     },
-    //     {
-    //       TypeClass: MessageBox,
-    //       propObj: {
-    //         styleObj: {},
-    //         attrObj: {}
-    //       }
-    //     }
-    //   ]
-    // });
+    // this.childNodes = [FormEditor.layout, FormEditor.dialog, FormEditor.messageBox];
+    this.createItem(this, {
+      TypeClass: LayoutWrapper,
+      // propObj: {
+      //   styleObj: {},
+      //   attrObj: {}
+      // },
+      childNodes: [
+        {
+          TypeClass: WebDialog,
+          // propObj: {
+          //   styleObj: {},
+          //   attrObj: {},
+          // }
+        },
+        {
+          TypeClass: MessageBox,
+          // propObj: {
+          //   styleObj: {},
+          //   attrObj: {}
+          // }
+        }
+      ]
+    });
     this.render();
     const json = this.toJSON();
     console.log('json is ', json);

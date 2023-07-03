@@ -273,12 +273,6 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
     this.dom.classList.remove(className);
     return this;
   }
-  // todo 真实的dom操作
-  // abstract setParent(parent: TypeElement): void;
-  setParent(parent: TypeElement): void {
-    this.parent = parent;
-  }
-
   /**
    * 在最后位置添加一个子节点。
    * 如果newChild.parent存在，则可能需要执行newChild?.parent.removeChild(newChild)。需要根据业务逻辑判断。
@@ -286,17 +280,17 @@ export abstract class TypeElement extends TypeNode implements ITypeElement {
    * @param newChild
    */
   // abstract appendChild(newChild: TypeElement | TextNode): TypeElement | TextNode;
-  appendChild(newChild: TypeElement| TextNode): void {
+  appendChild(newChild: TypeNode): void {
     newChild.setParent(this); // 如果不是子类，是其它地方的对象加过来，要重设其父类。
     this.childNodes.push(newChild);
     this.renderChild(newChild);
     // this.dom.appendChild(newChild.render().dom);
     // return this;
   }
-  unshiftChild(newChild: TypeElement | TextNode): void {
+  unshiftChild(newChild: TypeNode): void {
     this.childNodes.unshift(newChild);
   }
-  addChild(newChild: TypeElement | TextNode): void {
+  addChild(newChild: TypeNode): void {
     this.childNodes.push(newChild);
   }
   /**
