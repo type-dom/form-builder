@@ -1,4 +1,5 @@
 import { fromEvent } from 'rxjs';
+import { AppRoot } from '../../../../../src/app-root';
 import { TypeTableRow } from '../../../../type-element/type-html/table/row/row.class';
 import { DeleteSvg } from '../../../../components/svgs/delete/delete';
 import { Span } from '../../span/span.class';
@@ -79,7 +80,7 @@ export class TableRow extends TypeTableRow implements ITableRow {
         this.appendChild(tdObj);
       }
     });
-    if (this.appRoot.mode === 'fill') {
+    if (AppRoot.mode === 'fill') {
       // console.log('table row mod design ');
       // todo 只在dom上渲染，而不加到子节点上。
       this.appendChild(this.deleteSpan);

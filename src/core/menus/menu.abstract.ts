@@ -8,6 +8,7 @@ import { TableControl } from '../controls/complex/table/table.class';
 import { labelStyle } from '../controls/web-control.const';
 import { menuStyle } from './menu.const';
 import { IControlMenu } from './menu.interface';
+import { AppRoot } from '../../app-root';
 
 export abstract class ControlMenu extends TypeDiv implements IControlMenu {
   abstract ControlClass: ControlClass;
@@ -34,7 +35,7 @@ export abstract class ControlMenu extends TypeDiv implements IControlMenu {
       }),
       // 鼠标出
       fromEvent(this.dom, 'mouseout').subscribe(() => {
-        if (this.appRoot.selectedMenu !== this) {
+        if (AppRoot.selectedMenu !== this) {
           this.setStyleObj({
             backgroundColor: '#eee',
             background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
@@ -48,21 +49,21 @@ export abstract class ControlMenu extends TypeDiv implements IControlMenu {
       }),
       // 点击后直接创建控件，并加载到页面中
       fromEvent(this.dom, 'click').subscribe(() => {
-        this.appRoot.setSelectedMenu(this);
-        console.log('this.appRoot.selectedMenu is ', this.appRoot.selectedMenu);
+        AppRoot.setSelectedMenu(this);
+        console.log('AppRoot.selectedMenu is ', AppRoot.selectedMenu);
         // console.log('control is ', control);
-        // console.log('this.appRoot.selectedTableDataCell is ', this.appRoot.selectedTableDataCell);
+        // console.log('AppRoot.selectedTableDataCell is ', AppRoot.selectedTableDataCell);
         // console.log('this.ControlClass.name is ', this.ControlClass.name);
         // console.log('TableControl.name is ', TableControl.name);
         // 判断是否选中表格的单元格
-        if (this.appRoot.selectedTableDataCell && this.ControlClass !== TableControl) { // 修改表格单元格的控件。
-          this.appRoot.selectedTableDataCell.setControl(this.ControlClass as Exclude<ControlClass, typeof TableControl>);
+        if (AppRoot.selectedTableDataCell && this.ControlClass !== TableControl) { // 修改表格单元格的控件。
+          AppRoot.selectedTableDataCell.setControl(this.ControlClass as Exclude<ControlClass, typeof TableControl>);
           // todo 修改单元格中的控件时， 要触发 字段属性 reset
-          this.appRoot.fieldProperty.reset();
-          this.appRoot.selectedTableDataCell.render();
+          AppRoot.fieldProperty.reset();
+          AppRoot.selectedTableDataCell.render();
         } else { // 添加到页面中
           // 创建控件
-          const control = new this.ControlClass(this.appRoot.currentPage); // todo currentPage
+          const control = new this.ControlClass(AppRoot.currentPage); // todo currentPage
 
           // 表格控件不受表单列数设置影响。
           if (control instanceof TableControl) {
@@ -75,9 +76,9 @@ export abstract class ControlMenu extends TypeDiv implements IControlMenu {
               width: 'calc(100% - ' + labelStyle.width + ')',
             });
           }
-          // console.log('add control this.appRoot.currentPage is ', this.appRoot.currentPage);
-          this.appRoot.currentPage.appendChild(control);
-          this.appRoot.setSelectedControl(control);
+          // console.log('add control AppRoot.currentPage is ', AppRoot.currentPage);
+          AppRoot.currentPage.appendChild(control);
+          AppRoot.setSelectedControl(control);
         }
       }),
     );

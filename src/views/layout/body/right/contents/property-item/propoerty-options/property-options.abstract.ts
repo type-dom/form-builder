@@ -12,6 +12,7 @@ import { RadioControl } from '../../../../../../../core/controls/basic/radio/rad
 import { CheckboxControl } from '../../../../../../../core/controls/basic/checkbox/checkbox.class';
 import { SelectControl } from '../../../../../../../core/controls/basic/select/select.class';
 import { ThreeDotsSvg } from '../../../../../../../../type-dom/components/svgs/three-dots/three-dots';
+import { AppRoot } from '../../../../../../../app-root';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertyOptions extends PropertyItem {
@@ -119,23 +120,23 @@ export abstract class PropertyOptions extends PropertyItem {
     this.initEvents();
   }
   get optionConfig(): IOptionConfig | undefined {
-    if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
-      return this.appRoot.selectedTableDataCell?.control.optionConfig;
+    if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
+      return AppRoot.selectedTableDataCell?.control.optionConfig;
     }
-    return this.appRoot.selectedControl?.optionConfig;
+    return AppRoot.selectedControl?.optionConfig;
   }
   set optionConfig(optConfig: IOptionConfig | undefined) {
-    if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
-      this.appRoot.selectedTableDataCell.control.optionConfig = optConfig;
+    if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
+      AppRoot.selectedTableDataCell.control.optionConfig = optConfig;
       return;
     }
-    if (!this.appRoot.selectedControl?.optionConfig) {
+    if (!AppRoot.selectedControl?.optionConfig) {
       throw Error('没有选中的控件, optionConfig');
     }
-    this.appRoot.selectedControl.optionConfig = optConfig;
+    AppRoot.selectedControl.optionConfig = optConfig;
   }
   resetOptionConfigResultValue(value: string | number | boolean): void {
-    // this.appRoot.selectedControl?.propObj.attrObj.optionConfig''
+    // AppRoot.selectedControl?.propObj.attrObj.optionConfig''
     // this.optionConfig = Object.assign(this.optionConfig, { resultValue: value });
     if (this.optionConfig) this.optionConfig.resultValue = value;
   }
@@ -240,33 +241,33 @@ export abstract class PropertyOptions extends PropertyItem {
   // 重置控件
   resetControl(): void {
     // 选中的是单元格中的控件
-    if (this.appRoot.selectedTableDataCell?.control instanceof RadioControl
-      || this.appRoot.selectedTableDataCell?.control instanceof CheckboxControl
-      || this.appRoot.selectedTableDataCell?.control instanceof SelectControl
+    if (AppRoot.selectedTableDataCell?.control instanceof RadioControl
+      || AppRoot.selectedTableDataCell?.control instanceof CheckboxControl
+      || AppRoot.selectedTableDataCell?.control instanceof SelectControl
     ) {
-      if (this.appRoot.selectedTableDataCell?.control.optionConfig) {
+      if (AppRoot.selectedTableDataCell?.control.optionConfig) {
         // todo config 要配resultValue
-        this.appRoot.selectedTableDataCell?.control?.setOptionConfig(this.appRoot.selectedTableDataCell?.control.optionConfig);
-        this.appRoot.selectedTableDataCell?.control?.formItem.itemContent.render();
+        AppRoot.selectedTableDataCell?.control?.setOptionConfig(AppRoot.selectedTableDataCell?.control.optionConfig);
+        AppRoot.selectedTableDataCell?.control?.formItem.itemContent.render();
       } else {
-        console.error('this.appRoot.selectedTableDataCell?.control.optionConfig is undefined . ');
+        console.error('AppRoot.selectedTableDataCell?.control.optionConfig is undefined . ');
       }
       return;
     }
-    if (this.appRoot.selectedControl instanceof RadioControl
-      || this.appRoot.selectedControl instanceof CheckboxControl
-      || this.appRoot.selectedControl instanceof SelectControl
+    if (AppRoot.selectedControl instanceof RadioControl
+      || AppRoot.selectedControl instanceof CheckboxControl
+      || AppRoot.selectedControl instanceof SelectControl
     ) {
       //  选项属性刷新后，还要刷新控件。
-      const type = (this.appRoot.selectedControl instanceof RadioControl) ? 'radio'
-        : (this.appRoot.selectedControl instanceof CheckboxControl) ? 'checkbox' : 'select';
+      const type = (AppRoot.selectedControl instanceof RadioControl) ? 'radio'
+        : (AppRoot.selectedControl instanceof CheckboxControl) ? 'checkbox' : 'select';
       console.log('type is ', type);
-      if (this.appRoot.selectedControl.optionConfig) {
-        console.log('this.appRoot.selectedControl.optionConfig is ', this.appRoot.selectedControl.optionConfig);
-        this.appRoot.selectedControl?.setOptionConfig(this.appRoot.selectedControl.optionConfig);
-        this.appRoot.selectedControl?.formItem.itemContent.render();
+      if (AppRoot.selectedControl.optionConfig) {
+        console.log('AppRoot.selectedControl.optionConfig is ', AppRoot.selectedControl.optionConfig);
+        AppRoot.selectedControl?.setOptionConfig(AppRoot.selectedControl.optionConfig);
+        AppRoot.selectedControl?.formItem.itemContent.render();
       } else {
-        console.error('this.appRoot.selectedControl.optionConfig is undefined . ');
+        console.error('AppRoot.selectedControl.optionConfig is undefined . ');
       }
     }
   }

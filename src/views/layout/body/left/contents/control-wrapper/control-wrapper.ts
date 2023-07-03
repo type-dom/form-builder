@@ -13,16 +13,12 @@ export class ControlWrapper extends TypeDiv {
   constructor(public parent: LeftContents) {
     super();
     this.className = 'ControlWrapper';
-    this.propObj = {
-      styleObj: {
-        display: Display.flex,
-        flexDirection: 'column',
-        padding: '10px',
-      },
-      attrObj: {
-        name: 'control-wrapper',
-      }
-    };
+    this.addStyleObj({
+      display: Display.flex,
+      flexDirection: 'column',
+      padding: '10px',
+    });
+    this.addAttrName('control-wrapper');
     this.formControlWrapper = new BasicControlWrapper(this);
     this.staticControlWrapper = new ComplexControlWrapper(this);
     this.childNodes = [this.formControlWrapper, this.staticControlWrapper];

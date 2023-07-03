@@ -23,7 +23,7 @@ export abstract class PropertyItem extends TypeDiv {
     super();
     this.nodeName = 'div';
     this.dom = document.createElement('div');
-    this.propObj.styleObj = {
+    this.addStyleObj({
       // border: '1px solid #1890ff',
       // background: '#f3f9ff',
       display: 'flex',
@@ -31,7 +31,7 @@ export abstract class PropertyItem extends TypeDiv {
       padding: '10px',
       marginBottom: '10px!important',
       fontSize: '14px',
-    };
+    });
 
     this.label = new Label(this);
     const text = new TextNode(this.label, labelText);
@@ -40,7 +40,6 @@ export abstract class PropertyItem extends TypeDiv {
     this.button = new Button(this);
     this.button.hide();
   }
-
   show(): void {
     this.setStyleObj({
       display: 'flex',

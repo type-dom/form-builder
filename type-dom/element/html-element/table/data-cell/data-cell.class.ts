@@ -1,4 +1,5 @@
 import { fromEvent } from 'rxjs';
+import { AppRoot } from '../../../../../src/app-root';
 import { WebControl } from '../../../../../src/core/controls/web-control.abstract';
 import { SingleInputControl } from '../../../../../src/core/controls/basic/single-input/single-input.class';
 import { ControlClass, IWebControl } from '../../../../../src/core/controls/web-control.interface';
@@ -104,7 +105,7 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
         // 阻止冒泡 ？？？ TODO 为什么要阻止冒泡 ----> 点击表格控件其它区域时要取消选中单元格。
         // e.stopPropagation();
         // 单元格选中状态。
-        this.appRoot.setSelectedTableDataCell(this);
+        AppRoot.setSelectedTableDataCell(this);
       }),
     );
   }

@@ -2,6 +2,7 @@ import { fromEvent } from 'rxjs';
 import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
 import { StylePosition } from '../../../type-dom/style/style.enum';
 import { ControlClassMap } from '../../constants';
+import { AppRoot } from '../../app-root';
 import { WebDocumentContents } from '../document/contents/contents.class';
 import { WebControl } from '../controls/web-control.abstract';
 import { IWebPage } from './web-page.interface';
@@ -25,8 +26,8 @@ export class WebPage extends TypeDiv implements IWebPage {
       margin: '5mm',
       // paddingTop:'5px',
       minHeight: '300px',
-      maxHeight: 'calc(' + this.appRoot.el.clientHeight + 'px - 60px - 10mm)',
-      // height: 'calc(' + this.appRoot.el.clientHeight + 'px - 60px - 10mm)',
+      maxHeight: 'calc(' + AppRoot.el.clientHeight + 'px - 60px - 10mm)',
+      // height: 'calc(' + AppRoot.el.clientHeight + 'px - 60px - 10mm)',
       overflowY: 'auto',
       backgroundColor: '#fff',
       backgroundImage: '',
@@ -59,7 +60,7 @@ export class WebPage extends TypeDiv implements IWebPage {
       fromEvent(this.dom, 'click').subscribe((e) => {
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          this.appRoot.setSelectedControl(null);
+          AppRoot.setSelectedControl(null);
         }
       })
     );
@@ -69,10 +70,10 @@ export class WebPage extends TypeDiv implements IWebPage {
     if (pageJson.propObj) {
       this.setPropObj(pageJson.propObj);
     }
-    // console.log('this.appRoot.el.clientHeight is ', this.appRoot.el.clientHeight);
+    // console.log('AppRoot.el.clientHeight is ', AppRoot.el.clientHeight);
     // console.log('this.parent.tabs.dom.clientHeight is ', this.parent.parent.tabs.dom.clientHeight);
     this.setStyleObj({
-      maxHeight: 'calc(' + (this.appRoot.el.clientHeight - this.parent.parent.tabs.dom.clientHeight) + 'px - 60px - 10mm)',
+      maxHeight: 'calc(' + (AppRoot.el.clientHeight - this.parent.parent.tabs.dom.clientHeight) + 'px - 60px - 10mm)',
       overflowY: 'auto',
     });
     this.childNodes = [];

@@ -4,28 +4,22 @@ import { TypeUL } from '../../../../../../type-dom/type-element/type-html/ul/ul.
 import { ListItem } from '../../../../../../type-dom/element/html-element/unordered-list/list-item/list-item.class';
 import { TextNode } from '../../../../../../type-dom/text-node/text-node.class';
 import { BodyRight } from '../right';
-
 export class BodyRightTabs extends TypeUL {
   className: 'BodyRightTabs';
-
   fieldTab: ListItem;
   controlTab: ListItem;
   formTab: ListItem;
   constructor(public parent: BodyRight) {
     super();
     this.className = 'BodyRightTabs';
-    this.propObj = {
-      styleObj: {
-        display: Display.flex,
-        listStyle: 'none',
-        margin: '0',
-        backgroundColor: '#f0f0f0',
-        paddingLeft: '5px',
-      },
-      attrObj: {
-        name: 'body-right-tabs'
-      }
-    };
+    this.addStyleObj({
+      display: Display.flex,
+      listStyle: 'none',
+      margin: '0',
+      backgroundColor: '#f0f0f0',
+      paddingLeft: '5px',
+    });
+    this.addAttrName('body-right-tabs');
     const liStyle = {
       borderTop: '1px solid #d2d2d2',
       borderLeft: '1px solid #d2d2d2',

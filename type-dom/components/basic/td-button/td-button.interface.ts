@@ -1,8 +1,11 @@
+import { IType } from '../../../style/var';
+import { ISpan } from '../../../element/html-element/span/span.interface';
+import { ITdIcon } from '../td-icon/td-icon.interface';
 import { ITypeButton } from '../../../type-element/type-html/button/button.interface';
-import { ITypeNode } from '../../../type-node/type-node.interface';
 export interface ITdButton extends ITypeButton {
+  // nodeName: 'button',
   className: 'TdButton',
-  childNodes: ITypeNode[],
+  childNodes: (ISpan | ITdIcon)[],
 }
 export type IButtonSize = '' | 'mini' | 'small' | 'medium' | 'large';
 export type IButtonType = 'default' | 'primary' | 'success' | 'warning' | 'info' | 'danger' | 'text' | ''
@@ -26,6 +29,8 @@ export interface ITdButtonConfig {
   disabled: boolean,
   title: string,
   type: IButtonType,
+  SvgClass: any,
+  iconPosition: 'left' | 'right',
   icon: string,
   nativeType: IButtonNativeType,
   loading: boolean,

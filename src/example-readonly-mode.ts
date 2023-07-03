@@ -12,7 +12,7 @@ fromEvent(document, 'DOMContentLoaded').subscribe(() => {
     console.log('editor is ', editor);
     editor.createInstance(oldFormJson);
     // 给控件配值
-    editor.setFormData(oldFormData);
+    AppRoot.setFormData(oldFormData);
 
     // editor.createInstance(formJson);
     // // 给控件配值

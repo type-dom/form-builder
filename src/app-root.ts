@@ -1,5 +1,5 @@
 // 顺序不能随意调换，可能会加载报错。 WebControl todo 如何解决
-import { filter, fromEvent, switchMap, of, Observable, Subscription, map, Subject } from 'rxjs';
+import { filter, fromEvent, switchMap, of, Observable, Subscription, Subject } from 'rxjs';
 import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
@@ -33,45 +33,45 @@ import { Test } from './views/test/test';
 export class AppRoot extends TypeRoot {
   className: 'AppRoot';
   // 光标
-  cursor?: Cursor | null;
+  static cursor?: Cursor | null;
   // 选中的菜单
-  selectedMenu: ControlMenu | null;
+  static selectedMenu: ControlMenu | null;
   // 选中的控件
-  selectedControl: WebControl | null;
+  static selectedControl: WebControl | null;
   // 选中的表格单元格
-  selectedTableDataCell?: TableDataCell | null;
-  layout: LayoutWrapper;
+  static selectedTableDataCell?: TableDataCell | null;
+  static layout: LayoutWrapper;
   // 对话框
-  dialog: WebDialog;
+  static dialog: WebDialog;
   // 消息框
-  messageBox: MessageBox;
+  static messageBox: MessageBox;
   // 编辑器模式，对应 设计模式， 填表模式， 只读模式
-  mode: 'design' | 'fill' | 'readonly';
+  static mode: 'design' | 'fill' | 'readonly';
   // todo tabs操作中重置。
   // currentPage: WebPage;
   // 集中出来外部传入的函数或方法。
-  functionMap: Map<string, (...rest: any[]) => any>;
-  el: HTMLElement;
+  static functionMap: Map<string, (...rest: any[]) => any>;
+  static el: HTMLElement;
   events: Subscription[];
-  editorElObservable: Observable<Event>;
-  onReady: Observable<void>;
-  readyEvent: Subject<void>;
+  static editorElObservable: Observable<Event>;
+  static onReady: Observable<void>;
+  static readyEvent: Subject<void>;
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
     super(editorEl);
     this.className = 'AppRoot';
-    this.el = editorEl;
-    if (!this.el.clientHeight) {
-      // this.el.setAttribute('clientHeight', '500px');
-      this.el.style.height = '600px'; // 默认高度600px;
+    AppRoot.el = editorEl;
+    if (!AppRoot.el.clientHeight) {
+      // AppRoot.el.setAttribute('clientHeight', '500px');
+      AppRoot.el.style.height = '600px'; // 默认高度600px;
     }
-    // console.log('this.el.clientHeight is ', this.el.clientHeight);
+    // console.log('AppRoot.el.clientHeight is ', AppRoot.el.clientHeight);
     this.events = [];
-    this.mode = mode;
-    this.layout = new LayoutWrapper(this);
-    this.dialog = new WebDialog(this);
-    this.messageBox = new MessageBox(this);
-    // this.layout.childNodes.push(this.dialog, this.messageBox);
-    this.childNodes = [this.layout, this.dialog, this.messageBox];
+    AppRoot.mode = mode;
+    AppRoot.layout = new LayoutWrapper(this);
+    AppRoot.dialog = new WebDialog(this);
+    AppRoot.messageBox = new MessageBox(this);
+    // AppRoot.layout.childNodes.push(this.dialog, this.messageBox);
+    this.childNodes = [AppRoot.layout, AppRoot.dialog, AppRoot.messageBox];
     // this.root.createItem(this.root,{
     //   TypeClass: LayoutWrapper,
     //   propObj: {
@@ -99,95 +99,92 @@ export class AppRoot extends TypeRoot {
     const json = this.toJSON();
     console.log('json is ', json);
     // console.log('editorEl is ', editorEl);
-    // editorEl.appendChild(this.layout.dom);
+    // editorEl.appendChild(AppRoot.layout.dom);
     const test = new Test(this);
     console.log('test is ', test);
     test.render();
     editorEl.appendChild(test.dom);
     // this.currentPage = this.defaultPage;
-    this.selectedMenu = null;
-    this.selectedControl = null;
+    AppRoot.selectedMenu = null;
+    AppRoot.selectedControl = null;
     // this.connectionItemObservable = null;
-    this.editorElObservable = fromEvent(this.el, 'click')
+    AppRoot.editorElObservable = fromEvent(AppRoot.el, 'click')
       .pipe(filter(() => {
-        return !!this.selectedTableDataCell || !!this.selectedControl;
+        return !!AppRoot.selectedTableDataCell || !!AppRoot.selectedControl;
       }));
-    this.functionMap = new Map();
-    this.formProperty.reset();
-    this.readyEvent = new Subject<void>();
-    this.onReady = this.readyEvent.asObservable();
-  }
-  get appRoot(): AppRoot {
-    return this;
+    AppRoot.functionMap = new Map();
+    AppRoot.formProperty.reset();
+    AppRoot.readyEvent = new Subject<void>();
+    AppRoot.onReady = AppRoot.readyEvent.asObservable();
   }
   /**
    * 获取设置的文档对象
    */
-  get webDocument(): WebDocument {
-    return this.layout.webDocument;
+  static get webDocument(): WebDocument {
+    return AppRoot.layout.webDocument;
   }
 
   /**
    * 获取右侧属性栏的字段属性tab
    */
-  get fieldTab(): ListItem {
-    return this.layout.body.right.tabs.fieldTab;
+  static get fieldTab(): ListItem {
+    return AppRoot.layout.body.right.tabs.fieldTab;
   }
 
   /**
    * 获取右侧属性栏的控件属性的tab
    */
-  get controlTab(): ListItem {
-    return this.layout.body.right.tabs.controlTab;
+  static get controlTab(): ListItem {
+    return AppRoot.layout.body.right.tabs.controlTab;
   }
 
   /**
    * 获取右侧属性栏的表单属性的tab
    */
-  get formTab(): ListItem {
-    return this.layout.body.right.tabs.formTab;
+  static get formTab(): ListItem {
+    return AppRoot.layout.body.right.tabs.formTab;
   }
 
   /**
    * 获取控件属性栏
    */
-  get controlProperty(): ControlProperty {
-    return this.layout.body.right.contents.controlProperty;
+  static get controlProperty(): ControlProperty {
+    return AppRoot.layout.body.right.contents.controlProperty;
   }
 
   /**
    * 获取字段属性栏
    */
-  get fieldProperty(): FieldProperty {
-    return this.layout.body.right.contents.fieldProperty;
+  static get fieldProperty(): FieldProperty {
+    return AppRoot.layout.body.right.contents.fieldProperty;
   }
 
   /**
    * 获取表单属性栏
    */
-  get formProperty(): FormProperty {
-    return this.layout.body.right.contents.formProperty;
+  static get formProperty(): FormProperty {
+    return AppRoot.layout.body.right.contents.formProperty;
   }
 
   // todo 暂时不用
-  get currentPage(): WebPage {
-    return this.webDocument.contents.currentPage;
+  static get currentPage(): WebPage {
+    return AppRoot.webDocument.contents.currentPage;
   }
   /**
    * 获取默认页
    */
-  get defaultPage(): WebPage { // defaultPage 默认首页
-    // return this.webDocument.defaultPage;
-    return this.webDocument.contents.defaultPage;
+  static get defaultPage(): WebPage { // defaultPage 默认首页
+    // return AppRoot.webDocument.defaultPage;
+    return AppRoot.webDocument.contents.defaultPage;
   }
 
   /**
    * 获取所有控件
    * 考虑多页面
    */
-  get allControls(): WebControl[] {
+  static get allControls(): WebControl[] {
     const controls: WebControl[] = [];
-    this.webDocument.contents.childNodes.forEach(page => {
+    AppRoot.webDocument.contents.childNodes.forEach(page => {
       // todo
       if (page.className === 'WebPage') {
         controls.push(...page.childNodes);
@@ -199,21 +196,21 @@ export class AppRoot extends TypeRoot {
   /**
    * 获取所有选项控件
    */
-  get optionControls(): WebControl[] {
-    return this.allControls.filter(control => !!control.optionConfig);
+  static get optionControls(): WebControl[] {
+    return AppRoot.allControls.filter(control => !!control.optionConfig);
   }
 
   /**
    * 默认值属性控制项的控制公式编辑器是否显示的监听
    */
-  get formulaVisibleObservable(): Observable<Event> {
+  static get formulaVisibleObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        // console.log('this.editor.selectedControl is ', this.selectedControl);
-        // if (this.selectedTableDataCell) { // 表格单元格选中的控件
-        //   return this.fieldProperty.fieldDefaultValue.formulaObservable;
+        // console.log('this.editor.selectedControl is ', AppRoot.selectedControl);
+        // if (AppRoot.selectedTableDataCell) { // 表格单元格选中的控件
+        //   return AppRoot.fieldProperty.fieldDefaultValue.formulaObservable;
         // }
-        return this.controlProperty.controlDefaultValue.formulaObservable;
+        return AppRoot.controlProperty.controlDefaultValue.formulaObservable;
       })
     );
   }
@@ -221,16 +218,16 @@ export class AppRoot extends TypeRoot {
   /**
    * 控件属性中选项的监听
    */
-  get optionsConfigObservable(): Observable<Event> {
+  static get optionsConfigObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        // console.log('this.editor.selectedControl is ', this.selectedControl);
-        if (this.selectedTableDataCell) { // 表格单元格选中的控件
-          // console.log('this.fieldProperty.fieldOptions.optionsConfigObservable is ', this.fieldProperty.fieldOptions.optionsConfigObservable);
-          return this.fieldProperty.fieldOptions.optionsConfigObservable;
+        // console.log('this.editor.selectedControl is ', AppRoot.selectedControl);
+        if (AppRoot.selectedTableDataCell) { // 表格单元格选中的控件
+          // console.log('AppRoot.fieldProperty.fieldOptions.optionsConfigObservable is ', AppRoot.fieldProperty.fieldOptions.optionsConfigObservable);
+          return AppRoot.fieldProperty.fieldOptions.optionsConfigObservable;
         }
-        // console.log('this.controlProperty.controlOptions.optionsConfigObservable is ', this.controlProperty.controlOptions.optionsConfigObservable);
-        return this.controlProperty.controlOptions.optionsConfigObservable;
+        // console.log('AppRoot.controlProperty.controlOptions.optionsConfigObservable is ', AppRoot.controlProperty.controlOptions.optionsConfigObservable);
+        return AppRoot.controlProperty.controlOptions.optionsConfigObservable;
       })
     );
   }
@@ -238,21 +235,21 @@ export class AppRoot extends TypeRoot {
   /**
    * 提交表单的监听
    */
-  get submitObservable(): Observable<Event> | undefined {
-    return this.layout.form?.footer.submitBtn.submitObservable;
+  static get submitObservable(): Observable<Event> | undefined {
+    return AppRoot.layout.form?.footer.submitBtn.submitObservable;
   }
 
   /**
    * 关联选项控件的关联属性的监听
    */
-  get connectionObservable(): Observable<Event> {
+  static get connectionObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (this.selectedTableDataCell) { // 表格单元格选中的控件
-          console.log('this.fieldProperty.fieldConnection.connectionObservable is ', this.fieldProperty.fieldConnection.connectionObservable);
-          return this.fieldProperty.fieldConnection.connectionObservable;
+        if (AppRoot.selectedTableDataCell) { // 表格单元格选中的控件
+          console.log('AppRoot.fieldProperty.fieldConnection.connectionObservable is ', AppRoot.fieldProperty.fieldConnection.connectionObservable);
+          return AppRoot.fieldProperty.fieldConnection.connectionObservable;
         }
-        return this.controlProperty.controlConnection.connectionObservable;
+        return AppRoot.controlProperty.controlConnection.connectionObservable;
       })
     );
   }
@@ -261,16 +258,16 @@ export class AppRoot extends TypeRoot {
    * 点击关联选项时，监听其点击事件。返回当前选中的控件是关联选项控件时。
    * 要考虑表格单元格中的控件是ConnectionControl的情况
    */
-  get connectionItemObservable(): Observable<Event | null> {
+  static get connectionItemObservable(): Observable<Event | null> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (this.selectedTableDataCell?.control instanceof ConnectionControl) {
-          console.log('this.selectedTableDataCell.control.connectionItemObservable is ', this.selectedTableDataCell.control.connectionItemObservable);
-          return this.selectedTableDataCell.control.connectionItemObservable;
+        if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+          console.log('AppRoot.selectedTableDataCell.control.connectionItemObservable is ', AppRoot.selectedTableDataCell.control.connectionItemObservable);
+          return AppRoot.selectedTableDataCell.control.connectionItemObservable;
         }
-        if (this.selectedControl instanceof ConnectionControl) {
-          console.log('this.selectedControl.connectionItemObservable is ', this.selectedControl.connectionItemObservable);
-          return this.selectedControl.connectionItemObservable;
+        if (AppRoot.selectedControl instanceof ConnectionControl) {
+          console.log('AppRoot.selectedControl.connectionItemObservable is ', AppRoot.selectedControl.connectionItemObservable);
+          return AppRoot.selectedControl.connectionItemObservable;
         }
         return of(null);
       }),
@@ -281,14 +278,14 @@ export class AppRoot extends TypeRoot {
   /**
    * 附件上传文件的监听
    */
-  get attachmentObservable(): Observable<Event | null> {
+  static get attachmentObservable(): Observable<Event | null> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (this.selectedTableDataCell?.control instanceof AttachmentControl) {
-          return this.selectedTableDataCell.control.attachmentObservable;
+        if (AppRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
+          return AppRoot.selectedTableDataCell.control.attachmentObservable;
         }
-        if (this.selectedControl instanceof AttachmentControl) {
-          return this.selectedControl.attachmentObservable;
+        if (AppRoot.selectedControl instanceof AttachmentControl) {
+          return AppRoot.selectedControl.attachmentObservable;
         }
         return of(null);
       }),
@@ -298,16 +295,16 @@ export class AppRoot extends TypeRoot {
   /**
    * 获取表单
    */
-  get form(): WebForm | undefined {
-    return this.layout.form;
+  static get form(): WebForm | undefined {
+    return AppRoot.layout.form;
   }
 
   /**
    * 根据控件获取提交的数据
    */
-  get formData(): Record<string, string | any[]> {
+  static get formData(): Record<string, string | any[]> {
     const formData: Record<string, string | any[]> = {};
-    const formIds = this.webDocument.formIds;
+    const formIds = AppRoot.webDocument.formIds;
     if (formIds) {
       const formIdJson = JSON.parse(formIds);
       for (const key in formIdJson) {
@@ -316,7 +313,7 @@ export class AppRoot extends TypeRoot {
     }
     const tableData: Record<string, string | number | boolean>[] = [];
     formData.table = tableData;
-    this.allControls.forEach((ctrl) => {
+    AppRoot.allControls.forEach((ctrl) => {
       if (ctrl instanceof TableControl) {
         // console.log('ctrl is TableControl', ctrl);
         const table = ctrl.formItem.itemContent;
@@ -373,48 +370,48 @@ export class AppRoot extends TypeRoot {
    * 选中控件
    * @param control
    */
-  setSelectedControl(control: WebControl | null): void {
+  static setSelectedControl(control: WebControl | null): void {
     console.log('setSelectedControl . control is ', control);
     if (control) { // 选中控件
       // 如果重复选中一个控件，不做处理
-      if (this.selectedControl === control) {
+      if (AppRoot.selectedControl === control) {
         return;
       }
       // 如果选中的控件不是表格控件
       // todo ??? 为什么要清理 ???
-      if (this.selectedTableDataCell && !(control instanceof TableControl)) {
-        this.setSelectedTableDataCell(null);
+      if (AppRoot.selectedTableDataCell && !(control instanceof TableControl)) {
+        AppRoot.setSelectedTableDataCell(null);
       }
 
       // 如果之前有选中的控件，则重置样式。
-      this.selectedControl?.setStyleObj({
+      AppRoot.selectedControl?.setStyleObj({
         border: '1px solid #e2e0e0',
       });
-      this.selectedControl = control;
+      AppRoot.selectedControl = control;
       control.setStyleObj({
         border: '1px solid #f00',
       });
 
-      this.controlTab.setStyle('display', 'block'); // 控件属性栏的tab开始时隐藏的。
+      AppRoot.controlTab.setStyle('display', 'block'); // 控件属性栏的tab开始时隐藏的。
       // this.controlTab.dom.click();
       // console.log('clone ', control.clone());
       // this.form.appendChild(control.clone());
     } else { // 清除选中的控件
-      if (this.selectedControl) {
-        this.selectedControl.setStyleObj({
+      if (AppRoot.selectedControl) {
+        AppRoot.selectedControl.setStyleObj({
           border: '1px solid #e2e0e0',
         });
-        this.selectedControl = null;
+        AppRoot.selectedControl = null;
         // 清除选中控件时，如果有选中的单元格，也要同步清除。
-        if (this.selectedTableDataCell) {
-          this.setSelectedTableDataCell(null);
+        if (AppRoot.selectedTableDataCell) {
+          AppRoot.setSelectedTableDataCell(null);
         }
       }
       // this.controlTab.setStyle('display', 'none');
       // this.formTab.dom.click();
     }
-    if (this.mode === 'design') {
-      this.controlProperty.reset();
+    if (AppRoot.mode === 'design') {
+      AppRoot.controlProperty.reset();
     }
   }
 
@@ -423,39 +420,39 @@ export class AppRoot extends TypeRoot {
    * todo setSelectedControl setSelectedTableDataCell 联动问题
    * @param tableDataCell
    */
-  setSelectedTableDataCell(tableDataCell: TableDataCell | null): void {
+  static setSelectedTableDataCell(tableDataCell: TableDataCell | null): void {
     console.error('setSelectedTableDataCell . tableDataCell is ', tableDataCell);
     if (tableDataCell) {
-      if (this.selectedTableDataCell === tableDataCell) { // 重复选中同一单元格
+      if (AppRoot.selectedTableDataCell === tableDataCell) { // 重复选中同一单元格
         return;
       }
-      this.selectedTableDataCell?.setStyleObj({
+      AppRoot.selectedTableDataCell?.setStyleObj({
         borderWidth: '1px',
         borderStyle: 'solid',
         borderColor: '#DCDFE6',
       });
-      this.selectedTableDataCell = tableDataCell;
+      AppRoot.selectedTableDataCell = tableDataCell;
       tableDataCell.setStyleObj({
         borderWidth: '1px',
         borderStyle: 'solid',
         borderColor: '#f00',
         display: 'table-cell'
       });
-      this.fieldTab.setStyle('display', 'block'); // 字段的tab开始时隐藏的。
+      AppRoot.layout.body.right.tabs.fieldTab.setStyle('display', 'block'); // 字段的tab开始时隐藏的。
       // this.fieldTab.dom.click();
     } else { // 清除选中
-      if (this.selectedTableDataCell) {
-        this.selectedTableDataCell.setStyleObj({
+      if (AppRoot.selectedTableDataCell) {
+        AppRoot.selectedTableDataCell.setStyleObj({
           borderColor: '#DCDFE6',
         });
       }
-      this.selectedTableDataCell = null;
-      this.fieldTab.setStyle('display', 'none');
-      this.controlTab.dom.click();
+      AppRoot.selectedTableDataCell = null;
+      AppRoot.layout.body.right.tabs.fieldTab.setStyle('display', 'none');
+      AppRoot.controlTab.dom.click();
     }
-    if (this.mode === 'design') {
+    if (AppRoot.mode === 'design') {
       // 重置属性栏？？？
-      this.fieldProperty.reset();
+      AppRoot.fieldProperty.reset();
     }
   }
 
@@ -463,25 +460,25 @@ export class AppRoot extends TypeRoot {
    * 选中表格时单独处理。
    * @param menu
    */
-  setSelectedMenu(menu: ControlMenu | null): void {
+  static setSelectedMenu(menu: ControlMenu | null): void {
     if (menu) {
       // 要先移除之前选中的菜单的选中状态
-      this.selectedMenu?.setStyleObj({
+      AppRoot.selectedMenu?.setStyleObj({
         backgroundColor: '#eee',
         background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
       });
-      this.selectedMenu = menu;
+      AppRoot.selectedMenu = menu;
       menu.setStyleObj({
         backgroundColor: '#fae100',
         background: '#fae100',
       });
     } else {
-      if (this.selectedMenu) {
-        this.selectedMenu?.setStyleObj({
+      if (AppRoot.selectedMenu) {
+        AppRoot.selectedMenu?.setStyleObj({
           backgroundColor: '#eee',
           background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
         });
-        this.selectedMenu = null;
+        AppRoot.selectedMenu = null;
       }
     }
   }
@@ -491,17 +488,17 @@ export class AppRoot extends TypeRoot {
    * @param docLiteral
    */
   createInstance(docLiteral: IWebDocument): void {
-    this.layout.webDocument.createInstance(docLiteral);
-    this.formProperty.reset();
-    // this.layout.webDocument?.defaultPage.createInstance(pageLiteral);
-    // console.log('this.layout.webDocument is ', this.layout.webDocument);
+    AppRoot.layout.webDocument.createInstance(docLiteral);
+    AppRoot.formProperty.reset();
+    // AppRoot.layout.webDocument?.defaultPage.createInstance(pageLiteral);
+    // console.log('AppRoot.layout.webDocument is ', AppRoot.layout.webDocument);
   }
 
   /**
    * 保存表单数据的回调方法
    * @param callback
    */
-  save(callback: (jsonData: IWebDocument) => void): void {
+  static save(callback: (jsonData: IWebDocument) => void): void {
     const doc = this.getJsonObj();
     callback(doc);
   }
@@ -509,39 +506,39 @@ export class AppRoot extends TypeRoot {
   /**
    * 获取文档的字面量
    */
-  getJsonObj(): IWebDocument {
-    this.setSelectedControl(null); // 去除选中样式
-    return toJSON(this.webDocument) as IWebDocument;
+  static getJsonObj(): IWebDocument {
+    AppRoot.setSelectedControl(null); // 去除选中样式
+    return toJSON(AppRoot.webDocument) as IWebDocument;
   }
 
   /**
    * 设置控件字段的配置信息
    * @param config
    */
-  setControlFieldConfig(config: IOptionConfig): void {
-    this.controlProperty.controlField.resetFieldConfig(config);
+  static setControlFieldConfig(config: IOptionConfig): void {
+    AppRoot.controlProperty.controlField.resetFieldConfig(config);
   }
 
   /**
    * 设置控件默认值的公式
    * @param formula
    */
-  setControlDefaultValueFormula(formula: string): void {
-    this.controlProperty.controlDefaultValue.formula = formula;
+  static setControlDefaultValueFormula(formula: string): void {
+    AppRoot.controlProperty.controlDefaultValue.formula = formula;
   }
 
   /**
    * 设置控件的option-config
    * @param config
    */
-  setControlOptionConfig(config: IOptionConfig): void {
-    if (this.selectedTableDataCell) {
-      this.fieldProperty.fieldOptions.resetConfig(config);
-      this.fieldProperty.fieldOptions.resetControl();
+  static setControlOptionConfig(config: IOptionConfig): void {
+    if (AppRoot.selectedTableDataCell) {
+      AppRoot.fieldProperty.fieldOptions.resetConfig(config);
+      AppRoot.fieldProperty.fieldOptions.resetControl();
       return;
     }
-    this.controlProperty.controlOptions.resetConfig(config);
-    this.controlProperty.controlOptions.resetControl();
+    AppRoot.controlProperty.controlOptions.resetConfig(config);
+    AppRoot.controlProperty.controlOptions.resetControl();
   }
 
   /**
@@ -550,12 +547,12 @@ export class AppRoot extends TypeRoot {
    * @param label
    * @param value
    */
-  setControlConnection(label: string, value: string): void {
-    if (this.selectedTableDataCell) {
-      this.fieldProperty.fieldConnection.reset(label, value);
+  static setControlConnection(label: string, value: string): void {
+    if (AppRoot.selectedTableDataCell) {
+      AppRoot.fieldProperty.fieldConnection.reset(label, value);
       return;
     }
-    this.controlProperty.controlConnection.reset(label, value);
+    AppRoot.controlProperty.controlConnection.reset(label, value);
   }
 
   /**
@@ -565,44 +562,44 @@ export class AppRoot extends TypeRoot {
    * @param label
    * @param value
    */
-  setConnectionItemValue(label: string, value: string): void {
-    if (this.selectedTableDataCell?.control instanceof ConnectionControl) {
-      this.selectedTableDataCell.control.setAttrObj({
+  static setConnectionItemValue(label: string, value: string): void {
+    if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+      AppRoot.selectedTableDataCell.control.setAttrObj({
         value,
         label
       }); // 控件值
       // 在内容框中显示选中的值
-      this.selectedTableDataCell.control.formItem.itemContent.setAttrObj({
+      AppRoot.selectedTableDataCell.control.formItem.itemContent.setAttrObj({
         value: label // 显示值
       });
       return;
     }
-    if (this.selectedControl instanceof ConnectionControl) {
-      this.selectedControl.setAttrObj({
+    if (AppRoot.selectedControl instanceof ConnectionControl) {
+      AppRoot.selectedControl.setAttrObj({
         value,
         label
       }); // 控件值
       // 在内容框中显示选中的值
-      this.selectedControl.formItem.itemContent.setAttrObj({
+      AppRoot.selectedControl.formItem.itemContent.setAttrObj({
         value: label // 显示值
       });
-      // this.selectedControl.connectionItemLabel = label;
+      // AppRoot.selectedControl.connectionItemLabel = label;
     } else {
       console.error('当前选中的控件不是关联选项控件');
       throw Error('当前选中的控件不是关联选项控件');
     }
   }
   // 设置附件控件的值
-  setAttachmentValue(label: string, value: string): void {
-    if (this.selectedTableDataCell?.control instanceof AttachmentControl) {
-      this.selectedTableDataCell.control.setAttrObj({
+  static setAttachmentValue(label: string, value: string): void {
+    if (AppRoot.selectedTableDataCell?.control instanceof AttachmentControl) {
+      AppRoot.selectedTableDataCell.control.setAttrObj({
         value: value,
         title: value,
       }); // 控件值
       return;
     }
-    if (this.selectedControl instanceof AttachmentControl) {
-      this.selectedControl.setAttrObj({
+    if (AppRoot.selectedControl instanceof AttachmentControl) {
+      AppRoot.selectedControl.setAttrObj({
         value: value,
         title: value,
       }); // 控件值
@@ -617,7 +614,7 @@ export class AppRoot extends TypeRoot {
    * 读取表单时使用
    * @param formData
    */
-  setFormData(formData: Record<string, any>): void {
+  static setFormData(formData: Record<string, any>): void {
     if (!formData) {
       return;
     }  //  todo 基于formData插入数值
@@ -627,12 +624,12 @@ export class AppRoot extends TypeRoot {
         formIds[key] = formData[key];
       }
     }
-    this.webDocument.setAttrObj({
+    AppRoot.webDocument.setAttrObj({
       'form-ids': JSON.stringify(formIds),
     });
     const tableData = formData.table as Record<string, string>[];
     delete formData.table;
-    this.allControls.forEach(control => {
+    AppRoot.allControls.forEach(control => {
       // console.log('control.fieldName is ', control.fieldName);
       // console.log('control.className is ', control.className);
       if (control instanceof TableControl) {
@@ -667,7 +664,7 @@ export class AppRoot extends TypeRoot {
           }
         }
       }
-      if (this.mode === 'readonly') {
+      if (AppRoot.mode === 'readonly') {
         control.setDisabled();
       }
     });

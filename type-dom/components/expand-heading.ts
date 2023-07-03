@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeHtml } from '../type-element/type-html/type-html.abstract';
-import { TypeComponent } from '../type-element/type-component/type-component.abstract';
+import { TypeContainer } from '../type-element/type-container/type-container.abstract';
 import { Span } from '../element/html-element/span/span.class';
 import { TextNode } from '../text-node/text-node.class';
 import { TriangleSvg } from './svgs/triangle/triangle';
@@ -11,7 +11,7 @@ export class ExpandHeading extends TypeHtml {
   childNodes: [TriangleSvg, Span];
   svg: TriangleSvg;
   title: Span;
-  constructor(public parent: TypeComponent, title: string) {
+  constructor(public parent: TypeContainer, title: string) {
     super('h3');
     this.nodeName = 'h3';
     this.dom = document.createElement(this.nodeName);
@@ -22,7 +22,7 @@ export class ExpandHeading extends TypeHtml {
         backgroundColor: '#a0a0a0',
         color: '#fff',
         textIndent: '20px',
-        borderRadius: '4px',
+        borderRadius: '4px 4px 0 0',
         width: '100%',
       },
       attrObj: {

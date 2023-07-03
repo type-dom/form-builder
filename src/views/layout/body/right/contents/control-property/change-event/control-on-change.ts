@@ -1,5 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
+import { AppRoot } from '../../../../../../../app-root';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { ControlProperty } from '../control-property';
@@ -25,14 +26,14 @@ export class ControlOnChangeProperty extends PropertyTextarea {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) { // 输入值的操作
-      // this.appRoot.selectedControl?.addOnChange(this.input.dom.value);
+      // AppRoot.selectedControl?.addOnChange(this.input.dom.value);
       return;
     }
     // 选中控件
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    // if (this.appRoot.selectedControl?.itemContent instanceof Input ||
-    //   this.appRoot.selectedControl?.itemContent instanceof Textarea) {
-    const changeStr = this.appRoot.selectedControl?.changeStr;
+    // if (AppRoot.selectedControl?.itemContent instanceof Input ||
+    //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
+    const changeStr = AppRoot.selectedControl?.changeStr;
     if (changeStr) {
       this.resetInputValue(changeStr);
     } else {
@@ -41,15 +42,15 @@ export class ControlOnChangeProperty extends PropertyTextarea {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) { // 输入值的操作
-      // this.appRoot.selectedControl?.addOnChange(this.input.dom.value);
+      // AppRoot.selectedControl?.addOnChange(this.input.dom.value);
       return;
     }
     // 选中控件
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    // if (this.appRoot.selectedControl?.itemContent instanceof Input ||
-    //   this.appRoot.selectedControl?.itemContent instanceof Textarea) {
-    if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
-      const changeStr = this.appRoot.selectedTableDataCell?.control?.changeStr;
+    // if (AppRoot.selectedControl?.itemContent instanceof Input ||
+    //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
+    if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
+      const changeStr = AppRoot.selectedTableDataCell?.control?.changeStr;
       if (changeStr) {
         this.resetInputValue(changeStr);
       } else {
@@ -60,22 +61,22 @@ export class ControlOnChangeProperty extends PropertyTextarea {
   addOnChange(value: string): void {
     if (this.parent instanceof ControlProperty) {
       if (value.trim()) { // 输入值的操作
-        this.appRoot.selectedControl?.addOnChange(this.content.dom.value);
+        AppRoot.selectedControl?.addOnChange(this.content.dom.value);
         return;
       } else {
-        this.appRoot.selectedControl?.removeOnChange();
+        AppRoot.selectedControl?.removeOnChange();
       }
     }
     if (this.parent instanceof FieldProperty) {
-      if (this.appRoot.selectedTableDataCell?.control instanceof WebControl) {
+      if (AppRoot.selectedTableDataCell?.control instanceof WebControl) {
         if (value.trim()) { // 输入值的操作
-          this.appRoot.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
+          AppRoot.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
           return;
         } else {
-          this.appRoot.selectedTableDataCell?.control?.removeOnChange();
+          AppRoot.selectedTableDataCell?.control?.removeOnChange();
         }
       } else {
-        console.error('this.appRoot.selectedTableDataCell?.control is not WebControl . ');
+        console.error('AppRoot.selectedTableDataCell?.control is not WebControl . ');
       }
     }
   }

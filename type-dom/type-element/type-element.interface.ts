@@ -22,11 +22,9 @@ export interface ITypeProperty {
 export interface ITypeElement extends ITypeNode {
   className: string; // todo enum ??
   propObj: ITypeProperty;
-  // childPropObj?: IWebSectionProperty;
-  // items?: Array<IWebSectionItem>;
   childNodes: Array<ITypeNode>;// contents
 }
-export interface IWebBoundBox {
+export interface IBoundBox {
   top: number;
   left: number;
   width: number;

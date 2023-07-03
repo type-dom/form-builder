@@ -1,8 +1,9 @@
+import { AppRoot } from '../../../../../../../app-root';
 import { labelStyle } from '../../../../../../../core/controls/web-control.const';
+import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FormProperty } from '../form-property';
-import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
 
 const labelAlignConfigs: IOptionConfig = {
   name: '标签对齐' + Math.random(),
@@ -39,7 +40,7 @@ export class LabelAlignProperty extends PropertyRadio {
   reset(value?: string): void {
     if (value !== undefined) {
       labelStyle.textAlign = value; // 改变新建控件的宽度。
-      this.appRoot.allControls.forEach(control => { // 循环遍历改变样式
+      AppRoot.allControls.forEach(control => { // 循环遍历改变样式
         if (control instanceof TableControl) {
           return;
         }

@@ -1,4 +1,5 @@
 import { fromEvent, Observable } from 'rxjs';
+import { AppRoot } from '../../../../app-root';
 import { TypeButton } from '../../../../../type-dom/type-element/type-html/button/button.abstract';
 import { buttonStyle } from '../../../../../type-dom/type-element/type-html/button/button.const';
 import { TextNode } from '../../../../../type-dom/text-node/text-node.class';
@@ -21,16 +22,16 @@ export class SubmitButton extends TypeButton {
     this.initEvents();
   }
   get beforeSubmitStr(): string {
-    return this.appRoot.webDocument.attrObj['before-submit'] as string;
+    return AppRoot.webDocument.attrObj['before-submit'] as string;
   }
   get afterSubmitStr(): string {
-    return this.appRoot.webDocument.attrObj['after-submit'] as string;
+    return AppRoot.webDocument.attrObj['after-submit'] as string;
   }
   initEvents(): void {
     this.events.push(
       this.submitObservable.subscribe(() => {
         console.log('submit . ');
-        console.log('this.appRoot.exampleData is ', this.appRoot.formData);
+        console.log('AppRoot.exampleData is ', AppRoot.formData);
         this.submit();
       })
     );
@@ -41,7 +42,7 @@ export class SubmitButton extends TypeButton {
       this.createFun(this.beforeSubmitStr);
     }
     // todo submit方法 是否也要设计表单时确定 ？？？
-    console.log('this.appRoot.webDocument', this.appRoot.webDocument);
+    console.log('AppRoot.webDocument', AppRoot.webDocument);
     if (this.afterSubmitStr) {
       this.createFun(this.afterSubmitStr);
     }
@@ -49,6 +50,6 @@ export class SubmitButton extends TypeButton {
   createFun(value: string | number | boolean): void {
     // eslint-disable-next-line no-new-func
     const fun = new Function('return ' + value);
-    fun(this.appRoot.webDocument);
+    fun(AppRoot.webDocument);
   }
 }

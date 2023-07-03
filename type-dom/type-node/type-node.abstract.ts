@@ -1,8 +1,6 @@
 import { Subscription } from 'rxjs';
-import { AppRoot } from '../../src/app-root';
 import { TypeElement } from '../type-element/type-element.abstract';
 import { ITypeProperty } from '../type-element/type-element.interface';
-import { TypeRoot } from '../type-root/type-root.class';
 import { ITextNode } from '../text-node/text-node.interface';
 import { INodeAttr, IPath, ITypeNode } from './type-node.interface';
 const Entities: Record<number, string> = {
@@ -62,40 +60,25 @@ export abstract class TypeNode implements ITypeNode {
    */
   abstract className: string; // 最终实体类的名称，解析转换时需要创建对应的类；
   abstract dom: HTMLElement | SVGElement | Text;
-  propObj?: ITypeProperty;
+  abstract parent?: TypeElement;
   /**
    * 渲染出真实DOM
-   *
    */
   abstract render(): void;
+  // abstract setConfig?(): void;
+  propObj?: ITypeProperty;
   nodeName: string;
   nodeValue?: string;
-  abstract parent?: TypeElement;
   childNodes?: TypeNode[];
   attributes?: INodeAttr[];
   events?: Subscription[];
+  setConfig?(config: any): void;
   protected constructor(nodeName: string, nodeValue?: string) {
     this.nodeName = nodeName;
     if (nodeValue !== undefined) {
       this.nodeValue = nodeValue;
     }
     // Object.defineProperty(this, "parentNode", { value: null, writable: true });
-  }
-  // 通用化变量名称
-  get appRoot(): AppRoot {
-    if (this.parent === undefined) {
-      throw Error('this.parentNode is undefined . ');
-    }
-    if (this.parent.className === this.className) {
-      throw Error('get appRoot this.parent.className === this.className, and is ' + this.className);
-    }
-    return this.parent.appRoot;
-  }
-  get root(): TypeRoot {
-    if (this.parent === undefined) {
-      throw Error('this.parentNode is undefined . ');
-    }
-    return this.parent.root;
   }
   get firstChild(): TypeNode | undefined {
     return this.childNodes && this.childNodes[0];
@@ -142,6 +125,7 @@ export abstract class TypeNode implements ITypeNode {
   // }
   /**
    * 不独立为一个函数，是因为在这里，可以直接 this. 的方式调用。
+   * 在UI组件中会重写
    * @param parent 不一定是this，还可以是父级、子级等等。
    * @param node
    */
@@ -175,6 +159,10 @@ export abstract class TypeNode implements ITypeNode {
         throw Error('TypeClass is not TextNode, but nodeValue exist. ');
       }
     }
+    // todo
+    if (node.config && item.setConfig) {
+      item.setConfig(node.config);
+    }
     if (node.childNodes) {
       if (item.childNodes !== undefined) {
         item.childNodes = item.createItems(item as TypeElement, node.childNodes);
@@ -185,6 +173,8 @@ export abstract class TypeNode implements ITypeNode {
     return item;
   }
   /**
+   * 创建子节点
+   * 与创建组件不同
    * 基于json对象创建类实例
    *   todo 运行时，类可能还没有写入 typeMap ????
    * @param parent

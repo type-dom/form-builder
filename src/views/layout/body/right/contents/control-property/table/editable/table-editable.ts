@@ -2,6 +2,7 @@ import { TableControl } from '../../../../../../../../core/controls/complex/tabl
 import { PropertyRadio } from '../../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../../control-property';
 import { IOptionConfig } from '../../../../../../../../core/controls/web-control.interface';
+import {AppRoot} from "../../../../../../../../app-root";
 
 const TableEditableConfig: IOptionConfig = {
   name: '表格可编辑',
@@ -34,11 +35,11 @@ export class TableEditableProperty extends PropertyRadio {
 
   // todo 只修改选中的表格
   reset(value: string): void {
-    if (this.appRoot.selectedControl instanceof TableControl) {
-      const webTable = this.appRoot.selectedControl.formItem.itemContent;
+    if (AppRoot.selectedControl instanceof TableControl) {
+      const webTable = AppRoot.selectedControl.formItem.itemContent;
       if (webTable.config?.mode) {
         webTable.config.mode = value as 'editable' | 'disabled' | undefined;
-        this.appRoot.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
+        AppRoot.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
         webTable.setTable(webTable.config);
         console.log('webTable is ', webTable);
         webTable.render();

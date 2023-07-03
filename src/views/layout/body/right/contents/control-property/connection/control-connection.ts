@@ -1,6 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
 import { ThreeDotsSvg } from '../../../../../../../../type-dom/components/svgs/three-dots/three-dots';
 import { ConnectionControl } from '../../../../../../../core/controls/complex/connection/connection.class';
+import { AppRoot } from '../../../../../../../app-root';
 import { PropertySpan } from '../../property-item/span/property-span.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
@@ -28,10 +29,10 @@ export class ControlConnectionProperty extends PropertySpan {
   //   this.events.push(
   //     fromEvent(this.button.dom, 'click').subscribe(() => {
   //       console.log('this.btn.dom click . ');
-  //       // this.appRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
-  //       console.log('this.appRoot.connectionObservable is ', this.appRoot.connectionObservable);
-  //       // this.appRoot.selectedControl?.resetConnectionItem('ddd');
-  //       // console.log('this.selectionControl.connectionItem is ', this.appRoot.selectedControl?.connectionItem);
+  //       // AppRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
+  //       console.log('AppRoot.connectionObservable is ', AppRoot.connectionObservable);
+  //       // AppRoot.selectedControl?.resetConnectionItem('ddd');
+  //       // console.log('this.selectionControl.connectionItem is ', AppRoot.selectedControl?.connectionItem);
   //     }),
   //   );
   // }
@@ -47,18 +48,18 @@ export class ControlConnectionProperty extends PropertySpan {
   }
   controlPropertyReset(label?:string, value?: string): void {
     if (value !== undefined && label !== undefined) { // 输入值的操作
-      if (this.appRoot.selectedControl instanceof ConnectionControl) {
-        this.appRoot.selectedControl.resetConnectionConfig(label, value);
+      if (AppRoot.selectedControl instanceof ConnectionControl) {
+        AppRoot.selectedControl.resetConnectionConfig(label, value);
         this.resetText(label);
       } else {
         console.error('当前控件不是关联选项控件.');
       }
       return;
     }
-    if (this.appRoot.selectedControl instanceof ConnectionControl) {
+    if (AppRoot.selectedControl instanceof ConnectionControl) {
       // 选中控件
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const label = this.appRoot.selectedControl?.connectionConfigLabel;
+      const label = AppRoot.selectedControl?.connectionConfigLabel;
       if (label) {
         this.resetText(label);
       } else {
@@ -70,17 +71,17 @@ export class ControlConnectionProperty extends PropertySpan {
   }
   fieldPropertyReset(label?:string, value?: string): void {
     if (value !== undefined && label !== undefined) { // 输入值的操作
-      if (this.appRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
-        this.appRoot.selectedTableDataCell.control.resetConnectionConfig(label, value);
+      if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+        AppRoot.selectedTableDataCell.control.resetConnectionConfig(label, value);
         this.resetText(label);
       } else {
         console.error('当前控件不是关联选项控件');
       }
       return;
     }
-    if (this.appRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+    if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const label = this.appRoot.selectedTableDataCell.control?.connectionConfigLabel;
+      const label = AppRoot.selectedTableDataCell.control?.connectionConfigLabel;
       if (label) {
         this.resetText(label);
       } else {

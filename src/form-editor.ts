@@ -18,10 +18,10 @@ export class FormEditor {
     // 测试表格
     // this.appRoot.createInstance(tableJson);
     // this.appRoot.setFormData(tableData);
-    this.appRoot.setControlFieldConfig(fieldsConfig);
-    this.appRoot.functionMap.set('add', this.add);
-    this.appRoot.onReady.subscribe(() => {
-      console.log('this.appRoot on ready');
+    AppRoot.setControlFieldConfig(fieldsConfig);
+    AppRoot.functionMap.set('add', this.add);
+    AppRoot.onReady.subscribe(() => {
+      console.log('AppRoot on ready');
     });
     // this.events = [];
     // fetch('/source').then(res => { // 可以获取 html页面
@@ -39,50 +39,50 @@ export class FormEditor {
   }
 
   initEvents(): void {
-    console.log('this.appRoot.editorElObservable is ', this.appRoot.editorElObservable);
+    console.log('AppRoot.editorElObservable is ', AppRoot.editorElObservable);
     // if (optionConfigSubscription) optionConfigSubscription.unsubscribe();
-    this.appRoot.optionsConfigObservable.subscribe(() => {
-      console.log('this.appRoot.optionsConfigObservable . ');
-      this.appRoot.setControlOptionConfig(optionsConfig);
+    AppRoot.optionsConfigObservable.subscribe(() => {
+      console.log('AppRoot.optionsConfigObservable . ');
+      AppRoot.setControlOptionConfig(optionsConfig);
     });
 
     // if (connectionSubscription) connectionSubscription.unsubscribe();
-    this.appRoot.connectionObservable.subscribe(() => {
-      console.log('this.appRoot.connectionObservable . ');
-      this.appRoot.setControlConnection('config-label', 'config-value');
+    AppRoot.connectionObservable.subscribe(() => {
+      console.log('AppRoot.connectionObservable . ');
+      AppRoot.setControlConnection('config-label', 'config-value');
     });
-    this.appRoot.connectionItemObservable.subscribe(() => {
-      console.log('this.appRoot.connectionItemObservable . ');
-      if (this.appRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
-        console.log('this.appRoot.selectedControl.a is ', this.appRoot.selectedTableDataCell.control.connectionConfigLabel);
-        const value = this.appRoot.selectedTableDataCell.control.connectionConfigValue;
+    AppRoot.connectionItemObservable.subscribe(() => {
+      console.log('AppRoot.connectionItemObservable . ');
+      if (AppRoot.selectedTableDataCell?.control instanceof ConnectionControl) {
+        console.log('AppRoot.selectedControl.a is ', AppRoot.selectedTableDataCell.control.connectionConfigLabel);
+        const value = AppRoot.selectedTableDataCell.control.connectionConfigValue;
         if (value === undefined) {
           throw Error('请先选择配置信息。 ');
         }
         // then
-        this.appRoot.setConnectionItemValue('label', 'value');
+        AppRoot.setConnectionItemValue('label', 'value');
         return;
       }
-      if (this.appRoot.selectedControl instanceof ConnectionControl) {
-        console.log('this.appRoot.selectedControl.a is ', this.appRoot.selectedControl.connectionConfigLabel);
-        const value = this.appRoot.selectedControl.connectionConfigValue;
+      if (AppRoot.selectedControl instanceof ConnectionControl) {
+        console.log('AppRoot.selectedControl.a is ', AppRoot.selectedControl.connectionConfigLabel);
+        const value = AppRoot.selectedControl.connectionConfigValue;
         if (value === undefined) {
           throw Error('请先选择配置信息。 ');
         }
         // then
-        this.appRoot.setConnectionItemValue('label', 'value');
+        AppRoot.setConnectionItemValue('label', 'value');
       } else {
         throw Error('不是ConnectionControl . ');
       }
     });
-    // console.log('this.appRoot.attachmentObservable . ');
-    this.appRoot.attachmentObservable.subscribe((e) => {
+    // console.log('AppRoot.attachmentObservable . ');
+    AppRoot.attachmentObservable.subscribe((e) => {
       console.log('e.target files is ', (e && (e.target as HTMLInputElement).files));
-      this.appRoot.setAttachmentValue('附件', 'file1');
+      AppRoot.setAttachmentValue('附件', 'file1');
     });
-    this.appRoot.formulaVisibleObservable.subscribe(() => {
-      console.log('this.appRoot.formulaVisibleObservable . ');
-      this.appRoot.setControlDefaultValueFormula('a+b=c');
+    AppRoot.formulaVisibleObservable.subscribe(() => {
+      console.log('AppRoot.formulaVisibleObservable . ');
+      AppRoot.setControlDefaultValueFormula('a+b=c');
     });
   }
 }

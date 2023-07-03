@@ -1,6 +1,7 @@
 import { RadioControl } from '../../../../../../../core/controls/basic/radio/radio.class';
 import { CheckboxControl } from '../../../../../../../core/controls/basic/checkbox/checkbox.class';
 import { SelectControl } from '../../../../../../../core/controls/basic/select/select.class';
+import { AppRoot } from '../../../../../../../app-root';
 import { PropertyOptions } from '../../property-item/propoerty-options/property-options.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
@@ -26,21 +27,21 @@ export class ControlOptionsProperty extends PropertyOptions {
   controlPropertyReset(value?: string | number | boolean): void {
     if (value !== undefined) {
       //  todo setValue
-      if (this.appRoot.selectedControl instanceof RadioControl
-        || this.appRoot.selectedControl instanceof CheckboxControl
-        || this.appRoot.selectedControl instanceof SelectControl
+      if (AppRoot.selectedControl instanceof RadioControl
+        || AppRoot.selectedControl instanceof CheckboxControl
+        || AppRoot.selectedControl instanceof SelectControl
       ) {
-        this.appRoot.selectedControl.setValue(value);
+        AppRoot.selectedControl.setValue(value);
       }
       return;
     }
     //  根据选中的控件，设置选项。
-    if (this.appRoot.selectedControl instanceof RadioControl
-      || this.appRoot.selectedControl instanceof CheckboxControl
-      || this.appRoot.selectedControl instanceof SelectControl
+    if (AppRoot.selectedControl instanceof RadioControl
+      || AppRoot.selectedControl instanceof CheckboxControl
+      || AppRoot.selectedControl instanceof SelectControl
     ) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      const config = this.appRoot.selectedControl.optionConfig;
+      const config = AppRoot.selectedControl.optionConfig;
       // console.log('config is ', config);
       if (config) {
         this.resetConfig(config);
@@ -54,18 +55,18 @@ export class ControlOptionsProperty extends PropertyOptions {
   fieldPropertyReset(value?: string | number | boolean): void {
     if (value !== undefined) {
       //  todo setValue
-      if (this.appRoot.selectedTableDataCell?.control instanceof RadioControl
-        || this.appRoot.selectedTableDataCell?.control instanceof CheckboxControl
-        || this.appRoot.selectedTableDataCell?.control instanceof SelectControl) {
-        this.appRoot.selectedTableDataCell.control.setValue(value);
+      if (AppRoot.selectedTableDataCell?.control instanceof RadioControl
+        || AppRoot.selectedTableDataCell?.control instanceof CheckboxControl
+        || AppRoot.selectedTableDataCell?.control instanceof SelectControl) {
+        AppRoot.selectedTableDataCell.control.setValue(value);
       }
       return;
     }
-    if (this.appRoot.selectedTableDataCell?.control instanceof RadioControl
-      || this.appRoot.selectedTableDataCell?.control instanceof CheckboxControl
-      || this.appRoot.selectedTableDataCell?.control instanceof SelectControl) {
+    if (AppRoot.selectedTableDataCell?.control instanceof RadioControl
+      || AppRoot.selectedTableDataCell?.control instanceof CheckboxControl
+      || AppRoot.selectedTableDataCell?.control instanceof SelectControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      const config = this.appRoot.selectedTableDataCell.control.optionConfig;
+      const config = AppRoot.selectedTableDataCell.control.optionConfig;
       // console.log('config is ', config);
       if (config) {
         this.resetConfig(config);

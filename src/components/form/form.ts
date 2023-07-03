@@ -1,6 +1,7 @@
 import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
 import { TypeRoot } from '../../../type-dom/type-root/type-root.class';
 import { StylePosition } from '../../../type-dom/style/style.enum';
+import { AppRoot } from '../../app-root';
 import { LayoutWrapper } from '../../views/layout/layout';
 import { FormHeader } from './header/header';
 import { FormBody } from './body/body';
@@ -32,7 +33,7 @@ export class WebForm extends TypeDiv {
     this.header = new FormHeader(this);
     this.body = new FormBody(this);
     this.footer = new FormFooter(this);
-    if (this.appRoot.mode === 'readonly') {
+    if (AppRoot.mode === 'readonly') {
       this.footer.hide();
     }
     this.childNodes = [this.header, this.body, this.footer];

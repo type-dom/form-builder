@@ -9,12 +9,7 @@ export class LeftContents extends TypeDiv {
   constructor(public parent: BodyLeft) {
     super();
     this.className = 'LeftContents';
-    this.propObj = {
-      styleObj: {},
-      attrObj: {
-        name: 'left-contents'
-      }
-    };
+    this.addAttrName('left-contents');
     this.controlMenus = new ControlWrapper(this);
     this.childNodes = [this.controlMenus];
   }

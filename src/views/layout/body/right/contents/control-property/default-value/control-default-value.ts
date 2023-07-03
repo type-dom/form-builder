@@ -3,6 +3,7 @@ import { ThreeDotsSvg } from '../../../../../../../../type-dom/components/svgs/t
 import { SingleInputControl } from '../../../../../../../core/controls/basic/single-input/single-input.class';
 import { MultilineInputControl } from '../../../../../../../core/controls/basic/multiline-input/multiline-input.class';
 import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
+import { AppRoot } from '../../../../../../../app-root';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
@@ -31,28 +32,28 @@ export class ControlDefaultValueProperty extends PropertyInput {
   }
   get formula(): string {
     if (this.parent instanceof ControlProperty) {
-      if (!this.appRoot.selectedControl) throw Error('没有选中的控件');
-      return this.appRoot.selectedControl?.attrObj.formula as string;
+      if (!AppRoot.selectedControl) throw Error('没有选中的控件');
+      return AppRoot.selectedControl?.attrObj.formula as string;
     } else {
-      if (!this.appRoot.selectedTableDataCell) throw Error('没有选中的单元格控件');
-      return this.appRoot.selectedTableDataCell?.attrObj.formula as string;
+      if (!AppRoot.selectedTableDataCell) throw Error('没有选中的单元格控件');
+      return AppRoot.selectedTableDataCell?.attrObj.formula as string;
     }
   }
   set formula(value: string) {
     if (this.parent instanceof ControlProperty) {
-      if (!this.appRoot.selectedControl) throw Error('没有选中的控件');
-      this.appRoot.selectedControl.setAttribute('formula', value);
+      if (!AppRoot.selectedControl) throw Error('没有选中的控件');
+      AppRoot.selectedControl.setAttribute('formula', value);
     } else {
-      if (!this.appRoot.selectedTableDataCell) throw Error('没有选中的单元格控件');
-      this.appRoot.selectedTableDataCell?.setAttribute('formula', value);
+      if (!AppRoot.selectedTableDataCell) throw Error('没有选中的单元格控件');
+      AppRoot.selectedTableDataCell?.setAttribute('formula', value);
       return;
     }
   }
   // get formulaVisible(): boolean {
-  //   return this.appRoot.selectedControl?.attrObj['formula-visible'] as boolean;
+  //   return AppRoot.selectedControl?.attrObj['formula-visible'] as boolean;
   // }
   // set formulaVisible(value: boolean) {
-  //   this.appRoot.selectedControl?.setAttribute('formula-visible', value);
+  //   AppRoot.selectedControl?.setAttribute('formula-visible', value);
   // }
   // initEvents(): void {
   //   super.initEvents();
@@ -61,11 +62,11 @@ export class ControlDefaultValueProperty extends PropertyInput {
   //   //     console.log('this.button.dom click . ');
   //   //     // this.formulaVisible = true;
   //   //     // console.log('this.formulaVisible is ', this.formulaVisible);
-  //   //     // this.appRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
-  //   //     console.log('this.appRoot.formulaVisibleObservable is ', this.appRoot.formulaVisibleObservable);
-  //   //     // this.appRoot.dialog.setTitle('公式');
+  //   //     // AppRoot.formulaVisibleObservable = fromEvent(this.btn.dom, 'click');
+  //   //     console.log('AppRoot.formulaVisibleObservable is ', AppRoot.formulaVisibleObservable);
+  //   //     // AppRoot.dialog.setTitle('公式');
   //   //     // if (!this.textarea) {
-  //   //     //   this.textarea = new Textarea(this.appRoot.dialog.container.body);
+  //   //     //   this.textarea = new Textarea(AppRoot.dialog.container.body);
   //   //     //   this.textarea.setStyleObj({
   //   //     //     width: '100%',
   //   //     //     minHeight: '80px',
@@ -73,9 +74,9 @@ export class ControlDefaultValueProperty extends PropertyInput {
   //   //     // }
   //   //     // // todo 加载之前保存的公式
   //   //     // this.textarea.setValue('');
-  //   //     // this.appRoot.dialog.container.body.childNodes = [this.textarea];
-  //   //     // this.appRoot.dialog.container.body.render();
-  //   //     // this.appRoot.dialog.show();
+  //   //     // AppRoot.dialog.container.body.childNodes = [this.textarea];
+  //   //     // AppRoot.dialog.container.body.render();
+  //   //     // AppRoot.dialog.show();
   //   //   }),
   //   // );
   // }
@@ -91,19 +92,19 @@ export class ControlDefaultValueProperty extends PropertyInput {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) { // 输入值的操作
-      if (this.appRoot.selectedControl instanceof SingleInputControl ||
-        this.appRoot.selectedControl instanceof MultilineInputControl) {
-        this.appRoot.selectedControl?.resetDefaultValue(value);
+      if (AppRoot.selectedControl instanceof SingleInputControl ||
+        AppRoot.selectedControl instanceof MultilineInputControl) {
+        AppRoot.selectedControl?.resetDefaultValue(value);
       } else {
-        console.error('this.appRoot.selectedControl is not SingleInputControl or MultilineInputControl . ');
+        console.error('AppRoot.selectedControl is not SingleInputControl or MultilineInputControl . ');
       }
       return;
     }
     // 选中控件
     if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-    if (this.appRoot.selectedControl instanceof SingleInputControl ||
-      this.appRoot.selectedControl instanceof MultilineInputControl) {
-      const defaultValue = this.appRoot.selectedControl?.defaultValue;
+    if (AppRoot.selectedControl instanceof SingleInputControl ||
+      AppRoot.selectedControl instanceof MultilineInputControl) {
+      const defaultValue = AppRoot.selectedControl?.defaultValue;
       if (defaultValue) {
         this.resetInputValue(defaultValue);
       } else {
@@ -114,35 +115,35 @@ export class ControlDefaultValueProperty extends PropertyInput {
     }
   }
   fieldPropertyReset(value?: string): void {
-    if (!this.appRoot.selectedTableDataCell) {
-      console.error('this.appRoot.selectedTableDataCell is null .');
+    if (!AppRoot.selectedTableDataCell) {
+      console.error('AppRoot.selectedTableDataCell is null .');
       return;
     }
-    if (this.appRoot.selectedTableDataCell.control instanceof TextNode) {
-      console.error('this.appRoot.selectedTableDataCell.control instanceof TextNode');
+    if (AppRoot.selectedTableDataCell.control instanceof TextNode) {
+      console.error('AppRoot.selectedTableDataCell.control instanceof TextNode');
       return;
     }
     if (value !== undefined) { // 输入值的操作
-      if (this.appRoot.selectedTableDataCell.control instanceof SingleInputControl ||
-        this.appRoot.selectedTableDataCell.control instanceof MultilineInputControl) {
-        this.appRoot.selectedTableDataCell.control.resetDefaultValue(value);
+      if (AppRoot.selectedTableDataCell.control instanceof SingleInputControl ||
+        AppRoot.selectedTableDataCell.control instanceof MultilineInputControl) {
+        AppRoot.selectedTableDataCell.control.resetDefaultValue(value);
       } else {
-        console.error('this.appRoot.selectedTableDataCell.control SingleInputControl or MultilineInputControl . ');
+        console.error('AppRoot.selectedTableDataCell.control SingleInputControl or MultilineInputControl . ');
       }
       return;
     }
-    if (this.appRoot.selectedTableDataCell.control instanceof SingleInputControl ||
-      this.appRoot.selectedTableDataCell.control instanceof MultilineInputControl) {
+    if (AppRoot.selectedTableDataCell.control instanceof SingleInputControl ||
+      AppRoot.selectedTableDataCell.control instanceof MultilineInputControl) {
       // 选中控件
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const defaultValue = this.appRoot.selectedTableDataCell.control.defaultValue;
+      const defaultValue = AppRoot.selectedTableDataCell.control.defaultValue;
       if (defaultValue) {
         this.resetInputValue(defaultValue);
       } else {
         this.resetInputValue('');
       }
     } else {
-      console.error('this.appRoot.selectedTableDataCell.control is not SingleInputControl or MultilineInputControl . ');
+      console.error('AppRoot.selectedTableDataCell.control is not SingleInputControl or MultilineInputControl . ');
       this.hide();
     }
   }
