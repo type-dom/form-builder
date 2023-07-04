@@ -27,8 +27,8 @@ import { WebForm } from './components/form/form';
 import { TableDataCell } from './components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { TableRow } from './components/form/form-item/table-item/table/row/row.class';
 /**
- * 应用根节点，必须存在。
- * 应用继承 TypeRoot;
+ * 应用类，挂载全局属性和方法。
+ * 根节点，继承 TypeRoot;
  * 因为属性和方法要全局调用，所以全部设置为静态 static; 包括get也设置为静态
  */
 export class FormEditor extends TypeRoot {
@@ -124,49 +124,42 @@ export class FormEditor extends TypeRoot {
   static get webDocument(): WebDocument {
     return FormEditor.layout.webDocument;
   }
-
   /**
    * 获取右侧属性栏的字段属性tab
    */
   static get fieldTab(): ListItem {
     return FormEditor.layout.body.right.tabs.fieldTab;
   }
-
   /**
    * 获取右侧属性栏的控件属性的tab
    */
   static get controlTab(): ListItem {
     return FormEditor.layout.body.right.tabs.controlTab;
   }
-
   /**
    * 获取右侧属性栏的表单属性的tab
    */
   static get formTab(): ListItem {
     return FormEditor.layout.body.right.tabs.formTab;
   }
-
   /**
    * 获取控件属性栏
    */
   static get controlProperty(): ControlProperty {
     return FormEditor.layout.body.right.contents.controlProperty;
   }
-
   /**
    * 获取字段属性栏
    */
   static get fieldProperty(): FieldProperty {
     return FormEditor.layout.body.right.contents.fieldProperty;
   }
-
   /**
    * 获取表单属性栏
    */
   static get formProperty(): FormProperty {
     return FormEditor.layout.body.right.contents.formProperty;
   }
-
   // todo 暂时不用
   static get currentPage(): WebPage {
     return FormEditor.webDocument.contents.currentPage;
@@ -178,7 +171,6 @@ export class FormEditor extends TypeRoot {
     // return FormEditor.webDocument.defaultPage;
     return FormEditor.webDocument.contents.defaultPage;
   }
-
   /**
    * 获取所有控件
    * 考虑多页面
@@ -193,14 +185,12 @@ export class FormEditor extends TypeRoot {
     });
     return controls;
   }
-
   /**
    * 获取所有选项控件
    */
   static get optionControls(): WebControl[] {
     return FormEditor.allControls.filter(control => !!control.optionConfig);
   }
-
   /**
    * 默认值属性控制项的控制公式编辑器是否显示的监听
    */
@@ -215,7 +205,6 @@ export class FormEditor extends TypeRoot {
       })
     );
   }
-
   /**
    * 控件属性中选项的监听
    */
@@ -232,14 +221,12 @@ export class FormEditor extends TypeRoot {
       })
     );
   }
-
   /**
    * 提交表单的监听
    */
   static get submitObservable(): Observable<Event> | undefined {
     return FormEditor.layout.form?.footer.submitBtn.submitObservable;
   }
-
   /**
    * 关联选项控件的关联属性的监听
    */
@@ -254,7 +241,6 @@ export class FormEditor extends TypeRoot {
       })
     );
   }
-
   /**
    * 点击关联选项时，监听其点击事件。返回当前选中的控件是关联选项控件时。
    * 要考虑表格单元格中的控件是ConnectionControl的情况
@@ -275,7 +261,6 @@ export class FormEditor extends TypeRoot {
       filter(ob => ob !== null)
     );
   }
-
   /**
    * 附件上传文件的监听
    */
@@ -299,7 +284,6 @@ export class FormEditor extends TypeRoot {
   static get form(): WebForm | undefined {
     return FormEditor.layout.form;
   }
-
   /**
    * 根据控件获取提交的数据
    */
@@ -366,7 +350,6 @@ export class FormEditor extends TypeRoot {
     });
     return formData;
   }
-
   /**
    * 选中控件
    * @param control
@@ -415,7 +398,6 @@ export class FormEditor extends TypeRoot {
       FormEditor.controlProperty.reset();
     }
   }
-
   /**
    * 选中单元格，则显示字段属性；否则，隐藏；
    * todo setSelectedControl setSelectedTableDataCell 联动问题
@@ -456,7 +438,6 @@ export class FormEditor extends TypeRoot {
       FormEditor.fieldProperty.reset();
     }
   }
-
   /**
    * 选中表格时单独处理。
    * @param menu
@@ -483,7 +464,6 @@ export class FormEditor extends TypeRoot {
       }
     }
   }
-
   /**
    * 根据表单的字面量，实例化
    * @param docLiteral
@@ -494,7 +474,6 @@ export class FormEditor extends TypeRoot {
     // FormEditor.layout.webDocument?.defaultPage.createInstance(pageLiteral);
     // console.log('FormEditor.layout.webDocument is ', FormEditor.layout.webDocument);
   }
-
   /**
    * 保存表单数据的回调方法
    * @param callback
@@ -503,7 +482,6 @@ export class FormEditor extends TypeRoot {
     const doc = this.getJsonObj();
     callback(doc);
   }
-
   /**
    * 获取文档的字面量
    */
@@ -511,7 +489,6 @@ export class FormEditor extends TypeRoot {
     FormEditor.setSelectedControl(null); // 去除选中样式
     return toJSON(FormEditor.webDocument) as IWebDocument;
   }
-
   /**
    * 设置控件字段的配置信息
    * @param config
@@ -519,7 +496,6 @@ export class FormEditor extends TypeRoot {
   static setControlFieldConfig(config: IOptionConfig): void {
     FormEditor.controlProperty.controlField.resetFieldConfig(config);
   }
-
   /**
    * 设置控件默认值的公式
    * @param formula
@@ -527,7 +503,6 @@ export class FormEditor extends TypeRoot {
   static setControlDefaultValueFormula(formula: string): void {
     FormEditor.controlProperty.controlDefaultValue.formula = formula;
   }
-
   /**
    * 设置控件的option-config
    * @param config
@@ -541,7 +516,6 @@ export class FormEditor extends TypeRoot {
     FormEditor.controlProperty.controlOptions.resetConfig(config);
     FormEditor.controlProperty.controlOptions.resetControl();
   }
-
   /**
    * 设置选项控件对应的 label和value
    * todo 单元格中的处理
@@ -555,7 +529,6 @@ export class FormEditor extends TypeRoot {
     }
     FormEditor.controlProperty.controlConnection.reset(label, value);
   }
-
   /**
    * 设置选项控件的值
    * 当页面点击选项控件的选项按钮时，触发外部调用的页面，配置相关的数据。
