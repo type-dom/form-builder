@@ -10,7 +10,7 @@ import { DeleteSvg } from '../type-dom/components/svgs/delete/delete';
 import { SelectSvg } from '../type-dom/components/svgs/select/select';
 import { DateSvg } from '../type-dom/components/svgs/date/date';
 import { TextNode } from '../type-dom/text-node/text-node.class';
-import {Division} from "../type-dom/element/html-element/division/division.class";
+import { Division } from '../type-dom/element/html-element/division/division.class';
 /**
  * 应用根节点，必须存在。
  * 应用继承 TypeRoot;
