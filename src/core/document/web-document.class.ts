@@ -1,15 +1,15 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
+import { toJSON } from '../../../type-dom/type-element/type-element.function';
 import { FormEditor } from '../../form-editor';
 import { LayoutWrapper } from '../../views/layout/layout';
 import { BodyMainContent } from '../../views/layout/body/main-content/main-content';
 import { IOptionConfig } from '../controls/web-control.interface';
 import { fieldConfig } from '../controls/web-control.const';
+import { IWebPage } from '../page/web-page.interface';
 import { IWebDocument } from './web-document.interface';
 import { WebDocumentContents } from './contents/contents.class';
 import { WebDocumentTabs } from './tabs/tabs.class';
-import { toJSON } from '../../../type-dom/type-element/type-element.function';
-import { IWebPage } from '../page/web-page.interface';
 import { IWebDocumentContents } from './contents/contents.interface';
 
 // todo 处理多页面问题
