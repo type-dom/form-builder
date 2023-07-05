@@ -1,5 +1,5 @@
-import { TableSvg } from '../../../../../type-dom/components/svgs/table/table';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
+import { TableSvg } from '../../../../../type-dom/svgs/table/table';
 import { TableControl } from '../../../controls/complex/table/table.class';
 import { ControlMenu } from '../../menu.abstract';
 import { ComplexMenus } from '../complex-menus';

@@ -3,7 +3,7 @@ import { Display } from '../../../../../type-dom/style/style.enum';
 import { toJSON } from '../../../../../type-dom/type-element/type-element.function';
 import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
-import { AddSvg } from '../../../../../type-dom/components/svgs/add/add';
+import { AddSvg } from '../../../../../type-dom/svgs/add/add';
 import { TableControl } from '../../../../core/controls/complex/table/table.class';
 import { FormItem } from '../form-item.abstract';
 import { ITableItem } from './table-item.interface';

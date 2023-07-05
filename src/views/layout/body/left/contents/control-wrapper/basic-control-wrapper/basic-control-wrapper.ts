@@ -1,7 +1,7 @@
 import { TypeContainer } from '../../../../../../../../type-dom/type-element/type-container/type-container.abstract';
 import { BasicMenus } from '../../../../../../../core/menus/basic-menus/basic-menus';
-import { ExpandHeading } from '../../../../../../../../type-ui/expand-heading';
 import { ControlWrapper } from '../control-wrapper';
+import { ExpandHeading } from '../../../../../../../components/form/expand-heading';
 export class BasicControlWrapper extends TypeContainer {
   className: 'BasicControlWrapper';
   childNodes: [ExpandHeading, BasicMenus];

@@ -1,16 +1,14 @@
 import { TypeRoot } from '../type-dom/type-root/type-root.class';
-import { TdButton } from '../type-dom/components/basic/td-button/td-button.class';
-import { Br } from '../type-dom/element/html-element/br/br.class';
-import { ConnectionSvg } from '../type-dom/components/svgs/connetion/connection';
-import { CloseSvg } from '../type-dom/components/svgs/close/close';
-import { TimeSvg } from '../type-dom/components/svgs/time/time';
-import { AddSvg } from '../type-dom/components/svgs/add/add';
-import { AttachmentSvg } from '../type-dom/components/svgs/attachment/attachment';
-import { DeleteSvg } from '../type-dom/components/svgs/delete/delete';
-import { SelectSvg } from '../type-dom/components/svgs/select/select';
-import { DateSvg } from '../type-dom/components/svgs/date/date';
 import { TextNode } from '../type-dom/text-node/text-node.class';
 import { Division } from '../type-dom/element/html-element/division/division.class';
+import { TdButton } from '../type-ui/basic/td-button/td-button.class';
+import { Br } from '../type-dom/element/html-element/br/br.class';
+import { CloseSvg } from '../type-dom/svgs/close/close';
+import { DeleteSvg } from '../type-dom/svgs/delete/delete';
+import { SelectSvg } from '../type-dom/svgs/select/select';
+import { DateSvg } from '../type-dom/svgs/date/date';
+import { TimeSvg } from '../type-dom/svgs/time/time';
+import { ConnectionSvg } from '../type-dom/svgs/connetion/connection';
 /**
  * 应用根节点，必须存在。
  * 应用继承 TypeRoot;

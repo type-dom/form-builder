@@ -6,8 +6,6 @@ import {
 import { Input } from '../../../../../../../type-dom/element/html-element/input/input.class';
 import { Textarea } from '../../../../../../../type-dom/element/html-element/textarea/textarea.class';
 import { Select } from '../../../../../../../type-dom/element/html-element/select/select.class';
-import { RadioGroup } from '../../../../../../../type-dom/components/radio-group/radio-group.class';
-import { CheckboxGroup } from '../../../../../../../type-dom/components/checkbox-group/checkbox-group.class';
 import { ITextNode } from '../../../../../../../type-dom/text-node/text-node.interface';
 import { WebControl } from '../../../../../../core/controls/web-control.abstract';
 import { SingleInputControl } from '../../../../../../core/controls/basic/single-input/single-input.class';
@@ -15,6 +13,8 @@ import { TableControl } from '../../../../../../core/controls/complex/table/tabl
 import { ControlClass, IWebControl } from '../../../../../../core/controls/web-control.interface';
 import { ControlClassMap } from '../../../../../../constants';
 import { FormEditor } from '../../../../../../form-editor';
+import { RadioGroup } from '../../../../radio-group/radio-group.class';
+import { CheckboxGroup } from '../../../../checkbox-group/checkbox-group.class';
 import { TableRow } from '../row/row.class';
 import { ITableDataCell } from './data-cell.interface';
 

@@ -1,7 +1,6 @@
 import { fromEvent, Subscription } from 'rxjs';
 import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
-import { CheckboxOption } from '../../../type-dom/components/checkbox-group/checkbox-option/checkbox-option.class';
-import { RadioOption } from '../../../type-dom/components/radio-group/radio-option/radio-option.class';
+
 import { Select } from '../../../type-dom/element/html-element/select/select.class';
 import { Label } from '../../../type-dom/element/html-element/label/label.class';
 import { Input } from '../../../type-dom/element/html-element/input/input.class';
@@ -13,10 +12,12 @@ import { TableDataCell } from '../../components/form/form-item/table-item/table/
 import { Table } from '../../components/form/form-item/table-item/table/table.class';
 import { TableRow } from '../../components/form/form-item/table-item/table/row/row.class';
 import { ItemContent } from '../../components/form/form-item/form-item.interface';
-import { IOptionConfig, IWebControl } from './web-control.interface';
-import { WebPage } from '../page/web-page.class';
-import { controlStyle } from './web-control.const';
+import { RadioOption } from '../../components/form/radio-group/radio-option/radio-option.class';
+import { CheckboxOption } from '../../components/form/checkbox-group/checkbox-option/checkbox-option.class';
 import { FormEditor } from '../../form-editor';
+import { WebPage } from '../page/web-page.class';
+import { IOptionConfig, IWebControl } from './web-control.interface';
+import { controlStyle } from './web-control.const';
 export abstract class WebControl extends TypeDiv implements IWebControl {
   abstract className: string;
   // 控件都有这个属性

@@ -1,9 +1,8 @@
-import { TypeDiv } from '../../type-element/type-html/div/div.abstract';
-import { RadioItem } from '../../../src/components/form/form-item/radio-item/radio-item.class';
-import { RadioOption } from './radio-option/radio-option.class';
+import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
+import { IOption } from '../../../core/controls/web-control.interface';
+import { RadioItem } from '../form-item/radio-item/radio-item.class';
 import { IRadioGroup } from './radio-group.interface';
-import { IOption } from '../../../src/core/controls/web-control.interface';
-
+import { RadioOption } from './radio-option/radio-option.class';
 export class RadioGroup extends TypeDiv implements IRadioGroup {
   className: 'RadioGroup';
   childNodes: RadioOption[];

@@ -5,13 +5,13 @@ import { Textarea } from '../../../../type-dom/element/html-element/textarea/tex
 import { ILabel } from '../../../../type-dom/element/html-element/label/label.interface';
 import { Span } from '../../../../type-dom/element/html-element/span/span.class';
 import { Select } from '../../../../type-dom/element/html-element/select/select.class';
-import { RadioGroup } from '../../../../type-dom/components/radio-group/radio-group.class';
-import { CheckboxGroup } from '../../../../type-dom/components/checkbox-group/checkbox-group.class';
-import { DeleteSvg } from '../../../../type-dom/components/svgs/delete/delete';
 import { TextNode } from '../../../../type-dom/text-node/text-node.class';
 import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
+import { DeleteSvg } from '../../../../type-dom/svgs/delete/delete';
 import { FormEditor } from '../../../form-editor';
 import { formItemStyle, labelStyle } from '../../../core/controls/web-control.const';
+import { CheckboxGroup } from '../checkbox-group/checkbox-group.class';
+import { RadioGroup } from '../radio-group/radio-group.class';
 import { IFormItem, ItemContent } from './form-item.interface';
 import { Table } from './table-item/table/table.class';
 

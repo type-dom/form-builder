@@ -1,4 +1,4 @@
-import { TimeSvg } from '../../../../../type-dom/components/svgs/time/time';
+import { TimeSvg } from '../../../../../type-dom/svgs/time/time';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
 import { TimeControl } from '../../../controls/basic/time/time.class';
 import { ControlMenu } from '../../menu.abstract';

@@ -1,7 +1,6 @@
-import { IType } from '../../../style/var';
-import { ISpan } from '../../../element/html-element/span/span.interface';
+import { ITypeButton } from '../../../type-dom/type-element/type-html/button/button.interface';
+import { ISpan } from '../../../type-dom/element/html-element/span/span.interface';
 import { ITdIcon } from '../td-icon/td-icon.interface';
-import { ITypeButton } from '../../../type-element/type-html/button/button.interface';
 export interface ITdButton extends ITypeButton {
   // nodeName: 'button',
   className: 'TdButton',

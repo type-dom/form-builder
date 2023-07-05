@@ -1,4 +1,4 @@
-import { AttachmentSvg } from '../../../../../type-dom/components/svgs/attachment/attachment';
+import { AttachmentSvg } from '../../../../../type-dom/svgs/attachment/attachment';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
 import { AttachmentControl } from '../../../controls/basic/attachment/attachment.class';
 import { ControlMenu } from '../../menu.abstract';

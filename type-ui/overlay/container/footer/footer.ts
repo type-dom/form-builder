@@ -1,4 +1,4 @@
-import { TypeDiv } from '../../../../type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
 import { OverlayContainer } from '../container';
 import { CancelButton } from './cancel-button/cancel-button';
 import { ConfirmButton } from './confirm-button/confirm-button';

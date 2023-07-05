@@ -1,5 +1,5 @@
-import { CheckboxSvg } from '../../../../../type-dom/components/svgs/checkbox/checkbox';
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
+import { CheckboxSvg } from '../../../../../type-dom/svgs/checkbox/checkbox';
 import { CheckboxControl } from '../../../controls/basic/checkbox/checkbox.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';

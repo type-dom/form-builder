@@ -1,4 +1,4 @@
-import { TypeDiv } from '../../../../type-element/type-html/div/div.abstract';
+import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
 import { OverlayContainer } from '../container';
 import { OverlayTitle } from './title/title';
 import { CloseButton } from './close-button/close-button';

@@ -1,10 +1,10 @@
-import { FormEditor } from '../../../src/form-editor';
-import { TextNode } from '../../text-node/text-node.class';
-import { Span } from '../../element/html-element/span/span.class';
+import { Span } from '../../type-dom/element/html-element/span/span.class';
+import { TextNode } from '../../type-dom/text-node/text-node.class';
+import { TypeRoot } from '../../type-dom/type-root/type-root.class';
 import { Overlay } from '../overlay/overlay.abstract';
 export class MessageBox extends Overlay {
   className: 'MessageBox';
-  constructor(public parent: FormEditor) {
+  constructor(public parent: TypeRoot) {
     super();
     this.className = 'MessageBox';
     this.addAttrObj({

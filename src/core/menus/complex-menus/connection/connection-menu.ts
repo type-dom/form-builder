@@ -1,5 +1,5 @@
 import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
-import { ConnectionSvg } from '../../../../../type-dom/components/svgs/connetion/connection';
+import { ConnectionSvg } from '../../../../../type-dom/svgs/connetion/connection';
 import { ConnectionControl } from '../../../controls/complex/connection/connection.class';
 import { ControlMenu } from '../../menu.abstract';
 import { ComplexMenus } from '../complex-menus';

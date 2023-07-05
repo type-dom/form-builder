@@ -1,6 +1,6 @@
-import { TypeDiv } from '../../type-element/type-html/div/div.abstract';
-import { TypeHtml } from '../../type-element/type-html/type-html.abstract';
-import { IOption } from '../../../src/core/controls/web-control.interface';
+import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeHtml } from '../../../../type-dom/type-element/type-html/type-html.abstract';
+import { IOption } from '../../../core/controls/web-control.interface';
 import { CheckboxOption } from './checkbox-option/checkbox-option.class';
 import { ICheckboxGroup } from './checkbox-group.interface';
 

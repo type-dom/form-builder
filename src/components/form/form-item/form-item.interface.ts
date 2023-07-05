@@ -7,10 +7,10 @@ import { ISelect } from '../../../../type-dom/element/html-element/select/select
 import { ILabel } from '../../../../type-dom/element/html-element/label/label.interface';
 import { ISpan } from '../../../../type-dom/element/html-element/span/span.interface';
 import { ITypeDiv } from '../../../../type-dom/type-element/type-html/div/div.interface';
-import { RadioGroup } from '../../../../type-dom/components/radio-group/radio-group.class';
-import { IRadioGroup } from '../../../../type-dom/components/radio-group/radio-group.interface';
-import { CheckboxGroup } from '../../../../type-dom/components/checkbox-group/checkbox-group.class';
-import { ICheckboxGroup } from '../../../../type-dom/components/checkbox-group/checkbox-group.interface';
+import { RadioGroup } from '../radio-group/radio-group.class';
+import { CheckboxGroup } from '../checkbox-group/checkbox-group.class';
+import { IRadioGroup } from '../radio-group/radio-group.interface';
+import { ICheckboxGroup } from '../checkbox-group/checkbox-group.interface';
 import { Table } from './table-item/table/table.class';
 import { ITable } from './table-item/table/table.interface';
 

@@ -1,7 +1,6 @@
-import { TypeSvgSvg } from '../../../type-element/type-svg/svg/svg.abstract';
-import { TypeHtml } from '../../../type-element/type-html/type-html.abstract';
-import { SvgPath } from '../../../element/svg-element/path/path.class';
-
+import { TypeSvgSvg } from '../../type-element/type-svg/svg/svg.abstract';
+import { SvgPath } from '../../element/svg-element/path/path.class';
+import { TypeHtml } from '../../type-element/type-html/type-html.abstract';
 export class TriangleSvg extends TypeSvgSvg {
   className: 'TriangleSvg';
   childNodes: [SvgPath];

@@ -1,18 +1,14 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TdButton } from '../../../../../type-ui/basic/td-button/td-button.class';
 import { Display } from '../../../../../type-dom/style/style.enum';
-import { TdButton } from '../../../../../type-dom/components/basic/td-button/td-button.class';
-import { HeaderWrapper } from '../header';
+import { AttachmentSvg } from '../../../../../type-dom/svgs/attachment/attachment';
+import { DeleteSvg } from '../../../../../type-dom/svgs/delete/delete';
 import { toJSON } from '../../../../../type-dom/type-element/type-element.function';
 import { IWebDocument } from '../../../../core/document/web-document.interface';
 import { WebDocument } from '../../../../core/document/web-document.class';
-import { AddSvg } from '../../../../../type-dom/components/svgs/add/add';
-import { AttachmentSvg } from '../../../../../type-dom/components/svgs/attachment/attachment';
-import { TimeSvg } from '../../../../../type-dom/components/svgs/time/time';
-import { CloseSvg } from '../../../../../type-dom/components/svgs/close/close';
-import { ConnectionSvg } from '../../../../../type-dom/components/svgs/connetion/connection';
-import { DeleteSvg } from '../../../../../type-dom/components/svgs/delete/delete';
 import { FormEditor } from '../../../../form-editor';
+import { HeaderWrapper } from '../header';
 // import { SaveButton } from './save-button/save-button';
 
 export class Navbar extends TypeDiv {

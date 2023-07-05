@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { TypeButton } from '../../../../../type-element/type-html/button/button.abstract';
-import { Cursor, StylePosition } from '../../../../../style/style.enum';
-import { CloseSvg } from '../../../../svgs/close/close';
+import { TypeButton } from '../../../../../type-dom/type-element/type-html/button/button.abstract';
+import { CloseSvg } from '../../../../../type-dom/svgs/close/close';
+import { Cursor, StylePosition } from '../../../../../type-dom/style/style.enum';
 import { OverlayHeader } from '../header';
 
 export class CloseButton extends TypeButton {

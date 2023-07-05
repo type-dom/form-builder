@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { TypeSpan } from '../../../type-element/type-html/span/span.abstract';
-import { Input } from '../../../element/html-element/input/input.class';
-import { TextNode } from '../../../text-node/text-node.class';
+import { TextNode } from '../../../../../type-dom/text-node/text-node.class';
+import { TypeSpan } from '../../../../../type-dom/type-element/type-html/span/span.abstract';
+import { Input } from '../../../../../type-dom/element/html-element/input/input.class';
 import { CheckboxGroup } from '../checkbox-group.class';
 import { ICheckboxOption } from './checkbox-option.interface';
 

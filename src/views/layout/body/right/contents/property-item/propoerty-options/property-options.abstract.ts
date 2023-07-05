@@ -5,13 +5,13 @@ import { Select } from '../../../../../../../../type-dom/element/html-element/se
 import { Button } from '../../../../../../../../type-dom/element/html-element/button/button.class';
 import { Display } from '../../../../../../../../type-dom/style/style.enum';
 import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
+import { ThreeDotsSvg } from '../../../../../../../../type-dom/svgs/three-dots/three-dots';
 import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 import { RadioControl } from '../../../../../../../core/controls/basic/radio/radio.class';
 import { CheckboxControl } from '../../../../../../../core/controls/basic/checkbox/checkbox.class';
 import { SelectControl } from '../../../../../../../core/controls/basic/select/select.class';
-import { ThreeDotsSvg } from '../../../../../../../../type-dom/components/svgs/three-dots/three-dots';
 import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyItem } from '../property-item.abstract';
 

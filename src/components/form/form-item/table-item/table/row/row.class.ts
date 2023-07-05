@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { TypeTableRow } from '../../../../../../../type-dom/type-element/type-html/table/row/row.class';
 import { Span } from '../../../../../../../type-dom/element/html-element/span/span.class';
 import { StylePosition } from '../../../../../../../type-dom/style/style.enum';
-import { DeleteSvg } from '../../../../../../../type-dom/components/svgs/delete/delete';
+import { DeleteSvg } from '../../../../../../../type-dom/svgs/delete/delete';
 import { FormEditor } from '../../../../../../form-editor';
 import { TableDataCell } from '../data-cell/data-cell.class';
 import { ITableDataCell } from '../data-cell/data-cell.interface';
