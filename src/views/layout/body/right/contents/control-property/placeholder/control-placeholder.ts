@@ -1,5 +1,4 @@
-import { Textarea } from '../../../../../../../../type-dom/element/html-element/textarea/textarea.class';
-import { Input } from '../../../../../../../../type-dom/element/html-element/input/input.class';
+import { Textarea, Input } from 'type-dom.ts';
 import { SingleInputControl } from '../../../../../../../core/controls/basic/single-input/single-input.class';
 import { MultilineInputControl } from '../../../../../../../core/controls/basic/multiline-input/multiline-input.class';
 import { FormEditor } from '../../../../../../../form-editor';

@@ -1,6 +1,5 @@
+import { TypeDiv, Display } from 'type-dom.ts';
 import { BasicControlWrapper } from '../../../views/layout/body/left/contents/control-wrapper/basic-control-wrapper/basic-control-wrapper';
-import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
-import { Display } from '../../../../type-dom/style/style.enum';
 import { ControlMenu } from '../menu.abstract';
 import { NumericalMenu } from './numerical/numerical-menu';
 import { SingleInputMenu } from './single-input/single-input-menu';

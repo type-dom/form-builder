@@ -1,8 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { TypeTable } from '../../../../../../type-dom/type-element/type-html/table/table.class';
-import { Span } from '../../../../../../type-dom/element/html-element/span/span.class';
-import { toJSON } from '../../../../../../type-dom/type-element/type-element.function';
-import { TextNode } from '../../../../../../type-dom/text-node/text-node.class';
+import {Span, TextNode, TypeTable} from "type-dom.ts";
+import {toJSON} from "type-dom.ts/type-element/type-element.function";
 import { WebControl } from '../../../../../core/controls/web-control.abstract';
 import { ITableConfig, ITableField } from '../../../../../core/controls/complex/table/table.interface';
 import { FormEditor } from '../../../../../form-editor';

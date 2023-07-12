@@ -1,8 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
+import { TextNode, TypeButton } from 'type-dom.ts';
+import { buttonStyle } from 'type-dom.ts/type-element/type-html/button/button.const';
 import { FormEditor } from '../../../../form-editor';
-import { TypeButton } from '../../../../../type-dom/type-element/type-html/button/button.abstract';
-import { buttonStyle } from '../../../../../type-dom/type-element/type-html/button/button.const';
-import { TextNode } from '../../../../../type-dom/text-node/text-node.class';
 import { FormFooter } from '../footer';
 export class SubmitButton extends TypeButton {
   className: 'SubmitButton';

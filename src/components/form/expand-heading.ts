@@ -1,9 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { TypeHtml } from '../../../type-dom/type-element/type-html/type-html.abstract';
-import { TriangleSvg } from '../../../type-dom/svgs/triangle/triangle';
-import { Span } from '../../../type-dom/element/html-element/span/span.class';
-import { TypeContainer } from '../../../type-dom/type-element/type-container/type-container.abstract';
-import { TextNode } from '../../../type-dom/text-node/text-node.class';
+import { Span, TextNode, TypeContainer, TypeHtml } from 'type-dom.ts';
+import { TriangleSvg } from 'type-dom-svgs';
+
 
 export class ExpandHeading extends TypeHtml {
   nodeName: 'h3';

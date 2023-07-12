@@ -1,6 +1,5 @@
+import { TypeDiv } from 'type-dom.ts';
 import { WebForm } from '../form';
-import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
-
 // 表单主体部分的内容要另外添加。
 export class FormBody extends TypeDiv {
   className: 'FormBody';

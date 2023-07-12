@@ -1,7 +1,6 @@
-import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeDiv } from 'type-dom.ts';
 import { BodyWrapper } from '../body';
 import { LeftContents } from './contents/contents';
-
 export class BodyLeft extends TypeDiv {
   className: 'BodyLeft';
   childNodes: [LeftContents];

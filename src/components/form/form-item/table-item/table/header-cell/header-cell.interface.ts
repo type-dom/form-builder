@@ -1,6 +1,4 @@
-import {
-  ITypeTableHeaderCell
-} from '../../../../../../../type-dom/type-element/type-html/table/header-cell/header-cell.interface';
+import { ITypeTableHeaderCell } from 'type-dom.ts';
 export interface ITableHeaderCell extends ITypeTableHeaderCell {
   className: 'TableHeaderCell',
 }

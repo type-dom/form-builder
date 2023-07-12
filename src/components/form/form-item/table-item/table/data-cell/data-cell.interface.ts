@@ -1,7 +1,7 @@
 import {
+  ITextNode,
   ITypeTableDataCell
-} from '../../../../../../../type-dom/type-element/type-html/table/data-cell/data-cell.interface';
-import { ITextNode } from '../../../../../../../type-dom/text-node/text-node.interface';
+} from 'type-dom.ts';
 import { IWebControl } from '../../../../../../core/controls/web-control.interface';
 import { WebControl } from '../../../../../../core/controls/web-control.abstract';
 import { TableControl } from '../../../../../../core/controls/complex/table/table.class';

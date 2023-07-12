@@ -1,5 +1,4 @@
-import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
-import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
+import { Span, Label } from 'type-dom.ts';
 import { WebControl } from '../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../core/controls/web-control.const';
 import { RadioGroup } from '../../radio-group/radio-group.class';

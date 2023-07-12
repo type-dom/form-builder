@@ -1,4 +1,4 @@
-import { ITypeTableBody } from '../../../../../../../type-dom/type-element/type-html/table/body/body.interface';
+import { ITypeTableBody } from 'type-dom.ts';
 import { ITableRow } from '../row/row.interface';
 export interface ITableBody extends ITypeTableBody {
   className: 'TableBody',

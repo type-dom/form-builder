@@ -1,5 +1,4 @@
-import { Display } from '../../../../type-dom/style/style.enum';
-import { TypeHeader } from '../../../../type-dom/type-element/type-html/header/header.abstract';
+import { Display, TypeHeader } from 'type-dom.ts';
 import { LayoutWrapper } from '../layout';
 import { Navbar } from './navbar/navbar';
 // import { Logo } from './logo/logo';

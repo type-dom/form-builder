@@ -1,9 +1,6 @@
-import { TypeDiv } from '../../../../../../../type-dom/type-element/type-html/div/div.abstract';
-import { Division } from '../../../../../../../type-dom/element/html-element/division/division.class';
-import { TextNode } from '../../../../../../../type-dom/text-node/text-node.class';
-import { Display } from '../../../../../../../type-dom/style/style.enum';
-import { RightContents } from '../contents';
+import { Display, Division, TextNode, TypeDiv } from 'type-dom.ts';
 import { FormEditor } from '../../../../../../form-editor';
+import { RightContents } from '../contents';
 // control property
 import { ControlFieldProperty } from './field/control-field';
 import { ControlTitleProperty } from './title/control-title';

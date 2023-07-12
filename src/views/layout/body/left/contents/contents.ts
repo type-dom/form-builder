@@ -1,4 +1,4 @@
-import { TypeDiv } from '../../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeDiv } from 'type-dom.ts';
 import { BodyLeft } from '../left';
 import { ControlWrapper } from './control-wrapper/control-wrapper';
 

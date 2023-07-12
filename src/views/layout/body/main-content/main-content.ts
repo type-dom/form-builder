@@ -1,6 +1,5 @@
+import { StylePosition, TypeDiv } from 'type-dom.ts';
 import { WebDocument } from '../../../../core/document/web-document.class';
-import { StylePosition } from '../../../../../type-dom/style/style.enum';
-import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
 import { BodyWrapper } from '../body';
 
 export class BodyMainContent extends TypeDiv {

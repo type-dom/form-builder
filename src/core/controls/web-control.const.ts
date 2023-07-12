@@ -1,5 +1,4 @@
-import { IStyle } from '../../../type-dom/style/style.interface';
-import { Display } from '../../../type-dom/style/style.enum';
+import { IStyle, Display } from 'type-dom.ts';
 import { IOptionConfig } from './web-control.interface';
 
 export const controlStyle: Partial<IStyle> = {

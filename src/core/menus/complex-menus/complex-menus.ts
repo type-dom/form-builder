@@ -1,6 +1,5 @@
+import { Display, TypeDiv } from 'type-dom.ts';
 import { ComplexControlWrapper } from '../../../views/layout/body/left/contents/control-wrapper/complex-control-wrapper/complex-control-wrapper';
-import { Display } from '../../../../type-dom/style/style.enum';
-import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
 import { ControlMenu } from '../menu.abstract';
 import { TableMenu } from './table/table-menu';
 import { ConnectionMenu } from './connection/connection-menu';

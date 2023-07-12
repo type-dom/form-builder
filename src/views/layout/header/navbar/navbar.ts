@@ -1,10 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
-import { TdButton } from '../../../../../type-ui/basic/td-button/td-button.class';
-import { Display } from '../../../../../type-dom/style/style.enum';
-import { AttachmentSvg } from '../../../../../type-dom/svgs/attachment/attachment';
-import { DeleteSvg } from '../../../../../type-dom/svgs/delete/delete';
-import { toJSON } from '../../../../../type-dom/type-element/type-element.function';
+import { Display, TypeDiv } from 'type-dom.ts';
+import { TdAttachmentSvg, TdDeleteSvg } from 'type-dom-svgs';
+import { toJSON } from 'type-dom.ts/type-element/type-element.function';
+import { TdButton } from 'type-dom-ui';
 import { IWebDocument } from '../../../../core/document/web-document.interface';
 import { WebDocument } from '../../../../core/document/web-document.class';
 import { FormEditor } from '../../../../form-editor';
@@ -32,12 +30,12 @@ export class Navbar extends TypeDiv {
     //   TypeClass: TdButton,
     // }) as TdButton;
     this.previewBtn = new TdButton(this, {
-      SvgClass: AttachmentSvg,
+      SvgClass: TdAttachmentSvg,
       loading: true,
       title: '预览',
     });
     this.saveBtn = new TdButton(this, {
-      SvgClass: DeleteSvg,
+      SvgClass: TdDeleteSvg,
       loading: true,
       title: '保存',
       type: 'primary',

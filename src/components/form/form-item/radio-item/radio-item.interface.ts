@@ -1,5 +1,4 @@
-import { ILabel } from '../../../../../type-dom/element/html-element/label/label.interface';
-import { ISpan } from '../../../../../type-dom/element/html-element/span/span.interface';
+import { ILabel, ISpan } from 'type-dom.ts';
 import { IRadioGroup } from '../../radio-group/radio-group.interface';
 import { IFormItem } from '../form-item.interface';
 

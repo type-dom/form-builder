@@ -1,11 +1,6 @@
 import { fromEvent, Subscription } from 'rxjs';
-import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
-
-import { Select } from '../../../type-dom/element/html-element/select/select.class';
-import { Label } from '../../../type-dom/element/html-element/label/label.class';
-import { Input } from '../../../type-dom/element/html-element/input/input.class';
-import { Textarea } from '../../../type-dom/element/html-element/textarea/textarea.class';
-import { toJSON } from '../../../type-dom/type-element/type-element.function';
+import { Input, Label, Select, Textarea, TypeDiv } from 'type-dom.ts';
+import { toJSON } from 'type-dom.ts/type-element/type-element.function';
 import { ControlClassMap } from '../../constants';
 import { FormItem } from '../../components/form/form-item/form-item.abstract';
 import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';

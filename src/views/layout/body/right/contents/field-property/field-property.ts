@@ -1,5 +1,4 @@
-import { Display } from '../../../../../../../type-dom/style/style.enum';
-import { TypeDiv } from '../../../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { Display, TypeDiv } from 'type-dom.ts';
 import { ReadonlyProperty } from '../control-property/readonly/control-readonly';
 import { MinValueProperty } from '../control-property/min-value/control-min-value';
 import { MaxValueProperty } from '../control-property/max-value/control-max-value';

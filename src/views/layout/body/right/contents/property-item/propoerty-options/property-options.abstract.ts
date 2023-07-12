@@ -1,11 +1,6 @@
 import { fromEvent, Observable } from 'rxjs';
-import { Label } from '../../../../../../../../type-dom/element/html-element/label/label.class';
-import { Division } from '../../../../../../../../type-dom/element/html-element/division/division.class';
-import { Select } from '../../../../../../../../type-dom/element/html-element/select/select.class';
-import { Button } from '../../../../../../../../type-dom/element/html-element/button/button.class';
-import { Display } from '../../../../../../../../type-dom/style/style.enum';
-import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
-import { ThreeDotsSvg } from '../../../../../../../../type-dom/svgs/three-dots/three-dots';
+import { Button, Division, Label, Select, Display, TextNode } from 'type-dom.ts';
+import { TdThreeDotsSvg } from 'type-dom-svgs';
 import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
@@ -14,7 +9,6 @@ import { CheckboxControl } from '../../../../../../../core/controls/basic/checkb
 import { SelectControl } from '../../../../../../../core/controls/basic/select/select.class';
 import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyItem } from '../property-item.abstract';
-
 export abstract class PropertyOptions extends PropertyItem {
   childNodes: [Label, Division, Button];
   selectConfigDiv: Division;
@@ -24,7 +18,7 @@ export abstract class PropertyOptions extends PropertyItem {
   private readonly selectObj: Select;
   optionsContent: Division;
   protected btn: Button;
-  private readonly dotsSvg: ThreeDotsSvg;
+  private readonly dotsSvg: TdThreeDotsSvg;
   optionsConfigObservable: Observable<Event>;
 
   protected constructor(labelText = '选项列表') {
@@ -73,7 +67,7 @@ export abstract class PropertyOptions extends PropertyItem {
       border: '1px solid #DCDFE6',
       borderRadius: '0 4px 4px 0',
     });
-    this.dotsSvg = new ThreeDotsSvg(this.btn);
+    this.dotsSvg = new TdThreeDotsSvg(this.btn);
     this.dotsSvg.resetSize(16, 16);
     this.btn.textNode.setText('');
     this.btn.addChild(this.dotsSvg);

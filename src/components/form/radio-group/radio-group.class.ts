@@ -1,4 +1,4 @@
-import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeDiv } from 'type-dom.ts';
 import { IOption } from '../../../core/controls/web-control.interface';
 import { RadioItem } from '../form-item/radio-item/radio-item.class';
 import { IRadioGroup } from './radio-group.interface';

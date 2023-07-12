@@ -1,12 +1,10 @@
-import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeDiv } from 'type-dom.ts';
 import { WebForm } from '../form';
 import { SubmitButton } from './submit-button/submit-button';
-
 export class FormFooter extends TypeDiv {
   className: 'FormFooter';
   childNodes: SubmitButton[];
   submitBtn: SubmitButton;
-
   constructor(public parent: WebForm) {
     super();
     this.className = 'FormFooter';

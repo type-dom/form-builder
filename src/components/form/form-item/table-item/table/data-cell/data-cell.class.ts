@@ -1,12 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { TextNode } from '../../../../../../../type-dom/text-node/text-node.class';
-import {
-  TypeTableDataCell
-} from '../../../../../../../type-dom/type-element/type-html/table/data-cell/data-cell.class';
-import { Input } from '../../../../../../../type-dom/element/html-element/input/input.class';
-import { Textarea } from '../../../../../../../type-dom/element/html-element/textarea/textarea.class';
-import { Select } from '../../../../../../../type-dom/element/html-element/select/select.class';
-import { ITextNode } from '../../../../../../../type-dom/text-node/text-node.interface';
+import { Input, ITextNode, Select, Textarea, TextNode, TypeTableDataCell } from 'type-dom.ts';
 import { WebControl } from '../../../../../../core/controls/web-control.abstract';
 import { SingleInputControl } from '../../../../../../core/controls/basic/single-input/single-input.class';
 import { TableControl } from '../../../../../../core/controls/complex/table/table.class';

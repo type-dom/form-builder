@@ -1,5 +1,4 @@
-import { Display } from '../../../../../../../type-dom/style/style.enum';
-import { TypeDiv } from '../../../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeDiv, Display } from 'type-dom.ts';
 import { LeftContents } from '../contents';
 import { BasicControlWrapper } from './basic-control-wrapper/basic-control-wrapper';
 import { ComplexControlWrapper } from './complex-control-wrapper/complex-control-wrapper';

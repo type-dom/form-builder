@@ -1,5 +1,5 @@
+import { TextNode } from 'type-dom.ts';
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
 import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';

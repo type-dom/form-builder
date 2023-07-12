@@ -1,6 +1,4 @@
-import { Display } from '../../../type-dom/style/style.enum';
-import { IStyle } from '../../../type-dom/style/style.interface';
-
+import { IStyle, Display } from 'type-dom.ts';
 export const menuStyle: Partial<IStyle> = {
   display: Display.flex,
   flexDirection: 'column',

@@ -1,4 +1,4 @@
-import { TypeDiv } from '../../../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeDiv } from 'type-dom.ts';
 import { RightContents } from '../contents';
 import { FormSizeProperty } from './form-size/form-size';
 import { LabelWidthProperty } from './label-width/label-width';

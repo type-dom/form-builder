@@ -1,12 +1,4 @@
-import { Label } from '../../../../../../../type-dom/element/html-element/label/label.class';
-import { Input } from '../../../../../../../type-dom/element/html-element/input/input.class';
-import { Textarea } from '../../../../../../../type-dom/element/html-element/textarea/textarea.class';
-import { Division } from '../../../../../../../type-dom/element/html-element/division/division.class';
-import { Button } from '../../../../../../../type-dom/element/html-element/button/button.class';
-import { Select } from '../../../../../../../type-dom/element/html-element/select/select.class';
-import { Span } from '../../../../../../../type-dom/element/html-element/span/span.class';
-import { TextNode } from '../../../../../../../type-dom/text-node/text-node.class';
-import { TypeDiv } from '../../../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { Button, Division, Input, Label, Select, Span, Textarea, TextNode, TypeDiv } from 'type-dom.ts';
 import { labelStyle } from '../../../../../../core/controls/web-control.const';
 import { ControlProperty } from '../control-property/control-property';
 import { FormProperty } from '../form-property/form-property';

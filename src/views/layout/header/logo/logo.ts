@@ -1,6 +1,5 @@
-import { TypeDiv } from '../../../../../type-dom/type-element/type-html/div/div.abstract';
-import { TypeSvg } from '../../../../../type-dom/type-element/type-svg/type-svg.abstract';
-import { LogoSvg } from '../../../../../type-dom/svgs/logo/logo';
+import { TypeDiv, TypeSvg } from 'type-dom.ts';
+import { LogoSvg } from 'type-dom-svgs';
 import { HeaderWrapper } from '../header';
 export class Logo extends TypeDiv {
   className: 'Logo';

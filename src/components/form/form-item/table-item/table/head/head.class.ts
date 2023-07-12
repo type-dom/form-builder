@@ -1,6 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { TypeTableHead } from '../../../../../../../type-dom/type-element/type-html/table/head/head.class';
-import { TextNode } from '../../../../../../../type-dom/text-node/text-node.class';
+import { TypeTableHead, TextNode } from 'type-dom.ts';
 import { ITableField } from '../../../../../../core/controls/complex/table/table.interface';
 import { FormEditor } from '../../../../../../form-editor';
 import { TableHeaderCell } from '../header-cell/header-cell.class';

@@ -1,8 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { TypeTableRow } from '../../../../../../../type-dom/type-element/type-html/table/row/row.class';
-import { Span } from '../../../../../../../type-dom/element/html-element/span/span.class';
-import { StylePosition } from '../../../../../../../type-dom/style/style.enum';
-import { DeleteSvg } from '../../../../../../../type-dom/svgs/delete/delete';
+import { TypeTableRow, Span, StylePosition } from 'type-dom.ts';
+import { TdDeleteSvg } from 'type-dom-svgs';
 import { FormEditor } from '../../../../../../form-editor';
 import { TableDataCell } from '../data-cell/data-cell.class';
 import { ITableDataCell } from '../data-cell/data-cell.interface';
@@ -36,7 +34,7 @@ export class TableRow extends TypeTableRow implements ITableRow {
       // top: '10px',
       // backgroundColor: '#f00',
     });
-    const deleteSvg = new DeleteSvg(this.deleteSpan);
+    const deleteSvg = new TdDeleteSvg(this.deleteSpan);
     this.deleteSpan.addChild(deleteSvg);
     // console.log('table row delete span is ', this.deleteSpan);
     // this.addChild(this.deleteSpan);

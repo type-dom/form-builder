@@ -1,18 +1,15 @@
 // 顺序不能随意调换，可能会加载报错。 WebControl todo 如何解决
 import { filter, fromEvent, switchMap, of, Observable, Subscription, Subject } from 'rxjs';
+import { ListItem, Span, TextNode, TypeRoot } from 'type-dom.ts';
+import { Cursor } from 'type-dom.ts/style/style.enum';
+import { Dialog } from 'type-dom-ui/dialog/dialog';
+import { MessageBox } from 'type-dom-ui/message-box/message-box';
+
 import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
 import { Test } from './views/test/test';
-import { Cursor } from '../type-dom/style/style.enum';
-import { TypeRoot } from '../type-dom/type-root/type-root.class';
-import { ListItem } from '../type-dom/element/html-element/unordered-list/list-item/list-item.class';
-import { Span } from '../type-dom/element/html-element/span/span.class';
-import { toJSON } from '../type-dom/type-element/type-element.function';
-import { TextNode } from '../type-dom/text-node/text-node.class';
-import { MessageBox } from '../type-ui/message-box/message-box';
-import { WebDialog } from '../type-ui/dialog/dialog';
 import { ControlMenu } from './core/menus/menu.abstract';
 import { WebDocument } from './core/document/web-document.class';
 import { IWebDocument } from './core/document/web-document.interface';
@@ -26,6 +23,7 @@ import { ITableField } from './core/controls/complex/table/table.interface';
 import { WebForm } from './components/form/form';
 import { TableDataCell } from './components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { TableRow } from './components/form/form-item/table-item/table/row/row.class';
+import { toJSON } from 'type-dom.ts/type-element/type-element.function';
 /**
  * 应用类，挂载全局属性和方法。
  * 根节点，继承 TypeRoot;
@@ -43,7 +41,7 @@ export class FormEditor extends TypeRoot {
   static selectedTableDataCell?: TableDataCell | null;
   static layout: LayoutWrapper;
   // 对话框
-  static dialog: WebDialog;
+  static dialog: Dialog;
   // 消息框
   static messageBox: MessageBox;
   // 编辑器模式，对应 设计模式， 填表模式， 只读模式
@@ -53,10 +51,11 @@ export class FormEditor extends TypeRoot {
   // 集中出来外部传入的函数或方法。
   static functionMap: Map<string, (...rest: any[]) => any>;
   static el: HTMLElement;
-  events: Subscription[];
   static editorElObservable: Observable<Event>;
   static onReady: Observable<void>;
   static readyEvent: Subject<void>;
+  childNodes: [LayoutWrapper, Dialog, MessageBox];
+  events: Subscription[];
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
     super(editorEl);
     this.className = 'FormEditor';
@@ -69,7 +68,7 @@ export class FormEditor extends TypeRoot {
     this.events = [];
     FormEditor.mode = mode;
     FormEditor.layout = new LayoutWrapper(this);
-    FormEditor.dialog = new WebDialog(this);
+    FormEditor.dialog = new Dialog(this);
     FormEditor.messageBox = new MessageBox(this);
     // FormEditor.layout.childNodes.push(this.dialog, this.messageBox);
     this.childNodes = [FormEditor.layout, FormEditor.dialog, FormEditor.messageBox];

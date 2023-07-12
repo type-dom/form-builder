@@ -1,7 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
+import { TdThreeDotsSvg } from 'type-dom-svgs';
 import { ConnectionControl } from '../../../../../../../core/controls/complex/connection/connection.class';
 import { FormEditor } from '../../../../../../../form-editor';
-import { ThreeDotsSvg } from '../../../../../../../../type-dom/svgs/three-dots/three-dots';
 import { PropertySpan } from '../../property-item/span/property-span.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
@@ -9,7 +9,7 @@ import { FieldProperty } from '../../field-property/field-property';
 // 控件字段属性
 export class ControlConnectionProperty extends PropertySpan {
   className: 'ControlConnectionProperty';
-  private readonly dotsSvg: ThreeDotsSvg;
+  private readonly dotsSvg: TdThreeDotsSvg;
   connectionObservable: Observable<Event>;
 
   constructor(public parent: ControlProperty | FieldProperty) {
@@ -17,7 +17,7 @@ export class ControlConnectionProperty extends PropertySpan {
     this.resetText('显示关联值');
     this.className = 'ControlConnectionProperty';
     this.setAttrName('control-connection-property');
-    this.dotsSvg = new ThreeDotsSvg(this.button);
+    this.dotsSvg = new TdThreeDotsSvg(this.button);
     this.dotsSvg.resetSize(16, 16);
     this.button.textNode.setText('');
     this.button.addChild(this.dotsSvg);

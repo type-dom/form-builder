@@ -1,11 +1,9 @@
-import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
-import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
+import { Label, Span } from 'type-dom.ts';
 import { WebControl } from '../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../core/controls/web-control.const';
 import { CheckboxGroup } from '../../checkbox-group/checkbox-group.class';
 import { ConfigItem } from '../config-item/config-item.class';
 import { ICheckboxItem } from './checkbox-item.interface';
-
 export class CheckboxItem extends ConfigItem implements ICheckboxItem {
   className: 'CheckboxItem';
   childNodes: [Label, CheckboxGroup, Span];

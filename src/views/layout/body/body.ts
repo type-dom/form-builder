@@ -1,5 +1,4 @@
-import { TypeSection } from '../../../../type-dom/type-element/type-html/section/section.abstract';
-import { Display } from '../../../../type-dom/style/style.enum';
+import { TypeSection, Display } from 'type-dom.ts';
 import { FormEditor } from '../../../form-editor';
 import { LayoutWrapper } from '../layout';
 import { BodyLeft } from './left/left';

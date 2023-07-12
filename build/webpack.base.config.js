@@ -24,10 +24,7 @@ module.exports = {
   entry: {
     editMode: './src/example-design-mode.ts',
     formMode: './src/example-fill-mode.ts',
-    readonlyMode: './src/example-readonly-mode.ts',
-    uiComponentView: './src/ui-components-view.ts',
-    // lib: './src/example-lib.ts'
-    // layout: './src/layout/layout.ts'
+    readonlyMode: './src/example-readonly-mode.ts'
   },
   // 出口
   output: {
@@ -42,7 +39,7 @@ module.exports = {
     // library 一般是结合dll使用
     library: {
       // 整个库向外暴露的变量名
-      name: 'formEditor',
+      name: 'FormEditor',
       type: 'umd',
       // export: 'formEditor' // default umd
     },
@@ -201,12 +198,6 @@ module.exports = {
       filename: 'example-readonly-mode.html',
       // chunks: ['read', 'vendor']
     }),
-    new HtmlWebpackPlugin({
-      template: './public/ui-components-view.html',
-      title: 'ui view',
-      filename: 'ui-components-view.html',
-      // chunks: ['read', 'vendor']
-    }),
     // 提取css
     new MiniCssExtractPlugin({
       filename: 'css/[name].css'  // 设置css输出的文件名
@@ -327,7 +318,7 @@ module.exports = {
     //   },
     // },
     // 端口号
-    port: 8118,
+    port: 4444,
     // 服务器代理 --> 解决开发环境跨域问题
     proxy: {
       // 浏览器与服务器之间存在跨域问题，但与代理服务器之间不存在跨域，代理服务器与服务器之间也不存在跨域，所以，发送到代理服务器，再由它转发到服务器，可以避免跨域

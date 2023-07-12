@@ -1,7 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { Label } from '../../../../../../../../../type-dom/element/html-element/label/label.class';
-import { Division } from '../../../../../../../../../type-dom/element/html-element/division/division.class';
-import { Button } from '../../../../../../../../../type-dom/element/html-element/button/button.class';
+import { Button, Division, Label } from 'type-dom.ts';
 import { TableControl } from '../../../../../../../../core/controls/complex/table/table.class';
 import { FormEditor } from '../../../../../../../../form-editor';
 import { PropertyItem } from '../../../property-item/property-item.abstract';

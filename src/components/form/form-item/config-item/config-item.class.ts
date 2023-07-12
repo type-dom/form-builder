@@ -1,6 +1,4 @@
-import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
-import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
-import { Select } from '../../../../../type-dom/element/html-element/select/select.class';
+import { Label, Select, Span } from 'type-dom.ts';
 import { RadioGroup } from '../../radio-group/radio-group.class';
 import { CheckboxGroup } from '../../checkbox-group/checkbox-group.class';
 import { FormItem } from '../form-item.abstract';

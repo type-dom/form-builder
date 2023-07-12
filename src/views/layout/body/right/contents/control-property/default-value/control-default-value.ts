@@ -1,8 +1,8 @@
 import { fromEvent, Observable } from 'rxjs';
+import { TextNode } from 'type-dom.ts';
+import { TdThreeDotsSvg } from 'type-dom-svgs';
 import { SingleInputControl } from '../../../../../../../core/controls/basic/single-input/single-input.class';
 import { MultilineInputControl } from '../../../../../../../core/controls/basic/multiline-input/multiline-input.class';
-import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
-import { ThreeDotsSvg } from '../../../../../../../../type-dom/svgs/three-dots/three-dots';
 import { FormEditor } from '../../../../../../../form-editor';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
@@ -12,13 +12,13 @@ import { ControlProperty } from '../control-property';
 export class ControlDefaultValueProperty extends PropertyInput {
   className: 'ControlDefaultValueProperty';
   formulaObservable: Observable<Event>;
-  private readonly dotsSvg: ThreeDotsSvg;
+  private readonly dotsSvg: TdThreeDotsSvg;
 
   constructor(public parent: ControlProperty | FieldProperty) {
     super('默认值', '请输入默认值');
     this.className = 'ControlDefaultValueProperty';
     this.addAttrName('control-default-value-property');
-    this.dotsSvg = new ThreeDotsSvg(this.button);
+    this.dotsSvg = new TdThreeDotsSvg(this.button);
     this.dotsSvg.resetSize(16, 16);
     this.button.textNode.setText('');
     this.button.addChild(this.dotsSvg);

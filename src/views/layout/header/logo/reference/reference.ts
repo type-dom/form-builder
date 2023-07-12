@@ -1,5 +1,4 @@
-import { TypeDiv } from '../../../../../../type-dom/type-element/type-html/div/div.abstract';
-import { StylePosition } from '../../../../../../type-dom/style/style.enum';
+import { TypeDiv, StylePosition } from 'type-dom.ts';
 import { Logo } from '../logo';
 
 export class Reference extends TypeDiv {

@@ -3,7 +3,6 @@ import { TableDataCell } from '../../../../components/form/form-item/table-item/
 import { WebPage } from '../../../page/web-page.class';
 import { WebBasicControl } from '../basic.abstract';
 import { INumericalControl } from './numerical.interface';
-
 export class NumericalControl extends WebBasicControl implements INumericalControl {
   className: 'NumericalControl';
   formItem: InputItem;

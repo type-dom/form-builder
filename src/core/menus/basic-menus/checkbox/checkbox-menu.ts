@@ -1,12 +1,12 @@
-import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
-import { CheckboxSvg } from '../../../../../type-dom/svgs/checkbox/checkbox';
+import { Span } from 'type-dom.ts';
+import { TdCheckboxSvg } from 'type-dom-svgs';
 import { CheckboxControl } from '../../../controls/basic/checkbox/checkbox.class';
 import { ControlMenu } from '../../menu.abstract';
 import { BasicMenus } from '../basic-menus';
 export class CheckboxMenu extends ControlMenu {
   className: 'CheckboxMenu';
-  childNodes: [CheckboxSvg, Span];
-  svg: CheckboxSvg;
+  childNodes: [TdCheckboxSvg, Span];
+  svg: TdCheckboxSvg;
   ControlClass: typeof CheckboxControl;
 
   constructor(public parent: BasicMenus) {
@@ -14,7 +14,7 @@ export class CheckboxMenu extends ControlMenu {
     this.className = 'CheckboxMenu';
     this.ControlClass = CheckboxControl;
     this.addAttrName('checkbox-menu');
-    this.svg = new CheckboxSvg(this);
+    this.svg = new TdCheckboxSvg(this);
     this.svg.resetSize(24, 24);
     this.textNode.setText('复选');
     this.childNodes = [this.svg, this.titleSpan];

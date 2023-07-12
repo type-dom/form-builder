@@ -1,11 +1,8 @@
-import { Label } from '../../../../../type-dom/element/html-element/label/label.class';
-import { Textarea } from '../../../../../type-dom/element/html-element/textarea/textarea.class';
-import { Span } from '../../../../../type-dom/element/html-element/span/span.class';
+import { Label, Span, Textarea } from 'type-dom.ts';
 import { WebControl } from '../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../core/controls/web-control.const';
 import { FormItem } from '../form-item.abstract';
 import { ITextareaItem } from './textarea-item.interface';
-
 export class TextareaItem extends FormItem implements ITextareaItem {
   className: 'TextareaItem';
   childNodes: [Label, Textarea, Span];

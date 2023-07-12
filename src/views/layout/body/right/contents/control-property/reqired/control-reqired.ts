@@ -1,12 +1,9 @@
+import { Input, Textarea, TextNode } from 'type-dom.ts';
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-import { Input } from '../../../../../../../../type-dom/element/html-element/input/input.class';
-import { Textarea } from '../../../../../../../../type-dom/element/html-element/textarea/textarea.class';
-import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
 import { FormEditor } from '../../../../../../../form-editor';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';
-
 const requiredConfigs: IOptionConfig = {
   name: '必填' + Math.random(),
   resultValue: 'required',

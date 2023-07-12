@@ -1,15 +1,11 @@
 import { fromEvent } from 'rxjs';
-import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
-import { TypeSvgSvg } from '../../../type-dom/type-element/type-svg/svg/svg.abstract';
-import { Span } from '../../../type-dom/element/html-element/span/span.class';
-import { TextNode } from '../../../type-dom/text-node/text-node.class';
+import { Span, TextNode, TypeDiv, TypeSvgSvg } from 'type-dom.ts';
 import { ControlClass } from '../controls/web-control.interface';
 import { TableControl } from '../controls/complex/table/table.class';
 import { labelStyle } from '../controls/web-control.const';
+import { FormEditor } from '../../form-editor';
 import { menuStyle } from './menu.const';
 import { IControlMenu } from './menu.interface';
-import { FormEditor } from '../../form-editor';
-
 export abstract class ControlMenu extends TypeDiv implements IControlMenu {
   abstract ControlClass: ControlClass;
   abstract childNodes: [TypeSvgSvg, Span];

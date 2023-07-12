@@ -1,11 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { TypeElement } from '../../../../../../../../type-dom/type-element/type-element.abstract';
-import { TextNode } from '../../../../../../../../type-dom/text-node/text-node.class';
-import { Label } from '../../../../../../../../type-dom/element/html-element/label/label.class';
-import { Division } from '../../../../../../../../type-dom/element/html-element/division/division.class';
-import { Button } from '../../../../../../../../type-dom/element/html-element/button/button.class';
+import { Button, Division, Label, TextNode, TypeElement } from 'type-dom.ts';
 import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-
 import { PropertyItem } from '../property-item.abstract';
 export abstract class PropertyRadio extends PropertyItem {
   childNodes: [Label, Division, Button];

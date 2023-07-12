@@ -1,7 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { Button } from '../../../../../../../../type-dom/element/html-element/button/button.class';
-import { Label } from '../../../../../../../../type-dom/element/html-element/label/label.class';
-import { Input } from '../../../../../../../../type-dom/element/html-element/input/input.class';
+import { Button, Input, Label } from 'type-dom.ts';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { PropertyItem } from '../property-item.abstract';
 

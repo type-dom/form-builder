@@ -1,6 +1,4 @@
-import { TypeDiv } from '../../../type-dom/type-element/type-html/div/div.abstract';
-import { TypeRoot } from '../../../type-dom/type-root/type-root.class';
-import { StylePosition } from '../../../type-dom/style/style.enum';
+import { StylePosition, TypeDiv, TypeRoot } from 'type-dom.ts';
 import { FormEditor } from '../../form-editor';
 import { LayoutWrapper } from '../../views/layout/layout';
 import { FormHeader } from './header/header';

@@ -1,4 +1,4 @@
-import { ITypeTable } from '../../../../../../type-dom/type-element/type-html/table/table.interface';
+import { ITypeTable } from 'type-dom.ts';
 import { ITableHead } from './head/head.interface';
 import { ITableRow } from './row/row.interface';
 

@@ -1,20 +1,11 @@
-import { IStyle } from '../../../../type-dom/style/style.interface';
-import { Input } from '../../../../type-dom/element/html-element/input/input.class';
-import { Label } from '../../../../type-dom/element/html-element/label/label.class';
-import { Textarea } from '../../../../type-dom/element/html-element/textarea/textarea.class';
-import { ILabel } from '../../../../type-dom/element/html-element/label/label.interface';
-import { Span } from '../../../../type-dom/element/html-element/span/span.class';
-import { Select } from '../../../../type-dom/element/html-element/select/select.class';
-import { TextNode } from '../../../../type-dom/text-node/text-node.class';
-import { TypeDiv } from '../../../../type-dom/type-element/type-html/div/div.abstract';
-import { DeleteSvg } from '../../../../type-dom/svgs/delete/delete';
+import { Input, IStyle, Label, Select, Span, Textarea, TextNode, TypeDiv, ILabel } from 'type-dom.ts';
+import { TdDeleteSvg } from 'type-dom-svgs';
 import { FormEditor } from '../../../form-editor';
 import { formItemStyle, labelStyle } from '../../../core/controls/web-control.const';
 import { CheckboxGroup } from '../checkbox-group/checkbox-group.class';
 import { RadioGroup } from '../radio-group/radio-group.class';
 import { IFormItem, ItemContent } from './form-item.interface';
 import { Table } from './table-item/table/table.class';
-
 export abstract class FormItem extends TypeDiv implements IFormItem {
   abstract className: string;
   // abstract parent: WebControl;
@@ -52,7 +43,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
       },
       childNodes: [
         {
-          TypeClass: DeleteSvg,
+          TypeClass: TdDeleteSvg,
           propObj: {
             styleObj: {},
             attrObj: {

@@ -1,4 +1,4 @@
-import { TypeDiv } from '../../../../../../type-dom/type-element/type-html/div/div.abstract';
+import { TypeDiv } from 'type-dom.ts';
 import { FormEditor } from '../../../../../form-editor';
 import { BodyRight } from '../right';
 import { ControlProperty } from './control-property/control-property';
