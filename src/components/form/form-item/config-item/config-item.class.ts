@@ -1,4 +1,5 @@
-import { Label, Select, Span } from 'type-dom.ts';
+import { Label, Span } from 'type-dom.ts';
+import { Select } from '../../../select/select.class';
 import { RadioGroup } from '../../radio-group/radio-group.class';
 import { CheckboxGroup } from '../../checkbox-group/checkbox-group.class';
 import { FormItem } from '../form-item.abstract';

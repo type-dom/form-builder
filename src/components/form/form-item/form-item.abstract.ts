@@ -1,7 +1,8 @@
-import { Input, IStyle, Label, Select, Span, Textarea, TextNode, TypeDiv, ILabel } from 'type-dom.ts';
+import { Input, IStyle, Label, Span, Textarea, TextNode, TypeDiv, ILabel } from 'type-dom.ts';
 import { TdDeleteSvg } from 'type-dom-svgs';
 import { FormEditor } from '../../../form-editor';
 import { formItemStyle, labelStyle } from '../../../core/controls/web-control.const';
+import { Select } from '../../select/select.class';
 import { CheckboxGroup } from '../checkbox-group/checkbox-group.class';
 import { RadioGroup } from '../radio-group/radio-group.class';
 import { IFormItem, ItemContent } from './form-item.interface';

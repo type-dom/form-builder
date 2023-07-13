@@ -1,4 +1,5 @@
-import { ILabel, ISelect, ISpan } from 'type-dom.ts';
+import { ILabel, ISpan } from 'type-dom.ts';
+import { ISelect } from '../../../select/select.interface';
 import { IFormItem } from '../form-item.interface';
 export interface ISelectItem extends IFormItem {
   className: 'SelectItem',

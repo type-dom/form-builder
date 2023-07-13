@@ -1,5 +1,5 @@
 import { fromEvent, Observable } from 'rxjs';
-import { Button, Division, Label, Select, Display, TextNode } from 'type-dom.ts';
+import { Button, Division, Label, Display, TextNode } from 'type-dom.ts';
 import { TdThreeDotsSvg } from 'type-dom-svgs';
 import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
@@ -7,6 +7,7 @@ import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-c
 import { RadioControl } from '../../../../../../../core/controls/basic/radio/radio.class';
 import { CheckboxControl } from '../../../../../../../core/controls/basic/checkbox/checkbox.class';
 import { SelectControl } from '../../../../../../../core/controls/basic/select/select.class';
+import { Select } from '../../../../../../../components/select/select.class';
 import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyItem } from '../property-item.abstract';
 export abstract class PropertyOptions extends PropertyItem {

@@ -1,8 +1,9 @@
 import { fromEvent } from 'rxjs';
-import { Button, Display, Division, Label, Select } from 'type-dom.ts';
+import { Button, Display, Division, Label } from 'type-dom.ts';
 import { FormEditor } from '../../../../../../../form-editor';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
+import { Select } from '../../../../../../../components/select/select.class';
 import { PropertyItem } from '../property-item.abstract';
 /**
  * 两级联动，
