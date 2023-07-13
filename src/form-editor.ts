@@ -1,9 +1,7 @@
 // 顺序不能随意调换，可能会加载报错。 WebControl todo 如何解决
 import { filter, fromEvent, switchMap, of, Observable, Subscription, Subject } from 'rxjs';
-import { ListItem, Span, TextNode, TypeRoot } from 'type-dom.ts';
-import { Cursor } from 'type-dom.ts/style/style.enum';
-import { Dialog } from 'type-dom-ui/dialog/dialog';
-import { MessageBox } from 'type-dom-ui/message-box/message-box';
+import { ListItem, Span, TextNode, TypeRoot, Cursor, toJSON } from 'type-dom.ts';
+import { Dialog, MessageBox } from 'type-dom-ui';
 
 import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
@@ -23,7 +21,6 @@ import { ITableField } from './core/controls/complex/table/table.interface';
 import { WebForm } from './components/form/form';
 import { TableDataCell } from './components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { TableRow } from './components/form/form-item/table-item/table/row/row.class';
-import { toJSON } from 'type-dom.ts/type-element/type-element.function';
 /**
  * 应用类，挂载全局属性和方法。
  * 根节点，继承 TypeRoot;
