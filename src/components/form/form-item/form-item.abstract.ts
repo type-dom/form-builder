@@ -55,7 +55,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
           }
         }
       ]
-    }) as Span;
+    });
     //   new Span(this);
     // this.deleteSpan.setStyleObj({
     //   // position: 'absolute',

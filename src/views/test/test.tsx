@@ -1,5 +1,4 @@
-import { TypeDiv } from 'type-dom.ts';
-import { Parser } from 'type-dom-parser';
+import { TypeDiv, Parser } from 'type-dom.ts';
 import { FormEditor } from '../../form-editor';
 import template from './test.html';
 export class Test extends TypeDiv {
