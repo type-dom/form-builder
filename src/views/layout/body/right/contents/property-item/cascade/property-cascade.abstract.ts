@@ -1,5 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { Button, Display, Division, Label } from 'type-dom.ts';
+import { Display, Division, Label } from 'type-dom.ts';
+import { TdButton } from 'type-dom-ui';
 import { FormEditor } from '../../../../../../../form-editor';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
@@ -10,7 +11,7 @@ import { PropertyItem } from '../property-item.abstract';
  * 目前只有 字段名称属性项用到。 控件属性栏 control-field 字段属性栏 field-name
  */
 export abstract class PropertyCascade extends PropertyItem {
-  childNodes: [Label, Division, Button];
+  childNodes: [Label, Division, TdButton];
   cascadeDiv: Division;
   firstStageSelectObj: Select;
   secondStageSelectObj: Select;

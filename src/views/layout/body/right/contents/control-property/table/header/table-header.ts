@@ -1,5 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { Button, Division, Label } from 'type-dom.ts';
+import { Division, Label } from 'type-dom.ts';
+import { TdButton } from 'type-dom-ui';
 import { TableControl } from '../../../../../../../../core/controls/complex/table/table.class';
 import { FormEditor } from '../../../../../../../../form-editor';
 import { PropertyItem } from '../../../property-item/property-item.abstract';
@@ -8,7 +9,7 @@ import { ControlProperty } from '../../control-property';
 // 表单尺寸属性
 export class TableHeaderProperty extends PropertyItem {
   className: 'TableHeaderProperty';
-  childNodes: [Label, Division, Button];
+  childNodes: [Label, Division, TdButton];
   private division: Division;
   constructor(public parent: ControlProperty) {
     super('表头字段');

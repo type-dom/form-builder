@@ -1,10 +1,11 @@
 import { fromEvent } from 'rxjs';
-import { Label, Textarea, Button, Display } from 'type-dom.ts';
+import { Label, Textarea, Display } from 'type-dom.ts';
+import { TdButton } from 'type-dom-ui';
 import { PropertyItem } from '../property-item.abstract';
 
 export abstract class PropertyTextarea extends PropertyItem {
   abstract reset(value?: string): void;
-  childNodes: [Label, Textarea, Button];
+  childNodes: [Label, Textarea, TdButton];
   content: Textarea;
   protected constructor(labelText = '控件名称', placeholder = '请输入') {
     super(labelText);
@@ -41,7 +42,7 @@ export abstract class PropertyTextarea extends PropertyItem {
     };
     this.button.textNode.setText('确定');
     this.button.addStyleObj({
-      height: '24px',
+      // height: '24px',
       float: 'right',
       display: 'block',
     });
