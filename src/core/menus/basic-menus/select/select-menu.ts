@@ -9,7 +9,6 @@ export class SelectMenu extends ControlMenu {
   childNodes: [TdSelectSvg, Span];
   svg: TdSelectSvg;
   ControlClass: typeof SelectControl;
-
   constructor(public parent: BasicMenus) {
     super();
     this.className = 'SelectMenu';
