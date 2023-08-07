@@ -1,11 +1,11 @@
 import { fromEvent } from 'rxjs';
-import { Button, Label, Select } from 'type-dom.ts';
+import { Label, Select } from 'type-dom.ts';
+import { TdButton } from 'type-dom-ui';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { PropertyItem } from '../property-item.abstract';
-
 export abstract class PropertySelect extends PropertyItem {
   abstract reset(value?: string): void;
-  childNodes: [Label, Select, Button];
+  childNodes: [Label, Select, TdButton];
   select: Select;
   protected constructor(labelText = '控件名称') {
     super(labelText);

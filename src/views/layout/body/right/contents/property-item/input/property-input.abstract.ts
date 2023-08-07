@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { Button, Input, Label } from 'type-dom.ts';
+import { Input, Label } from 'type-dom.ts';
+import { TdButton } from 'type-dom-ui';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { PropertyItem } from '../property-item.abstract';
-
 const disableStyle = {
   backgroundColor: '#F5F7FA',
   borderColor: '#E4E7ED',
@@ -12,7 +12,7 @@ const disableStyle = {
 
 export abstract class PropertyInput extends PropertyItem {
   abstract reset(value?: string): void;
-  childNodes: [Label, Input, Button];
+  childNodes: [Label, Input, TdButton];
   content: Input;
   protected constructor(labelText = '控件名称', placeholder = '请输入') {
     super(labelText);

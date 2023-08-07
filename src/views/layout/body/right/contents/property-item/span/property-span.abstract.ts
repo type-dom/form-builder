@@ -1,8 +1,9 @@
-import { Button, Display, Label, Span, TextNode } from 'type-dom.ts';
+import { Display, Label, Span, TextNode } from 'type-dom.ts';
+import { TdButton } from 'type-dom-ui';
 import { PropertyItem } from '../property-item.abstract';
 export abstract class PropertySpan extends PropertyItem {
   private readonly text: TextNode;
-  childNodes: [Label, Span, Button];
+  childNodes: [Label, Span, TdButton];
   content: Span;
   protected constructor(labelText = '控件名称') {
     super(labelText);

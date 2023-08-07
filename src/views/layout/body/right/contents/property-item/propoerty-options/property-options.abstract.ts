@@ -1,6 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
 import { Button, Division, Label, Display, TextNode } from 'type-dom.ts';
 import { TdThreeDotsSvg } from 'type-dom-svgs';
+import { TdButton } from 'type-dom-ui';
 import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
 import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
 import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
@@ -11,7 +12,7 @@ import { Select } from '../../../../../../../components/select/select.class';
 import { FormEditor } from '../../../../../../../form-editor';
 import { PropertyItem } from '../property-item.abstract';
 export abstract class PropertyOptions extends PropertyItem {
-  childNodes: [Label, Division, Button];
+  childNodes: [Label, Division, TdButton];
   selectConfigDiv: Division;
   private readonly firstDiv: Division;
   // private readonly addDiv: Division;
