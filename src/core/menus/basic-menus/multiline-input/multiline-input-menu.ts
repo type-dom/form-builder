@@ -9,7 +9,6 @@ export class MultilineInputMenu extends ControlMenu {
   childNodes: [TdMultilineInputSvg, Span];
   svg: TdMultilineInputSvg;
   ControlClass: typeof MultilineInputControl;
-
   constructor(public parent: BasicMenus) {
     super();
     this.className = 'MultilineInputMenu';

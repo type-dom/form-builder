@@ -10,7 +10,6 @@ export class DateMenu extends ControlMenu {
   childNodes: [TdDateSvg, Span];
   svg: TdDateSvg;
   ControlClass: typeof DateControl;
-
   constructor(public parent: BasicMenus) {
     super();
     this.className = 'DateMenu';

@@ -9,7 +9,6 @@ export class TableMenu extends ControlMenu {
   childNodes: [TdTable2Svg, Span];
   svg: TdTable2Svg;
   ControlClass: typeof TableControl;
-
   constructor(public parent: ComplexMenus) {
     super();
     this.className = 'TableMenu';

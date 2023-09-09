@@ -8,7 +8,6 @@ export class NumericalMenu extends ControlMenu {
   childNodes: [TdNumericalSvg, Span];
   svg: TdNumericalSvg;
   ControlClass: typeof NumericalControl;
-
   constructor(public parent: BasicMenus) {
     super();
     this.className = 'NumericalMenu';

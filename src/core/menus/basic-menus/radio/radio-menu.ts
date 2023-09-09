@@ -8,7 +8,6 @@ export class RadioMenu extends ControlMenu {
   childNodes: [TdRadioButtonSvg, Span];
   svg: TdRadioButtonSvg;
   ControlClass: typeof RadioControl;
-
   constructor(public parent: BasicMenus) {
     super();
     this.className = 'RadioMenu';

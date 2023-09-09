@@ -1,8 +1,8 @@
 {
-  "name": "form-editor",
-  "version": "1.0.0",
-  "description": "form editor . ",
-  "main": "src/example-design-mode.ts",
+  "name": "type-form-editor",
+  "version": "0.0.2",
+  "description": "dynamic form editor . ",
+  "main": "src/index.ts",
   "scripts": {
     "serve": "webpack-dev-server --mode=development --config ./build/webpack.config.js",
     "build": "webpack --mode=production --config ./build/webpack.config.js",
@@ -25,6 +25,10 @@
   ],
   "author": "Xu",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xjf7711/form-editor.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",

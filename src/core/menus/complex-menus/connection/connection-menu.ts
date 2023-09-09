@@ -10,7 +10,6 @@ export class ConnectionMenu extends ControlMenu {
   childNodes: [TdConnectionSvg, Span];
   svg: TdConnectionSvg;
   ControlClass: typeof ConnectionControl;
-
   constructor(public parent: ComplexMenus) {
     super();
     this.className = 'ConnectionMenu';

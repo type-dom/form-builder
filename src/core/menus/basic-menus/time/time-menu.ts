@@ -8,7 +8,6 @@ export class TimeMenu extends ControlMenu {
   childNodes: [TdTimeSvg, Span];
   svg: TdTimeSvg;
   ControlClass: typeof TimeControl;
-
   constructor(public parent: BasicMenus) {
     super();
     this.className = 'TimeMenu';
