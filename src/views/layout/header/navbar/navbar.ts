@@ -1,7 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { Display, TypeDiv } from 'type-dom.ts';
+import { Display, TypeDiv, toJSON } from 'type-dom.ts';
 import { TdAttachmentSvg, TdDeleteSvg } from 'type-dom-svgs';
-import { toJSON } from 'type-dom.ts/type-element/type-element.function';
 import { TdButton } from 'type-dom-ui';
 import { IWebDocument } from '../../../../core/document/web-document.interface';
 import { WebDocument } from '../../../../core/document/web-document.class';

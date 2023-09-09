@@ -1,6 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { Span, Label, Display } from 'type-dom.ts';
-import { toJSON } from 'type-dom.ts/type-element/type-element.function';
+import { Span, Label, Display, toJSON } from 'type-dom.ts';
 import { TdAddSvg } from 'type-dom-svgs';
 import { TableControl } from '../../../../core/controls/complex/table/table.class';
 import { FormItem } from '../form-item.abstract';

@@ -1,6 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { TypeDiv } from 'type-dom.ts';
-import { toJSON } from 'type-dom.ts/type-element/type-element.function';
+import { TypeDiv, toJSON } from 'type-dom.ts';
 import { FormEditor } from '../../form-editor';
 import { LayoutWrapper } from '../../views/layout/layout';
 import { BodyMainContent } from '../../views/layout/body/main-content/main-content';

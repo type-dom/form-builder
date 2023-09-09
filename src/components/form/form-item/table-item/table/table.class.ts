@@ -1,6 +1,5 @@
 import { fromEvent } from 'rxjs';
-import {Span, TextNode, TypeTable} from "type-dom.ts";
-import {toJSON} from "type-dom.ts/type-element/type-element.function";
+import {Span, TextNode, TypeTable, toJSON} from "type-dom.ts";
 import { WebControl } from '../../../../../core/controls/web-control.abstract';
 import { ITableConfig, ITableField } from '../../../../../core/controls/complex/table/table.interface';
 import { FormEditor } from '../../../../../form-editor';

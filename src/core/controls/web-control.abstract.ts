@@ -1,6 +1,5 @@
 import { fromEvent, Subscription } from 'rxjs';
-import { Input, Label, Select, Textarea, TypeDiv } from 'type-dom.ts';
-import { toJSON } from 'type-dom.ts/type-element/type-element.function';
+import { Input, Label, Select, Textarea, TypeDiv, toJSON } from 'type-dom.ts';
 import { ControlClassMap } from '../../constants';
 import { FormItem } from '../../components/form/form-item/form-item.abstract';
 import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';
