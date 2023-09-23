@@ -1,26 +1,9 @@
-// 顺序会影响加载
-// todo 如果SingleInputControl不在最前面的话，会报错。Uncaught ReferenceError: Cannot access 'WebBasicControl' before initialization
-//    原因应该是在tableDataCell中创建了。
-import { SingleInputControl } from './core/controls/basic/single-input/single-input.class';
-import { MultilineInputControl } from './core/controls/basic/multiline-input/multiline-input.class';
-import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
-import { DateControl } from './core/controls/basic/date/date.class';
-import { NumericalControl } from './core/controls/basic/numerical/numerical.class';
-import { SelectControl } from './core/controls/basic/select/select.class';
-import { TimeControl } from './core/controls/basic/time/time.class';
-import { TextControl } from './core/controls/basic/text/text.class';
-import { RadioControl } from './core/controls/basic/radio/radio.class';
-import { CheckboxControl } from './core/controls/basic/checkbox/checkbox.class';
-import { TableControl } from './core/controls/complex/table/table.class';
-import { ConnectionControl } from './core/controls/complex/connection/connection.class';
 import { InputItem } from './components/form/form-item/input-item/input-item.class';
 import { RadioItem } from './components/form/form-item/radio-item/radio-item.class';
 import { TextareaItem } from './components/form/form-item/textarea-item/textarea-item.class';
 import { SelectItem } from './components/form/form-item/select-item/select-item.class';
 import { CheckboxItem } from './components/form/form-item/checkbox-item/checkbox-item.class';
 import { TableItem } from './components/form/form-item/table-item/table-item.class';
-import { ControlClass } from './core/controls/web-control.interface';
-
 // 一英寸等于25.4mm dpi (dot per inch)输出分辨率
 function getDPI() {
   const arrDPI = [];
@@ -68,33 +51,5 @@ export const px2ptRatio = inch2ptRatio / dpi[0]; // 0.75
 // 默认分辨率(96dpi)下，缇/567=厘米，像素/37.795=厘米
 
 export const EMPTY_OBJECT = Object.seal({});
-
 export const isWindows = /win(dows|32|64)/i.test(navigator.userAgent);
 export const isMac = /mac os/i.test(navigator.userAgent);
-
-// 注： 打包后类名会变化
-export const ControlItemClassMap = {
-  CheckboxItem,
-  InputItem,
-  RadioItem,
-  SelectItem,
-  TextareaItem,
-  TableItem,
-};
-
-// 控件类的映射
-export const ControlClassMap: Record<string, ControlClass> = {
-  // 将所有的控件类加到map中
-  AttachmentControl,
-  CheckboxControl,
-  DateControl,
-  MultilineInputControl,
-  NumericalControl,
-  RadioControl,
-  SelectControl,
-  SingleInputControl,
-  TextControl,
-  TimeControl,
-  ConnectionControl,
-  TableControl,
-};

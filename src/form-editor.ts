@@ -1,4 +1,4 @@
-// 顺序不能随意调换，可能会加载报错。 WebControl todo 如何解决
+// 顺序不能随意调换，可能会加载报错。 TypeControl todo 如何解决
 import { filter, fromEvent, switchMap, of, Observable, Subscription, Subject } from 'rxjs';
 import { ListItem, Span, TextNode, TypeRoot, Cursor, toJSON } from 'type-dom.ts';
 import { Dialog, MessageBox } from 'type-dom-ui';
@@ -8,16 +8,16 @@ import { ControlProperty } from './views/layout/body/right/contents/control-prop
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
 import { Test } from './views/test/test';
-import { ControlMenu } from './core/menus/menu.abstract';
+import { TypeMenu } from './core/menu/menu.abstract';
 import { WebDocument } from './core/document/web-document.class';
 import { IWebDocument } from './core/document/web-document.interface';
 import { WebPage } from './core/page/web-page.class';
-import { WebControl } from './core/controls/web-control.abstract';
-import { IOptionConfig } from './core/controls/web-control.interface';
-import { AttachmentControl } from './core/controls/basic/attachment/attachment.class';
-import { ConnectionControl } from './core/controls/complex/connection/connection.class';
-import { TableControl } from './core/controls/complex/table/table.class';
-import { ITableField } from './core/controls/complex/table/table.interface';
+import { TypeControl } from './core/control/type-control.abstract';
+import { IOptionConfig } from './core/control/type-control.interface';
+import { AttachmentControl } from './core/control/basic/attachment/attachment.class';
+import { ConnectionControl } from './core/control/complex/connection/connection.class';
+import { TableControl } from './core/control/complex/table/table.class';
+import { ITableField } from './core/control/complex/table/table.interface';
 import { WebForm } from './components/form/form';
 import { TableDataCell } from './components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { TableRow } from './components/form/form-item/table-item/table/row/row.class';
@@ -31,9 +31,9 @@ export class FormEditor extends TypeRoot {
   // 光标
   static cursor?: Cursor | null;
   // 选中的菜单
-  static selectedMenu: ControlMenu | null;
+  static selectedMenu: TypeMenu | null;
   // 选中的控件
-  static selectedControl: WebControl | null;
+  static selectedControl: TypeControl | null;
   // 选中的表格单元格
   static selectedTableDataCell?: TableDataCell | null;
   static layout: LayoutWrapper;
@@ -97,10 +97,10 @@ export class FormEditor extends TypeRoot {
     console.log('json is ', json);
     // console.log('editorEl is ', editorEl);
     // editorEl.appendChild(FormEditor.layout.dom);
-    const test = new Test(this);
-    console.log('test is ', test);
-    test.render();
-    editorEl.appendChild(test.dom);
+    // const test = new Test(this);
+    // console.log('test is ', test);
+    // test.render();
+    // editorEl.appendChild(test.dom);
     // this.currentPage = this.defaultPage;
     FormEditor.selectedMenu = null;
     FormEditor.selectedControl = null;
@@ -171,8 +171,8 @@ export class FormEditor extends TypeRoot {
    * 获取所有控件
    * 考虑多页面
    */
-  static get allControls(): WebControl[] {
-    const controls: WebControl[] = [];
+  static get allControls(): TypeControl[] {
+    const controls: TypeControl[] = [];
     FormEditor.webDocument.contents.childNodes.forEach(page => {
       // todo
       if (page.className === 'WebPage') {
@@ -184,7 +184,7 @@ export class FormEditor extends TypeRoot {
   /**
    * 获取所有选项控件
    */
-  static get optionControls(): WebControl[] {
+  static get optionControls(): TypeControl[] {
     return FormEditor.allControls.filter(control => !!control.optionConfig);
   }
   /**
@@ -330,7 +330,7 @@ export class FormEditor extends TypeRoot {
                 if (item instanceof TextNode) {
                   data[tableHead[index].name] = item.nodeValue;
                 } else {
-                  data[tableHead[index].name] = item.value; // WebControl.value;
+                  data[tableHead[index].name] = item.value; // TypeControl.value;
                 }
               });
               tableData.push(data);
@@ -350,7 +350,7 @@ export class FormEditor extends TypeRoot {
    * 选中控件
    * @param control
    */
-  static setSelectedControl(control: WebControl | null): void {
+  static setSelectedControl(control: TypeControl | null): void {
     console.log('setSelectedControl . control is ', control);
     if (control) { // 选中控件
       // 如果重复选中一个控件，不做处理
@@ -438,7 +438,7 @@ export class FormEditor extends TypeRoot {
    * 选中表格时单独处理。
    * @param menu
    */
-  static setSelectedMenu(menu: ControlMenu | null): void {
+  static setSelectedMenu(menu: TypeMenu | null): void {
     if (menu) {
       // 要先移除之前选中的菜单的选中状态
       FormEditor.selectedMenu?.setStyleObj({

@@ -1,7 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
 import { TdThreeDotsSvg } from 'type-dom-svgs';
-import { ConnectionControl } from '../../../../../../../core/controls/complex/connection/connection.class';
 import { FormEditor } from '../../../../../../../form-editor';
+import { ConnectionControl } from '../../../../../../../core/control/complex/connection/connection.class';
 import { PropertySpan } from '../../property-item/span/property-span.abstract';
 import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';

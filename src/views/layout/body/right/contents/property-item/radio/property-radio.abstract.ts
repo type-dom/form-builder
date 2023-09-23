@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { Button, Division, Label, TextNode, TypeElement } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
-import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
+import { IOption, IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { PropertyItem } from '../property-item.abstract';
 export abstract class PropertyRadio extends PropertyItem {
   childNodes: [Label, Division, TdButton];

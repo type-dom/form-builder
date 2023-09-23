@@ -1,6 +1,6 @@
-import { controlStyle } from '../../../../../../../core/controls/web-control.const';
-import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 import { FormEditor } from '../../../../../../../form-editor';
+import { controlStyle } from '../../../../../../../core/control/type-control.const';
+import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FormProperty } from '../form-property';
 

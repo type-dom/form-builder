@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { Span, Label, Display, toJSON } from 'type-dom.ts';
 import { TdAddSvg } from 'type-dom-svgs';
-import { TableControl } from '../../../../core/controls/complex/table/table.class';
+import { TableControl } from '../../../../core/control/complex/table/table.class';
 import { FormItem } from '../form-item.abstract';
 import { ITableItem } from './table-item.interface';
 import { Table } from './table/table.class';

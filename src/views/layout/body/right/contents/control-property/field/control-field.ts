@@ -1,10 +1,9 @@
-import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
 import { FormEditor } from '../../../../../../../form-editor';
+import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
+import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
 import { PropertyCascade } from '../../property-item/cascade/property-cascade.abstract';
-import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
-
+import { ControlProperty } from '../control-property';
 // 控件字段属性
 export class ControlFieldProperty extends PropertyCascade {
   className: 'ControlFieldProperty';

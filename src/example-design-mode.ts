@@ -12,7 +12,7 @@ import {
   testData1,
   testJson1
 } from './form-data';
-import { ConnectionControl } from './core/controls/complex/connection/connection.class';
+import { ConnectionControl } from './core/control/complex/connection/connection.class';
 import { makeLogger } from 'ts-loader/dist/logger';
 // 在页面中调用时
 

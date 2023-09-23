@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeHtml, TypeSelect } from 'type-dom.ts';
-import { IOption } from '../../core/controls/web-control.interface';
+import { IOption } from '../../core/control/type-control.interface';
 import { SelectOption } from './option/option.class';
 import { ISelect } from './select.interface';
 export class Select extends TypeSelect implements ISelect {

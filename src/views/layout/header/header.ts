@@ -2,7 +2,6 @@ import { Display, TypeHeader } from 'type-dom.ts';
 import { LayoutWrapper } from '../layout';
 import { Navbar } from './navbar/navbar';
 // import { Logo } from './logo/logo';
-
 export class HeaderWrapper extends TypeHeader {
   className: 'HeaderWrapper';
   childNodes: [Navbar];

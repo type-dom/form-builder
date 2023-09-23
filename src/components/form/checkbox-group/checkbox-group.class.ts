@@ -1,5 +1,5 @@
 import { TypeDiv, TypeHtml } from 'type-dom.ts';
-import { IOption } from '../../../core/controls/web-control.interface';
+import { IOption } from '../../../core/control/type-control.interface';
 import { CheckboxOption } from './checkbox-option/checkbox-option.class';
 import { ICheckboxGroup } from './checkbox-group.interface';
 export class CheckboxGroup extends TypeDiv implements ICheckboxGroup {

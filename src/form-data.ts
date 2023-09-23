@@ -1,5 +1,5 @@
 import { IWebDocument } from './core/document/web-document.interface';
-import { IOptionConfig } from './core/controls/web-control.interface';
+import { IOptionConfig } from './core/control/type-control.interface';
 
 export interface IFormData {
   table: Record<string, string>[],

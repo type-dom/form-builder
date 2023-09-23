@@ -1,5 +1,5 @@
 import { ITypeDiv } from 'type-dom.ts';
-import { IWebControl } from '../controls/web-control.interface';
+import { ITypeControl } from '../control/type-control.interface';
 
 export interface IWebPageBackground {
   type: number, // 背景类型，0：无背景；1：颜色背景；2：图像背景
@@ -9,5 +9,5 @@ export interface IWebPageBackground {
 
 export interface IWebPage extends ITypeDiv {
   className: 'WebPage',
-  childNodes: IWebControl[],
+  childNodes: ITypeControl[],
 }

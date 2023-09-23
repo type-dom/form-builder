@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
 import { Division, Label } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
-import { TableControl } from '../../../../../../../../core/controls/complex/table/table.class';
 import { FormEditor } from '../../../../../../../../form-editor';
+import { TableControl } from '../../../../../../../../core/control/complex/table/table.class';
 import { PropertyItem } from '../../../property-item/property-item.abstract';
 import { ControlProperty } from '../../control-property';
 // tableHeader 的设置

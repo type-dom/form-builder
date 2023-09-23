@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from 'type-dom.ts';
+import { FormEditor } from '../../form-editor';
 import { WebDocument } from '../../core/document/web-document.class';
 import { WebForm } from '../../components/form/form';
-import { FormEditor } from '../../form-editor';
 import { HeaderWrapper } from './header/header';
 import { BodyWrapper } from './body/body';
 export class LayoutWrapper extends TypeDiv {

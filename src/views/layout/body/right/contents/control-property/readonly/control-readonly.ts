@@ -1,9 +1,9 @@
 import { TextNode } from 'type-dom.ts';
-import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
 import { FormEditor } from '../../../../../../../form-editor';
+import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
-import { ControlProperty } from '../control-property';
 import { FieldProperty } from '../../field-property/field-property';
+import { ControlProperty } from '../control-property';
 
 const readonlyConfigs: IOptionConfig = {
   name: '只读' + Math.random(),
@@ -64,7 +64,7 @@ export class ReadonlyProperty extends PropertyRadio {
       return;
     }
     if (FormEditor.selectedTableDataCell?.control instanceof TextNode) {
-      console.error('AppRoot.selectedTableDataCell?.control is not WebControl . ');
+      console.error('AppRoot.selectedTableDataCell?.control is not TypeControl . ');
       return;
     }
     if (value !== undefined) {

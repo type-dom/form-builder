@@ -1,8 +1,8 @@
+import { FormEditor } from '../../../../../../../form-editor';
+import { NumericalControl } from '../../../../../../../core/control/basic/numerical/numerical.class';
+import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
-import { NumericalControl } from '../../../../../../../core/controls/basic/numerical/numerical.class';
-import { FieldProperty } from '../../field-property/field-property';
-import { FormEditor } from '../../../../../../../form-editor';
 
 // 最大值，只对数值控件有效
 export class MaxValueProperty extends PropertyInput {

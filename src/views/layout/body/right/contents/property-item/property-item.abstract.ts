@@ -1,6 +1,6 @@
 import { Division, Input, Label, Select, Span, Textarea, TextNode, TypeDiv } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
-import { labelStyle } from '../../../../../../core/controls/web-control.const';
+import { labelStyle } from '../../../../../../core/control/type-control.const';
 import { ControlProperty } from '../control-property/control-property';
 import { FormProperty } from '../form-property/form-property';
 import { FieldProperty } from '../field-property/field-property';

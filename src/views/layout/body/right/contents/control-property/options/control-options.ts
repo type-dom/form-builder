@@ -1,11 +1,10 @@
-import { RadioControl } from '../../../../../../../core/controls/basic/radio/radio.class';
-import { CheckboxControl } from '../../../../../../../core/controls/basic/checkbox/checkbox.class';
-import { SelectControl } from '../../../../../../../core/controls/basic/select/select.class';
 import { FormEditor } from '../../../../../../../form-editor';
+import { RadioControl } from '../../../../../../../core/control/basic/radio/radio.class';
+import { CheckboxControl } from '../../../../../../../core/control/basic/checkbox/checkbox.class';
+import { SelectControl } from '../../../../../../../core/control/basic/select/select.class';
 import { PropertyOptions } from '../../property-item/propoerty-options/property-options.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
-
 // 控件选项列表
 export class ControlOptionsProperty extends PropertyOptions {
   className: 'ControlOptionsProperty';

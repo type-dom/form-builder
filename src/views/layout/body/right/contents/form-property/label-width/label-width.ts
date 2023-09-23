@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { FormEditor } from '../../../../../../../form-editor';
-import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
-import { labelStyle } from '../../../../../../../core/controls/web-control.const';
+import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
+import { labelStyle } from '../../../../../../../core/control/type-control.const';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { FormProperty } from '../form-property';
 

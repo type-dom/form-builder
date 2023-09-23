@@ -2,13 +2,13 @@ import {
   ITextNode,
   ITypeTableDataCell
 } from 'type-dom.ts';
-import { IWebControl } from '../../../../../../core/controls/web-control.interface';
-import { WebControl } from '../../../../../../core/controls/web-control.abstract';
-import { TableControl } from '../../../../../../core/controls/complex/table/table.class';
+import { ITypeControl } from '../../../../../../core/control/type-control.interface';
+import { TypeControl } from '../../../../../../core/control/type-control.abstract';
+import { TableControl } from '../../../../../../core/control/complex/table/table.class';
 
 
-export type TableDataCellChild = Exclude<WebControl, TableControl>
+export type TableDataCellChild = Exclude<TypeControl, TableControl>
 export interface ITableDataCell extends ITypeTableDataCell {
   className: 'TableDataCell',
-  childNodes: (IWebControl | ITextNode)[],
+  childNodes: (ITypeControl | ITextNode)[],
 }

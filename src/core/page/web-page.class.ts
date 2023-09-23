@@ -1,16 +1,16 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv, StylePosition } from 'type-dom.ts';
-import { ControlClassMap } from '../../constants';
 import { FormEditor } from '../../form-editor';
+import { TypeControl } from '../control/type-control.abstract';
+import { createControl } from '../control/type-control.function';
 import { WebDocumentContents } from '../document/contents/contents.class';
-import { WebControl } from '../controls/web-control.abstract';
 import { IWebPage } from './web-page.interface';
 export class WebPage extends TypeDiv implements IWebPage {
   className: 'WebPage';
-  childNodes: WebControl[];
+  childNodes: TypeControl[];
   dragStartIndex: number;
   dragDropIndex: number;
-  // controlObjMap: Map<number, WebControl> = new Map();
+  // controlObjMap: Map<number, TypeControl> = new Map();
   constructor(public parent: WebDocumentContents) {
     super();
     this.className = 'WebPage';
@@ -78,14 +78,15 @@ export class WebPage extends TypeDiv implements IWebPage {
     this.childNodes = [];
     for (const control of pageJson.childNodes) {
       // const controlObj = new className();
-      if (ControlClassMap[control.className]) {
-        const controlObj = new ControlClassMap[control.className](this);
-        controlObj.createInstance(control);
-        this.appendChild(controlObj);
-      } else {
-        console.error('ControlClassMap is wrong, control.className is ', control.className);
-        // throw new Error('ControlClassMap is wrong, control.className is ' + control.className);
-      }
+      createControl(control.className, this);
+      // if (ControlClassMap[control.className]) {
+      //   const controlObj = new ControlClassMap[control.className](this);
+      //   controlObj.createInstance(control);
+      //   this.appendChild(controlObj);
+      // } else {
+      //   console.error('ControlClassMap is wrong, control.className is ', control.className);
+      //   // throw new Error('ControlClassMap is wrong, control.className is ' + control.className);
+      // }
     }
   }
 }

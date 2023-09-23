@@ -1,6 +1,6 @@
 import { Span, Label } from 'type-dom.ts';
-import { WebControl } from '../../../../core/controls/web-control.abstract';
-import { itemContentStyle } from '../../../../core/controls/web-control.const';
+import { TypeControl } from '../../../../core/control/type-control.abstract';
+import { itemContentStyle } from '../../../../core/control/type-control.const';
 import { RadioGroup } from '../../radio-group/radio-group.class';
 import { ConfigItem } from '../config-item/config-item.class';
 import { IRadioItem } from './radio-item.interface';
@@ -9,7 +9,7 @@ export class RadioItem extends ConfigItem implements IRadioItem {
   className: 'RadioItem';
   childNodes: [Label, RadioGroup, Span];
   itemContent: RadioGroup;
-  constructor(public parent: WebControl, labelText = '单选') {
+  constructor(public parent: TypeControl, labelText = '单选') {
     super(labelText);
     this.className = 'RadioItem';
     this.itemContent = new RadioGroup(this);

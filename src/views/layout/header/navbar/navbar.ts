@@ -2,17 +2,15 @@ import { fromEvent } from 'rxjs';
 import { Display, TypeDiv, toJSON } from 'type-dom.ts';
 import { TdAttachmentSvg, TdDeleteSvg } from 'type-dom-svgs';
 import { TdButton } from 'type-dom-ui';
+import { FormEditor } from '../../../../form-editor';
 import { IWebDocument } from '../../../../core/document/web-document.interface';
 import { WebDocument } from '../../../../core/document/web-document.class';
-import { FormEditor } from '../../../../form-editor';
 import { HeaderWrapper } from '../header';
 // import { SaveButton } from './save-button/save-button';
-
 export class Navbar extends TypeDiv {
   className: 'Navbar';
   private readonly previewBtn: TdButton;
   private readonly saveBtn: TdButton;
-
   constructor(public parent: HeaderWrapper) {
     super();
     this.className = 'Navbar';

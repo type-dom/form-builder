@@ -1,7 +1,7 @@
 import { Textarea, Input } from 'type-dom.ts';
-import { SingleInputControl } from '../../../../../../../core/controls/basic/single-input/single-input.class';
-import { MultilineInputControl } from '../../../../../../../core/controls/basic/multiline-input/multiline-input.class';
 import { FormEditor } from '../../../../../../../form-editor';
+import { SingleInputControl } from '../../../../../../../core/control/basic/single-input/single-input.class';
+import { MultilineInputControl } from '../../../../../../../core/control/basic/multiline-input/multiline-input.class';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';

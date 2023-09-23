@@ -1,10 +1,9 @@
-import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-import { AttachmentControl } from '../../../../../../../core/controls/basic/attachment/attachment.class';
 import { FormEditor } from '../../../../../../../form-editor';
+import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
+import { AttachmentControl } from '../../../../../../../core/control/basic/attachment/attachment.class';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
-
 const requiredConfigs: IOptionConfig = {
   name: '可多选' + Math.random(),
   resultValue: 'required',

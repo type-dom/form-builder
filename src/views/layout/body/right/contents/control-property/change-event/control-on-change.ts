@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
-import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
 import { FormEditor } from '../../../../../../../form-editor';
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { ControlProperty } from '../control-property';
@@ -49,7 +49,7 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
     // if (AppRoot.selectedControl?.itemContent instanceof Input ||
     //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
-    if (FormEditor.selectedTableDataCell?.control instanceof WebControl) {
+    if (FormEditor.selectedTableDataCell?.control instanceof TypeControl) {
       const changeStr = FormEditor.selectedTableDataCell?.control?.changeStr;
       if (changeStr) {
         this.resetInputValue(changeStr);
@@ -68,7 +68,7 @@ export class ControlOnChangeProperty extends PropertyTextarea {
       }
     }
     if (this.parent instanceof FieldProperty) {
-      if (FormEditor.selectedTableDataCell?.control instanceof WebControl) {
+      if (FormEditor.selectedTableDataCell?.control instanceof TypeControl) {
         if (value.trim()) { // 输入值的操作
           FormEditor.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
           return;
@@ -76,7 +76,7 @@ export class ControlOnChangeProperty extends PropertyTextarea {
           FormEditor.selectedTableDataCell?.control?.removeOnChange();
         }
       } else {
-        console.error('AppRoot.selectedTableDataCell?.control is not WebControl . ');
+        console.error('AppRoot.selectedTableDataCell?.control is not TypeControl . ');
       }
     }
   }

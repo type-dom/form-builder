@@ -1,7 +1,7 @@
 import { Input, IStyle, Label, Span, Textarea, TextNode, TypeDiv, ILabel } from 'type-dom.ts';
 import { TdDeleteSvg } from 'type-dom-svgs';
 import { FormEditor } from '../../../form-editor';
-import { formItemStyle, labelStyle } from '../../../core/controls/web-control.const';
+import { formItemStyle, labelStyle } from '../../../core/control/type-control.const';
 import { Select } from '../../select/select.class';
 import { CheckboxGroup } from '../checkbox-group/checkbox-group.class';
 import { RadioGroup } from '../radio-group/radio-group.class';
@@ -9,7 +9,7 @@ import { IFormItem, ItemContent } from './form-item.interface';
 import { Table } from './table-item/table/table.class';
 export abstract class FormItem extends TypeDiv implements IFormItem {
   abstract className: string;
-  // abstract parent: WebControl;
+  // abstract parent: TypeControl;
   abstract childNodes: [Label, ItemContent, Span];
   abstract itemContent: Input | Textarea | Select | RadioGroup | CheckboxGroup | Table;
 

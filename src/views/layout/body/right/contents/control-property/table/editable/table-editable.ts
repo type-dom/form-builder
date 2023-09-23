@@ -1,8 +1,8 @@
-import { TableControl } from '../../../../../../../../core/controls/complex/table/table.class';
+import {FormEditor} from '../../../../../../../../form-editor';
+import { TableControl } from '../../../../../../../../core/control/complex/table/table.class';
+import { IOptionConfig } from '../../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../../control-property';
-import { IOptionConfig } from '../../../../../../../../core/controls/web-control.interface';
-import {FormEditor} from "../../../../../../../../form-editor";
 
 const TableEditableConfig: IOptionConfig = {
   name: '表格可编辑',

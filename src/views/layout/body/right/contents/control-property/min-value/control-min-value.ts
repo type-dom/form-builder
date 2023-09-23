@@ -1,9 +1,8 @@
-import { NumericalControl } from '../../../../../../../core/controls/basic/numerical/numerical.class';
+import { FormEditor } from '../../../../../../../form-editor';
+import { NumericalControl } from '../../../../../../../core/control/basic/numerical/numerical.class';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
-import { FormEditor } from '../../../../../../../form-editor';
-
 // 最大值，只对数值控件有效
 export class MinValueProperty extends PropertyInput {
   className: 'MinValueProperty';

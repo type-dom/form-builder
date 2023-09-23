@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { Label, Select } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
-import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
+import { itemContentStyle } from '../../../../../../../core/control/type-control.const';
 import { PropertyItem } from '../property-item.abstract';
 export abstract class PropertySelect extends PropertyItem {
   abstract reset(value?: string): void;

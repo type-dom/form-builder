@@ -1,8 +1,7 @@
-import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
 import { FormEditor } from '../../../../../../../form-editor';
+import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
-
 // 表格列数
 export class TableColumnProperty extends PropertyInput {
   className: 'TableColumnProperty';

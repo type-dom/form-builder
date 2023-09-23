@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { Input, Label } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
-import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
+import { itemContentStyle } from '../../../../../../../core/control/type-control.const';
 import { PropertyItem } from '../property-item.abstract';
 const disableStyle = {
   backgroundColor: '#F5F7FA',

@@ -1,7 +1,6 @@
-import { FormProperty } from '../form-property';
+import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
-import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-
+import { FormProperty } from '../form-property';
 const FormSizeConfig: IOptionConfig = {
   name: '表单尺寸',
   resultValue: 'large',

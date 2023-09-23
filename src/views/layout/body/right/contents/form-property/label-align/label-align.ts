@@ -1,7 +1,7 @@
 import { FormEditor } from '../../../../../../../form-editor';
-import { labelStyle } from '../../../../../../../core/controls/web-control.const';
-import { TableControl } from '../../../../../../../core/controls/complex/table/table.class';
-import { IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
+import { labelStyle } from '../../../../../../../core/control/type-control.const';
+import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
+import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FormProperty } from '../form-property';
 

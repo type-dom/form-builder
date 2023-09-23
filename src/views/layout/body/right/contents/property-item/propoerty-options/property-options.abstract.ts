@@ -2,14 +2,14 @@ import { fromEvent, Observable } from 'rxjs';
 import { Button, Division, Label, Display, TextNode } from 'type-dom.ts';
 import { TdThreeDotsSvg } from 'type-dom-svgs';
 import { TdButton } from 'type-dom-ui';
-import { WebControl } from '../../../../../../../core/controls/web-control.abstract';
-import { itemContentStyle } from '../../../../../../../core/controls/web-control.const';
-import { IOption, IOptionConfig } from '../../../../../../../core/controls/web-control.interface';
-import { RadioControl } from '../../../../../../../core/controls/basic/radio/radio.class';
-import { CheckboxControl } from '../../../../../../../core/controls/basic/checkbox/checkbox.class';
-import { SelectControl } from '../../../../../../../core/controls/basic/select/select.class';
-import { Select } from '../../../../../../../components/select/select.class';
 import { FormEditor } from '../../../../../../../form-editor';
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
+import { itemContentStyle } from '../../../../../../../core/control/type-control.const';
+import { IOption, IOptionConfig } from '../../../../../../../core/control/type-control.interface';
+import { RadioControl } from '../../../../../../../core/control/basic/radio/radio.class';
+import { CheckboxControl } from '../../../../../../../core/control/basic/checkbox/checkbox.class';
+import { SelectControl } from '../../../../../../../core/control/basic/select/select.class';
+import { Select } from '../../../../../../../components/select/select.class';
 import { PropertyItem } from '../property-item.abstract';
 export abstract class PropertyOptions extends PropertyItem {
   childNodes: [Label, Division, TdButton];
@@ -116,13 +116,13 @@ export abstract class PropertyOptions extends PropertyItem {
     this.initEvents();
   }
   get optionConfig(): IOptionConfig | undefined {
-    if (FormEditor.selectedTableDataCell?.control instanceof WebControl) {
+    if (FormEditor.selectedTableDataCell?.control instanceof TypeControl) {
       return FormEditor.selectedTableDataCell?.control.optionConfig;
     }
     return FormEditor.selectedControl?.optionConfig;
   }
   set optionConfig(optConfig: IOptionConfig | undefined) {
-    if (FormEditor.selectedTableDataCell?.control instanceof WebControl) {
+    if (FormEditor.selectedTableDataCell?.control instanceof TypeControl) {
       FormEditor.selectedTableDataCell.control.optionConfig = optConfig;
       return;
     }

@@ -1,5 +1,5 @@
 import { TypeDiv } from 'type-dom.ts';
-import { IOption } from '../../../core/controls/web-control.interface';
+import { IOption } from '../../../core/control/type-control.interface';
 import { RadioItem } from '../form-item/radio-item/radio-item.class';
 import { IRadioGroup } from './radio-group.interface';
 import { RadioOption } from './radio-option/radio-option.class';

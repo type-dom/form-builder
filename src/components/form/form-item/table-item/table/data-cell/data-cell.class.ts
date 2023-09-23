@@ -1,11 +1,10 @@
 import { fromEvent } from 'rxjs';
 import { Input, ITextNode, Select, Textarea, TextNode, TypeTableDataCell } from 'type-dom.ts';
-import { WebControl } from '../../../../../../core/controls/web-control.abstract';
-import { SingleInputControl } from '../../../../../../core/controls/basic/single-input/single-input.class';
-import { TableControl } from '../../../../../../core/controls/complex/table/table.class';
-import { ControlClass, IWebControl } from '../../../../../../core/controls/web-control.interface';
-import { ControlClassMap } from '../../../../../../constants';
 import { FormEditor } from '../../../../../../form-editor';
+import { TypeControl } from '../../../../../../core/control/type-control.abstract';
+import { SingleInputControl } from '../../../../../../core/control/basic/single-input/single-input.class';
+import { TableControl } from '../../../../../../core/control/complex/table/table.class';
+import { ITypeControl } from '../../../../../../core/control/type-control.interface';
 import { RadioGroup } from '../../../../radio-group/radio-group.class';
 import { CheckboxGroup } from '../../../../checkbox-group/checkbox-group.class';
 import { TableRow } from '../row/row.class';
@@ -13,8 +12,8 @@ import { ITableDataCell } from './data-cell.interface';
 
 export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
   className: 'TableDataCell';
-  childNodes: [WebControl | TextNode]; // 有可能是Input
-  control: WebControl | TextNode;
+  childNodes: [TypeControl | TextNode]; // 有可能是Input
+  control: TypeControl | TextNode;
   constructor(public parent: TableRow, value: string | number | boolean) {
     super();
     this.nodeName = 'td';
@@ -41,15 +40,15 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
   }
 
   get value(): string | number | boolean {
-    if (this.control instanceof WebControl) {
+    if (this.control instanceof TypeControl) {
       return (this.control.formItem.itemContent as (Input | Textarea | Select | RadioGroup | CheckboxGroup)).value as string;
     } else {
       return this.control.nodeValue;
     }
   }
   // 注意： 这里没有对单元格重新渲染
-  setControl(ControlClass: Exclude<ControlClass, typeof TableControl>, ctrlLiterL?: IWebControl): void {
-    this.control = new ControlClass(this);
+  setControl(control: Exclude<TypeControl, TableControl>, ctrlLiterL?: ITypeControl): void {
+    this.control = control;
     this.control.formItem.setStyleInTable(); // 配置单元格的控件类型时，重置FormItem样式
     if (ctrlLiterL) {
       // 单元格中控件初始化
@@ -83,11 +82,11 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
         this.control.render();
       }
     } else {
-      if (this.control instanceof WebControl) {
+      if (this.control instanceof TypeControl) {
         const className = controlLiteral.className;
         // 默认是 SingleInputControl
-        const ClassControl = ControlClassMap[className] as Exclude<ControlClass, typeof TableControl>;
-        this.setControl(ClassControl, controlLiteral as IWebControl);
+        // const ClassControl = ControlClassMap[className] as Exclude<ControlClass, typeof TableControl>;
+        this.setControl(this.control, controlLiteral as ITypeControl);
       }
     }
   }

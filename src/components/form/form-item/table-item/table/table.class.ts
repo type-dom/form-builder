@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
 import {Span, TextNode, TypeTable, toJSON} from "type-dom.ts";
-import { WebControl } from '../../../../../core/controls/web-control.abstract';
-import { ITableConfig, ITableField } from '../../../../../core/controls/complex/table/table.interface';
 import { FormEditor } from '../../../../../form-editor';
+import { TypeControl } from '../../../../../core/control/type-control.abstract';
+import { ITableConfig, ITableField } from '../../../../../core/control/complex/table/table.interface';
 import { TableItem } from '../table-item.class';
 import { TableRow } from './row/row.class';
 import { TableHead } from './head/head.class';
@@ -165,7 +165,7 @@ export class Table extends TypeTable implements ITable {
         if (td instanceof Span) { // 最后的删除对象。
           return;
         }
-        if (td.control instanceof WebControl) {
+        if (td.control instanceof TypeControl) {
           td.control.setValue(trJson[this.tableHeader[index].name] || '');
         } else if (td.control instanceof TextNode) {
           td.control.nodeValue = trJson[this.tableHeader[index].name] || '';
