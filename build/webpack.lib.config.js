@@ -12,14 +12,14 @@ console.log('run lib');
 module.exports = {
   entry: {
     // lib: './src/example-lib.ts',
-    'form-editor': './src/form-editor.ts',
+    'type-form': './src/type-form.ts',
   },
   output: {
     filename: `[name].js`,
     path: path.resolve(__dirname, '../lib'),
     clean: true,
     library: {
-      name: 'FormEditor',
+      name: 'TypeForm',
       type: 'umd',
       // export: 'FormEditor',
     },

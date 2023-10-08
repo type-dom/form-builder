@@ -39,9 +39,9 @@ module.exports = {
     // library 一般是结合dll使用
     library: {
       // 整个库向外暴露的变量名
-      name: 'FormEditor',
+      name: 'TypeForm',
       type: 'umd',
-      // export: 'formEditor' // default umd
+      // export: 'TypeForm' // default umd
     },
     // libraryTarget: 'window' // 变量名添加到哪个全局上，browser浏览器端添加到window上
     // libraryTarget: 'global' // 变量名添加到哪个全局上，node服务端添加到global上
@@ -172,7 +172,7 @@ module.exports = {
   plugins: [
     //  Error: clean-webpack-plugin only accepts an options object. See:
     // https://github.com/johnagan/clean-webpack-plugin#options-and-defaults-optional
-    // at new CleanWebpackPlugin (D:\SVN\end\form-editor\node_modules\clean-webpack-plugin\dist\clean-webpack-plugin.js:
+    // at new CleanWebpackPlugin (D:\SVN\end\type-form\node_modules\clean-webpack-plugin\dist\clean-webpack-plugin.js:
     // new CleanWebpackPlugin(),
     // 多个html页面
     new HtmlWebpackPlugin({

@@ -16,7 +16,7 @@
     "coverage": "typescript-coverage-report"
   },
   "keywords": [
-    "FormEditor",
+    "TypeForm",
     "typescript",
     "webpack",
     "TypeDom",
@@ -27,7 +27,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xjf7711/form-editor.git"
+    "url": "git+https://github.com/xjf7711/type-form.git"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
