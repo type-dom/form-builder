@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { Display, TypeDiv, toJSON } from 'type-dom.ts';
+import { StyleDisplay, TypeDiv, toJSON } from 'type-dom.ts';
 import { TdAttachmentSvg, TdDeleteSvg } from 'type-dom-svgs';
 import { TdButton } from 'type-dom-ui';
-import { FormEditor } from '../../../../form-editor';
+import { TypeForm } from '../../../../type-form';
 import { IWebDocument } from '../../../../core/document/web-document.interface';
 import { WebDocument } from '../../../../core/document/web-document.class';
 import { HeaderWrapper } from '../header';
@@ -15,7 +15,7 @@ export class Navbar extends TypeDiv {
     super();
     this.className = 'Navbar';
     this.addStyleObj({
-      display: Display.flex,
+      display: StyleDisplay.flex,
       // justifyContent: 'space-between',
       alignItems: 'center',
       width: '100%',
@@ -45,16 +45,16 @@ export class Navbar extends TypeDiv {
   initEvents(): void {
     this.events.push(
       fromEvent(this.previewBtn.dom, 'click').subscribe(() => {
-        FormEditor.setSelectedControl(null);
-        FormEditor.dialog.show();
-        FormEditor.dialog.setTitle('预览');
+        TypeForm.mode.setSelectedControl(null);
+        TypeForm.dialog.show();
+        TypeForm.dialog.setTitle('预览');
         this.previewForm();
-        console.log('AppRoot.exampleData is ', FormEditor.formData);
+        console.log('AppRoot.exampleData is ', TypeForm.formData);
       }),
       fromEvent(this.saveBtn.dom, 'click').subscribe(() => {
         // FormEditor.messageBox.show();
         // // FormEditor.messageBox.setTitle('提醒');
-        FormEditor.messageBox.confirm('提醒', '你确定要保存表单吗？');
+        TypeForm.messageBox.confirm('提醒', '你确定要保存表单吗？');
         // AppRoot.dialog.preview(AppRoot.page);
         // console.log('AppRoot.form json is ', toJSON(AppRoot.page));
       })
@@ -65,14 +65,14 @@ export class Navbar extends TypeDiv {
    */
   previewForm(): void {
     console.log('preview form . ');
-    FormEditor.dialog.container.body.clearChildDom();
-    FormEditor.dialog.container.body.clearChildNodes();
-    const document = toJSON(FormEditor.webDocument) as IWebDocument;
+    TypeForm.dialog.container.body.clearChildDom();
+    TypeForm.dialog.container.body.clearChildNodes();
+    const document = toJSON(TypeForm.webDocument) as IWebDocument;
     console.log('document is ', document);
-    const docObj = new WebDocument(FormEditor.layout.body.content);
+    const docObj = new WebDocument(TypeForm.layout.body.content);
     docObj.createInstance(document);
-    docObj.setParent(FormEditor.dialog.container.body);
-    FormEditor.dialog.container.body.appendChild(docObj);
+    docObj.setParent(TypeForm.dialog.container.body);
+    TypeForm.dialog.container.body.appendChild(docObj);
     // this.container.body.dom.appendChild(element.dom);
     // AppRoot.dialog.container.body.dom.appendChild(docObj.dom);
     // AppRoot.dialog.container.body.dom.childNodes.forEach(node => node.remove());

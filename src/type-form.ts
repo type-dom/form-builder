@@ -1,13 +1,14 @@
 // 顺序不能随意调换，可能会加载报错。 TypeControl todo 如何解决
 import { filter, fromEvent, switchMap, of, Observable, Subscription, Subject } from 'rxjs';
-import { ListItem, Span, TextNode, TypeRoot, Cursor, toJSON } from 'type-dom.ts';
+import {ListItem, Span, TextNode, TypeRoot, StyleCursor, toJSON, StyleDisplay} from 'type-dom.ts';
 import { Dialog, MessageBox } from 'type-dom-ui';
-
+import {ModeStateAbstract} from "./state/mode/mode-state.abstract";
+import {createModeState} from "./state/mode/mode-state.factory";
 import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';
 import { FieldProperty } from './views/layout/body/right/contents/field-property/field-property';
-import { Test } from './views/test/test';
+// import { Test } from './views/test/test';
 import { TypeMenu } from './core/menu/menu.abstract';
 import { WebDocument } from './core/document/web-document.class';
 import { IWebDocument } from './core/document/web-document.interface';
@@ -26,10 +27,10 @@ import { TableRow } from './components/form/form-item/table-item/table/row/row.c
  * 根节点，继承 TypeRoot;
  * 因为属性和方法要全局调用，所以全部设置为静态 static; 包括get也设置为静态
  */
-export class FormEditor extends TypeRoot {
+export class TypeForm extends TypeRoot {
   className: 'FormEditor';
   // 光标
-  static cursor?: Cursor | null;
+  static cursor?: StyleCursor | null;
   // 选中的菜单
   static selectedMenu: TypeMenu | null;
   // 选中的控件
@@ -37,64 +38,45 @@ export class FormEditor extends TypeRoot {
   // 选中的表格单元格
   static selectedTableDataCell?: TableDataCell | null;
   static layout: LayoutWrapper;
-  // 对话框
+  // 对话框 todo 这样全局只有一个对话框，需要多个怎么办？
   static dialog: Dialog;
   // 消息框
   static messageBox: MessageBox;
   // 编辑器模式，对应 设计模式， 填表模式， 只读模式
-  static mode: 'design' | 'fill' | 'readonly';
+  static mode: ModeStateAbstract;
   // todo tabs操作中重置。
   // currentPage: WebPage;
   // 集中出来外部传入的函数或方法。
   static functionMap: Map<string, (...rest: any[]) => any>;
   static el: HTMLElement;
   static editorElObservable: Observable<Event>;
-  static onReady: Observable<void>;
-  static readyEvent: Subject<void>;
+  static controlSubject: Subject<TypeControl | null>;
+  static formSubject: Subject<TypeForm | null>;
+  static fieldSubject: Subject<TableDataCell | null>;
   childNodes: [LayoutWrapper, Dialog, MessageBox];
   events: Subscription[];
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
     super(editorEl);
     this.className = 'FormEditor';
-    FormEditor.el = editorEl;
-    if (!FormEditor.el.clientHeight) {
+    TypeForm.el = editorEl;
+    if (!TypeForm.el.clientHeight) {
       // FormEditor.el.setAttribute('clientHeight', '500px');
-      FormEditor.el.style.height = '600px'; // 默认高度600px;
+      TypeForm.el.style.height = '600px'; // 默认高度600px;
     }
     // console.log('FormEditor.el.clientHeight is ', FormEditor.el.clientHeight);
+    TypeForm.formSubject = new Subject<TypeForm | null>();
+    TypeForm.controlSubject = new Subject<TypeControl | null>();
+    TypeForm.fieldSubject = new Subject<TableDataCell | null>();
     this.events = [];
-    FormEditor.mode = mode;
-    FormEditor.layout = new LayoutWrapper(this);
-    FormEditor.dialog = new Dialog(this);
-    FormEditor.messageBox = new MessageBox(this);
+    const modeObj = TypeForm.mode = createModeState(mode);
+    TypeForm.layout = modeObj.createLayout(this);
+    TypeForm.dialog = new Dialog(this);
+    TypeForm.messageBox = new MessageBox(this);
     // FormEditor.layout.childNodes.push(this.dialog, this.messageBox);
-    this.childNodes = [FormEditor.layout, FormEditor.dialog, FormEditor.messageBox];
-    // this.createItem(this, {
-    //   TypeClass: LayoutWrapper,
-    //   // propObj: {
-    //   //   styleObj: {},
-    //   //   attrObj: {}
-    //   // },
-    //   childNodes: [
-    //     {
-    //       TypeClass: WebDialog,
-    //       // propObj: {
-    //       //   styleObj: {},
-    //       //   attrObj: {},
-    //       // }
-    //     },
-    //     {
-    //       TypeClass: MessageBox,
-    //       // propObj: {
-    //       //   styleObj: {},
-    //       //   attrObj: {}
-    //       // }
-    //     }
-    //   ]
-    // });
+    this.childNodes = [TypeForm.layout, TypeForm.dialog, TypeForm.messageBox];
     this.render();
-    const json = this.toJSON();
-    console.log('json is ', json);
+    // const json = this.toJSON();
+    // console.log('json is ', json);
     // console.log('editorEl is ', editorEl);
     // editorEl.appendChild(FormEditor.layout.dom);
     // const test = new Test(this);
@@ -102,70 +84,68 @@ export class FormEditor extends TypeRoot {
     // test.render();
     // editorEl.appendChild(test.dom);
     // this.currentPage = this.defaultPage;
-    FormEditor.selectedMenu = null;
-    FormEditor.selectedControl = null;
+    TypeForm.selectedMenu = null;
+    TypeForm.selectedControl = null;
     // this.connectionItemObservable = null;
-    FormEditor.editorElObservable = fromEvent(FormEditor.el, 'click')
+    TypeForm.editorElObservable = fromEvent(TypeForm.el, 'click')
       .pipe(filter(() => {
-        return !!FormEditor.selectedTableDataCell || !!FormEditor.selectedControl;
+        return !!TypeForm.selectedTableDataCell || !!TypeForm.selectedControl;
       }));
-    FormEditor.functionMap = new Map();
-    FormEditor.formProperty.reset();
-    FormEditor.readyEvent = new Subject<void>();
-    FormEditor.onReady = FormEditor.readyEvent.asObservable();
+    TypeForm.functionMap = new Map();
+    TypeForm.formProperty.reset();
   }
   /**
    * 获取设置的文档对象
    */
   static get webDocument(): WebDocument {
-    return FormEditor.layout.webDocument;
+    return TypeForm.layout.webDocument;
   }
   /**
    * 获取右侧属性栏的字段属性tab
    */
   static get fieldTab(): ListItem {
-    return FormEditor.layout.body.right.tabs.fieldTab;
+    return TypeForm.layout.body.right.tabs.fieldTab;
   }
   /**
    * 获取右侧属性栏的控件属性的tab
    */
   static get controlTab(): ListItem {
-    return FormEditor.layout.body.right.tabs.controlTab;
+    return TypeForm.layout.body.right.tabs.controlTab;
   }
   /**
    * 获取右侧属性栏的表单属性的tab
    */
   static get formTab(): ListItem {
-    return FormEditor.layout.body.right.tabs.formTab;
+    return TypeForm.layout.body.right.tabs.formTab;
   }
   /**
    * 获取控件属性栏
    */
   static get controlProperty(): ControlProperty {
-    return FormEditor.layout.body.right.contents.controlProperty;
+    return TypeForm.layout.body.right.contents.controlProperty;
   }
   /**
    * 获取字段属性栏
    */
   static get fieldProperty(): FieldProperty {
-    return FormEditor.layout.body.right.contents.fieldProperty;
+    return TypeForm.layout.body.right.contents.fieldProperty;
   }
   /**
    * 获取表单属性栏
    */
   static get formProperty(): FormProperty {
-    return FormEditor.layout.body.right.contents.formProperty;
+    return TypeForm.layout.body.right.contents.formProperty;
   }
   // todo 暂时不用
   static get currentPage(): WebPage {
-    return FormEditor.webDocument.contents.currentPage;
+    return TypeForm.webDocument.contents.currentPage;
   }
   /**
    * 获取默认页
    */
   static get defaultPage(): WebPage { // defaultPage 默认首页
     // return FormEditor.webDocument.defaultPage;
-    return FormEditor.webDocument.contents.defaultPage;
+    return TypeForm.webDocument.contents.defaultPage;
   }
   /**
    * 获取所有控件
@@ -173,7 +153,7 @@ export class FormEditor extends TypeRoot {
    */
   static get allControls(): TypeControl[] {
     const controls: TypeControl[] = [];
-    FormEditor.webDocument.contents.childNodes.forEach(page => {
+    TypeForm.webDocument.contents.childNodes.forEach(page => {
       // todo
       if (page.className === 'WebPage') {
         controls.push(...page.childNodes);
@@ -185,7 +165,7 @@ export class FormEditor extends TypeRoot {
    * 获取所有选项控件
    */
   static get optionControls(): TypeControl[] {
-    return FormEditor.allControls.filter(control => !!control.optionConfig);
+    return TypeForm.allControls.filter(control => !!control.optionConfig);
   }
   /**
    * 默认值属性控制项的控制公式编辑器是否显示的监听
@@ -197,7 +177,7 @@ export class FormEditor extends TypeRoot {
         // if (FormEditor.selectedTableDataCell) { // 表格单元格选中的控件
         //   return FormEditor.fieldProperty.fieldDefaultValue.formulaObservable;
         // }
-        return FormEditor.controlProperty.controlDefaultValue.formulaObservable;
+        return TypeForm.controlProperty.controlDefaultValue.formulaObservable;
       })
     );
   }
@@ -208,12 +188,12 @@ export class FormEditor extends TypeRoot {
     return this.editorElObservable.pipe(
       switchMap(() => {
         // console.log('this.editor.selectedControl is ', FormEditor.selectedControl);
-        if (FormEditor.selectedTableDataCell) { // 表格单元格选中的控件
+        if (TypeForm.selectedTableDataCell) { // 表格单元格选中的控件
           // console.log('FormEditor.fieldProperty.fieldOptions.optionsConfigObservable is ', FormEditor.fieldProperty.fieldOptions.optionsConfigObservable);
-          return FormEditor.fieldProperty.fieldOptions.optionsConfigObservable;
+          return TypeForm.fieldProperty.fieldOptions.optionsConfigObservable;
         }
         // console.log('FormEditor.controlProperty.controlOptions.optionsConfigObservable is ', FormEditor.controlProperty.controlOptions.optionsConfigObservable);
-        return FormEditor.controlProperty.controlOptions.optionsConfigObservable;
+        return TypeForm.controlProperty.controlOptions.optionsConfigObservable;
       })
     );
   }
@@ -221,7 +201,7 @@ export class FormEditor extends TypeRoot {
    * 提交表单的监听
    */
   static get submitObservable(): Observable<Event> | undefined {
-    return FormEditor.layout.form?.footer.submitBtn.submitObservable;
+    return TypeForm.layout.form?.footer.submitBtn.submitObservable;
   }
   /**
    * 关联选项控件的关联属性的监听
@@ -229,11 +209,11 @@ export class FormEditor extends TypeRoot {
   static get connectionObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (FormEditor.selectedTableDataCell) { // 表格单元格选中的控件
-          console.log('FormEditor.fieldProperty.fieldConnection.connectionObservable is ', FormEditor.fieldProperty.fieldConnection.connectionObservable);
-          return FormEditor.fieldProperty.fieldConnection.connectionObservable;
+        if (TypeForm.selectedTableDataCell) { // 表格单元格选中的控件
+          console.log('FormEditor.fieldProperty.fieldConnection.connectionObservable is ', TypeForm.fieldProperty.fieldConnection.connectionObservable);
+          return TypeForm.fieldProperty.fieldConnection.connectionObservable;
         }
-        return FormEditor.controlProperty.controlConnection.connectionObservable;
+        return TypeForm.controlProperty.controlConnection.connectionObservable;
       })
     );
   }
@@ -244,13 +224,13 @@ export class FormEditor extends TypeRoot {
   static get connectionItemObservable(): Observable<Event | null> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (FormEditor.selectedTableDataCell?.control instanceof ConnectionControl) {
-          console.log('FormEditor.selectedTableDataCell.control.connectionItemObservable is ', FormEditor.selectedTableDataCell.control.connectionItemObservable);
-          return FormEditor.selectedTableDataCell.control.connectionItemObservable;
+        if (TypeForm.selectedTableDataCell?.control instanceof ConnectionControl) {
+          console.log('FormEditor.selectedTableDataCell.control.connectionItemObservable is ', TypeForm.selectedTableDataCell.control.connectionItemObservable);
+          return TypeForm.selectedTableDataCell.control.connectionItemObservable;
         }
-        if (FormEditor.selectedControl instanceof ConnectionControl) {
-          console.log('FormEditor.selectedControl.connectionItemObservable is ', FormEditor.selectedControl.connectionItemObservable);
-          return FormEditor.selectedControl.connectionItemObservable;
+        if (TypeForm.selectedControl instanceof ConnectionControl) {
+          console.log('FormEditor.selectedControl.connectionItemObservable is ', TypeForm.selectedControl.connectionItemObservable);
+          return TypeForm.selectedControl.connectionItemObservable;
         }
         return of(null);
       }),
@@ -263,11 +243,11 @@ export class FormEditor extends TypeRoot {
   static get attachmentObservable(): Observable<Event | null> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (FormEditor.selectedTableDataCell?.control instanceof AttachmentControl) {
-          return FormEditor.selectedTableDataCell.control.attachmentObservable;
+        if (TypeForm.selectedTableDataCell?.control instanceof AttachmentControl) {
+          return TypeForm.selectedTableDataCell.control.attachmentObservable;
         }
-        if (FormEditor.selectedControl instanceof AttachmentControl) {
-          return FormEditor.selectedControl.attachmentObservable;
+        if (TypeForm.selectedControl instanceof AttachmentControl) {
+          return TypeForm.selectedControl.attachmentObservable;
         }
         return of(null);
       }),
@@ -278,14 +258,14 @@ export class FormEditor extends TypeRoot {
    * 获取表单
    */
   static get form(): WebForm | undefined {
-    return FormEditor.layout.form;
+    return TypeForm.layout.form;
   }
   /**
    * 根据控件获取提交的数据
    */
   static get formData(): Record<string, string | any[]> {
     const formData: Record<string, string | any[]> = {};
-    const formIds = FormEditor.webDocument.formIds;
+    const formIds = TypeForm.webDocument.formIds;
     if (formIds) {
       const formIdJson = JSON.parse(formIds);
       for (const key in formIdJson) {
@@ -294,7 +274,7 @@ export class FormEditor extends TypeRoot {
     }
     const tableData: Record<string, string | number | boolean>[] = [];
     formData.table = tableData;
-    FormEditor.allControls.forEach((ctrl) => {
+    TypeForm.allControls.forEach((ctrl) => {
       if (ctrl instanceof TableControl) {
         // console.log('ctrl is TableControl', ctrl);
         const table = ctrl.formItem.itemContent;
@@ -347,116 +327,28 @@ export class FormEditor extends TypeRoot {
     return formData;
   }
   /**
-   * 选中控件
-   * @param control
-   */
-  static setSelectedControl(control: TypeControl | null): void {
-    console.log('setSelectedControl . control is ', control);
-    if (control) { // 选中控件
-      // 如果重复选中一个控件，不做处理
-      if (FormEditor.selectedControl === control) {
-        return;
-      }
-      // 如果选中的控件不是表格控件
-      // todo ??? 为什么要清理 ???
-      if (FormEditor.selectedTableDataCell && !(control instanceof TableControl)) {
-        FormEditor.setSelectedTableDataCell(null);
-      }
-
-      // 如果之前有选中的控件，则重置样式。
-      FormEditor.selectedControl?.setStyleObj({
-        border: '1px solid #e2e0e0',
-      });
-      FormEditor.selectedControl = control;
-      control.setStyleObj({
-        border: '1px solid #f00',
-      });
-
-      FormEditor.controlTab.setStyle('display', 'block'); // 控件属性栏的tab开始时隐藏的。
-      // this.controlTab.dom.click();
-      // console.log('clone ', control.clone());
-      // this.form.appendChild(control.clone());
-    } else { // 清除选中的控件
-      if (FormEditor.selectedControl) {
-        FormEditor.selectedControl.setStyleObj({
-          border: '1px solid #e2e0e0',
-        });
-        FormEditor.selectedControl = null;
-        // 清除选中控件时，如果有选中的单元格，也要同步清除。
-        if (FormEditor.selectedTableDataCell) {
-          FormEditor.setSelectedTableDataCell(null);
-        }
-      }
-      // this.controlTab.setStyle('display', 'none');
-      // this.formTab.dom.click();
-    }
-    if (FormEditor.mode === 'design') {
-      FormEditor.controlProperty.reset();
-    }
-  }
-  /**
-   * 选中单元格，则显示字段属性；否则，隐藏；
-   * todo setSelectedControl setSelectedTableDataCell 联动问题
-   * @param tableDataCell
-   */
-  static setSelectedTableDataCell(tableDataCell: TableDataCell | null): void {
-    console.error('setSelectedTableDataCell . tableDataCell is ', tableDataCell);
-    if (tableDataCell) {
-      if (FormEditor.selectedTableDataCell === tableDataCell) { // 重复选中同一单元格
-        return;
-      }
-      FormEditor.selectedTableDataCell?.setStyleObj({
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderColor: '#DCDFE6',
-      });
-      FormEditor.selectedTableDataCell = tableDataCell;
-      tableDataCell.setStyleObj({
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderColor: '#f00',
-        display: 'table-cell'
-      });
-      FormEditor.layout.body.right.tabs.fieldTab.setStyle('display', 'block'); // 字段的tab开始时隐藏的。
-      // this.fieldTab.dom.click();
-    } else { // 清除选中
-      if (FormEditor.selectedTableDataCell) {
-        FormEditor.selectedTableDataCell.setStyleObj({
-          borderColor: '#DCDFE6',
-        });
-      }
-      FormEditor.selectedTableDataCell = null;
-      FormEditor.layout.body.right.tabs.fieldTab.setStyle('display', 'none');
-      FormEditor.controlTab.dom.click();
-    }
-    if (FormEditor.mode === 'design') {
-      // 重置属性栏？？？
-      FormEditor.fieldProperty.reset();
-    }
-  }
-  /**
    * 选中表格时单独处理。
    * @param menu
    */
   static setSelectedMenu(menu: TypeMenu | null): void {
     if (menu) {
       // 要先移除之前选中的菜单的选中状态
-      FormEditor.selectedMenu?.setStyleObj({
+      TypeForm.selectedMenu?.setStyleObj({
         backgroundColor: '#eee',
         background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
       });
-      FormEditor.selectedMenu = menu;
+      TypeForm.selectedMenu = menu;
       menu.setStyleObj({
         backgroundColor: '#fae100',
         background: '#fae100',
       });
     } else {
-      if (FormEditor.selectedMenu) {
-        FormEditor.selectedMenu?.setStyleObj({
+      if (TypeForm.selectedMenu) {
+        TypeForm.selectedMenu?.setStyleObj({
           backgroundColor: '#eee',
           background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
         });
-        FormEditor.selectedMenu = null;
+        TypeForm.selectedMenu = null;
       }
     }
   }
@@ -465,8 +357,8 @@ export class FormEditor extends TypeRoot {
    * @param docLiteral
    */
   createInstance(docLiteral: IWebDocument): void {
-    FormEditor.layout.webDocument.createInstance(docLiteral);
-    FormEditor.formProperty.reset();
+    TypeForm.layout.webDocument.createInstance(docLiteral);
+    TypeForm.formProperty.reset();
     // FormEditor.layout.webDocument?.defaultPage.createInstance(pageLiteral);
     // console.log('FormEditor.layout.webDocument is ', FormEditor.layout.webDocument);
   }
@@ -482,35 +374,122 @@ export class FormEditor extends TypeRoot {
    * 获取文档的字面量
    */
   static getJsonObj(): IWebDocument {
-    FormEditor.setSelectedControl(null); // 去除选中样式
-    return toJSON(FormEditor.webDocument) as IWebDocument;
+    TypeForm.mode.setSelectedControl(null); // 去除选中样式
+    return toJSON(TypeForm.webDocument) as IWebDocument;
+  }
+  /**
+   * 选中控件
+   * @param control
+   */
+  static setSelectedControl(control: TypeControl | null): void {
+    console.log('setSelectedControl . control is ', control);
+    // 选中控件
+    if (control) {
+      // 如果重复选中一个控件，不做处理
+      if (TypeForm.selectedControl === control) {
+        return;
+      }
+      // 已经选中单元格时
+      if (TypeForm.selectedTableDataCell) {
+        // 如果选中的控件不是表格控件
+        // todo ??? 为什么要清理 ???
+        if (!(control instanceof TableControl)) {
+          TypeForm.mode.setSelectedTableDataCell(null);
+        }
+      }
+
+      // 如果之前有选中的控件，则重置样式。
+      TypeForm.selectedControl?.formItem.setStyleObj({
+        borderColor: '#e2e0e0',
+      });
+      TypeForm.selectedControl = control;
+      control.formItem.setStyleObj({
+        borderColor: '#f00',
+      });
+
+      TypeForm.controlTab.show(StyleDisplay.flex); // 控件属性栏的tab默认是隐藏的。
+      // this.controlTab.dom.click();
+      // console.log('clone ', control.clone());
+      // this.form.appendChild(control.clone());
+    } else { // 清除选中的控件
+      if (TypeForm.selectedControl) {
+        TypeForm.selectedControl.setStyleObj({
+          border: '1px solid #e2e0e0',
+        });
+        TypeForm.selectedControl = null;
+        // 清除选中控件时，如果有选中的单元格，也要同步清除。
+        if (TypeForm.selectedTableDataCell) {
+          TypeForm.mode?.setSelectedTableDataCell(null);
+        }
+      }
+      // this.controlTab.setStyle('display', 'none');
+      // this.formTab.dom.click();
+    }
+  }
+  /**
+   *  设置选中、取消选中的样式变化。与属性栏联动由子类（DesignState类）方法实现。
+   * 选中单元格，则显示字段属性；否则，隐藏；
+   * todo setSelectedControl setSelectedTableDataCell 联动问题
+   * @param tableDataCell
+   */
+  static setSelectedTableDataCell(tableDataCell: TableDataCell | null): void {
+    console.error('setSelectedTableDataCell . tableDataCell is ', tableDataCell);
+    if (tableDataCell) {
+      if (TypeForm.selectedTableDataCell === tableDataCell) { // 重复选中同一单元格
+        return;
+      }
+      TypeForm.selectedTableDataCell?.setStyleObj({
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: '#DCDFE6',
+      });
+      TypeForm.selectedTableDataCell = tableDataCell;
+      tableDataCell.setStyleObj({
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: '#f00',
+        display: 'table-cell'
+      });
+      TypeForm.layout.body.right.tabs.fieldTab.setStyle('display', 'block'); // 字段的tab开始时隐藏的。
+      // this.fieldTab.dom.click();
+    } else {
+      // 清除选中
+      if (TypeForm.selectedTableDataCell) {
+        TypeForm.selectedTableDataCell.setStyleObj({
+          borderColor: '#DCDFE6',
+        });
+      }
+      TypeForm.selectedTableDataCell = null;
+      TypeForm.layout.body.right.tabs.fieldTab.setStyle('display', 'none');
+      TypeForm.controlTab.dom.click();
+    }
   }
   /**
    * 设置控件字段的配置信息
    * @param config
    */
   static setControlFieldConfig(config: IOptionConfig): void {
-    FormEditor.controlProperty.controlField.resetFieldConfig(config);
+    TypeForm.controlProperty.controlField.resetFieldConfig(config);
   }
   /**
    * 设置控件默认值的公式
    * @param formula
    */
   static setControlDefaultValueFormula(formula: string): void {
-    FormEditor.controlProperty.controlDefaultValue.formula = formula;
+    TypeForm.controlProperty.controlDefaultValue.formula = formula;
   }
   /**
    * 设置控件的option-config
    * @param config
    */
   static setControlOptionConfig(config: IOptionConfig): void {
-    if (FormEditor.selectedTableDataCell) {
-      FormEditor.fieldProperty.fieldOptions.resetConfig(config);
-      FormEditor.fieldProperty.fieldOptions.resetControl();
+    if (TypeForm.selectedTableDataCell) {
+      TypeForm.fieldProperty.fieldOptions.resetConfig(config);
+      TypeForm.fieldProperty.fieldOptions.resetControl();
       return;
     }
-    FormEditor.controlProperty.controlOptions.resetConfig(config);
-    FormEditor.controlProperty.controlOptions.resetControl();
+    TypeForm.controlProperty.controlOptions.resetConfig(config);
+    TypeForm.controlProperty.controlOptions.resetControl();
   }
   /**
    * 设置选项控件对应的 label和value
@@ -519,11 +498,11 @@ export class FormEditor extends TypeRoot {
    * @param value
    */
   static setControlConnection(label: string, value: string): void {
-    if (FormEditor.selectedTableDataCell) {
-      FormEditor.fieldProperty.fieldConnection.reset(label, value);
+    if (TypeForm.selectedTableDataCell) {
+      TypeForm.fieldProperty.fieldConnection.reset(label, value);
       return;
     }
-    FormEditor.controlProperty.controlConnection.reset(label, value);
+    TypeForm.controlProperty.controlConnection.reset(label, value);
   }
   /**
    * 设置选项控件的值
@@ -533,24 +512,24 @@ export class FormEditor extends TypeRoot {
    * @param value
    */
   static setConnectionItemValue(label: string, value: string): void {
-    if (FormEditor.selectedTableDataCell?.control instanceof ConnectionControl) {
-      FormEditor.selectedTableDataCell.control.setAttrObj({
+    if (TypeForm.selectedTableDataCell?.control instanceof ConnectionControl) {
+      TypeForm.selectedTableDataCell.control.setAttrObj({
         value,
         label
       }); // 控件值
       // 在内容框中显示选中的值
-      FormEditor.selectedTableDataCell.control.formItem.itemContent.setAttrObj({
+      TypeForm.selectedTableDataCell.control.formItem.itemContent.setAttrObj({
         value: label // 显示值
       });
       return;
     }
-    if (FormEditor.selectedControl instanceof ConnectionControl) {
-      FormEditor.selectedControl.setAttrObj({
+    if (TypeForm.selectedControl instanceof ConnectionControl) {
+      TypeForm.selectedControl.setAttrObj({
         value,
         label
       }); // 控件值
       // 在内容框中显示选中的值
-      FormEditor.selectedControl.formItem.itemContent.setAttrObj({
+      TypeForm.selectedControl.formItem.itemContent.setAttrObj({
         value: label // 显示值
       });
       // FormEditor.selectedControl.connectionItemLabel = label;
@@ -561,15 +540,15 @@ export class FormEditor extends TypeRoot {
   }
   // 设置附件控件的值
   static setAttachmentValue(label: string, value: string): void {
-    if (FormEditor.selectedTableDataCell?.control instanceof AttachmentControl) {
-      FormEditor.selectedTableDataCell.control.setAttrObj({
+    if (TypeForm.selectedTableDataCell?.control instanceof AttachmentControl) {
+      TypeForm.selectedTableDataCell.control.setAttrObj({
         value: value,
         title: value,
       }); // 控件值
       return;
     }
-    if (FormEditor.selectedControl instanceof AttachmentControl) {
-      FormEditor.selectedControl.setAttrObj({
+    if (TypeForm.selectedControl instanceof AttachmentControl) {
+      TypeForm.selectedControl.setAttrObj({
         value: value,
         title: value,
       }); // 控件值
@@ -581,10 +560,12 @@ export class FormEditor extends TypeRoot {
   }
   /**
    * 根据formData,给相应的控件设置值
+   * 填表模式和只读模式都会用到。
+   * todo 设计模式下，其实相当于设置了一个空数据。
    * 读取表单时使用
    * @param formData
    */
-  static setFormData(formData: Record<string, any>): void {
+  setFormData(formData: Record<string, any>): void {
     if (!formData) {
       return;
     }  //  todo 基于formData插入数值
@@ -594,12 +575,12 @@ export class FormEditor extends TypeRoot {
         formIds[key] = formData[key];
       }
     }
-    FormEditor.webDocument.setAttrObj({
+    TypeForm.webDocument.setAttrObj({
       'form-ids': JSON.stringify(formIds),
     });
     const tableData = formData.table as Record<string, string>[];
     delete formData.table;
-    FormEditor.allControls.forEach(control => {
+    TypeForm.allControls.forEach(control => {
       // console.log('control.fieldName is ', control.fieldName);
       // console.log('control.className is ', control.className);
       if (control instanceof TableControl) {
@@ -634,9 +615,7 @@ export class FormEditor extends TypeRoot {
           }
         }
       }
-      if (FormEditor.mode === 'readonly') {
-        control.setDisabled();
-      }
+      TypeForm.mode.setControlReadOnly(control);
     });
   }
 }

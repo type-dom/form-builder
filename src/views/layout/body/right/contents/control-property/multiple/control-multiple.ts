@@ -1,9 +1,10 @@
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { AttachmentControl } from '../../../../../../../core/control/basic/attachment/attachment.class';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
+import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
 const requiredConfigs: IOptionConfig = {
   name: '可多选' + Math.random(),
   resultValue: 'required',
@@ -40,16 +41,25 @@ export class MultipleProperty extends PropertyRadio {
       this.fieldPropertyReset(value);
     }
   }
+  update(control: TypeControl | null) {
+    const value = control?.formItem.itemContent.attrObj.multiple as string;
+    if (this.parent instanceof ControlProperty) {
+      this.controlPropertyReset(value);
+    }
+    if (this.parent instanceof FieldProperty) {
+      this.fieldPropertyReset(value);
+    }
+  }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (FormEditor.selectedControl instanceof AttachmentControl) {
-        FormEditor.selectedControl.itemContent.setAttribute('multiple', !!value);
+      if (TypeForm.selectedControl instanceof AttachmentControl) {
+        TypeForm.selectedControl.itemContent.setAttribute('multiple', !!value);
       }
       return;
     }
-    if (FormEditor.selectedControl instanceof AttachmentControl) {
+    if (TypeForm.selectedControl instanceof AttachmentControl) {
       if (this.styleObj.display === 'none') this.show();
-      const multiple = !!FormEditor.selectedControl?.formItem.itemContent.attrObj.multiple;
+      const multiple = !!TypeForm.selectedControl?.formItem.itemContent.attrObj.multiple;
       this.resetResultValue(multiple ? 'multiple' : '');
     } else {
       this.hide();
@@ -57,16 +67,16 @@ export class MultipleProperty extends PropertyRadio {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (FormEditor.selectedTableDataCell?.control instanceof AttachmentControl) {
-        FormEditor.selectedTableDataCell.control.itemContent.setAttribute('multiple', !!value);
+      if (TypeForm.selectedTableDataCell?.control instanceof AttachmentControl) {
+        TypeForm.selectedTableDataCell.control.itemContent.setAttribute('multiple', !!value);
       } else {
         console.error('AppRoot.selectedTableDataCell.control is not AttachmentControl . ');
       }
       return;
     }
-    if (FormEditor.selectedTableDataCell?.control instanceof AttachmentControl) {
+    if (TypeForm.selectedTableDataCell?.control instanceof AttachmentControl) {
       if (this.styleObj.display === 'none') this.show();
-      const multiple = !!FormEditor.selectedTableDataCell.control.formItem.itemContent.attrObj.multiple;
+      const multiple = !!TypeForm.selectedTableDataCell.control.formItem.itemContent.attrObj.multiple;
       this.resetResultValue(multiple ? 'multiple' : '');
       return;
     } else {

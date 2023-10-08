@@ -1,10 +1,10 @@
 import { fromEvent } from 'rxjs';
 import { Input, ITextNode, Select, Textarea, TextNode, TypeTableDataCell } from 'type-dom.ts';
-import { FormEditor } from '../../../../../../form-editor';
+import { TypeForm } from '../../../../../../type-form';
 import { TypeControl } from '../../../../../../core/control/type-control.abstract';
+import { ITypeControl } from '../../../../../../core/control/type-control.interface';
 import { SingleInputControl } from '../../../../../../core/control/basic/single-input/single-input.class';
 import { TableControl } from '../../../../../../core/control/complex/table/table.class';
-import { ITypeControl } from '../../../../../../core/control/type-control.interface';
 import { RadioGroup } from '../../../../radio-group/radio-group.class';
 import { CheckboxGroup } from '../../../../checkbox-group/checkbox-group.class';
 import { TableRow } from '../row/row.class';
@@ -16,8 +16,6 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
   control: TypeControl | TextNode;
   constructor(public parent: TableRow, value: string | number | boolean) {
     super();
-    this.nodeName = 'td';
-    this.dom = document.createElement(this.nodeName);
     this.className = 'TableDataCell';
     // this.propObj.attrObj.border = '1px solid black;';
     // this.childNodes = [];
@@ -97,8 +95,8 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
         console.log('table data cell mousedown ');
         // 阻止冒泡 ？？？ TODO 为什么要阻止冒泡 ----> 点击表格控件其它区域时要取消选中单元格。
         // e.stopPropagation();
-        // 单元格选中状态。
-        FormEditor.setSelectedTableDataCell(this);
+        // 单元格选中状态。不同状态时的处理不同。设计模式时要重置属性栏。
+        TypeForm.mode.setSelectedTableDataCell(this);
       }),
     );
   }

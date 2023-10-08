@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
 import { labelStyle } from '../../../../../../../core/control/type-control.const';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
@@ -24,7 +24,30 @@ export class LabelWidthProperty extends PropertyInput {
     if (value !== undefined) {
       // 这里改变的是全局的样式，不是某个控件的标签宽度
       labelStyle.width = value + 'px';
-      FormEditor.allControls.forEach(control => {
+      TypeForm.allControls.forEach(control => {
+        if (control instanceof TableControl) {
+          return;
+        }
+        // control.formItem.labelStyle.width = value + 'px'; // 改变新建控件的宽度。
+        control.label?.setStyle('width', value + 'px');
+        control.itemContent?.setStyle('width', 'calc(100% - ' + value + 'px)');
+        control.render();
+      });
+      return;
+    }
+    // 获取标签宽度
+    const width = labelStyle.width;
+    if (width) {
+      this.resetInputValue(parseInt(width, 10));
+    } else {
+      this.resetInputValue(100);
+    }
+  }
+  update(value?: string): void {
+    if (value !== undefined) {
+      // 这里改变的是全局的样式，不是某个控件的标签宽度
+      labelStyle.width = value + 'px';
+      TypeForm.allControls.forEach(control => {
         if (control instanceof TableControl) {
           return;
         }

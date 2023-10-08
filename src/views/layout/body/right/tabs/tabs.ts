@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { Display, ListItem, TextNode, TypeUL } from 'type-dom.ts';
+import { StyleDisplay, ListItem, TextNode, TypeUL } from 'type-dom.ts';
 import { BodyRight } from '../right';
 export class BodyRightTabs extends TypeUL {
   className: 'BodyRightTabs';
@@ -10,7 +10,7 @@ export class BodyRightTabs extends TypeUL {
     super();
     this.className = 'BodyRightTabs';
     this.addStyleObj({
-      display: Display.flex,
+      display: StyleDisplay.flex,
       listStyle: 'none',
       margin: '0',
       backgroundColor: '#f0f0f0',

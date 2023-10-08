@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from 'type-dom.ts';
-import { FormEditor } from '../../../form-editor';
+import { TypeForm } from '../../../type-form';
 import { WebPage } from '../../page/web-page.class';
 import { IWebPage } from '../../page/web-page.interface';
 import { WebDocument } from '../web-document.class';
@@ -25,25 +25,7 @@ export class WebDocumentContents extends TypeDiv implements IWebDocumentContents
   constructor(public parent: WebDocument) {
     super();
     this.className = 'WebDocumentContents';
-    this.propObj = {
-      styleObj: {
-        // display: Display.flex,
-        // flexDirection: 'column',
-        // // width: 'min-content',
-        // minWidth: '500px',
-        // maxHeight: 'calc(100vh - 40px)',
-        // padding: '20px',
-        // boxSizing: 'border-box',
-        // margin: '0 auto',
-        // transformOrigin: '50% 0',
-        // // transform: 'scale(0.5)',
-        // overflowY: 'auto',
-      },
-      attrObj: {
-        name: 'document-contents'
-      }
-    };
-
+    this.addAttrName('document-contents');
     this.defaultPage = new WebPage(this);
     this.currentPage = this.defaultPage;
     this.childNodes = [this.defaultPage];
@@ -107,7 +89,7 @@ export class WebDocumentContents extends TypeDiv implements IWebDocumentContents
         // console.log(this.dom, 'this.dom.lastChild.childNodes');
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          FormEditor.setSelectedControl(null);
+          // FormEditor.mode.setSelectedControl(null);
         }
       })
     );

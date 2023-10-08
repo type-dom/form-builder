@@ -9,7 +9,6 @@ const disableStyle = {
   color: '#C0C4CC',
   cursor: 'not-allowed'
 };
-
 export abstract class PropertyInput extends PropertyItem {
   abstract reset(value?: string): void;
   childNodes: [Label, Input, TdButton];
@@ -36,23 +35,20 @@ export abstract class PropertyInput extends PropertyItem {
     });
     this.button.textNode.setText('');
     this.childNodes = [this.label, this.content, this.button];
-    this.initEvents();
+    // this.initEvents();
   }
-
   resetInputPlaceholder(placeholder: string): void {
     this.content.setAttribute('placeholder', placeholder);
   }
-
   resetInputValue(value: string | number | boolean = ''): void {
     this.content.setAttribute('value', value);
     this.content.dom.value = String(value);
   }
-
   initEvents(): void {
     this.events.push(
-      fromEvent(this.content.dom, 'input').subscribe(() => {
-        // console.log('this.input input, event is ', evt);
-        // console.log('this.input.dom.value is ', this.input.dom.value);
+      fromEvent(this.content.dom, 'input').subscribe((evt) => {
+        console.log('this.input input, event is ', evt);
+        console.log('this.input.dom.value is ', this.content.dom.value);
         this.reset(this.content.dom.value);
       })
     );

@@ -1,8 +1,9 @@
-import {FormEditor} from '../../../../../../../../form-editor';
+import {TypeForm} from '../../../../../../../../type-form';
 import { TableControl } from '../../../../../../../../core/control/complex/table/table.class';
 import { IOptionConfig } from '../../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../../control-property';
+import {TypeControl} from "../../../../../../../../core/control/type-control.abstract";
 
 const TableEditableConfig: IOptionConfig = {
   name: '表格可编辑',
@@ -35,11 +36,25 @@ export class TableEditableProperty extends PropertyRadio {
 
   // todo 只修改选中的表格
   reset(value: string): void {
-    if (FormEditor.selectedControl instanceof TableControl) {
-      const webTable = FormEditor.selectedControl.formItem.itemContent;
+    if (TypeForm.selectedControl instanceof TableControl) {
+      const webTable = TypeForm.selectedControl.formItem.itemContent;
       if (webTable.config?.mode) {
         webTable.config.mode = value as 'editable' | 'disabled' | undefined;
-        FormEditor.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
+        TypeForm.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
+        webTable.setTable(webTable.config);
+        console.log('webTable is ', webTable);
+        webTable.render();
+      }
+    }
+  }
+  // todo 只修改选中的表格
+  update(control: TypeControl | null): void {
+    const value = control?.configs.tableEditable;
+    if (TypeForm.selectedControl instanceof TableControl) {
+      const webTable = TypeForm.selectedControl.formItem.itemContent;
+      if (webTable.config?.mode) {
+        webTable.config.mode = value as 'editable' | 'disabled' | undefined;
+        TypeForm.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
         webTable.setTable(webTable.config);
         console.log('webTable is ', webTable);
         webTable.render();

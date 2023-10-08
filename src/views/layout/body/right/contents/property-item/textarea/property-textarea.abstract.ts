@@ -1,8 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { Label, Textarea, Display } from 'type-dom.ts';
+import { Label, Textarea, StyleDisplay } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
 import { PropertyItem } from '../property-item.abstract';
-
 export abstract class PropertyTextarea extends PropertyItem {
   abstract reset(value?: string): void;
   childNodes: [Label, Textarea, TdButton];
@@ -29,7 +28,7 @@ export abstract class PropertyTextarea extends PropertyItem {
         // -webkit-box-sizing: border-box;
         boxSizing: 'border-box',
         color: '#606266',
-        display: Display.inlineBlock,
+        display: StyleDisplay.inlineBlock,
         outline: '0',
         padding: '0 15px',
         // -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);

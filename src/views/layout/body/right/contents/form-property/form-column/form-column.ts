@@ -1,4 +1,4 @@
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { controlStyle } from '../../../../../../../core/control/type-control.const';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
@@ -47,7 +47,7 @@ export class FormColumnProperty extends PropertyRadio {
   reset(value?: string): void {
     if (value !== undefined) {
       controlStyle.width = value; // 改变新建控件的宽度。
-      FormEditor.allControls.forEach(control => {
+      TypeForm.allControls.forEach(control => {
         if (control.className === 'TableControl') {
           control.setStyleObj({
             width: '100%',
@@ -61,5 +61,24 @@ export class FormColumnProperty extends PropertyRadio {
       return;
     }
   //   todo 获取表单列数
+  }
+  // 表单列数
+  update(value: string): void {
+    if (value !== undefined) {
+      controlStyle.width = value; // 改变新建控件的宽度。
+      TypeForm.allControls.forEach(control => {
+        if (control.className === 'TableControl') {
+          control.setStyleObj({
+            width: '100%',
+          });
+          return;
+        }
+        control.setStyleObj({
+          width: value,
+        });
+      });
+      return;
+    }
+    //   todo 获取表单列数
   }
 }

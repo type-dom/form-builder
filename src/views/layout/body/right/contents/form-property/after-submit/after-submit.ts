@@ -1,7 +1,9 @@
 import { fromEvent } from 'rxjs';
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { FormProperty } from '../form-property';
+import {TableDataCell} from "../../../../../../../components/form/form-item/table-item/table/data-cell/data-cell.class";
+import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
 
 // form after submit
 export class AfterSubmitProperty extends PropertyTextarea {
@@ -12,10 +14,10 @@ export class AfterSubmitProperty extends PropertyTextarea {
     this.addAttrName('after-submit-property');
   }
   get afterSubmitStr(): string {
-    return FormEditor.webDocument.propObj.attrObj['after-submit'] as string;
+    return TypeForm.webDocument.propObj.attrObj['after-submit'] as string;
   }
   set afterSubmitStr(value: string) {
-    FormEditor.webDocument.setAttribute('after-submit', value);
+    TypeForm.webDocument.setAttribute('after-submit', value);
   }
   reset(value?: string): void {
     if (value !== undefined) { // 输入值的操作
@@ -29,6 +31,19 @@ export class AfterSubmitProperty extends PropertyTextarea {
     }
     // }
   }
+  listenControl(control: TypeControl) {
+    this.update();
+  }
+  listenCell(cell: TableDataCell) {
+  }
+
+  update() {
+    if (this.afterSubmitStr) {
+      this.resetInputValue(this.afterSubmitStr);
+    } else {
+      this.resetInputValue('');
+    }
+  }
   addAfterSubmit(value: string): void {
     this.afterSubmitStr = value;
   }
@@ -37,7 +52,8 @@ export class AfterSubmitProperty extends PropertyTextarea {
     this.events.push(
       fromEvent(this.button.dom, 'click').subscribe(() => {
         this.addAfterSubmit(this.content.dom.value);
-      })
+      }),
+
     );
   }
 }

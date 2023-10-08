@@ -1,9 +1,10 @@
 import { TextNode } from 'type-dom.ts';
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
+import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
 
 const readonlyConfigs: IOptionConfig = {
   name: '只读' + Math.random(),
@@ -41,12 +42,22 @@ export class ReadonlyProperty extends PropertyRadio {
       this.fieldPropertyReset(value);
     }
   }
+  update(control: TypeControl | null): void {
+    const value = control?.configs.readonly;
+    console.log('value is ', value);
+    if (this.parent instanceof ControlProperty) {
+      this.controlPropertyReset(value);
+    }
+    if (this.parent instanceof FieldProperty) {
+      this.fieldPropertyReset(value);
+    }
+  }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
       if (value === 'disabled') {
-        FormEditor.selectedControl?.setDisabled();
+        TypeForm.selectedControl?.setDisabled();
       } else {
-        FormEditor.selectedControl?.removeDisabled();
+        TypeForm.selectedControl?.removeDisabled();
       }
       return;
     }
@@ -54,24 +65,24 @@ export class ReadonlyProperty extends PropertyRadio {
     console.log('this.styleObj.display is ', this.styleObj.display);
     // if (AppRoot.selectedTableDataCell?.control instanceof )
     if (this.styleObj.display === 'none') this.show();
-    let disabled = FormEditor.selectedControl?.formItem.itemContent.attrObj.disabled as boolean;
+    let disabled = TypeForm.selectedControl?.formItem.itemContent.attrObj.disabled as boolean;
     console.log('disabled is ', disabled);
     this.resetResultValue(disabled ? 'disabled' : '');
   }
   fieldPropertyReset(value?: string): void {
-    if (!FormEditor.selectedTableDataCell) {
+    if (!TypeForm.selectedTableDataCell) {
       console.error('AppRoot.selectedTableDataCell is null . ');
       return;
     }
-    if (FormEditor.selectedTableDataCell?.control instanceof TextNode) {
+    if (TypeForm.selectedTableDataCell?.control instanceof TextNode) {
       console.error('AppRoot.selectedTableDataCell?.control is not TypeControl . ');
       return;
     }
     if (value !== undefined) {
       if (value === 'disabled') {
-        FormEditor.selectedTableDataCell?.control.setDisabled();
+        TypeForm.selectedTableDataCell?.control.setDisabled();
       } else {
-        FormEditor.selectedTableDataCell?.control.removeDisabled();
+        TypeForm.selectedTableDataCell?.control.removeDisabled();
       }
       return;
     }
@@ -79,7 +90,7 @@ export class ReadonlyProperty extends PropertyRadio {
     // if (AppRoot.selectedTableDataCell?.control instanceof )
     if (this.styleObj.display === 'none') this.show();
     // todo 字段属性栏中设置。
-    let disabled = FormEditor.selectedTableDataCell.control.formItem.itemContent.attrObj.disabled as boolean;
+    let disabled = TypeForm.selectedTableDataCell.control.formItem.itemContent.attrObj.disabled as boolean;
     console.log('disabled is ', disabled);
     this.resetResultValue(disabled ? 'disabled' : '');
   }

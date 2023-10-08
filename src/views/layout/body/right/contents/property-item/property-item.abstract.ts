@@ -4,10 +4,9 @@ import { labelStyle } from '../../../../../../core/control/type-control.const';
 import { ControlProperty } from '../control-property/control-property';
 import { FormProperty } from '../form-property/form-property';
 import { FieldProperty } from '../field-property/field-property';
-
 export abstract class PropertyItem extends TypeDiv {
   abstract className: string;
-  abstract parent: ControlProperty | FormProperty | FieldProperty;
+  abstract parent: FormProperty | ControlProperty | FieldProperty;
   abstract childNodes: [Label, ...(Span | Input | Textarea | Select | Division)[], TdButton];
   label: Label;
   button: TdButton;
@@ -24,7 +23,6 @@ export abstract class PropertyItem extends TypeDiv {
       marginBottom: '10px!important',
       fontSize: '14px',
     });
-
     this.label = new Label(this);
     const text = new TextNode(this.label, labelText);
     this.label.childNodes.push(text);
@@ -34,10 +32,5 @@ export abstract class PropertyItem extends TypeDiv {
       size: 'mini'
     });
     this.button.hide();
-  }
-  show(): void {
-    this.setStyleObj({
-      display: 'flex',
-    });
   }
 }

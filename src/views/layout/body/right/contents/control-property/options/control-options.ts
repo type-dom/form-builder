@@ -1,10 +1,11 @@
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { RadioControl } from '../../../../../../../core/control/basic/radio/radio.class';
 import { CheckboxControl } from '../../../../../../../core/control/basic/checkbox/checkbox.class';
 import { SelectControl } from '../../../../../../../core/control/basic/select/select.class';
 import { PropertyOptions } from '../../property-item/propoerty-options/property-options.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
+import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
 // 控件选项列表
 export class ControlOptionsProperty extends PropertyOptions {
   className: 'ControlOptionsProperty';
@@ -23,24 +24,34 @@ export class ControlOptionsProperty extends PropertyOptions {
       this.fieldPropertyReset(value);
     }
   }
+  update(control: TypeControl | null): void {
+    const value = control?.configs.optionConfig;
+    console.log('value is ', value);
+    if (this.parent instanceof ControlProperty) {
+      this.controlPropertyReset(value);
+    }
+    if (this.parent instanceof FieldProperty) {
+      this.fieldPropertyReset(value);
+    }
+  }
   controlPropertyReset(value?: string | number | boolean): void {
     if (value !== undefined) {
       //  todo setValue
-      if (FormEditor.selectedControl instanceof RadioControl
-        || FormEditor.selectedControl instanceof CheckboxControl
-        || FormEditor.selectedControl instanceof SelectControl
+      if (TypeForm.selectedControl instanceof RadioControl
+        || TypeForm.selectedControl instanceof CheckboxControl
+        || TypeForm.selectedControl instanceof SelectControl
       ) {
-        FormEditor.selectedControl.setValue(value);
+        TypeForm.selectedControl.setValue(value);
       }
       return;
     }
     //  根据选中的控件，设置选项。
-    if (FormEditor.selectedControl instanceof RadioControl
-      || FormEditor.selectedControl instanceof CheckboxControl
-      || FormEditor.selectedControl instanceof SelectControl
+    if (TypeForm.selectedControl instanceof RadioControl
+      || TypeForm.selectedControl instanceof CheckboxControl
+      || TypeForm.selectedControl instanceof SelectControl
     ) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      const config = FormEditor.selectedControl.optionConfig;
+      const config = TypeForm.selectedControl.optionConfig;
       // console.log('config is ', config);
       if (config) {
         this.resetConfig(config);
@@ -54,18 +65,18 @@ export class ControlOptionsProperty extends PropertyOptions {
   fieldPropertyReset(value?: string | number | boolean): void {
     if (value !== undefined) {
       //  todo setValue
-      if (FormEditor.selectedTableDataCell?.control instanceof RadioControl
-        || FormEditor.selectedTableDataCell?.control instanceof CheckboxControl
-        || FormEditor.selectedTableDataCell?.control instanceof SelectControl) {
-        FormEditor.selectedTableDataCell.control.setValue(value);
+      if (TypeForm.selectedTableDataCell?.control instanceof RadioControl
+        || TypeForm.selectedTableDataCell?.control instanceof CheckboxControl
+        || TypeForm.selectedTableDataCell?.control instanceof SelectControl) {
+        TypeForm.selectedTableDataCell.control.setValue(value);
       }
       return;
     }
-    if (FormEditor.selectedTableDataCell?.control instanceof RadioControl
-      || FormEditor.selectedTableDataCell?.control instanceof CheckboxControl
-      || FormEditor.selectedTableDataCell?.control instanceof SelectControl) {
+    if (TypeForm.selectedTableDataCell?.control instanceof RadioControl
+      || TypeForm.selectedTableDataCell?.control instanceof CheckboxControl
+      || TypeForm.selectedTableDataCell?.control instanceof SelectControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      const config = FormEditor.selectedTableDataCell.control.optionConfig;
+      const config = TypeForm.selectedTableDataCell.control.optionConfig;
       // console.log('config is ', config);
       if (config) {
         this.resetConfig(config);

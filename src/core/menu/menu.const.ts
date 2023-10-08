@@ -1,6 +1,6 @@
-import { IStyle, Display } from 'type-dom.ts';
+import { IStyle, StyleDisplay } from 'type-dom.ts';
 export const menuStyle: Partial<IStyle> = {
-  display: Display.flex,
+  display: StyleDisplay.flex,
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',

@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { TypeTableHead, TextNode } from 'type-dom.ts';
 import { ITableField } from '../../../../../../core/control/complex/table/table.interface';
-import { FormEditor } from '../../../../../../form-editor';
+import { TypeForm } from '../../../../../../type-form';
 import { TableHeaderCell } from '../header-cell/header-cell.class';
 import { Table } from '../table.class';
 import { ITableHead } from './head.interface';
@@ -51,7 +51,7 @@ export class TableHead extends TypeTableHead implements ITableHead {
   initEvents(): void {
     this.events.push(
       fromEvent(this.dom, 'click').subscribe(() => {
-        FormEditor.setSelectedTableDataCell(null);
+        TypeForm.mode.setSelectedTableDataCell(null);
       })
     );
   }

@@ -16,7 +16,6 @@ export class MultilineInputControl extends BasicControl implements IMultilineInp
     this.propObj.attrObj.name = 'multiline-input-control';
     this.formItem = new TextareaItem(this, '多行输入', '请输入');
     this.childNodes = [this.formItem];
-    console.error('parent instanceof WebTableDataCell');
     this.initEvents();
   }
 }

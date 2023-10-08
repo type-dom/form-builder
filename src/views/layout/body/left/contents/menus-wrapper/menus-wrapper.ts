@@ -1,4 +1,4 @@
-import { TypeDiv, Display } from 'type-dom.ts';
+import { TypeDiv, StyleDisplay } from 'type-dom.ts';
 import { LeftContents } from '../contents';
 import { BasicMenusWrapper } from './basic-menus-wrapper/basic-menus-wrapper';
 import { ComplexMenusWrapper } from './complex-menus-wrapper/complex-menus-wrapper';
@@ -11,7 +11,7 @@ export class MenusWrapper extends TypeDiv {
     super();
     this.className = 'MenusWrapper';
     this.addStyleObj({
-      display: Display.flex,
+      display: StyleDisplay.flex,
       flexDirection: 'column',
       // padding: '10px',
     });

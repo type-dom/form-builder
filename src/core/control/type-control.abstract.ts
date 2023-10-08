@@ -1,6 +1,6 @@
 import { fromEvent, Subscription } from 'rxjs';
 import { Input, Label, Select, Textarea, TypeDiv, toJSON } from 'type-dom.ts';
-import { FormEditor } from '../../form-editor';
+import { TypeForm } from '../../type-form';
 import { FormItem } from '../../components/form/form-item/form-item.abstract';
 import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { Table } from '../../components/form/form-item/table-item/table/table.class';
@@ -11,15 +11,26 @@ import { CheckboxOption } from '../../components/form/checkbox-group/checkbox-op
 import { WebPage } from '../page/web-page.class';
 import { IOptionConfig, ITypeControl } from './type-control.interface';
 import { controlStyle } from './type-control.const';
-import { createControl } from './type-control.function';
+import { createControl } from './type-control.factory';
 export abstract class TypeControl extends TypeDiv implements ITypeControl {
   abstract className: string;
   // 控件都有这个属性
   abstract formItem: FormItem;
   abstract childNodes: [FormItem];
   static maxCtrlId = 0;
+  configs: {
+    defaultValue: string,
+    fieldName: string,
+    optionConfig?: string,
+    onChange?: string,
+    placeholder?: string,
+    readonly?: string,
+    required?: string,
+    tableEditable?: string,
+    tableHeaderEditable?: string,
+    tableColumnCount?: number,
+  };
   onChange?: Subscription;
-  changeStr?: string;
 
   protected constructor(public parent: WebPage | TableDataCell) {
     super();
@@ -34,8 +45,13 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
         'ctrl-id': TypeControl.maxCtrlId, // ctrlId会变为ctrlid;
       });
     }
+    this.configs = {
+      fieldName: '',
+      defaultValue: '',
+      optionConfig: '',
+      onChange: ''
+    };
     // parent.controlObjMap.set(TypeControl.maxCtrlId, this);
-    this.defaultValue = '';
   }
 
   get label(): Label {
@@ -47,19 +63,21 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
   }
 
   get fieldName(): string {
-    return this.attrObj['field-name'] as string;
+    return this.configs.fieldName;
   }
 
   set fieldName(value: string) {
-    this.setAttribute('field-name', value);
+    this.configs.fieldName = value;
   }
 
   get defaultValue(): string {
-    return this.attrObj['default-value'] as string;
+    return this.configs.defaultValue;
+    // return this.attrObj['default-value'] as string;
   }
 
   set defaultValue(value: string) {
-    this.addAttribute('default-value', value);
+    this.configs.defaultValue = value;
+    // this.addAttribute('default-value', value);
   }
 
   // 输入的值
@@ -86,16 +104,16 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
   }
 
   get optionConfig(): IOptionConfig | undefined {
-    return this.attrObj['option-config'] ? JSON.parse(this.attrObj['option-config'] as string) : undefined;
+    return this.configs.optionConfig ? JSON.parse(this.configs.optionConfig) : undefined;
   }
 
   set optionConfig(config: IOptionConfig | undefined) {
     if (config === undefined) {
-      this.removeAttribute('option-config');
+      delete this.configs.optionConfig;
     }
     // todo add, set是为了看效果
     //    加载时，会把optionConfig渲染出来
-    this.setAttribute('option-config', JSON.stringify(config));
+    this.configs.optionConfig = JSON.stringify(config)
   }
 
   resetLabelText(value: string): void {
@@ -124,7 +142,7 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
 
   addOnChange(value: string): void {
     console.log('addOnChange . ');
-    this.changeStr = value;
+    this.configs.onChange = value;
     // eslint-disable-next-line no-new-func
     const fun = new Function('return ' + value)();
     console.log('fun is ', fun);
@@ -132,7 +150,7 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
     if (!this.onChange) {
       this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
         // console.log('this.formItem.itemContent.dom  ' + eventName);
-        fun(FormEditor.selectedControl, FormEditor.functionMap);
+        fun(TypeForm.selectedControl, TypeForm.functionMap);
       });
       this.events.push(
         // fromEvent(this.dom, 'click').subscribe(() => {
@@ -145,7 +163,7 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
     this.onChange.unsubscribe();
     this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
       // console.log('this.formItem.itemContent.dom  ' + eventName);
-      fun(FormEditor.selectedControl, FormEditor.functionMap);
+      fun(TypeForm.selectedControl, TypeForm.functionMap);
     });
   }
 
@@ -160,12 +178,7 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
       fromEvent(this.dom, 'mousedown').subscribe(() => {
         // console.log('web control mousedown ');
         // console.log('this.index is ', this.index);
-        if (this.parent instanceof WebPage) {
-          FormEditor.setSelectedControl(this);
-        }
-        if (this.parent instanceof TableDataCell) {
-          FormEditor.setSelectedTableDataCell(this.parent);
-        }
+        TypeForm.mode.onControlMousedown(this);
       }),
       fromEvent(this.dom, 'dragover').subscribe((evt) => {
         // console.log('web-control dragover . ');
@@ -174,54 +187,22 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
       }),
       fromEvent(this.dom, 'dragstart').subscribe(() => {
         // console.log('web-control dragstart . ');
-        if (FormEditor.mode !== 'design') {
-          return;
-        }
-        if (this.parent instanceof WebPage) {
-          this.parent.dragStartIndex = this.index;
-          // console.log('this.parent.dragStartIndex is ', this.parent.dragStartIndex);
-        }
+        TypeForm.mode.onControlDragstart(this);
       }),
       fromEvent(this.dom, 'drop').subscribe(() => {
         // console.log('TypeControl drop . ');
-        if (FormEditor.mode !== 'design') {
-          return;
-        }
-        if (this.parent instanceof WebPage) {
-          this.parent.dragDropIndex = this.index;
-          // console.log('this.parent.dragDropIndex is ', this.parent.dragDropIndex);
-        }
+        TypeForm.mode.onControlDrop(this);
       }),
       fromEvent(this.dom, 'dragend').subscribe(() => {
         // console.log('web control dragend . ');
         // console.log('this.index is ', this.index);
-        if (FormEditor.mode !== 'design') {
-          return;
-        }
-        if (this.parent instanceof WebPage) {
-          if (this.parent.dragDropIndex !== undefined) {
-            // 节点重新排序
-            if (this.parent.dragStartIndex > this.parent.dragDropIndex) {
-              // 如果当前元素在拖动目标位置的下方，先将当前元素从数组拿出，数组长度-1，我们直接给数组拖动目标位置的地方新增一个和当前元素值一样的元素，
-              // 我们再把数组之前的那个拖动的元素删除掉，所以要len+1
-              this.parent.childNodes.splice(this.parent.dragDropIndex, 0, this);
-              this.parent.childNodes.splice(this.parent.dragStartIndex + 1, 1);
-            } else {
-              // 如果当前元素在拖动目标位置的上方，先将当前元素从数组拿出，数组长度-1，我们直接给数组拖动目标位置+1的地方新增一个和当前元素值一样的元素，
-              // 这时，数组len不变，我们再把数组之前的那个拖动的元素删除掉，下标还是index
-              this.parent.childNodes.splice(this.parent.dragDropIndex + 1, 0, this);
-              this.parent.childNodes.splice(this.parent.dragStartIndex, 1);
-            }
-          }
-          // console.log('this.parent is ', this.parent);
-          this.parent.render();
-        }
+        TypeForm.mode.onControlDragend(this);
       }),
       // 删除
       fromEvent(this.formItem.deleteSpan.dom, 'click').subscribe(() => {
         // console.log('this.formItem.deleteDiv.dom click . ');
         this.parent.childNodes.splice(this.index, 1);
-        FormEditor.setSelectedControl(null);
+        TypeForm.mode.setSelectedControl(null);
         this.parent.render();
       })
     );

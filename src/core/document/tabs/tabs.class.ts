@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
-import { TypeUL, IStyle, Display, ListItem, TextNode, ITextNode } from 'type-dom.ts';
+import { TypeUL, IStyle, StyleDisplay, ListItem, TextNode, ITextNode } from 'type-dom.ts';
+import { TypeForm } from '../../../type-form';
 import { WebDocument } from '../web-document.class';
 import { IWebDocumentTabs } from './tabs.interface';
-import { FormEditor } from '../../../form-editor';
 
 export class WebDocumentTabs extends TypeUL {
   className: 'WebDocumentTabs';
@@ -11,13 +11,11 @@ export class WebDocumentTabs extends TypeUL {
   constructor(public parent: WebDocument) {
     super();
     this.className = 'WebDocumentTabs';
-    console.log('AppRoot.el.clientWidth is ', FormEditor.el.clientWidth);
-    const width = FormEditor.mode === 'design'
-      ? FormEditor.el.clientWidth - 595 + 'px'
-      : '100%';
+    console.log('AppRoot.el.clientWidth is ', TypeForm.el.clientWidth);
+    const width = TypeForm.mode.width;
     this.propObj = {
       styleObj: {
-        display: Display.none, // 默认隐藏
+        display: StyleDisplay.none, // 默认隐藏
         listStyle: 'none',
         backgroundColor: '#f0f0f0',
         padding: '0 5px',
@@ -71,7 +69,7 @@ export class WebDocumentTabs extends TypeUL {
     if (num > 1) { // 多页面
       console.log('this.parent.contents.setPages . ');
       this.setStyleObj({
-        display: Display.flex, // 只有一个页面时tabs组件是隐藏的
+        display: StyleDisplay.flex, // 只有一个页面时tabs组件是隐藏的
         flexDirection: 'row',
         // display: 'block',
       }); // 多页面时显示
@@ -122,9 +120,7 @@ export class WebDocumentTabs extends TypeUL {
     console.log('web document tabs createInstance . ');
     //  todo
     this.setPropObj(literal.propObj);
-    const width = FormEditor.mode === 'design'
-      ? (FormEditor.el.clientWidth - 595) + 'px'
-      : '100%';
+    const width = TypeForm.mode.width;
     this.setStyleObj({
       // display: 'block',
       padding: '0 5px',
@@ -177,7 +173,7 @@ export class WebDocumentTabs extends TypeUL {
               if (index === li.index) {
                 page.show();
                 this.parent.contents.currentPage = page;
-                console.log('AppRoot.currentPage is ', FormEditor.currentPage);
+                console.log('FormEditor.currentPage is ', TypeForm.currentPage);
               } else {
                 page.hide();
               }
@@ -190,25 +186,10 @@ export class WebDocumentTabs extends TypeUL {
       // 双击时，tab部分可编辑
       fromEvent(this.dom, 'dblclick').subscribe((e) => {
         console.log('web document tabs double click . ');
-        for (const li of this.childNodes) {
-          if (li.dom === e.target && FormEditor.mode === 'design') { // 选中的tab
-            li.setAttrObj({
-              contenteditable: true,
-            });
-          } else {
-            li.setAttrObj({
-              contenteditable: false,
-            });
-          }
-        }
+        TypeForm.mode.onTabsDblClick(e, this);
       }),
       fromEvent(this.dom, 'input').subscribe((e) => {
-        for (const li of this.childNodes) {
-          if (li.dom === e.target && FormEditor.mode === 'design') { // 选中的tab
-            // console.log('li.dom.innerText is ', li.dom.innerText);
-            (li.childNodes[0] as TextNode).setText(li.dom.innerText);
-          }
-        }
+        TypeForm.mode.onTabsInput(e, this);
       }),
       fromEvent(this.dom, 'blur').subscribe(() => {
         this.setAttrObj({

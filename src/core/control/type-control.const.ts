@@ -1,4 +1,4 @@
-import { IStyle, Display } from 'type-dom.ts';
+import { IStyle, StyleDisplay } from 'type-dom.ts';
 import { IOptionConfig } from './type-control.interface';
 
 export const controlStyle: Partial<IStyle> = {
@@ -50,7 +50,7 @@ export const itemContentStyle: Partial<IStyle> = {
   // -webkit-box-sizing: border-box;
   boxSizing: 'border-box',
   color: '#606266',
-  display: Display.inlineBlock,
+  display: StyleDisplay.inlineBlock,
   fontSize: 'inherit',
   outline: '0',
   padding: '0 15px',

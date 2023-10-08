@@ -1,20 +1,22 @@
-import { Display, Division, TextNode, TypeDiv } from 'type-dom.ts';
-import { FormEditor } from '../../../../../../form-editor';
-import { RightContents } from '../contents';
+import {Division, StyleDisplay, TextNode, TypeDiv} from 'type-dom.ts';
+import {TypeForm} from '../../../../../../type-form';
+import {RightContents} from '../contents';
 // control property
-import { ControlFieldProperty } from './field/control-field';
-import { ControlTitleProperty } from './title/control-title';
-import { ControlPlaceholderProperty } from './placeholder/control-placeholder';
-import { ControlDefaultValueProperty } from './default-value/control-default-value';
-import { ControlOptionsProperty } from './options/control-options';
-import { RequiredProperty } from './reqired/control-reqired';
-import { MaxValueProperty } from './max-value/control-max-value';
-import { MinValueProperty } from './min-value/control-min-value';
-import { MultipleProperty } from './multiple/control-multiple';
-import { ControlOnChangeProperty } from './change-event/control-on-change';
-import { ControlConnectionProperty } from './connection/control-connection';
-import { TableColumnProperty } from './table-column/table-column';
-import { ReadonlyProperty } from './readonly/control-readonly';
+import {ControlFieldProperty} from './field/control-field';
+import {ControlTitleProperty} from './title/control-title';
+import {ControlPlaceholderProperty} from './placeholder/control-placeholder';
+import {ControlDefaultValueProperty} from './default-value/control-default-value';
+import {ControlOptionsProperty} from './options/control-options';
+import {RequiredProperty} from './reqired/control-reqired';
+import {MaxValueProperty} from './max-value/control-max-value';
+import {MinValueProperty} from './min-value/control-min-value';
+import {MultipleProperty} from './multiple/control-multiple';
+import {ControlOnChangeProperty} from './change-event/control-on-change';
+import {ControlConnectionProperty} from './connection/control-connection';
+import {TableColumnProperty} from './table-column/table-column';
+import {ReadonlyProperty} from './readonly/control-readonly';
+import {PropertyItem} from "../property-item/property-item.abstract";
+
 export class ControlProperty extends TypeDiv {
   className: 'ControlProperty';
   childNodes: [
@@ -25,6 +27,7 @@ export class ControlProperty extends TypeDiv {
     ReadonlyProperty,
     ControlOptionsProperty,
     ControlConnectionProperty,
+    ...TypeDiv[]
   ];
   readonly controlField: ControlFieldProperty;
   readonly controlTitle: ControlTitleProperty;
@@ -39,7 +42,9 @@ export class ControlProperty extends TypeDiv {
   readonly controlOnChange: ControlOnChangeProperty;
   readonly controlConnection: ControlConnectionProperty;
   readonly controlTableColumn: TableColumnProperty;
-
+  get observerList(): PropertyItem[] {
+    return this.childNodes.filter(item => item instanceof PropertyItem) as PropertyItem[];
+  }
   constructor(public parent: RightContents) {
     super();
     this.className = 'ControlProperty';
@@ -47,7 +52,7 @@ export class ControlProperty extends TypeDiv {
       styleObj: {
         boxSizing: 'border-box',
         backgroundColor: '#fff',
-        display: Display.none,
+        display: StyleDisplay.none,
       },
       attrObj: {
         name: 'control-property'
@@ -108,94 +113,10 @@ export class ControlProperty extends TypeDiv {
   }
   reset(): void {
     // todo 依据选中的控件设置控件属性显示
-    const className = FormEditor.selectedControl?.className;
+    const className = TypeForm.selectedControl?.className;
     console.log('className is ', className);
     // todo 控制项的显示和隐藏，是在这里判断，还是放在reset中更合理？？？
-    // switch (className) {
-    //   case 'NumericalControl': // 打包后，类名会变化
-    //     this.controlField.reset();
-    //     this.controlTitle.reset();
-    //     this.controlDefaultValue.reset();
-    //     this.controlOptions.reset();
-    //     this.controlRequired.reset();
-    //     this.controlMinValue.reset();
-    //     this.controlMaxValue.reset();
-    //     this.controlOnChange.reset();
-    //     this.controlReadOnly.reset();
-    //     break;
-    //   case 'SingleInputControl':
-    //   case 'MultilineInputControl':
-    //     this.controlField.reset();
-    //     this.controlTitle.reset();
-    //     this.controlPlaceholder.reset();
-    //     this.controlDefaultValue.reset();
-    //     this.controlRequired.reset();
-    //     this.controlOnChange.reset();
-    //     this.controlReadOnly.reset();
-    //     break;
-    //   case 'DateControl':
-    //   case 'TimeControl':
-    //     this.controlField.reset();
-    //     this.controlTitle.reset();
-    //     this.controlDefaultValue.reset();
-    //     this.controlRequired.reset();
-    //     this.controlOnChange.reset();
-    //     this.controlReadOnly.reset();
-    //     break;
-    //   case 'CheckboxControl':
-    //   case 'RadioControl':
-    //   case 'SelectControl':
-    //     this.controlField.reset();
-    //     this.controlTitle.reset();
-    //     this.controlDefaultValue.hide();
-    //     this.controlOptions.reset();
-    //     this.controlRequired.hide();
-    //     this.controlOnChange.reset();
-    //     this.controlReadOnly.reset();
-    //     break;
-    //   case 'AttachmentControl':
-    //     // console.log('todo .... ');
-    //     this.controlField.reset();
-    //     this.controlTitle.reset();
-    //     this.controlDefaultValue.hide();
-    //     this.controlRequired.hide();
-    //     this.controlMultiple.reset(); // 选择多个文件
-    //     this.controlOnChange.reset();
-    //     this.controlReadOnly.reset();
-    //     break;
-    //   case 'ConnectionControl':
-    //     this.controlField.reset();
-    //     this.controlTitle.reset();
-    //     this.controlDefaultValue.hide();
-    //     this.controlRequired.hide();
-    //     this.controlOnChange.reset();
-    //     this.controlConnection.reset();
-    //     this.controlReadOnly.reset();
-    //     break;
-    //   case 'TableControl':
-    //     this.controlField.hide();
-    //     this.controlDefaultValue.hide();
-    //     this.controlMinValue.hide();
-    //     this.controlMaxValue.hide();
-    //     this.controlPlaceholder.hide();
-    //     this.controlOptions.hide();
-    //     this.controlMultiple.hide();
-    //     this.controlRequired.hide();
-    //     this.controlOnChange.hide();
-    //     this.controlReadOnly.hide();
-    //     this.controlTitle.reset();
-    //     this.controlTableColumn.reset();
-    //     break;
-    //   default:
-    //     this.controlField.hide();
-    //     this.controlTitle.hide();
-    //     this.controlDefaultValue.hide();
-    //     this.controlRequired.hide();
-    //     this.controlOnChange.hide();
-    //     this.controlReadOnly.hide();
-    //     break;
-    // }
-    if (!FormEditor.selectedControl) {
+    if (!TypeForm.selectedControl) {
       this.controlField.hide();
       this.controlTitle.hide();
       this.controlPlaceholder.hide();

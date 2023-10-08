@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
-import { Display, Division, Label } from 'type-dom.ts';
+import { StyleDisplay, Division, Label } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { itemContentStyle } from '../../../../../../../core/control/type-control.const';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { Select } from '../../../../../../../components/select/select.class';
@@ -35,7 +35,7 @@ export abstract class PropertyCascade extends PropertyItem {
       // -webkit-box-sizing: border-box;
       boxSizing: 'border-box',
       color: '#606266',
-      display: Display.inlineBlock,
+      display: StyleDisplay.inlineBlock,
       outline: '0',
       // -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
       transition: 'border-color .2s cubic-bezier(.645,.045,.355,1)',
@@ -65,7 +65,7 @@ export abstract class PropertyCascade extends PropertyItem {
   }
 
   get fieldConfig(): IOptionConfig | undefined {
-    const fieldConfigStr = FormEditor.webDocument.attrObj['field-config'];
+    const fieldConfigStr = TypeForm.webDocument.attrObj['field-config'];
     if (fieldConfigStr) {
       const configJson = JSON.parse(fieldConfigStr as string) as IOptionConfig;
       let optionConfig: IOptionConfig = {
@@ -109,7 +109,7 @@ export abstract class PropertyCascade extends PropertyItem {
   }
 
   set fieldConfig(value: IOptionConfig | undefined) {
-    FormEditor.webDocument.setAttribute('field-config', JSON.stringify(value));
+    TypeForm.webDocument.setAttribute('field-config', JSON.stringify(value));
   }
 
   resetCascadeConfigResultValue(value: string | number | boolean): void {

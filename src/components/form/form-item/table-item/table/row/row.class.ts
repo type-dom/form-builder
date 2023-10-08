@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { TypeTableRow, Span, StylePosition } from 'type-dom.ts';
 import { TdDeleteSvg } from 'type-dom-svgs';
-import { FormEditor } from '../../../../../../form-editor';
+import { TypeForm } from '../../../../../../type-form';
 import { TableDataCell } from '../data-cell/data-cell.class';
 import { ITableDataCell } from '../data-cell/data-cell.interface';
 import { Table } from '../table.class';
@@ -78,18 +78,6 @@ export class TableRow extends TypeTableRow implements ITableRow {
         this.appendChild(tdObj);
       }
     });
-    if (FormEditor.mode === 'fill') {
-      // console.log('table row mod design ');
-      // todo 只在dom上渲染，而不加到子节点上。
-      this.appendChild(this.deleteSpan);
-      // this.render();
-      // this.deleteSpan.render();
-      // console.log('table row this.dom is ', this.dom);
-
-      // this.childNodes.splice(this.childNodes.length - 1, 1);
-      // console.log('table row this.childNodes is ', this.childNodes);
-      // this.removeChild(this.childNodes.length - 1);
-      // this.appendChildDom(this.deleteSpan);
-    }
+    TypeForm.mode.rowCreateInstance(this);
   }
 }

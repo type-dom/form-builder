@@ -1,29 +1,24 @@
 import { fromEvent } from 'rxjs';
 import {Span, TextNode, TypeTable, toJSON} from "type-dom.ts";
-import { FormEditor } from '../../../../../form-editor';
+import { TypeForm } from '../../../../../type-form';
 import { TypeControl } from '../../../../../core/control/type-control.abstract';
 import { ITableConfig, ITableField } from '../../../../../core/control/complex/table/table.interface';
 import { TableItem } from '../table-item.class';
 import { TableRow } from './row/row.class';
 import { TableHead } from './head/head.class';
 import { ITableRow } from './row/row.interface';
-import { ITableHead } from './head/head.interface';
 import { TableDataCell } from './data-cell/data-cell.class';
 import { ITable } from './table.interface';
 
 // todo 是否有选项列和操作列。
 export class Table extends TypeTable implements ITable {
-  nodeName: 'table';
   className: 'Table';
-  dom: HTMLTableElement;
   childNodes: [TableHead, ...TableRow[]];
   config?: ITableConfig;
   readonly tableHead: TableHead;
 
   constructor(public parent: TableItem) {
     super();
-    this.nodeName = 'table';
-    this.dom = document.createElement(this.nodeName);
     this.propObj = {
       attrObj: {
         border: '1', // 表格的边框宽度 1px;
@@ -243,27 +238,7 @@ export class Table extends TypeTable implements ITable {
   }
   createInstance(tableLiteral: ITable): void {
     super.createInstance(tableLiteral);
-    for (let index = 0; index < tableLiteral.childNodes.length; index++) {
-      const trLiteral = tableLiteral.childNodes[index];
-      if (index === 0) {
-        this.tableHead.createInstance(trLiteral as ITableHead);
-      } else {
-        // todo 设计模式下，应该只有一行
-        if (FormEditor.mode === 'design') {
-          if (index === 1) {
-            (this.childNodes[index]).createInstance(trLiteral as ITableRow);
-            break; // 断出
-          }
-        }
-        if ((this.childNodes[index]) instanceof TableRow) {
-          (this.childNodes[index] as TableRow).createInstance(trLiteral as ITableRow);
-        } else {
-          const trObj = new TableRow(this, {});
-          trObj.createInstance(trLiteral as ITableRow);
-          this.addChild(trObj);
-        }
-      }
-    }
+    TypeForm.mode.tableCreateInstance(this, tableLiteral);
   }
 
   //  todo 点击非td处， selectedTableDataCell = null;

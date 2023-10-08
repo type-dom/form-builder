@@ -1,5 +1,5 @@
-import { Span } from 'type-dom.ts/dist';
-import { TdMultilineInputSvg } from 'type-dom-svgs/dist';
+import { Span } from 'type-dom.ts';
+import { TdMultilineInputSvg } from 'type-dom-svgs';
 import {TableDataCell} from "../../../../components/form/form-item/table-item/table/data-cell/data-cell.class";
 import { BasicMenus } from '../../../../views/layout/body/left/contents/menus-wrapper/basic-menus-wrapper/basic-menus';
 import { MultilineInputControl } from '../../../control/basic/multiline-input/multiline-input.class';

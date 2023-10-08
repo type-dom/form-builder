@@ -1,5 +1,5 @@
 import { StylePosition, TypeDiv, TypeRoot } from 'type-dom.ts';
-import { FormEditor } from '../../form-editor';
+import { TypeForm } from '../../type-form';
 import { LayoutWrapper } from '../../views/layout/layout';
 import { FormHeader } from './header/header';
 import { FormBody } from './body/body';
@@ -31,9 +31,7 @@ export class WebForm extends TypeDiv {
     this.header = new FormHeader(this);
     this.body = new FormBody(this);
     this.footer = new FormFooter(this);
-    if (FormEditor.mode === 'readonly') {
-      this.footer.hide();
-    }
+    TypeForm.mode.hideFormFooter(this);
     this.childNodes = [this.header, this.body, this.footer];
   }
 

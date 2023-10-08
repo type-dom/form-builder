@@ -1,5 +1,5 @@
-import { Span } from 'type-dom.ts/dist';
-import { TdCheckboxSvg } from 'type-dom-svgs/dist';
+import { Span } from 'type-dom.ts';
+import { TdCheckboxSvg } from 'type-dom-svgs';
 import { CheckboxControl } from '../../../control/basic/checkbox/checkbox.class';
 import { TypeMenu } from '../../menu.abstract';
 import { BasicMenus } from '../../../../views/layout/body/left/contents/menus-wrapper/basic-menus-wrapper/basic-menus';

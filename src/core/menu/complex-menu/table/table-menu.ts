@@ -1,5 +1,5 @@
-import { Span } from 'type-dom.ts/dist';
-import { TdTable2Svg } from 'type-dom-svgs/dist';
+import { Span } from 'type-dom.ts';
+import { TdTable2Svg } from 'type-dom-svgs';
 import { ComplexMenus } from '../../../../views/layout/body/left/contents/menus-wrapper/complex-menus-wrapper/complex-menus';
 import { TableControl } from '../../../control/complex/table/table.class';
 import { WebPage } from '../../../page/web-page.class';

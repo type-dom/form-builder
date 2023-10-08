@@ -1,4 +1,4 @@
-import { CollapsibleBoxContents } from 'type-dom-ui/dist';
+import { CollapsibleBoxContents } from 'type-dom-ui';
 import { TypeMenu } from '../../../../../../../core/menu/menu.abstract';
 import { TableMenu } from '../../../../../../../core/menu/complex-menu/table/table-menu';
 import { ConnectionMenu } from '../../../../../../../core/menu/complex-menu/connection/connection-menu';

@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
@@ -14,7 +14,6 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     this.className = 'ControlOnChangeProperty';
     this.addAttrName('control-default-value-property');
   }
-
   reset(value?: string): void {
     console.log('value is ', value);
     if (this.parent instanceof ControlProperty) {
@@ -22,6 +21,19 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     }
     if (this.parent instanceof FieldProperty) {
       this.fieldPropertyReset(value);
+    }
+  }
+  update(control: TypeControl | null) {
+    if (!control) {
+      return;
+    }
+    // 显示属性项
+    if (this.styleObj.display === 'none') this.setStyle('display', 'block');
+    const value = control?.configs.onChange;
+    if (value) {
+      this.resetInputValue(value);
+    } else {
+      this.resetInputValue('');
     }
   }
   controlPropertyReset(value?: string): void {
@@ -33,7 +45,7 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
     // if (AppRoot.selectedControl?.itemContent instanceof Input ||
     //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
-    const changeStr = FormEditor.selectedControl?.changeStr;
+    const changeStr = TypeForm.selectedControl?.configs.onChange;
     if (changeStr) {
       this.resetInputValue(changeStr);
     } else {
@@ -49,8 +61,8 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
     // if (AppRoot.selectedControl?.itemContent instanceof Input ||
     //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
-    if (FormEditor.selectedTableDataCell?.control instanceof TypeControl) {
-      const changeStr = FormEditor.selectedTableDataCell?.control?.changeStr;
+    if (TypeForm.selectedTableDataCell?.control instanceof TypeControl) {
+      const changeStr = TypeForm.selectedTableDataCell?.control?.configs.onChange;
       if (changeStr) {
         this.resetInputValue(changeStr);
       } else {
@@ -61,19 +73,19 @@ export class ControlOnChangeProperty extends PropertyTextarea {
   addOnChange(value: string): void {
     if (this.parent instanceof ControlProperty) {
       if (value.trim()) { // 输入值的操作
-        FormEditor.selectedControl?.addOnChange(this.content.dom.value);
+        TypeForm.selectedControl?.addOnChange(this.content.dom.value);
         return;
       } else {
-        FormEditor.selectedControl?.removeOnChange();
+        TypeForm.selectedControl?.removeOnChange();
       }
     }
     if (this.parent instanceof FieldProperty) {
-      if (FormEditor.selectedTableDataCell?.control instanceof TypeControl) {
+      if (TypeForm.selectedTableDataCell?.control instanceof TypeControl) {
         if (value.trim()) { // 输入值的操作
-          FormEditor.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
+          TypeForm.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
           return;
         } else {
-          FormEditor.selectedTableDataCell?.control?.removeOnChange();
+          TypeForm.selectedTableDataCell?.control?.removeOnChange();
         }
       } else {
         console.error('AppRoot.selectedTableDataCell?.control is not TypeControl . ');

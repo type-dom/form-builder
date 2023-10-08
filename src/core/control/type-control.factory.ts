@@ -2,8 +2,8 @@
 // todo 如果SingleInputControl不在最前面的话，会报错。Uncaught ReferenceError: Cannot access 'BasicControl' before initialization
 //    原因应该是在tableDataCell中创建了。
 import { SingleInputControl } from './basic/single-input/single-input.class';
-import {TableDataCell} from "../../components/form/form-item/table-item/table/data-cell/data-cell.class";
-import {WebPage} from "../page/web-page.class";
+import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { WebPage } from '../page/web-page.class';
 import { AttachmentControl } from './basic/attachment/attachment.class';
 import { CheckboxControl } from './basic/checkbox/checkbox.class';
 import { ConnectionControl } from './complex/connection/connection.class';

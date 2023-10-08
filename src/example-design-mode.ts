@@ -1,7 +1,7 @@
 import { debounce, debounceTime, switchMap, fromEvent, map, filter, Observable, Subscription, merge } from 'rxjs';
 import './styles/index.scss';
 // import '../type-dom/style/scss/index.scss';
-import { FormEditor } from './form-editor';
+import { TypeForm } from './type-form';
 import {
   fieldsConfig,
   formData,
@@ -32,12 +32,12 @@ fromEvent(document, 'DOMContentLoaded').subscribe(e => {
 // });
 
 class ExampleDesignMode {
-  private editor: FormEditor;
+  private editor: TypeForm;
 
   // private events: Subscription[];
 
   constructor(public el: HTMLElement) {
-    this.editor = new FormEditor(el);
+    this.editor = new TypeForm(el);
     // 测试混合表单
     // AppRoot.createInstance(formJson);
     // AppRoot.setFormData(exampleData);
@@ -47,11 +47,8 @@ class ExampleDesignMode {
     // 测试表格
     // AppRoot.createInstance(tableJson);
     // AppRoot.setFormData(tableData);
-    FormEditor.setControlFieldConfig(fieldsConfig);
-    FormEditor.functionMap.set('add', this.add);
-    FormEditor.onReady.subscribe(() => {
-      console.log('this.editor on ready');
-    });
+    TypeForm.setControlFieldConfig(fieldsConfig);
+    TypeForm.functionMap.set('add', this.add);
     // this.events = [];
     // fetch('/source').then(res => { // 可以获取 html页面
     //   console.log('res is ', res);
@@ -68,52 +65,52 @@ class ExampleDesignMode {
   }
 
   initEvents(): void {
-    console.log('AppRoot.editorElObservable is ', FormEditor.editorElObservable);
+    console.log('AppRoot.editorElObservable is ', TypeForm.editorElObservable);
     // if (optionConfigSubscription) optionConfigSubscription.unsubscribe();
-    FormEditor.optionsConfigObservable.subscribe(() => {
+    TypeForm.optionsConfigObservable.subscribe(() => {
       console.log('AppRoot.optionsConfigObservable . ');
-      FormEditor.setControlOptionConfig(optionsConfig);
+      TypeForm.setControlOptionConfig(optionsConfig);
     });
 
     // if (connectionSubscription) connectionSubscription.unsubscribe();
-    FormEditor.connectionObservable.subscribe(() => {
+    TypeForm.connectionObservable.subscribe(() => {
       console.log('AppRoot.connectionObservable . ');
-      FormEditor.setControlConnection('config-label', 'config-value');
+      TypeForm.setControlConnection('config-label', 'config-value');
     });
-    FormEditor.connectionItemObservable.subscribe(() => {
+    TypeForm.connectionItemObservable.subscribe(() => {
       console.log('AppRoot.connectionItemObservable . ');
-      if (FormEditor.selectedTableDataCell?.control instanceof ConnectionControl) {
-        console.log('AppRoot.selectedControl.a is ', FormEditor.selectedTableDataCell.control.connectionConfigLabel);
-        const value = FormEditor.selectedTableDataCell.control.connectionConfigValue;
+      if (TypeForm.selectedTableDataCell?.control instanceof ConnectionControl) {
+        console.log('AppRoot.selectedControl.a is ', TypeForm.selectedTableDataCell.control.connectionConfigLabel);
+        const value = TypeForm.selectedTableDataCell.control.connectionConfigValue;
         if (value === undefined) {
           // todo 弹框提示
           throw Error('请先选择配置信息。 ');
         }
         // then
-        FormEditor.setConnectionItemValue('label', 'value');
+        TypeForm.setConnectionItemValue('label', 'value');
         return;
       }
-      if (FormEditor.selectedControl instanceof ConnectionControl) {
-        console.log('AppRoot.selectedControl.a is ', FormEditor.selectedControl.connectionConfigLabel);
-        const value = FormEditor.selectedControl.connectionConfigValue;
+      if (TypeForm.selectedControl instanceof ConnectionControl) {
+        console.log('AppRoot.selectedControl.a is ', TypeForm.selectedControl.connectionConfigLabel);
+        const value = TypeForm.selectedControl.connectionConfigValue;
         if (value === undefined) {
           // todo 弹框提示
           throw Error('请先选择配置信息。 ');
         }
         // then
-        FormEditor.setConnectionItemValue('label', 'value');
+        TypeForm.setConnectionItemValue('label', 'value');
       } else {
         throw Error('不是ConnectionControl . ');
       }
     });
     // console.log('AppRoot.attachmentObservable . ');
-    FormEditor.attachmentObservable.subscribe((e) => {
+    TypeForm.attachmentObservable.subscribe((e) => {
       console.log('e.target files is ', (e && (e.target as HTMLInputElement).files));
-      FormEditor.setAttachmentValue('附件', 'file1');
+      TypeForm.setAttachmentValue('附件', 'file1');
     });
-    FormEditor.formulaVisibleObservable.subscribe(() => {
+    TypeForm.formulaVisibleObservable.subscribe(() => {
       console.log('AppRoot.formulaVisibleObservable . ');
-      FormEditor.setControlDefaultValueFormula('a+b=c');
+      TypeForm.setControlDefaultValueFormula('a+b=c');
     });
 
   }

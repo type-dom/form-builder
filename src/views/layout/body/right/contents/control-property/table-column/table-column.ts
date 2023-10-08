@@ -1,7 +1,8 @@
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
+import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
 // 表格列数
 export class TableColumnProperty extends PropertyInput {
   className: 'TableColumnProperty';
@@ -19,17 +20,53 @@ export class TableColumnProperty extends PropertyInput {
 
   reset(value?: string): void {
     if (value !== undefined) {
-      if (FormEditor.selectedControl instanceof TableControl) {
-        const table = FormEditor.selectedControl.formItem.itemContent;
+      if (TypeForm.selectedControl instanceof TableControl) {
+        const table = TypeForm.selectedControl.formItem.itemContent;
         table.changeColumnCount(Number(value));
       } else {
         console.error('不是表格控件');
       }
     } else {
-      if (FormEditor.selectedControl instanceof TableControl) {
+      if (TypeForm.selectedControl instanceof TableControl) {
         if (this.styleObj.display === 'none') this.show();
         //  todo 根据表头数，设置现在的数量
-        const table = FormEditor.selectedControl.formItem.itemContent;
+        const table = TypeForm.selectedControl.formItem.itemContent;
+        const tableHead = table.tableHead;
+        const count = tableHead.length;
+        const config = table.config;
+        console.log('config', config);
+        console.log('tableHeader is ', table.tableHeader);
+        console.log('tableData is ', table.tableData);
+        if (config) {
+          config.tableHeader = table.tableHeader;
+          config.tableData = table.tableData;
+        }
+        if (count) {
+          this.resetInputValue(String(count));
+        } else {
+          // this.resetInputValue(0);
+          throw Error('表头没有字段 . ');
+        }
+      } else {
+        this.hide();
+        this.resetInputValue('');
+      }
+    }
+  }
+  update(control: TypeControl | null): void {
+    const value = control?.configs.tableColumnCount;
+    if (value !== undefined) {
+      if (TypeForm.selectedControl instanceof TableControl) {
+        const table = TypeForm.selectedControl.formItem.itemContent;
+        table.changeColumnCount(Number(value));
+      } else {
+        console.error('不是表格控件');
+      }
+    } else {
+      if (TypeForm.selectedControl instanceof TableControl) {
+        if (this.styleObj.display === 'none') this.show();
+        //  todo 根据表头数，设置现在的数量
+        const table = TypeForm.selectedControl.formItem.itemContent;
         const tableHead = table.tableHead;
         const count = tableHead.length;
         const config = table.config;

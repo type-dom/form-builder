@@ -1,5 +1,5 @@
-import { Span } from 'type-dom.ts/dist';
-import { TdConnectionSvg } from 'type-dom-svgs/dist';
+import { Span } from 'type-dom.ts';
+import { TdConnectionSvg } from 'type-dom-svgs';
 import { ComplexMenus } from '../../../../views/layout/body/left/contents/menus-wrapper/complex-menus-wrapper/complex-menus';
 import { TableDataCell } from '../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { ConnectionControl } from '../../../control/complex/connection/connection.class';

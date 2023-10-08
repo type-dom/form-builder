@@ -1,8 +1,8 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv, StylePosition } from 'type-dom.ts';
-import { FormEditor } from '../../form-editor';
+import { TypeForm } from '../../type-form';
 import { TypeControl } from '../control/type-control.abstract';
-import { createControl } from '../control/type-control.function';
+import { createControl } from '../control/type-control.factory';
 import { WebDocumentContents } from '../document/contents/contents.class';
 import { IWebPage } from './web-page.interface';
 export class WebPage extends TypeDiv implements IWebPage {
@@ -25,7 +25,7 @@ export class WebPage extends TypeDiv implements IWebPage {
       margin: '5mm',
       // paddingTop:'5px',
       minHeight: '300px',
-      maxHeight: 'calc(' + FormEditor.el.clientHeight + 'px - 60px - 10mm)',
+      maxHeight: 'calc(' + TypeForm.el.clientHeight + 'px - 60px - 10mm)',
       // height: 'calc(' + AppRoot.el.clientHeight + 'px - 60px - 10mm)',
       overflowY: 'auto',
       backgroundColor: '#fff',
@@ -59,7 +59,7 @@ export class WebPage extends TypeDiv implements IWebPage {
       fromEvent(this.dom, 'click').subscribe((e) => {
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          FormEditor.setSelectedControl(null);
+          TypeForm.mode.setSelectedControl(null);
         }
       })
     );
@@ -72,13 +72,16 @@ export class WebPage extends TypeDiv implements IWebPage {
     // console.log('AppRoot.el.clientHeight is ', AppRoot.el.clientHeight);
     // console.log('this.parent.tabs.dom.clientHeight is ', this.parent.parent.tabs.dom.clientHeight);
     this.setStyleObj({
-      maxHeight: 'calc(' + (FormEditor.el.clientHeight - this.parent.parent.tabs.dom.clientHeight) + 'px - 60px - 10mm)',
+      maxHeight: 'calc(' + (TypeForm.el.clientHeight - this.parent.parent.tabs.dom.clientHeight) + 'px - 60px - 10mm)',
       overflowY: 'auto',
     });
     this.childNodes = [];
     for (const control of pageJson.childNodes) {
       // const controlObj = new className();
-      createControl(control.className, this);
+      const ctrlObj = createControl(control.className, this);
+      if (ctrlObj) {
+        this.appendChild(ctrlObj);
+      }
       // if (ControlClassMap[control.className]) {
       //   const controlObj = new ControlClassMap[control.className](this);
       //   controlObj.createInstance(control);

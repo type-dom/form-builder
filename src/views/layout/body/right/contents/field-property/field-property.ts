@@ -1,4 +1,4 @@
-import { Display, TypeDiv } from 'type-dom.ts';
+import { StyleDisplay, TypeDiv } from 'type-dom.ts';
 import { ReadonlyProperty } from '../control-property/readonly/control-readonly';
 import { MinValueProperty } from '../control-property/min-value/control-min-value';
 import { MaxValueProperty } from '../control-property/max-value/control-max-value';
@@ -46,7 +46,7 @@ export class FieldProperty extends TypeDiv {
       styleObj: {
         boxSizing: 'border-box',
         backgroundColor: '#fff',
-        display: Display.none,
+        display: StyleDisplay.none,
       },
       attrObj: {
         name: 'field-property'

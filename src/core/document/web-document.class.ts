@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv, toJSON } from 'type-dom.ts';
-import { FormEditor } from '../../form-editor';
+import { TypeForm } from '../../type-form';
 import { LayoutWrapper } from '../../views/layout/layout';
 import { BodyMainContent } from '../../views/layout/body/main-content/main-content';
 import { IOptionConfig } from '../control/type-control.interface';
@@ -121,7 +121,7 @@ export class WebDocument extends TypeDiv implements IWebDocument {
         // console.log(this.allPages, 'this.allPages');
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          FormEditor.setSelectedControl(null);
+          TypeForm.mode.setSelectedControl(null);
         }
       })
     );

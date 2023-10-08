@@ -1,4 +1,4 @@
-import { Display, Label, Span, TextNode } from 'type-dom.ts';
+import { StyleDisplay, Label, Span, TextNode } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
 import { PropertyItem } from '../property-item.abstract';
 export abstract class PropertySpan extends PropertyItem {
@@ -22,7 +22,7 @@ export abstract class PropertySpan extends PropertyItem {
         // -webkit-box-sizing: border-box;
         boxSizing: 'border-box',
         color: '#606266',
-        display: Display.inlineBlock,
+        display: StyleDisplay.inlineBlock,
         outline: '0',
         padding: '0 15px',
         // -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);

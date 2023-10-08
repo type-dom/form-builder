@@ -38,4 +38,8 @@ export class FormSizeProperty extends PropertyRadio {
   reset(value: string): void {
     //
   }
+  // todo 表单尺寸的样式
+  update(value: string): void {
+    //
+  }
 }

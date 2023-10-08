@@ -1,5 +1,5 @@
 import { fromEvent, Subscription } from 'rxjs';
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { FormProperty } from '../form-property';
 
@@ -30,6 +30,13 @@ export class FormLoadedProperty extends PropertyTextarea {
     }
     // }
   }
+  update(value: string): void {
+    if (this.loadedStr) {
+      this.resetInputValue(this.loadedStr);
+    } else {
+      this.resetInputValue('');
+    }
+  }
   addFormLoaded(value: string): void {
     console.log('value is ', value);
     this.loadedStr = value;
@@ -42,7 +49,7 @@ export class FormLoadedProperty extends PropertyTextarea {
         // eslint-disable-next-line no-new-func
         const fun = new Function('return ' + value)();
         console.log('fun is ', fun);
-        fun(FormEditor.webDocument);
+        fun(TypeForm.webDocument);
       });
       return;
     } else {

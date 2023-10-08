@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from 'type-dom.ts';
-import { FormEditor } from '../../form-editor';
+import { TypeForm } from '../../type-form';
 import { WebDocument } from '../../core/document/web-document.class';
 import { WebForm } from '../../components/form/form';
 import { HeaderWrapper } from './header/header';
@@ -11,7 +11,7 @@ export class LayoutWrapper extends TypeDiv {
   header: HeaderWrapper;
   body: BodyWrapper;
   form?: WebForm;
-  constructor(public parent: FormEditor) {
+  constructor(public parent: TypeForm) {
     super();
     this.className = 'LayoutWrapper';
     this.addAttrName('layout');
@@ -22,19 +22,6 @@ export class LayoutWrapper extends TypeDiv {
     this.webDocument = new WebDocument(this);
     this.header = new HeaderWrapper(this);
     this.body = new BodyWrapper(this); // WebBody ---> MainContent中会调用 webDocument,所以必须先创建webDocument
-    if (FormEditor.mode === 'design') {
-      this.childNodes.push(this.header, this.body);
-      // console.log('this.formEditor.el.clientHeight is ', this.formEditor.el.clientHeight);
-    } else {
-      // todo fill mode read mode
-      this.form = new WebForm(this);
-      // 头部显示表单名称
-      // this.form.setTitle('');
-      this.form.header.hide(); // 隐藏头部
-      this.webDocument.propObj.styleObj.height = '100%';
-      this.form.body.addChild(this.webDocument);
-      this.addChild(this.form);
-    }
     this.initEvents();
   }
   initEvents(): void {

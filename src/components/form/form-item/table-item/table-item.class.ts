@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { Span, Label, Display, toJSON } from 'type-dom.ts';
+import { Span, Label, StyleDisplay, toJSON } from 'type-dom.ts';
 import { TdAddSvg } from 'type-dom-svgs';
 import { TableControl } from '../../../../core/control/complex/table/table.class';
 import { FormItem } from '../form-item.abstract';
@@ -31,7 +31,7 @@ export class TableItem extends FormItem implements ITableItem {
     this.itemContent = new Table(this);
     this.addSpan = new Span(this);
     this.addSpan.setStyleObj({
-      display: Display.block,
+      display: StyleDisplay.block,
       textAlign: 'center',
       marginTop: '-10px',
     });

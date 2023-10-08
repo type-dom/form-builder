@@ -1,9 +1,10 @@
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
 import { PropertyCascade } from '../../property-item/cascade/property-cascade.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
+import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
 // 控件字段属性
 export class ControlFieldProperty extends PropertyCascade {
   className: 'ControlFieldProperty';
@@ -15,11 +16,13 @@ export class ControlFieldProperty extends PropertyCascade {
   }
 
   get fieldName(): string {
-    return FormEditor.selectedControl?.attrObj['field-name'] as string;
+    return TypeForm.selectedControl?.configs.fieldName || '';
   }
 
   set fieldName(value: string) { // 是由二级下拉选择组装起来的，由 . 隔开，第1个是，第一级的值，第2个是第二级的值
-    FormEditor.selectedControl?.setAttribute('field-name', value);
+    if (TypeForm.selectedControl) {
+      TypeForm.selectedControl.fieldName = value;
+    }
   }
 
   resetFieldConfig(config: IOptionConfig): void {
@@ -35,16 +38,25 @@ export class ControlFieldProperty extends PropertyCascade {
       this.fieldPropertyReset(value);
     }
   }
+  update(control: TypeControl | null) {
+    const value = control?.configs.fieldName;
+    if (this.parent instanceof ControlProperty) {
+      this.controlPropertyReset(value);
+    }
+    if (this.parent instanceof FieldProperty) {
+      this.fieldPropertyReset(value);
+    }
+  }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
       this.fieldName = value;
       return;
     }
-    if (FormEditor.selectedControl instanceof TableControl) {
+    if (TypeForm.selectedControl instanceof TableControl) {
       this.hide();
       return;
     }
-    if (this.styleObj.display === 'none') this.setStyle('display', 'block');
+    if (this.styleObj.display === 'none') this.show();
     // todo 添加控件类型判断？？？？
     //    设置隐藏还是显示？？？？
     if (this.fieldName !== undefined) {
@@ -82,7 +94,7 @@ export class ControlFieldProperty extends PropertyCascade {
   }
   fieldPropertyReset(value?: string): void {
     // console.log('control field value is ', value);
-    if (!FormEditor.selectedTableDataCell) {
+    if (!TypeForm.selectedTableDataCell) {
       console.error('AppRoot.selectedTableDataCell is undefined . ');
       return;
     }
@@ -93,9 +105,9 @@ export class ControlFieldProperty extends PropertyCascade {
       //     this.select.resetConfig(this.fieldConfig);
       //   }
       // }
-      const table = FormEditor.selectedTableDataCell.parent.parent;
+      const table = TypeForm.selectedTableDataCell.parent.parent;
       const tableHeader = table.config?.tableHeader;
-      const index = FormEditor.selectedTableDataCell.index;
+      const index = TypeForm.selectedTableDataCell.index;
       // console.log('tableHeader is ', tableHeader);
       // console.log('index is ', index);
 
@@ -108,8 +120,8 @@ export class ControlFieldProperty extends PropertyCascade {
       return;
     }
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    const tableHeader = FormEditor.selectedTableDataCell.parent.parent.config?.tableHeader;
-    const index = FormEditor.selectedTableDataCell.index;
+    const tableHeader = TypeForm.selectedTableDataCell.parent.parent.config?.tableHeader;
+    const index = TypeForm.selectedTableDataCell.index;
     // console.log('tableHeader is ', tableHeader);
     // console.log('index is ', index);
 

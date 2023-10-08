@@ -1,8 +1,9 @@
-import { FormEditor } from '../../../../../../../form-editor';
+import { TypeForm } from '../../../../../../../type-form';
 import { NumericalControl } from '../../../../../../../core/control/basic/numerical/numerical.class';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
+import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
 
 // 最大值，只对数值控件有效
 export class MaxValueProperty extends PropertyInput {
@@ -24,18 +25,27 @@ export class MaxValueProperty extends PropertyInput {
       this.fieldPropertyReset(value);
     }
   }
+  update(control: TypeControl | null) {
+    const value = control?.formItem.itemContent.propObj.attrObj.max as string;
+    if (this.parent instanceof ControlProperty) {
+      this.controlPropertyReset(value);
+    }
+    if (this.parent instanceof FieldProperty) {
+      this.fieldPropertyReset(value);
+    }
+  }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (FormEditor.selectedControl instanceof NumericalControl) {
-        FormEditor.selectedControl?.formItem.itemContent.setAttribute('max', value);
+      if (TypeForm.selectedControl instanceof NumericalControl) {
+        TypeForm.selectedControl?.formItem.itemContent.setAttribute('max', value);
       } else {
         console.error('选中的控件不是数字控件。');
       }
       return;
     }
-    if (FormEditor.selectedControl instanceof NumericalControl) {
+    if (TypeForm.selectedControl instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MaxValue = FormEditor.selectedControl.formItem.itemContent.propObj.attrObj.max as string;
+      const MaxValue = TypeForm.selectedControl.formItem.itemContent.propObj.attrObj.max as string;
       if (MaxValue) {
         this.resetInputValue(MaxValue);
       } else {
@@ -48,16 +58,16 @@ export class MaxValueProperty extends PropertyInput {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (FormEditor.selectedTableDataCell?.control instanceof NumericalControl) {
-        FormEditor.selectedTableDataCell.control.formItem.itemContent.setAttribute('max', value);
+      if (TypeForm.selectedTableDataCell?.control instanceof NumericalControl) {
+        TypeForm.selectedTableDataCell.control.formItem.itemContent.setAttribute('max', value);
       } else {
         console.error('AppRoot.selectedTableDataCell?.control is null . ');
       }
       return;
     }
-    if (FormEditor.selectedTableDataCell?.control instanceof NumericalControl) {
+    if (TypeForm.selectedTableDataCell?.control instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MaxValue = FormEditor.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.max as string;
+      const MaxValue = TypeForm.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.max as string;
       if (MaxValue) {
         this.resetInputValue(MaxValue);
       } else {
