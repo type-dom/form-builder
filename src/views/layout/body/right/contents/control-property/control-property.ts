@@ -1,21 +1,21 @@
-import {Division, StyleDisplay, TextNode, TypeDiv} from 'type-dom.ts';
-import {TypeForm} from '../../../../../../type-form';
-import {RightContents} from '../contents';
+import { Division, StyleDisplay, TextNode, TypeDiv } from 'type-dom.ts';
+import { TypeForm } from '../../../../../../type-form';
+import { RightContents } from '../contents';
 // control property
-import {ControlFieldProperty} from './field/control-field';
-import {ControlTitleProperty} from './title/control-title';
-import {ControlPlaceholderProperty} from './placeholder/control-placeholder';
-import {ControlDefaultValueProperty} from './default-value/control-default-value';
-import {ControlOptionsProperty} from './options/control-options';
-import {RequiredProperty} from './reqired/control-reqired';
-import {MaxValueProperty} from './max-value/control-max-value';
-import {MinValueProperty} from './min-value/control-min-value';
-import {MultipleProperty} from './multiple/control-multiple';
-import {ControlOnChangeProperty} from './change-event/control-on-change';
-import {ControlConnectionProperty} from './connection/control-connection';
-import {TableColumnProperty} from './table-column/table-column';
-import {ReadonlyProperty} from './readonly/control-readonly';
-import {PropertyItem} from "../property-item/property-item.abstract";
+import { ControlFieldProperty } from './field/control-field';
+import { ControlTitleProperty } from './title/control-title';
+import { ControlPlaceholderProperty } from './placeholder/control-placeholder';
+import { ControlDefaultValueProperty } from './default-value/control-default-value';
+import { ControlOptionsProperty } from './options/control-options';
+import { RequiredProperty } from './reqired/control-reqired';
+import { MaxValueProperty } from './max-value/control-max-value';
+import { MinValueProperty } from './min-value/control-min-value';
+import { MultipleProperty } from './multiple/control-multiple';
+import { ControlOnChangeProperty } from './change-event/control-on-change';
+import { ControlConnectionProperty } from './connection/control-connection';
+import { TableColumnProperty } from './table-column/table-column';
+import { ReadonlyProperty } from './readonly/control-readonly';
+import { PropertyItem } from '../property-item/property-item.abstract';
 
 export class ControlProperty extends TypeDiv {
   className: 'ControlProperty';

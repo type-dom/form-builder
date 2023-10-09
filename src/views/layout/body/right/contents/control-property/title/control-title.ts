@@ -1,11 +1,11 @@
-import {distinctUntilChanged, Subject, Subscription} from 'rxjs';
-import {TypeForm} from '../../../../../../../type-form';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
-import {TableDataCell} from "../../../../../../../components/form/form-item/table-item/table/data-cell/data-cell.class";
-import {TableHead} from '../../../../../../../components/form/form-item/table-item/table/head/head.class';
-import {FieldProperty} from '../../field-property/field-property';
-import {PropertyInput} from '../../property-item/input/property-input.abstract';
-import {ControlProperty} from '../control-property';
+import { distinctUntilChanged } from 'rxjs';
+import { TypeForm } from '../../../../../../../type-form';
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
+import { TableDataCell } from '../../../../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { TableHead } from '../../../../../../../components/form/form-item/table-item/table/head/head.class';
+import { FieldProperty } from '../../field-property/field-property';
+import { PropertyInput } from '../../property-item/input/property-input.abstract';
+import { ControlProperty } from '../control-property';
 /**
  * 控件标题属性
  * 控件和字段会创建多次

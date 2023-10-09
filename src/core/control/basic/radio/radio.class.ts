@@ -1,6 +1,6 @@
+import { deepClone } from 'type-dom.ts';
 import { RadioItem } from '../../../../components/form/form-item/radio-item/radio-item.class';
 import { TableDataCell } from '../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
-import { deepClone } from '../../../../utils';
 import { WebPage } from '../../../page/web-page.class';
 import { defaultOptionConfig } from '../../type-control.const';
 import { IOptionConfig, ITypeControl } from '../../type-control.interface';

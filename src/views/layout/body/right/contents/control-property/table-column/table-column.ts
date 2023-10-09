@@ -2,7 +2,7 @@ import { TypeForm } from '../../../../../../../type-form';
 import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 // 表格列数
 export class TableColumnProperty extends PropertyInput {
   className: 'TableColumnProperty';

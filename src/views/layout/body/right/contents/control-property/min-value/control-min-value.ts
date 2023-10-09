@@ -3,7 +3,7 @@ import { NumericalControl } from '../../../../../../../core/control/basic/numeri
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 // 最大值，只对数值控件有效
 export class MinValueProperty extends PropertyInput {
   className: 'MinValueProperty';

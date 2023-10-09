@@ -1,8 +1,8 @@
 import { Span } from 'type-dom.ts';
 import { TdSelectSvg } from 'type-dom-svgs';
 import { BasicMenus } from '../../../../views/layout/body/left/contents/menus-wrapper/basic-menus-wrapper/basic-menus';
-import {TableDataCell} from "../../../../components/form/form-item/table-item/table/data-cell/data-cell.class";
-import {WebPage} from "../../../page/web-page.class";
+import { TableDataCell } from '../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { WebPage } from '../../../page/web-page.class';
 import { SelectControl } from '../../../control/basic/select/select.class';
 import { TypeMenu } from '../../menu.abstract';
 // import html from './select-menu.html';

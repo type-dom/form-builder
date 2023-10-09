@@ -4,7 +4,7 @@ import { AttachmentControl } from '../../../../../../../core/control/basic/attac
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 const requiredConfigs: IOptionConfig = {
   name: '可多选' + Math.random(),
   resultValue: 'required',

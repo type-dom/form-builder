@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { Division, Label } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
 import { TypeForm } from '../../../../../../../../type-form';
-import {TypeControl} from "../../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../../core/control/type-control.abstract';
 import { TableControl } from '../../../../../../../../core/control/complex/table/table.class';
 import { PropertyItem } from '../../../property-item/property-item.abstract';
 import { ControlProperty } from '../../control-property';

@@ -2,8 +2,8 @@ import { fromEvent } from 'rxjs';
 import { TypeForm } from '../../../../../../../type-form';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { FormProperty } from '../form-property';
-import {TableDataCell} from "../../../../../../../components/form/form-item/table-item/table/data-cell/data-cell.class";
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TableDataCell } from '../../../../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 
 // form after submit
 export class AfterSubmitProperty extends PropertyTextarea {

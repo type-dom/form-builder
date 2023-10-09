@@ -1,6 +1,6 @@
 import { TypeDiv } from 'type-dom.ts';
 import { BodyLeft } from '../left';
-import { MenusWrapper } from "./menus-wrapper/menus-wrapper";
+import { MenusWrapper } from './menus-wrapper/menus-wrapper';
 
 export class LeftContents extends TypeDiv {
   className: 'LeftContents';

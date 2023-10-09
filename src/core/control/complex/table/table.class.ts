@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
+import { deepClone } from 'type-dom.ts';
 import { TypeForm } from '../../../../type-form';
-import { deepClone } from '../../../../utils';
 import { TableItem } from '../../../../components/form/form-item/table-item/table-item.class';
 import { WebPage } from '../../../page/web-page.class';
 import { ComplexControl } from '../complex.abstract';

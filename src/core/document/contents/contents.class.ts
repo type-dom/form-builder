@@ -1,6 +1,5 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from 'type-dom.ts';
-import { TypeForm } from '../../../type-form';
 import { WebPage } from '../../page/web-page.class';
 import { IWebPage } from '../../page/web-page.interface';
 import { WebDocument } from '../web-document.class';

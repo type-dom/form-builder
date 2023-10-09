@@ -1,11 +1,13 @@
+import { deepClone } from 'type-dom.ts';
 import { CheckboxItem } from '../../../../components/form/form-item/checkbox-item/checkbox-item.class';
 import { TableDataCell } from '../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
-import { deepClone } from '../../../../utils';
 import { WebPage } from '../../../page/web-page.class';
 import { defaultOptionConfig } from '../../type-control.const';
 import { IOptionConfig, ITypeControl } from '../../type-control.interface';
 import { TypeControl } from '../../type-control.abstract';
 import { ICheckboxControl } from './checkbox.interface';
+
+
 export class CheckboxControl extends TypeControl implements ICheckboxControl {
   className: 'CheckboxControl';
   childNodes: [CheckboxItem];

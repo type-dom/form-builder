@@ -3,7 +3,7 @@ import { NumericalControl } from '../../../../../../../core/control/basic/numeri
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 
 // 最大值，只对数值控件有效
 export class MaxValueProperty extends PropertyInput {

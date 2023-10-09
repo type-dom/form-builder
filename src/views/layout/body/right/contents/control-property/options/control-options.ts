@@ -5,7 +5,7 @@ import { SelectControl } from '../../../../../../../core/control/basic/select/se
 import { PropertyOptions } from '../../property-item/propoerty-options/property-options.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 // 控件选项列表
 export class ControlOptionsProperty extends PropertyOptions {
   className: 'ControlOptionsProperty';

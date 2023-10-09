@@ -1,9 +1,9 @@
 // 顺序不能随意调换，可能会加载报错。 TypeControl todo 如何解决
 import { filter, fromEvent, switchMap, of, Observable, Subscription, Subject } from 'rxjs';
-import {ListItem, Span, TextNode, TypeRoot, StyleCursor, toJSON, StyleDisplay} from 'type-dom.ts';
+import { ListItem, Span, TextNode, TypeRoot, StyleCursor, toJSON, StyleDisplay } from 'type-dom.ts';
 import { Dialog, MessageBox } from 'type-dom-ui';
-import {ModeStateAbstract} from "./state/mode/mode-state.abstract";
-import {createModeState} from "./state/mode/mode-state.factory";
+import { ModeStateAbstract } from './state/mode/mode-state.abstract';
+import { createModeState } from './state/mode/mode-state.factory';
 import { LayoutWrapper } from './views/layout/layout';
 import { ControlProperty } from './views/layout/body/right/contents/control-property/control-property';
 import { FormProperty } from './views/layout/body/right/contents/form-property/form-property';

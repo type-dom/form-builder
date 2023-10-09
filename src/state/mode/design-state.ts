@@ -1,17 +1,17 @@
-import {Span, TextNode} from "type-dom.ts";
-import {TypeForm} from "../../type-form";
-import {LayoutWrapper} from "../../views/layout/layout";
-import {TypeControl} from "../../core/control/type-control.abstract";
-import {WebPage} from "../../core/page/web-page.class";
-import {Table} from "../../components/form/form-item/table-item/table/table.class";
-import {ITable} from "../../components/form/form-item/table-item/table/table.interface";
-import {ITableHead} from "../../components/form/form-item/table-item/table/head/head.interface";
-import {ITableRow} from "../../components/form/form-item/table-item/table/row/row.interface";
-import {TableDataCell} from "../../components/form/form-item/table-item/table/data-cell/data-cell.class";
-import {ModeStateAbstract} from "./mode-state.abstract";
-import {WebDocumentTabs} from "../../core/document/tabs/tabs.class";
-import {TableRow} from "../../components/form/form-item/table-item/table/row/row.class";
-import {WebForm} from "../../components/form/form";
+import { Span, TextNode } from 'type-dom.ts';
+import { TypeForm } from '../../type-form';
+import { LayoutWrapper } from '../../views/layout/layout';
+import { TypeControl } from '../../core/control/type-control.abstract';
+import { WebPage } from '../../core/page/web-page.class';
+import { Table } from '../../components/form/form-item/table-item/table/table.class';
+import { ITable } from '../../components/form/form-item/table-item/table/table.interface';
+import { ITableHead } from '../../components/form/form-item/table-item/table/head/head.interface';
+import { ITableRow } from '../../components/form/form-item/table-item/table/row/row.interface';
+import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { ModeStateAbstract } from './mode-state.abstract';
+import { WebDocumentTabs } from '../../core/document/tabs/tabs.class';
+import { TableRow } from '../../components/form/form-item/table-item/table/row/row.class';
+import { WebForm } from '../../components/form/form';
 /**
  * 设计模式
  * 显示设计面板：左侧控制栏和右侧属性栏
@@ -61,8 +61,8 @@ export class DesignState extends ModeStateAbstract {
       } else {
         // 设计模式下，应该只有一行
         if (index === 1) {
-            (table.childNodes[index]).createInstance(trLiteral as ITableRow);
-            break; // 断出
+          (table.childNodes[index]).createInstance(trLiteral as ITableRow);
+          break; // 断出
         }
       }
     }

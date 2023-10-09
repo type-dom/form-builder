@@ -1,7 +1,7 @@
 import { fromEvent, Observable } from 'rxjs';
 import { TdThreeDotsSvg } from 'type-dom-svgs';
 import { TypeForm } from '../../../../../../../type-form';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 import { ConnectionControl } from '../../../../../../../core/control/complex/connection/connection.class';
 import { PropertySpan } from '../../property-item/span/property-span.abstract';
 import { ControlProperty } from '../control-property';

@@ -91,7 +91,7 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
 
   initEvents(): void {
     this.events.push(
-      fromEvent(this.dom, 'mousedown').subscribe((e) => {
+      fromEvent(this.dom, 'mousedown').subscribe(() => {
         console.log('table data cell mousedown ');
         // 阻止冒泡 ？？？ TODO 为什么要阻止冒泡 ----> 点击表格控件其它区域时要取消选中单元格。
         // e.stopPropagation();

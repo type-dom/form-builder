@@ -4,7 +4,7 @@ import { IOptionConfig } from '../../../../../../../core/control/type-control.in
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../control-property';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 const requiredConfigs: IOptionConfig = {
   name: '必填' + Math.random(),
   resultValue: 'required',

@@ -1,17 +1,17 @@
-import {Span} from "type-dom.ts";
-import {TypeForm} from "../../type-form";
-import {LayoutWrapper} from "../../views/layout/layout";
-import {TypeControl} from "../../core/control/type-control.abstract";
-import {WebForm} from "../../components/form/form";
-import {Table} from "../../components/form/form-item/table-item/table/table.class";
-import {ITable} from "../../components/form/form-item/table-item/table/table.interface";
-import {ITableHead} from "../../components/form/form-item/table-item/table/head/head.interface";
-import {ITableRow} from "../../components/form/form-item/table-item/table/row/row.interface";
-import {TableRow} from "../../components/form/form-item/table-item/table/row/row.class";
-import {TableDataCell} from "../../components/form/form-item/table-item/table/data-cell/data-cell.class";
-import {ModeStateAbstract} from "./mode-state.abstract";
-import {WebDocumentTabs} from "../../core/document/tabs/tabs.class";
-import {TableControl} from "../../core/control/complex/table/table.class";
+import { Span } from 'type-dom.ts';
+import { TypeForm } from '../../type-form';
+import { LayoutWrapper } from '../../views/layout/layout';
+import { TypeControl } from '../../core/control/type-control.abstract';
+import { WebForm } from '../../components/form/form';
+import { Table } from '../../components/form/form-item/table-item/table/table.class';
+import { ITable } from '../../components/form/form-item/table-item/table/table.interface';
+import { ITableHead } from '../../components/form/form-item/table-item/table/head/head.interface';
+import { ITableRow } from '../../components/form/form-item/table-item/table/row/row.interface';
+import { TableRow } from '../../components/form/form-item/table-item/table/row/row.class';
+import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { ModeStateAbstract } from './mode-state.abstract';
+import { WebDocumentTabs } from '../../core/document/tabs/tabs.class';
+import { TableControl } from '../../core/control/complex/table/table.class';
 /**
  * 填表模式
  * 所有控件可填写

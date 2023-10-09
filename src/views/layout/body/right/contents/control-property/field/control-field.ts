@@ -4,7 +4,7 @@ import { TableControl } from '../../../../../../../core/control/complex/table/ta
 import { PropertyCascade } from '../../property-item/cascade/property-cascade.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 // 控件字段属性
 export class ControlFieldProperty extends PropertyCascade {
   className: 'ControlFieldProperty';

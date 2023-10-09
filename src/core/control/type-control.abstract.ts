@@ -113,7 +113,7 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
     }
     // todo add, set是为了看效果
     //    加载时，会把optionConfig渲染出来
-    this.configs.optionConfig = JSON.stringify(config)
+    this.configs.optionConfig = JSON.stringify(config);
   }
 
   resetLabelText(value: string): void {

@@ -9,7 +9,7 @@ export class ComplexMenus extends CollapsibleBoxContents {
   constructor(public parent: ComplexMenusWrapper) {
     super(parent);
     this.className = 'ComplexMenus';
-    this.addAttrName('complex-control-menus')
+    this.addAttrName('complex-control-menus');
     const tableMenu = new TableMenu(this);
     const connectionMenu = new ConnectionMenu(this);
     this.childNodes = [tableMenu, connectionMenu];

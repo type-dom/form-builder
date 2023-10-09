@@ -1,15 +1,15 @@
-import {Span} from "type-dom.ts";
-import {TypeForm} from "../../type-form";
-import {TypeControl} from "../../core/control/type-control.abstract";
-import {WebDocumentTabs} from "../../core/document/tabs/tabs.class";
+import { Span } from 'type-dom.ts';
+import { TypeForm } from '../../type-form';
+import { TypeControl } from '../../core/control/type-control.abstract';
+import { WebDocumentTabs } from '../../core/document/tabs/tabs.class';
 import { LayoutWrapper } from '../../views/layout/layout';
-import {TableDataCell} from "../../components/form/form-item/table-item/table/data-cell/data-cell.class";
-import {WebPage} from "../../core/page/web-page.class";
-import {ITable} from "../../components/form/form-item/table-item/table/table.interface";
-import {Table} from "../../components/form/form-item/table-item/table/table.class";
-import {TableControl} from "../../core/control/complex/table/table.class";
-import {TableRow} from "../../components/form/form-item/table-item/table/row/row.class";
-import {WebForm} from "../../components/form/form";
+import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';
+import { WebPage } from '../../core/page/web-page.class';
+import { ITable } from '../../components/form/form-item/table-item/table/table.interface';
+import { Table } from '../../components/form/form-item/table-item/table/table.class';
+import { TableControl } from '../../core/control/complex/table/table.class';
+import { TableRow } from '../../components/form/form-item/table-item/table/row/row.class';
+import { WebForm } from '../../components/form/form';
 /**
  * design        设计模式
  * filling       填表模式

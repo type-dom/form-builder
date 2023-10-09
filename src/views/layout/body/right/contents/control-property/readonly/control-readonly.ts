@@ -4,7 +4,7 @@ import { IOptionConfig } from '../../../../../../../core/control/type-control.in
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { ControlProperty } from '../control-property';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 
 const readonlyConfigs: IOptionConfig = {
   name: '只读' + Math.random(),

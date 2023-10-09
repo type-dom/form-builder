@@ -47,7 +47,7 @@ export function createControl(className: string, parent: WebPage | TableDataCell
     case 'TimeControl':
       return new TimeControl(parent);
     default:
-      throw Error('there is no control has this classname .')
+      throw Error('there is no control has this classname .');
   }
 }
 

@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import {Span, TextNode, TypeTable, toJSON} from "type-dom.ts";
+import { Span, TextNode, TypeTable, toJSON } from 'type-dom.ts';
 import { TypeForm } from '../../../../../type-form';
 import { TypeControl } from '../../../../../core/control/type-control.abstract';
 import { ITableConfig, ITableField } from '../../../../../core/control/complex/table/table.interface';

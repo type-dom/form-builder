@@ -7,7 +7,7 @@ import { MultilineInputControl } from '../../../../../../../core/control/basic/m
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
-import {TypeControl} from "../../../../../../../core/control/type-control.abstract";
+import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 
 // 控件字段属性
 export class ControlDefaultValueProperty extends PropertyInput {
