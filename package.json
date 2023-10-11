@@ -1,14 +1,14 @@
 {
-  "name": "type-form",
+  "name": "type-form-designer",
   "version": "0.0.1",
-  "description": "dynamic form designer . ",
+  "description": "dynamic form designer based on type-dom framework . ",
   "main": "src/index.ts",
   "scripts": {
     "serve": "webpack-dev-server --mode=development --config ./build/webpack.config.js",
     "build": "webpack --mode=production --config ./build/webpack.config.js",
     "lib": "webpack --mode=none --config ./build/webpack.lib.config.js",
     "js": "tsc",
-    "postversion": "rimraf lib && npm run lib && cd lib && npm publish",
+    "postversion": "rimraf lib && npm run lib  && cp README.md package.json lib && cd lib && npm publish",
     "test": "jest",
     "lint": "eslint src",
     "lint-fix": "eslint 'src/**/*.{ts,js,tsx,jsx}' --fix -o eslint_log.log",
