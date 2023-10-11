@@ -28,7 +28,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xjf7711/type-form.git"
+    "url": "git+https://github.com/xjf7711/type-form-designer.git"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
