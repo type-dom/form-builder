@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { StyleDisplay, TypeDiv, toJSON } from 'type-dom.ts';
 import { TdAttachmentSvg, TdDeleteSvg } from 'type-dom-svgs';
 import { TdButton } from 'type-dom-ui';
-import { TypeForm } from '../../../../type-form';
+import { TypeFormDesigner } from '../../../../type-form-designer';
 import { IWebDocument } from '../../../../core/document/web-document.interface';
 import { WebDocument } from '../../../../core/document/web-document.class';
 import { HeaderWrapper } from '../header';
@@ -45,16 +45,16 @@ export class Navbar extends TypeDiv {
   initEvents(): void {
     this.events.push(
       fromEvent(this.previewBtn.dom, 'click').subscribe(() => {
-        TypeForm.mode.setSelectedControl(null);
-        TypeForm.dialog.show();
-        TypeForm.dialog.setTitle('预览');
+        TypeFormDesigner.mode.setSelectedControl(null);
+        TypeFormDesigner.dialog.show();
+        TypeFormDesigner.dialog.setTitle('预览');
         this.previewForm();
-        console.log('AppRoot.exampleData is ', TypeForm.formData);
+        console.log('AppRoot.exampleData is ', TypeFormDesigner.formData);
       }),
       fromEvent(this.saveBtn.dom, 'click').subscribe(() => {
         // FormEditor.messageBox.show();
         // // FormEditor.messageBox.setTitle('提醒');
-        TypeForm.messageBox.confirm('提醒', '你确定要保存表单吗？');
+        TypeFormDesigner.messageBox.confirm('提醒', '你确定要保存表单吗？');
         // AppRoot.dialog.preview(AppRoot.page);
         // console.log('AppRoot.form json is ', toJSON(AppRoot.page));
       })
@@ -65,14 +65,14 @@ export class Navbar extends TypeDiv {
    */
   previewForm(): void {
     console.log('preview form . ');
-    TypeForm.dialog.container.body.clearChildDom();
-    TypeForm.dialog.container.body.clearChildNodes();
-    const document = toJSON(TypeForm.webDocument) as IWebDocument;
+    TypeFormDesigner.dialog.container.body.clearChildDom();
+    TypeFormDesigner.dialog.container.body.clearChildNodes();
+    const document = toJSON(TypeFormDesigner.webDocument) as IWebDocument;
     console.log('document is ', document);
-    const docObj = new WebDocument(TypeForm.layout.body.content);
+    const docObj = new WebDocument(TypeFormDesigner.layout.body.content);
     docObj.createInstance(document);
-    docObj.setParent(TypeForm.dialog.container.body);
-    TypeForm.dialog.container.body.appendChild(docObj);
+    docObj.setParent(TypeFormDesigner.dialog.container.body);
+    TypeFormDesigner.dialog.container.body.appendChild(docObj);
     // this.container.body.dom.appendChild(element.dom);
     // AppRoot.dialog.container.body.dom.appendChild(docObj.dom);
     // AppRoot.dialog.container.body.dom.childNodes.forEach(node => node.remove());

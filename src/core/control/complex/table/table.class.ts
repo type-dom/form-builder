@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { deepClone } from 'type-dom.ts';
-import { TypeForm } from '../../../../type-form';
+import { TypeFormDesigner } from '../../../../type-form-designer';
 import { TableItem } from '../../../../components/form/form-item/table-item/table-item.class';
 import { WebPage } from '../../../page/web-page.class';
 import { ComplexControl } from '../complex.abstract';
@@ -37,7 +37,7 @@ export class TableControl extends ComplexControl implements ITableControl {
   configTable(config: ITableConfig): void {
     this.formItem.itemContent.setTable(config);
     // console.log('table control config is ', config);
-    TypeForm.mode.tableControlConfigTable(this);
+    TypeFormDesigner.mode.tableControlConfigTable(this);
   }
 
   initEvents(): void {
@@ -48,7 +48,7 @@ export class TableControl extends ComplexControl implements ITableControl {
       fromEvent(this.label.dom, 'click').subscribe((e) => {
         // console.log('table control click . ');
         console.log('e.target is ', e.target);
-        TypeForm.mode.setSelectedTableDataCell(null);
+        TypeFormDesigner.mode.setSelectedTableDataCell(null);
       })
     );
   }

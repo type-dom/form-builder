@@ -1,4 +1,4 @@
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { AttachmentControl } from '../../../../../../../core/control/basic/attachment/attachment.class';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
@@ -52,14 +52,14 @@ export class MultipleProperty extends PropertyRadio {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (TypeForm.selectedControl instanceof AttachmentControl) {
-        TypeForm.selectedControl.itemContent.setAttribute('multiple', !!value);
+      if (TypeFormDesigner.selectedControl instanceof AttachmentControl) {
+        TypeFormDesigner.selectedControl.itemContent.setAttribute('multiple', !!value);
       }
       return;
     }
-    if (TypeForm.selectedControl instanceof AttachmentControl) {
+    if (TypeFormDesigner.selectedControl instanceof AttachmentControl) {
       if (this.styleObj.display === 'none') this.show();
-      const multiple = !!TypeForm.selectedControl?.formItem.itemContent.attrObj.multiple;
+      const multiple = !!TypeFormDesigner.selectedControl?.formItem.itemContent.attrObj.multiple;
       this.resetResultValue(multiple ? 'multiple' : '');
     } else {
       this.hide();
@@ -67,16 +67,16 @@ export class MultipleProperty extends PropertyRadio {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (TypeForm.selectedTableDataCell?.control instanceof AttachmentControl) {
-        TypeForm.selectedTableDataCell.control.itemContent.setAttribute('multiple', !!value);
+      if (TypeFormDesigner.selectedTableDataCell?.control instanceof AttachmentControl) {
+        TypeFormDesigner.selectedTableDataCell.control.itemContent.setAttribute('multiple', !!value);
       } else {
         console.error('AppRoot.selectedTableDataCell.control is not AttachmentControl . ');
       }
       return;
     }
-    if (TypeForm.selectedTableDataCell?.control instanceof AttachmentControl) {
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof AttachmentControl) {
       if (this.styleObj.display === 'none') this.show();
-      const multiple = !!TypeForm.selectedTableDataCell.control.formItem.itemContent.attrObj.multiple;
+      const multiple = !!TypeFormDesigner.selectedTableDataCell.control.formItem.itemContent.attrObj.multiple;
       this.resetResultValue(multiple ? 'multiple' : '');
       return;
     } else {

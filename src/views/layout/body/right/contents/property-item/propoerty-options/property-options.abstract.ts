@@ -2,7 +2,7 @@ import { fromEvent, Observable } from 'rxjs';
 import { Button, Division, Label, StyleDisplay, TextNode, StylePosition } from 'type-dom.ts';
 import { TdThreeDotsSvg } from 'type-dom-svgs';
 import { TdButton } from 'type-dom-ui';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 import { itemContentStyle } from '../../../../../../../core/control/type-control.const';
 import { IOption, IOptionConfig } from '../../../../../../../core/control/type-control.interface';
@@ -116,20 +116,20 @@ export abstract class PropertyOptions extends PropertyItem {
     this.initEvents();
   }
   get optionConfig(): IOptionConfig | undefined {
-    if (TypeForm.selectedTableDataCell?.control instanceof TypeControl) {
-      return TypeForm.selectedTableDataCell?.control.optionConfig;
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof TypeControl) {
+      return TypeFormDesigner.selectedTableDataCell?.control.optionConfig;
     }
-    return TypeForm.selectedControl?.optionConfig;
+    return TypeFormDesigner.selectedControl?.optionConfig;
   }
   set optionConfig(optConfig: IOptionConfig | undefined) {
-    if (TypeForm.selectedTableDataCell?.control instanceof TypeControl) {
-      TypeForm.selectedTableDataCell.control.optionConfig = optConfig;
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof TypeControl) {
+      TypeFormDesigner.selectedTableDataCell.control.optionConfig = optConfig;
       return;
     }
-    if (!TypeForm.selectedControl?.optionConfig) {
+    if (!TypeFormDesigner.selectedControl?.optionConfig) {
       throw Error('没有选中的控件, optionConfig');
     }
-    TypeForm.selectedControl.optionConfig = optConfig;
+    TypeFormDesigner.selectedControl.optionConfig = optConfig;
   }
   resetOptionConfigResultValue(value: string | number | boolean): void {
     // AppRoot.selectedControl?.propObj.attrObj.optionConfig''
@@ -237,31 +237,31 @@ export abstract class PropertyOptions extends PropertyItem {
   // 重置控件
   resetControl(): void {
     // 选中的是单元格中的控件
-    if (TypeForm.selectedTableDataCell?.control instanceof RadioControl
-      || TypeForm.selectedTableDataCell?.control instanceof CheckboxControl
-      || TypeForm.selectedTableDataCell?.control instanceof SelectControl
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof RadioControl
+      || TypeFormDesigner.selectedTableDataCell?.control instanceof CheckboxControl
+      || TypeFormDesigner.selectedTableDataCell?.control instanceof SelectControl
     ) {
-      if (TypeForm.selectedTableDataCell?.control.optionConfig) {
+      if (TypeFormDesigner.selectedTableDataCell?.control.optionConfig) {
         // todo config 要配resultValue
-        TypeForm.selectedTableDataCell?.control?.setOptionConfig(TypeForm.selectedTableDataCell?.control.optionConfig);
-        TypeForm.selectedTableDataCell?.control?.formItem.itemContent.render();
+        TypeFormDesigner.selectedTableDataCell?.control?.setOptionConfig(TypeFormDesigner.selectedTableDataCell?.control.optionConfig);
+        TypeFormDesigner.selectedTableDataCell?.control?.formItem.itemContent.render();
       } else {
         console.error('AppRoot.selectedTableDataCell?.control.optionConfig is undefined . ');
       }
       return;
     }
-    if (TypeForm.selectedControl instanceof RadioControl
-      || TypeForm.selectedControl instanceof CheckboxControl
-      || TypeForm.selectedControl instanceof SelectControl
+    if (TypeFormDesigner.selectedControl instanceof RadioControl
+      || TypeFormDesigner.selectedControl instanceof CheckboxControl
+      || TypeFormDesigner.selectedControl instanceof SelectControl
     ) {
       //  选项属性刷新后，还要刷新控件。
-      const type = (TypeForm.selectedControl instanceof RadioControl) ? 'radio'
-        : (TypeForm.selectedControl instanceof CheckboxControl) ? 'checkbox' : 'select';
+      const type = (TypeFormDesigner.selectedControl instanceof RadioControl) ? 'radio'
+        : (TypeFormDesigner.selectedControl instanceof CheckboxControl) ? 'checkbox' : 'select';
       console.log('type is ', type);
-      if (TypeForm.selectedControl.optionConfig) {
-        console.log('AppRoot.selectedControl.optionConfig is ', TypeForm.selectedControl.optionConfig);
-        TypeForm.selectedControl?.setOptionConfig(TypeForm.selectedControl.optionConfig);
-        TypeForm.selectedControl?.formItem.itemContent.render();
+      if (TypeFormDesigner.selectedControl.optionConfig) {
+        console.log('AppRoot.selectedControl.optionConfig is ', TypeFormDesigner.selectedControl.optionConfig);
+        TypeFormDesigner.selectedControl?.setOptionConfig(TypeFormDesigner.selectedControl.optionConfig);
+        TypeFormDesigner.selectedControl?.formItem.itemContent.render();
       } else {
         console.error('AppRoot.selectedControl.optionConfig is undefined . ');
       }

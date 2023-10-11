@@ -1,5 +1,5 @@
 import { Span } from 'type-dom.ts';
-import { TypeForm } from '../../type-form';
+import { TypeFormDesigner } from '../../type-form-designer';
 import { TypeControl } from '../../core/control/type-control.abstract';
 import { WebDocumentTabs } from '../../core/document/tabs/tabs.class';
 import { LayoutWrapper } from '../../views/layout/layout';
@@ -18,7 +18,7 @@ import { WebForm } from '../../components/form/form';
 export abstract class ModeStateAbstract {
   abstract mode: 'design' | 'fill' | 'readonly';
   abstract width: string;
-  abstract createLayout(editor: TypeForm): LayoutWrapper;
+  abstract createLayout(editor: TypeFormDesigner): LayoutWrapper;
   setMode(mode: 'design' | 'fill' | 'readonly' = 'design') {
     this.mode = mode;
   }

@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { TypeTableRow, Span, StylePosition } from 'type-dom.ts';
 import { TdDeleteSvg } from 'type-dom-svgs';
-import { TypeForm } from '../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../type-form-designer';
 import { TableDataCell } from '../data-cell/data-cell.class';
 import { ITableDataCell } from '../data-cell/data-cell.interface';
 import { Table } from '../table.class';
@@ -78,6 +78,6 @@ export class TableRow extends TypeTableRow implements ITableRow {
         this.appendChild(tdObj);
       }
     });
-    TypeForm.mode.rowCreateInstance(this);
+    TypeFormDesigner.mode.rowCreateInstance(this);
   }
 }

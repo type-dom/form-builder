@@ -1,4 +1,4 @@
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { NumericalControl } from '../../../../../../../core/control/basic/numerical/numerical.class';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { FieldProperty } from '../../field-property/field-property';
@@ -34,16 +34,16 @@ export class MinValueProperty extends PropertyInput {
 
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (TypeForm.selectedControl instanceof NumericalControl) {
-        TypeForm.selectedControl.formItem.itemContent.setAttribute('min', value);
+      if (TypeFormDesigner.selectedControl instanceof NumericalControl) {
+        TypeFormDesigner.selectedControl.formItem.itemContent.setAttribute('min', value);
       } else {
         console.error('AppRoot.selectedControl is not NumericalControl .');
       }
       return;
     }
-    if (TypeForm.selectedControl instanceof NumericalControl) {
+    if (TypeFormDesigner.selectedControl instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MinValue = TypeForm.selectedControl.formItem.itemContent.propObj.attrObj.min as string;
+      const MinValue = TypeFormDesigner.selectedControl.formItem.itemContent.propObj.attrObj.min as string;
       if (MinValue) {
         this.resetInputValue(MinValue);
       } else {
@@ -55,16 +55,16 @@ export class MinValueProperty extends PropertyInput {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (TypeForm.selectedTableDataCell?.control instanceof NumericalControl) {
-        TypeForm.selectedTableDataCell.control.formItem.itemContent.setAttribute('min', value);
+      if (TypeFormDesigner.selectedTableDataCell?.control instanceof NumericalControl) {
+        TypeFormDesigner.selectedTableDataCell.control.formItem.itemContent.setAttribute('min', value);
       } else {
         console.error('AppRoot.selectedTableDataCell.control is not NumericalControl .');
       }
       return;
     }
-    if (TypeForm.selectedTableDataCell?.control instanceof NumericalControl) {
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MinValue = TypeForm.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.min as string;
+      const MinValue = TypeFormDesigner.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.min as string;
       if (MinValue) {
         this.resetInputValue(MinValue);
       } else {

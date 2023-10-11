@@ -1,4 +1,4 @@
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { NumericalControl } from '../../../../../../../core/control/basic/numerical/numerical.class';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
@@ -36,16 +36,16 @@ export class MaxValueProperty extends PropertyInput {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (TypeForm.selectedControl instanceof NumericalControl) {
-        TypeForm.selectedControl?.formItem.itemContent.setAttribute('max', value);
+      if (TypeFormDesigner.selectedControl instanceof NumericalControl) {
+        TypeFormDesigner.selectedControl?.formItem.itemContent.setAttribute('max', value);
       } else {
         console.error('选中的控件不是数字控件。');
       }
       return;
     }
-    if (TypeForm.selectedControl instanceof NumericalControl) {
+    if (TypeFormDesigner.selectedControl instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MaxValue = TypeForm.selectedControl.formItem.itemContent.propObj.attrObj.max as string;
+      const MaxValue = TypeFormDesigner.selectedControl.formItem.itemContent.propObj.attrObj.max as string;
       if (MaxValue) {
         this.resetInputValue(MaxValue);
       } else {
@@ -58,16 +58,16 @@ export class MaxValueProperty extends PropertyInput {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (TypeForm.selectedTableDataCell?.control instanceof NumericalControl) {
-        TypeForm.selectedTableDataCell.control.formItem.itemContent.setAttribute('max', value);
+      if (TypeFormDesigner.selectedTableDataCell?.control instanceof NumericalControl) {
+        TypeFormDesigner.selectedTableDataCell.control.formItem.itemContent.setAttribute('max', value);
       } else {
         console.error('AppRoot.selectedTableDataCell?.control is null . ');
       }
       return;
     }
-    if (TypeForm.selectedTableDataCell?.control instanceof NumericalControl) {
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof NumericalControl) {
       if (this.styleObj.display === 'none') this.show();
-      const MaxValue = TypeForm.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.max as string;
+      const MaxValue = TypeFormDesigner.selectedTableDataCell.control.formItem.itemContent.propObj.attrObj.max as string;
       if (MaxValue) {
         this.resetInputValue(MaxValue);
       } else {

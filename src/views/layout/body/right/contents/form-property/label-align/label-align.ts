@@ -1,4 +1,4 @@
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { labelStyle } from '../../../../../../../core/control/type-control.const';
 import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
@@ -40,7 +40,7 @@ export class LabelAlignProperty extends PropertyRadio {
   reset(value?: string): void {
     if (value !== undefined) {
       labelStyle.textAlign = value; // 改变新建控件的宽度。
-      TypeForm.allControls.forEach(control => { // 循环遍历改变样式
+      TypeFormDesigner.allControls.forEach(control => { // 循环遍历改变样式
         if (control instanceof TableControl) {
           return;
         }
@@ -59,7 +59,7 @@ export class LabelAlignProperty extends PropertyRadio {
   update(value?: string): void {
     if (value !== undefined) {
       labelStyle.textAlign = value; // 改变新建控件的宽度。
-      TypeForm.allControls.forEach(control => { // 循环遍历改变样式
+      TypeFormDesigner.allControls.forEach(control => { // 循环遍历改变样式
         if (control instanceof TableControl) {
           return;
         }

@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { FormProperty } from '../form-property';
 // form before submit
@@ -11,10 +11,10 @@ export class BeforeSubmitProperty extends PropertyTextarea {
     this.addAttrName('before-submit-property');
   }
   get beforeSubmitStr(): string {
-    return TypeForm.webDocument.propObj.attrObj['before-submit'] as string;
+    return TypeFormDesigner.webDocument.propObj.attrObj['before-submit'] as string;
   }
   set beforeSubmitStr(value: string) {
-    TypeForm.webDocument.setAttribute('before-submit', value);
+    TypeFormDesigner.webDocument.setAttribute('before-submit', value);
   }
   reset(value?: string): void {
     if (value !== undefined) { // 输入值的操作

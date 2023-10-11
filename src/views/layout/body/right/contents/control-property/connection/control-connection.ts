@@ -1,6 +1,6 @@
 import { fromEvent, Observable } from 'rxjs';
 import { TdThreeDotsSvg } from 'type-dom-svgs';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 import { ConnectionControl } from '../../../../../../../core/control/complex/connection/connection.class';
 import { PropertySpan } from '../../property-item/span/property-span.abstract';
@@ -62,18 +62,18 @@ export class ControlConnectionProperty extends PropertySpan {
   }
   controlPropertyReset(label?:string, value?: string): void {
     if (value !== undefined && label !== undefined) { // 输入值的操作
-      if (TypeForm.selectedControl instanceof ConnectionControl) {
-        TypeForm.selectedControl.resetConnectionConfig(label, value);
+      if (TypeFormDesigner.selectedControl instanceof ConnectionControl) {
+        TypeFormDesigner.selectedControl.resetConnectionConfig(label, value);
         this.resetText(label);
       } else {
         console.error('当前控件不是关联选项控件.');
       }
       return;
     }
-    if (TypeForm.selectedControl instanceof ConnectionControl) {
+    if (TypeFormDesigner.selectedControl instanceof ConnectionControl) {
       // 选中控件
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const label = TypeForm.selectedControl?.connectionConfigLabel;
+      const label = TypeFormDesigner.selectedControl?.connectionConfigLabel;
       if (label) {
         this.resetText(label);
       } else {
@@ -85,17 +85,17 @@ export class ControlConnectionProperty extends PropertySpan {
   }
   fieldPropertyReset(label?:string, value?: string): void {
     if (value !== undefined && label !== undefined) { // 输入值的操作
-      if (TypeForm.selectedTableDataCell?.control instanceof ConnectionControl) {
-        TypeForm.selectedTableDataCell.control.resetConnectionConfig(label, value);
+      if (TypeFormDesigner.selectedTableDataCell?.control instanceof ConnectionControl) {
+        TypeFormDesigner.selectedTableDataCell.control.resetConnectionConfig(label, value);
         this.resetText(label);
       } else {
         console.error('当前控件不是关联选项控件');
       }
       return;
     }
-    if (TypeForm.selectedTableDataCell?.control instanceof ConnectionControl) {
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof ConnectionControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'flex');
-      const label = TypeForm.selectedTableDataCell.control?.connectionConfigLabel;
+      const label = TypeFormDesigner.selectedTableDataCell.control?.connectionConfigLabel;
       if (label) {
         this.resetText(label);
       } else {

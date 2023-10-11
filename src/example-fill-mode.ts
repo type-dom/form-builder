@@ -9,7 +9,7 @@ import {
   taskJson,
   taskData
 } from './form-data';
-import { TypeForm } from './type-form';
+import { TypeFormDesigner } from './type-form-designer';
 import './styles/index.scss';
 // 在页面中调用时
 fromEvent(document, 'DOMContentLoaded').subscribe(e => {
@@ -19,25 +19,25 @@ fromEvent(document, 'DOMContentLoaded').subscribe(e => {
   if (formEl) {
     formEl.style.maxWidth = '800px';
     formEl.style.margin = '0 auto';
-    const editor = new TypeForm(formEl, 'fill');
-    console.log('editor is ', editor);
+    const formDesigner = new TypeFormDesigner(formEl, 'fill');
+    console.log('formDesigner is ', formDesigner);
 
     // 测试混合表单
-    editor.createInstance(taskJson);
+    formDesigner.createInstance(taskJson);
     // 给控件配值
-    editor.setFormData(taskData);
+    formDesigner.setFormData(taskData);
     // 老数据
-    // editor.createInstance(oldFormJson);
+    // formDesigner.createInstance(oldFormJson);
     // // 给控件配值
-    // editor.setFormData(oldFormData);
+    // formDesigner.setFormData(oldFormData);
     // 表格数据
-    // editor.createInstance(tableJson);
+    // formDesigner.createInstance(tableJson);
     // // 给控件配值
-    // editor.setFormData(tableData);
+    // formDesigner.setFormData(tableData);
 
-    // const tableControl = new TableControl(editor.layout.webDocument.defaultPage, '我的表格', list);
-    // editor.layout.webDocument.defaultPage.childNodes.push(tableControl);
-    // FormEditor.mode.setSelectedControl(FormEditor.currentPage.childNodes[0]); todo
+    // const tableControl = new TableControl(formDesigner.layout.webDocument.defaultPage, '我的表格', list);
+    // formDesigner.layout.webDocument.defaultPage.childNodes.push(tableControl);
+    // TypeForm.mode.setSelectedControl(TypeForm.currentPage.childNodes[0]); todo
   }
 });
 

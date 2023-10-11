@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeUL, IStyle, StyleDisplay, ListItem, TextNode, ITextNode } from 'type-dom.ts';
-import { TypeForm } from '../../../type-form';
+import { TypeFormDesigner } from '../../../type-form-designer';
 import { WebDocument } from '../web-document.class';
 import { IWebDocumentTabs } from './tabs.interface';
 
@@ -11,8 +11,8 @@ export class WebDocumentTabs extends TypeUL {
   constructor(public parent: WebDocument) {
     super();
     this.className = 'WebDocumentTabs';
-    console.log('AppRoot.el.clientWidth is ', TypeForm.el.clientWidth);
-    const width = TypeForm.mode.width;
+    console.log('AppRoot.el.clientWidth is ', TypeFormDesigner.el.clientWidth);
+    const width = TypeFormDesigner.mode.width;
     this.propObj = {
       styleObj: {
         display: StyleDisplay.none, // 默认隐藏
@@ -120,7 +120,7 @@ export class WebDocumentTabs extends TypeUL {
     console.log('web document tabs createInstance . ');
     //  todo
     this.setPropObj(literal.propObj);
-    const width = TypeForm.mode.width;
+    const width = TypeFormDesigner.mode.width;
     this.setStyleObj({
       // display: 'block',
       padding: '0 5px',
@@ -173,7 +173,7 @@ export class WebDocumentTabs extends TypeUL {
               if (index === li.index) {
                 page.show();
                 this.parent.contents.currentPage = page;
-                console.log('FormEditor.currentPage is ', TypeForm.currentPage);
+                console.log('FormEditor.currentPage is ', TypeFormDesigner.currentPage);
               } else {
                 page.hide();
               }
@@ -186,10 +186,10 @@ export class WebDocumentTabs extends TypeUL {
       // 双击时，tab部分可编辑
       fromEvent(this.dom, 'dblclick').subscribe((e) => {
         console.log('web document tabs double click . ');
-        TypeForm.mode.onTabsDblClick(e, this);
+        TypeFormDesigner.mode.onTabsDblClick(e, this);
       }),
       fromEvent(this.dom, 'input').subscribe((e) => {
-        TypeForm.mode.onTabsInput(e, this);
+        TypeFormDesigner.mode.onTabsInput(e, this);
       }),
       fromEvent(this.dom, 'blur').subscribe(() => {
         this.setAttrObj({

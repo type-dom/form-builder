@@ -27,7 +27,7 @@ import { TableRow } from './components/form/form-item/table-item/table/row/row.c
  * 根节点，继承 TypeRoot;
  * 因为属性和方法要全局调用，所以全部设置为静态 static; 包括get也设置为静态
  */
-export class TypeForm extends TypeRoot {
+export class TypeFormDesigner extends TypeRoot {
   className: 'FormEditor';
   // 光标
   static cursor?: StyleCursor | null;
@@ -51,29 +51,29 @@ export class TypeForm extends TypeRoot {
   static el: HTMLElement;
   static editorElObservable: Observable<Event>;
   static controlSubject: Subject<TypeControl | null>;
-  static formSubject: Subject<TypeForm | null>;
+  static formSubject: Subject<TypeFormDesigner | null>;
   static fieldSubject: Subject<TableDataCell | null>;
   childNodes: [LayoutWrapper, Dialog, MessageBox];
   events: Subscription[];
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
     super(editorEl);
     this.className = 'FormEditor';
-    TypeForm.el = editorEl;
-    if (!TypeForm.el.clientHeight) {
+    TypeFormDesigner.el = editorEl;
+    if (!TypeFormDesigner.el.clientHeight) {
       // FormEditor.el.setAttribute('clientHeight', '500px');
-      TypeForm.el.style.height = '600px'; // 默认高度600px;
+      TypeFormDesigner.el.style.height = '600px'; // 默认高度600px;
     }
     // console.log('FormEditor.el.clientHeight is ', FormEditor.el.clientHeight);
-    TypeForm.formSubject = new Subject<TypeForm | null>();
-    TypeForm.controlSubject = new Subject<TypeControl | null>();
-    TypeForm.fieldSubject = new Subject<TableDataCell | null>();
+    TypeFormDesigner.formSubject = new Subject<TypeFormDesigner | null>();
+    TypeFormDesigner.controlSubject = new Subject<TypeControl | null>();
+    TypeFormDesigner.fieldSubject = new Subject<TableDataCell | null>();
     this.events = [];
-    const modeObj = TypeForm.mode = createModeState(mode);
-    TypeForm.layout = modeObj.createLayout(this);
-    TypeForm.dialog = new Dialog(this);
-    TypeForm.messageBox = new MessageBox(this);
+    const modeObj = TypeFormDesigner.mode = createModeState(mode);
+    TypeFormDesigner.layout = modeObj.createLayout(this);
+    TypeFormDesigner.dialog = new Dialog(this);
+    TypeFormDesigner.messageBox = new MessageBox(this);
     // FormEditor.layout.childNodes.push(this.dialog, this.messageBox);
-    this.childNodes = [TypeForm.layout, TypeForm.dialog, TypeForm.messageBox];
+    this.childNodes = [TypeFormDesigner.layout, TypeFormDesigner.dialog, TypeFormDesigner.messageBox];
     this.render();
     // const json = this.toJSON();
     // console.log('json is ', json);
@@ -84,68 +84,68 @@ export class TypeForm extends TypeRoot {
     // test.render();
     // editorEl.appendChild(test.dom);
     // this.currentPage = this.defaultPage;
-    TypeForm.selectedMenu = null;
-    TypeForm.selectedControl = null;
+    TypeFormDesigner.selectedMenu = null;
+    TypeFormDesigner.selectedControl = null;
     // this.connectionItemObservable = null;
-    TypeForm.editorElObservable = fromEvent(TypeForm.el, 'click')
+    TypeFormDesigner.editorElObservable = fromEvent(TypeFormDesigner.el, 'click')
       .pipe(filter(() => {
-        return !!TypeForm.selectedTableDataCell || !!TypeForm.selectedControl;
+        return !!TypeFormDesigner.selectedTableDataCell || !!TypeFormDesigner.selectedControl;
       }));
-    TypeForm.functionMap = new Map();
-    TypeForm.formProperty.reset();
+    TypeFormDesigner.functionMap = new Map();
+    TypeFormDesigner.formProperty.reset();
   }
   /**
    * 获取设置的文档对象
    */
   static get webDocument(): WebDocument {
-    return TypeForm.layout.webDocument;
+    return TypeFormDesigner.layout.webDocument;
   }
   /**
    * 获取右侧属性栏的字段属性tab
    */
   static get fieldTab(): ListItem {
-    return TypeForm.layout.body.right.tabs.fieldTab;
+    return TypeFormDesigner.layout.body.right.tabs.fieldTab;
   }
   /**
    * 获取右侧属性栏的控件属性的tab
    */
   static get controlTab(): ListItem {
-    return TypeForm.layout.body.right.tabs.controlTab;
+    return TypeFormDesigner.layout.body.right.tabs.controlTab;
   }
   /**
    * 获取右侧属性栏的表单属性的tab
    */
   static get formTab(): ListItem {
-    return TypeForm.layout.body.right.tabs.formTab;
+    return TypeFormDesigner.layout.body.right.tabs.formTab;
   }
   /**
    * 获取控件属性栏
    */
   static get controlProperty(): ControlProperty {
-    return TypeForm.layout.body.right.contents.controlProperty;
+    return TypeFormDesigner.layout.body.right.contents.controlProperty;
   }
   /**
    * 获取字段属性栏
    */
   static get fieldProperty(): FieldProperty {
-    return TypeForm.layout.body.right.contents.fieldProperty;
+    return TypeFormDesigner.layout.body.right.contents.fieldProperty;
   }
   /**
    * 获取表单属性栏
    */
   static get formProperty(): FormProperty {
-    return TypeForm.layout.body.right.contents.formProperty;
+    return TypeFormDesigner.layout.body.right.contents.formProperty;
   }
   // todo 暂时不用
   static get currentPage(): WebPage {
-    return TypeForm.webDocument.contents.currentPage;
+    return TypeFormDesigner.webDocument.contents.currentPage;
   }
   /**
    * 获取默认页
    */
   static get defaultPage(): WebPage { // defaultPage 默认首页
     // return FormEditor.webDocument.defaultPage;
-    return TypeForm.webDocument.contents.defaultPage;
+    return TypeFormDesigner.webDocument.contents.defaultPage;
   }
   /**
    * 获取所有控件
@@ -153,7 +153,7 @@ export class TypeForm extends TypeRoot {
    */
   static get allControls(): TypeControl[] {
     const controls: TypeControl[] = [];
-    TypeForm.webDocument.contents.childNodes.forEach(page => {
+    TypeFormDesigner.webDocument.contents.childNodes.forEach(page => {
       // todo
       if (page.className === 'WebPage') {
         controls.push(...page.childNodes);
@@ -165,7 +165,7 @@ export class TypeForm extends TypeRoot {
    * 获取所有选项控件
    */
   static get optionControls(): TypeControl[] {
-    return TypeForm.allControls.filter(control => !!control.optionConfig);
+    return TypeFormDesigner.allControls.filter(control => !!control.optionConfig);
   }
   /**
    * 默认值属性控制项的控制公式编辑器是否显示的监听
@@ -177,7 +177,7 @@ export class TypeForm extends TypeRoot {
         // if (FormEditor.selectedTableDataCell) { // 表格单元格选中的控件
         //   return FormEditor.fieldProperty.fieldDefaultValue.formulaObservable;
         // }
-        return TypeForm.controlProperty.controlDefaultValue.formulaObservable;
+        return TypeFormDesigner.controlProperty.controlDefaultValue.formulaObservable;
       })
     );
   }
@@ -188,12 +188,12 @@ export class TypeForm extends TypeRoot {
     return this.editorElObservable.pipe(
       switchMap(() => {
         // console.log('this.editor.selectedControl is ', FormEditor.selectedControl);
-        if (TypeForm.selectedTableDataCell) { // 表格单元格选中的控件
+        if (TypeFormDesigner.selectedTableDataCell) { // 表格单元格选中的控件
           // console.log('FormEditor.fieldProperty.fieldOptions.optionsConfigObservable is ', FormEditor.fieldProperty.fieldOptions.optionsConfigObservable);
-          return TypeForm.fieldProperty.fieldOptions.optionsConfigObservable;
+          return TypeFormDesigner.fieldProperty.fieldOptions.optionsConfigObservable;
         }
         // console.log('FormEditor.controlProperty.controlOptions.optionsConfigObservable is ', FormEditor.controlProperty.controlOptions.optionsConfigObservable);
-        return TypeForm.controlProperty.controlOptions.optionsConfigObservable;
+        return TypeFormDesigner.controlProperty.controlOptions.optionsConfigObservable;
       })
     );
   }
@@ -201,7 +201,7 @@ export class TypeForm extends TypeRoot {
    * 提交表单的监听
    */
   static get submitObservable(): Observable<Event> | undefined {
-    return TypeForm.layout.form?.footer.submitBtn.submitObservable;
+    return TypeFormDesigner.layout.form?.footer.submitBtn.submitObservable;
   }
   /**
    * 关联选项控件的关联属性的监听
@@ -209,11 +209,11 @@ export class TypeForm extends TypeRoot {
   static get connectionObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (TypeForm.selectedTableDataCell) { // 表格单元格选中的控件
-          console.log('FormEditor.fieldProperty.fieldConnection.connectionObservable is ', TypeForm.fieldProperty.fieldConnection.connectionObservable);
-          return TypeForm.fieldProperty.fieldConnection.connectionObservable;
+        if (TypeFormDesigner.selectedTableDataCell) { // 表格单元格选中的控件
+          console.log('FormEditor.fieldProperty.fieldConnection.connectionObservable is ', TypeFormDesigner.fieldProperty.fieldConnection.connectionObservable);
+          return TypeFormDesigner.fieldProperty.fieldConnection.connectionObservable;
         }
-        return TypeForm.controlProperty.controlConnection.connectionObservable;
+        return TypeFormDesigner.controlProperty.controlConnection.connectionObservable;
       })
     );
   }
@@ -224,13 +224,13 @@ export class TypeForm extends TypeRoot {
   static get connectionItemObservable(): Observable<Event | null> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (TypeForm.selectedTableDataCell?.control instanceof ConnectionControl) {
-          console.log('FormEditor.selectedTableDataCell.control.connectionItemObservable is ', TypeForm.selectedTableDataCell.control.connectionItemObservable);
-          return TypeForm.selectedTableDataCell.control.connectionItemObservable;
+        if (TypeFormDesigner.selectedTableDataCell?.control instanceof ConnectionControl) {
+          console.log('FormEditor.selectedTableDataCell.control.connectionItemObservable is ', TypeFormDesigner.selectedTableDataCell.control.connectionItemObservable);
+          return TypeFormDesigner.selectedTableDataCell.control.connectionItemObservable;
         }
-        if (TypeForm.selectedControl instanceof ConnectionControl) {
-          console.log('FormEditor.selectedControl.connectionItemObservable is ', TypeForm.selectedControl.connectionItemObservable);
-          return TypeForm.selectedControl.connectionItemObservable;
+        if (TypeFormDesigner.selectedControl instanceof ConnectionControl) {
+          console.log('FormEditor.selectedControl.connectionItemObservable is ', TypeFormDesigner.selectedControl.connectionItemObservable);
+          return TypeFormDesigner.selectedControl.connectionItemObservable;
         }
         return of(null);
       }),
@@ -243,11 +243,11 @@ export class TypeForm extends TypeRoot {
   static get attachmentObservable(): Observable<Event | null> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        if (TypeForm.selectedTableDataCell?.control instanceof AttachmentControl) {
-          return TypeForm.selectedTableDataCell.control.attachmentObservable;
+        if (TypeFormDesigner.selectedTableDataCell?.control instanceof AttachmentControl) {
+          return TypeFormDesigner.selectedTableDataCell.control.attachmentObservable;
         }
-        if (TypeForm.selectedControl instanceof AttachmentControl) {
-          return TypeForm.selectedControl.attachmentObservable;
+        if (TypeFormDesigner.selectedControl instanceof AttachmentControl) {
+          return TypeFormDesigner.selectedControl.attachmentObservable;
         }
         return of(null);
       }),
@@ -258,14 +258,14 @@ export class TypeForm extends TypeRoot {
    * 获取表单
    */
   static get form(): WebForm | undefined {
-    return TypeForm.layout.form;
+    return TypeFormDesigner.layout.form;
   }
   /**
    * 根据控件获取提交的数据
    */
   static get formData(): Record<string, string | any[]> {
     const formData: Record<string, string | any[]> = {};
-    const formIds = TypeForm.webDocument.formIds;
+    const formIds = TypeFormDesigner.webDocument.formIds;
     if (formIds) {
       const formIdJson = JSON.parse(formIds);
       for (const key in formIdJson) {
@@ -274,7 +274,7 @@ export class TypeForm extends TypeRoot {
     }
     const tableData: Record<string, string | number | boolean>[] = [];
     formData.table = tableData;
-    TypeForm.allControls.forEach((ctrl) => {
+    TypeFormDesigner.allControls.forEach((ctrl) => {
       if (ctrl instanceof TableControl) {
         // console.log('ctrl is TableControl', ctrl);
         const table = ctrl.formItem.itemContent;
@@ -333,22 +333,22 @@ export class TypeForm extends TypeRoot {
   static setSelectedMenu(menu: TypeMenu | null): void {
     if (menu) {
       // 要先移除之前选中的菜单的选中状态
-      TypeForm.selectedMenu?.setStyleObj({
+      TypeFormDesigner.selectedMenu?.setStyleObj({
         backgroundColor: '#eee',
         background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
       });
-      TypeForm.selectedMenu = menu;
+      TypeFormDesigner.selectedMenu = menu;
       menu.setStyleObj({
         backgroundColor: '#fae100',
         background: '#fae100',
       });
     } else {
-      if (TypeForm.selectedMenu) {
-        TypeForm.selectedMenu?.setStyleObj({
+      if (TypeFormDesigner.selectedMenu) {
+        TypeFormDesigner.selectedMenu?.setStyleObj({
           backgroundColor: '#eee',
           background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
         });
-        TypeForm.selectedMenu = null;
+        TypeFormDesigner.selectedMenu = null;
       }
     }
   }
@@ -357,8 +357,8 @@ export class TypeForm extends TypeRoot {
    * @param docLiteral
    */
   createInstance(docLiteral: IWebDocument): void {
-    TypeForm.layout.webDocument.createInstance(docLiteral);
-    TypeForm.formProperty.reset();
+    TypeFormDesigner.layout.webDocument.createInstance(docLiteral);
+    TypeFormDesigner.formProperty.reset();
     // FormEditor.layout.webDocument?.defaultPage.createInstance(pageLiteral);
     // console.log('FormEditor.layout.webDocument is ', FormEditor.layout.webDocument);
   }
@@ -374,8 +374,8 @@ export class TypeForm extends TypeRoot {
    * 获取文档的字面量
    */
   static getJsonObj(): IWebDocument {
-    TypeForm.mode.setSelectedControl(null); // 去除选中样式
-    return toJSON(TypeForm.webDocument) as IWebDocument;
+    TypeFormDesigner.mode.setSelectedControl(null); // 去除选中样式
+    return toJSON(TypeFormDesigner.webDocument) as IWebDocument;
   }
   /**
    * 选中控件
@@ -386,40 +386,40 @@ export class TypeForm extends TypeRoot {
     // 选中控件
     if (control) {
       // 如果重复选中一个控件，不做处理
-      if (TypeForm.selectedControl === control) {
+      if (TypeFormDesigner.selectedControl === control) {
         return;
       }
       // 已经选中单元格时
-      if (TypeForm.selectedTableDataCell) {
+      if (TypeFormDesigner.selectedTableDataCell) {
         // 如果选中的控件不是表格控件
         // todo ??? 为什么要清理 ???
         if (!(control instanceof TableControl)) {
-          TypeForm.mode.setSelectedTableDataCell(null);
+          TypeFormDesigner.mode.setSelectedTableDataCell(null);
         }
       }
 
       // 如果之前有选中的控件，则重置样式。
-      TypeForm.selectedControl?.formItem.setStyleObj({
+      TypeFormDesigner.selectedControl?.formItem.setStyleObj({
         borderColor: '#e2e0e0',
       });
-      TypeForm.selectedControl = control;
+      TypeFormDesigner.selectedControl = control;
       control.formItem.setStyleObj({
         borderColor: '#f00',
       });
 
-      TypeForm.controlTab.show(StyleDisplay.flex); // 控件属性栏的tab默认是隐藏的。
+      TypeFormDesigner.controlTab.show(StyleDisplay.flex); // 控件属性栏的tab默认是隐藏的。
       // this.controlTab.dom.click();
       // console.log('clone ', control.clone());
       // this.form.appendChild(control.clone());
     } else { // 清除选中的控件
-      if (TypeForm.selectedControl) {
-        TypeForm.selectedControl.setStyleObj({
+      if (TypeFormDesigner.selectedControl) {
+        TypeFormDesigner.selectedControl.setStyleObj({
           border: '1px solid #e2e0e0',
         });
-        TypeForm.selectedControl = null;
+        TypeFormDesigner.selectedControl = null;
         // 清除选中控件时，如果有选中的单元格，也要同步清除。
-        if (TypeForm.selectedTableDataCell) {
-          TypeForm.mode?.setSelectedTableDataCell(null);
+        if (TypeFormDesigner.selectedTableDataCell) {
+          TypeFormDesigner.mode?.setSelectedTableDataCell(null);
         }
       }
       // this.controlTab.setStyle('display', 'none');
@@ -435,33 +435,33 @@ export class TypeForm extends TypeRoot {
   static setSelectedTableDataCell(tableDataCell: TableDataCell | null): void {
     console.error('setSelectedTableDataCell . tableDataCell is ', tableDataCell);
     if (tableDataCell) {
-      if (TypeForm.selectedTableDataCell === tableDataCell) { // 重复选中同一单元格
+      if (TypeFormDesigner.selectedTableDataCell === tableDataCell) { // 重复选中同一单元格
         return;
       }
-      TypeForm.selectedTableDataCell?.setStyleObj({
+      TypeFormDesigner.selectedTableDataCell?.setStyleObj({
         borderWidth: '1px',
         borderStyle: 'solid',
         borderColor: '#DCDFE6',
       });
-      TypeForm.selectedTableDataCell = tableDataCell;
+      TypeFormDesigner.selectedTableDataCell = tableDataCell;
       tableDataCell.setStyleObj({
         borderWidth: '1px',
         borderStyle: 'solid',
         borderColor: '#f00',
         display: 'table-cell'
       });
-      TypeForm.layout.body.right.tabs.fieldTab.setStyle('display', 'block'); // 字段的tab开始时隐藏的。
+      TypeFormDesigner.layout.body.right.tabs.fieldTab.setStyle('display', 'block'); // 字段的tab开始时隐藏的。
       // this.fieldTab.dom.click();
     } else {
       // 清除选中
-      if (TypeForm.selectedTableDataCell) {
-        TypeForm.selectedTableDataCell.setStyleObj({
+      if (TypeFormDesigner.selectedTableDataCell) {
+        TypeFormDesigner.selectedTableDataCell.setStyleObj({
           borderColor: '#DCDFE6',
         });
       }
-      TypeForm.selectedTableDataCell = null;
-      TypeForm.layout.body.right.tabs.fieldTab.setStyle('display', 'none');
-      TypeForm.controlTab.dom.click();
+      TypeFormDesigner.selectedTableDataCell = null;
+      TypeFormDesigner.layout.body.right.tabs.fieldTab.setStyle('display', 'none');
+      TypeFormDesigner.controlTab.dom.click();
     }
   }
   /**
@@ -469,27 +469,27 @@ export class TypeForm extends TypeRoot {
    * @param config
    */
   static setControlFieldConfig(config: IOptionConfig): void {
-    TypeForm.controlProperty.controlField.resetFieldConfig(config);
+    TypeFormDesigner.controlProperty.controlField.resetFieldConfig(config);
   }
   /**
    * 设置控件默认值的公式
    * @param formula
    */
   static setControlDefaultValueFormula(formula: string): void {
-    TypeForm.controlProperty.controlDefaultValue.formula = formula;
+    TypeFormDesigner.controlProperty.controlDefaultValue.formula = formula;
   }
   /**
    * 设置控件的option-config
    * @param config
    */
   static setControlOptionConfig(config: IOptionConfig): void {
-    if (TypeForm.selectedTableDataCell) {
-      TypeForm.fieldProperty.fieldOptions.resetConfig(config);
-      TypeForm.fieldProperty.fieldOptions.resetControl();
+    if (TypeFormDesigner.selectedTableDataCell) {
+      TypeFormDesigner.fieldProperty.fieldOptions.resetConfig(config);
+      TypeFormDesigner.fieldProperty.fieldOptions.resetControl();
       return;
     }
-    TypeForm.controlProperty.controlOptions.resetConfig(config);
-    TypeForm.controlProperty.controlOptions.resetControl();
+    TypeFormDesigner.controlProperty.controlOptions.resetConfig(config);
+    TypeFormDesigner.controlProperty.controlOptions.resetControl();
   }
   /**
    * 设置选项控件对应的 label和value
@@ -498,11 +498,11 @@ export class TypeForm extends TypeRoot {
    * @param value
    */
   static setControlConnection(label: string, value: string): void {
-    if (TypeForm.selectedTableDataCell) {
-      TypeForm.fieldProperty.fieldConnection.reset(label, value);
+    if (TypeFormDesigner.selectedTableDataCell) {
+      TypeFormDesigner.fieldProperty.fieldConnection.reset(label, value);
       return;
     }
-    TypeForm.controlProperty.controlConnection.reset(label, value);
+    TypeFormDesigner.controlProperty.controlConnection.reset(label, value);
   }
   /**
    * 设置选项控件的值
@@ -512,24 +512,24 @@ export class TypeForm extends TypeRoot {
    * @param value
    */
   static setConnectionItemValue(label: string, value: string): void {
-    if (TypeForm.selectedTableDataCell?.control instanceof ConnectionControl) {
-      TypeForm.selectedTableDataCell.control.setAttrObj({
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof ConnectionControl) {
+      TypeFormDesigner.selectedTableDataCell.control.setAttrObj({
         value,
         label
       }); // 控件值
       // 在内容框中显示选中的值
-      TypeForm.selectedTableDataCell.control.formItem.itemContent.setAttrObj({
+      TypeFormDesigner.selectedTableDataCell.control.formItem.itemContent.setAttrObj({
         value: label // 显示值
       });
       return;
     }
-    if (TypeForm.selectedControl instanceof ConnectionControl) {
-      TypeForm.selectedControl.setAttrObj({
+    if (TypeFormDesigner.selectedControl instanceof ConnectionControl) {
+      TypeFormDesigner.selectedControl.setAttrObj({
         value,
         label
       }); // 控件值
       // 在内容框中显示选中的值
-      TypeForm.selectedControl.formItem.itemContent.setAttrObj({
+      TypeFormDesigner.selectedControl.formItem.itemContent.setAttrObj({
         value: label // 显示值
       });
       // FormEditor.selectedControl.connectionItemLabel = label;
@@ -540,15 +540,15 @@ export class TypeForm extends TypeRoot {
   }
   // 设置附件控件的值
   static setAttachmentValue(label: string, value: string): void {
-    if (TypeForm.selectedTableDataCell?.control instanceof AttachmentControl) {
-      TypeForm.selectedTableDataCell.control.setAttrObj({
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof AttachmentControl) {
+      TypeFormDesigner.selectedTableDataCell.control.setAttrObj({
         value: value,
         title: value,
       }); // 控件值
       return;
     }
-    if (TypeForm.selectedControl instanceof AttachmentControl) {
-      TypeForm.selectedControl.setAttrObj({
+    if (TypeFormDesigner.selectedControl instanceof AttachmentControl) {
+      TypeFormDesigner.selectedControl.setAttrObj({
         value: value,
         title: value,
       }); // 控件值
@@ -575,12 +575,12 @@ export class TypeForm extends TypeRoot {
         formIds[key] = formData[key];
       }
     }
-    TypeForm.webDocument.setAttrObj({
+    TypeFormDesigner.webDocument.setAttrObj({
       'form-ids': JSON.stringify(formIds),
     });
     const tableData = formData.table as Record<string, string>[];
     delete formData.table;
-    TypeForm.allControls.forEach(control => {
+    TypeFormDesigner.allControls.forEach(control => {
       // console.log('control.fieldName is ', control.fieldName);
       // console.log('control.className is ', control.className);
       if (control instanceof TableControl) {
@@ -615,7 +615,7 @@ export class TypeForm extends TypeRoot {
           }
         }
       }
-      TypeForm.mode.setControlReadOnly(control);
+      TypeFormDesigner.mode.setControlReadOnly(control);
     });
   }
 }

@@ -1,4 +1,4 @@
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { ControlProperty } from '../control-property';
@@ -20,17 +20,17 @@ export class TableColumnProperty extends PropertyInput {
 
   reset(value?: string): void {
     if (value !== undefined) {
-      if (TypeForm.selectedControl instanceof TableControl) {
-        const table = TypeForm.selectedControl.formItem.itemContent;
+      if (TypeFormDesigner.selectedControl instanceof TableControl) {
+        const table = TypeFormDesigner.selectedControl.formItem.itemContent;
         table.changeColumnCount(Number(value));
       } else {
         console.error('不是表格控件');
       }
     } else {
-      if (TypeForm.selectedControl instanceof TableControl) {
+      if (TypeFormDesigner.selectedControl instanceof TableControl) {
         if (this.styleObj.display === 'none') this.show();
         //  todo 根据表头数，设置现在的数量
-        const table = TypeForm.selectedControl.formItem.itemContent;
+        const table = TypeFormDesigner.selectedControl.formItem.itemContent;
         const tableHead = table.tableHead;
         const count = tableHead.length;
         const config = table.config;
@@ -56,17 +56,17 @@ export class TableColumnProperty extends PropertyInput {
   update(control: TypeControl | null): void {
     const value = control?.configs.tableColumnCount;
     if (value !== undefined) {
-      if (TypeForm.selectedControl instanceof TableControl) {
-        const table = TypeForm.selectedControl.formItem.itemContent;
+      if (TypeFormDesigner.selectedControl instanceof TableControl) {
+        const table = TypeFormDesigner.selectedControl.formItem.itemContent;
         table.changeColumnCount(Number(value));
       } else {
         console.error('不是表格控件');
       }
     } else {
-      if (TypeForm.selectedControl instanceof TableControl) {
+      if (TypeFormDesigner.selectedControl instanceof TableControl) {
         if (this.styleObj.display === 'none') this.show();
         //  todo 根据表头数，设置现在的数量
-        const table = TypeForm.selectedControl.formItem.itemContent;
+        const table = TypeFormDesigner.selectedControl.formItem.itemContent;
         const tableHead = table.tableHead;
         const count = tableHead.length;
         const config = table.config;

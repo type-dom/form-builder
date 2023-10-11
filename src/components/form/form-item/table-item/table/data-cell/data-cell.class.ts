@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { Input, ITextNode, Select, Textarea, TextNode, TypeTableDataCell } from 'type-dom.ts';
-import { TypeForm } from '../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../type-form-designer';
 import { TypeControl } from '../../../../../../core/control/type-control.abstract';
 import { ITypeControl } from '../../../../../../core/control/type-control.interface';
 import { SingleInputControl } from '../../../../../../core/control/basic/single-input/single-input.class';
@@ -96,7 +96,7 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
         // 阻止冒泡 ？？？ TODO 为什么要阻止冒泡 ----> 点击表格控件其它区域时要取消选中单元格。
         // e.stopPropagation();
         // 单元格选中状态。不同状态时的处理不同。设计模式时要重置属性栏。
-        TypeForm.mode.setSelectedTableDataCell(this);
+        TypeFormDesigner.mode.setSelectedTableDataCell(this);
       }),
     );
   }

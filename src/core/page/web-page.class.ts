@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv, StylePosition } from 'type-dom.ts';
-import { TypeForm } from '../../type-form';
+import { TypeFormDesigner } from '../../type-form-designer';
 import { TypeControl } from '../control/type-control.abstract';
 import { createControl } from '../control/type-control.factory';
 import { WebDocumentContents } from '../document/contents/contents.class';
@@ -25,7 +25,7 @@ export class WebPage extends TypeDiv implements IWebPage {
       margin: '5mm',
       // paddingTop:'5px',
       minHeight: '300px',
-      maxHeight: 'calc(' + TypeForm.el.clientHeight + 'px - 60px - 10mm)',
+      maxHeight: 'calc(' + TypeFormDesigner.el.clientHeight + 'px - 60px - 10mm)',
       // height: 'calc(' + AppRoot.el.clientHeight + 'px - 60px - 10mm)',
       overflowY: 'auto',
       backgroundColor: '#fff',
@@ -59,7 +59,7 @@ export class WebPage extends TypeDiv implements IWebPage {
       fromEvent(this.dom, 'click').subscribe((e) => {
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          TypeForm.mode.setSelectedControl(null);
+          TypeFormDesigner.mode.setSelectedControl(null);
         }
       })
     );
@@ -72,7 +72,7 @@ export class WebPage extends TypeDiv implements IWebPage {
     // console.log('AppRoot.el.clientHeight is ', AppRoot.el.clientHeight);
     // console.log('this.parent.tabs.dom.clientHeight is ', this.parent.parent.tabs.dom.clientHeight);
     this.setStyleObj({
-      maxHeight: 'calc(' + (TypeForm.el.clientHeight - this.parent.parent.tabs.dom.clientHeight) + 'px - 60px - 10mm)',
+      maxHeight: 'calc(' + (TypeFormDesigner.el.clientHeight - this.parent.parent.tabs.dom.clientHeight) + 'px - 60px - 10mm)',
       overflowY: 'auto',
     });
     this.childNodes = [];

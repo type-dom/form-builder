@@ -1,4 +1,4 @@
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { TableControl } from '../../../../../../../core/control/complex/table/table.class';
 import { PropertyCascade } from '../../property-item/cascade/property-cascade.abstract';
@@ -16,12 +16,12 @@ export class ControlFieldProperty extends PropertyCascade {
   }
 
   get fieldName(): string {
-    return TypeForm.selectedControl?.configs.fieldName || '';
+    return TypeFormDesigner.selectedControl?.configs.fieldName || '';
   }
 
   set fieldName(value: string) { // 是由二级下拉选择组装起来的，由 . 隔开，第1个是，第一级的值，第2个是第二级的值
-    if (TypeForm.selectedControl) {
-      TypeForm.selectedControl.fieldName = value;
+    if (TypeFormDesigner.selectedControl) {
+      TypeFormDesigner.selectedControl.fieldName = value;
     }
   }
 
@@ -52,7 +52,7 @@ export class ControlFieldProperty extends PropertyCascade {
       this.fieldName = value;
       return;
     }
-    if (TypeForm.selectedControl instanceof TableControl) {
+    if (TypeFormDesigner.selectedControl instanceof TableControl) {
       this.hide();
       return;
     }
@@ -94,7 +94,7 @@ export class ControlFieldProperty extends PropertyCascade {
   }
   fieldPropertyReset(value?: string): void {
     // console.log('control field value is ', value);
-    if (!TypeForm.selectedTableDataCell) {
+    if (!TypeFormDesigner.selectedTableDataCell) {
       console.error('AppRoot.selectedTableDataCell is undefined . ');
       return;
     }
@@ -105,9 +105,9 @@ export class ControlFieldProperty extends PropertyCascade {
       //     this.select.resetConfig(this.fieldConfig);
       //   }
       // }
-      const table = TypeForm.selectedTableDataCell.parent.parent;
+      const table = TypeFormDesigner.selectedTableDataCell.parent.parent;
       const tableHeader = table.config?.tableHeader;
-      const index = TypeForm.selectedTableDataCell.index;
+      const index = TypeFormDesigner.selectedTableDataCell.index;
       // console.log('tableHeader is ', tableHeader);
       // console.log('index is ', index);
 
@@ -120,8 +120,8 @@ export class ControlFieldProperty extends PropertyCascade {
       return;
     }
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-    const tableHeader = TypeForm.selectedTableDataCell.parent.parent.config?.tableHeader;
-    const index = TypeForm.selectedTableDataCell.index;
+    const tableHeader = TypeFormDesigner.selectedTableDataCell.parent.parent.config?.tableHeader;
+    const index = TypeFormDesigner.selectedTableDataCell.index;
     // console.log('tableHeader is ', tableHeader);
     // console.log('index is ', index);
 

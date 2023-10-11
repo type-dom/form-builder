@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { Division, Label } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
-import { TypeForm } from '../../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../../type-form-designer';
 import { TypeControl } from '../../../../../../../../core/control/type-control.abstract';
 import { TableControl } from '../../../../../../../../core/control/complex/table/table.class';
 import { PropertyItem } from '../../../property-item/property-item.abstract';
@@ -26,11 +26,11 @@ export class TableHeaderProperty extends PropertyItem {
 
   // todo 只修改选中的表格
   reset(value: string): void {
-    if (TypeForm.selectedControl instanceof TableControl) {
-      const webTable = TypeForm.selectedControl.formItem.itemContent;
+    if (TypeFormDesigner.selectedControl instanceof TableControl) {
+      const webTable = TypeFormDesigner.selectedControl.formItem.itemContent;
       if (webTable.config?.mode) {
         webTable.config.mode = value as 'editable' | 'disabled' | undefined;
-        TypeForm.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
+        TypeFormDesigner.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
         webTable.setTable(webTable.config);
         console.log('webTable is ', webTable);
         webTable.render();
@@ -40,11 +40,11 @@ export class TableHeaderProperty extends PropertyItem {
   // todo 只修改选中的表格
   update(control: TypeControl | null): void {
     const value = control?.configs.tableHeaderEditable;
-    if (TypeForm.selectedControl instanceof TableControl) {
-      const webTable = TypeForm.selectedControl.formItem.itemContent;
+    if (TypeFormDesigner.selectedControl instanceof TableControl) {
+      const webTable = TypeFormDesigner.selectedControl.formItem.itemContent;
       if (webTable.config?.mode) {
         webTable.config.mode = value as 'editable' | 'disabled' | undefined;
-        TypeForm.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
+        TypeFormDesigner.selectedControl.formItem.addSpan.setStyle('display', webTable.config.mode === 'editable' ? 'block' : 'none');
         webTable.setTable(webTable.config);
         console.log('webTable is ', webTable);
         webTable.render();

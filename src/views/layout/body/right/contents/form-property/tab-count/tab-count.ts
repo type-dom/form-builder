@@ -1,4 +1,4 @@
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { PropertyInput } from '../../property-item/input/property-input.abstract';
 import { FormProperty } from '../form-property';
 
@@ -22,11 +22,11 @@ export class TabCountProperty extends PropertyInput {
 
   reset(value?: string): void {
     if (value !== undefined) {
-      TypeForm.webDocument.tabs.setTabs(parseInt(value, 10));
+      TypeFormDesigner.webDocument.tabs.setTabs(parseInt(value, 10));
       return;
     }
     // todo 根据已有的页面数，设置 tab数量
-    const count = TypeForm.webDocument.tabs.childNodes.length;
+    const count = TypeFormDesigner.webDocument.tabs.childNodes.length;
     // console.error('count is ', count);
     if (count) {
       this.resetInputValue(String(count));
@@ -36,11 +36,11 @@ export class TabCountProperty extends PropertyInput {
   }
   update(value?: string): void {
     if (value !== undefined) {
-      TypeForm.webDocument.tabs.setTabs(parseInt(value, 10));
+      TypeFormDesigner.webDocument.tabs.setTabs(parseInt(value, 10));
       return;
     }
     // todo 根据已有的页面数，设置 tab数量
-    const count = TypeForm.webDocument.tabs.childNodes.length;
+    const count = TypeFormDesigner.webDocument.tabs.childNodes.length;
     // console.error('count is ', count);
     if (count) {
       this.resetInputValue(String(count));

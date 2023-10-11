@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { Span, TextNode, TypeTable, toJSON } from 'type-dom.ts';
-import { TypeForm } from '../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../type-form-designer';
 import { TypeControl } from '../../../../../core/control/type-control.abstract';
 import { ITableConfig, ITableField } from '../../../../../core/control/complex/table/table.interface';
 import { TableItem } from '../table-item.class';
@@ -238,7 +238,7 @@ export class Table extends TypeTable implements ITable {
   }
   createInstance(tableLiteral: ITable): void {
     super.createInstance(tableLiteral);
-    TypeForm.mode.tableCreateInstance(this, tableLiteral);
+    TypeFormDesigner.mode.tableCreateInstance(this, tableLiteral);
   }
 
   //  todo 点击非td处， selectedTableDataCell = null;

@@ -1,5 +1,5 @@
 import { fromEvent, Subscription } from 'rxjs';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { FormProperty } from '../form-property';
 
@@ -49,7 +49,7 @@ export class FormLoadedProperty extends PropertyTextarea {
         // eslint-disable-next-line no-new-func
         const fun = new Function('return ' + value)();
         console.log('fun is ', fun);
-        fun(TypeForm.webDocument);
+        fun(TypeFormDesigner.webDocument);
       });
       return;
     } else {

@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { Span, TextNode, TypeDiv, TypeSvgSvg } from 'type-dom.ts';
-import { TypeForm } from '../../type-form';
+import { TypeFormDesigner } from '../../type-form-designer';
 import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { TypeControl } from '../control/type-control.abstract';
 import { TableControl } from '../control/complex/table/table.class';
@@ -33,7 +33,7 @@ export abstract class TypeMenu extends TypeDiv implements ITypeMenu {
       }),
       // 鼠标出
       fromEvent(this.dom, 'mouseout').subscribe(() => {
-        if (TypeForm.selectedMenu !== this) {
+        if (TypeFormDesigner.selectedMenu !== this) {
           this.setStyleObj({
             backgroundColor: '#eee',
             background: '-webkit-linear-gradient(top, #eee, #d9d9d9)',
@@ -47,28 +47,28 @@ export abstract class TypeMenu extends TypeDiv implements ITypeMenu {
       }),
       // 点击后直接创建控件，并加载到页面中
       fromEvent(this.dom, 'click').subscribe(() => {
-        TypeForm.setSelectedMenu(this);
-        console.log('AppRoot.selectedMenu is ', TypeForm.selectedMenu);
+        TypeFormDesigner.setSelectedMenu(this);
+        console.log('AppRoot.selectedMenu is ', TypeFormDesigner.selectedMenu);
         // console.log('control is ', control);
         // console.log('AppRoot.selectedTableDataCell is ', AppRoot.selectedTableDataCell);
         // console.log('this.ControlClass.name is ', this.ControlClass.name);
         // console.log('TableControl.name is ', TableControl.name);
         // 判断是否选中表格的单元格
-        if (TypeForm.selectedTableDataCell) { // 修改表格单元格的控件。
+        if (TypeFormDesigner.selectedTableDataCell) { // 修改表格单元格的控件。
           if (this.className !== 'TableMenu') {
-            const control = this.createControl(TypeForm.selectedTableDataCell);
-            TypeForm.selectedTableDataCell.setControl(control);
+            const control = this.createControl(TypeFormDesigner.selectedTableDataCell);
+            TypeFormDesigner.selectedTableDataCell.setControl(control);
             // todo 修改单元格中的控件时， 要触发 字段属性 reset
-            TypeForm.fieldProperty.reset();
-            TypeForm.selectedTableDataCell.render();
+            TypeFormDesigner.fieldProperty.reset();
+            TypeFormDesigner.selectedTableDataCell.render();
           } else {
             // 弹框提示
             console.error('单元格中不能添加表格。');
-            TypeForm.messageBox.toast('错误提示', '单元格中不能添加表格');
+            TypeFormDesigner.messageBox.toast('错误提示', '单元格中不能添加表格');
           }
         } else { // 添加到页面中
           // 创建控件
-          const control = this.createControl(TypeForm.currentPage); // todo currentPage
+          const control = this.createControl(TypeFormDesigner.currentPage); // todo currentPage
           // 表格控件不受表单列数设置影响。
           if (control instanceof TableControl) {
             control.setStyleObj({
@@ -81,7 +81,7 @@ export abstract class TypeMenu extends TypeDiv implements ITypeMenu {
             });
           }
           // console.log('add control AppRoot.currentPage is ', AppRoot.currentPage);
-          TypeForm.currentPage.appendChild(control);
+          TypeFormDesigner.currentPage.appendChild(control);
           // FormEditor.mode.setSelectedControl(control);
         }
       }),

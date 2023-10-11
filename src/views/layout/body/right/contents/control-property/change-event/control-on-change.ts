@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
@@ -45,7 +45,7 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
     // if (AppRoot.selectedControl?.itemContent instanceof Input ||
     //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
-    const changeStr = TypeForm.selectedControl?.configs.onChange;
+    const changeStr = TypeFormDesigner.selectedControl?.configs.onChange;
     if (changeStr) {
       this.resetInputValue(changeStr);
     } else {
@@ -61,8 +61,8 @@ export class ControlOnChangeProperty extends PropertyTextarea {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
     // if (AppRoot.selectedControl?.itemContent instanceof Input ||
     //   AppRoot.selectedControl?.itemContent instanceof Textarea) {
-    if (TypeForm.selectedTableDataCell?.control instanceof TypeControl) {
-      const changeStr = TypeForm.selectedTableDataCell?.control?.configs.onChange;
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof TypeControl) {
+      const changeStr = TypeFormDesigner.selectedTableDataCell?.control?.configs.onChange;
       if (changeStr) {
         this.resetInputValue(changeStr);
       } else {
@@ -73,19 +73,19 @@ export class ControlOnChangeProperty extends PropertyTextarea {
   addOnChange(value: string): void {
     if (this.parent instanceof ControlProperty) {
       if (value.trim()) { // 输入值的操作
-        TypeForm.selectedControl?.addOnChange(this.content.dom.value);
+        TypeFormDesigner.selectedControl?.addOnChange(this.content.dom.value);
         return;
       } else {
-        TypeForm.selectedControl?.removeOnChange();
+        TypeFormDesigner.selectedControl?.removeOnChange();
       }
     }
     if (this.parent instanceof FieldProperty) {
-      if (TypeForm.selectedTableDataCell?.control instanceof TypeControl) {
+      if (TypeFormDesigner.selectedTableDataCell?.control instanceof TypeControl) {
         if (value.trim()) { // 输入值的操作
-          TypeForm.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
+          TypeFormDesigner.selectedTableDataCell?.control?.addOnChange(this.content.dom.value);
           return;
         } else {
-          TypeForm.selectedTableDataCell?.control?.removeOnChange();
+          TypeFormDesigner.selectedTableDataCell?.control?.removeOnChange();
         }
       } else {
         console.error('AppRoot.selectedTableDataCell?.control is not TypeControl . ');

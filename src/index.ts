@@ -1,1 +1,1 @@
-export { TypeForm } from './type-form';
+export { TypeFormDesigner } from './type-form-designer';

@@ -1,5 +1,5 @@
 import { Input, Textarea, TextNode } from 'type-dom.ts';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { FieldProperty } from '../../field-property/field-property';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
@@ -54,42 +54,42 @@ export class RequiredProperty extends PropertyRadio {
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
       if (
-        TypeForm.selectedControl?.itemContent instanceof Input
-        || TypeForm.selectedControl?.itemContent instanceof Textarea
+        TypeFormDesigner.selectedControl?.itemContent instanceof Input
+        || TypeFormDesigner.selectedControl?.itemContent instanceof Textarea
       ) {
-        TypeForm.selectedControl?.itemContent.setAttribute('required', !!value);
+        TypeFormDesigner.selectedControl?.itemContent.setAttribute('required', !!value);
       }
       return;
     }
     // when select control
     console.log('this.styleObj.display is ', this.styleObj.display);
     if (this.styleObj.display === 'none') this.show();
-    const required = !!TypeForm.selectedControl?.formItem.itemContent.attrObj.required;
+    const required = !!TypeFormDesigner.selectedControl?.formItem.itemContent.attrObj.required;
     console.log('required is ', required);
     this.resetResultValue(required ? 'required' : '');
   }
   fieldPropertyReset(value?: string): void {
-    if (!TypeForm.selectedTableDataCell) {
+    if (!TypeFormDesigner.selectedTableDataCell) {
       console.error('AppRoot.selectedTableDataCell is null . ');
       return;
     }
-    if (TypeForm.selectedTableDataCell.control instanceof TextNode) {
+    if (TypeFormDesigner.selectedTableDataCell.control instanceof TextNode) {
       console.error('AppRoot.selectedTableDataCell.control is not TypeControl . ');
       return;
     }
     if (value !== undefined) {
       if (
-        TypeForm.selectedTableDataCell.control.itemContent instanceof Input
-        || TypeForm.selectedTableDataCell.control.itemContent instanceof Textarea
+        TypeFormDesigner.selectedTableDataCell.control.itemContent instanceof Input
+        || TypeFormDesigner.selectedTableDataCell.control.itemContent instanceof Textarea
       ) {
-        TypeForm.selectedTableDataCell.control.itemContent.setAttribute('required', !!value);
+        TypeFormDesigner.selectedTableDataCell.control.itemContent.setAttribute('required', !!value);
       }
       return;
     }
     // when select control
     console.log('this.styleObj.display is ', this.styleObj.display);
     if (this.styleObj.display === 'none') this.show();
-    const required = !!TypeForm.selectedTableDataCell.control.formItem.itemContent.attrObj.required;
+    const required = !!TypeFormDesigner.selectedTableDataCell.control.formItem.itemContent.attrObj.required;
     console.log('required is ', required);
     this.resetResultValue(required ? 'required' : '');
   }

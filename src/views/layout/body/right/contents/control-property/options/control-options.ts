@@ -1,4 +1,4 @@
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { RadioControl } from '../../../../../../../core/control/basic/radio/radio.class';
 import { CheckboxControl } from '../../../../../../../core/control/basic/checkbox/checkbox.class';
 import { SelectControl } from '../../../../../../../core/control/basic/select/select.class';
@@ -37,21 +37,21 @@ export class ControlOptionsProperty extends PropertyOptions {
   controlPropertyReset(value?: string | number | boolean): void {
     if (value !== undefined) {
       //  todo setValue
-      if (TypeForm.selectedControl instanceof RadioControl
-        || TypeForm.selectedControl instanceof CheckboxControl
-        || TypeForm.selectedControl instanceof SelectControl
+      if (TypeFormDesigner.selectedControl instanceof RadioControl
+        || TypeFormDesigner.selectedControl instanceof CheckboxControl
+        || TypeFormDesigner.selectedControl instanceof SelectControl
       ) {
-        TypeForm.selectedControl.setValue(value);
+        TypeFormDesigner.selectedControl.setValue(value);
       }
       return;
     }
     //  根据选中的控件，设置选项。
-    if (TypeForm.selectedControl instanceof RadioControl
-      || TypeForm.selectedControl instanceof CheckboxControl
-      || TypeForm.selectedControl instanceof SelectControl
+    if (TypeFormDesigner.selectedControl instanceof RadioControl
+      || TypeFormDesigner.selectedControl instanceof CheckboxControl
+      || TypeFormDesigner.selectedControl instanceof SelectControl
     ) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      const config = TypeForm.selectedControl.optionConfig;
+      const config = TypeFormDesigner.selectedControl.optionConfig;
       // console.log('config is ', config);
       if (config) {
         this.resetConfig(config);
@@ -65,18 +65,18 @@ export class ControlOptionsProperty extends PropertyOptions {
   fieldPropertyReset(value?: string | number | boolean): void {
     if (value !== undefined) {
       //  todo setValue
-      if (TypeForm.selectedTableDataCell?.control instanceof RadioControl
-        || TypeForm.selectedTableDataCell?.control instanceof CheckboxControl
-        || TypeForm.selectedTableDataCell?.control instanceof SelectControl) {
-        TypeForm.selectedTableDataCell.control.setValue(value);
+      if (TypeFormDesigner.selectedTableDataCell?.control instanceof RadioControl
+        || TypeFormDesigner.selectedTableDataCell?.control instanceof CheckboxControl
+        || TypeFormDesigner.selectedTableDataCell?.control instanceof SelectControl) {
+        TypeFormDesigner.selectedTableDataCell.control.setValue(value);
       }
       return;
     }
-    if (TypeForm.selectedTableDataCell?.control instanceof RadioControl
-      || TypeForm.selectedTableDataCell?.control instanceof CheckboxControl
-      || TypeForm.selectedTableDataCell?.control instanceof SelectControl) {
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof RadioControl
+      || TypeFormDesigner.selectedTableDataCell?.control instanceof CheckboxControl
+      || TypeFormDesigner.selectedTableDataCell?.control instanceof SelectControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      const config = TypeForm.selectedTableDataCell.control.optionConfig;
+      const config = TypeFormDesigner.selectedTableDataCell.control.optionConfig;
       // console.log('config is ', config);
       if (config) {
         this.resetConfig(config);

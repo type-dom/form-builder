@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { formData, formJson, oldFormData, oldFormJson, tableData, tableJson } from './form-data';
-import { TypeForm } from './type-form';
+import { TypeFormDesigner } from './type-form-designer';
 import './styles/index.scss';
 // 在页面中调用时
 fromEvent(document, 'DOMContentLoaded').subscribe(() => {
@@ -8,7 +8,7 @@ fromEvent(document, 'DOMContentLoaded').subscribe(() => {
   const formEl = document.querySelector('#readonly-mode') as HTMLElement;
   // console.log('formEl is ', formEl);
   if (formEl) {
-    const editor = new TypeForm(formEl, 'readonly');
+    const editor = new TypeFormDesigner(formEl, 'readonly');
     console.log('editor is ', editor);
     editor.createInstance(oldFormJson);
     // 给控件配值

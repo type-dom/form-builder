@@ -2,10 +2,10 @@
 <title >nomnoml</title>
 <desc >#.interface: fill=lightblue
 #.enumeration: fill=lightgreen
-[ExampleDesignMode|-editor: TypeForm;+el: HTMLElement|+add(): number;+initEvents(): void]
+[ExampleDesignMode|-editor: TypeFormDesigner;+el: HTMLElement|+add(): number;+initEvents(): void]
 [&lt;interface&gt;IFormData|+table: Record&lt;string, string&gt;\[\]|]
-[TypeForm|+className: &quot;TypeForm&quot;;+static cursor: Cursor \| null \| undefined;+static selectedMenu: TypeMenu \| null;+static selectedControl: TypeControl \| null;+static selectedTableDataCell: TableDataCell \| null \| undefined;+static layout: LayoutWrapper;+static dialog: Dialog;+static messageBox: MessageBox;+static mode: &quot;design&quot; \| &quot;fill&quot; \| &quot;readonly&quot;;+static functionMap: Map&lt;string, (...rest: any\[\]) =&gt; any&gt;;+static el: HTMLElement;+static editorElObservable: any;+static onReady: any;+static readyEvent: any;+childNodes: \[LayoutWrapper, Dialog, MessageBox\];+events: any\[\]|+static setSelectedControl(): void;+static setSelectedTableDataCell(): void;+static setSelectedMenu(): void;+createInstance(): void;+static save(): void;+static getJsonObj(): IWebDocument;+static setControlFieldConfig(): void;+static setControlDefaultValueFormula(): void;+static setControlOptionConfig(): void;+static setControlConnection(): void;+static setConnectionItemValue(): void;+static setAttachmentValue(): void;+static setFormData(): void]
-[TypeRoot]&lt;:-[TypeForm]
+[TypeFormDesigner|+className: &quot;TypeFormDesigner&quot;;+static cursor: Cursor \| null \| undefined;+static selectedMenu: TypeMenu \| null;+static selectedControl: TypeControl \| null;+static selectedTableDataCell: TableDataCell \| null \| undefined;+static layout: LayoutWrapper;+static dialog: Dialog;+static messageBox: MessageBox;+static mode: &quot;design&quot; \| &quot;fill&quot; \| &quot;readonly&quot;;+static functionMap: Map&lt;string, (...rest: any\[\]) =&gt; any&gt;;+static el: HTMLElement;+static editorElObservable: any;+static onReady: any;+static readyEvent: any;+childNodes: \[LayoutWrapper, Dialog, MessageBox\];+events: any\[\]|+static setSelectedControl(): void;+static setSelectedTableDataCell(): void;+static setSelectedMenu(): void;+createInstance(): void;+static save(): void;+static getJsonObj(): IWebDocument;+static setControlFieldConfig(): void;+static setControlDefaultValueFormula(): void;+static setControlOptionConfig(): void;+static setControlConnection(): void;+static setConnectionItemValue(): void;+static setAttachmentValue(): void;+static setFormData(): void]
+[TypeRoot]&lt;:-[TypeFormDesigner]
 [WebForm|+className: &quot;WebForm&quot;;+childNodes: \[FormHeader, FormBody, FormFooter\];+header: FormHeader;+body: FormBody;+footer: FormFooter;+title: string;+parent: LayoutWrapper \| TypeRoot|+setTitle(): void]
 [TypeDiv]&lt;:-[WebForm]
 [Select|+nodeName: &quot;select&quot;;+dom: HTMLSelectElement;+className: &quot;Select&quot;;+childNodes: SelectOption\[\];+value: string \| number \| boolean \| undefined;+parent: TypeHtml|+setOptions(): void;+resetOptions(): void;+initEvents(): void]
@@ -62,7 +62,7 @@
 [&lt;interface&gt;IWebPage|+className: &quot;WebPage&quot;;+childNodes: ITypeControl\[\]|]
 [ITypeDiv]&lt;:--[IWebPage]
 [IWebPage]&lt;:--[WebPage]
-[LayoutWrapper|+className: &quot;LayoutWrapper&quot;;+webDocument: WebDocument;+header: HeaderWrapper;+body: BodyWrapper;+form: WebForm \| undefined;+parent: TypeForm|+initEvents(): void]
+[LayoutWrapper|+className: &quot;LayoutWrapper&quot;;+webDocument: WebDocument;+header: HeaderWrapper;+body: BodyWrapper;+form: WebForm \| undefined;+parent: TypeFormDesigner|+initEvents(): void]
 [TypeDiv]&lt;:-[LayoutWrapper]
 [FormBody|+className: &quot;FormBody&quot;;+parent: WebForm|]
 [TypeDiv]&lt;:-[FormBody]
@@ -851,7 +851,7 @@
 <rect x="13.5" y="24.5" height="123" width="197" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>
 <a id=".ExampleDesignMode" xlink:href=""><text x="112" y="46" style="fill: #33322E;text-anchor: middle;">ExampleDesignMode</text></a>
 <path d="M13.5 55.5 L210.5 55.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
-<text x="21.5" y="77" style="fill: #33322E;font-weight:normal;">-editor: TypeForm</text>
+<text x="21.5" y="77" style="fill: #33322E;font-weight:normal;">-editor: TypeFormDesigner</text>
 <text x="21.5" y="92" style="fill: #33322E;font-weight:normal;">+el: HTMLElement</text>
 <path d="M13.5 101.5 L210.5 101.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="21.5" y="123" style="fill: #33322E;font-weight:normal;">+add(): number</text>
@@ -862,9 +862,9 @@
 <text x="258.5" y="104" style="fill: #33322E;font-weight:normal;">+table: Record&lt;string, string&gt;[]</text>
 <path d="M250.5 113.5 L570.5 113.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="2146.5" y="198.5" height="498" width="615" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>
-<a id="src/type-form.ts.TypeForm" xlink:href="src/type-form.ts"><text x="2454" y="220" style="fill: #33322E;text-anchor: middle;">TypeForm</text></a>
+<a id="src/type-form-designer.ts.TypeFormDesigner" xlink:href="src/type-form-designer.ts"><text x="2454" y="220" style="fill: #33322E;text-anchor: middle;">TypeFormDesigner</text></a>
 <path d="M2146.5 229.5 L2761.5 229.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
-<text x="2154.5" y="251" style="fill: #33322E;font-weight:normal;">+className: &quot;TypeForm&quot;</text>
+<text x="2154.5" y="251" style="fill: #33322E;font-weight:normal;">+className: &quot;TypeFormDesigner&quot;</text>
 <text x="2154.5" y="266" style="fill: #33322E;font-weight:normal;">+static cursor: Cursor | null | undefined</text>
 <text x="2154.5" y="281" style="fill: #33322E;font-weight:normal;">+static selectedMenu: TypeMenu | null</text>
 <text x="2154.5" y="296" style="fill: #33322E;font-weight:normal;">+static selectedControl: TypeControl | null</text>
@@ -1036,7 +1036,7 @@
 <text x="4209.5" y="909" style="fill: #33322E;font-weight:normal;">+header: HeaderWrapper</text>
 <text x="4209.5" y="924" style="fill: #33322E;font-weight:normal;">+body: BodyWrapper</text>
 <text x="4209.5" y="939" style="fill: #33322E;font-weight:normal;">+form: WebForm | undefined</text>
-<text x="4209.5" y="954" style="fill: #33322E;font-weight:normal;">+parent: TypeForm</text>
+<text x="4209.5" y="954" style="fill: #33322E;font-weight:normal;">+parent: TypeFormDesigner</text>
 <path d="M4201.5 963.5 L4478.5 963.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="4209.5" y="985" style="fill: #33322E;font-weight:normal;">+initEvents(): void</text>
 <rect x="4518.5" y="868.5" height="85" width="225" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>

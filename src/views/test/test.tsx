@@ -1,9 +1,9 @@
 import { TypeDiv, Parser } from 'type-dom.ts';
-import { TypeForm } from '../../type-form';
+import { TypeFormDesigner } from '../../type-form-designer';
 import template from './test.html';
 export class Test extends TypeDiv {
   className: 'Test';
-  constructor(public parent: TypeForm) {
+  constructor(public parent: TypeFormDesigner) {
     super();
     this.className = 'Test';
     // this.childNodes = this.createItems(this, [{

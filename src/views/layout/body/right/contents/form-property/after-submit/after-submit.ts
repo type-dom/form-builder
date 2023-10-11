@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { PropertyTextarea } from '../../property-item/textarea/property-textarea.abstract';
 import { FormProperty } from '../form-property';
 import { TableDataCell } from '../../../../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
@@ -14,10 +14,10 @@ export class AfterSubmitProperty extends PropertyTextarea {
     this.addAttrName('after-submit-property');
   }
   get afterSubmitStr(): string {
-    return TypeForm.webDocument.propObj.attrObj['after-submit'] as string;
+    return TypeFormDesigner.webDocument.propObj.attrObj['after-submit'] as string;
   }
   set afterSubmitStr(value: string) {
-    TypeForm.webDocument.setAttribute('after-submit', value);
+    TypeFormDesigner.webDocument.setAttribute('after-submit', value);
   }
   reset(value?: string): void {
     if (value !== undefined) { // 输入值的操作

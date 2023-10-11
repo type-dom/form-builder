@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from 'type-dom.ts';
-import { TypeForm } from '../../type-form';
+import { TypeFormDesigner } from '../../type-form-designer';
 import { WebDocument } from '../../core/document/web-document.class';
 import { WebForm } from '../../components/form/form';
 import { HeaderWrapper } from './header/header';
@@ -11,7 +11,7 @@ export class LayoutWrapper extends TypeDiv {
   header: HeaderWrapper;
   body: BodyWrapper;
   form?: WebForm;
-  constructor(public parent: TypeForm) {
+  constructor(public parent: TypeFormDesigner) {
     super();
     this.className = 'LayoutWrapper';
     this.addAttrName('layout');

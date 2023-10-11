@@ -1,5 +1,5 @@
 import { Span, TextNode } from 'type-dom.ts';
-import { TypeForm } from '../../type-form';
+import { TypeFormDesigner } from '../../type-form-designer';
 import { LayoutWrapper } from '../../views/layout/layout';
 import { TypeControl } from '../../core/control/type-control.abstract';
 import { WebPage } from '../../core/page/web-page.class';
@@ -22,9 +22,9 @@ export class DesignState extends ModeStateAbstract {
   constructor() {
     super();
     this.mode = 'design';
-    this.width = TypeForm.el.clientWidth - 595 + 'px';
+    this.width = TypeFormDesigner.el.clientWidth - 595 + 'px';
   }
-  createLayout(editor: TypeForm): LayoutWrapper {
+  createLayout(editor: TypeFormDesigner): LayoutWrapper {
     //   todo 显示面板
     const layout = new LayoutWrapper(editor);
     // layout.header = new HeaderWrapper(layout);
@@ -33,24 +33,24 @@ export class DesignState extends ModeStateAbstract {
     return layout;
   }
   resetFieldProperty() {
-    TypeForm.fieldProperty.reset();
+    TypeFormDesigner.fieldProperty.reset();
   }
   setControlReadOnly(control: TypeControl): void {
     return;
   }
   setSelectedControl(control: TypeControl | null) {
     console.log('setSelectedControl . ');
-    TypeForm.setSelectedControl(control);
+    TypeFormDesigner.setSelectedControl(control);
     // FormEditor.controlProperty.reset();
     console.warn('warning next ........');
-    TypeForm.controlSubject.next(control);
+    TypeFormDesigner.controlSubject.next(control);
   }
 
   setSelectedTableDataCell(tableDataCell: TableDataCell | null) {
-    TypeForm.setSelectedTableDataCell(tableDataCell);
+    TypeFormDesigner.setSelectedTableDataCell(tableDataCell);
     // 重置属性栏？？？
-    TypeForm.fieldProperty.reset();
-    TypeForm.fieldSubject.next(tableDataCell);
+    TypeFormDesigner.fieldProperty.reset();
+    TypeFormDesigner.fieldSubject.next(tableDataCell);
   }
   hideFormItemDeleteSpan(deleteSpan: Span): void {}
   tableCreateInstance(table: Table, tableLiteral: ITable) {

@@ -1,6 +1,6 @@
 import { Input, IStyle, Label, Span, Textarea, TextNode, TypeDiv, ILabel } from 'type-dom.ts';
 import { TdDeleteSvg } from 'type-dom-svgs';
-import { TypeForm } from '../../../type-form';
+import { TypeFormDesigner } from '../../../type-form-designer';
 import { formItemStyle, labelStyle } from '../../../core/control/type-control.const';
 import { Select } from '../../select/select.class';
 import { CheckboxGroup } from '../checkbox-group/checkbox-group.class';
@@ -56,7 +56,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
         }
       ]
     });
-    TypeForm.mode.hideFormItemDeleteSpan(this.deleteSpan);
+    TypeFormDesigner.mode.hideFormItemDeleteSpan(this.deleteSpan);
     //   new Span(this);
     // this.deleteSpan.setStyleObj({
     //   // position: 'absolute',
@@ -87,7 +87,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
     this.itemContent.setPropObj(itemContentLiteral.propObj);
     // 实例化 ----> 在子类中实例化 todo 只有 TableItem中重写了 ？？？
     // this.itemContent.createInstance(itemContentLiteral);
-    TypeForm.mode.hideFormItemDeleteSpan(this.deleteSpan);
+    TypeFormDesigner.mode.hideFormItemDeleteSpan(this.deleteSpan);
   }
   setDisabled(): void {
     this.itemContent.setAttrObj({

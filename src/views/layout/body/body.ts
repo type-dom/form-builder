@@ -1,5 +1,5 @@
 import { TypeSection, StyleDisplay } from 'type-dom.ts';
-import { TypeForm } from '../../../type-form';
+import { TypeFormDesigner } from '../../../type-form-designer';
 import { LayoutWrapper } from '../layout';
 import { BodyLeft } from './left/left';
 import { BodyRight } from './right/right';
@@ -13,10 +13,10 @@ export class BodyWrapper extends TypeSection {
   constructor(public parent: LayoutWrapper) {
     super();
     this.className = 'BodyWrapper';
-    console.log('this.editor.el.clientHeight is ', TypeForm.el.clientHeight);
+    console.log('this.editor.el.clientHeight is ', TypeFormDesigner.el.clientHeight);
     this.addStyleObj({
       display: StyleDisplay.flex,
-      height: 'calc(' + TypeForm.el.clientHeight + 'px - 60px)',
+      height: 'calc(' + TypeFormDesigner.el.clientHeight + 'px - 60px)',
       justifyContent: 'space-between'
     });
     this.addAttrName('body-wrapper');

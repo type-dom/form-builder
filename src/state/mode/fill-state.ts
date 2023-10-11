@@ -1,5 +1,5 @@
 import { Span } from 'type-dom.ts';
-import { TypeForm } from '../../type-form';
+import { TypeFormDesigner } from '../../type-form-designer';
 import { LayoutWrapper } from '../../views/layout/layout';
 import { TypeControl } from '../../core/control/type-control.abstract';
 import { WebForm } from '../../components/form/form';
@@ -25,7 +25,7 @@ export class FillState extends ModeStateAbstract {
     this.mode = 'fill';
     this.width = '100%';
   }
-  createLayout(editor: TypeForm): LayoutWrapper {
+  createLayout(editor: TypeFormDesigner): LayoutWrapper {
     const layout = new LayoutWrapper(editor);
     layout.form = new WebForm(layout);
     // 头部显示表单名称
@@ -40,10 +40,10 @@ export class FillState extends ModeStateAbstract {
     return;
   }
   setSelectedControl(control: TypeControl | null): void {
-    TypeForm.setSelectedControl(control);
+    TypeFormDesigner.setSelectedControl(control);
   }
   setSelectedTableDataCell(tableDataCell: TableDataCell | null): void {
-    TypeForm.setSelectedTableDataCell(tableDataCell);
+    TypeFormDesigner.setSelectedTableDataCell(tableDataCell);
   }
   hideFormItemDeleteSpan(deleteSpan: Span) {
     deleteSpan.hide();

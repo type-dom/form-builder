@@ -1,5 +1,5 @@
 import { TypeDiv } from 'type-dom.ts';
-import { TypeForm } from '../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../type-form-designer';
 import { BodyRight } from '../right';
 import { ControlProperty } from './control-property/control-property';
 import { FormProperty } from './form-property/form-property';
@@ -15,7 +15,7 @@ export class RightContents extends TypeDiv {
     super();
     this.className = 'RightContents';
     this.addStyleObj({
-      height: 'calc(' + TypeForm.el.clientHeight + 'px - 100px)',
+      height: 'calc(' + TypeFormDesigner.el.clientHeight + 'px - 100px)',
       overflowY: 'auto',
       margin: '0 5px 5px',
       border: '1px solid #ccc',

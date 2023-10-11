@@ -1,5 +1,5 @@
 import { TextNode } from 'type-dom.ts';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
 import { FieldProperty } from '../../field-property/field-property';
@@ -55,9 +55,9 @@ export class ReadonlyProperty extends PropertyRadio {
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
       if (value === 'disabled') {
-        TypeForm.selectedControl?.setDisabled();
+        TypeFormDesigner.selectedControl?.setDisabled();
       } else {
-        TypeForm.selectedControl?.removeDisabled();
+        TypeFormDesigner.selectedControl?.removeDisabled();
       }
       return;
     }
@@ -65,24 +65,24 @@ export class ReadonlyProperty extends PropertyRadio {
     console.log('this.styleObj.display is ', this.styleObj.display);
     // if (AppRoot.selectedTableDataCell?.control instanceof )
     if (this.styleObj.display === 'none') this.show();
-    let disabled = TypeForm.selectedControl?.formItem.itemContent.attrObj.disabled as boolean;
+    let disabled = TypeFormDesigner.selectedControl?.formItem.itemContent.attrObj.disabled as boolean;
     console.log('disabled is ', disabled);
     this.resetResultValue(disabled ? 'disabled' : '');
   }
   fieldPropertyReset(value?: string): void {
-    if (!TypeForm.selectedTableDataCell) {
+    if (!TypeFormDesigner.selectedTableDataCell) {
       console.error('AppRoot.selectedTableDataCell is null . ');
       return;
     }
-    if (TypeForm.selectedTableDataCell?.control instanceof TextNode) {
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof TextNode) {
       console.error('AppRoot.selectedTableDataCell?.control is not TypeControl . ');
       return;
     }
     if (value !== undefined) {
       if (value === 'disabled') {
-        TypeForm.selectedTableDataCell?.control.setDisabled();
+        TypeFormDesigner.selectedTableDataCell?.control.setDisabled();
       } else {
-        TypeForm.selectedTableDataCell?.control.removeDisabled();
+        TypeFormDesigner.selectedTableDataCell?.control.removeDisabled();
       }
       return;
     }
@@ -90,7 +90,7 @@ export class ReadonlyProperty extends PropertyRadio {
     // if (AppRoot.selectedTableDataCell?.control instanceof )
     if (this.styleObj.display === 'none') this.show();
     // todo 字段属性栏中设置。
-    let disabled = TypeForm.selectedTableDataCell.control.formItem.itemContent.attrObj.disabled as boolean;
+    let disabled = TypeFormDesigner.selectedTableDataCell.control.formItem.itemContent.attrObj.disabled as boolean;
     console.log('disabled is ', disabled);
     this.resetResultValue(disabled ? 'disabled' : '');
   }

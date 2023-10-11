@@ -1,5 +1,5 @@
 import { distinctUntilChanged } from 'rxjs';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { TypeControl } from '../../../../../../../core/control/type-control.abstract';
 import { TableDataCell } from '../../../../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { TableHead } from '../../../../../../../components/form/form-item/table-item/table/head/head.class';
@@ -29,12 +29,12 @@ export class ControlTitleProperty extends PropertyInput {
     super.initEvents();
     if (this.parent instanceof ControlProperty) {
       this.events.push(
-        TypeForm.controlSubject
+        TypeFormDesigner.controlSubject
           .pipe(distinctUntilChanged())
           .subscribe((control) => this.listenControl(control)));
     } else {
       this.events.push(
-        TypeForm.fieldSubject
+        TypeFormDesigner.fieldSubject
           .pipe(distinctUntilChanged())
           .subscribe((cell) => this.listenCell(cell)));
     }
@@ -59,7 +59,7 @@ export class ControlTitleProperty extends PropertyInput {
     if (this.styleObj.display === 'none') this.setStyle('display', 'block');
     const tableHeader = cell?.parent.parent.config?.tableHeader;
     // console.log('tableHeader is ', tableHeader);
-    const index = TypeForm.selectedTableDataCell?.index;
+    const index = TypeFormDesigner.selectedTableDataCell?.index;
     // console.log('index is ', index);
     if (tableHeader && index !== undefined) {
       // console.log('tableHeader[index].label is ', tableHeader[index].label);
@@ -80,19 +80,19 @@ export class ControlTitleProperty extends PropertyInput {
   // 选中控件时，重置控件属性 ---> 重置控件标题
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      TypeForm.selectedControl?.resetLabelText(this.content.dom.value);
+      TypeFormDesigner.selectedControl?.resetLabelText(this.content.dom.value);
       return;
     }
   }
   fieldPropertyReset(value?: string): void {
-    if (!TypeForm.selectedTableDataCell) {
+    if (!TypeFormDesigner.selectedTableDataCell) {
       console.error('AppRoot.selectedTableDataCell is null .');
       return;
     }
     if (value !== undefined) {
-      const table = TypeForm.selectedTableDataCell.parent.parent;
-      const tableHeader = TypeForm.selectedTableDataCell.parent.parent.config?.tableHeader;
-      const index = TypeForm.selectedTableDataCell.index;
+      const table = TypeFormDesigner.selectedTableDataCell.parent.parent;
+      const tableHeader = TypeFormDesigner.selectedTableDataCell.parent.parent.config?.tableHeader;
+      const index = TypeFormDesigner.selectedTableDataCell.index;
       if (tableHeader && index !== undefined) {
         tableHeader[index].label = value;
         // 修改表头标签

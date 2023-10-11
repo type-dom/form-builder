@@ -1,5 +1,5 @@
 import { Textarea, Input } from 'type-dom.ts';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { SingleInputControl } from '../../../../../../../core/control/basic/single-input/single-input.class';
 import { MultilineInputControl } from '../../../../../../../core/control/basic/multiline-input/multiline-input.class';
 import { FieldProperty } from '../../field-property/field-property';
@@ -38,21 +38,21 @@ export class ControlPlaceholderProperty extends PropertyInput {
   }
   controlPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (TypeForm.selectedControl instanceof SingleInputControl ||
-        TypeForm.selectedControl instanceof MultilineInputControl) {
-        TypeForm.selectedControl?.resetPlaceholder(this.content.dom.value);
+      if (TypeFormDesigner.selectedControl instanceof SingleInputControl ||
+        TypeFormDesigner.selectedControl instanceof MultilineInputControl) {
+        TypeFormDesigner.selectedControl?.resetPlaceholder(this.content.dom.value);
       } else {
         throw Error('不是单行输入控件或者多行输入控件');
       }
       return;
     }
-    if (TypeForm.selectedControl instanceof SingleInputControl ||
-      TypeForm.selectedControl instanceof MultilineInputControl) {
+    if (TypeFormDesigner.selectedControl instanceof SingleInputControl ||
+      TypeFormDesigner.selectedControl instanceof MultilineInputControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      if (TypeForm.selectedControl?.itemContent instanceof Input ||
-        TypeForm.selectedControl?.itemContent instanceof Textarea) {
+      if (TypeFormDesigner.selectedControl?.itemContent instanceof Input ||
+        TypeFormDesigner.selectedControl?.itemContent instanceof Textarea) {
         // todo 表格中的控件和普通控件的placeholder取值不一样。普通控件能这样取，表格中控件却不行 ？？？
-        const placeholder = TypeForm.selectedControl?.itemContent?.dom.placeholder;
+        const placeholder = TypeFormDesigner.selectedControl?.itemContent?.dom.placeholder;
         if (placeholder) {
           this.resetInputValue(placeholder);
         } else {
@@ -65,20 +65,20 @@ export class ControlPlaceholderProperty extends PropertyInput {
   }
   fieldPropertyReset(value?: string): void {
     if (value !== undefined) {
-      if (TypeForm.selectedTableDataCell?.control instanceof SingleInputControl ||
-        TypeForm.selectedTableDataCell?.control instanceof MultilineInputControl) {
-        TypeForm.selectedTableDataCell.control.resetPlaceholder(this.content.dom.value);
+      if (TypeFormDesigner.selectedTableDataCell?.control instanceof SingleInputControl ||
+        TypeFormDesigner.selectedTableDataCell?.control instanceof MultilineInputControl) {
+        TypeFormDesigner.selectedTableDataCell.control.resetPlaceholder(this.content.dom.value);
       } else {
         throw Error('不是单行输入控件或者多行输入控件');
       }
       return;
     }
-    if (TypeForm.selectedTableDataCell?.control instanceof SingleInputControl ||
-      TypeForm.selectedTableDataCell?.control instanceof MultilineInputControl) {
+    if (TypeFormDesigner.selectedTableDataCell?.control instanceof SingleInputControl ||
+      TypeFormDesigner.selectedTableDataCell?.control instanceof MultilineInputControl) {
       if (this.styleObj.display === 'none') this.setStyle('display', 'block');
-      if (TypeForm.selectedTableDataCell.control.itemContent instanceof Input ||
-        TypeForm.selectedTableDataCell.control.itemContent instanceof Textarea) {
-        const placeholder = TypeForm.selectedTableDataCell.control.itemContent.attrObj.placeholder as string;
+      if (TypeFormDesigner.selectedTableDataCell.control.itemContent instanceof Input ||
+        TypeFormDesigner.selectedTableDataCell.control.itemContent instanceof Textarea) {
+        const placeholder = TypeFormDesigner.selectedTableDataCell.control.itemContent.attrObj.placeholder as string;
         if (placeholder) {
           this.resetInputValue(placeholder);
         } else {

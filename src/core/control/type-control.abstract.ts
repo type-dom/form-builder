@@ -1,6 +1,6 @@
 import { fromEvent, Subscription } from 'rxjs';
 import { Input, Label, Select, Textarea, TypeDiv, toJSON } from 'type-dom.ts';
-import { TypeForm } from '../../type-form';
+import { TypeFormDesigner } from '../../type-form-designer';
 import { FormItem } from '../../components/form/form-item/form-item.abstract';
 import { TableDataCell } from '../../components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { Table } from '../../components/form/form-item/table-item/table/table.class';
@@ -150,7 +150,7 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
     if (!this.onChange) {
       this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
         // console.log('this.formItem.itemContent.dom  ' + eventName);
-        fun(TypeForm.selectedControl, TypeForm.functionMap);
+        fun(TypeFormDesigner.selectedControl, TypeFormDesigner.functionMap);
       });
       this.events.push(
         // fromEvent(this.dom, 'click').subscribe(() => {
@@ -163,7 +163,7 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
     this.onChange.unsubscribe();
     this.onChange = fromEvent(this.formItem.itemContent.dom, eventName).subscribe(() => {
       // console.log('this.formItem.itemContent.dom  ' + eventName);
-      fun(TypeForm.selectedControl, TypeForm.functionMap);
+      fun(TypeFormDesigner.selectedControl, TypeFormDesigner.functionMap);
     });
   }
 
@@ -178,7 +178,7 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
       fromEvent(this.dom, 'mousedown').subscribe(() => {
         // console.log('web control mousedown ');
         // console.log('this.index is ', this.index);
-        TypeForm.mode.onControlMousedown(this);
+        TypeFormDesigner.mode.onControlMousedown(this);
       }),
       fromEvent(this.dom, 'dragover').subscribe((evt) => {
         // console.log('web-control dragover . ');
@@ -187,22 +187,22 @@ export abstract class TypeControl extends TypeDiv implements ITypeControl {
       }),
       fromEvent(this.dom, 'dragstart').subscribe(() => {
         // console.log('web-control dragstart . ');
-        TypeForm.mode.onControlDragstart(this);
+        TypeFormDesigner.mode.onControlDragstart(this);
       }),
       fromEvent(this.dom, 'drop').subscribe(() => {
         // console.log('TypeControl drop . ');
-        TypeForm.mode.onControlDrop(this);
+        TypeFormDesigner.mode.onControlDrop(this);
       }),
       fromEvent(this.dom, 'dragend').subscribe(() => {
         // console.log('web control dragend . ');
         // console.log('this.index is ', this.index);
-        TypeForm.mode.onControlDragend(this);
+        TypeFormDesigner.mode.onControlDragend(this);
       }),
       // 删除
       fromEvent(this.formItem.deleteSpan.dom, 'click').subscribe(() => {
         // console.log('this.formItem.deleteDiv.dom click . ');
         this.parent.childNodes.splice(this.index, 1);
-        TypeForm.mode.setSelectedControl(null);
+        TypeFormDesigner.mode.setSelectedControl(null);
         this.parent.render();
       })
     );

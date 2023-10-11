@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { StyleDisplay, Division, Label } from 'type-dom.ts';
 import { TdButton } from 'type-dom-ui';
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { itemContentStyle } from '../../../../../../../core/control/type-control.const';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { Select } from '../../../../../../../components/select/select.class';
@@ -65,7 +65,7 @@ export abstract class PropertyCascade extends PropertyItem {
   }
 
   get fieldConfig(): IOptionConfig | undefined {
-    const fieldConfigStr = TypeForm.webDocument.attrObj['field-config'];
+    const fieldConfigStr = TypeFormDesigner.webDocument.attrObj['field-config'];
     if (fieldConfigStr) {
       const configJson = JSON.parse(fieldConfigStr as string) as IOptionConfig;
       let optionConfig: IOptionConfig = {
@@ -109,7 +109,7 @@ export abstract class PropertyCascade extends PropertyItem {
   }
 
   set fieldConfig(value: IOptionConfig | undefined) {
-    TypeForm.webDocument.setAttribute('field-config', JSON.stringify(value));
+    TypeFormDesigner.webDocument.setAttribute('field-config', JSON.stringify(value));
   }
 
   resetCascadeConfigResultValue(value: string | number | boolean): void {

@@ -1,4 +1,4 @@
-import { TypeForm } from '../../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../../type-form-designer';
 import { controlStyle } from '../../../../../../../core/control/type-control.const';
 import { IOptionConfig } from '../../../../../../../core/control/type-control.interface';
 import { PropertyRadio } from '../../property-item/radio/property-radio.abstract';
@@ -47,7 +47,7 @@ export class FormColumnProperty extends PropertyRadio {
   reset(value?: string): void {
     if (value !== undefined) {
       controlStyle.width = value; // 改变新建控件的宽度。
-      TypeForm.allControls.forEach(control => {
+      TypeFormDesigner.allControls.forEach(control => {
         if (control.className === 'TableControl') {
           control.setStyleObj({
             width: '100%',
@@ -66,7 +66,7 @@ export class FormColumnProperty extends PropertyRadio {
   update(value: string): void {
     if (value !== undefined) {
       controlStyle.width = value; // 改变新建控件的宽度。
-      TypeForm.allControls.forEach(control => {
+      TypeFormDesigner.allControls.forEach(control => {
         if (control.className === 'TableControl') {
           control.setStyleObj({
             width: '100%',

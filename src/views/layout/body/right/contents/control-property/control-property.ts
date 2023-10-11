@@ -1,5 +1,5 @@
 import { Division, StyleDisplay, TextNode, TypeDiv } from 'type-dom.ts';
-import { TypeForm } from '../../../../../../type-form';
+import { TypeFormDesigner } from '../../../../../../type-form-designer';
 import { RightContents } from '../contents';
 // control property
 import { ControlFieldProperty } from './field/control-field';
@@ -113,10 +113,10 @@ export class ControlProperty extends TypeDiv {
   }
   reset(): void {
     // todo 依据选中的控件设置控件属性显示
-    const className = TypeForm.selectedControl?.className;
+    const className = TypeFormDesigner.selectedControl?.className;
     console.log('className is ', className);
     // todo 控制项的显示和隐藏，是在这里判断，还是放在reset中更合理？？？
-    if (!TypeForm.selectedControl) {
+    if (!TypeFormDesigner.selectedControl) {
       this.controlField.hide();
       this.controlTitle.hide();
       this.controlPlaceholder.hide();
