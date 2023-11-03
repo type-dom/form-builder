@@ -41,7 +41,7 @@ export class DesignState extends ModeStateAbstract {
   setSelectedControl(control: TypeControl | null) {
     console.log('setSelectedControl . ');
     TypeFormDesigner.setSelectedControl(control);
-    // FormEditor.controlProperty.reset();
+    // TypeFormDesigner.controlProperty.reset();
     console.warn('warning next ........');
     TypeFormDesigner.controlSubject.next(control);
   }

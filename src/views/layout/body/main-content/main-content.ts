@@ -25,8 +25,8 @@ export class BodyMainContent extends TypeDiv {
       }
     };
 
-    // FormEditor.curDoc = this.webDocument;
-    // FormEditor.selector = this.selector;
+    // TypeFormDesigner.curDoc = this.webDocument;
+    // TypeFormDesigner.selector = this.selector;
     // console.log('parent.parent is ', parent.parent);
     parent.parent.webDocument.setParent(this);
     this.childNodes = [parent.parent.webDocument];

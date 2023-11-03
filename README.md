@@ -90,7 +90,7 @@
 
 ## 配置控件字段
 
-        对应FormEditor类中的方法 setControlFieldConfig(config: IOptionConfig)
+        对应TypeFormDesigner类中的方法 setControlFieldConfig(config: IOptionConfig)
 
 ## 公式
 

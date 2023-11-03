@@ -173,7 +173,7 @@ export class WebDocumentTabs extends TypeUL {
               if (index === li.index) {
                 page.show();
                 this.parent.contents.currentPage = page;
-                console.log('FormEditor.currentPage is ', TypeFormDesigner.currentPage);
+                console.log('TypeFormDesigner.currentPage is ', TypeFormDesigner.currentPage);
               } else {
                 page.hide();
               }

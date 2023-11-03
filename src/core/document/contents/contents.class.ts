@@ -1,5 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from 'type-dom.ts';
+import { TypeFormDesigner } from '../../../type-form-designer';
 import { WebPage } from '../../page/web-page.class';
 import { IWebPage } from '../../page/web-page.interface';
 import { WebDocument } from '../web-document.class';
@@ -88,7 +89,7 @@ export class WebDocumentContents extends TypeDiv implements IWebDocumentContents
         // console.log(this.dom, 'this.dom.lastChild.childNodes');
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          // FormEditor.mode.setSelectedControl(null);
+          TypeFormDesigner.mode.setSelectedControl(null);
         }
       })
     );

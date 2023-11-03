@@ -82,7 +82,7 @@ export abstract class TypeMenu extends TypeDiv implements ITypeMenu {
           }
           // console.log('add control AppRoot.currentPage is ', AppRoot.currentPage);
           TypeFormDesigner.currentPage.appendChild(control);
-          // FormEditor.mode.setSelectedControl(control);
+          TypeFormDesigner.mode.setSelectedControl(control);
         }
       }),
     );
