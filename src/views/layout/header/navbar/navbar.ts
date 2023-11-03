@@ -26,12 +26,12 @@ export class Navbar extends TypeDiv {
     // this.previewBtn = this.createItem(this, {
     //   TypeClass: TdButton,
     // }) as TdButton;
-    this.previewBtn = new TdButton(this, {
+    this.previewBtn = new TdButton({
       SvgClass: TdAttachmentSvg,
       loading: true,
       title: '预览',
     });
-    this.saveBtn = new TdButton(this, {
+    this.saveBtn = new TdButton({
       SvgClass: TdDeleteSvg,
       loading: true,
       title: '保存',
@@ -40,7 +40,6 @@ export class Navbar extends TypeDiv {
     // this.previewBtn = new PreviewButton(this);
     // this.saveBtn = new SaveButton(this);
     this.addChildren(this.previewBtn, this.saveBtn);
-    this.initEvents();
   }
   initEvents(): void {
     this.events.push(
@@ -52,8 +51,8 @@ export class Navbar extends TypeDiv {
         console.log('AppRoot.exampleData is ', TypeFormDesigner.formData);
       }),
       fromEvent(this.saveBtn.dom, 'click').subscribe(() => {
-        // FormEditor.messageBox.show();
-        // // FormEditor.messageBox.setTitle('提醒');
+        // TypeFormDesigner.messageBox.show();
+        // // TypeFormDesigner.messageBox.setTitle('提醒');
         TypeFormDesigner.messageBox.confirm('提醒', '你确定要保存表单吗？');
         // AppRoot.dialog.preview(AppRoot.page);
         // console.log('AppRoot.form json is ', toJSON(AppRoot.page));

@@ -35,7 +35,6 @@ export abstract class PropertyInput extends PropertyItem {
     });
     this.button.textNode.setText('');
     this.childNodes = [this.label, this.content, this.button];
-    // this.initEvents();
   }
   resetInputPlaceholder(placeholder: string): void {
     this.content.setAttribute('placeholder', placeholder);

@@ -20,7 +20,6 @@ export class AttachmentMenu extends TypeMenu {
     this.svg.resetSize(24, 24);
     this.textNode.setText('附件');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): AttachmentControl {
     return new AttachmentControl(parent);

@@ -1,8 +1,8 @@
 {
   "name": "type-form-designer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "dynamic form designer based on type-dom framework . ",
-  "main": "src/index.ts",
+  "main": "lib/type-form-designer.js",
   "scripts": {
     "serve": "webpack-dev-server --mode=development --config ./build/webpack.config.js",
     "build": "webpack --mode=production --config ./build/webpack.config.js",
@@ -14,10 +14,14 @@
     "lint-fix": "eslint 'src/**/*.{ts,js,tsx,jsx}' --fix -o eslint_log.log",
     "uml": "tsuml2 --glob ./src/**/*.ts ",
     "docs": "typedoc --entryPointStrategy expand ./src",
-    "coverage": "typescript-coverage-report"
+    "coverage": "typescript-coverage-report",
+    "git-push": "git add . && git commit -m 'edit' && git push origin main",
+    "git-pull": "git pull"
   },
   "keywords": [
-    "TypeForm",
+    "Dynamic Form",
+    "FormDesigner",
+    "TypeFormDesigner",
     "typescript",
     "webpack",
     "TypeDom",
@@ -36,8 +40,8 @@
     "@babel/preset-react": "^7.22.5",
     "@types/file-saver": "^2.0.3",
     "@types/jest": "^29.5.2",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
@@ -54,11 +58,8 @@
     "less-loader": "^11.1.3",
     "lint": "^1.1.2",
     "mini-css-extract-plugin": "^2.7.6",
-    "postcss": "^8.4.24",
-    "postcss-loader": "^7.3.3",
-    "precss": "^4.0.0",
     "rimraf": "^5.0.5",
-    "sass": "^1.63.3",
+    "sass": "^1.69.3",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
@@ -104,15 +105,5 @@
     "showRelativePath": true,
     "historyFile": "typecoverage.json",
     "noDetailWhenFailed": true
-  },
-  "nx": {
-    "targets": {
-      "build": {
-        "outputs": [
-          "{projectRoot}/dist",
-          "{projectRoot}/public/dist"
-        ]
-      }
-    }
   }
 }

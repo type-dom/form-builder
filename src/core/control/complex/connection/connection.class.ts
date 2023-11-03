@@ -21,7 +21,6 @@ export class ConnectionControl extends ComplexControl implements IConnectionCont
     this.childNodes = [this.formItem];
     // 在表格中时，点击会先触发，导致 selectedTableDataCell没有值。所以要延时触发。
     this.connectionItemObservable = fromEvent(this.formItem.dom, 'click');
-    this.initEvents();
   }
 
   get connectionConfigLabel(): string {

@@ -18,10 +18,9 @@ export class TableHeaderProperty extends PropertyItem {
     this.className = 'TableHeaderProperty';
     this.addAttrName('table-header-property');
     // console.log('this.dom is ', this.dom);
-    this.division = new Division(this);
+    this.division = new Division();
 
     this.childNodes = [this.label, this.division, this.button];
-    this.initEvents();
   }
 
   // todo 只修改选中的表格

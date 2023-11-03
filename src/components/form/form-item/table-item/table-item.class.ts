@@ -38,7 +38,6 @@ export class TableItem extends FormItem implements ITableItem {
     const addSvg = new TdAddSvg(this.addSpan);
     this.addSpan.addChild(addSvg);
     this.childNodes = [this.label, this.itemContent, this.deleteSpan];
-    this.initEvents();
   }
 
   initEvents(): void {

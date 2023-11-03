@@ -18,7 +18,6 @@ export class TableHead extends TypeTableHead implements ITableHead {
     this.className = 'TableHead';
     this.childNodes = [];
     this.setHeadItems(th);
-    this.initEvents();
   }
 
   setHeadItems(th: ITableField[]): void {
@@ -26,7 +25,7 @@ export class TableHead extends TypeTableHead implements ITableHead {
     this.clearChildNodes();
     for (const field of th) {
       const tableHeader = new TableHeaderCell(this);
-      const text = new TextNode(tableHeader, field.label);
+      const text = new TextNode(field.label);
       tableHeader.setAttrName(field.name);
       tableHeader.childNodes.push(text);
       this.childNodes.push(tableHeader);

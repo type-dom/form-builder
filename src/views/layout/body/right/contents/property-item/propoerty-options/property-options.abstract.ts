@@ -26,7 +26,7 @@ export abstract class PropertyOptions extends PropertyItem {
   protected constructor(labelText = '选项列表') {
     super(labelText);
     this.addAttrName('option-property');
-    this.selectConfigDiv = new Division(this);
+    this.selectConfigDiv = new Division();
     this.selectConfigDiv.addAttrName('select-config');
     this.selectConfigDiv.addStyleObj({
       height: '100%',
@@ -45,7 +45,7 @@ export abstract class PropertyOptions extends PropertyItem {
       transition: 'border-color .2s cubic-bezier(.645,.045,.355,1)',
       width: 'calc(100% - 100px)',
     });
-    this.selectDiv = new Division(this.selectConfigDiv);
+    this.selectDiv = new Division();
     this.selectDiv.addStyleObj({
       display: 'flex',
       flexDirection: 'row',
@@ -74,21 +74,21 @@ export abstract class PropertyOptions extends PropertyItem {
     this.btn.textNode.setText('');
     this.btn.addChild(this.dotsSvg);
     this.selectDiv.childNodes = [this.selectObj, this.btn];
-    this.firstDiv = new Division(this.selectConfigDiv);
-    const labelDiv = new Division(this.firstDiv);
+    this.firstDiv = new Division();
+    const labelDiv = new Division();
     labelDiv.addStyleObj({
       display: 'inline-block',
       width: '50%',
     });
-    labelDiv.addChild(new TextNode(labelDiv, '标签'));
-    const valueDiv = new Division(this.firstDiv);
+    labelDiv.addChild(new TextNode('标签'));
+    const valueDiv = new Division();
     valueDiv.addStyleObj({
       display: 'inline-block',
       width: '50%',
     });
-    valueDiv.addChild(new TextNode(valueDiv, '值'));
+    valueDiv.addChild(new TextNode('值'));
     this.firstDiv.childNodes = [labelDiv, valueDiv];
-    this.optionsContent = new Division(this.selectConfigDiv);
+    this.optionsContent = new Division();
     this.selectConfigDiv.childNodes = [this.selectDiv, this.firstDiv, this.optionsContent];
 
     this.button.addStyleObj({
@@ -113,7 +113,6 @@ export abstract class PropertyOptions extends PropertyItem {
     // svg.addAttribute('width', '24px');
     // this.addDiv.addChild(svg);
     this.optionsConfigObservable = fromEvent(this.btn.dom, 'click');
-    this.initEvents();
   }
   get optionConfig(): IOptionConfig | undefined {
     if (TypeFormDesigner.selectedTableDataCell?.control instanceof TypeControl) {
@@ -160,23 +159,23 @@ export abstract class PropertyOptions extends PropertyItem {
       throw Error('选项有问题');
     }
     selectedOption.options.forEach((opt, optIndex) => {
-      const optDiv = new Division(this.optionsContent);
-      const labelDiv = new Division(optDiv);
+      const optDiv = new Division();
+      const labelDiv = new Division();
       labelDiv.addStyleObj(styleObj);
       labelDiv.setAttrObj({
         // contenteditable: 'true', // 现在选项不需要编辑
         optIndex,
         optType: 'label',
       });
-      labelDiv.addChild(new TextNode(labelDiv, opt.label));
-      const valueDiv = new Division(optDiv);
+      labelDiv.addChild(new TextNode(opt.label));
+      const valueDiv = new Division();
       valueDiv.addStyleObj(styleObj);
       valueDiv.addAttrObj({
         // contenteditable: 'true', // 现在选项不需要编辑
         optIndex,
         optType: 'value',
       });
-      valueDiv.addChild(new TextNode(valueDiv, String(opt.value)));
+      valueDiv.addChild(new TextNode(String(opt.value)));
 
       // const deleteDiv = new Division(optDiv);
       // deleteDiv.setStyleObj({
@@ -212,23 +211,23 @@ export abstract class PropertyOptions extends PropertyItem {
     // let optIndex = 0;
     // config.options设置
     options.forEach((opt, optIndex) => {
-      const optDiv = new Division(this.optionsContent);
+      const optDiv = new Division();
       optDiv.setAttrName('option');
-      const labelDiv = new Division(optDiv);
+      const labelDiv = new Division();
       labelDiv.addStyleObj(styleObj);
       labelDiv.setAttrObj({
         // contenteditable: 'true', // 现在选项不需要编辑
         optIndex,
         optType: 'label',
       });
-      labelDiv.addChild(new TextNode(labelDiv, opt.label));
-      const valueDiv = new Division(optDiv);
+      labelDiv.addChild(new TextNode(opt.label));
+      const valueDiv = new Division();
       valueDiv.addStyleObj(styleObj);
       valueDiv.addAttrObj({
         optIndex,
         optType: 'value',
       });
-      valueDiv.addChild(new TextNode(valueDiv, String(opt.value)));
+      valueDiv.addChild(new TextNode(String(opt.value)));
       optDiv.childNodes = [labelDiv, valueDiv];
       this.optionsContent.appendChild(optDiv);
     });

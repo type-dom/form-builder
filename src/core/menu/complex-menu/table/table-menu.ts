@@ -19,7 +19,6 @@ export class TableMenu extends TypeMenu {
     this.svg.resetSize(24, 24);
     this.textNode.setText('表格');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage): TableControl {
     return new TableControl(parent);

@@ -20,6 +20,5 @@ export class TimeControl extends BasicControl implements ITimeControl {
       type: 'time',
     });
     this.childNodes = [this.formItem];
-    this.initEvents();
   }
 }

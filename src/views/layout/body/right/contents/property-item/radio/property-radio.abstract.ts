@@ -13,10 +13,9 @@ export abstract class PropertyRadio extends PropertyItem {
     super(labelText);
     this.name = config.name;
     this.resultValue = config.resultValue;
-    this.optionDiv = new Division(this);
+    this.optionDiv = new Division();
     this.childNodes = [this.label, this.optionDiv, this.button];
     this.setOptions(config.options);
-    this.initEvents();
   }
 
   abstract reset(value?: string): void;
@@ -26,7 +25,7 @@ export abstract class PropertyRadio extends PropertyItem {
       let button;
       if (!this.optionDiv.childNodes[index]) {
         button = new Button(this.optionDiv);
-        const label = new TextNode(button, option.label);
+        const label = new TextNode(option.label);
         button.childNodes = [label];
         this.optionDiv.addChild(button);
       } else {
@@ -67,6 +66,9 @@ export abstract class PropertyRadio extends PropertyItem {
   }
   initEvents(): void {
     this.optionDiv.childNodes.forEach((btn) => {
+      if (btn.dom === undefined) {
+        return;
+      }
       this.events.push(
         fromEvent(btn.dom, 'click').subscribe(() => {
           if (this.selectedOpt) {

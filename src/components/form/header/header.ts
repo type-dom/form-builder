@@ -24,7 +24,7 @@ export class FormHeader extends TypeDiv {
       }
     };
 
-    const textNode = new TextNode(this, parent.title);
+    const textNode = new TextNode(parent.title);
     this.childNodes = [textNode];
   }
 }

@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { deepClone } from 'type-dom.ts';
+import { deepClone } from 'type-utils';
 import { TypeFormDesigner } from '../../../../type-form-designer';
 import { TableItem } from '../../../../components/form/form-item/table-item/table-item.class';
 import { WebPage } from '../../../page/web-page.class';
@@ -15,7 +15,6 @@ export class TableControl extends ComplexControl implements ITableControl {
   // tableData?: Record<string, string | number | boolean>[];
   // tableHeader?: Record<string, string>;
   // tableName?: string;
-
   constructor(parent: WebPage) {
     super(parent);
     // console.log('TableControl constructor .这里的tableData要改为获取的形式，config格式', this);
@@ -31,7 +30,6 @@ export class TableControl extends ComplexControl implements ITableControl {
       tableData: deepClone(tableData)
     };
     this.configTable(config);
-    this.initEvents();
   }
 
   configTable(config: ITableConfig): void {

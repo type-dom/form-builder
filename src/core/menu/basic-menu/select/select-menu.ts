@@ -19,7 +19,6 @@ export class SelectMenu extends TypeMenu {
     this.svg = new TdSelectSvg(this);
     this.textNode.setText('下拉选择');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): SelectControl {
     return new SelectControl(parent);

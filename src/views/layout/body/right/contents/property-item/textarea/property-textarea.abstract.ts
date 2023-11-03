@@ -46,7 +46,6 @@ export abstract class PropertyTextarea extends PropertyItem {
       display: 'block',
     });
     this.childNodes = [this.label, this.content, this.button];
-    this.initEvents();
   }
 
   resetInputPlaceholder(placeholder: string): void {

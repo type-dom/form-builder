@@ -14,6 +14,5 @@ export class TextControl extends BasicControl implements ITextControl {
     this.propObj.attrObj.name = 'text-control';
     this.formItem = new InputItem(this, '文本输入', '请输入文本');
     this.childNodes = [this.formItem];
-    this.initEvents();
   }
 }

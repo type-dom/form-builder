@@ -22,7 +22,6 @@ export class LayoutWrapper extends TypeDiv {
     this.webDocument = new WebDocument(this);
     this.header = new HeaderWrapper(this);
     this.body = new BodyWrapper(this); // WebBody ---> MainContent中会调用 webDocument,所以必须先创建webDocument
-    this.initEvents();
   }
   initEvents(): void {
     this.events.push(

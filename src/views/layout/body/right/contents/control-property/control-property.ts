@@ -82,8 +82,8 @@ export class ControlProperty extends TypeDiv {
       this.controlOptions,
       this.controlConnection,
     ];
-    const labelValidate = new Division(this);
-    labelValidate.addChild(new TextNode(labelValidate, '校验'));
+    const labelValidate = new Division();
+    labelValidate.addChild(new TextNode('校验'));
     labelValidate.addStyleObj({
       textAlign: 'center',
       padding: '10px 0',
@@ -105,8 +105,8 @@ export class ControlProperty extends TypeDiv {
     this.controlTableColumn.hide();
     this.addChild(this.controlTableColumn);
 
-    const eventsDiv = new Division(this);
-    eventsDiv.addChild(new TextNode(eventsDiv, '监听事件'));
+    const eventsDiv = new Division();
+    eventsDiv.addChild(new TextNode('监听事件'));
     this.controlOnChange = new ControlOnChangeProperty(this);
     this.controlOnChange.hide();
     this.addChild(this.controlOnChange);

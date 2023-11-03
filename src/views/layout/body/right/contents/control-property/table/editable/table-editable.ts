@@ -1,9 +1,9 @@
 import { TypeFormDesigner } from '../../../../../../../../type-form-designer';
 import { TableControl } from '../../../../../../../../core/control/complex/table/table.class';
 import { IOptionConfig } from '../../../../../../../../core/control/type-control.interface';
+import { TypeControl } from '../../../../../../../../core/control/type-control.abstract';
 import { PropertyRadio } from '../../../property-item/radio/property-radio.abstract';
 import { ControlProperty } from '../../control-property';
-import { TypeControl } from '../../../../../../../../core/control/type-control.abstract';
 
 const TableEditableConfig: IOptionConfig = {
   name: '表格可编辑',
@@ -31,7 +31,6 @@ export class TableEditableProperty extends PropertyRadio {
     this.className = 'TableEditableProperty';
     this.addAttrName('table-editable-property');
     // console.log('this.dom is ', this.dom);
-    this.initEvents();
   }
 
   // todo 只修改选中的表格

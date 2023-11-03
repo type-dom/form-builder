@@ -24,7 +24,6 @@ export class ButtonItem extends FormItem implements IButtonItem {
     };
     this.childNodes = [this.label, this.itemContent, this.deleteSpan];
     // this.childNodes.push(this.itemContent);
-    this.initEvents();
   }
   initEvents(): void {
     this.events.push(

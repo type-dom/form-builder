@@ -42,7 +42,6 @@ export class Table extends TypeTable implements ITable {
     this.className = 'Table';
     this.tableHead = new TableHead(this);
     this.childNodes = [this.tableHead];
-    // this.initEvents();
   }
 
   /**

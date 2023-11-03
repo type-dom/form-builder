@@ -1,0 +1,119 @@
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/components/form/form-item/table-item/table/data-cell/data-cell.class.ts[24m[0m
+[0m  [2m83:15[22m  [31merror[39m  'className' is assigned a value but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/constants.ts[24m[0m
+[0m   [2m1:10[22m  [31merror[39m  'InputItem' is defined but never used     [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m2:10[22m  [31merror[39m  'RadioItem' is defined but never used     [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m3:10[22m  [31merror[39m  'TextareaItem' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m4:10[22m  [31merror[39m  'SelectItem' is defined but never used    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m5:10[22m  [31merror[39m  'CheckboxItem' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m6:10[22m  [31merror[39m  'TableItem' is defined but never used     [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m10:50[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/core/document/web-document.class.ts[24m[0m
+[0m  [2m68:43[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m84:26[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m91:64[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/example-design-mode.ts[24m[0m
+[0m   [2m1:10[22m  [31merror[39m  'debounce' is defined but never used          [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m1:20[22m  [31merror[39m  'debounceTime' is defined but never used      [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m1:34[22m  [31merror[39m  'switchMap' is defined but never used         [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m1:56[22m  [31merror[39m  'map' is defined but never used               [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m1:61[22m  [31merror[39m  'filter' is defined but never used            [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m1:69[22m  [31merror[39m  'Observable' is defined but never used        [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m1:81[22m  [31merror[39m  'Subscription' is defined but never used      [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m1:95[22m  [31merror[39m  'merge' is defined but never used             [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m7:3[22m   [31merror[39m  'formData' is defined but never used          [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m8:3[22m   [31merror[39m  'formJson' is defined but never used          [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m10:3[22m   [31merror[39m  'tableData' is defined but never used         [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m11:3[22m   [31merror[39m  'tableJson' is defined but never used         [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m12:3[22m   [31merror[39m  'testData1' is defined but never used         [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m13:3[22m   [31merror[39m  'testJson1' is defined but never used         [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m16:10[22m  [31merror[39m  'makeLogger' is defined but never used        [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m19:51[22m  [31merror[39m  'e' is defined but never used                 [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m24:11[22m  [31merror[39m  'example' is assigned a value but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/example-fill-mode.ts[24m[0m
+[0m   [2m3:3[22m   [31merror[39m  'formJson' is defined but never used     [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m4:3[22m   [31merror[39m  'tableJson' is defined but never used    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m5:3[22m   [31merror[39m  'oldFormJson' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m6:3[22m   [31merror[39m  'oldFormData' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m7:3[22m   [31merror[39m  'formData' is defined but never used     [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m8:3[22m   [31merror[39m  'tableData' is defined but never used    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m15:51[22m  [31merror[39m  'e' is defined but never used            [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/example-readonly-mode.ts[24m[0m
+[0m  [2m2:10[22m  [31merror[39m  'formData' is defined but never used   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m2:20[22m  [31merror[39m  'formJson' is defined but never used   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m2:56[22m  [31merror[39m  'tableData' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m2:67[22m  [31merror[39m  'tableJson' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/state/mode/design-state.ts[24m[0m
+[0m   [2m38:22[22m  [31merror[39m  'control' is defined but never used                [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m55:26[22m  [31merror[39m  'deleteSpan' is defined but never used             [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m55:50[22m  [31merror[39m  Unexpected empty method 'hideFormItemDeleteSpan'   [2mno-empty-function[22m[0m
+[0m  [2m126:29[22m  [31merror[39m  Unexpected empty method 'tableControlConfigTable'  [2mno-empty-function[22m[0m
+[0m  [2m127:21[22m  [31merror[39m  'row' is defined but never used                    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m127:36[22m  [31merror[39m  Unexpected empty method 'rowCreateInstance'        [2mno-empty-function[22m[0m
+[0m  [2m128:18[22m  [31merror[39m  'form' is defined but never used                   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m128:39[22m  [31merror[39m  Unexpected empty method 'hideFormFooter'           [2mno-empty-function[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/state/mode/fill-state.ts[24m[0m
+[0m  [2m39:22[22m  [31merror[39m  'control' is defined but never used           [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m67:21[22m  [31merror[39m  Unexpected empty method 'designInterrupt'     [2mno-empty-function[22m[0m
+[0m  [2m68:22[22m  [31merror[39m  'control' is defined but never used           [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m68:44[22m  [31merror[39m  Unexpected empty method 'onControlDragstart'  [2mno-empty-function[22m[0m
+[0m  [2m69:17[22m  [31merror[39m  'control' is defined but never used           [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m69:44[22m  [31merror[39m  Unexpected empty method 'onControlDrop'       [2mno-empty-function[22m[0m
+[0m  [2m70:20[22m  [31merror[39m  'control' is defined but never used           [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m70:42[22m  [31merror[39m  Unexpected empty method 'onControlDragend'    [2mno-empty-function[22m[0m
+[0m  [2m78:15[22m  [31merror[39m  'evt' is defined but never used               [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m78:27[22m  [31merror[39m  'tabs' is defined but never used              [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m78:50[22m  [31merror[39m  Unexpected empty method 'onTabsInput'         [2mno-empty-function[22m[0m
+[0m  [2m86:18[22m  [31merror[39m  'form' is defined but never used              [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m86:39[22m  [31merror[39m  Unexpected empty method 'hideFormFooter'      [2mno-empty-function[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/state/mode/readonly-state.ts[24m[0m
+[0m  [2m67:22[22m  [31merror[39m  'control' is defined but never used                [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m67:44[22m  [31merror[39m  Unexpected empty method 'onControlDragstart'       [2mno-empty-function[22m[0m
+[0m  [2m68:17[22m  [31merror[39m  'control' is defined but never used                [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m68:44[22m  [31merror[39m  Unexpected empty method 'onControlDrop'            [2mno-empty-function[22m[0m
+[0m  [2m69:20[22m  [31merror[39m  'control' is defined but never used                [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m69:42[22m  [31merror[39m  Unexpected empty method 'onControlDragend'         [2mno-empty-function[22m[0m
+[0m  [2m77:15[22m  [31merror[39m  'evt' is defined but never used                    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m77:27[22m  [31merror[39m  'tabs' is defined but never used                   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m77:50[22m  [31merror[39m  Unexpected empty method 'onTabsInput'              [2mno-empty-function[22m[0m
+[0m  [2m78:27[22m  [31merror[39m  'tableControl' is defined but never used           [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m78:55[22m  [31merror[39m  Unexpected empty method 'tableControlConfigTable'  [2mno-empty-function[22m[0m
+[0m  [2m79:21[22m  [31merror[39m  'row' is defined but never used                    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m79:36[22m  [31merror[39m  Unexpected empty method 'rowCreateInstance'        [2mno-empty-function[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/type-form-designer.ts[24m[0m
+[0m   [2m50:45[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m   [2m50:55[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m266:50[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m267:45[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m568:40[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/views/layout/body/right/contents/form-property/after-submit/after-submit.ts[24m[0m
+[0m  [2m34:17[22m  [31merror[39m  'control' is defined but never used   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m37:14[22m  [31merror[39m  'cell' is defined but never used      [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m37:35[22m  [31merror[39m  Unexpected empty method 'listenCell'  [2mno-empty-function[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/views/layout/body/right/contents/form-property/before-submit/before-submit.ts[24m[0m
+[0m  [2m30:10[22m  [31merror[39m  'context' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/views/layout/body/right/contents/form-property/form-loaded/form-loaded.ts[24m[0m
+[0m  [2m33:10[22m  [31merror[39m  'value' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/views/layout/body/right/contents/form-property/form-size/form-size.ts[24m[0m
+[0m  [2m38:9[22m   [31merror[39m  'value' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m42:10[22m  [31merror[39m  'value' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4m/Users/jianfengxu/Documents/MY-GIT/nx-workspace/apps/type-form-designer/src/views/layout/body/right/contents/property-item/input/property-input.abstract.ts[24m[0m
+[0m  [2m6:7[22m  [31merror[39m  'disableStyle' is assigned a value but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[31m[1m✖ 86 problems (86 errors, 0 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m

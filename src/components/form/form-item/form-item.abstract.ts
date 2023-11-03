@@ -26,7 +26,7 @@ export abstract class FormItem extends TypeDiv implements IFormItem {
     this.label = new Label(this);
     this.labelStyle = Object.assign({}, labelStyle);
     this.label.propObj.styleObj = this.labelStyle;
-    this.labelText = new TextNode(this.label, labelText);
+    this.labelText = new TextNode(labelText);
     this.label.childNodes.push(this.labelText);
     this.deleteSpan = this.createItem(this, {
       TypeClass: Span,

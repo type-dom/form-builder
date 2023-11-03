@@ -21,9 +21,8 @@ export class RadioOption extends TypeSpan implements IRadioOption {
       // value: opt.value,
       // checked: opt.checked || false
     });
-    this.text = new TextNode(this, '');
+    this.text = new TextNode();
     this.childNodes = [this.input, this.text];
-    this.initEvents();
   }
   initEvents(): void {
     this.events.push(

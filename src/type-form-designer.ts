@@ -28,7 +28,7 @@ import { TableRow } from './components/form/form-item/table-item/table/row/row.c
  * 因为属性和方法要全局调用，所以全部设置为静态 static; 包括get也设置为静态
  */
 export class TypeFormDesigner extends TypeRoot {
-  className: 'FormEditor';
+  className: 'TypeFormDesigner';
   // 光标
   static cursor?: StyleCursor | null;
   // 选中的菜单
@@ -56,29 +56,29 @@ export class TypeFormDesigner extends TypeRoot {
   childNodes: [LayoutWrapper, Dialog, MessageBox];
   events: Subscription[];
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
-    super(editorEl);
-    this.className = 'FormEditor';
+    super({ el: editorEl });
+    this.className = 'TypeFormDesigner';
     TypeFormDesigner.el = editorEl;
     if (!TypeFormDesigner.el.clientHeight) {
-      // FormEditor.el.setAttribute('clientHeight', '500px');
+      // TypeFormDesigner.el.setAttribute('clientHeight', '500px');
       TypeFormDesigner.el.style.height = '600px'; // 默认高度600px;
     }
-    // console.log('FormEditor.el.clientHeight is ', FormEditor.el.clientHeight);
+    // console.log('TypeFormDesigner.el.clientHeight is ', TypeFormDesigner.el.clientHeight);
     TypeFormDesigner.formSubject = new Subject<TypeFormDesigner | null>();
     TypeFormDesigner.controlSubject = new Subject<TypeControl | null>();
     TypeFormDesigner.fieldSubject = new Subject<TableDataCell | null>();
     this.events = [];
     const modeObj = TypeFormDesigner.mode = createModeState(mode);
     TypeFormDesigner.layout = modeObj.createLayout(this);
-    TypeFormDesigner.dialog = new Dialog(this);
-    TypeFormDesigner.messageBox = new MessageBox(this);
-    // FormEditor.layout.childNodes.push(this.dialog, this.messageBox);
+    TypeFormDesigner.dialog = new Dialog();
+    TypeFormDesigner.messageBox = new MessageBox();
+    // TypeFormDesigner.layout.childNodes.push(this.dialog, this.messageBox);
     this.childNodes = [TypeFormDesigner.layout, TypeFormDesigner.dialog, TypeFormDesigner.messageBox];
     this.render();
     // const json = this.toJSON();
     // console.log('json is ', json);
     // console.log('editorEl is ', editorEl);
-    // editorEl.appendChild(FormEditor.layout.dom);
+    // editorEl.appendChild(TypeFormDesigner.layout.dom);
     // const test = new Test(this);
     // console.log('test is ', test);
     // test.render();
@@ -144,7 +144,7 @@ export class TypeFormDesigner extends TypeRoot {
    * 获取默认页
    */
   static get defaultPage(): WebPage { // defaultPage 默认首页
-    // return FormEditor.webDocument.defaultPage;
+    // return TypeFormDesigner.webDocument.defaultPage;
     return TypeFormDesigner.webDocument.contents.defaultPage;
   }
   /**
@@ -173,9 +173,9 @@ export class TypeFormDesigner extends TypeRoot {
   static get formulaVisibleObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        // console.log('this.editor.selectedControl is ', FormEditor.selectedControl);
-        // if (FormEditor.selectedTableDataCell) { // 表格单元格选中的控件
-        //   return FormEditor.fieldProperty.fieldDefaultValue.formulaObservable;
+        // console.log('this.editor.selectedControl is ', TypeFormDesigner.selectedControl);
+        // if (TypeFormDesigner.selectedTableDataCell) { // 表格单元格选中的控件
+        //   return TypeFormDesigner.fieldProperty.fieldDefaultValue.formulaObservable;
         // }
         return TypeFormDesigner.controlProperty.controlDefaultValue.formulaObservable;
       })
@@ -187,12 +187,12 @@ export class TypeFormDesigner extends TypeRoot {
   static get optionsConfigObservable(): Observable<Event> {
     return this.editorElObservable.pipe(
       switchMap(() => {
-        // console.log('this.editor.selectedControl is ', FormEditor.selectedControl);
+        // console.log('this.editor.selectedControl is ', TypeFormDesigner.selectedControl);
         if (TypeFormDesigner.selectedTableDataCell) { // 表格单元格选中的控件
-          // console.log('FormEditor.fieldProperty.fieldOptions.optionsConfigObservable is ', FormEditor.fieldProperty.fieldOptions.optionsConfigObservable);
+          // console.log('TypeFormDesigner.fieldProperty.fieldOptions.optionsConfigObservable is ', TypeFormDesigner.fieldProperty.fieldOptions.optionsConfigObservable);
           return TypeFormDesigner.fieldProperty.fieldOptions.optionsConfigObservable;
         }
-        // console.log('FormEditor.controlProperty.controlOptions.optionsConfigObservable is ', FormEditor.controlProperty.controlOptions.optionsConfigObservable);
+        // console.log('TypeFormDesigner.controlProperty.controlOptions.optionsConfigObservable is ', TypeFormDesigner.controlProperty.controlOptions.optionsConfigObservable);
         return TypeFormDesigner.controlProperty.controlOptions.optionsConfigObservable;
       })
     );
@@ -210,7 +210,7 @@ export class TypeFormDesigner extends TypeRoot {
     return this.editorElObservable.pipe(
       switchMap(() => {
         if (TypeFormDesigner.selectedTableDataCell) { // 表格单元格选中的控件
-          console.log('FormEditor.fieldProperty.fieldConnection.connectionObservable is ', TypeFormDesigner.fieldProperty.fieldConnection.connectionObservable);
+          console.log('TypeFormDesigner.fieldProperty.fieldConnection.connectionObservable is ', TypeFormDesigner.fieldProperty.fieldConnection.connectionObservable);
           return TypeFormDesigner.fieldProperty.fieldConnection.connectionObservable;
         }
         return TypeFormDesigner.controlProperty.controlConnection.connectionObservable;
@@ -225,11 +225,11 @@ export class TypeFormDesigner extends TypeRoot {
     return this.editorElObservable.pipe(
       switchMap(() => {
         if (TypeFormDesigner.selectedTableDataCell?.control instanceof ConnectionControl) {
-          console.log('FormEditor.selectedTableDataCell.control.connectionItemObservable is ', TypeFormDesigner.selectedTableDataCell.control.connectionItemObservable);
+          console.log('TypeFormDesigner.selectedTableDataCell.control.connectionItemObservable is ', TypeFormDesigner.selectedTableDataCell.control.connectionItemObservable);
           return TypeFormDesigner.selectedTableDataCell.control.connectionItemObservable;
         }
         if (TypeFormDesigner.selectedControl instanceof ConnectionControl) {
-          console.log('FormEditor.selectedControl.connectionItemObservable is ', TypeFormDesigner.selectedControl.connectionItemObservable);
+          console.log('TypeFormDesigner.selectedControl.connectionItemObservable is ', TypeFormDesigner.selectedControl.connectionItemObservable);
           return TypeFormDesigner.selectedControl.connectionItemObservable;
         }
         return of(null);
@@ -359,8 +359,8 @@ export class TypeFormDesigner extends TypeRoot {
   createInstance(docLiteral: IWebDocument): void {
     TypeFormDesigner.layout.webDocument.createInstance(docLiteral);
     TypeFormDesigner.formProperty.reset();
-    // FormEditor.layout.webDocument?.defaultPage.createInstance(pageLiteral);
-    // console.log('FormEditor.layout.webDocument is ', FormEditor.layout.webDocument);
+    // TypeFormDesigner.layout.webDocument?.defaultPage.createInstance(pageLiteral);
+    // console.log('TypeFormDesigner.layout.webDocument is ', TypeFormDesigner.layout.webDocument);
   }
   /**
    * 保存表单数据的回调方法
@@ -532,7 +532,7 @@ export class TypeFormDesigner extends TypeRoot {
       TypeFormDesigner.selectedControl.formItem.itemContent.setAttrObj({
         value: label // 显示值
       });
-      // FormEditor.selectedControl.connectionItemLabel = label;
+      // TypeFormDesigner.selectedControl.connectionItemLabel = label;
     } else {
       console.error('当前选中的控件不是关联选项控件');
       throw Error('当前选中的控件不是关联选项控件');

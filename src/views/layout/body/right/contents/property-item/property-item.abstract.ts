@@ -24,10 +24,10 @@ export abstract class PropertyItem extends TypeDiv {
       fontSize: '14px',
     });
     this.label = new Label(this);
-    const text = new TextNode(this.label, labelText);
+    const text = new TextNode(labelText);
     this.label.childNodes.push(text);
     this.label.propObj.styleObj = Object.assign({}, labelStyle);
-    this.button = new TdButton(this, {
+    this.button = new TdButton({
       type: 'primary',
       size: 'mini'
     });

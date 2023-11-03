@@ -1,4 +1,4 @@
-import { deepClone } from 'type-dom.ts';
+import { deepClone } from 'type-utils';
 import { RadioItem } from '../../../../components/form/form-item/radio-item/radio-item.class';
 import { TableDataCell } from '../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
@@ -22,7 +22,6 @@ export class RadioControl extends BasicControl implements IRadioControl {
     // this.formItem.itemContent.setOptionConfig(optionConfig);
     // this.optionConfig = optionConfig;
     this.childNodes = [this.formItem];
-    this.initEvents();
   }
   createInstance(controlLiteral: ITypeControl): void {
     super.createInstance(controlLiteral);

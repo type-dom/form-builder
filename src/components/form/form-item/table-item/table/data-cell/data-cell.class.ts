@@ -23,7 +23,7 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
     //  如何判断是输入框还是文本。
     const mode = parent.parent.config?.mode;
     if (mode === 'editable') {
-      // const textNode = new TextNode(this, String(td));
+      // const textNode = new TextNode(String(td));
       // 默认生成 SingleInputControl
       this.control = new SingleInputControl(this);
       this.control.formItem.setStyleInTable(); // 在单元格中创建控件时，重置FormItem样式
@@ -31,10 +31,9 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
       // input.propObj.styleObj = Object.assign({}, inputStyle, { width: '100%' });
       // input.setValue(value);
     } else {
-      this.control = new TextNode(this, String(value));
+      this.control = new TextNode(String(value));
     }
     this.childNodes = [this.control];
-    this.initEvents();
   }
 
   get value(): string | number | boolean {
@@ -75,7 +74,7 @@ export class TableDataCell extends TypeTableDataCell implements ITableDataCell {
         this.control.setText((controlLiteral as ITextNode).nodeValue);
       } else {
         console.error('单元格的字面量和控件不一致');
-        this.control = new TextNode(this, (controlLiteral as ITextNode).nodeValue);
+        this.control = new TextNode((controlLiteral as ITextNode).nodeValue);
         this.childNodes = [this.control];
         this.control.render();
       }

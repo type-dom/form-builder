@@ -22,7 +22,7 @@ fromEvent(document, 'DOMContentLoaded').subscribe(e => {
   // console.log('editorEl is ', editorEl);
   if (editorEl) {
     const example = new ExampleDesignMode(editorEl);
-    // editor = new FormEditor(editorEl);
+    // designer = new TypeFormDesigner(editorEl);
     // console.log('editor is ', editor);
   }
 });
@@ -56,7 +56,6 @@ class ExampleDesignMode {
     // }).then(text => {
     //   console.log('text is ', text);
     // });
-    this.initEvents();
   }
 
   add(a: number, b: number) {

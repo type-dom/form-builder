@@ -19,7 +19,6 @@ export class SingleInputMenu extends TypeMenu {
     this.svg = new TdSingleInputSvg(this);
     this.textNode.setText('单行输入');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): SingleInputControl {
     return new SingleInputControl(parent);

@@ -19,11 +19,10 @@ export class ControlTitleProperty extends PropertyInput {
     this.addAttrName('control-title-property');
     // console.log('this.dom is ', this.dom);
     // if (parent instanceof ControlProperty) {
-    //   this.subject = FormEditor.controlSubject;
+    //   this.subject = TypeFormDesigner.controlSubject;
     // } else {
-    //   this.subject = FormEditor.fieldSubject;
+    //   this.subject = TypeFormDesigner.fieldSubject;
     // }
-    this.initEvents();
   }
   initEvents() {
     super.initEvents();

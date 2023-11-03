@@ -20,7 +20,6 @@ export abstract class PropertySelect extends PropertyItem {
     };
 
     this.childNodes = [this.label, this.select, this.button];
-    this.initEvents();
   }
 
   initEvents(): void {

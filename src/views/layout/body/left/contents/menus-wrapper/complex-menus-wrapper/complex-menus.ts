@@ -7,7 +7,7 @@ export class ComplexMenus extends CollapsibleBoxContents {
   className: 'ComplexMenus';
   childNodes: TypeMenu[];
   constructor(public parent: ComplexMenusWrapper) {
-    super(parent);
+    super();
     this.className = 'ComplexMenus';
     this.addAttrName('complex-control-menus');
     const tableMenu = new TableMenu(this);

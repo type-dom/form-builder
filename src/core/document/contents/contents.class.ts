@@ -1,5 +1,6 @@
 import { fromEvent } from 'rxjs';
 import { TypeDiv } from 'type-dom.ts';
+import { TypeFormDesigner } from '../../../type-form-designer';
 import { WebPage } from '../../page/web-page.class';
 import { IWebPage } from '../../page/web-page.interface';
 import { WebDocument } from '../web-document.class';
@@ -28,7 +29,6 @@ export class WebDocumentContents extends TypeDiv implements IWebDocumentContents
     this.defaultPage = new WebPage(this);
     this.currentPage = this.defaultPage;
     this.childNodes = [this.defaultPage];
-    this.initEvents();
   }
 
   // TODO count is 1 ？？？
@@ -78,8 +78,6 @@ export class WebDocumentContents extends TypeDiv implements IWebDocumentContents
     });
     this.currentPage = this.childNodes[this.childNodes.length - 1];
     // this.currentPage = this.defaultPage;
-    // 加载 tabHeaders 绑定的事件
-    this.initEvents();
   }
 
   initEvents(): void {
@@ -88,7 +86,7 @@ export class WebDocumentContents extends TypeDiv implements IWebDocumentContents
         // console.log(this.dom, 'this.dom.lastChild.childNodes');
         // console.log('e target is ', e.target);
         if (e.target === this.dom) { // 选中非控件部位，取消选中控件。
-          // FormEditor.mode.setSelectedControl(null);
+          TypeFormDesigner.mode.setSelectedControl(null);
         }
       })
     );

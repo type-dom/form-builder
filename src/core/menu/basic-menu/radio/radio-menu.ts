@@ -19,7 +19,6 @@ export class RadioMenu extends TypeMenu {
     this.svg.resetSize(24, 24);
     this.textNode.setText('单选');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): RadioControl {
     return new RadioControl(parent);

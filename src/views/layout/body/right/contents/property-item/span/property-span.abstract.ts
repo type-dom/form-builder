@@ -33,7 +33,7 @@ export abstract class PropertySpan extends PropertyItem {
         name: 'property-span',
       }
     };
-    this.text = new TextNode(this.content, '显示');
+    this.text = new TextNode('显示');
     this.content.addChild(this.text);
 
     this.button.setStyleObj({
