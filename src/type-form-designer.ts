@@ -70,13 +70,8 @@ export class TypeFormDesigner extends TypeRoot {
     this.events = [];
     const modeObj = TypeFormDesigner.mode = createModeState(mode);
     TypeFormDesigner.layout = modeObj.createLayout(this);
-<<<<<<< HEAD
-    TypeFormDesigner.dialog = new Dialog(this);
-    TypeFormDesigner.messageBox = new MessageBox(this);
-=======
     TypeFormDesigner.dialog = new Dialog();
     TypeFormDesigner.messageBox = new MessageBox();
->>>>>>> a58d83fd100001a51b223ef939ec59ddf3febe35
     // TypeFormDesigner.layout.childNodes.push(this.dialog, this.messageBox);
     this.childNodes = [TypeFormDesigner.layout, TypeFormDesigner.dialog, TypeFormDesigner.messageBox];
     this.render();
