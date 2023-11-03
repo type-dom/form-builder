@@ -22,7 +22,7 @@ export abstract class PropertyCascade extends PropertyItem {
   protected constructor(labelText = '二级级联') {
     super(labelText);
     this.addAttrName('cascade-property');
-    this.cascadeDiv = new Division(this);
+    this.cascadeDiv = new Division();
     this.cascadeDiv.addAttrName('cascade');
     this.cascadeDiv.addStyleObj({
       height: '100%',
@@ -61,7 +61,6 @@ export abstract class PropertyCascade extends PropertyItem {
     }));
     this.cascadeDiv.childNodes = [this.firstStageSelectObj, this.secondStageSelectObj];
     this.childNodes = [this.label, this.cascadeDiv, this.button];
-    this.initEvents();
   }
 
   get fieldConfig(): IOptionConfig | undefined {

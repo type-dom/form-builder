@@ -22,6 +22,5 @@ export class DateControl extends BasicControl implements IDateControl {
     });
     this.childNodes = [this.formItem];
     // parent.controlObjMap.set(TypeControl.maxCtrlId, this);
-    this.initEvents();
   }
 }

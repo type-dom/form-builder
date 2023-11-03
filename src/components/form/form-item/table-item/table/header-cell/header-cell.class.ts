@@ -16,7 +16,7 @@ export class TableHeaderCell extends TypeTableHeaderCell implements ITableHeader
       if (this.childNodes[index]) {
         this.childNodes[index].setText(textNode.nodeValue);
       } else {
-        const textObj = new TextNode(this);
+        const textObj = new TextNode();
         textObj.setText(textNode.nodeValue);
         this.appendChild(textObj);
       }

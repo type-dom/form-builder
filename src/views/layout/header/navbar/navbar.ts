@@ -26,12 +26,12 @@ export class Navbar extends TypeDiv {
     // this.previewBtn = this.createItem(this, {
     //   TypeClass: TdButton,
     // }) as TdButton;
-    this.previewBtn = new TdButton(this, {
+    this.previewBtn = new TdButton({
       SvgClass: TdAttachmentSvg,
       loading: true,
       title: '预览',
     });
-    this.saveBtn = new TdButton(this, {
+    this.saveBtn = new TdButton({
       SvgClass: TdDeleteSvg,
       loading: true,
       title: '保存',
@@ -40,7 +40,6 @@ export class Navbar extends TypeDiv {
     // this.previewBtn = new PreviewButton(this);
     // this.saveBtn = new SaveButton(this);
     this.addChildren(this.previewBtn, this.saveBtn);
-    this.initEvents();
   }
   initEvents(): void {
     this.events.push(

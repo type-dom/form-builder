@@ -38,7 +38,6 @@ export class TableRow extends TypeTableRow implements ITableRow {
     this.deleteSpan.addChild(deleteSvg);
     // console.log('table row delete span is ', this.deleteSpan);
     // this.addChild(this.deleteSpan);
-    this.initEvents();
   }
   get rowId(): string | undefined {
     return this.attrObj['row-id'] ? this.attrObj['row-id'] as string : undefined;

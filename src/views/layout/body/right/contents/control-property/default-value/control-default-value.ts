@@ -29,7 +29,6 @@ export class ControlDefaultValueProperty extends PropertyInput {
       borderRight: 'none',
     });
     this.formulaObservable = fromEvent(this.button.dom, 'click');
-    // this.initEvents();
   }
   get formula(): string {
     if (this.parent instanceof ControlProperty) {

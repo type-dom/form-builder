@@ -22,6 +22,5 @@ export class NumericalControl extends BasicControl implements INumericalControl 
     this.formItem.itemContent.removeAttribute('placeholder'); // 不需要提示语
     this.formItem.itemContent.dom.value = '0'; // 默认为零。
     this.childNodes = [this.formItem];
-    this.initEvents();
   }
 }

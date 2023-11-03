@@ -29,7 +29,6 @@ export class WebDocumentContents extends TypeDiv implements IWebDocumentContents
     this.defaultPage = new WebPage(this);
     this.currentPage = this.defaultPage;
     this.childNodes = [this.defaultPage];
-    this.initEvents();
   }
 
   // TODO count is 1 ？？？
@@ -79,8 +78,6 @@ export class WebDocumentContents extends TypeDiv implements IWebDocumentContents
     });
     this.currentPage = this.childNodes[this.childNodes.length - 1];
     // this.currentPage = this.defaultPage;
-    // 加载 tabHeaders 绑定的事件
-    this.initEvents();
   }
 
   initEvents(): void {

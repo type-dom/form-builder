@@ -56,7 +56,7 @@ export class TypeFormDesigner extends TypeRoot {
   childNodes: [LayoutWrapper, Dialog, MessageBox];
   events: Subscription[];
   constructor(editorEl: HTMLElement, mode: 'design' | 'fill' | 'readonly' = 'design') {
-    super({ el: editorEl});
+    super({ el: editorEl });
     this.className = 'TypeFormDesigner';
     TypeFormDesigner.el = editorEl;
     if (!TypeFormDesigner.el.clientHeight) {
@@ -70,8 +70,13 @@ export class TypeFormDesigner extends TypeRoot {
     this.events = [];
     const modeObj = TypeFormDesigner.mode = createModeState(mode);
     TypeFormDesigner.layout = modeObj.createLayout(this);
+<<<<<<< HEAD
     TypeFormDesigner.dialog = new Dialog(this);
     TypeFormDesigner.messageBox = new MessageBox(this);
+=======
+    TypeFormDesigner.dialog = new Dialog();
+    TypeFormDesigner.messageBox = new MessageBox();
+>>>>>>> a58d83fd100001a51b223ef939ec59ddf3febe35
     // TypeFormDesigner.layout.childNodes.push(this.dialog, this.messageBox);
     this.childNodes = [TypeFormDesigner.layout, TypeFormDesigner.dialog, TypeFormDesigner.messageBox];
     this.render();

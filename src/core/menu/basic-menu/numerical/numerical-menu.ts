@@ -18,7 +18,6 @@ export class NumericalMenu extends TypeMenu {
     this.svg = new TdNumericalSvg(this);
     this.textNode.setText('数值');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): NumericalControl {
     return new NumericalControl(parent);

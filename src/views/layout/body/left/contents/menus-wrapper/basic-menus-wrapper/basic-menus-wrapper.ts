@@ -1,12 +1,12 @@
 import { CollapsibleBox } from 'type-dom-ui';
-import { BasicMenus } from './basic-menus';
 import { MenusWrapper } from '../menus-wrapper';
+import { BasicMenus } from './basic-menus';
 export class BasicMenusWrapper extends CollapsibleBox {
   className: 'BasicMenusWrapper';
   // childNodes: [ExpandHeading, BasicMenus];
   // basicTypeMenus = new BasicMenus(this);
   constructor(public parent: MenusWrapper) {
-    super(parent);
+    super();
     this.className = 'BasicMenusWrapper';
     // this.addStyleObj({
     //   border: '1px solid #dddddd',

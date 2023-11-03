@@ -21,6 +21,5 @@ export class DateTimeControl extends BasicControl implements IDateTimeControl {
       placeholder: false,
     });
     this.childNodes = [this.formItem];
-    this.initEvents();
   }
 }

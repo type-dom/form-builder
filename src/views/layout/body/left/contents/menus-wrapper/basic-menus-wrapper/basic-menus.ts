@@ -14,7 +14,7 @@ export class BasicMenus extends CollapsibleBoxContents {
   className: 'BasicMenus';
   childNodes: TypeMenu[];
   constructor(public parent: BasicMenusWrapper) {
-    super(parent);
+    super();
     this.className = 'BasicMenus';
     this.addAttrName('basic-menus');
     const numerical = new NumericalMenu(this);

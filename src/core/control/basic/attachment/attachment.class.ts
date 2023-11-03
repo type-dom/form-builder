@@ -23,6 +23,5 @@ export class AttachmentControl extends BasicControl implements IAttachmentContro
     });
     this.childNodes = [this.formItem];
     this.attachmentObservable = fromEvent(this.itemContent.dom, 'change');
-    this.initEvents();
   }
 }

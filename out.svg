@@ -82,7 +82,7 @@
 [IFormItem]&lt;:--[TableItem]
 [IFormItem]&lt;:--[TextareaItem]
 [IFormItem]&lt;:--[ButtonItem]
-[IFormItem]&lt;:--[InputItem]
+[IFormItem]&lt;:--[InputItemClass]
 [IFormItem]&lt;:--[RadioItem]
 [IFormItem]&lt;:--[SelectItem]
 [IFormItem]&lt;:--[CheckboxItem]
@@ -140,11 +140,11 @@
 [IConfigItem]&lt;:--[RadioItem]
 [IConfigItem]&lt;:--[SelectItem]
 [IConfigItem]&lt;:--[CheckboxItem]
-[InputItem|+className: &quot;InputItem&quot;;+childNodes: \[Label, Input, Span\];+itemContent: Input;+parent: TypeControl|]
-[FormItem]&lt;:-[InputItem]
-[&lt;interface&gt;IInputItem|+className: &quot;InputItem&quot;;+childNodes: \[ILabel, IInput, ISpan\]|]
+[InputItemClass|+className: &quot;InputItemClass&quot;;+childNodes: \[Label, Input, Span\];+itemContent: Input;+parent: TypeControl|]
+[FormItem]&lt;:-[InputItemClass]
+[&lt;interface&gt;IInputItem|+className: &quot;InputItemClass&quot;;+childNodes: \[ILabel, IInput, ISpan\]|]
 [IFormItem]&lt;:--[IInputItem]
-[IInputItem]&lt;:--[InputItem]
+[IInputItem]&lt;:--[InputItemClass]
 [RadioItem|+className: &quot;RadioItem&quot;;+childNodes: \[Label, RadioGroup, Span\];+itemContent: RadioGroup;+parent: TypeControl|]
 [ConfigItem]&lt;:-[RadioItem]
 [&lt;interface&gt;IRadioItem|+className: &quot;RadioItem&quot;;+childNodes: \[ILabel, IRadioGroup, ISpan\]|]
@@ -170,7 +170,7 @@
 [&lt;interface&gt;IRadioOption|+className: &quot;RadioOption&quot;;+childNodes: \[IInput, ITextNode\]|]
 [ITypeSpan]&lt;:--[IRadioOption]
 [IRadioOption]&lt;:--[RadioOption]
-[AttachmentControl|+className: &quot;AttachmentControl&quot;;+formItem: InputItem;+childNodes: \[InputItem\];+attachmentObservable: any|]
+[AttachmentControl|+className: &quot;AttachmentControl&quot;;+formItem: InputItemClass;+childNodes: \[InputItemClass\];+attachmentObservable: any|]
 [BasicControl]&lt;:-[AttachmentControl]
 [&lt;interface&gt;IAttachmentControl|+className: &quot;AttachmentControl&quot;;+childNodes: IInputItem\[\]|]
 [ITypeDiv]&lt;:--[IAttachmentControl]
@@ -180,12 +180,12 @@
 [&lt;interface&gt;ICheckboxControl|+className: &quot;CheckboxControl&quot;;+childNodes: \[ICheckboxItem\]|]
 [ITypeControl]&lt;:--[ICheckboxControl]
 [ICheckboxControl]&lt;:--[CheckboxControl]
-[DateControl|+className: &quot;DateControl&quot;;+formItem: InputItem;+childNodes: \[InputItem\]|]
+[DateControl|+className: &quot;DateControl&quot;;+formItem: InputItemClass;+childNodes: \[InputItemClass\]|]
 [BasicControl]&lt;:-[DateControl]
 [&lt;interface&gt;IDateControl|+className: &quot;DateControl&quot;;+childNodes: \[IInputItem\]|]
 [ITypeControl]&lt;:--[IDateControl]
 [IDateControl]&lt;:--[DateControl]
-[DateTimeControl|+className: &quot;DateTimeControl&quot;;+formItem: InputItem;+childNodes: \[InputItem\]|]
+[DateTimeControl|+className: &quot;DateTimeControl&quot;;+formItem: InputItemClass;+childNodes: \[InputItemClass\]|]
 [BasicControl]&lt;:-[DateTimeControl]
 [&lt;interface&gt;IDateTimeControl|+className: &quot;DateTimeControl&quot;;+childNodes: \[IInputItem\]|]
 [ITypeControl]&lt;:--[IDateTimeControl]
@@ -195,7 +195,7 @@
 [&lt;interface&gt;IMultilineInputControl|+className: &quot;MultilineInputControl&quot;;+childNodes: \[ITextareaItem\]|]
 [ITypeControl]&lt;:--[IMultilineInputControl]
 [IMultilineInputControl]&lt;:--[MultilineInputControl]
-[NumericalControl|+className: &quot;NumericalControl&quot;;+formItem: InputItem;+childNodes: \[InputItem\];+minValue: number \| undefined;+maxValue: number \| undefined|]
+[NumericalControl|+className: &quot;NumericalControl&quot;;+formItem: InputItemClass;+childNodes: \[InputItemClass\];+minValue: number \| undefined;+maxValue: number \| undefined|]
 [BasicControl]&lt;:-[NumericalControl]
 [&lt;interface&gt;INumericalControl|+className: &quot;NumericalControl&quot;;+childNodes: \[IInputItem\]|]
 [ITypeControl]&lt;:--[INumericalControl]
@@ -210,17 +210,17 @@
 [&lt;interface&gt;ISelectControl|+className: &quot;SelectControl&quot;;+childNodes: \[SelectItem\]|]
 [ITypeControl]&lt;:--[ISelectControl]
 [ISelectControl]&lt;:--[SelectControl]
-[SingleInputControl|+className: &quot;SingleInputControl&quot;;+childNodes: \[InputItem\];+formItem: InputItem|]
+[SingleInputControl|+className: &quot;SingleInputControl&quot;;+childNodes: \[InputItemClass\];+formItem: InputItemClass|]
 [BasicControl]&lt;:-[SingleInputControl]
-[&lt;interface&gt;ISingleInputControl|+nodeName: &quot;div&quot;;+className: &quot;SingleInputControl&quot;;+childNodes: InputItem\[\]|]
+[&lt;interface&gt;ISingleInputControl|+nodeName: &quot;div&quot;;+className: &quot;SingleInputControl&quot;;+childNodes: InputItemClass\[\]|]
 [ITypeDiv]&lt;:--[ISingleInputControl]
 [ISingleInputControl]&lt;:--[SingleInputControl]
-[TextControl|+className: &quot;TextControl&quot;;+childNodes: \[InputItem\];+formItem: InputItem|]
+[TextControl|+className: &quot;TextControl&quot;;+childNodes: \[InputItemClass\];+formItem: InputItemClass|]
 [BasicControl]&lt;:-[TextControl]
 [&lt;interface&gt;ITextControl|+className: &quot;TextControl&quot;;+childNodes: \[IInputItem\]|]
 [ITypeControl]&lt;:--[ITextControl]
 [ITextControl]&lt;:--[TextControl]
-[TimeControl|+className: &quot;TimeControl&quot;;+formItem: InputItem;+childNodes: \[InputItem\]|]
+[TimeControl|+className: &quot;TimeControl&quot;;+formItem: InputItemClass;+childNodes: \[InputItemClass\]|]
 [BasicControl]&lt;:-[TimeControl]
 [&lt;interface&gt;ITimeControl|+className: &quot;TimeControl&quot;;+childNodes: \[IInputItem\]|]
 [ITypeControl]&lt;:--[ITimeControl]
@@ -1000,7 +1000,7 @@
 <text x="31990.5" y="963" style="fill: #33322E;font-weight:normal;">+createControl(): TypeControl</text>
 <text x="31990.5" y="978" style="fill: #33322E;font-weight:normal;">+initEvents(): void</text>
 <rect x="32760.5" y="412.5" height="70" width="206" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
-<a id="src/core/menu/menu.interface.ts.ITypeMenu" xlink:href="src/core/menu/menu.interface.ts"><text x="32863.5" y="434" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ITypeMenu</text></a>
+<a id="src/core/menu/menu-item.interface.ts.ITypeMenu" xlink:href="src/core/menu/menu-item.interface.ts"><text x="32863.5" y="434" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ITypeMenu</text></a>
 <path d="M32760.5 443.5 L32966.5 443.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="32768.5" y="465" style="fill: #33322E;font-weight:normal;">+textNode: ITextNode</text>
 <path d="M32760.5 474.5 L32966.5 474.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
@@ -1115,7 +1115,7 @@
 <text x="5761.5" y="473" style="fill: #33322E;font-weight:normal;">+childNodes: IRadioOption[]</text>
 <path d="M5753.5 482.5 L6026.5 482.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="6598.5" y="838.5" height="145" width="263" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>
-<a id="src/components/select/option/option.class.ts.SelectOption" xlink:href="src/components/select/option/option.class.ts"><text x="6730" y="860" style="fill: #33322E;text-anchor: middle;">SelectOption</text></a>
+<a id="src/components/select/option/opt-group.class.ts.SelectOption" xlink:href="src/components/select/option/opt-group.class.ts"><text x="6730" y="860" style="fill: #33322E;text-anchor: middle;">SelectOption</text></a>
 <path d="M6598.5 869.5 L6861.5 869.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="6606.5" y="891" style="fill: #33322E;font-weight:normal;">+nodeName: &quot;option&quot;</text>
 <text x="6606.5" y="906" style="fill: #33322E;font-weight:normal;">+className: &quot;SelectOption&quot;</text>
@@ -1125,7 +1125,7 @@
 <text x="6606.5" y="966" style="fill: #33322E;font-weight:normal;">+parent: Select</text>
 <path d="M6598.5 975.5 L6861.5 975.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="6217.5" y="405.5" height="85" width="263" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
-<a id="src/components/select/option/option.interface.ts.ISelectOption" xlink:href="src/components/select/option/option.interface.ts"><text x="6349" y="427" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ISelectOption</text></a>
+<a id="src/components/select/option/opt-group.interface.ts.ISelectOption" xlink:href="src/components/select/option/opt-group.interface.ts"><text x="6349" y="427" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ISelectOption</text></a>
 <path d="M6217.5 436.5 L6480.5 436.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="6225.5" y="458" style="fill: #33322E;font-weight:normal;">+nodeName: &quot;option&quot;</text>
 <text x="6225.5" y="473" style="fill: #33322E;font-weight:normal;">+className: &quot;SelectOption&quot;</text>
@@ -1192,7 +1192,7 @@
 <text x="8673.5" y="480" style="fill: #33322E;font-weight:normal;">+parent: LayoutWrapper</text>
 <path d="M8665.5 489.5 L8942.5 489.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="7572.5" y="834.5" height="153" width="301" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>
-<a id="src/components/form/checkbox-group/checkbox-option/checkbox-option.class.ts.CheckboxOption" xlink:href="src/components/form/checkbox-group/checkbox-option/checkbox-option.class.ts"><text x="7723" y="856" style="fill: #33322E;text-anchor: middle;">CheckboxOption</text></a>
+<a id="src/components/form/checkbox-group/checkbox-option/checkbox-opt-group.class.ts.CheckboxOption" xlink:href="src/components/form/checkbox-group/checkbox-option/checkbox-opt-group.class.ts"><text x="7723" y="856" style="fill: #33322E;text-anchor: middle;">CheckboxOption</text></a>
 <path d="M7572.5 865.5 L7873.5 865.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="7580.5" y="887" style="fill: #33322E;font-weight:normal;">+className: &quot;CheckboxOption&quot;</text>
 <text x="7580.5" y="902" style="fill: #33322E;font-weight:normal;">+childNodes: [Input, TextNode]</text>
@@ -1202,7 +1202,7 @@
 <path d="M7572.5 956.5 L7873.5 956.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="7580.5" y="978" style="fill: #33322E;font-weight:normal;">+initEvents(): void</text>
 <rect x="7088.5" y="405.5" height="85" width="320" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
-<a id="src/components/form/checkbox-group/checkbox-option/checkbox-option.interface.ts.ICheckboxOption" xlink:href="src/components/form/checkbox-group/checkbox-option/checkbox-option.interface.ts"><text x="7248.5" y="427" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ICheckboxOption</text></a>
+<a id="src/components/form/checkbox-group/checkbox-option/checkbox-opt-group.interface.ts.ICheckboxOption" xlink:href="src/components/form/checkbox-group/checkbox-option/checkbox-opt-group.interface.ts"><text x="7248.5" y="427" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ICheckboxOption</text></a>
 <path d="M7088.5 436.5 L7408.5 436.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="7096.5" y="458" style="fill: #33322E;font-weight:normal;">+className: &quot;CheckboxOption&quot;</text>
 <text x="7096.5" y="473" style="fill: #33322E;font-weight:normal;">+childNodes: [IInput, ITextNode]</text>
@@ -1261,17 +1261,17 @@
 <text x="25310.5" y="936" style="fill: #33322E;font-weight:normal;">+childNodes: [ILabel, ISelect | ICheckboxGroup | IRadioGroup, ISpan]</text>
 <path d="M25302.5 945.5 L25964.5 945.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="8406.5" y="1203.5" height="115" width="330" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>
-<a id="src/components/form/form-item/input-item/input-item.class.ts.InputItem" xlink:href="src/components/form/form-item/input-item/input-item.class.ts"><text x="8571.5" y="1225" style="fill: #33322E;text-anchor: middle;">InputItem</text></a>
+<a id="src/components/form/form-item/input-item/td-input-number.class.ts.InputItemClass" xlink:href="src/components/form/form-item/input-item/td-input-number.class.ts"><text x="8571.5" y="1225" style="fill: #33322E;text-anchor: middle;">InputItemClass</text></a>
 <path d="M8406.5 1234.5 L8736.5 1234.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
-<text x="8414.5" y="1256" style="fill: #33322E;font-weight:normal;">+className: &quot;InputItem&quot;</text>
+<text x="8414.5" y="1256" style="fill: #33322E;font-weight:normal;">+className: &quot;InputItemClass&quot;</text>
 <text x="8414.5" y="1271" style="fill: #33322E;font-weight:normal;">+childNodes: [Label, Input, Span]</text>
 <text x="8414.5" y="1286" style="fill: #33322E;font-weight:normal;">+itemContent: Input</text>
 <text x="8414.5" y="1301" style="fill: #33322E;font-weight:normal;">+parent: TypeControl</text>
 <path d="M8406.5 1310.5 L8736.5 1310.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="8501.5" y="868.5" height="85" width="358" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
-<a id="src/components/form/form-item/input-item/input-item.interface.ts.IInputItem" xlink:href="src/components/form/form-item/input-item/input-item.interface.ts"><text x="8680.5" y="890" style="fill: #33322E;font-weight:normal;text-anchor: middle;">IInputItem</text></a>
+<a id="src/components/form/form-item/input-item/td-input-number.interface.ts.IInputItem" xlink:href="src/components/form/form-item/input-item/td-input-number.interface.ts"><text x="8680.5" y="890" style="fill: #33322E;font-weight:normal;text-anchor: middle;">IInputItem</text></a>
 <path d="M8501.5 899.5 L8859.5 899.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
-<text x="8509.5" y="921" style="fill: #33322E;font-weight:normal;">+className: &quot;InputItem&quot;</text>
+<text x="8509.5" y="921" style="fill: #33322E;font-weight:normal;">+className: &quot;InputItemClass&quot;</text>
 <text x="8509.5" y="936" style="fill: #33322E;font-weight:normal;">+childNodes: [ILabel, IInput, ISpan]</text>
 <path d="M8501.5 945.5 L8859.5 945.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="12677.5" y="1464.5" height="115" width="377" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>
@@ -1334,7 +1334,7 @@
 <text x="26490.5" y="936" style="fill: #33322E;font-weight:normal;">+childNodes: [ILabel, ITextarea, ISpan]</text>
 <path d="M26482.5 945.5 L26869.5 945.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="9646.5" y="834.5" height="153" width="301" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>
-<a id="src/components/form/radio-group/radio-option/radio-option.class.ts.RadioOption" xlink:href="src/components/form/radio-group/radio-option/radio-option.class.ts"><text x="9797" y="856" style="fill: #33322E;text-anchor: middle;">RadioOption</text></a>
+<a id="src/components/form/radio-group/radio-option/radio-opt-group.class.ts.RadioOption" xlink:href="src/components/form/radio-group/radio-option/radio-opt-group.class.ts"><text x="9797" y="856" style="fill: #33322E;text-anchor: middle;">RadioOption</text></a>
 <path d="M9646.5 865.5 L9947.5 865.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="9654.5" y="887" style="fill: #33322E;font-weight:normal;">+className: &quot;RadioOption&quot;</text>
 <text x="9654.5" y="902" style="fill: #33322E;font-weight:normal;">+childNodes: [Input, TextNode]</text>
@@ -1344,7 +1344,7 @@
 <path d="M9646.5 956.5 L9947.5 956.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="9654.5" y="978" style="fill: #33322E;font-weight:normal;">+initEvents(): void</text>
 <rect x="9417.5" y="405.5" height="85" width="320" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
-<a id="src/components/form/radio-group/radio-option/radio-option.interface.ts.IRadioOption" xlink:href="src/components/form/radio-group/radio-option/radio-option.interface.ts"><text x="9577.5" y="427" style="fill: #33322E;font-weight:normal;text-anchor: middle;">IRadioOption</text></a>
+<a id="src/components/form/radio-group/radio-option/radio-opt-group.interface.ts.IRadioOption" xlink:href="src/components/form/radio-group/radio-option/radio-opt-group.interface.ts"><text x="9577.5" y="427" style="fill: #33322E;font-weight:normal;text-anchor: middle;">IRadioOption</text></a>
 <path d="M9417.5 436.5 L9737.5 436.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="9425.5" y="458" style="fill: #33322E;font-weight:normal;">+className: &quot;RadioOption&quot;</text>
 <text x="9425.5" y="473" style="fill: #33322E;font-weight:normal;">+childNodes: [IInput, ITextNode]</text>
@@ -1353,8 +1353,8 @@
 <a id="src/core/control/basic/attachment/attachment.class.ts.AttachmentControl" xlink:href="src/core/control/basic/attachment/attachment.class.ts"><text x="32006" y="1486" style="fill: #33322E;text-anchor: middle;">AttachmentControl</text></a>
 <path d="M31850.5 1495.5 L32161.5 1495.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="31858.5" y="1517" style="fill: #33322E;font-weight:normal;">+className: &quot;AttachmentControl&quot;</text>
-<text x="31858.5" y="1532" style="fill: #33322E;font-weight:normal;">+formItem: InputItem</text>
-<text x="31858.5" y="1547" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItem]</text>
+<text x="31858.5" y="1532" style="fill: #33322E;font-weight:normal;">+formItem: InputItemClass</text>
+<text x="31858.5" y="1547" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItemClass]</text>
 <text x="31858.5" y="1562" style="fill: #33322E;font-weight:normal;">+attachmentObservable: any</text>
 <path d="M31850.5 1571.5 L32161.5 1571.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="34261.5" y="1218.5" height="85" width="311" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
@@ -1382,8 +1382,8 @@
 <a id="src/core/control/basic/date/date.class.ts.DateControl" xlink:href="src/core/control/basic/date/date.class.ts"><text x="38808.5" y="1493" style="fill: #33322E;text-anchor: middle;">DateControl</text></a>
 <path d="M38681.5 1502.5 L38935.5 1502.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="38689.5" y="1524" style="fill: #33322E;font-weight:normal;">+className: &quot;DateControl&quot;</text>
-<text x="38689.5" y="1539" style="fill: #33322E;font-weight:normal;">+formItem: InputItem</text>
-<text x="38689.5" y="1554" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItem]</text>
+<text x="38689.5" y="1539" style="fill: #33322E;font-weight:normal;">+formItem: InputItemClass</text>
+<text x="38689.5" y="1554" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItemClass]</text>
 <path d="M38681.5 1563.5 L38935.5 1563.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="38888.5" y="1218.5" height="85" width="254" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
 <a id="src/core/control/basic/date/date.interface.ts.IDateControl" xlink:href="src/core/control/basic/date/date.interface.ts"><text x="39015.5" y="1240" style="fill: #33322E;font-weight:normal;text-anchor: middle;">IDateControl</text></a>
@@ -1395,8 +1395,8 @@
 <a id="src/core/control/basic/date-time/date-time.class.ts.DateTimeControl" xlink:href="src/core/control/basic/date-time/date-time.class.ts"><text x="37039.5" y="1493" style="fill: #33322E;text-anchor: middle;">DateTimeControl</text></a>
 <path d="M36893.5 1502.5 L37185.5 1502.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="36901.5" y="1524" style="fill: #33322E;font-weight:normal;">+className: &quot;DateTimeControl&quot;</text>
-<text x="36901.5" y="1539" style="fill: #33322E;font-weight:normal;">+formItem: InputItem</text>
-<text x="36901.5" y="1554" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItem]</text>
+<text x="36901.5" y="1539" style="fill: #33322E;font-weight:normal;">+formItem: InputItemClass</text>
+<text x="36901.5" y="1554" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItemClass]</text>
 <path d="M36893.5 1563.5 L37185.5 1563.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="37049.5" y="1218.5" height="85" width="292" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
 <a id="src/core/control/basic/date-time/date-time.interface.ts.IDateTimeControl" xlink:href="src/core/control/basic/date-time/date-time.interface.ts"><text x="37195.5" y="1240" style="fill: #33322E;font-weight:normal;text-anchor: middle;">IDateTimeControl</text></a>
@@ -1421,8 +1421,8 @@
 <a id="src/core/control/basic/numerical/numerical.class.ts.NumericalControl" xlink:href="src/core/control/basic/numerical/numerical.class.ts"><text x="37414" y="1478" style="fill: #33322E;text-anchor: middle;">NumericalControl</text></a>
 <path d="M37263.5 1487.5 L37564.5 1487.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="37271.5" y="1509" style="fill: #33322E;font-weight:normal;">+className: &quot;NumericalControl&quot;</text>
-<text x="37271.5" y="1524" style="fill: #33322E;font-weight:normal;">+formItem: InputItem</text>
-<text x="37271.5" y="1539" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItem]</text>
+<text x="37271.5" y="1524" style="fill: #33322E;font-weight:normal;">+formItem: InputItemClass</text>
+<text x="37271.5" y="1539" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItemClass]</text>
 <text x="37271.5" y="1554" style="fill: #33322E;font-weight:normal;">+minValue: number | undefined</text>
 <text x="37271.5" y="1569" style="fill: #33322E;font-weight:normal;">+maxValue: number | undefined</text>
 <path d="M37263.5 1578.5 L37564.5 1578.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
@@ -1466,22 +1466,22 @@
 <a id="src/core/control/basic/single-input/single-input.class.ts.SingleInputControl" xlink:href="src/core/control/basic/single-input/single-input.class.ts"><text x="28406.5" y="1493" style="fill: #33322E;text-anchor: middle;">SingleInputControl</text></a>
 <path d="M28246.5 1502.5 L28566.5 1502.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="28254.5" y="1524" style="fill: #33322E;font-weight:normal;">+className: &quot;SingleInputControl&quot;</text>
-<text x="28254.5" y="1539" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItem]</text>
-<text x="28254.5" y="1554" style="fill: #33322E;font-weight:normal;">+formItem: InputItem</text>
+<text x="28254.5" y="1539" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItemClass]</text>
+<text x="28254.5" y="1554" style="fill: #33322E;font-weight:normal;">+formItem: InputItemClass</text>
 <path d="M28246.5 1563.5 L28566.5 1563.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="28438.5" y="1211.5" height="100" width="320" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
 <a id="src/core/control/basic/single-input/single-input.inerface.ts.ISingleInputControl" xlink:href="src/core/control/basic/single-input/single-input.inerface.ts"><text x="28598.5" y="1233" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ISingleInputControl</text></a>
 <path d="M28438.5 1242.5 L28758.5 1242.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="28446.5" y="1264" style="fill: #33322E;font-weight:normal;">+nodeName: &quot;div&quot;</text>
 <text x="28446.5" y="1279" style="fill: #33322E;font-weight:normal;">+className: &quot;SingleInputControl&quot;</text>
-<text x="28446.5" y="1294" style="fill: #33322E;font-weight:normal;">+childNodes: InputItem[]</text>
+<text x="28446.5" y="1294" style="fill: #33322E;font-weight:normal;">+childNodes: InputItemClass[]</text>
 <path d="M28438.5 1303.5 L28758.5 1303.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="35048.5" y="1471.5" height="100" width="254" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>
 <a id="src/core/control/basic/text/text.class.ts.TextControl" xlink:href="src/core/control/basic/text/text.class.ts"><text x="35175.5" y="1493" style="fill: #33322E;text-anchor: middle;">TextControl</text></a>
 <path d="M35048.5 1502.5 L35302.5 1502.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="35056.5" y="1524" style="fill: #33322E;font-weight:normal;">+className: &quot;TextControl&quot;</text>
-<text x="35056.5" y="1539" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItem]</text>
-<text x="35056.5" y="1554" style="fill: #33322E;font-weight:normal;">+formItem: InputItem</text>
+<text x="35056.5" y="1539" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItemClass]</text>
+<text x="35056.5" y="1554" style="fill: #33322E;font-weight:normal;">+formItem: InputItemClass</text>
 <path d="M35048.5 1563.5 L35302.5 1563.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="35403.5" y="1218.5" height="85" width="254" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
 <a id="src/core/control/basic/text/text.interface.ts.ITextControl" xlink:href="src/core/control/basic/text/text.interface.ts"><text x="35530.5" y="1240" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ITextControl</text></a>
@@ -1493,8 +1493,8 @@
 <a id="src/core/control/basic/time/time.class.ts.TimeControl" xlink:href="src/core/control/basic/time/time.class.ts"><text x="34632.5" y="1493" style="fill: #33322E;text-anchor: middle;">TimeControl</text></a>
 <path d="M34505.5 1502.5 L34759.5 1502.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="34513.5" y="1524" style="fill: #33322E;font-weight:normal;">+className: &quot;TimeControl&quot;</text>
-<text x="34513.5" y="1539" style="fill: #33322E;font-weight:normal;">+formItem: InputItem</text>
-<text x="34513.5" y="1554" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItem]</text>
+<text x="34513.5" y="1539" style="fill: #33322E;font-weight:normal;">+formItem: InputItemClass</text>
+<text x="34513.5" y="1554" style="fill: #33322E;font-weight:normal;">+childNodes: [InputItemClass]</text>
 <path d="M34505.5 1563.5 L34759.5 1563.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="34652.5" y="1218.5" height="85" width="254" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
 <a id="src/core/control/basic/time/time.interface.ts.ITimeControl" xlink:href="src/core/control/basic/time/time.interface.ts"><text x="34779.5" y="1240" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ITimeControl</text></a>
@@ -1757,14 +1757,14 @@
 <text x="14050.5" y="936" style="fill: #33322E;font-weight:normal;">+parent: Logo</text>
 <path d="M14042.5 945.5 L14277.5 945.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="14317.5" y="860.5" height="100" width="235" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;"></rect>
-<a id="src/components/form/form-item/table-item/table/body/body.class.ts.TableBody" xlink:href="src/components/form/form-item/table-item/table/body/body.class.ts"><text x="14435" y="882" style="fill: #33322E;text-anchor: middle;">TableBody</text></a>
+<a id="src/components/form/form-item/table-item/table/body/col-group.class.ts.TableBody" xlink:href="src/components/form/form-item/table-item/table/body/col-group.class.ts"><text x="14435" y="882" style="fill: #33322E;text-anchor: middle;">TableBody</text></a>
 <path d="M14317.5 891.5 L14552.5 891.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="14325.5" y="913" style="fill: #33322E;font-weight:normal;">+className: &quot;TableBody&quot;</text>
 <text x="14325.5" y="928" style="fill: #33322E;font-weight:normal;">+childNodes: TableRow[]</text>
 <text x="14325.5" y="943" style="fill: #33322E;font-weight:normal;">+parent: Table</text>
 <path d="M14317.5 952.5 L14552.5 952.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <rect x="17724.5" y="405.5" height="85" width="244" style="stroke:#33322E;fill:lightblue;stroke-dasharray:none;"></rect>
-<a id="src/components/form/form-item/table-item/table/body/body.interface.ts.ITableBody" xlink:href="src/components/form/form-item/table-item/table/body/body.interface.ts"><text x="17846.5" y="427" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ITableBody</text></a>
+<a id="src/components/form/form-item/table-item/table/body/col-group.interface.ts.ITableBody" xlink:href="src/components/form/form-item/table-item/table/body/col-group.interface.ts"><text x="17846.5" y="427" style="fill: #33322E;font-weight:normal;text-anchor: middle;">ITableBody</text></a>
 <path d="M17724.5 436.5 L17968.5 436.5" style="stroke:#33322E;fill:none;stroke-dasharray:none;"></path>
 <text x="17732.5" y="458" style="fill: #33322E;font-weight:normal;">+className: &quot;TableBody&quot;</text>
 <text x="17732.5" y="473" style="fill: #33322E;font-weight:normal;">+childNodes: ITableRow[]</text>

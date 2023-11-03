@@ -20,7 +20,6 @@ export class MultilineInputMenu extends TypeMenu {
     this.svg.resetSize(24, 24);
     this.textNode.setText('多行输入');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): MultilineInputControl {
     return new MultilineInputControl(parent);

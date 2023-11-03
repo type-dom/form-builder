@@ -40,7 +40,6 @@ export class WebPage extends TypeDiv implements IWebPage {
     this.childNodes = [];
     this.dragStartIndex = 0;
     this.dragDropIndex = 0;
-    this.initEvents();
   }
   get beforeSubmitStr(): string {
     return this.propObj.attrObj['before-submit'] as string;

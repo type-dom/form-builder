@@ -1,4 +1,4 @@
-import { deepClone } from 'type-dom.ts';
+import { deepClone } from 'type-utils';
 import { SelectItem } from '../../../../components/form/form-item/select-item/select-item.class';
 import { TableDataCell } from '../../../../components/form/form-item/table-item/table/data-cell/data-cell.class';
 import { WebPage } from '../../../page/web-page.class';
@@ -19,7 +19,6 @@ export class SelectControl extends BasicControl implements ISelectControl {
     const optionsConfig = deepClone(Object.assign(defaultOptionConfig, { name: '下拉选择' + Math.random() }));
     this.setOptionConfig(optionsConfig);
     this.childNodes = [this.formItem];
-    this.initEvents();
   }
   createInstance(controlLiteral: ITypeControl): void { // ISelectControl 会报错
     super.createInstance(controlLiteral);

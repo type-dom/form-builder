@@ -49,7 +49,6 @@ export class WebDocumentTabs extends TypeUL {
       // left: leftMargin,
     };
     this.setTabs(1); // 默认生成一个
-    this.initEvents();
   }
 
   setTabs(num: number): void {
@@ -76,7 +75,7 @@ export class WebDocumentTabs extends TypeUL {
       for (let i = 0; i < num; i++) {
         if (!this.childNodes[i]) { // 如果不存在，创建子节点
           const liObj = new ListItem(this);
-          const text = new TextNode(liObj, 'tab标签');
+          const text = new TextNode('tab标签');
           if (i === 0) {
             text.setText('首页');
           } else {
@@ -101,7 +100,7 @@ export class WebDocumentTabs extends TypeUL {
         console.log('tabs没有子节点。');
         const liObj = new ListItem(this);
         liObj.addStyleObj(Object.assign({}, this.liStyle));
-        const text = new TextNode(liObj, '首页');
+        const text = new TextNode('首页');
         liObj.addChild(text);
         this.appendChild(liObj);
       } else { // 原来有多页时
@@ -149,7 +148,7 @@ export class WebDocumentTabs extends TypeUL {
         const liObj = new ListItem(this);
         liObj.addStyleObj(Object.assign({}, this.liStyle));
         const text = (liJson.childNodes[0] as ITextNode).nodeValue;
-        const textNode = new TextNode(liObj, text);
+        const textNode = new TextNode(text);
         liObj.addChild(textNode);
         this.appendChild(liObj);
       }

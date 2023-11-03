@@ -15,6 +15,7 @@
     "uml": "tsuml2 --glob ./src/**/*.ts ",
     "docs": "typedoc --entryPointStrategy expand ./src",
     "coverage": "typescript-coverage-report",
+    "git-push": "git add . && git commit -m 'edit' && git push origin main",
     "git-pull": "git pull"
   },
   "keywords": [
@@ -104,15 +105,5 @@
     "showRelativePath": true,
     "historyFile": "typecoverage.json",
     "noDetailWhenFailed": true
-  },
-  "nx": {
-    "targets": {
-      "build": {
-        "outputs": [
-          "{projectRoot}/dist",
-          "{projectRoot}/public/dist"
-        ]
-      }
-    }
   }
 }

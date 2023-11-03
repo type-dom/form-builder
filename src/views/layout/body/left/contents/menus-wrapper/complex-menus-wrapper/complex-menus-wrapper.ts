@@ -4,7 +4,7 @@ import { ComplexMenus } from './complex-menus';
 export class ComplexMenusWrapper extends CollapsibleBox {
   className: 'ComplexMenusWrapper';
   constructor(public parent: MenusWrapper) {
-    super(parent);
+    super();
     this.className = 'ComplexMenusWrapper';
     // this.addStyleObj({
     //   border: '1px solid #dddddd',

@@ -15,9 +15,8 @@ export class SubmitButton extends TypeButton {
       },
       styleObj: buttonStyle,
     };
-    this.textNode = new TextNode(this, '提交');
+    this.textNode = new TextNode('提交');
     this.submitObservable = fromEvent(this.dom, 'click');
-    this.initEvents();
   }
   get beforeSubmitStr(): string {
     return TypeFormDesigner.webDocument.attrObj['before-submit'] as string;

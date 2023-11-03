@@ -56,7 +56,6 @@ class ExampleDesignMode {
     // }).then(text => {
     //   console.log('text is ', text);
     // });
-    this.initEvents();
   }
 
   add(a: number, b: number) {

@@ -18,7 +18,7 @@ export abstract class TypeMenu extends TypeDiv implements ITypeMenu {
     super();
     this.addStyleObj(Object.assign({}, menuStyle));
     this.titleSpan = new Span(this);
-    this.textNode = new TextNode(this.titleSpan);
+    this.textNode = new TextNode();
     this.titleSpan.childNodes = [this.textNode];
   }
   initEvents(): void {

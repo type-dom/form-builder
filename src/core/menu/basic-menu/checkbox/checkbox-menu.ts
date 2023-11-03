@@ -19,7 +19,6 @@ export class CheckboxMenu extends TypeMenu {
     this.svg.resetSize(24, 24);
     this.textNode.setText('复选');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): CheckboxControl {
     return new CheckboxControl(parent);

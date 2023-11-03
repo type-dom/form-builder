@@ -23,7 +23,6 @@ export class ControlConnectionProperty extends PropertySpan {
     this.button.addChild(this.dotsSvg);
     this.button.setStyle('display', 'inline-block'); // 默认是隐藏的
     this.connectionObservable = fromEvent(this.button.dom, 'click');
-    // this.initEvents();
   }
   // initEvents(): void {
   //   this.events.push(

@@ -27,18 +27,17 @@ export class BodyRightTabs extends TypeUL {
     // 字段属性是动态显示的。只有选中表格的单元格才会触发。
     this.fieldTab = new ListItem(this);
     this.fieldTab.addStyleObj(Object.assign({}, liStyle, { display: 'none' }));
-    this.fieldTab.childNodes = [new TextNode(this.fieldTab, '字段属性')];
+    this.fieldTab.childNodes = [new TextNode('字段属性')];
 
     this.controlTab = new ListItem(this);
     // li1.setAttribute('class', 'attribute__menu-active');
     this.controlTab.setStyleObj(Object.assign({}, liStyle, { display: 'none' }));
-    this.controlTab.childNodes = [new TextNode(this.controlTab, '控件属性')];
+    this.controlTab.childNodes = [new TextNode('控件属性')];
 
     this.formTab = new ListItem(this);
     this.formTab.addStyleObj(Object.assign({}, liStyle, { backgroundColor: '#ffffff' }));
-    this.formTab.childNodes = [new TextNode(this.formTab, '表单属性')];
+    this.formTab.childNodes = [new TextNode('表单属性')];
     this.childNodes = [this.fieldTab, this.controlTab, this.formTab];
-    this.initEvents();
   }
   initEvents(): void {
     this.events.push(

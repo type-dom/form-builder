@@ -19,7 +19,6 @@ export class TimeMenu extends TypeMenu {
     this.svg.resetSize(24, 24);
     this.textNode.setText('时间');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): TimeControl {
     return new TimeControl(parent);

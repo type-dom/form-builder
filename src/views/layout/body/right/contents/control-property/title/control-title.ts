@@ -23,7 +23,6 @@ export class ControlTitleProperty extends PropertyInput {
     // } else {
     //   this.subject = TypeFormDesigner.fieldSubject;
     // }
-    this.initEvents();
   }
   initEvents() {
     super.initEvents();

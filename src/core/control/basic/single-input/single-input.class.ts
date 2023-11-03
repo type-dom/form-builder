@@ -25,6 +25,5 @@ export class SingleInputControl extends BasicControl implements ISingleInputCont
     if (this.defaultValue) {
       this.formItem.itemContent.setValue(this.defaultValue);
     }
-    this.initEvents();
   }
 }

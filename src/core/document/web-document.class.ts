@@ -34,7 +34,6 @@ export class WebDocument extends TypeDiv implements IWebDocument {
     this.tabs = new WebDocumentTabs(this);
     this.fieldConfig = fieldConfig; // 设置默认的字段选项。
     this.childNodes = [this.tabs, this.contents];
-    this.initEvents();
   }
 
   get formIds(): string | undefined {
@@ -64,8 +63,6 @@ export class WebDocument extends TypeDiv implements IWebDocument {
     }
     this.tabs.createInstance(docLiteral.childNodes[0]);
     this.contents.createInstance(docLiteral.childNodes[1]);
-    // 加载 tabHeaders 绑定的事件
-    this.initEvents();
   }
   // 处理 SelectGroup 类；
   processSelectGroup(json: Record<string, any>): void {
@@ -108,7 +105,6 @@ export class WebDocument extends TypeDiv implements IWebDocument {
       // });
       this.childNodes = [this.tabs, this.contents];
       this.render(); // 应该是这里有问题
-      this.initEvents();
       return true;
     }
     return false;

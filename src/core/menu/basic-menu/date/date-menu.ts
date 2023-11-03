@@ -21,7 +21,6 @@ export class DateMenu extends TypeMenu {
     this.svg.resetSize(24, 24);
     this.textNode.setText('日期');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): DateControl {
     return new DateControl(parent);

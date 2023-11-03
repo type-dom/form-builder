@@ -21,7 +21,6 @@ export class ConnectionMenu extends TypeMenu {
     this.svg.resetSize(24, 24);
     this.textNode.setText('关联选项');
     this.childNodes = [this.svg, this.titleSpan];
-    this.initEvents();
   }
   createControl(parent: WebPage | TableDataCell): ConnectionControl {
     return new ConnectionControl(parent);
