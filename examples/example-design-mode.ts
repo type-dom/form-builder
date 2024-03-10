@@ -1,5 +1,5 @@
 import { TypeRoot } from '@type-dom/framework';
-import { FormBuilder, ConnectionControl } from '../src/index';
+import { FormBuilder, ConnectionControl } from '../src';
 import {
   fieldsConfig,
   // formData,
