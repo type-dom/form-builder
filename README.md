@@ -1,3 +1,15 @@
+# form-builder
+
+This library was generated with [Nx](https://nx.dev).
+
+## Building
+
+Run `nx build form-builder` to build the library.
+
+## Running unit tests
+
+Run `nx test form-builder` to execute the unit tests via [Jest](https://jestjs.io).
+
 ## 项目说明
 
 > 这是一个基于TypeDom框架创建的动态表单组件。
@@ -15,7 +27,6 @@
 > 5、安装loader， ts-loader css-loader url-loader file-loader less-loader
 
 > 6、单元测试npx ts-jest config:init
-
 
 ## 项目运行
 
@@ -179,7 +190,6 @@
         defaultPage: 默认页面
         form: 填表模式和只读模式下表单层
 
-        
 ## 注
 
 > 1、在constructor构造函数中，不要用 setStyle,setAttrObj,appendChild等带有渲染的方法。

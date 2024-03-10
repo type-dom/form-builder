@@ -22,9 +22,9 @@ console.log('当前模式', process.argv); // process.env.NODE_ENV);
 module.exports = {
   // 入口 (单个入口 或多个入口),现在是多入口
   entry: {
-    designMode: './src/example-design-mode.ts',
-    fillMode: './src/example-fill-mode.ts',
-    readonlyMode: './src/example-readonly-mode.ts'
+    designMode: './examples/example-design-mode.ts',
+    fillMode: './examples/example-fill-mode.ts',
+    readonlyMode: './examples/example-readonly-mode.ts'
   },
   // 出口
   output: {
